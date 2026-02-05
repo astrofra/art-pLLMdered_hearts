@@ -16,6 +16,9 @@ import pygame
 from c64renderer import C64Renderer
 from knowledge_base import plundered_hearts_wiki, plundered_hearts_fandom
 
+print("Waiting for Ollama")
+time.sleep(5)
+
 # os.environ["OLLAMA_NO_CUDA"] = "1"
 
 AI_THINKING_STATUS = "<MISTRAL REFLECHIT>"
