@@ -1,3 +1,3 @@
 del llm_out\*.txt
-python src/faketerm.py
+call run-faketerm.bat
 pause
