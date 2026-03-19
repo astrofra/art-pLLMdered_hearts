@@ -10,6 +10,8 @@ pLLMdered Hearts est une installation qui fait jouer automatiquement Plundered H
 
 Deux recits se croisent : Lady Dimsford dans le jeu, et Amy Briggs dans son temoignage.
 
+**[Video Capture on Youtube](https://www.youtube.com/watch?v=oFxodrQh4-s)**
+
 ## Architecture
 
 - `src/faketerm.py` pilote `frotz`, envoie une solution pre-ecrite, nettoie la sortie, et rend le texte via un renderer C64.
