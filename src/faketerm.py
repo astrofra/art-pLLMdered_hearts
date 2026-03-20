@@ -3,6 +3,34 @@ import pexpect
 import time
 import re
 import json
+import signal
+import os
+import select
+
+DEFAULT_OLLAMA_MODEL = "ministral-3:14b"
+GAME_CONTEXT = (
+    "Plundered Hearts is an Infocom text adventure set in the Caribbean. "
+    "You play a kidnapped young woman aboard a pirate ship and must suggest the next text command."
+)
+ZMACHINE_PARSER_GUIDANCE = (
+    "The game uses a classic Infocom-style parser. "
+    "Prefer very short commands: most valid inputs are one or two words. "
+    "Use exactly one action per turn. "
+    "Directions are usually single letters like N, S, E, W, and vertical moves like UP or DOWN. "
+    "Wait is often Z. "
+    "Default command shape is VERB or VERB NOUN, such as EXAMINE DOOR or TAKE BOTTLE. "
+    "When needed, use simple parser patterns like VERB NOUN PREPOSITION NOUN, for example LOOK THROUGH WINDOW, "
+    "PUT RAG IN WATER, THROW PORK AT CROCODILE, or UNLOCK DOOR WITH KEY. "
+    "Use nouns that appear explicitly in the latest game text. "
+    "Prefer concrete adventure verbs like EXAMINE, LOOK, OPEN, TAKE, READ, ENTER, CLIMB, PUSH, PULL, GIVE, THROW, "
+    "WEAR, REMOVE, UNLOCK, DRINK, ASK, or TALK. "
+    "Do not write full sentences, explanations, punctuation-heavy text, or multiple actions joined together. "
+    "Avoid inventing synonyms or abstract verbs if the object names are not present in the scene. "
+    "If the game asks a yes or no question addressed to a character, the parser may accept a compact reply like NAME, YES or NAME, NO."
+)
+
+class OllamaTimeoutError(Exception):
+    pass
 
 def extract_and_parse_json(text):
     """
@@ -15,17 +43,11 @@ def extract_and_parse_json(text):
     if not match:
         # If no fenced block, try raw { ... } block (useful for degraded format)
         match = re.search(r"(\{[\s\S]*?\})", text)
-    
-    if match:
-        try:
-            json_str = match.group(1)
-            return json.loads(json_str)
-        except json.JSONDecodeError as e:
-            # print("JSON parsing failed:", e)
-            return None
-    else:
-        # print("No JSON block found.")
-        return None
+    if not match:
+        raise RuntimeError("No JSON object found in Ollama response.")
+
+    json_str = match.group(1)
+    return json.loads(json_str)
 
 ansi_escape = re.compile(r'''
     \x1b    # ESC
@@ -47,6 +69,76 @@ def clean_output(text):
     lines = text.strip().splitlines()
     lines = [line for line in lines if not line.strip().isdigit()]
     return '\n'.join(lines).strip()
+
+
+def pick_ollama_model():
+    preferred_models = [
+        DEFAULT_OLLAMA_MODEL,
+        "ministral-3:14b",
+        "minimax-m2.7:cloud",
+        "qwen3-vl:8b",
+    ]
+
+    available_models = [model.model for model in ollama.list().models]
+
+    for model in preferred_models:
+        if model in available_models:
+            return model
+
+    for model in available_models:
+        if "embed" not in model:
+            return model
+
+    return DEFAULT_OLLAMA_MODEL
+
+
+def read_game_output(child, timeout=2):
+    output = ""
+    idle_cycles = 0
+
+    while True:
+        ready, _, _ = select.select([child.child_fd], [], [], timeout)
+        if not ready:
+            idle_cycles = idle_cycles + 1
+            if idle_cycles >= 2:
+                break
+            continue
+
+        chunk = os.read(child.child_fd, 4096)
+        if not chunk:
+            break
+        output = output + chunk.decode("utf-8", errors="ignore")
+        idle_cycles = 0
+
+        while "[MORE]" in output or "***MORE***" in output:
+            output = output.replace("[MORE]", "")
+            output = output.replace("***MORE***", "")
+            child.send(" ")
+
+    return clean_output(output)
+
+def _handle_ollama_timeout(signum, frame):
+    raise OllamaTimeoutError()
+
+
+def ask_ollama_for_command(model, prompt, timeout_seconds=20):
+    previous_handler = signal.getsignal(signal.SIGALRM)
+    signal.signal(signal.SIGALRM, _handle_ollama_timeout)
+    signal.alarm(timeout_seconds)
+
+    response = ollama.chat(
+        model=model,
+        format='json',
+        options={'temperature': 0.2},
+        messages=[{
+            'role': 'user',
+            'content': prompt
+        }]
+    )
+    signal.alarm(0)
+    signal.signal(signal.SIGALRM, previous_handler)
+    # print(response.message.content)
+    return extract_and_parse_json(response.message.content)
 
 
 # official Amiga solution
@@ -164,21 +256,15 @@ The Plundered Hearts package included an elegant velvet reticule (pouch) contain
 Game reviewers complimented Plundered Hearts for its gripping prose, challenging predicaments, and scenes of derring-do. Other publications said it was a good introduction to interactive fiction, with writing suitable for both men and women. Some noted that the genre might have alienated Infocom's typical audience, but praised its bold direction nonetheless.
 """
 
-# run frotz through a terminal emulator, using the ascii mode
-child = pexpect.spawn("frotz -p roms/PLUNDERE.z3", encoding='utf-8', timeout=5)
+# run dfrotz to get a plain terminal stream that is easier to parse than curses output
+child = pexpect.spawn("dfrotz roms/PLUNDERE.z3", encoding='utf-8', timeout=5)
+ollama_model = pick_ollama_model()
+step = 0
 
-# Catch the intro message
-child.expect("Press RETURN or ENTER to begin")
-print(child.before)
-
-# Answer the intro message by pressing "enter"
+# Start the story and consume intro pages until the command prompt appears.
 child.sendline("")
-
 time.sleep(0.5)
-
-# Initial output
-child.expect("\r\x1b", timeout=5)
-print(child.before)
+print(read_game_output(child))
 print("\n")
 
 prev_output = ""
@@ -186,57 +272,34 @@ prev_cmd = None
 
 # automated walkthrough
 while True : # for step, cmd in enumerate(plundered_hearts_commands):
-    try:
-        # print(f"\n→ Étape {step+1}: {cmd}")
-        # print(f"{cmd}")
-        prompt = "You are playing Pludered Hearts, a text interactive fiction by Amy Briggs."
-        prompt = prompt + "Here is what Wikipedia says about this game : "
-        prompt = prompt + plundered_hearts_wiki
-        # prompt = prompt + "Here is the known solution for the game but please don't jump to the end directly : "
-        # prompt = prompt + plundered_hearts_solution
-        prompt = prompt + "Here is the latest output from the game (don't repeat it twice in a row): "
-        prompt = prompt + prev_output
-        if prev_cmd is not None:
-            prompt = prompt + "You previous command was : " + prev_cmd
-        prompt = prompt + "Please provide a JSON with two keys : 'comment' key to explain your decision, 'prompt' key that will only contain the command you suggest."
+    step = step + 1
+    # print(f"\n→ Étape {step+1}: {cmd}")
+    # print(f"{cmd}")
+    prompt = "You are playing Plundered Hearts, a text interactive fiction by Amy Briggs. "
+    prompt = prompt + GAME_CONTEXT
+    prompt = prompt + " "
+    prompt = prompt + ZMACHINE_PARSER_GUIDANCE
+    prompt = prompt + " Latest game output: "
+    prompt = prompt + prev_output
+    if prev_cmd is not None:
+        prompt = prompt + " Previous command: " + prev_cmd + "."
+    prompt = prompt + " Reply with JSON only using keys 'comment' and 'prompt'."
+    prompt = prompt + " The 'prompt' value must be a single parser command, not a sentence."
 
-        json_command = None
-        while json_command is None:
-            response = ollama.chat(
-                model='llama3:8b',
-                messages=[{
-                    'role': 'user',
-                    'content': prompt
-                    }]
-            )
-            # print(response.message.content)
-            json_command = extract_and_parse_json(response.message.content)
+    json_command = ask_ollama_for_command(ollama_model, prompt)
 
-        # print("\n")
-        print("AI thinks : '" + json_command["comment"] + "'\n")
-        command = json_command["prompt"]
-        command = command.replace(">", "").strip().upper()
-        child.sendline(" " + command)
-        prev_output = ""
-        prev_cmd = command
+    if not isinstance(json_command, dict):
+        raise RuntimeError(f"Unexpected Ollama payload type: {type(json_command).__name__}")
+    if "comment" not in json_command or "prompt" not in json_command:
+        raise RuntimeError("Ollama JSON must contain both 'comment' and 'prompt'.")
 
-        # read several lines in a row
-        while True:
-            i = child.expect([r"\r\x1b", pexpect.EOF, pexpect.TIMEOUT], timeout=2)
-            # print(child.before)
-            print(clean_output(child.before))
-            prev_output = prev_output + clean_output(child.before)
-            if i != 0:
-                break
+    # print("\n")
+    print("AI thinks : '" + json_command["comment"] + "'\n")
+    command = json_command["prompt"]
+    command = command.replace(">", "").strip().upper()
+    child.sendline(command)
+    prev_cmd = command
+    prev_output = read_game_output(child)
+    print(prev_output)
 
-        time.sleep(0.3)  # artificially wait to allow reading
-
-    except pexpect.EOF:
-        print("Game ended.")
-        break
-    except KeyboardInterrupt:
-        print("User stopped the game.")
-        break
-    except Exception as e:
-        print(f"Error found at step {step+1}: {e}")
-        break
+    # time.sleep(0.3)  # artificially wait to allow reading
