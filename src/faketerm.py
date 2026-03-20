@@ -6,6 +6,7 @@ import json
 import signal
 import os
 import select
+from datetime import datetime
 
 DEFAULT_OLLAMA_MODEL = "ministral-3:14b"
 GAME_CONTEXT = (
@@ -31,6 +32,25 @@ ZMACHINE_PARSER_GUIDANCE = (
 
 class OllamaTimeoutError(Exception):
     pass
+
+
+LOG_TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
+LOG_PATH = f"log_{LOG_TIMESTAMP}.txt"
+LOG_FILE = open(LOG_PATH, "w", encoding="utf-8")
+
+
+def emit(text=""):
+    print(text)
+    LOG_FILE.write(text + "\n")
+    LOG_FILE.flush()
+
+
+def emit_block(content):
+    if content:
+        emit(content)
+    else:
+        emit("")
+    emit("")
 
 def extract_and_parse_json(text):
     """
@@ -137,7 +157,6 @@ def ask_ollama_for_command(model, prompt, timeout_seconds=20):
     )
     signal.alarm(0)
     signal.signal(signal.SIGALRM, previous_handler)
-    # print(response.message.content)
     return extract_and_parse_json(response.message.content)
 
 
@@ -261,13 +280,16 @@ child = pexpect.spawn("dfrotz roms/PLUNDERE.z3", encoding='utf-8', timeout=5)
 ollama_model = pick_ollama_model()
 step = 0
 
+emit(f"Log file: {LOG_PATH}")
+emit(f"Model: {ollama_model}")
+emit("")
+
 # Start the story and consume intro pages until the command prompt appears.
 child.sendline("")
-time.sleep(0.5)
-print(read_game_output(child))
-print("\n")
+# time.sleep(0.5)
+prev_output = read_game_output(child)
+emit_block(prev_output)
 
-prev_output = ""
 prev_cmd = None
 
 # automated walkthrough
@@ -286,6 +308,8 @@ while True : # for step, cmd in enumerate(plundered_hearts_commands):
     prompt = prompt + " Reply with JSON only using keys 'comment' and 'prompt'."
     prompt = prompt + " The 'prompt' value must be a single parser command, not a sentence."
 
+    # emit(f"Step {step}")
+    emit("")
     json_command = ask_ollama_for_command(ollama_model, prompt)
 
     if not isinstance(json_command, dict):
@@ -293,13 +317,14 @@ while True : # for step, cmd in enumerate(plundered_hearts_commands):
     if "comment" not in json_command or "prompt" not in json_command:
         raise RuntimeError("Ollama JSON must contain both 'comment' and 'prompt'.")
 
-    # print("\n")
-    print("AI thinks : '" + json_command["comment"] + "'\n")
+    emit("AI thinks : '" + json_command["comment"] + "'")
     command = json_command["prompt"]
     command = command.replace(">", "").strip().upper()
+    emit(f"AI suggests: '{command}'")
+    emit("")
     child.sendline(command)
     prev_cmd = command
     prev_output = read_game_output(child)
-    print(prev_output)
+    emit_block(prev_output)
 
     # time.sleep(0.3)  # artificially wait to allow reading
