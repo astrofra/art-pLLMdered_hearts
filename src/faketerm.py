@@ -9,6 +9,8 @@ import select
 from datetime import datetime
 
 DEFAULT_OLLAMA_MODEL = "ministral-3:14b"
+RECENT_HISTORY_STEPS = 2
+COMPRESS_HISTORY_MIN_WORD_LENGTH = 4
 GAME_CONTEXT = (
     "Plundered Hearts is an Infocom text adventure set in the Caribbean. "
     "You play a kidnapped young woman aboard a pirate ship and must suggest the next text command."
@@ -89,6 +91,47 @@ def clean_output(text):
     lines = text.strip().splitlines()
     lines = [line for line in lines if not line.strip().isdigit()]
     return '\n'.join(lines).strip()
+
+
+def compress_history_text(text, min_word_length=COMPRESS_HISTORY_MIN_WORD_LENGTH):
+    compressed_lines = []
+
+    for line in text.splitlines():
+        words = re.findall(r"[A-Za-z']+|[^A-Za-z'\s]+", line)
+        kept_words = []
+
+        for word in words:
+            if re.fullmatch(r"[A-Za-z']+", word):
+                if len(word) >= min_word_length:
+                    kept_words.append(word)
+            else:
+                kept_words.append(word)
+
+        compressed_line = ' '.join(kept_words).strip()
+        compressed_line = re.sub(r"\s+([,.;:!?])", r"\1", compressed_line)
+        if compressed_line:
+            compressed_lines.append(compressed_line)
+
+    return '\n'.join(compressed_lines).strip()
+
+
+def build_recent_history_context(recent_history):
+    past_steps = recent_history[-(RECENT_HISTORY_STEPS + 1):-1]
+
+    if not past_steps:
+        return "No recent action history is available yet."
+
+    history_lines = [
+        "Recent past actions are provided below for context.",
+        "These already happened and are not the current screen."
+    ]
+
+    for index, entry in enumerate(past_steps, start=1):
+        compressed_output = compress_history_text(entry["output"])
+        history_lines.append(f"Past step {index} command: {entry['command']}")
+        history_lines.append(f"Past step {index} result: {compressed_output}")
+
+    return ' '.join(history_lines)
 
 
 def pick_ollama_model():
@@ -291,6 +334,7 @@ prev_output = read_game_output(child)
 emit_block(prev_output)
 
 prev_cmd = None
+recent_history = []
 
 # automated walkthrough
 while True : # for step, cmd in enumerate(plundered_hearts_commands):
@@ -301,6 +345,8 @@ while True : # for step, cmd in enumerate(plundered_hearts_commands):
     prompt = prompt + GAME_CONTEXT
     prompt = prompt + " "
     prompt = prompt + ZMACHINE_PARSER_GUIDANCE
+    prompt = prompt + " "
+    prompt = prompt + build_recent_history_context(recent_history)
     prompt = prompt + " Latest game output: "
     prompt = prompt + prev_output
     if prev_cmd is not None:
@@ -325,6 +371,11 @@ while True : # for step, cmd in enumerate(plundered_hearts_commands):
     child.sendline(command)
     prev_cmd = command
     prev_output = read_game_output(child)
+    recent_history.append({
+        "command": command,
+        "output": prev_output,
+    })
+    recent_history = recent_history[-(RECENT_HISTORY_STEPS + 1):]
     emit_block(prev_output)
 
     # time.sleep(0.3)  # artificially wait to allow reading
