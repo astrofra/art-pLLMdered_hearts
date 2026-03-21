@@ -9,7 +9,7 @@ import select
 from datetime import datetime
 
 DEFAULT_OLLAMA_MODEL = "ministral-3:14b"
-RECENT_HISTORY_STEPS = 2
+RECENT_HISTORY_STEPS = 0
 COMPRESS_HISTORY_MIN_WORD_LENGTH = 4
 GAME_CONTEXT = (
     "Plundered Hearts is an Infocom text adventure set in the Caribbean. "
@@ -325,6 +325,7 @@ step = 0
 
 emit(f"Log file: {LOG_PATH}")
 emit(f"Model: {ollama_model}")
+emit(f"History steps: {RECENT_HISTORY_STEPS}")
 emit("")
 
 # Start the story and consume intro pages until the command prompt appears.
