@@ -10,6 +10,8 @@ pLLMdered Hearts is an installation that automatically plays *Plundered Hearts* 
 
 Two narratives intersect: Lady Dimsford in the game, and Amy Briggs in her testimony.
 
+[Video preview on Youtube](https://www.youtube.com/watch?v=N-wqsWJO8fM)
+
 ## Architecture
 
 - `src/faketerm.py` drives `frotz`, sends a pre-written solution, cleans the output, and renders the text via a C64-style renderer.
