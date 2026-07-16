@@ -6,10 +6,11 @@ import json
 import signal
 import os
 import select
+import atexit
 from datetime import datetime
 
 DEFAULT_OLLAMA_MODEL = "ministral-3:14b"
-RECENT_HISTORY_STEPS = 0
+RECENT_HISTORY_STEPS = 16
 COMPRESS_HISTORY_MIN_WORD_LENGTH = 4
 GAME_CONTEXT = (
     "Plundered Hearts is an Infocom text adventure set in the Caribbean. "
@@ -38,7 +39,20 @@ class OllamaTimeoutError(Exception):
 
 LOG_TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
 LOG_PATH = f"log_{LOG_TIMESTAMP}.txt"
+MARKDOWN_PATH = f"log_{LOG_TIMESTAMP}.md"
+SUGGESTIONS_PATH = f"log_{LOG_TIMESTAMP}_suggests.txt"
 LOG_FILE = open(LOG_PATH, "w", encoding="utf-8")
+MARKDOWN_FILE = open(MARKDOWN_PATH, "w", encoding="utf-8")
+SUGGESTIONS_FILE = open(SUGGESTIONS_PATH, "w", encoding="utf-8")
+
+
+def close_output_files():
+    LOG_FILE.close()
+    MARKDOWN_FILE.close()
+    SUGGESTIONS_FILE.close()
+
+
+atexit.register(close_output_files)
 
 
 def emit(text=""):
@@ -53,6 +67,23 @@ def emit_block(content):
     else:
         emit("")
     emit("")
+
+
+def emit_markdown_step(step_number, history_text, ai_comment, ai_suggestion):
+    history_text = history_text.strip() or "No recent action history is available yet."
+
+    MARKDOWN_FILE.write(f"## Step {step_number}\n\n")
+    MARKDOWN_FILE.write("### History\n\n")
+    MARKDOWN_FILE.write(history_text + "\n\n")
+    MARKDOWN_FILE.write("### Model reaction\n\n")
+    MARKDOWN_FILE.write(f"- **AI Thinks:** {ai_comment.strip()}\n")
+    MARKDOWN_FILE.write(f"- **AI suggests:** {ai_suggestion.strip()}\n\n")
+    MARKDOWN_FILE.flush()
+
+
+def emit_suggestion_only(ai_suggestion):
+    SUGGESTIONS_FILE.write(f"AI suggests: '{ai_suggestion.strip()}'\n")
+    SUGGESTIONS_FILE.flush()
 
 def extract_and_parse_json(text):
     """
@@ -132,6 +163,23 @@ def build_recent_history_context(recent_history):
         history_lines.append(f"Past step {index} result: {compressed_output}")
 
     return ' '.join(history_lines)
+
+
+def build_recent_history_markdown(recent_history):
+    past_steps = recent_history[-(RECENT_HISTORY_STEPS + 1):-1]
+
+    if not past_steps:
+        return "No recent action history is available yet."
+
+    history_lines = []
+
+    for index, entry in enumerate(past_steps, start=1):
+        compressed_output = compress_history_text(entry["output"])
+        history_lines.append(f"Past step {index} command: {entry['command']}")
+        history_lines.append(f"Past step {index} result: {compressed_output}")
+        history_lines.append("")
+
+    return '\n'.join(history_lines).strip()
 
 
 def pick_ollama_model():
@@ -324,9 +372,24 @@ ollama_model = pick_ollama_model()
 step = 0
 
 emit(f"Log file: {LOG_PATH}")
+emit(f"Markdown archive: {MARKDOWN_PATH}")
+emit(f"Suggestions archive: {SUGGESTIONS_PATH}")
 emit(f"Model: {ollama_model}")
 emit(f"History steps: {RECENT_HISTORY_STEPS}")
 emit("")
+
+MARKDOWN_FILE.write(f"# Run archive {LOG_TIMESTAMP}\n\n")
+MARKDOWN_FILE.write(f"- Log file: `{LOG_PATH}`\n")
+MARKDOWN_FILE.write(f"- Model: `{ollama_model}`\n")
+MARKDOWN_FILE.write(f"- History steps: `{RECENT_HISTORY_STEPS}`\n\n")
+MARKDOWN_FILE.flush()
+
+SUGGESTIONS_FILE.write(f"Log file: {LOG_PATH}\n")
+SUGGESTIONS_FILE.write(f"Markdown archive: {MARKDOWN_PATH}\n")
+SUGGESTIONS_FILE.write(f"Suggestions archive: {SUGGESTIONS_PATH}\n")
+SUGGESTIONS_FILE.write(f"Model: {ollama_model}\n")
+SUGGESTIONS_FILE.write(f"History steps: {RECENT_HISTORY_STEPS}\n\n")
+SUGGESTIONS_FILE.flush()
 
 # Start the story and consume intro pages until the command prompt appears.
 child.sendline("")
@@ -347,7 +410,9 @@ while True : # for step, cmd in enumerate(plundered_hearts_commands):
     prompt = prompt + " "
     prompt = prompt + ZMACHINE_PARSER_GUIDANCE
     prompt = prompt + " "
-    prompt = prompt + build_recent_history_context(recent_history)
+    history_context = build_recent_history_context(recent_history)
+    history_markdown = build_recent_history_markdown(recent_history)
+    prompt = prompt + history_context
     prompt = prompt + " Latest game output: "
     prompt = prompt + prev_output
     if prev_cmd is not None:
@@ -368,6 +433,8 @@ while True : # for step, cmd in enumerate(plundered_hearts_commands):
     command = json_command["prompt"]
     command = command.replace(">", "").strip().upper()
     emit(f"AI suggests: '{command}'")
+    emit_markdown_step(step, history_markdown, json_command["comment"], command)
+    emit_suggestion_only(command)
     emit("")
     child.sendline(command)
     prev_cmd = command

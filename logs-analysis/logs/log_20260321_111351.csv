@@ -1,0 +1,120 @@
+situation,commande_suggeree,rejected,reponse_parser
+Log file: log_20260321_111351.txt,Model: ministral-3:14b,History steps: 4,
+"Trembling, you fire the heavy ar",EXAMINE CABIN,N,"""Good, you brought the girl,"" Da"
+"""Good, you brought the girl,"" Da",OPEN DOOR,N,You can't reach the door from th
+You can't reach the door from th,GET UP,N,You get out of the bed. You reco
+You get out of the bed. You reco,GO STERN,Y,"[I don't know the word ""stern.""]"
+"[I don't know the word ""stern.""]",GO BACK,N,Did you have any particular dire
+Did you have any particular dire,LOOK PORTHOLE,N,You may use prepositions to indi
+You may use prepositions to indi,GO AFT,N,"You can't go that way. Suddenly,"
+"You can't go that way. Suddenly,",OPEN COFFER,N,It's quite locked.
+It's quite locked.,EXAMINE COFFER,N,"It is a small heavy chest, with "
+"It is a small heavy chest, with ",TAKE LOCK,N,Taken.
+Taken.,EXAMINE LOCK,N,"It is a small heavy chest, with "
+"It is a small heavy chest, with ",UNLOCK COFFER WITH LOCK,N,"Don't be absurd. ""Avast me, but "
+"Don't be absurd. ""Avast me, but ",EXAMINE LOCK,N,"It is a small heavy chest, with "
+"It is a small heavy chest, with ",OPEN COFFER,N,It's quite locked. To your surpr
+It's quite locked. To your surpr,READ MISSIVE,N,The missive is in dear Papa's ha
+The missive is in dear Papa's ha,EXAMINE DOOR,N,"It is open. ""We haven't time to "
+"It is open. ""We haven't time to ",GO DOOR,N,Did you have any particular dire
+Did you have any particular dire,ASK DAVIS ABOUT FATHER,N,He fails to notice you've spoken
+He fails to notice you've spoken,OPEN CUPBOARD,N,TWO DAYS LATER... You blear awak
+TWO DAYS LATER... You blear awak,EXAMINE RING,N,"masculine air, with ebony panell"
+"masculine air, with ebony panell",TAKE RING,N,Captain Jamison curls his fist a
+Captain Jamison curls his fist a,EXAMINE RAPIER,N,Jamison's rapier is a dangerous 
+Jamison's rapier is a dangerous ,EXAMINE RIBBON,Y,"[I don't know the word ""ribbon.""]"
+"[I don't know the word ""ribbon.""",EXAMINE RIBBON RAPIER,Y,"[I don't know the word ""ribbon.""]"
+"[I don't know the word ""ribbon.""",TAKE RIBBON RAPIER,Y,"[I don't know the word ""ribbon.""]"
+"[I don't know the word ""ribbon.""",EXAMINE SWORD,N,Jamison's rapier is a dangerous 
+Jamison's rapier is a dangerous ,ASK COOKIE ABOUT FATHER,N,Those things aren't here!
+Those things aren't here!,LOOK,N,"Captain's Quarters, on the bed T"
+"Captain's Quarters, on the bed T",OPEN CURTAIN,N,You can't reach the curtain from
+You can't reach the curtain from,EXAMINE CURTAIN,N,You can only tell that the curta
+You can only tell that the curta,CLIMB SILL,N,"Think again, guv'nor."
+"Think again, guv'nor.",STAND ON TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",OPEN WINDOW,N,You can't reach the window from 
+You can't reach the window from ,CLIMB TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",EXAMINE TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",CLIMB WINDOW,N,It's Bedlam for you! You hear th
+It's Bedlam for you! You hear th,OPEN COFFER,N,You can't reach the coffer from 
+You can't reach the coffer from ,TAKE BROOCH,N,You'll have to stand up first.
+You'll have to stand up first.,STAND,N,You get out of the bed.
+You get out of the bed.,OPEN COFFER,N,Opening the coffer reveals an in
+Opening the coffer reveals an in,READ INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,PULL LADDER,N,Pulling the ladder accomplishes 
+Pulling the ladder accomplishes ,TAKE INVITATION,N,Taken.
+Taken.,EXAMINE INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,STAND ON CHAIR,N,You can't see any chair here!
+You can't see any chair here!,READ INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,LOOK OUT WINDOW,N,A rope ladder twists by in the b
+A rope ladder twists by in the b,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,PUSH LADDER,N,Pushing the ladder has no desira
+Pushing the ladder has no desira,EXAMINE INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,READ INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,EXAMINE INVITATION CLOSELY,Y,"[I don't know the word ""closely.""]"
+"[I don't know the word ""closely.",EXAMINE INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,LOOK INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,TAKE INVITATION,N,You already have the invitation.
+You already have the invitation.,EXAMINE DESK,N,"You have no need for that, milad"
+"You have no need for that, milad",EXAMINE CHAIR,N,You can't see any chair here!
+You can't see any chair here!,EXAMINE NEED,Y,"[I don't know the word ""need.""]"
+"[I don't know the word ""need.""]",EXAMINE DESK,N,"You have no need for that, milad"
+"You have no need for that, milad",EXAMINE KEY,N,You can't see any key here!
+You can't see any key here!,EXAMINE NEED,Y,"[I don't know the word ""need.""]"
+"[I don't know the word ""need.""]",TAKE NEED,Y,"[I don't know the word ""need.""]"
+"[I don't know the word ""need.""]",EXAMINE TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",OPEN TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",TAKE NEEDLE,Y,"[I don't know the word ""needle.""]"
+"[I don't know the word ""needle.""",EXAMINE NEED,Y,"[I don't know the word ""need.""]"
+"[I don't know the word ""need.""]",EXAMINE NEED,Y,"[I don't know the word ""need.""]"
+"[I don't know the word ""need.""]",EXAMINE HOOK,N,You can't see any hook here!
+You can't see any hook here!,EXAMINE TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,TAKE NEED,Y,"[I don't know the word ""need.""]"
+"[I don't know the word ""need.""]",TAKE THAT,N,[coffer] Taken.
+[coffer] Taken.,OPEN COFFER,N,It is already open. The end of a
+It is already open. The end of a,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,TAKE LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,GRAB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,PULL LADDER,N,Pulling the ladder doesn't do an
+Pulling the ladder doesn't do an,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LEDGE,N,You have lost your mind.
+You have lost your mind.,EXAMINE LEDGE,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,TAKE LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,REACH THROUGH WINDOW,Y,[That sentence isn't one I recognize.]
+[That sentence isn't one I recog,USE LADDER,N,You'll have to be more specific.
+You'll have to be more specific.,CLIMB WINDOW,N,This is no time to get hysterica
+This is no time to get hysterica,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,GRAB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LEDGE,N,You have lost your mind.
+You have lost your mind.,LOOK,N,Captain's Quarters The room has 
+Captain's Quarters The room has ,PULL CURTAIN,N,You pull the cloth aside momenta
+You pull the cloth aside momenta,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE CUPBOARD,N,You can see only the back of the
+You can see only the back of the,PUSH CUPBOARD,N,The large cupboard is not flush 
+The large cupboard is not flush ,SQUEEZE PAST CUPBOARD,Y,"[I don't know the word ""past.""]"
+"[I don't know the word ""past.""]",SQUEEZE THROUGH CUPBOARD,Y,[That sentence isn't one I recognize.]
+[That sentence isn't one I recog,SQUEEZE,Y,[What do you want to squeeze?]
+[What do you want to squeeze?],SQUEEZE CUPBOARD,N,Don't bother.
+Don't bother.,EXAMINE DOORSILL,Y,"[I don't know the word ""doorsill.""]"
+"[I don't know the word ""doorsill",EXAMINE DOOR,N,You can see only the back of the
+You can see only the back of the,OPEN DOOR,N,The door is on the other side of
+The door is on the other side of,PUSH CUPBOARD,N,The large cupboard is not flush 
+The large cupboard is not flush ,SQUEEZE PAST,Y,"[I don't know the word ""past.""]"
+"[I don't know the word ""past.""]",SQUEEZE CUPBOARD,N,Don't dally around.
+Don't dally around.,PULL CUPBOARD,N,The large cupboard is not flush 
+The large cupboard is not flush ,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi

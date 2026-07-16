@@ -1,0 +1,101 @@
+situation,commande_suggeree,rejected,reponse_parser
+Log file: log_20260321_105614.txt,Model: ministral-3:14b,History steps: 2,
+"Trembling, you fire the heavy ar",EXAMINE ROOM,N,"""Good, you brought the girl,"" Da"
+"""Good, you brought the girl,"" Da",LOOK PORTHOLE,N,You may use prepositions to indi
+You may use prepositions to indi,LOOK DECK,N,There's nothing unusual about th
+There's nothing unusual about th,OPEN PORTHOLE,N,You can't reach the window from 
+You can't reach the window from ,GET UP,N,"You get out of the bed. ""The Fal"
+"You get out of the bed. ""The Fal",LOOK PORTHOLE,N,Through the porthole you see the
+Through the porthole you see the,TAKE COFFER,N,Taken.
+Taken.,EXAMINE COFFER,N,"It is a small heavy chest, with "
+"It is a small heavy chest, with ",OPEN CABIN,N,You can't open a quarters! With 
+You can't open a quarters! With ,EXAMINE DOOR,N,It is closed. Crash! You whirl a
+It is closed. Crash! You whirl a,RUN,N,Did you have any particular dire
+Did you have any particular dire,EXAMINE CABIN,N,Cabin You are in an officer's ca
+Cabin You are in an officer's ca,TALK FALCON,Y,[That sentence isn't one I recognize.]
+[That sentence isn't one I recog,ASK FALCON NAME,Y,"[I don't know the word ""name.""]"
+"[I don't know the word ""name.""]",ASK FALCON WHO,N,"[You used the word ""who"" in a wa"
+"[You used the word ""who"" in a wa",ASK FALCON ABOUT CAPTAIN,N,He fails to notice you've spoken
+He fails to notice you've spoken,READ MISSIVE,N,The missive is in dear Papa's ha
+The missive is in dear Papa's ha,ASK JAMISON ABOUT HORSE,Y,"[I don't know the word ""horse.""]"
+"[I don't know the word ""horse.""]",ASK JAMISON ABOUT RESCUE,N,"[You used the word ""rescue"" in a"
+"[You used the word ""rescue"" in a",ASK JAMISON ABOUT FATHER,N,"""I admire and respect your fathe"
+"""I admire and respect your fathe",EXAMINE CABIN,N,Cabin You are in an officer's ca
+Cabin You are in an officer's ca,ASK DAVIS ABOUT FATHER,N,He fails to notice you've spoken
+He fails to notice you've spoken,EXAMINE CUPBOARD,N,TWO DAYS LATER... You blear awak
+TWO DAYS LATER... You blear awak,TAKE RIBBON,N,"masculine air, with ebony panell"
+"masculine air, with ebony panell",EXAMINE RAPIER,N,Jamison's rapier is a dangerous 
+Jamison's rapier is a dangerous ,OPEN CURTAIN,N,You can't reach the curtain from
+You can't reach the curtain from,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,ASK CAPTAIN ABOUT COOKIE,N,He fails to notice you've spoken
+He fails to notice you've spoken,EXAMINE LEDGE,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,PUSH LEDGE,N,Pushing the ledge doesn't do any
+Pushing the ledge doesn't do any,OPEN LEDGE,N,You can't reach the ledge from t
+You can't reach the ledge from t,EXAMINE BED,N,"Other than yourself, you can see"
+"Other than yourself, you can see",EXAMINE WALL,N,There's nothing special about th
+There's nothing special about th,EXAMINE DOOR,N,You can see only the back of the
+You can see only the back of the,OPEN CUPBOARD,N,You can't reach the large cupboa
+You can't reach the large cupboa,EXAMINE BED,N,"Other than yourself, you can see"
+"Other than yourself, you can see",OPEN COFFER,N,You can't reach the coffer from 
+You can't reach the coffer from ,EXAMINE BROOCH,N,"All diamonds winking fire, tears"
+"All diamonds winking fire, tears",USE BROOCH,N,You'll have to be more specific.
+You'll have to be more specific.,EXAMINE CLASP,N,"All diamonds winking fire, tears"
+"All diamonds winking fire, tears",PULL PIN,N,That is a waste of time. Men clo
+That is a waste of time. Men clo,CLIMB LADDER,N,You'll have to stand up first.
+You'll have to stand up first.,STAND,N,You get out of the bed.
+You get out of the bed.,EXAMINE BED,N,Someone appears to have tumbled 
+Someone appears to have tumbled ,LOOK UNDER BED,N,There's nothing under the bed.
+There's nothing under the bed.,OPEN CHEST,N,Opening the coffer reveals an in
+Opening the coffer reveals an in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,LOOK ROPE,N,Completely common looking rope l
+Completely common looking rope l,GRAB ROPE,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB ROPE,N,It's on the other side of the wi
+It's on the other side of the wi,PUSH WINDOW,N,Pushing the window has no desira
+Pushing the window has no desira,GRAB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,GO THROUGH WINDOW,N,The available ledge on this side
+The available ledge on this side,GRAB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,STAND LEDGE,Y,[That sentence isn't one I recognize.]
+[That sentence isn't one I recog,LOOK,N,Captain's Quarters The room has 
+Captain's Quarters The room has ,OPEN COFFER,N,It is already open.
+It is already open.,READ INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,OPEN CURTAIN,N,You pull the cloth aside momenta
+You pull the cloth aside momenta,OPEN CUPBOARD,N,The door is on the other side of
+The door is on the other side of,MOVE CUPBOARD,N,The large cupboard is not flush 
+The large cupboard is not flush ,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,LOOK LEDGE,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,PULL ROPE,N,Pulling the ladder accomplishes 
+Pulling the ladder accomplishes ,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,LOOK THROUGH WINDOW,N,A rope ladder twists by in the b
+A rope ladder twists by in the b,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,GRAB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,PULL LADDER,N,Pulling the ladder doesn't do an
+Pulling the ladder doesn't do an,EXAMINE ROPE,N,Completely common looking rope l
+Completely common looking rope l,CLIMB ROPE,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,REACH LADDER,Y,[That sentence isn't one I recognize.]
+[That sentence isn't one I recog,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,LOOK ROPE LADDER,N,Completely common looking rope l
+Completely common looking rope l,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,EXAMINE LEDGE,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,EXAMINE FLOOR,N,Well scrubbed and smoothed floor
+Well scrubbed and smoothed floor,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in

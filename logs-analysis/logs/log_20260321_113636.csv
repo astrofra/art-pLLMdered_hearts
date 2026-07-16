@@ -1,0 +1,99 @@
+situation,commande_suggeree,rejected,reponse_parser
+Log file: log_20260321_113636.txt,Model: ministral-3:14b,History steps: 8,
+"Trembling, you fire the heavy ar",EXAMINE DOOR,N,"""Good, you brought the girl,"" Da"
+"""Good, you brought the girl,"" Da",LOOK PORTHOLE,N,You may use prepositions to indi
+You may use prepositions to indi,EXAMINE FIRELIGHT,Y,"[I don't know the word ""firelight.""]"
+"[I don't know the word ""fireligh",EXAMINE CABIN,N,"Cabin, on the bed You are in an "
+"Cabin, on the bed You are in an ",LOOK THROUGH PORTHOLE,N,Through the porthole you see the
+Through the porthole you see the,OPEN DOOR,N,You can't reach the door from th
+You can't reach the door from th,TAKE BED,N,You'll have to stand up first. S
+You'll have to stand up first. S,EXAMINE COFFER,N,"It is a small heavy chest, with "
+"It is a small heavy chest, with ",OPEN COFFER,N,It's quite locked.
+It's quite locked.,UNLOCK COFFER,N,And how do you propose to do tha
+And how do you propose to do tha,LOOK COFFER,N,"It is a small heavy chest, with "
+"It is a small heavy chest, with ",ASK ANDY CRULLEY KEY,Y,[That sentence isn't one I recognize.]
+[That sentence isn't one I recog,TALK ANDY,Y,[That sentence isn't one I recognize.]
+[That sentence isn't one I recog,ASK ANDY CRULLEY ABOUT KEY,N,"Crulley ignores you. ""Avast me, "
+"Crulley ignores you. ""Avast me, ",TELL ANDY CRULLEY ABOUT BEAUTY,Y,"[I don't know the word ""beauty.""]"
+"[I don't know the word ""beauty.""",EXAMINE DOOR,N,"It is closed. Or, what remains o"
+"It is closed. Or, what remains o",TALK FALCON,Y,[That sentence isn't one I recognize.]
+[That sentence isn't one I recog,ASK FALCON ABOUT CRULLEY,N,He fails to notice you've spoken
+He fails to notice you've spoken,READ MISSIVE,N,The missive is in dear Papa's ha
+The missive is in dear Papa's ha,TAKE MISSIVE,N,"You already have the missive. ""W"
+"You already have the missive. ""W",GO WITH JAMISON,N,But Captain Jamison is right her
+But Captain Jamison is right her,HELP DAVIS,N,And how do you propose to do tha
+And how do you propose to do tha,EXAMINE CUPBOARD,N,TWO DAYS LATER... You blear awak
+TWO DAYS LATER... You blear awak,ASK FALCON ABOUT RING,N,"masculine air, with ebony panell"
+"masculine air, with ebony panell",TAKE RING,N,Captain Jamison curls his fist a
+Captain Jamison curls his fist a,OPEN CURTAIN,N,You can't reach the curtain from
+You can't reach the curtain from,LOOK WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,LOOK THROUGH WINDOW,N,The moon beckons across the lago
+The moon beckons across the lago,ASK COOKIE ABOUT SKIFF,N,Those things aren't here!
+Those things aren't here!,EXAMINE TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",CLIMB LEDGE,N,Don't be absurd.
+Don't be absurd.,OPEN WINDOW,N,You can't reach the window from 
+You can't reach the window from ,PUSH WOODWORK,Y,"[I don't know the word ""woodwork.""]"
+"[I don't know the word ""woodwork",EXAMINE FRAME,N,You can't see any frame here!
+You can't see any frame here!,PUSH LEDGE,N,Pushing the ledge has no desirab
+Pushing the ledge has no desirab,BREAK GLASS,N,And how do you propose to do tha
+And how do you propose to do tha,SMASH WINDOW,N,And how do you propose to do tha
+And how do you propose to do tha,USE KNIFE ON FRAME,N,Those things aren't here!
+Those things aren't here!,OPEN WINDOW WITH KNIFE,N,You can't see that here!
+You can't see that here!,CLIMB LEDGE AGAIN,N,"Think again, guv'nor."
+"Think again, guv'nor.",PULL LEDGE,N,You can't reach the ledge from t
+You can't reach the ledge from t,OPEN BOX,N,You can't reach the coffer from 
+You can't reach the coffer from ,TAKE BROOCH,N,You'll have to stand up first.
+You'll have to stand up first.,STAND,N,You get out of the bed.
+You get out of the bed.,OPEN COFFER,N,Opening the coffer reveals an in
+Opening the coffer reveals an in,READ INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,GO WINDOW,N,Did you have any particular dire
+Did you have any particular dire,CLIMB WINDOW,N,It's Bedlam for you! The end of 
+It's Bedlam for you! The end of ,GRAB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,EXAMINE BROOCH,N,"All diamonds winking fire, tears"
+"All diamonds winking fire, tears",TAKE BROOCH,N,You already have the jewelled br
+You already have the jewelled br,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,CLIMB DOWN LADDER,N,You'll have to get on the ladder
+You'll have to get on the ladder,CLIMB DOWN,N,You can't go that way. The end o
+You can't go that way. The end o,PUSH WINDOW,N,Pushing the window doesn't do an
+Pushing the window doesn't do an,EXAMINE ROPE,N,Completely common looking rope l
+Completely common looking rope l,PULL ROPE,N,Pulling the ladder accomplishes 
+Pulling the ladder accomplishes ,EXAMINE BROOCH,N,"All diamonds winking fire, tears"
+"All diamonds winking fire, tears",REPAIR BROOCH,N,That will have to be done by a g
+That will have to be done by a g,TAKE ROPE,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,EXAMINE TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",CLIMB ROPE,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",UNLOCK TABLE,N,It already is.
+It already is.,SEARCH TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",EXAMINE DESK,N,"You have no need for that, milad"
+"You have no need for that, milad",CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,TAKE ROPE,N,It's on the other side of the wi
+It's on the other side of the wi,GRAB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,GRAB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,PULL LADDER,N,Pulling the ladder doesn't do an
+Pulling the ladder doesn't do an,EXAMINE ROPE,N,Completely common looking rope l
+Completely common looking rope l,CLIMB ROPE,N,It's on the other side of the wi
+It's on the other side of the wi,CLIMB ROPE,N,It's on the other side of the wi
+It's on the other side of the wi,TIE ROPE,Y,[What do you want to tie the rope to?]
+[What do you want to tie the rop,TIE ROPE TO WINDOW,N,That is a waste of time. The end
+That is a waste of time. The end,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,TAKE ROPE,N,It's on the other side of the wi
+It's on the other side of the wi,LOOK THROUGH WINDOW,N,A rope ladder twists by in the b
+A rope ladder twists by in the b,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,TIE ROPE TO LADDER,N,What an odd thing to attempt. Th
+What an odd thing to attempt. Th,PULL ROPE,N,Pulling the ladder accomplishes 
+Pulling the ladder accomplishes ,TIE ROPE TO LEDGE,N,It's not worth it. Believe me. T
+It's not worth it. Believe me. T,BREAK GLASS,N,And how do you propose to do tha
+And how do you propose to do tha,HIT GLASS WITH ROPE,N,You're not holding the ladder.
+You're not holding the ladder.,SWING ROPE,N,You're not holding the ladder.
+You're not holding the ladder.,SECURE ROPE,Y,[What do you want to secure the rope to?]
+[What do you want to secure the ,TIE ROPE TO LEDGE,N,That seems a useless idea.
+That seems a useless idea.,CLIMB DOWN,N,You can't go that way.

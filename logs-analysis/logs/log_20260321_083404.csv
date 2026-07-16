@@ -1,0 +1,94 @@
+situation,commande_suggeree,rejected,reponse_parser
+Log file: log_20260321_083404.txt,Model: ministral-3:14b,History steps: 0,
+"Trembling, you fire the heavy ar",EXAMINE TABLE,N,"""Good, you brought the girl,"" Da"
+"""Good, you brought the girl,"" Da",OPEN DOOR,N,You can't reach the door from th
+You can't reach the door from th,GET UP,N,You get out of the bed.
+You get out of the bed.,EXAMINE BED,N,Someone appears to have tumbled 
+Someone appears to have tumbled ,OPEN BED,N,"You can't do that to a bed! ""Cap"
+"You can't do that to a bed! ""Cap",EXAMINE BED,N,Someone appears to have tumbled 
+Someone appears to have tumbled ,TAKE COFFER,N,Taken.
+Taken.,OPEN COFFER,N,It's quite locked.
+It's quite locked.,EXAMINE COFFER,N,"It is a small heavy chest, with "
+"It is a small heavy chest, with ",OPEN COFFER,N,It's quite locked. Crash! You wh
+It's quite locked. Crash! You wh,ASK ANDY CRULLEY ABOUT COFFER,N,"Crulley ignores you. ""Avast me, "
+"Crulley ignores you. ""Avast me, ",EXAMINE CRULLEY,N,The pirate's unsavory face is cr
+The pirate's unsavory face is cr,LOOK STERN,Y,"[I don't know the word ""stern.""]"
+"[I don't know the word ""stern.""]",LOOK AROUND,N,Cabin You are in an officer's ca
+Cabin You are in an officer's ca,READ MISSIVE,N,The missive is in dear Papa's ha
+The missive is in dear Papa's ha,ASK CAPTAIN ABOUT FATHER,N,
+,EXAMINE CAPTAIN,N,Jamison carries an aura of power
+Jamison carries an aura of power,NO,N,"""No!"" you say pertly. He sighs, "
+"""No!"" you say pertly. He sighs, ",TAKE KNIFE,N,You can't see any knife here!
+You can't see any knife here!,EXAMINE TABLE,N,You can't see any table here!
+You can't see any table here!,LOOK,N,Deck The deck is an avalanche of
+Deck The deck is an avalanche of,EXAMINE CUPBOARD,N,TWO DAYS LATER... You blear awak
+TWO DAYS LATER... You blear awak,TAKE RIBBON,N,"masculine air, with ebony panell"
+"masculine air, with ebony panell",EXAMINE BED,N,"Other than yourself, you can see"
+"Other than yourself, you can see",EXAMINE TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",TAKE RAPIER,N,"You'll have to stand up first. """
+"You'll have to stand up first. """,STAND,N,You get out of the bed. His look
+You get out of the bed. His look,EXAMINE DOOR,N,You can see only the back of the
+You can see only the back of the,SQUEEZE CUPBOARD,N,Don't bother.
+Don't bother.,EXAMINE TABLE,N,"You have no need for that, milad"
+"You have no need for that, milad",EXAMINE DOOR,N,You can see only the back of the
+You can see only the back of the,OPEN CUPBOARD,N,The door is on the other side of
+The door is on the other side of,EXAMINE DOOR,N,You can see only the back of the
+You can see only the back of the,OPEN CUPBOARD,N,The door is on the other side of
+The door is on the other side of,PUSH CUPBOARD,N,The large cupboard is not flush 
+The large cupboard is not flush ,OPEN COFFER,N,Opening the coffer reveals an in
+Opening the coffer reveals an in,READ INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,EXAMINE DRESS,N,"It is your favorite old frock, l"
+"It is your favorite old frock, l",TAKE DRESS,N,You're already wearing the cotto
+You're already wearing the cotto,EXAMINE ROOM,N,Captain's Quarters The room has 
+Captain's Quarters The room has ,OPEN COFFER,N,It is already open. The end of a
+It is already open. The end of a,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LEDGE,N,It's Bedlam for you!
+It's Bedlam for you!,EXAMINE ROOM,N,Captain's Quarters The room has 
+Captain's Quarters The room has ,OPEN COFFER,N,It is already open.
+It is already open.,EXAMINE COFFER,N,"It is a small heavy chest, with "
+"It is a small heavy chest, with ",TAKE ALL,N,coffer: Taken. The end of a rope
+coffer: Taken. The end of a rope,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,EXIT WINDOW,N,The available ledge on this side
+The available ledge on this side,LOOK,N,Captain's Quarters The room has 
+Captain's Quarters The room has ,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,EXIT WINDOW,N,The available ledge on this side
+The available ledge on this side,LOOK LEDGE,N,You may use prepositions to indi
+You may use prepositions to indi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,LOOK THROUGH WINDOW,N,A rope ladder twists by in the b
+A rope ladder twists by in the b,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,EXIT WINDOW,N,The available ledge on this side
+The available ledge on this side,EXAMINE LEDGE,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi

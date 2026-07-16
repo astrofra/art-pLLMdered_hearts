@@ -1,0 +1,94 @@
+situation,commande_suggeree,rejected,reponse_parser
+Log file: log_20260321_085622.txt,Model: ministral-3:14b,History steps: 1,
+"Trembling, you fire the heavy ar",EXAMINE DESK,N,"""Good, you brought the girl,"" Da"
+"""Good, you brought the girl,"" Da",UNLOCK DOOR,N,And how do you propose to do tha
+And how do you propose to do tha,LOOK PORTHOLE,N,You may use prepositions to indi
+You may use prepositions to indi,OPEN DOOR,N,You can't reach the door from th
+You can't reach the door from th,GET UP,N,You get out of the bed.
+You get out of the bed.,EXAMINE DOOR,N,"It is closed. Suddenly, the ship"
+"It is closed. Suddenly, the ship",OPEN COFFER,N,It's quite locked.
+It's quite locked.,EXAMINE COFFER,N,"It is a small heavy chest, with "
+"It is a small heavy chest, with ",UNLOCK COFFER,N,And how do you propose to do tha
+And how do you propose to do tha,EXAMINE KEYHOLE,Y,"[I don't know the word ""keyhole.""]"
+"[I don't know the word ""keyhole.",OPEN COFFER,N,It's quite locked. Crash! You wh
+It's quite locked. Crash! You wh,EXAMINE ANDY,N,The pirate's unsavory face is cr
+The pirate's unsavory face is cr,TAKE HOOK,N,"Don't dally around. ""They calls "
+"Don't dally around. ""They calls ",EXAMINE FALCON,N,Jamison carries an aura of power
+Jamison carries an aura of power,READ MISSIVE,N,The missive is in dear Papa's ha
+The missive is in dear Papa's ha,OPEN COFFER,N,
+,TAKE KEY,N,You can't see any key here!
+You can't see any key here!,EXAMINE COFFER,N,"It is a small heavy chest, with "
+"It is a small heavy chest, with ",OPEN COFFER,N,"It's quite locked. He sighs, ""Yo"
+"It's quite locked. He sighs, ""Yo",EXAMINE DAVIS,N,Davis is ugly with fear. Davis l
+Davis is ugly with fear. Davis l,EXAMINE CUPBOARD,N,TWO DAYS LATER... You blear awak
+TWO DAYS LATER... You blear awak,EXAMINE RING,N,"masculine air, with ebony panell"
+"masculine air, with ebony panell",EXAMINE RAPIER,N,Jamison's rapier is a dangerous 
+Jamison's rapier is a dangerous ,OPEN WINDOW,N,You can't reach the window from 
+You can't reach the window from ,TAKE RAPIER,N,"You'll have to stand up first. """
+"You'll have to stand up first. """,STAND,N,You get out of the bed. His look
+You get out of the bed. His look,EXAMINE BED,N,Someone appears to have tumbled 
+Someone appears to have tumbled ,EXAMINE DESK,N,"You have no need for that, milad"
+"You have no need for that, milad",OPEN DOOR,N,The door is on the other side of
+The door is on the other side of,MOVE CUPBOARD,N,The large cupboard is not flush 
+The large cupboard is not flush ,SQUEEZE,Y,[What do you want to squeeze?]
+[What do you want to squeeze?],SQUEEZE CUPBOARD,N,That seems a useless idea.
+That seems a useless idea.,EXAMINE BED,N,Someone appears to have tumbled 
+Someone appears to have tumbled ,SEARCH BED,N,You find nothing.
+You find nothing.,EXAMINE DESK,N,"You have no need for that, milad"
+"You have no need for that, milad",OPEN COFFER,N,Opening the coffer reveals an in
+Opening the coffer reveals an in,READ INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,SEARCH COFFER,N,You find an invitation.
+You find an invitation.,EXAMINE INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,READ INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,LOOK WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,EXIT WINDOW,N,The available ledge on this side
+The available ledge on this side,LOOK,N,Captain's Quarters The room has 
+Captain's Quarters The room has ,OPEN COFFER,N,It is already open.
+It is already open.,READ INVITATION,N,"The invitation is addressed to """
+"The invitation is addressed to """,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,EXIT,N,Did you have any particular dire
+Did you have any particular dire,LOOK WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LEDGE,N,You have lost your mind.
+You have lost your mind.,EXAMINE LEDGE,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,LOOK THROUGH GLASS,N,A rope ladder twists by in the b
+A rope ladder twists by in the b,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,PUSH LEDGE,N,Pushing the ledge doesn't do any
+Pushing the ledge doesn't do any,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,PUSH LEDGE,N,Pushing the ledge has no desirab
+Pushing the ledge has no desirab,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LEDGE,N,Don't be absurd. The end of a ro
+Don't be absurd. The end of a ro,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,EXAMINE LEDGE,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,GRAB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,OPEN WINDOW,N,These windows don't open.
+These windows don't open.,EXAMINE WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,EXAMINE LEDGE,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,OPEN WINDOW,N,These windows don't open. The en
+These windows don't open. The en,CLIMB LADDER,N,It's on the other side of the wi
+It's on the other side of the wi,LOOK WINDOW,N,Tall panes of glass are inset in
+Tall panes of glass are inset in,CLIMB LEDGE,N,This is no time to get hysterica
