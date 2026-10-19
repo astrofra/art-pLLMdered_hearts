@@ -64,7 +64,7 @@ def list_text_files(input_dir):
 def build_title(text, model):
     prompt = (
         "Write an archive tape label for this transcript, summarizing the main topic. "
-        "Use title case, no quotes, 3-7 words, FRENCH, PLAIN TEXT, NO MARKDOWN.\n\n"
+        "Use title case, no quotes, 3-7 words, ENGLISH, PLAIN TEXT, NO MARKDOWN.\n\n"
         f"Transcript:\n{text}"
     )
     response = ollama.chat(

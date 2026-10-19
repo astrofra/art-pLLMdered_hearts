@@ -31,6 +31,7 @@ Deux recits se croisent : Lady Dimsford dans le jeu, et Amy Briggs dans son temo
 - Les deux modeles requis sont `ministral-3:14b` et `embeddinggemma:300m`. Les installer si besoin avec `ollama pull ministral-3:14b` et `ollama pull embeddinggemma:300m`.
 - Premiere installation : lancer `1-install-python-reqs.bat`. Il cree un environnement Python local `.venv` et y installe les dependances, sans modifier les autres projets.
 - Lancement habituel : double-cliquer sur `3-run-ai-play.bat`. Le batch fonctionne aussi depuis un autre repertoire et utilise `.venv` en priorite.
+- Les commentaires du LLM, les libelles et les titres des extraits sont en anglais par defaut, pour la demonstration a Loughborough. La variable `COMMENTARY_LANGUAGE` permet de choisir une autre langue pour les commentaires (par exemple `French`).
 - Le rendu C64 et le viewer `bin/itw-viewer.exe` sont lances ensemble. Echap ou Ctrl+C arrete le pilote et ses processus enfants. Echap dans le viewer seul ferme sa fenetre.
 - Le viewer peut tourner seul et attend les nouvelles demandes dans `llm_out/`. Les demandes des sessions precedentes sont conservees et ignorees au demarrage.
 - La variable d'environnement `LLM_OUT_OVERRIDE` permet de choisir un autre dossier de demandes, aussi bien pour Python que pour le viewer exporte. Le pilote transmet automatiquement le chemin absolu au viewer.

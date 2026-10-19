@@ -19,12 +19,13 @@ from pexpect.popen_spawn import PopenSpawn
 import pygame
 
 from c64renderer import C64Renderer
-AI_THINKING_STATUS = "<MISTRAL REFLECHIT>"
-AI_COMMENT_LABEL = "MISTRAL COMMENTE:"
-AI_VIDEO_LABEL = "MAGNETO, JOUE LA BANDE:"
+AI_THINKING_STATUS = "<MISTRAL IS THINKING>"
+AI_COMMENT_LABEL = "MISTRAL COMMENTS:"
+AI_VIDEO_LABEL = "NOW PLAYING:"
 AI_COMMENT_FG = (255, 255, 255)
 AI_COMMENT_BG = (0, 0, 0)
 LLM_MODEL = os.environ.get("LLM_MODEL", "ministral-3:14b")
+COMMENTARY_LANGUAGE = os.environ.get("COMMENTARY_LANGUAGE", "English")
 LLM_TIMEOUT = float(os.environ.get("LLM_TIMEOUT", "180"))
 EMBED_TIMEOUT = float(os.environ.get("EMBED_TIMEOUT", "30"))
 GAME_TIMEOUT = 30.0
@@ -595,14 +596,14 @@ Here is an excerpt from Amy Briggs recalling her years at Infocom:
 """
     prompt += load_itw_redux()
 
-    prompt += """
+    prompt += f"""
 While reading the following moment from the game, your response may attend to
 any aspect of Amy Briggs’s testimony that feels relevant in this moment:
 a memory of daily work, the group dynamics at Infocom, informal mentoring practices,
 commercial pressures, the struggle to legitimize video games as a growth engine versus
 business software (such as Cornerstone), and her personal desire to write novels,
 or technical detail, whatever seems relevant...
-Answer in TWO short sentences, 60 words maximum in total, in neutral French.
+Answer in TWO short sentences, 60 words maximum in total, in neutral {COMMENTARY_LANGUAGE}.
 Use plain text only, NO MARKDOWN, as a fleeting inner association.
 """
     prompt += prev_output + "\nYour next move will be : " + cmd
