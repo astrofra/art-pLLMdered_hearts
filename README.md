@@ -60,11 +60,13 @@ Le seuil `COMMENTARY_MIN_WORDS` vaut 150 par defaut : le compteur inclut les com
 
 Le prompt contient aussi les deux derniers commentaires affiches, dans une section distincte qui demande d'eviter de reprendre leurs observations, analogies et formulations. Cette memoire reste limitee a deux reponses reussies et traverse les redemarrages du parcours. Les commentaires peuvent developper deux phrases, avec une limite de 90 mots au total au lieu de 60 ; `COMMENTARY_WORD_LIMIT` permet d'ajuster cette limite. Le seuil de 150 mots concerne toujours uniquement les commandes et sorties du jeu.
 
+Le LLM recoit uniquement les evenements deja affiches et les commandes deja executees, jamais la prochaine commande du parcours. La consigne privilegie un detail nouveau de la scene et demande que les deux phrases developpent la meme observation. Le temoignage d'Amy reste un contexte facultatif ; il ne sert pas a expliquer chaque evenement par des contraintes de production ou une intention supposee de l'autrice.
+
 Les commentaires continuent pendant les videos. Seule la vectorisation attend la fin estimee de l'extrait, avec `VIDEO_END_MARGIN_SEC=3`. Si plusieurs commentaires ont ete produits entre-temps, seul le dernier choisit le prochain extrait. Sans commentaire disponible, le viewer reste sur le bruit video. Les durees du catalogue proviennent des sous-titres et sont deja legerement prudentes ; une duree absente ou invalide utilise 200 secondes.
 
 `LLM_NUM_CTX=4096` et `LLM_NUM_PREDICT=2560` configurent le contexte et le plafond de generation. Le raisonnement est active par defaut pour Gemma 4. Le plafond couvre son raisonnement interne et le commentaire affiche ; les deux phrases restent limitees a 90 mots dans le prompt. Le prompt et les tokens generes partagent la fenetre de contexte.
 
-Chaque session enregistre automatiquement ses tentatives de commentaire dans `llm_out/commentary_YYYYMMDD_HHMMSS_PID.jsonl`, y compris les reponses vides et les erreurs. Le chemin est affiche au demarrage. Chaque ligne contient le commentaire, les deux commentaires precedents, le contexte de jeu, la prochaine commande, le prompt exact, le modele, les reglages, les durees et les compteurs de tokens. Le raisonnement interne est seulement compte, pas enregistre. Le viewer ignore les fichiers `.jsonl` et continue de lire les demandes video `.txt`. `LLM_OUT_OVERRIDE` deplace aussi le journal automatique. `COMMENTARY_LOG_PATH` permet de choisir un autre fichier, par exemple :
+Chaque session enregistre automatiquement ses tentatives de commentaire dans `llm_out/commentary_YYYYMMDD_HHMMSS_PID.jsonl`, y compris les reponses vides et les erreurs. Le chemin est affiche au demarrage. Chaque ligne contient le commentaire, les deux commentaires precedents, le contexte de jeu, le prompt exact, le modele, les reglages, les durees et les compteurs de tokens. Le raisonnement interne est seulement compte, pas enregistre. Le viewer ignore les fichiers `.jsonl` et continue de lire les demandes video `.txt`. `LLM_OUT_OVERRIDE` deplace aussi le journal automatique. `COMMENTARY_LOG_PATH` permet de choisir un autre fichier, par exemple :
 
 ```bat
 set "COMMENTARY_LOG_PATH=documentation\commentary-session.jsonl"
@@ -110,6 +112,8 @@ Un [essai cible avec la memoire des deux derniers commentaires](documentation/ll
 La [verification des budgets courts](documentation/llm-thinking-memory-2026-10-19/budget-results.json) reprend ces trois prompts et les deux graines avec raisonnement. A 512 tokens, les six essais s'arretent avant tout commentaire. A 768 tokens (256 + 512), cinq essais sur six sont tronques, dont quatre sans texte affiche. Le reglage actuel ajoute 512 tokens au plafond de 2048 teste, soit 2560 ; il ne force pas le modele a utiliser tout ce budget.
 
 Le profil du nouveau buffer est dans `documentation/commentary-buffer-analysis/`. `profile_buffers.py` reconstitue les historiques depuis le parcours Frotz capture ; `--measure-tokens` compte leurs tokens avec Gemma. Les comparatifs precedents restent des archives du prompt et du rythme anterieurs.
+
+La [revision du prompt sur les 17 historiques d'une session](documentation/commentary-prompt-review-2026-10-19/comparison.html) confronte les commentaires enregistres a un rejeu avec la nouvelle consigne, sans prochaine commande et avec une memoire alimentee par les nouvelles reponses. Le resume de 752 mots reste identique. Ce rejeu exploratoire utilise la graine 42 ; la session initiale n'avait pas de graine fixee. Les donnees completes conservent les deux versions et leurs prompts. Les ressemblances lexicales et les meilleurs rapprochements video bruts ne constituent pas une mesure automatique de pertinence ou de diversite de diffusion.
 
 ## Notes
 

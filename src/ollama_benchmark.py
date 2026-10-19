@@ -54,7 +54,7 @@ def collect_scenes():
                     "id": command.replace(" ", "_"), "label": SCENE_COMMANDS[command],
                     "step": step, "command": faketerm.enhance_game_command(command),
                     "game_text": text,
-                    "prompt": faketerm.build_prompt(text, faketerm.enhance_game_command(command)),
+                    "prompt": faketerm.build_prompt(text),
                 })
                 found.add(command)
             game.sendline(faketerm.enhance_game_command(command))

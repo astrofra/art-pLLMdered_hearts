@@ -1,0 +1,1799 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Revision du prompt de commentaire</title><style>body{font:16px/1.6 system-ui;max-width:1200px;margin:2rem auto;padding:0 1rem;color:#222}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:.5rem;text-align:left}.pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem}article{border:1px solid #ddd;border-radius:8px;padding:1rem}section{margin:2rem 0}pre{white-space:pre-wrap}summary{cursor:pointer}small{color:#555}@media(max-width:700px){.pair{grid-template-columns:1fr}}</style><h1>Revision du prompt : les 17 historiques de la session</h1><p>Gemma E4B avec raisonnement, contexte de 4096 tokens, plafond de 2560 tokens. La prochaine commande est retiree du nouveau prompt. Le temoignage anglais de 752 mots reste identique.</p><p>La session initiale n&#39;avait pas de graine fixee. Le rejeu utilise la graine 42 et les deux commentaires nouvellement produits a chaque etape. Il s&#39;agit d&#39;une verification exploratoire, pas d&#39;un comparatif controle.</p><table><tr><th>Observation</th><th>Session initiale</th><th>Nouveau prompt</th></tr><tr><td>Explication par les contraintes techniques, lecture manuelle</td><td>7 / 17</td><td>0 / 17</td></tr><tr><td>Reponses completes</td><td>17 / 17</td><td>17 / 17</td></tr><tr><td>Temps median observe</td><td>8,5 s</td><td>7,1 s</td></tr></table><p>Les nouvelles observations restent parfois descriptives. Les numeros 15 et 16 reprennent un contraste proche. Aucune ne cite explicitement Amy : il faut aussi juger la place laissee au temoignage. Les meilleurs rapprochements video bruts donnent sept extraits distincts dans chaque condition, avant exclusion des videos recentes et delai de lecture.</p><p><a href="results.json">Prompts, historiques, reponses et rapprochements complets</a></p><section><h2>Intervention 1</h2><div class="pair"><article><h3>Session initiale</h3><p>The cabin, stripped bare except for the bed, suggests a highly constrained environment. Briggs noted that space limitations shaped design decisions, which may explain the focused, high-stakes nature of this immediate opening sequence.</p></article><article><h3>Nouveau prompt</h3><p>The room seems to have been emptied thoroughly, if hurriedly. This suggests the sudden violence of the boarding action has already disturbed the space, making it feel less like a private retreat.</p><small>6.453 s ; 1716 tokens de prompt ; 754 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;SHOOT THE PIRATE
+Trembling, you fire the heavy arquebus. You hear its loud report over the
+roaring wind, yet the dark figure still approaches. The gun falls from your
+nerveless hands.
+   &quot;You won&#x27;t kill me,&quot; he says, stepping over the weapon. &quot;Not when I am
+the only protection you have from Jean Lafond.&quot;
+   Chestnut hair, tousled by the wind, frames the tanned oval of his face.
+Lips curving, his eyes rake over your inadequately dressed body, the damp
+chemise clinging to your legs and heaving bosom, your gleaming hair. You
+are intensely aware of the strength of his hard seaworn body, of the deep
+sea blue of his eyes. And then his mouth is on yours, lips parted,
+demanding, and you arch into his kiss...
+   He presses you against him, head bent. &quot;But who, my dear,&quot; he whispers
+into your hair, &quot;will protect you from me?&quot;
+
+PLUNDERED HEARTS
+Infocom interactive fiction
+Copyright (c) 1987 by Infocom, Inc. All rights reserved.
+PLUNDERED HEARTS is a trademark of Infocom, Inc.
+Release 26 / Serial number 870730
+
+LATE ONE SPRING NIGHT IN THE WEST INDIES...
+
+   A crash overhead! Pirates are boarding the Lafond Deux! The first mate
+hurries you into Captain Davis&#x27;s cabin.
+   &quot;Good, you brought the girl,&quot; Davis smirks. &quot;She&#x27;ll keep the pirates
+busy. She was only a tool of Lafond&#x27;s, anyway. Let me just find that cof--&quot;
+A man on deck screams in agony and Davis starts. &quot;Let&#x27;s go.&quot; The captain
+thrusts you on the bed and walks out, locking the door.
+   His laugh echoes. &quot;Best get comfortable, girl. You&#x27;re likely to be there
+for the rest of your life.&quot;
+
+Cabin, on the bed
+   You are in an officer&#x27;s cabin, lit by the firelight glowing through a
+porthole. A door is to starboard. Except for the built-in bed, the room
+seems to have been emptied thoroughly, if hurriedly.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;SHOOT THE PIRATE
+Trembling, you fire the heavy arquebus. You hear its loud report over the
+roaring wind, yet the dark figure still approaches. The gun falls from your
+nerveless hands.
+   &quot;You won&#x27;t kill me,&quot; he says, stepping over the weapon. &quot;Not when I am
+the only protection you have from Jean Lafond.&quot;
+   Chestnut hair, tousled by the wind, frames the tanned oval of his face.
+Lips curving, his eyes rake over your inadequately dressed body, the damp
+chemise clinging to your legs and heaving bosom, your gleaming hair. You
+are intensely aware of the strength of his hard seaworn body, of the deep
+sea blue of his eyes. And then his mouth is on yours, lips parted,
+demanding, and you arch into his kiss...
+   He presses you against him, head bent. &quot;But who, my dear,&quot; he whispers
+into your hair, &quot;will protect you from me?&quot;
+
+PLUNDERED HEARTS
+Infocom interactive fiction
+Copyright (c) 1987 by Infocom, Inc. All rights reserved.
+PLUNDERED HEARTS is a trademark of Infocom, Inc.
+Release 26 / Serial number 870730
+
+LATE ONE SPRING NIGHT IN THE WEST INDIES...
+
+   A crash overhead! Pirates are boarding the Lafond Deux! The first mate
+hurries you into Captain Davis&#x27;s cabin.
+   &quot;Good, you brought the girl,&quot; Davis smirks. &quot;She&#x27;ll keep the pirates
+busy. She was only a tool of Lafond&#x27;s, anyway. Let me just find that cof--&quot;
+A man on deck screams in agony and Davis starts. &quot;Let&#x27;s go.&quot; The captain
+thrusts you on the bed and walks out, locking the door.
+   His laugh echoes. &quot;Best get comfortable, girl. You&#x27;re likely to be there
+for the rest of your life.&quot;
+
+Cabin, on the bed
+   You are in an officer&#x27;s cabin, lit by the firelight glowing through a
+porthole. A door is to starboard. Except for the built-in bed, the room
+seems to have been emptied thoroughly, if hurriedly.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 2</h2><div class="pair"><article><h3>Session initiale</h3><p>The sudden lurch of the ship and the shout introduce immediate external action into the confined cabin. This rapid shift from quiet inventory checks to high-stakes drama aligns with the romantic, swashbuckling genre Briggs sought to explore.</p></article><article><h3>Nouveau prompt</h3><p>The delicate linen chemise and cotton frock are instantly contradicted by the violent lurching of the ship. This abrupt physical shock pulls the scene away from a private, domestic moment and into the immediate chaos of the vessel.</p><small>7.906 s ; 1583 tokens de prompt ; 897 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; STAND UP
+You get out of the bed.
+
+&gt;
+&gt;&gt; INVENTORY
+You have your reticule (hanging from your wrist). It seems that your
+reticule contains smelling salts and a banknote. You are wearing your kid
+slippers, a linen chemise and a cotton frock.
+
+&gt;
+&gt;&gt; EXAMINE SMELLING SALTS
+You always carry your smelling salts, for emergencies. There is a small tag
+on one side of them.
+
+&gt;
+&gt;&gt; READ TAG
+It says, &quot;For cases of vapors, hysteria or collapse, revive persons with
+the smelling salts.&quot;
+
+&gt;
+&gt;&gt; EXAMINE BANKNOTE
+This is the banknote that came in your game package.
+   Suddenly, the ship lurches to one side, throwing you off balance. A
+coffer slides from under the bed and bumps against your foot.
+
+&gt;
+&gt;&gt; EXAMINE COFFER
+It is a small heavy chest, with a lock. It is closed.
+   &quot;The Falcon! The Falcon conquers!&quot; yells someone.
+
+&gt;
+&gt;&gt; EXAMINE DOOR
+It is closed.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The room seems to have been emptied thoroughly, if hurriedly. This suggests the sudden violence of the boarding action has already disturbed the space, making it feel less like a private retreat.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; STAND UP
+You get out of the bed.
+
+&gt;
+&gt;&gt; INVENTORY
+You have your reticule (hanging from your wrist). It seems that your
+reticule contains smelling salts and a banknote. You are wearing your kid
+slippers, a linen chemise and a cotton frock.
+
+&gt;
+&gt;&gt; EXAMINE SMELLING SALTS
+You always carry your smelling salts, for emergencies. There is a small tag
+on one side of them.
+
+&gt;
+&gt;&gt; READ TAG
+It says, &quot;For cases of vapors, hysteria or collapse, revive persons with
+the smelling salts.&quot;
+
+&gt;
+&gt;&gt; EXAMINE BANKNOTE
+This is the banknote that came in your game package.
+   Suddenly, the ship lurches to one side, throwing you off balance. A
+coffer slides from under the bed and bumps against your foot.
+
+&gt;
+&gt;&gt; EXAMINE COFFER
+It is a small heavy chest, with a lock. It is closed.
+   &quot;The Falcon! The Falcon conquers!&quot; yells someone.
+
+&gt;
+&gt;&gt; EXAMINE DOOR
+It is closed.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 3</h2><div class="pair"><article><h3>Session initiale</h3><p>The sudden, highly descriptive introduction of Falcon shifts the focus from simple survival to intense dramatic confrontation. This emphasis on powerful, swashbuckling action supports Briggs&#x27;s goal of treating romance as a legitimate, high-stakes narrative form.</p></article><article><h3>Nouveau prompt</h3><p>Crulley&#x27;s sudden collapse into the player&#x27;s arms halts the immediate threat, replacing the active danger with a moment of stunned stillness. This physical failure of the attacker immediately highlights the looming, powerful presence of the stranger blocking the shattered door.</p><small>7.985 s ; 1800 tokens de prompt ; 889 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; OPEN DOOR
+It appears to be locked.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   Crash! You whirl around to see the door shatter, kicked by a hulking
+man, his twisted visage blackened with soot and blood. &quot;Me name&#x27;s Andy
+Crulley, and ladies learn to love me,&quot; sniggers the pirate, advancing
+toward you.
+
+&gt;
+&gt;&gt; SCREAM
+&quot;Help me!&quot; you cry, hoping someone will help you.
+   &quot;Avast me, but ain&#x27;t ye a beauty,&quot; sniggers the pirate. His breath is
+heavy with rum.
+   &quot;Cap&#x27;n Jamison! We&#x27;ve got &#x27;em!&quot; cries a rough voice.
+
+&gt;
+&gt;&gt; EAST
+&quot;Not that way, me pretty,&quot; says Crulley, blocking your way.
+   &quot;They calls me Andy, but I&#x27;m really randy,&quot; sniggers the pirate,
+advancing toward you.
+   Crulley drags you, despite your resistance, towards him. Then suddenly
+he grunts, stiffens and slumps into your arms. Stunned, Crulley collapses
+at your feet, his eyes rolling.
+   A tall form blocks the shattered door, one fist still raised from
+striking your attacker. You catch a glimpse of the hard masculinity of his
+broad shoulders, the implied power in the scar that etches the stranger&#x27;s
+jaw, and feel tremors course through your veins. Then you realize how
+ragged are his shirt, patched breeches and high boots. Intuitively, you
+understand -- he is the dreaded Falcon, scourge of the sea! Alas, your fate
+is sealed. Resigned, you meet his sea-blue eyes.
+   You recognize a voice from far away, &quot;Don&#x27;t take that! Look in the cabin
+at the stern -- you&#x27;ll find some fun there!&quot; It sounds like Davis.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The room seems to have been emptied thoroughly, if hurriedly. This suggests the sudden violence of the boarding action has already disturbed the space, making it feel less like a private retreat.
+2. The delicate linen chemise and cotton frock are instantly contradicted by the violent lurching of the ship. This abrupt physical shock pulls the scene away from a private, domestic moment and into the immediate chaos of the vessel.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; OPEN DOOR
+It appears to be locked.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   Crash! You whirl around to see the door shatter, kicked by a hulking
+man, his twisted visage blackened with soot and blood. &quot;Me name&#x27;s Andy
+Crulley, and ladies learn to love me,&quot; sniggers the pirate, advancing
+toward you.
+
+&gt;
+&gt;&gt; SCREAM
+&quot;Help me!&quot; you cry, hoping someone will help you.
+   &quot;Avast me, but ain&#x27;t ye a beauty,&quot; sniggers the pirate. His breath is
+heavy with rum.
+   &quot;Cap&#x27;n Jamison! We&#x27;ve got &#x27;em!&quot; cries a rough voice.
+
+&gt;
+&gt;&gt; EAST
+&quot;Not that way, me pretty,&quot; says Crulley, blocking your way.
+   &quot;They calls me Andy, but I&#x27;m really randy,&quot; sniggers the pirate,
+advancing toward you.
+   Crulley drags you, despite your resistance, towards him. Then suddenly
+he grunts, stiffens and slumps into your arms. Stunned, Crulley collapses
+at your feet, his eyes rolling.
+   A tall form blocks the shattered door, one fist still raised from
+striking your attacker. You catch a glimpse of the hard masculinity of his
+broad shoulders, the implied power in the scar that etches the stranger&#x27;s
+jaw, and feel tremors course through your veins. Then you realize how
+ragged are his shirt, patched breeches and high boots. Intuitively, you
+understand -- he is the dreaded Falcon, scourge of the sea! Alas, your fate
+is sealed. Resigned, you meet his sea-blue eyes.
+   You recognize a voice from far away, &quot;Don&#x27;t take that! Look in the cabin
+at the stern -- you&#x27;ll find some fun there!&quot; It sounds like Davis.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 4</h2><div class="pair"><article><h3>Session initiale</h3><p>The missive establishes that the protagonist&#x27;s father is in grave danger from the villain Lafond. This immediate, life-or-death conflict, requiring trust in the pirate captain, elevates the narrative beyond simple romance.</p></article><article><h3>Nouveau prompt</h3><p>The offer of protection from Captain Jamison is instantly shattered by a sharp, echoing scream. This sudden eruption of violence makes the earlier warnings in the missive seem less like a looming threat and more like a distant memory.</p><small>7.593 s ; 1895 tokens de prompt ; 732 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; EXAMINE FALCON
+Jamison carries an aura of power unusual in men so slim and tall, the
+strength of a willow in his hard seaworn body, straight shouldered and
+resilient. Chestnut hair, tousled by the wind, frames the tanned oval of
+his face. A jagged scar etches one cheek, harsh against the warmth of his
+limpid blue eyes.
+   To your surprise, the stranger bows. &quot;Well met, my lady.&quot; His accent is
+cultured, his smile vibrant. &quot;I am Captain Nicholas Jamison, known in these
+waters as &#x27;The Falcon&#x27;. Your father has sent me.&quot; He chuckles at your glare
+of distrust. &quot;Yes, you are like your sire. You needn&#x27;t believe me untried
+-- I carry this.&quot; He hands you a missive.
+
+&gt;
+&gt;&gt; READ MISSIVE
+The missive is in dear Papa&#x27;s handwriting:
+
+&quot;Dearest child,
+   You are in gravest danger! Lafond is a viper with the smile of a saint,
+my most particular enemy. I have only now learned the depth of his
+deception. Should Lafond get you in his power... It is unspeakable!
+   I have sided with Nicholas Jamison, a sea captain and a gentleman, whose
+circumstances have driven him to extreme measures, even branding him a
+pirate. Nevertheless, I trust him and so may you.
+   You will be safe -- but there is another for whom I fear! My horse is
+waiting and I ride to her rescue. Jamison will deliver this to you. Should
+anything happen to me, you must rely on him. I remain, with love, your
+father.&quot;
+
+   The pirate captain glances around the empty room, then notices the
+coffer. &quot;Davis&#x27;s safety box -- my men were hoping I&#x27;d find it.&quot; He takes it
+and nudges the unconscious man on the floor, &quot;I wonder how Crulley knew you
+were here? Just his bad luck? He&#x27;ll be flogged when he wakes.&quot;
+   The pirate bows. &quot;My lady, may I offer my protection and my ship until
+your father is free?&quot;
+   &quot;Aaieeee!&quot; echoes a scream, followed by several grunts and thumps.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The delicate linen chemise and cotton frock are instantly contradicted by the violent lurching of the ship. This abrupt physical shock pulls the scene away from a private, domestic moment and into the immediate chaos of the vessel.
+2. Crulley&#x27;s sudden collapse into the player&#x27;s arms halts the immediate threat, replacing the active danger with a moment of stunned stillness. This physical failure of the attacker immediately highlights the looming, powerful presence of the stranger blocking the shattered door.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; EXAMINE FALCON
+Jamison carries an aura of power unusual in men so slim and tall, the
+strength of a willow in his hard seaworn body, straight shouldered and
+resilient. Chestnut hair, tousled by the wind, frames the tanned oval of
+his face. A jagged scar etches one cheek, harsh against the warmth of his
+limpid blue eyes.
+   To your surprise, the stranger bows. &quot;Well met, my lady.&quot; His accent is
+cultured, his smile vibrant. &quot;I am Captain Nicholas Jamison, known in these
+waters as &#x27;The Falcon&#x27;. Your father has sent me.&quot; He chuckles at your glare
+of distrust. &quot;Yes, you are like your sire. You needn&#x27;t believe me untried
+-- I carry this.&quot; He hands you a missive.
+
+&gt;
+&gt;&gt; READ MISSIVE
+The missive is in dear Papa&#x27;s handwriting:
+
+&quot;Dearest child,
+   You are in gravest danger! Lafond is a viper with the smile of a saint,
+my most particular enemy. I have only now learned the depth of his
+deception. Should Lafond get you in his power... It is unspeakable!
+   I have sided with Nicholas Jamison, a sea captain and a gentleman, whose
+circumstances have driven him to extreme measures, even branding him a
+pirate. Nevertheless, I trust him and so may you.
+   You will be safe -- but there is another for whom I fear! My horse is
+waiting and I ride to her rescue. Jamison will deliver this to you. Should
+anything happen to me, you must rely on him. I remain, with love, your
+father.&quot;
+
+   The pirate captain glances around the empty room, then notices the
+coffer. &quot;Davis&#x27;s safety box -- my men were hoping I&#x27;d find it.&quot; He takes it
+and nudges the unconscious man on the floor, &quot;I wonder how Crulley knew you
+were here? Just his bad luck? He&#x27;ll be flogged when he wakes.&quot;
+   The pirate bows. &quot;My lady, may I offer my protection and my ship until
+your father is free?&quot;
+   &quot;Aaieeee!&quot; echoes a scream, followed by several grunts and thumps.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 5</h2><div class="pair"><article><h3>Session initiale</h3><p>The contrast between the deck&#x27;s brutal chaos and the captain&#x27;s refined quarters emphasizes the protagonist&#x27;s sudden isolation. Falcon&#x27;s transformation from rags to finery suggests a hidden complexity, a layered character design that speaks to the ambition of the narrative.</p></article><article><h3>Nouveau prompt</h3><p>The Falcon is seen tying a ribbon onto his rapier, transforming the weapon into an object of meticulous care. This delicate act of adornment stands in stark contrast to the brutal, bloody violence that led to the player&#x27;s confinement.</p><small>7.016 s ; 1976 tokens de prompt ; 691 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; FALCON, YES
+You nod tentatively.
+   He chuckles. &quot;Brave lady, to trust a stranger -- and a pirate. Who
+knows, perhaps I forged your father&#x27;s signature? Keep by my side as we go
+to my ship -- few sailors respect a lady&#x27;s dignity.&quot; He helps you through
+the door.
+
+Deck
+   The deck is an avalanche of noise and blood. Lit by roaring fires,
+silhouetted forms crash swords, dancing around the screaming wounded.
+   Out of the smoke staggers Davis, tugging a bloodied knife from the back
+of a pirate. Davis&#x27;s eyes gleam white from a face blackened and bloody, his
+lips dark red as if he has been drinking blood. He turns to face you.
+
+&gt;
+&gt;&gt; EXAMINE DAVIS
+Davis is ugly with fear.
+   Davis leaps across the deck to your side, &quot;Free me or she dies!&quot; he
+yells, jabbing a knife up to your throat. In one smooth motion, Captain
+Jamison draws his rapier, pulls you free and stabs. Davis slumps into a
+bloody heap.
+   Swooning, you fall into the Falcon&#x27;s arms. You are dimly aware of being
+carried to the other ship, down a short flight of stairs, and laid gently
+on a soft bed. When you gather strength to look around, the Falcon has left
+you in peace.
+   You remain confined to this room, a large cupboard blocking the door.
+Meals are brought by a peg-legged old man and eaten in silence. Of your
+handsome rescuer you see nothing. Slowly the days pass.
+
+TWO DAYS LATER...
+
+   You blear awake from a bored nap, focusing on something shiny. You
+discern it to be a new ring, on a strong hand in the act of tying a ribbon
+onto a rapier.
+   The man with the rapier and the ring turns, &quot;Sorry, I tried not to wake
+you.&quot; You sit up as if the bed had caught fire, for this is the Falcon,
+changed from his rags to a finery all red velvet and white lace -- and in
+your presence!
+
+Captain&#x27;s Quarters, on the bed
+
+   You are in the captain&#x27;s quarters of the Helena Louise, where you have
+been trapped these past days since your &quot;rescue&quot; from the Lafond Deux. The
+room has a masculine air, with ebony panelling, a large messy table, and a
+rumpled bed (upon which you lie). A curtain masks the forward exit and
+gilded woodwork decorates the sill of the tall window looking aft.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. Crulley&#x27;s sudden collapse into the player&#x27;s arms halts the immediate threat, replacing the active danger with a moment of stunned stillness. This physical failure of the attacker immediately highlights the looming, powerful presence of the stranger blocking the shattered door.
+2. The offer of protection from Captain Jamison is instantly shattered by a sharp, echoing scream. This sudden eruption of violence makes the earlier warnings in the missive seem less like a looming threat and more like a distant memory.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; FALCON, YES
+You nod tentatively.
+   He chuckles. &quot;Brave lady, to trust a stranger -- and a pirate. Who
+knows, perhaps I forged your father&#x27;s signature? Keep by my side as we go
+to my ship -- few sailors respect a lady&#x27;s dignity.&quot; He helps you through
+the door.
+
+Deck
+   The deck is an avalanche of noise and blood. Lit by roaring fires,
+silhouetted forms crash swords, dancing around the screaming wounded.
+   Out of the smoke staggers Davis, tugging a bloodied knife from the back
+of a pirate. Davis&#x27;s eyes gleam white from a face blackened and bloody, his
+lips dark red as if he has been drinking blood. He turns to face you.
+
+&gt;
+&gt;&gt; EXAMINE DAVIS
+Davis is ugly with fear.
+   Davis leaps across the deck to your side, &quot;Free me or she dies!&quot; he
+yells, jabbing a knife up to your throat. In one smooth motion, Captain
+Jamison draws his rapier, pulls you free and stabs. Davis slumps into a
+bloody heap.
+   Swooning, you fall into the Falcon&#x27;s arms. You are dimly aware of being
+carried to the other ship, down a short flight of stairs, and laid gently
+on a soft bed. When you gather strength to look around, the Falcon has left
+you in peace.
+   You remain confined to this room, a large cupboard blocking the door.
+Meals are brought by a peg-legged old man and eaten in silence. Of your
+handsome rescuer you see nothing. Slowly the days pass.
+
+TWO DAYS LATER...
+
+   You blear awake from a bored nap, focusing on something shiny. You
+discern it to be a new ring, on a strong hand in the act of tying a ribbon
+onto a rapier.
+   The man with the rapier and the ring turns, &quot;Sorry, I tried not to wake
+you.&quot; You sit up as if the bed had caught fire, for this is the Falcon,
+changed from his rags to a finery all red velvet and white lace -- and in
+your presence!
+
+Captain&#x27;s Quarters, on the bed
+
+   You are in the captain&#x27;s quarters of the Helena Louise, where you have
+been trapped these past days since your &quot;rescue&quot; from the Lafond Deux. The
+room has a masculine air, with ebony panelling, a large messy table, and a
+rumpled bed (upon which you lie). A curtain masks the forward exit and
+gilded woodwork decorates the sill of the tall window looking aft.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 6</h2><div class="pair"><article><h3>Session initiale</h3><p>The captain&#x27;s intimate gesture, coupled with his warning about the crew&#x27;s lack of principles, immediately complicates the relationship. This tension mirrors the narrative&#x27;s exploration of constrained agency, a complexity inherent in the genre Briggs sought to legitimize.</p></article><article><h3>Nouveau prompt</h3><p>Jamison shifts from discussing his violent intent and revenge to offering a seemingly protective, personal gesture. This sudden intimacy, coupled with his lingering gaze, creates a profound tension against the backdrop of the ship&#x27;s inherent danger.</p><small>7.281 s ; 1706 tokens de prompt ; 755 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; EXAMINE RING
+Made of copper, the new ring has a curious design of gargoyles, curled
+tongues extended, on its flat face, with &quot;Sal Sapit Omnia&quot; engraved at the
+bottom.
+
+&gt;
+&gt;&gt; EXAMINE FALCON
+Jamison is finely dressed, in red velvet coat and full breeches, with a
+long gold embroidered vest and waterfalls of white lace at his neck, wrists
+and boottops. His rapier is bedecked with a fringed gold ribbon. He wears
+no wig, his unpowdered hair tied neatly at the back of his neck.
+   &quot;We have anchored off St. Sinistra,&quot; says Captain Jamison, &quot;and I must
+look like a guest at Lafond&#x27;s dance tonight. I will find and free your
+father, and then finally wreak my revenge on Lafond.&quot; He half draws his
+rapier from its scabbard.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   &quot;I am sorry you have been confined down here, but I don&#x27;t trust my
+lonely crew with such beauty. Crulley isn&#x27;t the only man aboard with few
+principles.&quot; He smiles at you, eyes lingering, and takes your hand. You
+feel your color rising. &quot;If anything goes wrong, turn to Cookie. He is
+quite deaf, but capable. He&#x27;ll see you through.&quot;
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The offer of protection from Captain Jamison is instantly shattered by a sharp, echoing scream. This sudden eruption of violence makes the earlier warnings in the missive seem less like a looming threat and more like a distant memory.
+2. The Falcon is seen tying a ribbon onto his rapier, transforming the weapon into an object of meticulous care. This delicate act of adornment stands in stark contrast to the brutal, bloody violence that led to the player&#x27;s confinement.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; EXAMINE RING
+Made of copper, the new ring has a curious design of gargoyles, curled
+tongues extended, on its flat face, with &quot;Sal Sapit Omnia&quot; engraved at the
+bottom.
+
+&gt;
+&gt;&gt; EXAMINE FALCON
+Jamison is finely dressed, in red velvet coat and full breeches, with a
+long gold embroidered vest and waterfalls of white lace at his neck, wrists
+and boottops. His rapier is bedecked with a fringed gold ribbon. He wears
+no wig, his unpowdered hair tied neatly at the back of his neck.
+   &quot;We have anchored off St. Sinistra,&quot; says Captain Jamison, &quot;and I must
+look like a guest at Lafond&#x27;s dance tonight. I will find and free your
+father, and then finally wreak my revenge on Lafond.&quot; He half draws his
+rapier from its scabbard.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   &quot;I am sorry you have been confined down here, but I don&#x27;t trust my
+lonely crew with such beauty. Crulley isn&#x27;t the only man aboard with few
+principles.&quot; He smiles at you, eyes lingering, and takes your hand. You
+feel your color rising. &quot;If anything goes wrong, turn to Cookie. He is
+quite deaf, but capable. He&#x27;ll see you through.&quot;
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 7</h2><div class="pair"><article><h3>Session initiale</h3><p>The sudden shift from Jamison&#x27;s intense monologue about Lafond to the quiet view of St. Sinistra creates a moment of suspended action. The lagoon provides a visual counterpoint to the internal conflict, grounding the high drama in a specific, maritime setting.</p></article><article><h3>Nouveau prompt</h3><p>Jamison emphasizes that Lafond has bought respectability, yet this status is immediately undercut by the memory of his past actions. The assertion that he &quot;shall never buy peace&quot; suggests that material success cannot erase the stain of violence.</p><small>7.438 s ; 1648 tokens de prompt ; 811 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; WAIT
+Time passes...
+   His look darkens. &quot;You should know why I hate Lafond: Some years ago, as
+my brother and his bride sailed to a new life in Virginia, pirates struck.
+Their ship was boarded, looted and burned, the women taken, never to be
+seen again. A sailor, the one survivor, watched as a man of Lafond&#x27;s
+description shot my brother in the back as he tried to save the women.
+Lafond has now bought respectability, but he shall never buy peace.&quot;
+Jamison straightens resolutely, bows, and departs.
+
+&gt;
+&gt;&gt; STAND UP
+You get out of the bed.
+
+&gt;
+&gt;&gt; LOOK AROUND
+Captain&#x27;s Quarters
+   The room has a masculine air, with ebony panelling, a large messy table,
+and a rumpled bed. A curtain masks the forward exit and gilded woodwork
+decorates the sill of the tall window looking aft.
+
+&gt;
+&gt;&gt; LOOK THROUGH WINDOW
+The moon beckons across the lagoon to St. Sinistra. Moored to the stern is
+a skiff.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The Falcon is seen tying a ribbon onto his rapier, transforming the weapon into an object of meticulous care. This delicate act of adornment stands in stark contrast to the brutal, bloody violence that led to the player&#x27;s confinement.
+2. Jamison shifts from discussing his violent intent and revenge to offering a seemingly protective, personal gesture. This sudden intimacy, coupled with his lingering gaze, creates a profound tension against the backdrop of the ship&#x27;s inherent danger.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; WAIT
+Time passes...
+   His look darkens. &quot;You should know why I hate Lafond: Some years ago, as
+my brother and his bride sailed to a new life in Virginia, pirates struck.
+Their ship was boarded, looted and burned, the women taken, never to be
+seen again. A sailor, the one survivor, watched as a man of Lafond&#x27;s
+description shot my brother in the back as he tried to save the women.
+Lafond has now bought respectability, but he shall never buy peace.&quot;
+Jamison straightens resolutely, bows, and departs.
+
+&gt;
+&gt;&gt; STAND UP
+You get out of the bed.
+
+&gt;
+&gt;&gt; LOOK AROUND
+Captain&#x27;s Quarters
+   The room has a masculine air, with ebony panelling, a large messy table,
+and a rumpled bed. A curtain masks the forward exit and gilded woodwork
+decorates the sill of the tall window looking aft.
+
+&gt;
+&gt;&gt; LOOK THROUGH WINDOW
+The moon beckons across the lagoon to St. Sinistra. Moored to the stern is
+a skiff.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 8</h2><div class="pair"><article><h3>Session initiale</h3><p>The scene is characterized by a sudden, concentrated burst of character interaction. Jamison’s swift departure, after delivering the brooch and his assurances, suggests a design choice prioritizing narrative efficiency. This echoes the technical constraints Briggs faced when shaping the game&#x27;s content.</p></article><article><h3>Nouveau prompt</h3><p>The jeweled brooch, intended as a personal adornment, is rendered useless by its broken clasp. This small mechanical failure immediately deflates the weight of his gesture, transforming the intended act of care into a momentary, imperfect offering.</p><small>7.281 s ; 1658 tokens de prompt ; 776 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; OPEN CURTAIN
+You pull the cloth aside momentarily. Behind it, a large cupboard mostly
+blocks the doorway.
+
+&gt;
+&gt;&gt; EXAMINE CUPBOARD
+You can see only the back of the large cupboard. You might be able to
+squeeze past it.
+
+&gt;
+&gt;&gt; EXAMINE TABLE
+You have no need for that, milady.
+
+&gt;
+&gt;&gt; EXAMINE BED
+Someone appears to have tumbled out of it in a hurry.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   You hear the large cupboard scrape, and turn to see Captain Jamison.
+&quot;Hello! I came down to give you this -- my allotment from the coffer.&quot; He
+nods at the box in his arms.
+   Jamison starts to pin a jewelled brooch on your clothes, but, &quot;Devil
+take it, the clasp is broken. I&#x27;ll have it repaired.&quot; He folds the pretty
+thing into your hand. &quot;And I meant to reassure you that if the men suddenly
+abandon ship, they are off to help me. Rodney will stay behind with you.&quot;
+He drops the coffer on the floor, smiling in farewell, and walks swiftly
+away.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. Jamison shifts from discussing his violent intent and revenge to offering a seemingly protective, personal gesture. This sudden intimacy, coupled with his lingering gaze, creates a profound tension against the backdrop of the ship&#x27;s inherent danger.
+2. Jamison emphasizes that Lafond has bought respectability, yet this status is immediately undercut by the memory of his past actions. The assertion that he &quot;shall never buy peace&quot; suggests that material success cannot erase the stain of violence.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; OPEN CURTAIN
+You pull the cloth aside momentarily. Behind it, a large cupboard mostly
+blocks the doorway.
+
+&gt;
+&gt;&gt; EXAMINE CUPBOARD
+You can see only the back of the large cupboard. You might be able to
+squeeze past it.
+
+&gt;
+&gt;&gt; EXAMINE TABLE
+You have no need for that, milady.
+
+&gt;
+&gt;&gt; EXAMINE BED
+Someone appears to have tumbled out of it in a hurry.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   You hear the large cupboard scrape, and turn to see Captain Jamison.
+&quot;Hello! I came down to give you this -- my allotment from the coffer.&quot; He
+nods at the box in his arms.
+   Jamison starts to pin a jewelled brooch on your clothes, but, &quot;Devil
+take it, the clasp is broken. I&#x27;ll have it repaired.&quot; He folds the pretty
+thing into your hand. &quot;And I meant to reassure you that if the men suddenly
+abandon ship, they are off to help me. Rodney will stay behind with you.&quot;
+He drops the coffer on the floor, smiling in farewell, and walks swiftly
+away.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 9</h2><div class="pair"><article><h3>Session initiale</h3><p>The detailed description of the broken brooch, a small piece of luxury, contrasts sharply with the formal invitation to the Governor&#x27;s ball. This juxtaposition highlights how the game uses small, tangible objects to drive the narrative forward, a necessity when memory constraints limit expansive world-building.</p></article><article><h3>Nouveau prompt</h3><p>The invitation promises a formal dance at a mansion, a world of polished society. This promise stands in sharp contrast to the gloomy, damp reality of the ship&#x27;s aft hold.</p><small>6.89 s ; 1687 tokens de prompt ; 763 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; EXAMINE BROOCH
+All diamonds winking fire, tears of sapphire and crushed rubies in an oval
+setting, it is a pity that the clasp of the jewelled brooch has broken. The
+gold pin at the back swings about uselessly.
+
+&gt;
+&gt;&gt; OPEN COFFER
+Opening the coffer reveals an invitation.
+
+&gt;
+&gt;&gt; TAKE INVITATION
+Taken.
+
+&gt;
+&gt;&gt; READ INVITATION
+The invitation is addressed to &quot;Davis&quot;:
+
+       In Honor of Jean Lafond,
+         recently proclaimed
+       Governor of St. Sinistra
+        A Dance at his Mansion
+      Ananas Road, St. Sinistra
+Formal Dress and Invitation Required.
+
+   A ball! You haven&#x27;t been to a ball in months!
+
+&gt;
+&gt;&gt; NORTH
+The large cupboard is not flush against the doorsill. You squeeze through
+the opening between cupboard and wall.
+
+Landing
+   You are on the landing of a steep stairway heading up and down. A large
+cupboard against the aft wall blocks the doorway to the captain&#x27;s quarters.
+
+&gt;
+&gt;&gt; DOWN
+Aft Hold
+   This is a gloomy, damp area at the bottom of the Helena Louise. To the
+fore there seems to be a little more light, or you can climb up some steep
+stairs.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. Jamison emphasizes that Lafond has bought respectability, yet this status is immediately undercut by the memory of his past actions. The assertion that he &quot;shall never buy peace&quot; suggests that material success cannot erase the stain of violence.
+2. The jeweled brooch, intended as a personal adornment, is rendered useless by its broken clasp. This small mechanical failure immediately deflates the weight of his gesture, transforming the intended act of care into a momentary, imperfect offering.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; EXAMINE BROOCH
+All diamonds winking fire, tears of sapphire and crushed rubies in an oval
+setting, it is a pity that the clasp of the jewelled brooch has broken. The
+gold pin at the back swings about uselessly.
+
+&gt;
+&gt;&gt; OPEN COFFER
+Opening the coffer reveals an invitation.
+
+&gt;
+&gt;&gt; TAKE INVITATION
+Taken.
+
+&gt;
+&gt;&gt; READ INVITATION
+The invitation is addressed to &quot;Davis&quot;:
+
+       In Honor of Jean Lafond,
+         recently proclaimed
+       Governor of St. Sinistra
+        A Dance at his Mansion
+      Ananas Road, St. Sinistra
+Formal Dress and Invitation Required.
+
+   A ball! You haven&#x27;t been to a ball in months!
+
+&gt;
+&gt;&gt; NORTH
+The large cupboard is not flush against the doorsill. You squeeze through
+the opening between cupboard and wall.
+
+Landing
+   You are on the landing of a steep stairway heading up and down. A large
+cupboard against the aft wall blocks the doorway to the captain&#x27;s quarters.
+
+&gt;
+&gt;&gt; DOWN
+Aft Hold
+   This is a gloomy, damp area at the bottom of the Helena Louise. To the
+fore there seems to be a little more light, or you can climb up some steep
+stairs.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 10</h2><div class="pair"><article><h3>Session initiale</h3><p>The confined space, filled with smoke and the threat of fire, suggests a narrative where danger is immediate and unavoidable. This mirrors the way memory constraints forced the game to simplify complex scenarios and heighten the stakes of every interaction.</p></article><article><h3>Nouveau prompt</h3><p>The tiny glow of fire creeps across the floor inside the cage of ammunition. This small, contained blaze threatens the entire store of gunpowder and shot, turning a resource of defense into a potential disaster.</p><small>7.125 s ; 1630 tokens de prompt ; 786 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; NORTH
+You hear a scuffling noise ahead, and scraping up near the ceiling. You
+would think it was caused by rats, but for the definite curse you heard
+before all the movement.
+
+Hold
+   Steep stairs lead up in the dimness to a canvas hatch above. Rats&#x27;
+scratchings counterpoint the lullaby of bilge water sloshing in the
+bulkheads, punctuated by footsteps slapping the deck overhead. You may move
+fore or aft.
+   Behind a high fence, decorated by a sign, are stacked the food and
+ammunition supplies; casks of rum, water, flour and salt meat interspersed
+with kegs of gunpowder and shot. A closed gate is the only way in.
+   You gradually notice a familiar, worrying smell, sniff, and identify it
+as smoke. A tiny glow of fire creeps across a stretch of floor -- inside
+the cage full of ammunition.
+
+&gt;
+&gt;&gt; EXAMINE GATE
+It has a huge iron lock. Between the gate and the ceiling, however, is a
+gap of about 6 inches.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The jeweled brooch, intended as a personal adornment, is rendered useless by its broken clasp. This small mechanical failure immediately deflates the weight of his gesture, transforming the intended act of care into a momentary, imperfect offering.
+2. The invitation promises a formal dance at a mansion, a world of polished society. This promise stands in sharp contrast to the gloomy, damp reality of the ship&#x27;s aft hold.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; NORTH
+You hear a scuffling noise ahead, and scraping up near the ceiling. You
+would think it was caused by rats, but for the definite curse you heard
+before all the movement.
+
+Hold
+   Steep stairs lead up in the dimness to a canvas hatch above. Rats&#x27;
+scratchings counterpoint the lullaby of bilge water sloshing in the
+bulkheads, punctuated by footsteps slapping the deck overhead. You may move
+fore or aft.
+   Behind a high fence, decorated by a sign, are stacked the food and
+ammunition supplies; casks of rum, water, flour and salt meat interspersed
+with kegs of gunpowder and shot. A closed gate is the only way in.
+   You gradually notice a familiar, worrying smell, sniff, and identify it
+as smoke. A tiny glow of fire creeps across a stretch of floor -- inside
+the cage full of ammunition.
+
+&gt;
+&gt;&gt; EXAMINE GATE
+It has a huge iron lock. Between the gate and the ceiling, however, is a
+gap of about 6 inches.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 11</h2><div class="pair"><article><h3>Session initiale</h3><p>The cramped crew quarters are saturated with visceral detail, from blood stains to malodorous potions. This intense focus on immediate, localized danger and small, critical actions mirrors how technical constraints often force designers to maximize narrative impact within limited memory.</p></article><article><h3>Nouveau prompt</h3><p>Crulley describes his planned actions as merely &quot;mischief&quot; before cutting a taut rope and diving into the sea. This casual phrasing reduces a potentially violent act and dangerous escape to a simple, routine step toward collecting his pay.</p><small>9.454 s ; 1648 tokens de prompt ; 1015 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; NORTH
+Crew&#x27;s Quarters
+   The crew sleeps, in shifts, in this cramped space under the forecastle.
+A breeze blows in on a moonbeam through a grate in the ceiling. A low
+doorsill is abaft.
+   This area must also serve as sickroom. Strewn about the floor are
+various powders and spills of malodorous potions. In one corner, a large
+blood stain indicates an amputation; in another is the smear of a leech,
+dropped off a bloodletting.
+   A small bottle has been dropped nearby.
+   A chipped piece of mirror sits propped on a shoulder-high timber.
+
+&gt;
+&gt;&gt; TAKE BOTTLE
+Taken.
+   &quot;I gotta let Lafond know &#x27;e&#x27;s comin&#x27;.&quot; Crulley stands on deck above,
+talking to himself, his voice floating down through a grate in the ceiling.
+&quot;First, I do in the mates aboard-ship, with this and t&#x27;other mischief,&quot; he
+grunts, and you hear a snapping noise, like a taut rope being cut. &quot;Now to
+warn the boss and collect me pay. Off I go, har.&quot; He dives into the sea.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The invitation promises a formal dance at a mansion, a world of polished society. This promise stands in sharp contrast to the gloomy, damp reality of the ship&#x27;s aft hold.
+2. The tiny glow of fire creeps across the floor inside the cage of ammunition. This small, contained blaze threatens the entire store of gunpowder and shot, turning a resource of defense into a potential disaster.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; NORTH
+Crew&#x27;s Quarters
+   The crew sleeps, in shifts, in this cramped space under the forecastle.
+A breeze blows in on a moonbeam through a grate in the ceiling. A low
+doorsill is abaft.
+   This area must also serve as sickroom. Strewn about the floor are
+various powders and spills of malodorous potions. In one corner, a large
+blood stain indicates an amputation; in another is the smear of a leech,
+dropped off a bloodletting.
+   A small bottle has been dropped nearby.
+   A chipped piece of mirror sits propped on a shoulder-high timber.
+
+&gt;
+&gt;&gt; TAKE BOTTLE
+Taken.
+   &quot;I gotta let Lafond know &#x27;e&#x27;s comin&#x27;.&quot; Crulley stands on deck above,
+talking to himself, his voice floating down through a grate in the ceiling.
+&quot;First, I do in the mates aboard-ship, with this and t&#x27;other mischief,&quot; he
+grunts, and you hear a snapping noise, like a taut rope being cut. &quot;Now to
+warn the boss and collect me pay. Off I go, har.&quot; He dives into the sea.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 12</h2><div class="pair"><article><h3>Session initiale</h3><p>The small, potent bottle of laudanum suggests a deep dive into character pain and internal struggle. This narrative intimacy supports Briggs&#x27;s vision of the adventure feeling more like a novel than a typical swashbuckling action game.</p></article><article><h3>Nouveau prompt</h3><p>The bunk is described as soft and plumped up with fresh straw. Despite this comfort, it is situated entirely within a dark, cramped cupboard.</p><small>8.203 s ; 1650 tokens de prompt ; 948 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; TAKE MIRROR
+Taken.
+
+&gt;
+&gt;&gt; EXAMINE BOTTLE
+It&#x27;s a small leather bottle, with a tiny label on one side. It appears to
+be almost empty.
+
+&gt;
+&gt;&gt; READ LABEL
+The label reads, &quot;Laudanum drops. Squeeze into a glass of wine to sleep
+free of pain and mental anguish.&quot;
+
+&gt;
+&gt;&gt; SOUTH
+Hold
+   A tiny glow of fire creeps across a stretch of floor -- inside the cage
+full of ammunition.
+
+&gt;
+&gt;&gt; SOUTH
+Aft Hold
+
+&gt;
+&gt;&gt; UP
+Landing
+
+&gt;
+&gt;&gt; OPEN DOOR
+Opened. It is a dark messy bed, set entirely within and filling the large
+cupboard. A cabin boy must sleep here when Jamison isn&#x27;t using it. Kicked
+into a far corner is a pile of clothes.
+
+&gt;
+&gt;&gt; ENTER
+Sleeping Cupboard
+   The bed is softer than it looks, plumped up with fresh straw. A soft, if
+somewhat cramped, bunk for the tall bulk of Jamison. The cupboard opens to
+the fore.
+   Kicked into a far corner is a pile of clothes.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The tiny glow of fire creeps across the floor inside the cage of ammunition. This small, contained blaze threatens the entire store of gunpowder and shot, turning a resource of defense into a potential disaster.
+2. Crulley describes his planned actions as merely &quot;mischief&quot; before cutting a taut rope and diving into the sea. This casual phrasing reduces a potentially violent act and dangerous escape to a simple, routine step toward collecting his pay.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; TAKE MIRROR
+Taken.
+
+&gt;
+&gt;&gt; EXAMINE BOTTLE
+It&#x27;s a small leather bottle, with a tiny label on one side. It appears to
+be almost empty.
+
+&gt;
+&gt;&gt; READ LABEL
+The label reads, &quot;Laudanum drops. Squeeze into a glass of wine to sleep
+free of pain and mental anguish.&quot;
+
+&gt;
+&gt;&gt; SOUTH
+Hold
+   A tiny glow of fire creeps across a stretch of floor -- inside the cage
+full of ammunition.
+
+&gt;
+&gt;&gt; SOUTH
+Aft Hold
+
+&gt;
+&gt;&gt; UP
+Landing
+
+&gt;
+&gt;&gt; OPEN DOOR
+Opened. It is a dark messy bed, set entirely within and filling the large
+cupboard. A cabin boy must sleep here when Jamison isn&#x27;t using it. Kicked
+into a far corner is a pile of clothes.
+
+&gt;
+&gt;&gt; ENTER
+Sleeping Cupboard
+   The bed is softer than it looks, plumped up with fresh straw. A soft, if
+somewhat cramped, bunk for the tall bulk of Jamison. The cupboard opens to
+the fore.
+   Kicked into a far corner is a pile of clothes.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 13</h2><div class="pair"><article><h3>Session initiale</h3><p>The act of hurling the coffer alters the physical space, allowing the player to sit on the ledge. This kind of environmental manipulation shows how design decisions, even under memory constraints, must be both impactful and functionally necessary.</p></article><article><h3>Nouveau prompt</h3><p>The coffer is taken from the Captain&#x27;s Quarters and then hurled into the sea. This act of discarding the object is what makes the ledge deep enough for the player to sit upon.</p><small>5.781 s ; 1662 tokens de prompt ; 620 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; TAKE CLOTHES
+You pick up the pile of clothes. It separates into a pair of breeches and a
+shirt.
+
+&gt;
+&gt;&gt; REMOVE DRESS
+You take off the cotton frock.
+
+&gt;
+&gt;&gt; WEAR BREECHES
+You tuck the linen chemise into the pants. You look a little fat, but now
+you can move freely.
+
+&gt;
+&gt;&gt; WEAR SHIRT
+It fits loosely, masking your figure.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+
+&gt;
+&gt;&gt; OUT
+Landing
+
+&gt;
+&gt;&gt; SOUTH
+You squeeze through the opening between cupboard and wall.
+
+Captain&#x27;s Quarters
+   You can see a coffer here.
+
+&gt;
+&gt;&gt; TAKE COFFER
+Taken.
+   The end of a rope ladder blows past the window.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   Your eyes are drawn to a flicker of light off the sea. Squinting, you
+see a man swimming to shore, moonlight flashing off his hook.
+
+&gt;
+&gt;&gt; THROW COFFER THROUGH WINDOW
+You hurl the coffer through the window, sending it and a shower of glass
+into the sea. The ledge now looks deep enough to sit upon.
+   The end of a rope ladder blows past the window.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. Crulley describes his planned actions as merely &quot;mischief&quot; before cutting a taut rope and diving into the sea. This casual phrasing reduces a potentially violent act and dangerous escape to a simple, routine step toward collecting his pay.
+2. The bunk is described as soft and plumped up with fresh straw. Despite this comfort, it is situated entirely within a dark, cramped cupboard.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; TAKE CLOTHES
+You pick up the pile of clothes. It separates into a pair of breeches and a
+shirt.
+
+&gt;
+&gt;&gt; REMOVE DRESS
+You take off the cotton frock.
+
+&gt;
+&gt;&gt; WEAR BREECHES
+You tuck the linen chemise into the pants. You look a little fat, but now
+you can move freely.
+
+&gt;
+&gt;&gt; WEAR SHIRT
+It fits loosely, masking your figure.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+
+&gt;
+&gt;&gt; OUT
+Landing
+
+&gt;
+&gt;&gt; SOUTH
+You squeeze through the opening between cupboard and wall.
+
+Captain&#x27;s Quarters
+   You can see a coffer here.
+
+&gt;
+&gt;&gt; TAKE COFFER
+Taken.
+   The end of a rope ladder blows past the window.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   Your eyes are drawn to a flicker of light off the sea. Squinting, you
+see a man swimming to shore, moonlight flashing off his hook.
+
+&gt;
+&gt;&gt; THROW COFFER THROUGH WINDOW
+You hurl the coffer through the window, sending it and a shower of glass
+into the sea. The ledge now looks deep enough to sit upon.
+   The end of a rope ladder blows past the window.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 14</h2><div class="pair"><article><h3>Session initiale</h3><p>The sudden tumble from the ledge, followed by the desperate climb, illustrates the high stakes of the adventure. This kind of immediate physical consequence aligns with Briggs&#x27;s note that frequent player deaths were used to simplify puzzle design under memory constraints.</p></article><article><h3>Nouveau prompt</h3><p>The ladder slams into the stern, forcing all the air from the player&#x27;s lungs. This sudden, violent impact immediately brings the proximity of the growing reefs into sharp focus.</p><small>3.937 s ; 1650 tokens de prompt ; 385 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; SIT ON LEDGE
+You climb onto the ledge. The ladder drifts within reach.
+
+&gt;
+&gt;&gt; PUT ALL IN RETICULE
+shirt: You&#x27;ll have to remove the shirt first.
+breeches: You&#x27;ll have to remove the breeches first.
+bit of mirror: Done.
+leather bottle: Done.
+invitation: Done.
+jewelled brooch: Done.
+missive: Done.
+your kid slippers: You&#x27;ll have to remove your kid slippers first.
+linen chemise: You&#x27;ll have to remove the linen chemise first.
+cotton frock: Done.
+
+&gt;
+&gt;&gt; TAKE LADDER
+You reach out for the ladder and over-balance, tumbling from your perch.
+Your hand closes on a slimy hemp rung as you fly out over the waves,
+clinging tenuously, feet free, to the ladder.
+
+On the Ladder
+   You are clinging to a slimy ladder, tied to a rail of the poop deck
+above you. Not far from your feet, waves kiss the stern of the ship.
+
+&gt;
+&gt;&gt; UP
+You climb up the ladder.
+   All air is driven out of you as the ladder slams into the stern.
+   The reefs are definitely getting larger.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The bunk is described as soft and plumped up with fresh straw. Despite this comfort, it is situated entirely within a dark, cramped cupboard.
+2. The coffer is taken from the Captain&#x27;s Quarters and then hurled into the sea. This act of discarding the object is what makes the ledge deep enough for the player to sit upon.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; SIT ON LEDGE
+You climb onto the ledge. The ladder drifts within reach.
+
+&gt;
+&gt;&gt; PUT ALL IN RETICULE
+shirt: You&#x27;ll have to remove the shirt first.
+breeches: You&#x27;ll have to remove the breeches first.
+bit of mirror: Done.
+leather bottle: Done.
+invitation: Done.
+jewelled brooch: Done.
+missive: Done.
+your kid slippers: You&#x27;ll have to remove your kid slippers first.
+linen chemise: You&#x27;ll have to remove the linen chemise first.
+cotton frock: Done.
+
+&gt;
+&gt;&gt; TAKE LADDER
+You reach out for the ladder and over-balance, tumbling from your perch.
+Your hand closes on a slimy hemp rung as you fly out over the waves,
+clinging tenuously, feet free, to the ladder.
+
+On the Ladder
+   You are clinging to a slimy ladder, tied to a rail of the poop deck
+above you. Not far from your feet, waves kiss the stern of the ship.
+
+&gt;
+&gt;&gt; UP
+You climb up the ladder.
+   All air is driven out of you as the ladder slams into the stern.
+   The reefs are definitely getting larger.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 15</h2><div class="pair"><article><h3>Session initiale</h3><p>The moonlit deck, filled with silent activity and looming reefs, establishes a dramatic tension. This atmosphere reflects the ambition of the narrative, blending the swashbuckling romance with genuine peril.</p></article><article><h3>Nouveau prompt</h3><p>The men move quietly under the shadows of the navigation wheel. Despite this calm, the cannons are lined up and the casks are stacked high, suggesting a latent tension beneath the moonlight.</p><small>4.266 s ; 1656 tokens de prompt ; 377 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; UP
+You climb up the ladder, passing the halfway point.
+   Rebounding, the ladder twists you around to face the Helena Louise.
+
+&gt;
+&gt;&gt; UP
+You climb up the ladder.
+   The ladder swings back towards the Helena Louise.
+
+&gt;
+&gt;&gt; UP
+You heave yourself over the stern rail and sink breathless to the deck of
+the Helena Louise.
+
+Poop
+   From this platform deck you can see the whole of the two-masted ship,
+shadowy forms moving about here and there. A railing protects you from
+stepping off the deck in any direction but to the fore. A rope ladder is
+tied to the railing at the stern of the ship.
+   The reefs are definitely getting larger.
+
+&gt;
+&gt;&gt; NORTH
+Quarterdeck
+   No torches are lit, or needed on this moonlit night, except in the deep
+shadows cast by the huge navigation wheel. Men move about to the fore,
+talking quietly. Under the stairs aft to the poop is a barred door.
+   The reefs are definitely getting larger.
+   Abaft the wheel sits a large pyramid of casks, held in place by a heavy
+rope.
+   Cannon line the deck, aimed at open sea and the island.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The coffer is taken from the Captain&#x27;s Quarters and then hurled into the sea. This act of discarding the object is what makes the ledge deep enough for the player to sit upon.
+2. The ladder slams into the stern, forcing all the air from the player&#x27;s lungs. This sudden, violent impact immediately brings the proximity of the growing reefs into sharp focus.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; UP
+You climb up the ladder, passing the halfway point.
+   Rebounding, the ladder twists you around to face the Helena Louise.
+
+&gt;
+&gt;&gt; UP
+You climb up the ladder.
+   The ladder swings back towards the Helena Louise.
+
+&gt;
+&gt;&gt; UP
+You heave yourself over the stern rail and sink breathless to the deck of
+the Helena Louise.
+
+Poop
+   From this platform deck you can see the whole of the two-masted ship,
+shadowy forms moving about here and there. A railing protects you from
+stepping off the deck in any direction but to the fore. A rope ladder is
+tied to the railing at the stern of the ship.
+   The reefs are definitely getting larger.
+
+&gt;
+&gt;&gt; NORTH
+Quarterdeck
+   No torches are lit, or needed on this moonlit night, except in the deep
+shadows cast by the huge navigation wheel. Men move about to the fore,
+talking quietly. Under the stairs aft to the poop is a barred door.
+   The reefs are definitely getting larger.
+   Abaft the wheel sits a large pyramid of casks, held in place by a heavy
+rope.
+   Cannon line the deck, aimed at open sea and the island.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 16</h2><div class="pair"><article><h3>Session initiale</h3><p>The detailed description of the ship&#x27;s structure, from the tangled rigging to the mooring winch, reinforces the text adventure&#x27;s literary ambition. The repeated note that the reefs are getting larger establishes a persistent environmental threat beneath the surface of the swashbuckling action.</p></article><article><h3>Nouveau prompt</h3><p>The pirates sing low shanties while simultaneously repairing cannons and sharpening daggers. This casual rhythm of labor feels strangely at odds with the heavy, inky shadow cast by the mainmast.</p><small>3.453 s ; 1641 tokens de prompt ; 355 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; NORTH
+Main Deck
+   It is a deceptively quiet evening on the ship, the pirates singing low
+shanties as they repair cannon, twist ropes and sharpen daggers. The
+mainmast casts an inky shadow over the canvas screening the hatch. A
+tangled mass of rigging hangs down from the mast, like many rope ladders
+woven together.
+   The reefs are definitely getting larger.
+   Two large barrels stand near the stair to the foredeck.
+
+&gt;
+&gt;&gt; NORTH
+Forecastle
+   Higher than all but the poop deck, this end of the ship commands a good
+view of the island; the &quot;crow&#x27;s nest,&quot; swinging above in the heights of the
+foremast, would command a better. A tangled mass of rigging hangs down from
+the mast, like many rope ladders woven together.
+   Imbedded in the deck is a grated air hole to the crew&#x27;s quarters below.
+You can go aft, or forward through a break in the ubiquitous railing.
+   Odors of old grease and char waft from a little shack perched behind the
+mast.
+   The reefs are definitely getting larger.
+   You can see a mooring winch here.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The ladder slams into the stern, forcing all the air from the player&#x27;s lungs. This sudden, violent impact immediately brings the proximity of the growing reefs into sharp focus.
+2. The men move quietly under the shadows of the navigation wheel. Despite this calm, the cannons are lined up and the casks are stacked high, suggesting a latent tension beneath the moonlight.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; NORTH
+Main Deck
+   It is a deceptively quiet evening on the ship, the pirates singing low
+shanties as they repair cannon, twist ropes and sharpen daggers. The
+mainmast casts an inky shadow over the canvas screening the hatch. A
+tangled mass of rigging hangs down from the mast, like many rope ladders
+woven together.
+   The reefs are definitely getting larger.
+   Two large barrels stand near the stair to the foredeck.
+
+&gt;
+&gt;&gt; NORTH
+Forecastle
+   Higher than all but the poop deck, this end of the ship commands a good
+view of the island; the &quot;crow&#x27;s nest,&quot; swinging above in the heights of the
+foremast, would command a better. A tangled mass of rigging hangs down from
+the mast, like many rope ladders woven together.
+   Imbedded in the deck is a grated air hole to the crew&#x27;s quarters below.
+You can go aft, or forward through a break in the ubiquitous railing.
+   Odors of old grease and char waft from a little shack perched behind the
+mast.
+   The reefs are definitely getting larger.
+   You can see a mooring winch here.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section><section><h2>Intervention 17</h2><div class="pair"><article><h3>Session initiale</h3><p>The discovery of the barrels and the ship&#x27;s drift emphasize the blending of survival mechanics with the romantic setting. This focus on character action, signaled by the next command, aligns with Briggs&#x27;s intent to treat romance as a legitimate narrative form.</p></article><article><h3>Nouveau prompt</h3><p>The Helena Louise drifts back toward the island. This movement is dictated by the turning tide, making the ship seem less controlled and more subject to the environment.</p><small>4.047 s ; 1641 tokens de prompt ; 408 tokens generes</small></article></div><details><summary>Historique du jeu</summary><pre>&gt;&gt; EXAMINE WINCH
+Made of an old barrel turning on a pole, the mooring winch is used to coil
+in the anchor chain. A pair of metal teeth bite the links to prevent it
+from dragging out; a lever is connected to the teeth. Something is written
+on the lever.
+
+&gt;
+&gt;&gt; READ LEVER
+On the lever is written &quot;Open Up, Close Down.&quot; You notice the lever is
+pointed down.
+
+&gt;
+&gt;&gt; PULL LEVER UP
+The metal teeth open as you raise up the lever. The anchor, released,
+splashes down into the sea, dragging its clanking chain. After a moment,
+you feel the ship pull slightly against the current. You lower the lever to
+prevent any more chain from spooling out.
+
+&gt;
+&gt;&gt; SOUTH
+Main Deck
+
+&gt;
+&gt;&gt; EXAMINE BARRELS
+The two open barrels contain rum and water, you can tell by the smell of
+each. They are identical but for the dark stains around the mouth of the
+rum barrel.
+   With a heave and creak of timbers, the Helena Louise drifts a little way
+back towards the island. The tide has turned.
+
+&gt;</pre></details><details><summary>Prompt du rejeu</summary><pre>You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS&#x27;S TESTIMONY
+Amy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.
+Briggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.
+Her move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.
+Encouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.
+Briggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.
+From a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.
+Commercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.
+After Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.
+Looking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.
+END OF BACKGROUND
+
+YOUR LAST COMMENTS (oldest first, ideas already used):
+1. The men move quietly under the shadows of the navigation wheel. Despite this calm, the cannons are lined up and the casks are stacked high, suggesting a latent tension beneath the moonlight.
+2. The pirates sing low shanties while simultaneously repairing cannons and sharpening daggers. This casual rhythm of labor feels strangely at odds with the heavy, inky shadow cast by the mainmast.
+END OF PREVIOUS COMMENTS
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
+
+GAME HISTORY (oldest first, all events already seen):
+&gt;&gt; EXAMINE WINCH
+Made of an old barrel turning on a pole, the mooring winch is used to coil
+in the anchor chain. A pair of metal teeth bite the links to prevent it
+from dragging out; a lever is connected to the teeth. Something is written
+on the lever.
+
+&gt;
+&gt;&gt; READ LEVER
+On the lever is written &quot;Open Up, Close Down.&quot; You notice the lever is
+pointed down.
+
+&gt;
+&gt;&gt; PULL LEVER UP
+The metal teeth open as you raise up the lever. The anchor, released,
+splashes down into the sea, dragging its clanking chain. After a moment,
+you feel the ship pull slightly against the current. You lower the lever to
+prevent any more chain from spooling out.
+
+&gt;
+&gt;&gt; SOUTH
+Main Deck
+
+&gt;
+&gt;&gt; EXAMINE BARRELS
+The two open barrels contain rum and water, you can tell by the smell of
+each. They are identical but for the dark stains around the mouth of the
+rum barrel.
+   With a heave and creak of timbers, the Helena Louise drifts a little way
+back towards the island. The tide has turned.
+
+&gt;
+END OF GAME HISTORY
+
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs&#x27;s testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
+Write TWO sentences, up to 90 words in total, in neutral English.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+</pre></details></section></html>

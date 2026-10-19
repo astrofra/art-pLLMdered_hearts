@@ -602,38 +602,42 @@ def load_itw_redux():
         return handle.read().strip()
 
 
-def build_prompt(prev_output, cmd, interview_text=None, recent_comments=None):
-    prompt = """You are a quiet observer of an installation replaying Plundered Hearts,
-a 1987 interactive fiction by Amy Briggs. The game follows a fixed walkthrough.
-Here is an excerpt from Amy Briggs recalling her years at Infocom:
+def build_prompt(prev_output, interview_text=None, recent_comments=None):
+    prompt = """You are a quiet observer watching Plundered Hearts unfold.
+Respond as an attentive reader to the events already shown. You do not choose moves.
+Your task is to notice something particular to this moment, not explain the game as a whole.
+
+OPTIONAL BACKGROUND: AMY BRIGGS'S TESTIMONY
 """
     prompt += load_itw_redux() if interview_text is None else interview_text
+    prompt += "\nEND OF BACKGROUND\n"
 
     if recent_comments:
-        prompt += "\n\nYOUR LAST COMMENTS (oldest first, for avoiding repetition only):\n"
+        prompt += "\nYOUR LAST COMMENTS (oldest first, ideas already used):\n"
         for index, comment in enumerate(recent_comments[-2:], 1):
             prompt += f"{index}. {comment}\n"
         prompt += """END OF PREVIOUS COMMENTS
-These are your own earlier reactions, not evidence about the game or Briggs.
-Do not repeat or paraphrase their observations, analogies, conclusions, or openings.
-Choose a fresh detail or angle supported by the new game events.
-Do not reuse the same aspect of Briggs's testimony as either previous comment.
-If no fresh connection is supported, stay with a new observation about the game.
+These are ideas you have already expressed, not evidence or a style template.
+Compare your intended point with BOTH comments before answering.
+If it makes the same claim with different characters or objects, choose another detail
+or relationship. Do not continue their analogies or reuse their conclusions.
 """
 
+    prompt += "\nGAME HISTORY (oldest first, all events already seen):\n" + prev_output
+    prompt += "\nEND OF GAME HISTORY\n"
     prompt += f"""
-Read the chronological game history accumulated since your previous comment.
-Choose one concrete event or change, preferably from the latest developments.
-Make a modest, specific association with Briggs's testimony only when it fits.
-Otherwise, stay with the game. Her testimony is context, not a checklist of themes.
-Do not invent biographical facts or causes for design choices.
-You are neither Amy Briggs nor a game character, and you do not choose the moves.
+Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
+an object changing purpose, an opening, a contradiction, or a consequence.
+Let the second sentence deepen that SAME observation, rather than attach a general theme.
+An observation entirely within the scene is a complete answer.
+Use Briggs's testimony only if a specific connection adds something new; leave it
+in the background otherwise. It does not establish why an individual scene was designed
+this way. Do not infer production causes or authorial intentions from fictional events.
+Naming the genre or praising narrative ambition does not develop an observation.
+Stay with what has happened; do not predict events, invent motives, or advise the player.
 Write TWO sentences, up to {COMMENTARY_WORD_LIMIT} words in total, in neutral {COMMENTARY_LANGUAGE}.
-You have room to develop one concrete observation rather than just name a theme.
-Use plain text only, NO MARKDOWN, as a fleeting inner association.
+Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
 """
-    prompt += "\nGAME HISTORY (oldest first):\n" + prev_output
-    prompt += "\nEND OF GAME HISTORY\nNext scripted command (not yet executed): " + cmd
     return prompt
 
 
@@ -862,9 +866,9 @@ def display_game_output(raw_output):
     return cleaned
 
 
-def comment_on_game(previous_output, command, recent_comments=None):
+def comment_on_game(previous_output, recent_comments=None):
     recent_comments = list(recent_comments or ())[-2:]
-    prompt = build_prompt(previous_output, command, recent_comments=recent_comments)
+    prompt = build_prompt(previous_output, recent_comments=recent_comments)
     metrics = {"history_words": len(previous_output.split()), "history_characters": len(previous_output),
                "history_commands": len(re.findall(r"^>> ", previous_output, re.M)),
                "context_tokens": LLM_NUM_CTX, "model": LLM_MODEL,
@@ -891,7 +895,7 @@ def comment_on_game(previous_output, command, recent_comments=None):
             path = os.path.abspath(COMMENTARY_LOG_PATH)
             os.makedirs(os.path.dirname(path), exist_ok=True)
             record = dict(metrics, timestamp=time.time(), game_history=previous_output,
-                          next_command=command, commentary=commentary, prompt=prompt)
+                          commentary=commentary, prompt=prompt)
             with open(path, "a", encoding="utf-8") as handle:
                 handle.write(json.dumps(record, ensure_ascii=False) + "\n")
         except OSError as exc:
@@ -940,7 +944,7 @@ def play(steps=None, once=False):
                         write_raw_output(RAW_OUTPUT_PATH, raw_outputs)
                 history_words = sum(len(text.split()) for text in commentary_history)
                 if ENABLE_LLM and commentary_is_due(history_words):
-                    commentary = comment_on_game("\n".join(commentary_history), command,
+                    commentary = comment_on_game("\n".join(commentary_history),
                                                  recent_comments=recent_comments)
                     if commentary:
                         recent_comments = (recent_comments + [commentary])[-2:]

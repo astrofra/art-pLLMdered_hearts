@@ -1,0 +1,17 @@
+{
+  "exit_code": 0,
+  "commands": 6,
+  "comments": 1,
+  "next_command_in_prompt_or_log": false,
+  "memory_counts": [
+    0
+  ],
+  "prompt_tokens": [
+    1716
+  ],
+  "output_tokens": [
+    889
+  ],
+  "video_requests": 1,
+  "scope": "Usual batch launcher with real Frotz, Gemma thinking and CPU embeddings; display and viewer disabled; isolated watchfolder."
+}

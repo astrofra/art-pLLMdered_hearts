@@ -147,8 +147,8 @@ class CommentaryTimingTests(unittest.TestCase):
             events.append(("display", text))
             return text
 
-        def comment(history, command, recent_comments=None):
-            events.append(("comment", now[0], history, command, tuple(recent_comments or ())))
+        def comment(history, recent_comments=None):
+            events.append(("comment", now[0], history, tuple(recent_comments or ())))
             return next(comments)
 
         def embed(text):
@@ -213,7 +213,7 @@ class CommentaryTimingTests(unittest.TestCase):
             iter(["First comment.", "Second comment.", "Last comment."]), ["one"], steps=3, once=False)
         comments = [event for event in events if event[0] == "comment"]
         self.assertEqual([event[1] for event in comments], [0, 2, 6])
-        self.assertEqual([event[4] for event in comments],
+        self.assertEqual([event[3] for event in comments],
                          [(), ("First comment.",), ("First comment.", "Second comment.")])
         self.assertEqual([event for event in events if event[0] == "embed"],
                          [("embed", 0, "First comment."), ("embed", 6, "Last comment.")])
@@ -245,7 +245,7 @@ class CommentaryTimingTests(unittest.TestCase):
             iter(["First.", "Second.", "", "Third.", "Fourth."]),
             ["one", "two", "three", "four", "five"])
         comments = [event for event in events if event[0] == "comment"]
-        self.assertEqual([event[4] for event in comments],
+        self.assertEqual([event[3] for event in comments],
                          [(), ("First.",), ("First.", "Second."),
                           ("First.", "Second."), ("Second.", "Third.")])
 

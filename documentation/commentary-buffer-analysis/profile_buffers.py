@@ -24,8 +24,7 @@ def collect_buffers(rows):
         words = sum(len(text.split()) for text in history)
         if faketerm.commentary_is_due(words):
             samples.append({"step": row["step"],
-                            "history_words": words, "history": "\n".join(history),
-                            "next_command": row["command"]})
+                            "history_words": words, "history": "\n".join(history)})
             history = []
         history.append(">> " + row["command"])
     history.append(rows[-1]["game_text"])
@@ -49,8 +48,9 @@ def write_report(result, samples):
              'attendent la fin estimée de l’extrait courant, calculée depuis l’écriture de la demande '
              'avec la durée du catalogue et une marge de 3 secondes. Godot ne renvoie aucun état.</p>',
              '<p>Le nouveau prompt demande une observation concrète sur les événements du buffer '
-             'et une association au témoignage seulement si elle est justifiée. Gemma E4B reste '
-             'sans raisonnement prolongé, avec un contexte de 4 096 tokens.</p>',
+             'et une association au témoignage seulement si elle est justifiée. La prochaine '
+             'commande est exclue du prompt. Le comptage des tokens utilise un contexte de '
+             + str(faketerm.LLM_NUM_CTX) + ' tokens, sans raisonnement prolongé.</p>',
              '<h2>Taille des historiques</h2><table><tr><th>Mesure</th><th>Valeur</th></tr>']
     for label, value in [
         ('Commandes du parcours capturé', result['source_commands']),
@@ -84,16 +84,15 @@ def write_report(result, samples):
                  'diffusion. Aucune comparaison qualitative aveugle n’est menée ici.</small></p>')
     for sample in samples:
         row = by_step.get(sample['step'], {})
-        prompt = faketerm.build_prompt(sample['history'], sample['next_command'])
+        prompt = faketerm.build_prompt(sample['history'])
         if row.get('prompt_sha256') != hashlib.sha256(prompt.encode()).hexdigest():
             row = {}
         parts.append('<section><h3>Étape ' + str(sample['step']) + '</h3><p>'
                      + escape(row.get('commentary', 'Non mesuré')) + '</p><small>'
                      + str(sample['history_words']) + ' mots dans l’historique · '
                      + str(row.get('prompt_tokens', '?')) + ' tokens dans le prompt</small>'
-                     '<details><summary>Historique complet et prochaine commande</summary><pre>'
-                     + escape(sample['history']) + '</pre><p>Prochaine commande : <code>'
-                     + escape(sample['next_command']) + '</code></p></details></section>')
+                     '<details><summary>Historique complet</summary><pre>'
+                     + escape(sample['history']) + '</pre></details></section>')
     (DIRECTORY / 'report.html').write_text(''.join(parts) + '</html>\n', encoding='utf-8')
 
 
@@ -109,12 +108,12 @@ def main():
               "mean_words": round(statistics.mean(words), 1), "median_words": statistics.median(words),
               "min_words": min(words), "max_words": max(words), "uncommented_tail_words": tail,
               "description": "One captured walkthrough, complete outputs and executed commands. Tail is preserved at runtime across restarts.",
-              "prompt_template_sha256": hashlib.sha256(faketerm.build_prompt("", "").encode()).hexdigest(),
+              "prompt_template_sha256": hashlib.sha256(faketerm.build_prompt("").encode()).hexdigest(),
               "token_measurements": []}
     if args.measure_tokens:
         client = ollama.Client(host=faketerm.OLLAMA_HOST, timeout=faketerm.LLM_TIMEOUT)
         for sample in samples:
-            prompt = faketerm.build_prompt(sample["history"], sample["next_command"])
+            prompt = faketerm.build_prompt(sample["history"])
             response = client.chat(model=faketerm.LLM_MODEL, messages=[{"role": "user", "content": prompt}],
                                    think=False, options={"temperature": 0.3, "num_ctx": faketerm.LLM_NUM_CTX,
                                                          "num_predict": 1}, keep_alive="15m")
@@ -130,7 +129,7 @@ def main():
             by_step = {int(row["scene_id"].split("_")[1]): row for row in measured}
             for sample in samples:
                 row = by_step.get(sample["step"])
-                prompt_hash = hashlib.sha256(faketerm.build_prompt(sample["history"], sample["next_command"]).encode()).hexdigest()
+                prompt_hash = hashlib.sha256(faketerm.build_prompt(sample["history"]).encode()).hexdigest()
                 if row and row.get("prompt_sha256") == prompt_hash:
                     result["token_measurements"].append({"step": sample["step"],
                         "history_words": sample["history_words"], "prompt_tokens": row["prompt_tokens"],
