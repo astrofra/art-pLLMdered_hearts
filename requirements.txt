@@ -1,3 +1,1 @@
-ollama
-pexpect
-pygame
+-r src/requirements.txt

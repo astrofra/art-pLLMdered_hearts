@@ -45,6 +45,7 @@ func _ready() -> void:
 	rng.randomize()
 	_scan_video_folder()
 	llm_out_dir = _resolve_llm_out_dir()
+	last_llm_file = _find_latest_llm_file()
 	call_deferred("_update_video_cover")
 	subtitle_panel.visible = false
 	_apply_subtitle_style()
@@ -408,6 +409,9 @@ func _resolve_video_path(filename: String) -> String:
 	return ""
 
 func _resolve_llm_out_dir() -> String:
+	var environment_override = OS.get_environment("LLM_OUT_OVERRIDE")
+	if environment_override != "":
+		return environment_override.simplify_path()
 	if LLM_OUT_OVERRIDE != "":
 		return LLM_OUT_OVERRIDE.simplify_path()
 	var base_dir = ""
@@ -427,10 +431,10 @@ func _poll_llm_out(delta: float) -> void:
 	var latest = _find_latest_llm_file()
 	if latest == "" or latest == last_llm_file:
 		return
-	last_llm_file = latest
 	var next_video = _read_llm_video_request(latest)
 	if next_video == "":
 		return
+	last_llm_file = latest
 	enqueue_video(next_video)
 	if not video_player.is_playing():
 		_play_next_from_queue()
@@ -443,7 +447,7 @@ func _find_latest_llm_file() -> String:
 	var latest_name = ""
 	var name = dir.get_next()
 	while name != "":
-		if not dir.current_is_dir():
+		if not dir.current_is_dir() and name.ends_with(".txt"):
 			if name > latest_name:
 				latest_name = name
 		name = dir.get_next()

@@ -2,3 +2,5 @@
 .DS_Store
 /www/static/video/abriggs-itw.mp4
 __pycache__
+.venv/
+godot-viewer/.godot/

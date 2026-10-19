@@ -1,32 +1,34 @@
+import argparse
 import hashlib
 import json
 import math
 import os
+import queue
 import re
+import shutil
 import sys
+import threading
 import time
 import unicodedata
 import subprocess
 
 import ollama
 import pexpect
+from pexpect.popen_spawn import PopenSpawn
 
 import pygame
 
 from c64renderer import C64Renderer
-from knowledge_base import plundered_hearts_wiki, plundered_hearts_fandom
-
-print("Waiting for Ollama")
-time.sleep(5)
-
-# os.environ["OLLAMA_NO_CUDA"] = "1"
-
 AI_THINKING_STATUS = "<MISTRAL REFLECHIT>"
 AI_COMMENT_LABEL = "MISTRAL COMMENTE:"
 AI_VIDEO_LABEL = "MAGNETO, JOUE LA BANDE:"
 AI_COMMENT_FG = (255, 255, 255)
 AI_COMMENT_BG = (0, 0, 0)
-LLM_MODEL = 'ministral-3:14b' # 'ministral-3:8b' # 'qwen2.5:7b' # 'ministral-3:14b'
+LLM_MODEL = os.environ.get("LLM_MODEL", "ministral-3:14b")
+LLM_TIMEOUT = float(os.environ.get("LLM_TIMEOUT", "180"))
+EMBED_TIMEOUT = float(os.environ.get("EMBED_TIMEOUT", "30"))
+GAME_TIMEOUT = 30.0
+OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434")
 ENABLE_LLM = True
 ENABLE_RAW_OUTPUT = False
 ENABLE_C64_RENDERER = True
@@ -41,12 +43,19 @@ C64_OUTPUT_SCALE = 2
 C64_FIT_TO_DISPLAY = True
 
 C64_FONT_PATH = None  # Using built-in fallback font; no external sprite sheet required.
-KEY_AUDIO_DIR = os.path.join(os.path.dirname(__file__), "..", "assets", "audio")
-GODOT_VIEWER_PATH = os.path.join(os.path.dirname(__file__), "..", "bin", "itw-viewer.exe")
-RAW_OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "assets", "game-raw-output.json")
-VIDEO_EMBEDDINGS_PATH = os.path.join(os.path.dirname(__file__), "..", "assets", "abriggs-itw-embeddings.json")
-VIDEO_EMBED_MODEL = "embeddinggemma:300m"
-LLM_OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "llm_out")
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+KEY_AUDIO_DIR = os.path.join(PROJECT_DIR, "assets", "audio")
+GODOT_VIEWER_PATH = os.path.join(PROJECT_DIR, "bin", "itw-viewer.exe")
+GAME_ROM_PATH = os.path.join(PROJECT_DIR, "roms", "PLUNDERE.z3")
+RAW_OUTPUT_PATH = os.path.join(PROJECT_DIR, "assets", "game-raw-output.json")
+VIDEO_EMBEDDINGS_PATH = os.path.join(PROJECT_DIR, "assets", "abriggs-itw-embeddings.json")
+VIDEO_EMBED_MODEL = os.environ.get("VIDEO_EMBED_MODEL", "embeddinggemma:300m")
+VIDEO_EMBED_NUM_GPU = int(os.environ.get("VIDEO_EMBED_NUM_GPU", "0"))
+LLM_OUT_DIR = os.path.abspath(os.environ.get("LLM_OUT_OVERRIDE") or os.path.join(PROJECT_DIR, "llm_out"))
+FAST_OUTPUT = False
+child = None
+renderer = None
+_godot_viewer_process = None
 
 if ENABLE_RAW_OUTPUT and ENABLE_LLM:
     raise ValueError("ENABLE_RAW_OUTPUT requires ENABLE_LLM to be False.")
@@ -54,7 +63,7 @@ if ENABLE_RAW_OUTPUT and ENABLE_LLM:
 def llm_response_is_valid(llm_commentary):
     if llm_commentary is None:
         return False
-    
+
     return True
 
 def extract_and_parse_json(text):
@@ -72,7 +81,7 @@ def extract_and_parse_json(text):
     if not match:
         # If no fenced block, try raw { ... } block (useful for degraded format)
         match = re.search(r"(\{[\s\S]*?\})", text)
-    
+
     if match:
         try:
             json_str = match.group(1)
@@ -96,7 +105,8 @@ def sanitize_renderer_text(text):
     return ascii_text.replace(placeholder, "'")
 
 # Match ANSI escape sequences like ESC[31m or ESC[2J
-ansi_escape = re.compile(r'\x1b\[[0-9;]*[A-Za-z]')
+ansi_escape = re.compile(r'\x1b\[[0-?]*[ -/]*[@-~]')
+terminal_title = re.compile(r'\x1b\][^\x07\x1b]*(?:\x07|\x1b\\)')
 # Match cursor position commands like [24d (often without ESC, incomplete sequences)
 cursor_directives = re.compile(r'\[\d{1,3}d')
 # Match charset switch like ESC(A or ESC(B
@@ -110,6 +120,7 @@ line_breaking_escapes = re.compile(r'\x1b\[[0-9;]*([HJfABCD])')
 
 def clean_output(text):
     global LAST_STATUS_BAR
+    text = terminal_title.sub('', text)
     # Replace certain ANSI codes with newlines (those likely to imply line moves)
     def replace_with_newline(match):
         command = match.group(1)
@@ -124,6 +135,7 @@ def clean_output(text):
     text = cursor_directives.sub('', text)
     # Remove remaining ANSI escape codes
     text = ansi_escape.sub('', text)
+    text = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', text)
 
     # Remove status/title bar and lines containing only a number (like score or parser noise)
     lines = text.strip().splitlines()
@@ -226,23 +238,34 @@ def _start_godot_viewer():
         print(f"Godot viewer not found at {viewer_path}")
         return None
     try:
-        return subprocess.Popen([viewer_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        viewer_env = os.environ.copy()
+        viewer_env["LLM_OUT_OVERRIDE"] = LLM_OUT_DIR
+        return subprocess.Popen(
+            [viewer_path], cwd=os.path.dirname(viewer_path), env=viewer_env,
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        )
     except Exception as exc:
         print(f"Unable to start Godot viewer: {exc}")
         return None
 
 
 def _exit_immediately():
-    try:
-        if child is not None:
-            child.terminate(force=True)
-    except Exception:
-        pass
-    try:
-        pygame.quit()
-    except Exception:
-        pass
-    sys.exit(0)
+    raise KeyboardInterrupt
+
+
+def _stop_process(process):
+    if process is None:
+        return
+    if process.poll() is None:
+        process.terminate()
+        try:
+            process.wait(timeout=3)
+        except subprocess.TimeoutExpired:
+            process.kill()
+            process.wait(timeout=3)
+    for stream in (process.stdin, process.stdout, process.stderr):
+        if stream:
+            stream.close()
 
 
 def _handle_quit_shortcut():
@@ -287,6 +310,11 @@ def type_to_renderer(
     proportional to ASCII distance from the previous character.
     """
     if not renderer or text is None:
+        return
+    if FAST_OUTPUT:
+        _handle_quit_shortcut()
+        renderer.write(text, fg_color=fg_color, bg_color=bg_color)
+        renderer.render_frame()
         return
     def _sleep_with_events(delay):
         if delay <= 0:
@@ -428,7 +456,10 @@ def embed_commentary_text(text):
     if not text:
         return None, 0.0
     try:
-        response = ollama.embeddings(model=VIDEO_EMBED_MODEL, prompt=text)
+        response = _ollama_request(
+            "embeddings", EMBED_TIMEOUT, model=VIDEO_EMBED_MODEL, prompt=text,
+            options={"num_gpu": VIDEO_EMBED_NUM_GPU},
+        )
     except Exception as exc:
         print(f"Embedding failed: {exc}")
         return None, 0.0
@@ -444,9 +475,11 @@ def select_best_video(comment_vector, comment_norm, catalog, recent, last_video)
         return None
     scored = []
     for item in catalog:
+        if len(comment_vector) != len(item["embedding"]):
+            continue
         score = _cosine_similarity(comment_vector, comment_norm, item["embedding"], item["norm"])
         scored.append((score, item))
-    scored.sort(reverse=True)
+    scored.sort(key=lambda pair: pair[0], reverse=True)
 
     for _, item in scored:
         var_filename = item["filename"]
@@ -519,27 +552,34 @@ def maybe_emit_video_request(renderer, entry, recent, last_played, next_allowed,
             beep=False,
             word_mode=True,
         )
-    write_llm_video_request(next_video)
+    if not write_llm_video_request(next_video):
+        return entry, next_allowed, last_played
     record_video_choice(next_video, catalog_size, recent)
     last_played = next_video
-    next_allowed = now + _get_video_duration(entry)
+    next_allowed = time.monotonic() + _get_video_duration(entry)
     return None, next_allowed, last_played
 
 
 def write_llm_video_request(filename):
     if not filename:
-        return
+        return False
     os.makedirs(LLM_OUT_DIR, exist_ok=True)
     now = time.time()
     stamp = time.strftime("%Y%m%d_%H%M%S", time.localtime(now))
     millis = int((now - int(now)) * 1000)
     out_name = f"{stamp}_{millis:03d}.txt"
     out_path = os.path.join(LLM_OUT_DIR, out_name)
+    temp_path = out_path + ".tmp"
     try:
-        with open(out_path, "w", encoding="utf-8") as handle:
+        with open(temp_path, "w", encoding="utf-8") as handle:
             handle.write(filename.strip() + "\n")
+        os.replace(temp_path, out_path)
+        return True
     except Exception as exc:
         print(f"Unable to write llm_out file: {exc}")
+        if os.path.isfile(temp_path):
+            os.remove(temp_path)
+        return False
 
 
 def load_itw_redux():
@@ -558,11 +598,12 @@ Here is an excerpt from Amy Briggs recalling her years at Infocom:
     prompt += """
 While reading the following moment from the game, your response may attend to
 any aspect of Amy Briggs’s testimony that feels relevant in this moment:
-a memory of daily work, the group dynamics at Infocom, informal mentoring practices, 
-commercial pressures, the struggle to legitimize video games as a growth engine versus 
-business software (such as Cornerstone), and her personal desire to write novels, 
+a memory of daily work, the group dynamics at Infocom, informal mentoring practices,
+commercial pressures, the struggle to legitimize video games as a growth engine versus
+business software (such as Cornerstone), and her personal desire to write novels,
 or technical detail, whatever seems relevant...
-Answer in TWO sentences, in neutral French, plain text, NO MARKDOWN, as a fleeting inner association.
+Answer in TWO short sentences, 60 words maximum in total, in neutral French.
+Use plain text only, NO MARKDOWN, as a fleeting inner association.
 """
     prompt += prev_output + "\nYour next move will be : " + cmd
     return prompt
@@ -616,7 +657,7 @@ cmd_replace_dict = {
     "NE": "NORTHEAST",
     "NW": "NORTHWEST",
     "SE": "SOUTHEAST",
-    "SW": "SOUTHWEST", 
+    "SW": "SOUTHWEST",
     "U": "UP",
     "D": "DOWN",
     "L": "LOOK"
@@ -628,241 +669,263 @@ def enhance_game_command(cmd):
         return cmd_replace_dict[cmd]
     return cmd
 
-# run frotz through a terminal emulator, using the ascii mode
-# child = pexpect.spawn("frotz -p roms/PLUNDERE.z3", encoding='utf-8', timeout=5)
-from pexpect.popen_spawn import PopenSpawn
+def _game_executable():
+    configured = os.environ.get("FROTZ_PATH")
+    if configured:
+        executable = shutil.which(configured)
+        if executable:
+            return executable
+        raise FileNotFoundError(f"FROTZ_PATH not found: {configured}")
+    local_path = os.path.join(PROJECT_DIR, "frotz.exe" if os.name == "nt" else "frotz")
+    executable = local_path if os.path.isfile(local_path) else shutil.which("frotz")
+    if not executable:
+        raise FileNotFoundError("Frotz not found. Put frotz.exe in the project or set FROTZ_PATH.")
+    return executable
+
 
 def _start_game_process():
-    return PopenSpawn("frotz -p roms/PLUNDERE.z3", encoding='utf-8', timeout=5)
+    return PopenSpawn(
+        [_game_executable(), "-p", GAME_ROM_PATH], cwd=PROJECT_DIR,
+        encoding="utf-8", codec_errors="replace", timeout=GAME_TIMEOUT,
+    )
 
-child = None
 
-renderer = None
-if ENABLE_C64_RENDERER:
-    try:
-        display_index = None
-        if C64_DISPLAY_INDEX:
-            try:
-                display_index = max(0, int(C64_DISPLAY_INDEX) - 1)
-            except (TypeError, ValueError):
-                display_index = None
-        renderer = C64Renderer(
-            font_path=C64_FONT_PATH,
-            fps=50,
-            fullscreen=ENABLE_C64_FULLSCREEN,
-            display_index=display_index,
-            window_size=C64_WINDOW_SIZE,
-            window_position=C64_WINDOW_POSITION,
-            borderless=C64_WINDOW_UNDECORATED,
-            output_scale=C64_OUTPUT_SCALE,
-            fit_to_display=C64_FIT_TO_DISPLAY,
-        )
-    except Exception as exc:
-        print(f"Unable to start C64 renderer: {exc}")
-        renderer = None
+def read_game_output(game):
+    """Wait for a complete prompt, acknowledging introduction and pagination."""
+    output = ""
+    deadline = time.monotonic() + GAME_TIMEOUT
+    markers = ("***MORE***", "[Press RETURN or ENTER to continue.]",
+               "[Press RETURN or ENTER to begin.]")
+    while time.monotonic() < deadline:
+        _handle_quit_shortcut()
+        try:
+            chunk = game.read_nonblocking(size=4096, timeout=0.05)
+        except pexpect.TIMEOUT:
+            chunk = ""
+        except pexpect.EOF:
+            if output:
+                return output
+            raise RuntimeError("Frotz stopped before the next prompt.") from None
+        if not chunk:
+            time.sleep(0.01)
+            continue
+        output += chunk
+        for marker in markers:
+            if marker in output:
+                output = output.replace(marker, "")
+                game.sendline("")
+        if re.search(r">[ \t]*$", output):
+            return output
+    raise TimeoutError("Frotz did not reach a prompt within %.0f seconds." % GAME_TIMEOUT)
 
-_godot_viewer_process = _start_godot_viewer()
 
-raw_output_map = load_raw_output(RAW_OUTPUT_PATH) if ENABLE_RAW_OUTPUT else {}
-video_embeddings = load_video_embeddings(VIDEO_EMBEDDINGS_PATH) if ENABLE_LLM else []
-recent_videos = []
-last_video_played = None
-pending_video_entry = None
-next_allowed_video_time = 0.0
+def _ollama_request(method, timeout, **kwargs):
+    """Keep the display responsive while a bounded local request runs."""
+    result = queue.Queue()
 
-restart_message = (
-    "Congratulations, you just finished pLLMdered_hearts.\n"
-    "The installation will now restart."
-)
+    def request():
+        try:
+            client = ollama.Client(host=OLLAMA_HOST, timeout=timeout)
+            result.put((getattr(client, method)(**kwargs), None))
+        except Exception as exc:
+            result.put((None, exc))
 
-# Unified loop for reading, displaying, and responding.
-while True:  # for step, cmd in enumerate(plundered_hearts_commands):
-    child = _start_game_process()
-    prev_output = ""
-    prev_outputs = []
-    cmd_index = 0
-    prev_cmd = None
-    pending_intro_ack = True
-    last_cleaned = ""
-    LAST_STATUS_BAR = ""
-
+    threading.Thread(target=request, daemon=True).start()
+    deadline = time.monotonic() + timeout
     while True:
         _handle_quit_shortcut()
-
-        raw_output = ""
-        start_time = time.time()
-        timeout_seconds = 4
-        while time.time() - start_time < timeout_seconds:
-            try:
-                chunk = child.read_nonblocking(size=1024, timeout=0.3)
-                if not chunk:
-                    break
-                raw_output += chunk
-                if "***MORE***" in raw_output or  "[Press RETURN or ENTER to continue.]" in raw_output:
-                    raw_output = raw_output.replace("***MORE***", "")
-                    child.sendline("")
-                    continue
-                if ">" in raw_output:
-                    break
-            except pexpect.exceptions.TIMEOUT:
-                break
-
-        if not raw_output and pending_intro_ack:
-            try:
-                child.expect("Press RETURN or ENTER to begin", timeout=1)
-                raw_output = (child.before or "") + (child.after or "")
-            except pexpect.exceptions.TIMEOUT:
-                pass
-
-        if raw_output:
-            cleaned = clean_output(raw_output)
-            last_cleaned = cleaned
-            if renderer and LAST_STATUS_BAR:
-                renderer.set_status_bar(LAST_STATUS_BAR)
-            if renderer:
-                if cleaned:
-                    type_to_renderer(
-                        renderer,
-                        cleaned + "\n",
-                        base_delay=1 / 60.0,
-                        min_delay=1 / 240.0,
-                        max_delay=1 / 30.0,
-                        beep=True,
-                        word_mode=True,
-                    )
-                else:
-                    renderer.render_frame()
-            print(cleaned)
-            if cleaned:
-                prev_outputs.append(cleaned)
-                if len(prev_outputs) > 3:
-                    prev_outputs = prev_outputs[-3:]
-                prev_output = "\n".join(prev_outputs)
-
-        if pending_intro_ack and ("Press RETURN or ENTER to begin" in raw_output or not raw_output):
-            child.sendline("")
-            pending_intro_ack = False
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise TimeoutError(f"Ollama {method} exceeded {timeout:g} seconds.")
+        try:
+            response, error = result.get(timeout=min(0.05, remaining))
+        except queue.Empty:
             continue
+        if error:
+            raise error
+        return response
 
-        # Only proceed if the game shows a prompt and we still have commands to send.
-        if ">" in raw_output and cmd_index < len(plundered_hearts_commands):
-            cmd = enhance_game_command(plundered_hearts_commands[cmd_index]) # Sanitize game command (remove the game's shortcuts)
 
-            if ENABLE_RAW_OUTPUT and prev_output:
-                if update_raw_output(raw_output_map, prev_output + "\nYour next move will be : " + cmd):
-                    write_raw_output(RAW_OUTPUT_PATH, raw_output_map)
-                prev_output = ""
-
-            if ENABLE_LLM:
-                prompt = build_prompt(prev_output, cmd)
-                llm_commentary = None
-                retry = 0
-                status_color = None
-                status_text = None
-                if renderer:
-                    status_color = getattr(renderer, "status_bar_bg", None)
-                    status_text = LAST_STATUS_BAR
-                    if status_text:
-                        renderer.set_status_bar(_status_with_ai_thinking(status_text))
-                    renderer.set_status_bar_color((0, 0, 0))
-                    renderer.render_frame()
-                while llm_commentary is None:
-                    response = ollama.chat(
-                        model=LLM_MODEL,
-                        messages=[{
-                            'role': 'user',
-                            'content': prompt
-                            }]
-                    )
-                    llm_commentary = response.message.content
-                    if retry > 0:
-                        print("Retry #" + str(retry))
-                    retry = retry + 1
-                if renderer and status_color:
-                    renderer.set_status_bar_color(status_color)
-                    if status_text:
-                        renderer.set_status_bar(status_text)
-                    renderer.render_frame()
-                next_video_entry = None
-                if llm_commentary and video_embeddings:
-                    comment_vector, comment_norm = embed_commentary_text(llm_commentary)
-                    next_video_entry = select_best_video(
-                        comment_vector,
-                        comment_norm,
-                        video_embeddings,
-                        recent_videos,
-                        last_video_played,
-                    )
-                ai_thinking = llm_commentary + "\n"
-                print("<AI thinks : '" + ai_thinking + "'>\n")
-                if renderer and llm_commentary:
-                    cleaned_comment = sanitize_renderer_text(llm_commentary).strip()
-                    if cleaned_comment:
-                        display_comment = "\n> " + AI_COMMENT_LABEL + " " + cleaned_comment
-                    else:
-                        display_comment = "\n> " + AI_COMMENT_LABEL
-                    type_to_renderer(
-                        renderer,
-                        display_comment,
-                        base_delay=1 / 60.0,
-                        min_delay=1 / 240.0,
-                        max_delay=1 / 30.0,
-                        beep=False,
-                        word_mode=True,
-                        fg_color=AI_COMMENT_FG,
-                        bg_color=AI_COMMENT_BG,
-                    )
-                    type_to_renderer(
-                        renderer,
-                        "\n",
-                        base_delay=1 / 60.0,
-                        min_delay=1 / 240.0,
-                        max_delay=1 / 30.0,
-                        beep=False,
-                        word_mode=True,
-                    )
-                if next_video_entry:
-                    pending_video_entry = next_video_entry
-                pending_video_entry, next_allowed_video_time, last_video_played = maybe_emit_video_request(
-                    renderer,
-                    pending_video_entry,
-                    recent_videos,
-                    last_video_played,
-                    next_allowed_video_time,
-                    len(video_embeddings),
-                )
-            display_cmd = ">> " + cmd.strip()
-            print(display_cmd + "\n")
-            if renderer:
-                type_to_renderer(renderer, "\n" + display_cmd + "\n", beep=True)
-            child.sendline(" " + cmd)
-            prev_cmd = cmd
-            cmd_index += 1
-
-        pending_video_entry, next_allowed_video_time, last_video_played = maybe_emit_video_request(
-            renderer,
-            pending_video_entry,
-            recent_videos,
-            last_video_played,
-            next_allowed_video_time,
-            len(video_embeddings),
-        )
-
-        if cmd_index >= len(plundered_hearts_commands):
-            break
-
-    print(restart_message)
-    if renderer:
-        type_to_renderer(
-            renderer,
-            "\n" + restart_message + "\n",
-            base_delay=1 / 60.0,
-            min_delay=1 / 240.0,
-            max_delay=1 / 30.0,
-            beep=True,
-            word_mode=True,
-        )
+def generate_commentary(prompt):
     try:
-        child.terminate(force=True)
-    except Exception:
-        pass
+        response = _ollama_request(
+            "chat", LLM_TIMEOUT, model=LLM_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            options={"temperature": 0.3, "num_predict": 256},
+        )
+        return clean_output(response.message.content or "").strip()
+    except Exception as exc:
+        print(f"Commentary unavailable, continuing the game: {exc}")
+        return ""
+
+
+def check_runtime():
+    print(f"Python: {sys.version.split()[0]} ({sys.executable})")
+    print(f"Frotz: {_game_executable()}")
+    if not os.path.isfile(GAME_ROM_PATH):
+        raise FileNotFoundError(f"Game ROM missing: {GAME_ROM_PATH}")
+    if ENABLE_GODOT_VIEWER:
+        if not os.path.isfile(GODOT_VIEWER_PATH):
+            raise FileNotFoundError(f"Godot viewer missing: {GODOT_VIEWER_PATH}")
+        if not os.path.isfile(os.path.splitext(GODOT_VIEWER_PATH)[0] + ".pck"):
+            raise FileNotFoundError("Godot viewer .pck missing from bin/.")
+    if ENABLE_LLM:
+        load_itw_redux()
+        catalog = load_video_embeddings(VIDEO_EMBEDDINGS_PATH)
+        if not catalog:
+            raise RuntimeError(f"Video embeddings missing or empty: {VIDEO_EMBEDDINGS_PATH}")
+        response = _ollama_request("list", 5.0)
+        available = {model.model for model in response.models}
+        for model in (LLM_MODEL, VIDEO_EMBED_MODEL):
+            if model not in available and model + ":latest" not in available:
+                raise RuntimeError(f"Ollama model missing. Run: ollama pull {model}")
+        print(f"Ollama: {OLLAMA_HOST}; {LLM_MODEL}; {VIDEO_EMBED_MODEL}")
+        print(f"Video catalog: {len(catalog)} clips")
+    os.makedirs(LLM_OUT_DIR, exist_ok=True)
+    print(f"Video requests: {LLM_OUT_DIR}")
+
+
+def create_renderer():
+    if not ENABLE_C64_RENDERER:
+        return None
+    display_index = max(0, int(C64_DISPLAY_INDEX) - 1) if C64_DISPLAY_INDEX else None
+    return C64Renderer(
+        font_path=C64_FONT_PATH, fps=50, fullscreen=ENABLE_C64_FULLSCREEN,
+        display_index=display_index, window_size=C64_WINDOW_SIZE,
+        window_position=C64_WINDOW_POSITION, borderless=C64_WINDOW_UNDECORATED,
+        output_scale=C64_OUTPUT_SCALE, fit_to_display=C64_FIT_TO_DISPLAY,
+    )
+
+
+def display_game_output(raw_output):
+    cleaned = clean_output(raw_output)
+    print(cleaned)
+    if renderer:
+        if LAST_STATUS_BAR:
+            renderer.set_status_bar(LAST_STATUS_BAR)
+        type_to_renderer(
+            renderer, cleaned + "\n", base_delay=1 / 60.0,
+            min_delay=1 / 240.0, max_delay=1 / 30.0, word_mode=True,
+        )
+    return cleaned
+
+
+def comment_on_game(previous_output, command):
+    status_color = getattr(renderer, "status_bar_bg", None)
+    status_text = LAST_STATUS_BAR
+    if renderer:
+        renderer.set_status_bar(_status_with_ai_thinking(status_text))
+        renderer.set_status_bar_color((0, 0, 0))
+        renderer.render_frame()
+    try:
+        commentary = generate_commentary(build_prompt(previous_output, command))
+    finally:
+        if renderer:
+            renderer.set_status_bar_color(status_color)
+            renderer.set_status_bar(status_text)
+            renderer.render_frame()
+    if commentary:
+        print(f"<AI thinks: {commentary}>\n")
+        type_to_renderer(
+            renderer, "\n> " + AI_COMMENT_LABEL + " " + sanitize_renderer_text(commentary) + "\n",
+            base_delay=1 / 60.0, min_delay=1 / 240.0, max_delay=1 / 30.0,
+            beep=False, word_mode=True, fg_color=AI_COMMENT_FG, bg_color=AI_COMMENT_BG,
+        )
+    return commentary
+
+
+def play(steps=None, once=False):
+    global child, LAST_STATUS_BAR
+    catalog = load_video_embeddings(VIDEO_EMBEDDINGS_PATH) if ENABLE_LLM else []
+    raw_outputs = load_raw_output(RAW_OUTPUT_PATH) if ENABLE_RAW_OUTPUT else {}
+    recent = []
+    last_video = None
+    pending_video = None
+    next_allowed = 0.0
+    commands_sent = 0
+    while True:
+        child = _start_game_process()
+        previous_outputs = []
+        LAST_STATUS_BAR = ""
+        try:
+            for command in plundered_hearts_commands:
+                cleaned = display_game_output(read_game_output(child))
+                if cleaned:
+                    previous_outputs = (previous_outputs + [cleaned])[-3:]
+                previous_output = "\n".join(previous_outputs)
+                command = enhance_game_command(command)
+                if ENABLE_RAW_OUTPUT and previous_output:
+                    if update_raw_output(raw_outputs, previous_output + "\nYour next move will be : " + command):
+                        write_raw_output(RAW_OUTPUT_PATH, raw_outputs)
+                if ENABLE_LLM:
+                    commentary = comment_on_game(previous_output, command)
+                    if commentary and catalog:
+                        vector, norm = embed_commentary_text(commentary)
+                        entry = select_best_video(vector, norm, catalog, recent, last_video)
+                        if entry:
+                            pending_video = entry
+                pending_video, next_allowed, last_video = maybe_emit_video_request(
+                    renderer, pending_video, recent, last_video, next_allowed, len(catalog),
+                )
+                print(">> " + command + "\n")
+                type_to_renderer(renderer, "\n>> " + command + "\n")
+                child.sendline(command)
+                commands_sent += 1
+                if steps is not None and commands_sent >= steps:
+                    display_game_output(read_game_output(child))
+                    return
+            # Render the response to the final command before restarting.
+            display_game_output(read_game_output(child))
+        finally:
+            _stop_process(child.proc)
+            child = None
+        restart_message = ("Congratulations, you just finished pLLMdered_hearts.\n"
+                           "The installation will now restart.")
+        if once:
+            return
+        print(restart_message)
+        type_to_renderer(renderer, "\n" + restart_message + "\n", word_mode=True)
+
+
+def main(argv=None):
+    global ENABLE_LLM, ENABLE_C64_RENDERER, ENABLE_GODOT_VIEWER, FAST_OUTPUT
+    global renderer, _godot_viewer_process
+    parser = argparse.ArgumentParser(description="Run the pLLMdered Hearts installation.")
+    parser.add_argument("--check", action="store_true", help="Check dependencies without opening windows")
+    parser.add_argument("--no-llm", action="store_true", help="Play without AI commentary")
+    parser.add_argument("--no-renderer", action="store_true", help="Use console output only")
+    parser.add_argument("--no-viewer", action="store_true", help="Do not start the video viewer")
+    parser.add_argument("--fast", action="store_true", help="Display text without typing delays")
+    parser.add_argument("--steps", type=int, help="Exit after this many commands, for diagnostics")
+    parser.add_argument("--once", action="store_true", help="Exit after one complete walkthrough")
+    args = parser.parse_args(argv)
+    if args.steps is not None and args.steps < 1:
+        parser.error("--steps must be positive")
+    ENABLE_LLM = ENABLE_LLM and not args.no_llm
+    ENABLE_C64_RENDERER = ENABLE_C64_RENDERER and not args.no_renderer
+    ENABLE_GODOT_VIEWER = ENABLE_GODOT_VIEWER and not args.no_viewer
+    FAST_OUTPUT = args.fast
+    try:
+        check_runtime()
+        if args.check:
+            print("Runtime ready.")
+            return 0
+        renderer = create_renderer()
+        _godot_viewer_process = _start_godot_viewer()
+        play(steps=args.steps, once=args.once)
+        return 0
+    except KeyboardInterrupt:
+        print("Installation stopped.")
+        return 0
+    except Exception as exc:
+        print(f"Unable to run the installation: {exc}", file=sys.stderr)
+        return 1
+    finally:
+        if child is not None:
+            _stop_process(child.proc)
+        _stop_process(_godot_viewer_process)
+        pygame.quit()
+
+
+if __name__ == "__main__":
+    sys.exit(main())
