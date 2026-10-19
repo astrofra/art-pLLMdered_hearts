@@ -1,0 +1,194 @@
+{
+  "source": "results.json",
+  "source_sha256": "6eca567bc275a8edd8aaaca4d34bfeb41dc4b58d6fc8ff498dd011dad46b8492",
+  "model": "gemma4:e4b",
+  "date": "2026-10-19",
+  "think": true,
+  "num_ctx": 4096,
+  "temperature": 0.3,
+  "budgets": [
+    512,
+    768
+  ],
+  "seeds": [
+    42,
+    43
+  ],
+  "warmups": [
+    {
+      "case_id": 4,
+      "seed": 41,
+      "num_predict": 512,
+      "elapsed_sec": 4.578,
+      "prompt_tokens": 1956,
+      "output_tokens": 512,
+      "done_reason": "length",
+      "thinking_characters": 2133,
+      "commentary": ""
+    },
+    {
+      "case_id": 4,
+      "seed": 41,
+      "num_predict": 768,
+      "elapsed_sec": 6.453,
+      "prompt_tokens": 1956,
+      "output_tokens": 701,
+      "done_reason": "stop",
+      "thinking_characters": 2763,
+      "commentary": "The transition from the chaotic deck to the confined Captain's Quarters emphasizes a sudden narrative compression. This focus on intimate detail within a limited space mirrors how technical constraints shaped the design of the game."
+    }
+  ],
+  "results": [
+    {
+      "case_id": 4,
+      "seed": 42,
+      "num_predict": 512,
+      "elapsed_sec": 4.594,
+      "prompt_tokens": 1956,
+      "output_tokens": 512,
+      "done_reason": "length",
+      "thinking_characters": 2061,
+      "commentary": ""
+    },
+    {
+      "case_id": 4,
+      "seed": 42,
+      "num_predict": 768,
+      "elapsed_sec": 7.078,
+      "prompt_tokens": 1956,
+      "output_tokens": 768,
+      "done_reason": "length",
+      "thinking_characters": 3245,
+      "commentary": ""
+    },
+    {
+      "case_id": 5,
+      "seed": 42,
+      "num_predict": 768,
+      "elapsed_sec": 6.953,
+      "prompt_tokens": 1683,
+      "output_tokens": 768,
+      "done_reason": "length",
+      "thinking_characters": 3261,
+      "commentary": ""
+    },
+    {
+      "case_id": 5,
+      "seed": 42,
+      "num_predict": 512,
+      "elapsed_sec": 4.438,
+      "prompt_tokens": 1683,
+      "output_tokens": 512,
+      "done_reason": "length",
+      "thinking_characters": 2094,
+      "commentary": ""
+    },
+    {
+      "case_id": 7,
+      "seed": 42,
+      "num_predict": 768,
+      "elapsed_sec": 6.171,
+      "prompt_tokens": 1649,
+      "output_tokens": 659,
+      "done_reason": "stop",
+      "thinking_characters": 2581,
+      "commentary": "The Captain's hurried departure and the focus on the broken brooch clasp emphasize the immediate, tangible flaws within the scene. This attention to small, imperfect details reflects how technical constraints shaped the design of Plundered Hearts, forcing the narrative to work around limitations."
+    },
+    {
+      "case_id": 7,
+      "seed": 42,
+      "num_predict": 512,
+      "elapsed_sec": 4.672,
+      "prompt_tokens": 1649,
+      "output_tokens": 512,
+      "done_reason": "length",
+      "thinking_characters": 2159,
+      "commentary": ""
+    },
+    {
+      "case_id": 4,
+      "seed": 43,
+      "num_predict": 768,
+      "elapsed_sec": 7.094,
+      "prompt_tokens": 1956,
+      "output_tokens": 768,
+      "done_reason": "length",
+      "thinking_characters": 3234,
+      "commentary": ""
+    },
+    {
+      "case_id": 4,
+      "seed": 43,
+      "num_predict": 512,
+      "elapsed_sec": 4.516,
+      "prompt_tokens": 1956,
+      "output_tokens": 512,
+      "done_reason": "length",
+      "thinking_characters": 2050,
+      "commentary": ""
+    },
+    {
+      "case_id": 5,
+      "seed": 43,
+      "num_predict": 512,
+      "elapsed_sec": 4.734,
+      "prompt_tokens": 1683,
+      "output_tokens": 512,
+      "done_reason": "length",
+      "thinking_characters": 2142,
+      "commentary": ""
+    },
+    {
+      "case_id": 5,
+      "seed": 43,
+      "num_predict": 768,
+      "elapsed_sec": 7.203,
+      "prompt_tokens": 1683,
+      "output_tokens": 768,
+      "done_reason": "length",
+      "thinking_characters": 3278,
+      "commentary": ""
+    },
+    {
+      "case_id": 7,
+      "seed": 43,
+      "num_predict": 512,
+      "elapsed_sec": 4.594,
+      "prompt_tokens": 1649,
+      "output_tokens": 512,
+      "done_reason": "length",
+      "thinking_characters": 2115,
+      "commentary": ""
+    },
+    {
+      "case_id": 7,
+      "seed": 43,
+      "num_predict": 768,
+      "elapsed_sec": 6.828,
+      "prompt_tokens": 1649,
+      "output_tokens": 768,
+      "done_reason": "length",
+      "thinking_characters": 3176,
+      "commentary": "The captain's hurried departure and the presentation of the broken brooch mirror the technical imperfections"
+    }
+  ],
+  "protocol": "Same three frozen prompts and fixed previous comments as the 2048-token comparison. Two seeds, alternate budget order by case and repeat. Warmups excluded. No viewer requests.",
+  "summary": [
+    {
+      "num_predict": 512,
+      "samples": 6,
+      "complete_nonempty": 0,
+      "empty": 6,
+      "truncated": 6,
+      "median_elapsed_sec": 4.594
+    },
+    {
+      "num_predict": 768,
+      "samples": 6,
+      "complete_nonempty": 1,
+      "empty": 4,
+      "truncated": 5,
+      "median_elapsed_sec": 7.016
+    }
+  ]
+}

@@ -19,6 +19,7 @@ Guidelines for maintaining the installation that plays Plundered Hearts while dr
 - Game output is cleaned by `clean_output()` and rendered through the C64 renderer when enabled.
 - Complete game outputs and executed commands accumulate until the history exceeds `COMMENTARY_MIN_WORDS` (default 150). Commentary runs only at a game prompt, after rendering the whole output.
 - Each successful LLM comment is displayed immediately, including during an interview, and clears the game-history buffer. Empty responses keep the buffer. History and the pending comment survive walkthrough restarts.
+- The prompt includes only the two most recent successfully displayed comments as anti-repetition context, separate from the game history. This bounded memory survives walkthrough restarts; empty responses never enter it.
 - Only after the current interview's estimated duration plus `VIDEO_END_MARGIN_SEC` (default 3) has elapsed is the latest pending comment embedded with `VIDEO_EMBED_MODEL` and matched by cosine similarity against `assets/abriggs-itw-embeddings.json`.
 - The chosen interview `filename` is written to a timestamped file in `llm_out/`.
 - A cooldown uses `duration_sec` to avoid queuing a new video while the current one is still expected to play. Godot sends no playback feedback to Python.
@@ -34,11 +35,13 @@ Guidelines for maintaining the installation that plays Plundered Hearts while dr
   - `LLM_OUT_OVERRIDE` can force an absolute watchfolder path for exported builds.
 
 ## LLM usage
-- Commentary uses `LLM_MODEL` (default `gemma4:e4b`) via `ollama.chat`, with extended thinking disabled by default for Gemma 4 (`LLM_THINK=0`).
+- Commentary uses `LLM_MODEL` (default `gemma4:e4b`) via `ollama.chat`, with extended thinking enabled by default for Gemma 4 (`LLM_THINK=1`). Set `LLM_THINK=0` to disable it.
 - Video matching uses embeddings via `ollama.embeddings`.
 - Keep prompts short and deterministic; avoid multi-turn chains.
 - Guard against missing or slow responses to avoid blocking the loop.
-- `LLM_NUM_CTX` defaults to 4096 and `LLM_NUM_PREDICT` to 256. `COMMENTARY_LOG_PATH` optionally logs full histories and token metrics as JSONL.
+- `LLM_NUM_CTX` defaults to 4096 and `LLM_NUM_PREDICT` to 2560, shared between hidden reasoning and the visible response.
+- Commentary attempts are logged by default to one `llm_out/commentary_YYYYMMDD_HHMMSS_PID.jsonl` per process. Records include full game histories, the exact prompt, previous comments, model settings, timings and token counts; hidden reasoning text is not logged. The viewer only reads `.txt` video requests. `COMMENTARY_LOG_PATH` overrides the log file; `COMMENTARY_LOG_ENABLED=0` disables logging. `LLM_OUT_OVERRIDE` also moves the default log.
+- Commentary remains two sentences, with `COMMENTARY_WORD_LIMIT` defaulting to 90 words in total.
 
 ## Subtitle and embedding tools
 - `src/embed_vtt.py` builds `abriggs-itw-embeddings.json` from subtitle `.txt` files and adds `sequence_title`.

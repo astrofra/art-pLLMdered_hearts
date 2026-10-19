@@ -1,0 +1,275 @@
+{
+  "source": "Frozen prompts from cases 4, 5 and 7 (zero-based) of an eight-comment live run.",
+  "options": {
+    "temperature": 0.3,
+    "num_ctx": 4096,
+    "num_predict": 2048
+  },
+  "model": "gemma4:e4b",
+  "cases": [
+    {
+      "case_id": 4,
+      "recent_comments": [
+        "The sudden, violent intrusion of Andy Crulley mirrors the abrupt shifts in Infocom's corporate atmosphere. The encounter with the Falcon, a figure of implied power, suggests a narrative where external forces dictate the protagonist's immediate reality, much like the pressure of market demands.",
+        "The captain's immediate offer of protection, despite his reputation, mirrors the precarious alliances described in Briggs's narrative. This reliance on external figures for safety echoes the way the game's structure forces reliance on specific narrative elements to proceed."
+      ],
+      "prompt": "You are a quiet observer of an installation replaying Plundered Hearts,\na 1987 interactive fiction by Amy Briggs. The game follows a fixed walkthrough.\nHere is an excerpt from Amy Briggs recalling her years at Infocom:\nAmy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.\nBriggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.\nHer move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.\nEncouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.\nBriggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.\nFrom a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.\nCommercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.\nAfter Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.\nLooking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.\n\nYOUR LAST COMMENTS (oldest first, for avoiding repetition only):\n1. The sudden, violent intrusion of Andy Crulley mirrors the abrupt shifts in Infocom's corporate atmosphere. The encounter with the Falcon, a figure of implied power, suggests a narrative where external forces dictate the protagonist's immediate reality, much like the pressure of market demands.\n2. The captain's immediate offer of protection, despite his reputation, mirrors the precarious alliances described in Briggs's narrative. This reliance on external figures for safety echoes the way the game's structure forces reliance on specific narrative elements to proceed.\nEND OF PREVIOUS COMMENTS\nThese are your own earlier reactions, not evidence about the game or Briggs.\nDo not repeat or paraphrase their observations, analogies, conclusions, or openings.\nChoose a fresh detail or angle supported by the new game events.\nDo not reuse the same aspect of Briggs's testimony as either previous comment.\nIf no fresh connection is supported, stay with a new observation about the game.\n\nRead the chronological game history accumulated since your previous comment.\nChoose one concrete event or change, preferably from the latest developments.\nMake a modest, specific association with Briggs's testimony only when it fits.\nOtherwise, stay with the game. Her testimony is context, not a checklist of themes.\nDo not invent biographical facts or causes for design choices.\nYou are neither Amy Briggs nor a game character, and you do not choose the moves.\nWrite TWO sentences, up to 90 words in total, in neutral English.\nYou have room to develop one concrete observation rather than just name a theme.\nUse plain text only, NO MARKDOWN, as a fleeting inner association.\n\nGAME HISTORY (oldest first):\n>> FALCON, YES\nYou nod tentatively.\n   He chuckles. \"Brave lady, to trust a stranger -- and a pirate. Who\nknows, perhaps I forged your father's signature? Keep by my side as we go\nto my ship -- few sailors respect a lady's dignity.\" He helps you through\nthe door.\n\nDeck\n   The deck is an avalanche of noise and blood. Lit by roaring fires,\nsilhouetted forms crash swords, dancing around the screaming wounded.\n   Out of the smoke staggers Davis, tugging a bloodied knife from the back\nof a pirate. Davis's eyes gleam white from a face blackened and bloody, his\nlips dark red as if he has been drinking blood. He turns to face you.\n\n>\n>> EXAMINE DAVIS\nDavis is ugly with fear.\n   Davis leaps across the deck to your side, \"Free me or she dies!\" he\nyells, jabbing a knife up to your throat. In one smooth motion, Captain\nJamison draws his rapier, pulls you free and stabs. Davis slumps into a\nbloody heap.\n   Swooning, you fall into the Falcon's arms. You are dimly aware of being\ncarried to the other ship, down a short flight of stairs, and laid gently\non a soft bed. When you gather strength to look around, the Falcon has left\nyou in peace.\n   You remain confined to this room, a large cupboard blocking the door.\nMeals are brought by a peg-legged old man and eaten in silence. Of your\nhandsome rescuer you see nothing. Slowly the days pass.\n\nTWO DAYS LATER...\n\n   You blear awake from a bored nap, focusing on something shiny. You\ndiscern it to be a new ring, on a strong hand in the act of tying a ribbon\nonto a rapier.\n   The man with the rapier and the ring turns, \"Sorry, I tried not to wake\nyou.\" You sit up as if the bed had caught fire, for this is the Falcon,\nchanged from his rags to a finery all red velvet and white lace -- and in\nyour presence!\n\nCaptain's Quarters, on the bed\n\n   You are in the captain's quarters of the Helena Louise, where you have\nbeen trapped these past days since your \"rescue\" from the Lafond Deux. The\nroom has a masculine air, with ebony panelling, a large messy table, and a\nrumpled bed (upon which you lie). A curtain masks the forward exit and\ngilded woodwork decorates the sill of the tall window looking aft.\n\n>\nEND OF GAME HISTORY\nNext scripted command (not yet executed): EXAMINE RING",
+      "original_comment": "The forced confinement in the captain's quarters, despite the initial drama, reflects the constraints of the game's structure. This enforced stillness contrasts with Briggs's description of how memory and lasting impression can persist even when a project feels technically constrained or commercially underwhelming."
+    },
+    {
+      "case_id": 5,
+      "recent_comments": [
+        "The captain's immediate offer of protection, despite his reputation, mirrors the precarious alliances described in Briggs's narrative. This reliance on external figures for safety echoes the way the game's structure forces reliance on specific narrative elements to proceed.",
+        "The forced confinement in the captain's quarters, despite the initial drama, reflects the constraints of the game's structure. This enforced stillness contrasts with Briggs's description of how memory and lasting impression can persist even when a project feels technically constrained or commercially underwhelming."
+      ],
+      "prompt": "You are a quiet observer of an installation replaying Plundered Hearts,\na 1987 interactive fiction by Amy Briggs. The game follows a fixed walkthrough.\nHere is an excerpt from Amy Briggs recalling her years at Infocom:\nAmy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.\nBriggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.\nHer move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.\nEncouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.\nBriggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.\nFrom a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.\nCommercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.\nAfter Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.\nLooking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.\n\nYOUR LAST COMMENTS (oldest first, for avoiding repetition only):\n1. The captain's immediate offer of protection, despite his reputation, mirrors the precarious alliances described in Briggs's narrative. This reliance on external figures for safety echoes the way the game's structure forces reliance on specific narrative elements to proceed.\n2. The forced confinement in the captain's quarters, despite the initial drama, reflects the constraints of the game's structure. This enforced stillness contrasts with Briggs's description of how memory and lasting impression can persist even when a project feels technically constrained or commercially underwhelming.\nEND OF PREVIOUS COMMENTS\nThese are your own earlier reactions, not evidence about the game or Briggs.\nDo not repeat or paraphrase their observations, analogies, conclusions, or openings.\nChoose a fresh detail or angle supported by the new game events.\nDo not reuse the same aspect of Briggs's testimony as either previous comment.\nIf no fresh connection is supported, stay with a new observation about the game.\n\nRead the chronological game history accumulated since your previous comment.\nChoose one concrete event or change, preferably from the latest developments.\nMake a modest, specific association with Briggs's testimony only when it fits.\nOtherwise, stay with the game. Her testimony is context, not a checklist of themes.\nDo not invent biographical facts or causes for design choices.\nYou are neither Amy Briggs nor a game character, and you do not choose the moves.\nWrite TWO sentences, up to 90 words in total, in neutral English.\nYou have room to develop one concrete observation rather than just name a theme.\nUse plain text only, NO MARKDOWN, as a fleeting inner association.\n\nGAME HISTORY (oldest first):\n>> EXAMINE RING\nMade of copper, the new ring has a curious design of gargoyles, curled\ntongues extended, on its flat face, with \"Sal Sapit Omnia\" engraved at the\nbottom.\n\n>\n>> EXAMINE FALCON\nJamison is finely dressed, in red velvet coat and full breeches, with a\nlong gold embroidered vest and waterfalls of white lace at his neck, wrists\nand boottops. His rapier is bedecked with a fringed gold ribbon. He wears\nno wig, his unpowdered hair tied neatly at the back of his neck.\n   \"We have anchored off St. Sinistra,\" says Captain Jamison, \"and I must\nlook like a guest at Lafond's dance tonight. I will find and free your\nfather, and then finally wreak my revenge on Lafond.\" He half draws his\nrapier from its scabbard.\n\n>\n>> WAIT\nTime passes...\n   \"I am sorry you have been confined down here, but I don't trust my\nlonely crew with such beauty. Crulley isn't the only man aboard with few\nprinciples.\" He smiles at you, eyes lingering, and takes your hand. You\nfeel your color rising. \"If anything goes wrong, turn to Cookie. He is\nquite deaf, but capable. He'll see you through.\"\n\n>\nEND OF GAME HISTORY\nNext scripted command (not yet executed): WAIT",
+      "original_comment": "The captain's assurance of protection, despite his questionable character, echoes the way the game's structure forces reliance on specific narrative elements to proceed. This enforced stillness in the captain's quarters contrasts with Briggs's description of how memory and lasting impression can persist even when a project feels technically constrained or commercially underwhelming."
+    },
+    {
+      "case_id": 7,
+      "recent_comments": [
+        "The captain's assurance of protection, despite his questionable character, echoes the way the game's structure forces reliance on specific narrative elements to proceed. This enforced stillness in the captain's quarters contrasts with Briggs's description of how memory and lasting impression can persist even when a project feels technically constrained or commercially underwhelming.",
+        "The captain's intense recounting of past violence against his family mirrors the narrative weight Briggs placed on romance as a legitimate, weighty genre. This personal history provides a stark contrast to the commercial disappointment the game faced despite its narrative ambition."
+      ],
+      "prompt": "You are a quiet observer of an installation replaying Plundered Hearts,\na 1987 interactive fiction by Amy Briggs. The game follows a fixed walkthrough.\nHere is an excerpt from Amy Briggs recalling her years at Infocom:\nAmy Briggs recounts her experience at Infocom as a mixture of chance, creative intensity, and gradual disillusionment. She entered the company almost accidentally in the early 1980s, after breaking up with a boyfriend and impulsively deciding to move to Massachusetts. Discovering a job ad for game testers at Infocom, she applied, was quickly hired, and found herself inside a company that felt unlike any workplace she had known. At the time, she had little sense of how unusual Infocom was, as it was her first job out of college.\nBriggs began as a tester, part of a group closely connected to the implementers (“Imps”), the writers-programmers responsible for Infocom’s games. Testing was not merely about finding crashes or bugs, but about identifying where a fictional world broke down—where player expectations exceeded what the game could reasonably implement. This role gave her an unusually deep understanding of how text adventures were built, from early, broken alpha versions to finished works. That proximity made the transition from tester to implementer feel natural rather than aspirational.\nHer move into game creation came at a precarious moment in Infocom’s history. The company was expanding, relocating to a sleek new office, and betting heavily on Cornerstone, a business software product meant to transform Infocom into a more “serious” company. Briggs recalls being swept up in the excitement of this shift, even though it ultimately proved disastrous. As Cornerstone failed and Infocom was acquired by Activision, layoffs followed and the internal atmosphere changed. The free, lightly managed creative culture that had allowed the games group to flourish began to erode under pressure and fear.\nEncouraged by Steve Meretzky, Briggs decided to apply for an implementer position. She was told bluntly that opportunities were rare and that if she wanted the job, she had to act immediately. Her test game was deliberately strange and abstract, avoiding realistic settings that might expose weaknesses in her implementation skills. She was hired, becoming one of the few women to design an Infocom game. Her first project was Plundered Hearts, a romantic, swashbuckling adventure written from a female perspective.\nBriggs emphasizes that Plundered Hearts was not imposed on her by management. Writing romance aligned with her own interests and her long-standing desire to explore that genre. At the time, “games for girls” were often condescending or trivial, and she saw romance as a legitimate narrative form rather than a marketing gimmick. Still, the game’s positioning as “a woman writing for women” became central to its reception, sometimes in ways she found frustrating. Some critics accused the game of being anti-feminist because it constrained the protagonist’s actions, while others dismissed it for not conforming to expectations of empowerment.\nFrom a technical perspective, Plundered Hearts was ambitious and difficult. Briggs completed it early, then spent months cutting content to fit the memory constraints of platforms like the Commodore 64. Space limitations shaped design decisions, including frequent player deaths, which served as a crude but effective way to simplify puzzle design. She also recalls lingering embarrassment over bugs that slipped into the final release, highlighting how even experienced testing could miss obvious player actions.\nCommercially, the game underperformed by Infocom’s standards, selling roughly half of what an average title sold at the time. Internally, this was treated as a disappointment, though Briggs stresses that nearly every game not matching Hitchhiker’s Guide to the Galaxy was judged similarly. Years later, however, she was surprised and moved to discover that Plundered Hearts had left a lasting impression on players, particularly those who encountered it indirectly through siblings. What she had experienced as a failed experiment was remembered by others as meaningful and formative.\nAfter Plundered Hearts, Briggs struggled to find alignment with management about future projects. She proposed ideas ranging from vampire fiction inspired by Anne Rice to Doctor Who, but none gained traction. Increasingly, Infocom’s leadership demanded guaranteed commercial success without offering clear creative direction. This contradiction, combined with the broader panic following Cornerstone’s collapse, made continued work untenable. She ultimately left Infocom, convinced that what had made the company great—creative neglect and trust—had been replaced by micromanagement and fear.\nLooking back, Briggs describes Infocom as a brief “Camelot”: a rare moment when individual vision, technical constraint, and collaborative support aligned. She remains skeptical that such conditions can easily be recreated, particularly in an industry now dominated by large teams, heavy budgets, and cinematic expectations. For her, text adventures were closer to books than films, and Infocom’s legacy lies in that unique blend of literature and play.\n\nYOUR LAST COMMENTS (oldest first, for avoiding repetition only):\n1. The captain's assurance of protection, despite his questionable character, echoes the way the game's structure forces reliance on specific narrative elements to proceed. This enforced stillness in the captain's quarters contrasts with Briggs's description of how memory and lasting impression can persist even when a project feels technically constrained or commercially underwhelming.\n2. The captain's intense recounting of past violence against his family mirrors the narrative weight Briggs placed on romance as a legitimate, weighty genre. This personal history provides a stark contrast to the commercial disappointment the game faced despite its narrative ambition.\nEND OF PREVIOUS COMMENTS\nThese are your own earlier reactions, not evidence about the game or Briggs.\nDo not repeat or paraphrase their observations, analogies, conclusions, or openings.\nChoose a fresh detail or angle supported by the new game events.\nDo not reuse the same aspect of Briggs's testimony as either previous comment.\nIf no fresh connection is supported, stay with a new observation about the game.\n\nRead the chronological game history accumulated since your previous comment.\nChoose one concrete event or change, preferably from the latest developments.\nMake a modest, specific association with Briggs's testimony only when it fits.\nOtherwise, stay with the game. Her testimony is context, not a checklist of themes.\nDo not invent biographical facts or causes for design choices.\nYou are neither Amy Briggs nor a game character, and you do not choose the moves.\nWrite TWO sentences, up to 90 words in total, in neutral English.\nYou have room to develop one concrete observation rather than just name a theme.\nUse plain text only, NO MARKDOWN, as a fleeting inner association.\n\nGAME HISTORY (oldest first):\n>> OPEN CURTAIN\nYou pull the cloth aside momentarily. Behind it, a large cupboard mostly\nblocks the doorway.\n\n>\n>> EXAMINE CUPBOARD\nYou can see only the back of the large cupboard. You might be able to\nsqueeze past it.\n\n>\n>> EXAMINE TABLE\nYou have no need for that, milady.\n\n>\n>> EXAMINE BED\nSomeone appears to have tumbled out of it in a hurry.\n\n>\n>> WAIT\nTime passes...\n   You hear the large cupboard scrape, and turn to see Captain Jamison.\n\"Hello! I came down to give you this -- my allotment from the coffer.\" He\nnods at the box in his arms.\n   Jamison starts to pin a jewelled brooch on your clothes, but, \"Devil\ntake it, the clasp is broken. I'll have it repaired.\" He folds the pretty\nthing into your hand. \"And I meant to reassure you that if the men suddenly\nabandon ship, they are off to help me. Rodney will stay behind with you.\"\nHe drops the coffer on the floor, smiling in farewell, and walks swiftly\naway.\n\n>\nEND OF GAME HISTORY\nNext scripted command (not yet executed): EXAMINE BROOCH",
+      "original_comment": "The captain's swift departure after offering assurance mirrors the pressure Briggs felt from management demanding immediate results. His hurried exit contrasts with the slow, deliberate process of building a narrative that defied easy commercial categorization."
+    }
+  ],
+  "warmups": [
+    {
+      "think": false,
+      "seed": 42,
+      "elapsed_sec": 1.344,
+      "prompt_tokens": 1653,
+      "output_tokens": 35,
+      "done_reason": "stop",
+      "thinking_characters": 0,
+      "commentary": "The cabin feels oppressively small, a stark contrast to the sweeping romance described in the opening exchange. This cramped setting reflects the memory constraints Briggs faced while designing the game.",
+      "copied_sentence": false,
+      "longest_shared_words": 0
+    },
+    {
+      "think": true,
+      "seed": 42,
+      "elapsed_sec": 7.672,
+      "prompt_tokens": 1660,
+      "output_tokens": 782,
+      "done_reason": "stop",
+      "thinking_characters": 3106,
+      "commentary": "The cabin is described as emptied, suggesting a sudden and hurried displacement for the protagonist. This initial confinement on the bed contrasts with the romantic, swashbuckling adventure Briggs intended for the narrative.",
+      "copied_sentence": false,
+      "longest_shared_words": 0
+    }
+  ],
+  "results": [
+    {
+      "think": false,
+      "seed": 42,
+      "elapsed_sec": 1.266,
+      "prompt_tokens": 1949,
+      "output_tokens": 38,
+      "done_reason": "stop",
+      "thinking_characters": 0,
+      "commentary": "The forced confinement in the captain's quarters, despite the apparent rescue, mirrors the narrative constraints Briggs mentioned. This enforced stillness contrasts sharply with the violent action of the initial deck scene.",
+      "copied_sentence": false,
+      "longest_shared_words": 2,
+      "case_id": 4
+    },
+    {
+      "think": true,
+      "seed": 42,
+      "elapsed_sec": 7.625,
+      "prompt_tokens": 1956,
+      "output_tokens": 770,
+      "done_reason": "stop",
+      "thinking_characters": 3003,
+      "commentary": "The contrast between the bloody chaos of the deck and the Falcon's refined quarters emphasizes the genre's focus on contained intimacy. His sudden appearance in fine attire, meticulously tending to his rapier, suggests a deliberate performance of romance within the narrative's constraints.",
+      "copied_sentence": false,
+      "longest_shared_words": 2,
+      "case_id": 4
+    },
+    {
+      "think": true,
+      "seed": 42,
+      "elapsed_sec": 9.609,
+      "prompt_tokens": 1683,
+      "output_tokens": 990,
+      "done_reason": "stop",
+      "thinking_characters": 4243,
+      "commentary": "The mention of Cookie, a deaf but capable figure, introduces a specific, limited contingency. This reliance on a designated secondary character highlights how the narrative structure must manage player agency within tight design parameters.",
+      "copied_sentence": false,
+      "longest_shared_words": 3,
+      "case_id": 5
+    },
+    {
+      "think": false,
+      "seed": 42,
+      "elapsed_sec": 1.188,
+      "prompt_tokens": 1676,
+      "output_tokens": 50,
+      "done_reason": "stop",
+      "thinking_characters": 0,
+      "commentary": "The captain's insistence on keeping the protagonist confined, despite his outward display of chivalry, mirrors the narrative constraints Briggs faced. This controlled environment echoes the way memory and lasting impression can persist even when a project feels technically constrained or commercially underwhelming.",
+      "copied_sentence": false,
+      "longest_shared_words": 16,
+      "case_id": 5
+    },
+    {
+      "think": false,
+      "seed": 42,
+      "elapsed_sec": 1.297,
+      "prompt_tokens": 1642,
+      "output_tokens": 57,
+      "done_reason": "stop",
+      "thinking_characters": 0,
+      "commentary": "The captain's swift departure, leaving the protagonist with the brooch and his assurance, mirrors the way content had to be ruthlessly cut in Plundered Hearts to meet memory constraints. This forced simplification of the world mirrors the pressure to make every narrative beat count when space is limited.",
+      "copied_sentence": false,
+      "longest_shared_words": 2,
+      "case_id": 7
+    },
+    {
+      "think": true,
+      "seed": 42,
+      "elapsed_sec": 7.484,
+      "prompt_tokens": 1649,
+      "output_tokens": 769,
+      "done_reason": "stop",
+      "thinking_characters": 3037,
+      "commentary": "The cramped setting and the captain's swift departure create a sense of immediate, fragile privacy. This feeling of limited space reflects the memory constraints that shaped the game's design, forcing narrative focus onto small, crucial moments.",
+      "copied_sentence": false,
+      "longest_shared_words": 2,
+      "case_id": 7
+    },
+    {
+      "think": true,
+      "seed": 43,
+      "elapsed_sec": 6.282,
+      "prompt_tokens": 1956,
+      "output_tokens": 699,
+      "done_reason": "stop",
+      "thinking_characters": 2698,
+      "commentary": "The transition from the violent chaos of the deck to the confined captain's quarters emphasizes the limitations placed upon the protagonist. This narrative constraint echoes Briggs's reflection on how the game's romantic focus was sometimes criticized for limiting the heroine's agency.",
+      "copied_sentence": false,
+      "longest_shared_words": 2,
+      "case_id": 4
+    },
+    {
+      "think": false,
+      "seed": 43,
+      "elapsed_sec": 1.343,
+      "prompt_tokens": 1949,
+      "output_tokens": 48,
+      "done_reason": "stop",
+      "thinking_characters": 0,
+      "commentary": "The forced confinement in the captain's quarters, despite the initial violent rescue, echoes the narrative constraints Briggs mentioned. The slow reveal of the Falcon's true appearance suggests a deliberate pacing, perhaps mirroring how memory shapes a fragmented experience.",
+      "copied_sentence": false,
+      "longest_shared_words": 2,
+      "case_id": 4
+    },
+    {
+      "think": false,
+      "seed": 43,
+      "elapsed_sec": 1.141,
+      "prompt_tokens": 1676,
+      "output_tokens": 47,
+      "done_reason": "stop",
+      "thinking_characters": 0,
+      "commentary": "The captain's assurance of protection, despite his questionable character, mirrors the narrative's reliance on specific figures to navigate the plot. This dynamic echoes the way memory can persist in a work that felt technically constrained during its creation.",
+      "copied_sentence": false,
+      "longest_shared_words": 4,
+      "case_id": 5
+    },
+    {
+      "think": true,
+      "seed": 43,
+      "elapsed_sec": 9.438,
+      "prompt_tokens": 1683,
+      "output_tokens": 1009,
+      "done_reason": "stop",
+      "thinking_characters": 4096,
+      "commentary": "The detailed description of Captain Jamison's attire and vengeful intent establishes a high-stakes swashbuckling backdrop. This drama is immediately contrasted by the enforced intimacy of the confined quarters, reflecting the genre's complex blend of action and personal vulnerability.",
+      "copied_sentence": false,
+      "longest_shared_words": 2,
+      "case_id": 5
+    },
+    {
+      "think": true,
+      "seed": 43,
+      "elapsed_sec": 8.125,
+      "prompt_tokens": 1649,
+      "output_tokens": 898,
+      "done_reason": "stop",
+      "thinking_characters": 3524,
+      "commentary": "The Captain's momentary struggle with the broken brooch clasp highlights the small, imperfect realities of the setting. This mirrors Briggs's note that even experienced testing could miss obvious flaws that slipped into the final release, demonstrating how constraints affect every level of detail.",
+      "copied_sentence": false,
+      "longest_shared_words": 2,
+      "case_id": 7
+    },
+    {
+      "think": false,
+      "seed": 43,
+      "elapsed_sec": 1.438,
+      "prompt_tokens": 1642,
+      "output_tokens": 63,
+      "done_reason": "stop",
+      "thinking_characters": 0,
+      "commentary": "The captain's hurried departure, leaving the protagonist with a broken item and a promise of aid, mirrors the tension Briggs felt when her creative proposals were dismissed by management. This sequence demonstrates how narrative necessities, like the captain's assurance, are woven into the structure, much like memory persists despite commercial failure.",
+      "copied_sentence": false,
+      "longest_shared_words": 3,
+      "case_id": 7
+    }
+  ],
+  "protocol": {
+    "date": "2026-10-19",
+    "seeds": [
+      42,
+      43
+    ],
+    "warmups_excluded": true,
+    "order": "False/True when (repeat_index + case_id) is even; True/False otherwise.",
+    "options": {
+      "temperature": 0.3,
+      "num_ctx": 4096,
+      "num_predict": 2048
+    },
+    "game_word_threshold": 150,
+    "commentary_word_limit": 90,
+    "recent_comment_limit": 2,
+    "interview_summary": "assets/abriggs-itw-750-words.txt",
+    "scope": "Three selected problem cases with fixed previous comments, not independent full walkthroughs.",
+    "production_settings_changed": false,
+    "metrics": {
+      "longest_shared_words": "Longest contiguous normalized word sequence shared with either prior comment (difflib.SequenceMatcher, autojunk=False).",
+      "copied_sentence": "At least one complete normalized sentence of six or more words is identical to a sentence in either prior comment.",
+      "output_tokens": "Includes hidden reasoning and final answer tokens.",
+      "elapsed_sec": "Wall time of the local Ollama request."
+    }
+  },
+  "summary": [
+    {
+      "think": false,
+      "samples": 6,
+      "median_elapsed_sec": 1.281,
+      "max_shared_words": 16,
+      "copied_sentences": 0,
+      "truncated": 0,
+      "max_output_tokens": 63
+    },
+    {
+      "think": true,
+      "samples": 6,
+      "median_elapsed_sec": 7.875,
+      "max_shared_words": 3,
+      "copied_sentences": 0,
+      "truncated": 0,
+      "max_output_tokens": 1009
+    }
+  ],
+  "review": [
+    "Thinking selected more specific new details in several samples (Cookie, the broken brooch clasp).",
+    "One non-thinking response reused 16 consecutive normalized words from a previous comment. Thinking responses shared at most three words with the fixed previous comments.",
+    "Both modes still made strained analogies and revisited constraints. Avoiding copied wording is not proof of a fresh interpretation.",
+    "These selected cases and two seeds are exploratory evidence, not a general quality benchmark.",
+    "The experiment used 2048 output tokens in both modes to avoid truncating reasoning. Production remains non-thinking with a 256-token output budget."
+  ]
+}

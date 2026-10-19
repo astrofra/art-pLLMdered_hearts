@@ -147,8 +147,8 @@ class CommentaryTimingTests(unittest.TestCase):
             events.append(("display", text))
             return text
 
-        def comment(history, command):
-            events.append(("comment", now[0], history, command))
+        def comment(history, command, recent_comments=None):
+            events.append(("comment", now[0], history, command, tuple(recent_comments or ())))
             return next(comments)
 
         def embed(text):
@@ -213,6 +213,8 @@ class CommentaryTimingTests(unittest.TestCase):
             iter(["First comment.", "Second comment.", "Last comment."]), ["one"], steps=3, once=False)
         comments = [event for event in events if event[0] == "comment"]
         self.assertEqual([event[1] for event in comments], [0, 2, 6])
+        self.assertEqual([event[4] for event in comments],
+                         [(), ("First comment.",), ("First comment.", "Second comment.")])
         self.assertEqual([event for event in events if event[0] == "embed"],
                          [("embed", 0, "First comment."), ("embed", 6, "Last comment.")])
         for text in ["first ending text", "second opening text", "[The game has restarted from the beginning.]"]:
@@ -236,6 +238,16 @@ class CommentaryTimingTests(unittest.TestCase):
         self.assertEqual(len(comments), 1)
         self.assertEqual(comments[0][1], 1)
         self.assertTrue(comments[0][2].endswith("the next output finishes here"))
+
+    def test_remembers_only_the_last_two_successful_comments(self):
+        events = self.run_game(
+            [(index, "a complete game output") for index in range(6)],
+            iter(["First.", "Second.", "", "Third.", "Fourth."]),
+            ["one", "two", "three", "four", "five"])
+        comments = [event for event in events if event[0] == "comment"]
+        self.assertEqual([event[4] for event in comments],
+                         [(), ("First.",), ("First.", "Second."),
+                          ("First.", "Second."), ("Second.", "Third.")])
 
 
 if __name__ == "__main__":

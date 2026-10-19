@@ -58,14 +58,20 @@ Les embeddings utilisent le processeur par defaut pour garder la memoire graphiq
 
 Le seuil `COMMENTARY_MIN_WORDS` vaut 150 par defaut : le compteur inclut les commandes et le texte nettoye du jeu. Le programme attend toujours la fin d'une sortie complete avant de verifier ce seuil. Il ne tronque pas le buffer. Une reponse vide conserve l'historique pour la tentative suivante ; les fins de parcours sont conservees et marquees lors du redemarrage.
 
+Le prompt contient aussi les deux derniers commentaires affiches, dans une section distincte qui demande d'eviter de reprendre leurs observations, analogies et formulations. Cette memoire reste limitee a deux reponses reussies et traverse les redemarrages du parcours. Les commentaires peuvent developper deux phrases, avec une limite de 90 mots au total au lieu de 60 ; `COMMENTARY_WORD_LIMIT` permet d'ajuster cette limite. Le seuil de 150 mots concerne toujours uniquement les commandes et sorties du jeu.
+
 Les commentaires continuent pendant les videos. Seule la vectorisation attend la fin estimee de l'extrait, avec `VIDEO_END_MARGIN_SEC=3`. Si plusieurs commentaires ont ete produits entre-temps, seul le dernier choisit le prochain extrait. Sans commentaire disponible, le viewer reste sur le bruit video. Les durees du catalogue proviennent des sous-titres et sont deja legerement prudentes ; une duree absente ou invalide utilise 200 secondes.
 
-`LLM_NUM_CTX=4096` et `LLM_NUM_PREDICT=256` configurent le contexte et le plafond de generation. Le raisonnement reste desactive par defaut. `COMMENTARY_LOG_PATH` peut enregistrer un journal JSONL des buffers, prompts, commentaires et nombres de tokens, par exemple :
+`LLM_NUM_CTX=4096` et `LLM_NUM_PREDICT=2560` configurent le contexte et le plafond de generation. Le raisonnement est active par defaut pour Gemma 4. Le plafond couvre son raisonnement interne et le commentaire affiche ; les deux phrases restent limitees a 90 mots dans le prompt. Le prompt et les tokens generes partagent la fenetre de contexte.
+
+Chaque session enregistre automatiquement ses tentatives de commentaire dans `llm_out/commentary_YYYYMMDD_HHMMSS_PID.jsonl`, y compris les reponses vides et les erreurs. Le chemin est affiche au demarrage. Chaque ligne contient le commentaire, les deux commentaires precedents, le contexte de jeu, la prochaine commande, le prompt exact, le modele, les reglages, les durees et les compteurs de tokens. Le raisonnement interne est seulement compte, pas enregistre. Le viewer ignore les fichiers `.jsonl` et continue de lire les demandes video `.txt`. `LLM_OUT_OVERRIDE` deplace aussi le journal automatique. `COMMENTARY_LOG_PATH` permet de choisir un autre fichier, par exemple :
 
 ```bat
 set "COMMENTARY_LOG_PATH=documentation\commentary-session.jsonl"
 3-run-ai-play.bat
 ```
+
+`COMMENTARY_LOG_ENABLED=0` desactive le journal. Les sessions precedentes restent disponibles pour analyse.
 
 Apres modification du viewer, reconstruire `bin/itw-viewer.exe` et son `.pck` depuis Godot avec le preset `Windows Desktop`. Les videos `.ogv`, les sous-titres et les fontes doivent rester inclus dans l'export.
 
@@ -73,7 +79,7 @@ Apres modification du viewer, reconstruire `bin/itw-viewer.exe` et son `.pck` de
 
 Les lanceurs `4-test-qwen-4b.bat` et `4-test-gemma-e4b.bat` ouvrent l'installation avec, respectivement, `qwen3.5:4b` et `gemma4:e4b`. Ils acceptent les memes options de diagnostic que le lanceur habituel, par exemple `--steps 2 --fast`. Les modeles doivent etre installes avec `ollama pull` et necessitent un Ollama recent ; les essais du 19 octobre 2026 utilisent la version 0.40.6.
 
-Le lanceur habituel utilise desormais `gemma4:e4b`, avec `LLM_THINK=0` par defaut pour obtenir directement les commentaires. Les lanceurs de test fixent aussi `LLM_THINK=0`. La variable reste configurable ; pour les autres familles de modeles, son absence conserve leur comportement de raisonnement par defaut. `LLM_DISPLAY_NAME` peut personnaliser le nom affiche ; par defaut, il correspond au modele choisi. Le client Python Ollama est mis a jour via `1-install-python-reqs.bat` pour prendre en charge cette option.
+Le lanceur habituel utilise desormais `gemma4:e4b`, avec `LLM_THINK=1` par defaut. Le lanceur de test Gemma suit ce reglage ; celui de Qwen conserve explicitement `LLM_THINK=0`. `LLM_THINK=0` permet de desactiver le raisonnement de Gemma. La variable reste configurable ; pour les autres familles de modeles, son absence conserve leur comportement de raisonnement par defaut. `LLM_DISPLAY_NAME` peut personnaliser le nom affiche ; par defaut, il correspond au modele choisi. Le client Python Ollama est mis a jour via `1-install-python-reqs.bat` pour prendre en charge cette option.
 
 Le comparatif reproductible utilise le prompt de l'installation et douze moments du parcours, figes une fois puis reutilises par tous les modeles :
 
@@ -98,6 +104,10 @@ Le comparatif du raisonnement de Gemma se relance avec :
 ```
 
 Il reutilise les douze scenes du premier benchmark et compare les modes sans raisonnement (256 et 1024 tokens) et avec raisonnement (1024 tokens), sur deux graines. Les modes sont echauffes, l'ordre des conditions est equilibre et les temps de lecture du prompt et de generation sont enregistres separement. Si le raisonnement atteint le plafond de 1024 tokens, une serie complete a 2048 tokens est ajoutee. Le rapport `comparison.html` et les donnees restent dans ce dossier ; les reglages de l'installation ne sont pas modifies par cet essai.
+
+Un [essai cible avec la memoire des deux derniers commentaires](documentation/llm-thinking-memory-2026-10-19/results.json) conserve trois prompts problematiques issus d'une execution reelle et leurs reponses : deux graines, six reponses par mode, memes prompts et plafond de 2048 tokens pour les deux modes. Le temps median est de 1,3 s sans raisonnement et 7,9 s avec raisonnement. Une reponse sans raisonnement reprend 16 mots consecutifs d'un commentaire precedent ; avec raisonnement, le maximum observe est de trois mots. Les rapprochements forces et certains themes recurrents persistent : ce petit essai ne constitue pas une evaluation generale. Cet essai utilisait encore un lancement habituel sans raisonnement ; le reglage a depuis ete active avec un plafond de 2560 tokens.
+
+La [verification des budgets courts](documentation/llm-thinking-memory-2026-10-19/budget-results.json) reprend ces trois prompts et les deux graines avec raisonnement. A 512 tokens, les six essais s'arretent avant tout commentaire. A 768 tokens (256 + 512), cinq essais sur six sont tronques, dont quatre sans texte affiche. Le reglage actuel ajoute 512 tokens au plafond de 2048 teste, soit 2560 ; il ne force pas le modele a utiliser tout ce budget.
 
 Le profil du nouveau buffer est dans `documentation/commentary-buffer-analysis/`. `profile_buffers.py` reconstitue les historiques depuis le parcours Frotz capture ; `--measure-tokens` compte leurs tokens avec Gemma. Les comparatifs precedents restent des archives du prompt et du rythme anterieurs.
 
