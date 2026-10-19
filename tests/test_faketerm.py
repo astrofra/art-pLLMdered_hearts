@@ -228,10 +228,10 @@ class CommentaryTimingTests(unittest.TestCase):
         self.assertEqual([event for event in events if event[0] == "embed"],
                          [("embed", 0, "A comment."), ("embed", 1, "A comment.")])
 
-    def test_waits_for_500_words_and_a_complete_output(self):
+    def test_waits_for_150_words_and_a_complete_output(self):
         events = self.run_game(
-            [(0, "word " * 500), (1, "the next output finishes here"), (2, "ending")],
-            iter(["A comment."]), ["one", "two"], minimum=500)
+            [(0, "word " * 150), (1, "the next output finishes here"), (2, "ending")],
+            iter(["A comment."]), ["one", "two"], minimum=150)
         comments = [event for event in events if event[0] == "comment"]
         self.assertEqual(len(comments), 1)
         self.assertEqual(comments[0][1], 1)

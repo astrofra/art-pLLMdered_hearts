@@ -13,7 +13,7 @@ Deux recits se croisent : Lady Dimsford dans le jeu, et Amy Briggs dans son temo
 ## Architecture
 
 - `src/faketerm.py` pilote `frotz`, envoie une solution pre-ecrite, nettoie la sortie, et rend le texte via un renderer C64.
-- Le LLM ne choisit pas les commandes : il commente quand le buffer depasse 500 mots, au retour au prompt, apres l'affichage complet de la sortie du jeu.
+- Le LLM ne choisit pas les commandes : il commente quand le buffer depasse 150 mots, au retour au prompt, apres l'affichage complet de la sortie du jeu.
 - Le buffer conserve toutes les commandes et sorties depuis le dernier commentaire reussi. Le commentaire s'affiche immediatement, meme pendant un extrait d'Amy.
 - Python garde le dernier commentaire disponible. Une fois l'extrait courant termine selon `duration_sec` et une marge de 3 secondes, ce commentaire est embarque (`ollama.embeddings`) puis compare a `assets/abriggs-itw-embeddings.json` pour choisir le prochain clip video.
 - Le choix est ecrit dans `llm_out/` via un fichier timestamp. La synchronisation repose uniquement sur les durees ; Godot ne renvoie aucun etat a Python.
@@ -56,7 +56,7 @@ Les variables `LLM_MODEL`, `VIDEO_EMBED_MODEL`, `OLLAMA_HOST` et `FROTZ_PATH` pe
 
 Les embeddings utilisent le processeur par defaut pour garder la memoire graphique disponible pour Gemma, notamment sur une carte de 8 Go. `VIDEO_EMBED_NUM_GPU=-1` permet a Ollama de choisir automatiquement le placement si la carte dispose de davantage de memoire. Le premier commentaire inclut le temps de chargement des modeles.
 
-Le seuil `COMMENTARY_MIN_WORDS` vaut 500 par defaut : le compteur inclut les commandes et le texte nettoye du jeu. Le programme attend toujours la fin d'une sortie complete avant de verifier ce seuil. Il ne tronque pas le buffer. Une reponse vide conserve l'historique pour la tentative suivante ; les fins de parcours sont conservees et marquees lors du redemarrage.
+Le seuil `COMMENTARY_MIN_WORDS` vaut 150 par defaut : le compteur inclut les commandes et le texte nettoye du jeu. Le programme attend toujours la fin d'une sortie complete avant de verifier ce seuil. Il ne tronque pas le buffer. Une reponse vide conserve l'historique pour la tentative suivante ; les fins de parcours sont conservees et marquees lors du redemarrage.
 
 Les commentaires continuent pendant les videos. Seule la vectorisation attend la fin estimee de l'extrait, avec `VIDEO_END_MARGIN_SEC=3`. Si plusieurs commentaires ont ete produits entre-temps, seul le dernier choisit le prochain extrait. Sans commentaire disponible, le viewer reste sur le bruit video. Les durees du catalogue proviennent des sous-titres et sont deja legerement prudentes ; une duree absente ou invalide utilise 200 secondes.
 

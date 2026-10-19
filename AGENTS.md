@@ -17,7 +17,7 @@ Guidelines for maintaining the installation that plays Plundered Hearts while dr
 ## Runtime flow (`src/faketerm.py`)
 - Spawns `frotz` via `pexpect`, waits for the initial prompt, and plays the walkthrough in `plundered_hearts_commands`.
 - Game output is cleaned by `clean_output()` and rendered through the C64 renderer when enabled.
-- Complete game outputs and executed commands accumulate until the history exceeds `COMMENTARY_MIN_WORDS` (default 500). Commentary runs only at a game prompt, after rendering the whole output.
+- Complete game outputs and executed commands accumulate until the history exceeds `COMMENTARY_MIN_WORDS` (default 150). Commentary runs only at a game prompt, after rendering the whole output.
 - Each successful LLM comment is displayed immediately, including during an interview, and clears the game-history buffer. Empty responses keep the buffer. History and the pending comment survive walkthrough restarts.
 - Only after the current interview's estimated duration plus `VIDEO_END_MARGIN_SEC` (default 3) has elapsed is the latest pending comment embedded with `VIDEO_EMBED_MODEL` and matched by cosine similarity against `assets/abriggs-itw-embeddings.json`.
 - The chosen interview `filename` is written to a timestamped file in `llm_out/`.

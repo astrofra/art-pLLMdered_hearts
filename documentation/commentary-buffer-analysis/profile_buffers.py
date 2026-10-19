@@ -40,9 +40,9 @@ def write_report(result, samples):
              '<style>body{font:16px/1.6 system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;color:#222}'
              'table{border-collapse:collapse;width:100%}th,td{padding:.6rem;border:1px solid #ddd;text-align:left}'
              'pre{white-space:pre-wrap}section{margin:2rem 0}small{color:#555}</style>',
-             '<h1>Buffer de commentaire : seuil de 500 mots</h1>',
+             '<h1>Buffer de commentaire : seuil de ' + escape(result['threshold_words']) + ' mots</h1>',
              '<p>Les commandes exécutées et les sorties complètes du jeu s’accumulent. '
-             'Quand le buffer dépasse 500 mots, le LLM commente au retour au prompt, après '
+             'Quand le buffer dépasse ' + escape(result['threshold_words']) + ' mots, le LLM commente au retour au prompt, après '
              'l’affichage complet de la sortie du jeu. Le commentaire s’affiche immédiatement, '
              'y compris pendant un extrait d’Amy.</p>',
              '<p>Python conserve le dernier commentaire. Sa vectorisation et le choix de la vidéo '
@@ -84,6 +84,9 @@ def write_report(result, samples):
                  'diffusion. Aucune comparaison qualitative aveugle n’est menée ici.</small></p>')
     for sample in samples:
         row = by_step.get(sample['step'], {})
+        prompt = faketerm.build_prompt(sample['history'], sample['next_command'])
+        if row.get('prompt_sha256') != hashlib.sha256(prompt.encode()).hexdigest():
+            row = {}
         parts.append('<section><h3>Étape ' + str(sample['step']) + '</h3><p>'
                      + escape(row.get('commentary', 'Non mesuré')) + '</p><small>'
                      + str(sample['history_words']) + ' mots dans l’historique · '
