@@ -1,0 +1,38 @@
+{
+  "exit_code": 0,
+  "commands": 16,
+  "comments": 5,
+  "temperature": 0.3,
+  "context_file": "assets/abriggs-itw-facts-brief.txt",
+  "context_words": 136,
+  "memory_counts": [
+    0,
+    1,
+    2,
+    2,
+    2
+  ],
+  "prompt_tokens": [
+    940,
+    853,
+    945,
+    1109,
+    1194
+  ],
+  "output_tokens": [
+    833,
+    563,
+    521,
+    552,
+    483
+  ],
+  "elapsed_sec": [
+    7.093,
+    5.453,
+    5.031,
+    5.203,
+    4.734
+  ],
+  "video_requests": 1,
+  "scope": "Actual batch launcher, Frotz, unseeded Gemma thinking and CPU embeddings; renderer and viewer disabled; isolated watchfolder. Complete responses and reproducible log settings validated."
+}

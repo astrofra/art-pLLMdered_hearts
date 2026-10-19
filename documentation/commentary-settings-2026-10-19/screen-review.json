@@ -1,0 +1,26 @@
+{
+  "method": "Qualitative inspection by the coding assistant of all 96 responses, not blinded. The shortlist is exploratory and requires rolling validation.",
+  "findings": [
+    "All 96 responses are complete. Neither the technical-memory obsession nor genre labeling reappeared in these four scenes with the new prompt.",
+    "Higher temperature sometimes chooses a better detail, but does not consistently improve the observation. Errors about objects and actors occur at low and high temperatures.",
+    "The short prose and detailed cards use identical factual sentences and ordering; formatting alone has no decisive qualitative advantage in this small screen.",
+    "The compact cards retain enough background for these scenes, but later parts of the game may require facts omitted by this compression.",
+    "Most comments remain entirely about the scene. Explicit references to Briggs are not used as a success criterion."
+  ],
+  "examples_to_audit": [
+    {"condition": "brief_t0.3", "seed": 42, "case_id": "session_01", "assessment": "Good specific observation: the instruction to get comfortable makes imprisonment sound routine."},
+    {"condition": "cards_t0.6", "seed": 43, "case_id": "session_08", "assessment": "Useful association between the failed clasp and the precarious protection being offered; a reading of the scene, not a production cause."},
+    {"condition": "original_t0.9", "seed": 42, "case_id": "session_17", "assessment": "Contradicts the source by calling the barrels' contents seemingly identical; the game identifies rum and water."},
+    {"condition": "prose_t0.3", "seed": 43, "case_id": "session_11", "assessment": "Invents the bottle as a means of delivering a message to Lafond."},
+    {"condition": "prose_t0.9", "seed": 42, "case_id": "session_11", "assessment": "Conflates the bottle taken by the protagonist with Crulley's plan for mischief."},
+    {"condition": "cards_t0.6", "seed": 43, "case_id": "session_11", "assessment": "Also associates the seized bottle with Crulley's plans without support; this candidate is not uniformly reliable."},
+    {"condition": "original_t0.6", "seed": 42, "case_id": "session_08", "assessment": "Adds money to the coffer's allotment; the displayed history does not establish money."},
+    {"condition": "brief_t0.9", "seed": 42, "case_id": "session_17", "assessment": "Evocative but uses Markdown italics despite the plain-text instruction."}
+  ],
+  "finalists": [
+    {"condition": "original:0.3", "reason": "Current runtime baseline, needed to judge the effect of both changes."},
+    {"condition": "cards:0.6", "reason": "Detailed factual reference with moderate variation; promising associations but some actor confusion to check."},
+    {"condition": "brief:0.3", "reason": "Compact low-temperature candidate with several good observations; checks whether temperature increase is necessary."},
+    {"condition": "brief:0.9", "reason": "Compact high-temperature candidate with expressive examples; checks long-run factual and formatting reliability."}
+  ]
+}

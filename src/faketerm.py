@@ -31,6 +31,7 @@ COMMENTARY_LANGUAGE = os.environ.get("COMMENTARY_LANGUAGE", "English")
 LLM_TIMEOUT = float(os.environ.get("LLM_TIMEOUT", "180"))
 LLM_NUM_CTX = int(os.environ.get("LLM_NUM_CTX", "4096"))
 LLM_NUM_PREDICT = int(os.environ.get("LLM_NUM_PREDICT", "2560"))
+LLM_TEMPERATURE = float(os.environ.get("LLM_TEMPERATURE", "0.3"))
 EMBED_TIMEOUT = float(os.environ.get("EMBED_TIMEOUT", "30"))
 VIDEO_END_MARGIN_SEC = float(os.environ.get("VIDEO_END_MARGIN_SEC", "3"))
 COMMENTARY_MIN_WORDS = int(os.environ.get("COMMENTARY_MIN_WORDS", "150"))
@@ -52,6 +53,8 @@ C64_FIT_TO_DISPLAY = True
 
 C64_FONT_PATH = None  # Using built-in fallback font; no external sprite sheet required.
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+INTERVIEW_CONTEXT_PATH = os.path.abspath(os.path.join(
+    PROJECT_DIR, os.environ.get("INTERVIEW_CONTEXT_PATH", "assets/abriggs-itw-facts-brief.txt")))
 KEY_AUDIO_DIR = os.path.join(PROJECT_DIR, "assets", "audio")
 GODOT_VIEWER_PATH = os.path.join(PROJECT_DIR, "bin", "itw-viewer.exe")
 GAME_ROM_PATH = os.path.join(PROJECT_DIR, "roms", "PLUNDERE.z3")
@@ -596,9 +599,7 @@ def write_llm_video_request(filename):
 
 
 def load_itw_redux():
-    base_dir = os.path.dirname(__file__)
-    src_path = os.path.join(base_dir, "..", "assets", "abriggs-itw-750-words.txt")
-    with open(src_path, "r", encoding="utf-8") as handle:
+    with open(INTERVIEW_CONTEXT_PATH, "r", encoding="utf-8") as handle:
         return handle.read().strip()
 
 
@@ -787,7 +788,7 @@ def generate_commentary(prompt, metrics=None):
         response = _ollama_request(
             "chat", LLM_TIMEOUT, model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
-            options={"temperature": 0.3, "num_predict": LLM_NUM_PREDICT, "num_ctx": LLM_NUM_CTX},
+            options={"temperature": LLM_TEMPERATURE, "num_predict": LLM_NUM_PREDICT, "num_ctx": LLM_NUM_CTX},
             **thinking,
         )
         if metrics is not None:
@@ -817,6 +818,8 @@ def check_runtime():
         if not os.path.isfile(os.path.splitext(GODOT_VIEWER_PATH)[0] + ".pck"):
             raise FileNotFoundError("Godot viewer .pck missing from bin/.")
     if ENABLE_LLM:
+        if not math.isfinite(LLM_TEMPERATURE) or LLM_TEMPERATURE < 0:
+            raise ValueError("LLM_TEMPERATURE must be finite and nonnegative.")
         if COMMENTARY_MIN_WORDS < 0 or COMMENTARY_WORD_LIMIT < 1 or LLM_NUM_CTX < 1 or LLM_NUM_PREDICT < 1:
             raise ValueError("Commentary threshold must be nonnegative and word/token limits must be positive.")
         if not math.isfinite(VIDEO_END_MARGIN_SEC) or VIDEO_END_MARGIN_SEC < 0:
@@ -832,8 +835,9 @@ def check_runtime():
                 raise RuntimeError(f"Ollama model missing. Run: ollama pull {model}")
         print(f"Ollama: {OLLAMA_HOST}; {LLM_MODEL}; {VIDEO_EMBED_MODEL}")
         print(f"Video catalog: {len(catalog)} clips")
+        print(f"Interview context: {INTERVIEW_CONTEXT_PATH}")
         print(f"Commentary: over {COMMENTARY_MIN_WORDS} words at a game prompt; "
-              f"up to {COMMENTARY_WORD_LIMIT} words; context {LLM_NUM_CTX}, "
+              f"up to {COMMENTARY_WORD_LIMIT} words; temperature {LLM_TEMPERATURE:g}; context {LLM_NUM_CTX}, "
               f"output {LLM_NUM_PREDICT}; video margin {VIDEO_END_MARGIN_SEC:g}s")
         if COMMENTARY_LOG_PATH:
             print(f"Commentary log: {os.path.abspath(COMMENTARY_LOG_PATH)}")
@@ -868,11 +872,15 @@ def display_game_output(raw_output):
 
 def comment_on_game(previous_output, recent_comments=None):
     recent_comments = list(recent_comments or ())[-2:]
-    prompt = build_prompt(previous_output, recent_comments=recent_comments)
+    interview_text = load_itw_redux()
+    prompt = build_prompt(previous_output, interview_text=interview_text, recent_comments=recent_comments)
     metrics = {"history_words": len(previous_output.split()), "history_characters": len(previous_output),
                "history_commands": len(re.findall(r"^>> ", previous_output, re.M)),
                "context_tokens": LLM_NUM_CTX, "model": LLM_MODEL,
                "output_token_limit": LLM_NUM_PREDICT, "thinking_setting": LLM_THINK,
+               "temperature": LLM_TEMPERATURE, "interview_context_path": INTERVIEW_CONTEXT_PATH,
+               "interview_context_words": len(interview_text.split()),
+               "interview_context_sha256": hashlib.sha256(interview_text.encode("utf-8")).hexdigest(),
                "recent_comments": recent_comments, "commentary_word_limit": COMMENTARY_WORD_LIMIT}
     status_color = getattr(renderer, "status_bar_bg", None)
     status_text = LAST_STATUS_BAR

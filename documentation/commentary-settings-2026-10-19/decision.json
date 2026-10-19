@@ -1,0 +1,87 @@
+{
+  "chosen": {
+    "model": "gemma4:e4b",
+    "temperature": 0.3,
+    "context": "brief",
+    "context_file": "assets/abriggs-itw-facts-brief.txt",
+    "context_words": 136,
+    "think": true,
+    "num_ctx": 4096,
+    "num_predict": 2560,
+    "recent_comments": 2
+  },
+  "summary_fr": "Reglage retenu : temperature 0,3 et huit fiches compactes (136 mots). Les lectures sont globalement comparables aux autres candidats, avec un temps median observe de 4,84 s contre 7,05 s pour le recit de 752 mots. Les temperatures 0,6 et 0,9 ne donnent pas un gain qualitatif assez regulier. Tous les candidats gardent des erreurs ponctuelles.",
+  "samples": {
+    "screen": 96,
+    "rolling": 275,
+    "total": 371,
+    "excluded_warmups": 4,
+    "complete_nonempty": 371
+  },
+  "sequence_statistics": [
+    {
+      "condition": "brief_t0.3",
+      "samples": 55,
+      "complete_nonempty": 55,
+      "median_elapsed_sec": 4.844,
+      "median_prompt_tokens": 883,
+      "median_output_tokens": 509,
+      "max_prompt_tokens": 1193,
+      "max_prompt_plus_output_tokens": 2064
+    },
+    {
+      "condition": "brief_t0.9",
+      "samples": 55,
+      "complete_nonempty": 55,
+      "median_elapsed_sec": 7.078,
+      "median_prompt_tokens": 883,
+      "median_output_tokens": 764,
+      "max_prompt_tokens": 1186,
+      "max_prompt_plus_output_tokens": 2008
+    },
+    {
+      "condition": "cards_t0.3",
+      "samples": 55,
+      "complete_nonempty": 55,
+      "median_elapsed_sec": 6.75,
+      "median_prompt_tokens": 1042,
+      "median_output_tokens": 726,
+      "max_prompt_tokens": 1339,
+      "max_prompt_plus_output_tokens": 2081
+    },
+    {
+      "condition": "cards_t0.6",
+      "samples": 55,
+      "complete_nonempty": 55,
+      "median_elapsed_sec": 6.953,
+      "median_prompt_tokens": 1035,
+      "median_output_tokens": 764,
+      "max_prompt_tokens": 1349,
+      "max_prompt_plus_output_tokens": 2143
+    },
+    {
+      "condition": "original_t0.3",
+      "samples": 55,
+      "complete_nonempty": 55,
+      "median_elapsed_sec": 7.047,
+      "median_prompt_tokens": 1663,
+      "median_output_tokens": 769,
+      "max_prompt_tokens": 1967,
+      "max_prompt_plus_output_tokens": 2905
+    }
+  ],
+  "rationale": [
+    "Keep the revised event-first prompt, which addresses the former repeated technical-memory explanations.",
+    "Keep temperature 0.3: increasing it did not consistently improve insight or prevent errors.",
+    "Use the compact factual reference for responsiveness and context margin; its eight facets preserve the main documentary handles without supplying ready-made general conclusions.",
+    "Keep all longer references and make both temperature and context file configurable and logged."
+  ],
+  "limits": [
+    "This is the best practical compromise selected among tested conditions, not a statistically established global optimum.",
+    "Screening uses two seeds; each complete walkthrough uses one seed and a rolling memory of its own responses.",
+    "Four sequences were interleaved. The detailed-card 0.3 follow-up was run afterward.",
+    "The comparison uses frozen game outputs and does not simulate the Godot playback timeline.",
+    "Interpretive quality was judged by the coding assistant. Literal keyword counts and embedding diversity are not quality scores.",
+    "Occasional unsupported interpretations remain, including in the selected preset."
+  ]
+}

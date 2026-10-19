@@ -1,0 +1,116 @@
+{
+  "method": "Qualitative inspection by the coding assistant; no independent human panel or blinded scoring. Examples illustrate observations, not error-rate estimates.",
+  "conditions": [
+    {
+      "condition": "brief_t0.3",
+      "samples": 55,
+      "complete_nonempty": 55,
+      "median_elapsed_sec": 4.844,
+      "median_prompt_tokens": 883,
+      "median_output_tokens": 509,
+      "max_prompt_tokens": 1193,
+      "max_prompt_plus_output_tokens": 2064
+    },
+    {
+      "condition": "brief_t0.9",
+      "samples": 55,
+      "complete_nonempty": 55,
+      "median_elapsed_sec": 7.078,
+      "median_prompt_tokens": 883,
+      "median_output_tokens": 764,
+      "max_prompt_tokens": 1186,
+      "max_prompt_plus_output_tokens": 2008
+    },
+    {
+      "condition": "cards_t0.3",
+      "samples": 55,
+      "complete_nonempty": 55,
+      "median_elapsed_sec": 6.75,
+      "median_prompt_tokens": 1042,
+      "median_output_tokens": 726,
+      "max_prompt_tokens": 1339,
+      "max_prompt_plus_output_tokens": 2081
+    },
+    {
+      "condition": "cards_t0.6",
+      "samples": 55,
+      "complete_nonempty": 55,
+      "median_elapsed_sec": 6.953,
+      "median_prompt_tokens": 1035,
+      "median_output_tokens": 764,
+      "max_prompt_tokens": 1349,
+      "max_prompt_plus_output_tokens": 2143
+    },
+    {
+      "condition": "original_t0.3",
+      "samples": 55,
+      "complete_nonempty": 55,
+      "median_elapsed_sec": 7.047,
+      "median_prompt_tokens": 1663,
+      "median_output_tokens": 769,
+      "max_prompt_tokens": 1967,
+      "max_prompt_plus_output_tokens": 2905
+    }
+  ],
+  "readings": {
+    "original_t0.3": {
+      "strengths": [
+        "Several good associations, notably Lafond as a performance reviewer and Papa greeting the crocodile casually.",
+        "Fuller documentary context remains useful and has not become unusable."
+      ],
+      "limitations": [
+        "Attributes the protagonist's bottle to Crulley in step_038.",
+        "Largest prompt budget, without consistent qualitative superiority over the compact reference."
+      ]
+    },
+    "brief_t0.3": {
+      "strengths": [
+        "Specific observations including the ironic get comfortable, public dancing as a setting for a secret passage, and the final ring exchange.",
+        "Most responsive option in the interleaved sequence, with output length comparable to the baseline."
+      ],
+      "limitations": [
+        "Some comments paraphrase the scene.",
+        "Step_006 attributes the ship lurch directly to examining a banknote, an unsupported diegetic causal reading.",
+        "Compression omits details such as the exact sales ratio and the link Briggs made between frequent deaths and simplified puzzle design."
+      ]
+    },
+    "brief_t0.9": {
+      "strengths": [
+        "Some expressive readings, including the interface cataloguing objects after violence.",
+        "Occasional useful differences in focus."
+      ],
+      "limitations": [
+        "No regular qualitative improvement over the lower temperature.",
+        "Step_230 reads Cookie's sweetheart as addressed to the crocodile rather than the protagonist.",
+        "Step_090 misreads storing clothes as logging contents and calls a physical requirement arbitrary."
+      ]
+    },
+    "cards_t0.6": {
+      "strengths": [
+        "More detailed reference with all eight facets.",
+        "Some useful specific associations, especially in the screening brooch example."
+      ],
+      "limitations": [
+        "Step_258 substitutes a pistol for the cheap copy of the ring.",
+        "Occasional repeated claims, such as treating consecutive rescue-planning scenes as the same coordinated operation."
+      ]
+    },
+    "cards_t0.3": {
+      "strengths": [
+        "Good opening observation about the heroine being called a tool.",
+        "More context retained than in the compact reference."
+      ],
+      "limitations": [
+        "Several forced contrasts or descriptive restatements.",
+        "Step_258 incorrectly sends both rings into the sea.",
+        "Run after the four interleaved conditions, so its timing comparison is less controlled."
+      ]
+    }
+  },
+  "overall": [
+    "No return to a repeated production-memory explanation was observed in these replays with the revised prompt. This is mainly evidence for the prompt change, not proof that shortening the context caused it.",
+    "The facts-only prose and cards contain the same sentences and order; the screen does not establish a general benefit from headings or removal of chronology.",
+    "A higher temperature changes samples, not reliably their semantic novelty. Errors of objects and actors occur at every tested temperature.",
+    "The compact 0.3 preset is a practical operating choice: comparable overall readings, fewer context tokens and lower observed response time. The full narrative remains a valid alternative."
+  ]
+}

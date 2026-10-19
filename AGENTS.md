@@ -37,11 +37,12 @@ Guidelines for maintaining the installation that plays Plundered Hearts while dr
 
 ## LLM usage
 - Commentary uses `LLM_MODEL` (default `gemma4:e4b`) via `ollama.chat`, with extended thinking enabled by default for Gemma 4 (`LLM_THINK=1`). Set `LLM_THINK=0` to disable it.
+- `LLM_TEMPERATURE` defaults to 0.3. `INTERVIEW_CONTEXT_PATH` defaults to `assets/abriggs-itw-facts-brief.txt`, eight compact factual entries (136 words). Relative overrides resolve against the project root; the 750-word narrative and longer fact sheets remain available for comparison.
 - Video matching uses embeddings via `ollama.embeddings`.
 - Keep prompts short and deterministic; avoid multi-turn chains.
 - Guard against missing or slow responses to avoid blocking the loop.
 - `LLM_NUM_CTX` defaults to 4096 and `LLM_NUM_PREDICT` to 2560, shared between hidden reasoning and the visible response.
-- Commentary attempts are logged by default to one `llm_out/commentary_YYYYMMDD_HHMMSS_PID.jsonl` per process. Records include full game histories, the exact prompt, previous comments, model settings, timings and token counts; hidden reasoning text is not logged. The viewer only reads `.txt` video requests. `COMMENTARY_LOG_PATH` overrides the log file; `COMMENTARY_LOG_ENABLED=0` disables logging. `LLM_OUT_OVERRIDE` also moves the default log.
+- Commentary attempts are logged by default to one `llm_out/commentary_YYYYMMDD_HHMMSS_PID.jsonl` per process. Records include full game histories, the exact prompt, previous comments, model settings, temperature, context path/word count/SHA-256, timings and token counts; hidden reasoning text is not logged. The viewer only reads `.txt` video requests. `COMMENTARY_LOG_PATH` overrides the log file; `COMMENTARY_LOG_ENABLED=0` disables logging. `LLM_OUT_OVERRIDE` also moves the default log.
 - Commentary remains two sentences, with `COMMENTARY_WORD_LIMIT` defaulting to 90 words in total.
 
 ## Subtitle and embedding tools

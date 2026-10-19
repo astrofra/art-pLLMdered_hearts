@@ -62,7 +62,8 @@ def write_report(result, samples):
         parts.append('<tr><td>' + escape(label) + '</td><td>' + escape(value) + '</td></tr>')
     parts.append('</table><p><small>Les historiques sont reconstitués à partir d’un parcours réel '
                  'capturé dans Frotz, en conservant les commandes et chaque sortie complète. '
-                 'Les tokens sont mesurés avec Gemma, résumé de 752 mots et consignes inclus. '
+                 'Les tokens incluent les consignes et le contexte documentaire courant ('
+                 + str(len(faketerm.load_itw_redux().split())) + ' mots). '
                  'Le reliquat de fin de parcours est conservé au redémarrage dans l’installation. '
                  'Ces chiffres dépendent du seuil et des sorties effectivement produites par le jeu.</small></p>')
     integration_path = DIRECTORY / 'integration.json'

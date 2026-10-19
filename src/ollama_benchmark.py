@@ -38,6 +38,20 @@ def save_json(path, value):
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def interview_from_prompt(prompt):
+    start = "\nOPTIONAL BACKGROUND: AMY BRIGGS'S TESTIMONY\n"
+    end = "\nEND OF BACKGROUND\n"
+    if prompt.count(start) == 1 and prompt.count(end) == 1:
+        return prompt.split(start, 1)[1].split(end, 1)[0].strip()
+    paths = [Path(faketerm.INTERVIEW_CONTEXT_PATH)] + list(
+        (Path(faketerm.PROJECT_DIR) / "assets").glob("abriggs-itw-*-words.txt"))
+    for path in paths:
+        text = path.read_text(encoding="utf-8").strip()
+        if text and prompt.count(text) == 1:
+            return text
+    raise ValueError("Cannot identify interview context in saved prompt.")
+
+
 def collect_scenes():
     history = []
     scenes = []
@@ -269,12 +283,10 @@ def main():
     scenes = json.loads(args.scenes.read_text(encoding="utf-8")) if args.scenes else collect_scenes()
     if args.limit:
         scenes = scenes[:args.limit]
-    interview_text = args.summary.read_text(encoding="utf-8").strip() if args.summary else faketerm.load_itw_redux()
+    interview_text = args.summary.read_text(encoding="utf-8").strip() if args.summary else interview_from_prompt(scenes[0]["prompt"])
     if args.summary:
-        original_summary = faketerm.load_itw_redux()
         for scene in scenes:
-            if scene["prompt"].count(original_summary) != 1:
-                parser.error("Saved prompt does not contain the original summary exactly once: " + scene["id"])
+            original_summary = interview_from_prompt(scene["prompt"])
             scene["prompt"] = scene["prompt"].replace(original_summary, interview_text, 1)
     save_json(directory / "scenes.json", scenes)
     client = ollama.Client(host=faketerm.OLLAMA_HOST, timeout=faketerm.LLM_TIMEOUT)
@@ -285,7 +297,7 @@ def main():
     data = {"models": args.models, "rounds": args.rounds, "options": options,
             "ollama_version": version,
             "interview_summary": {
-                "file": str(args.summary) if args.summary else "assets/abriggs-itw-750-words.txt",
+                "file": str(args.summary) if args.summary else "embedded in frozen prompts",
                 "words": len(interview_text.split()),
                 "sha256": hashlib.sha256(interview_text.encode("utf-8")).hexdigest(),
             },

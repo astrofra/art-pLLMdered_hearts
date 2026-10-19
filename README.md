@@ -62,11 +62,21 @@ Le prompt contient aussi les deux derniers commentaires affiches, dans une secti
 
 Le LLM recoit uniquement les evenements deja affiches et les commandes deja executees, jamais la prochaine commande du parcours. La consigne privilegie un detail nouveau de la scene et demande que les deux phrases developpent la meme observation. Le temoignage d'Amy reste un contexte facultatif ; il ne sert pas a expliquer chaque evenement par des contraintes de production ou une intention supposee de l'autrice.
 
+Le contexte par defaut est `assets/abriggs-itw-facts-brief.txt` : huit fiches factuelles totalisant 136 mots. `LLM_TEMPERATURE=0.3` conserve un echantillonnage modere. `INTERVIEW_CONTEXT_PATH` choisit un autre fichier UTF-8 ; les chemins relatifs partent de la racine du projet. Pour essayer le resume historique avec une autre temperature :
+
+```bat
+set "LLM_TEMPERATURE=0.6"
+set "INTERVIEW_CONTEXT_PATH=assets\abriggs-itw-750-words.txt"
+3-run-ai-play.bat
+```
+
+Les variantes conservees sont le recit historique (752 mots), `abriggs-itw-facts-prose.txt` (230 mots), `abriggs-itw-facts-cards.txt` (255 mots, memes phrases que la prose avec huit rubriques), et `abriggs-itw-facts-brief.txt` (136 mots, plus condense). Ces nouveaux fichiers sont derives de l'entretien et du resume ; ils ne modifient ni les sous-titres ni le catalogue d'embeddings.
+
 Les commentaires continuent pendant les videos. Seule la vectorisation attend la fin estimee de l'extrait, avec `VIDEO_END_MARGIN_SEC=3`. Si plusieurs commentaires ont ete produits entre-temps, seul le dernier choisit le prochain extrait. Sans commentaire disponible, le viewer reste sur le bruit video. Les durees du catalogue proviennent des sous-titres et sont deja legerement prudentes ; une duree absente ou invalide utilise 200 secondes.
 
 `LLM_NUM_CTX=4096` et `LLM_NUM_PREDICT=2560` configurent le contexte et le plafond de generation. Le raisonnement est active par defaut pour Gemma 4. Le plafond couvre son raisonnement interne et le commentaire affiche ; les deux phrases restent limitees a 90 mots dans le prompt. Le prompt et les tokens generes partagent la fenetre de contexte.
 
-Chaque session enregistre automatiquement ses tentatives de commentaire dans `llm_out/commentary_YYYYMMDD_HHMMSS_PID.jsonl`, y compris les reponses vides et les erreurs. Le chemin est affiche au demarrage. Chaque ligne contient le commentaire, les deux commentaires precedents, le contexte de jeu, le prompt exact, le modele, les reglages, les durees et les compteurs de tokens. Le raisonnement interne est seulement compte, pas enregistre. Le viewer ignore les fichiers `.jsonl` et continue de lire les demandes video `.txt`. `LLM_OUT_OVERRIDE` deplace aussi le journal automatique. `COMMENTARY_LOG_PATH` permet de choisir un autre fichier, par exemple :
+Chaque session enregistre automatiquement ses tentatives de commentaire dans `llm_out/commentary_YYYYMMDD_HHMMSS_PID.jsonl`, y compris les reponses vides et les erreurs. Le chemin est affiche au demarrage. Chaque ligne contient le commentaire, les deux commentaires precedents, le contexte de jeu, le prompt exact, le modele, les reglages, la temperature, le fichier de contexte et son empreinte SHA-256, les durees et les compteurs de tokens. Le raisonnement interne est seulement compte, pas enregistre. Le viewer ignore les fichiers `.jsonl` et continue de lire les demandes video `.txt`. `LLM_OUT_OVERRIDE` deplace aussi le journal automatique. `COMMENTARY_LOG_PATH` permet de choisir un autre fichier, par exemple :
 
 ```bat
 set "COMMENTARY_LOG_PATH=documentation\commentary-session.jsonl"
@@ -97,7 +107,7 @@ Pour comparer un autre resume sur exactement les memes scenes et consignes, util
 .venv\Scripts\python.exe src\ollama_benchmark.py --scenes documentation\llm-comparison-2026-10-19\scenes.json --summary assets\abriggs-itw-1250-words.txt --output-dir documentation\llm-comparison-2026-10-19-1250
 ```
 
-Le script remplace seulement le resume dans les prompts sauvegardes et enregistre son empreinte. Les prompts archives conservent leurs consignes d'origine, meme apres une evolution de l'installation. Ce choix concerne le benchmark ; le lancement habituel conserve son resume de 750 mots.
+Le script remplace seulement le resume dans les prompts sauvegardes et enregistre son empreinte. Il identifie le texte du contexte dans les prompts, y compris les anciennes versions de 750 et 1250 mots. Les prompts archives conservent leurs consignes d'origine, meme apres une evolution de l'installation. Le lancement habituel utilise desormais les fiches compactes.
 
 Le comparatif du raisonnement de Gemma se relance avec :
 
@@ -114,6 +124,10 @@ La [verification des budgets courts](documentation/llm-thinking-memory-2026-10-1
 Le profil du nouveau buffer est dans `documentation/commentary-buffer-analysis/`. `profile_buffers.py` reconstitue les historiques depuis le parcours Frotz capture ; `--measure-tokens` compte leurs tokens avec Gemma. Les comparatifs precedents restent des archives du prompt et du rythme anterieurs.
 
 La [revision du prompt sur les 17 historiques d'une session](documentation/commentary-prompt-review-2026-10-19/comparison.html) confronte les commentaires enregistres a un rejeu avec la nouvelle consigne, sans prochaine commande et avec une memoire alimentee par les nouvelles reponses. Le resume de 752 mots reste identique. Ce rejeu exploratoire utilise la graine 42 ; la session initiale n'avait pas de graine fixee. Les donnees completes conservent les deux versions et leurs prompts. Les ressemblances lexicales et les meilleurs rapprochements video bruts ne constituent pas une mesure automatique de pertinence ou de diversite de diffusion.
+
+Le [comparatif des temperatures et des fiches](documentation/commentary-settings-2026-10-19/comparison.html) conserve 96 essais croises (quatre contextes, temperatures 0.3/0.6/0.9, quatre scenes, deux graines), puis cinq rejeux de 55 buffers avec memoire glissante, soit 371 reponses hors echauffement. Les quatre premiers rejeux sont entrelaces ; le cinquieme verifie ensuite les fiches detaillees a 0.3. Le choix pratique retient les fiches compactes a 0.3 : qualite globalement comparable et temps median observe de 4.8 s, contre 7.0 s pour le recit a 0.3. Les temperatures plus hautes n'apportent pas un gain qualitatif assez regulier pour etre retenues. Cette lecture qualitative par l'assistant ne remplace pas l'evaluation dans l'installation ; tous les candidats gardent des erreurs ponctuelles.
+
+L'experience se relance avec `.venv\Scripts\python.exe documentation\commentary-settings-2026-10-19\run_experiment.py --stage screen`, puis `--stage finalists` et `--stage sequence --condition cards:0.3`. Les resultats existants permettent de reprendre une serie ; `facts.json` dans ce dossier est la source des trois nouveaux fichiers de contexte. `make_report.py` reconstruit le rapport interactif depuis les donnees enregistrees.
 
 ## Notes
 

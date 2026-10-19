@@ -1,0 +1,16 @@
+{
+  "purpose": "Select useful settings for a situated reading of the game, with the interview as available context. Do not optimize lexical diversity alone.",
+  "priority_order": [
+    "Grounding: distinguish a defensible reading of the visible text from invented events, specific unsupported motives, production causes, or biographical facts.",
+    "Observation: prefer an implication, tension, or association rooted in a specific detail over a paraphrase or a generic conclusion about the whole game.",
+    "Novelty: assess the claim against both provided prior comments; a changed noun does not make the same claim new.",
+    "Clarity: concise, readable English, two sentences within 90 words, suitable for display.",
+    "Interview use: a precise supported connection can add value; mentioning Briggs or a theme is not valuable on its own, and absence is not an automatic failure."
+  ],
+  "limitations": [
+    "Literary interpretation is not a fact-retrieval task. A cautious interpretation can be valid even when the game does not state it explicitly.",
+    "Lexical counters and embedding similarities are descriptive, not quality scores.",
+    "The screen is exploratory: four scenes and two seeds per condition. Finalists require a rolling sequence and later game events.",
+    "Assessment is by the coding assistant, not an independent human panel; the user should judge the retained examples in the installation."
+  ]
+}
