@@ -33,7 +33,7 @@ Guidelines for maintaining the installation that plays Plundered Hearts while dr
   - `LLM_OUT_OVERRIDE` can force an absolute watchfolder path for exported builds.
 
 ## LLM usage
-- Commentary uses `LLM_MODEL` (default `ministral-3:14b`) via `ollama.chat`.
+- Commentary uses `LLM_MODEL` (default `gemma4:e4b`) via `ollama.chat`, with extended thinking disabled by default for Gemma 4 (`LLM_THINK=0`).
 - Video matching uses embeddings via `ollama.embeddings`.
 - Keep prompts short and deterministic; avoid multi-turn chains.
 - Guard against missing or slow responses to avoid blocking the loop.

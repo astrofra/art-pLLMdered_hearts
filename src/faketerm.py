@@ -19,12 +19,14 @@ from pexpect.popen_spawn import PopenSpawn
 import pygame
 
 from c64renderer import C64Renderer
-AI_THINKING_STATUS = "<MISTRAL IS THINKING>"
-AI_COMMENT_LABEL = "MISTRAL COMMENTS:"
+LLM_MODEL = os.environ.get("LLM_MODEL", "gemma4:e4b")
+LLM_DISPLAY_NAME = os.environ.get("LLM_DISPLAY_NAME", LLM_MODEL.split(":")[0].upper())
+AI_THINKING_STATUS = f"<{LLM_DISPLAY_NAME} IS THINKING>"
+AI_COMMENT_LABEL = f"{LLM_DISPLAY_NAME} COMMENTS:"
 AI_VIDEO_LABEL = "NOW PLAYING:"
 AI_COMMENT_FG = (255, 255, 255)
 AI_COMMENT_BG = (0, 0, 0)
-LLM_MODEL = os.environ.get("LLM_MODEL", "ministral-3:14b")
+LLM_THINK = os.environ.get("LLM_THINK", "0" if LLM_MODEL.split(":")[0] == "gemma4" else None)
 COMMENTARY_LANGUAGE = os.environ.get("COMMENTARY_LANGUAGE", "English")
 LLM_TIMEOUT = float(os.environ.get("LLM_TIMEOUT", "180"))
 EMBED_TIMEOUT = float(os.environ.get("EMBED_TIMEOUT", "30"))
@@ -590,11 +592,11 @@ def load_itw_redux():
         return handle.read().strip()
 
 
-def build_prompt(prev_output, cmd):
+def build_prompt(prev_output, cmd, interview_text=None):
     prompt = """Plundered Hearts is a 1987 interactive fiction by Amy Briggs.
 Here is an excerpt from Amy Briggs recalling her years at Infocom:
 """
-    prompt += load_itw_redux()
+    prompt += load_itw_redux() if interview_text is None else interview_text
 
     prompt += f"""
 While reading the following moment from the game, your response may attend to
@@ -749,10 +751,14 @@ def _ollama_request(method, timeout, **kwargs):
 
 def generate_commentary(prompt):
     try:
+        thinking = {}
+        if LLM_THINK is not None:
+            thinking["think"] = LLM_THINK.strip().lower() in ("1", "true", "yes")
         response = _ollama_request(
             "chat", LLM_TIMEOUT, model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             options={"temperature": 0.3, "num_predict": 256},
+            **thinking,
         )
         return clean_output(response.message.content or "").strip()
     except Exception as exc:
