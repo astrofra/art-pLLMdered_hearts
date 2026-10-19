@@ -1,0 +1,30 @@
+{
+  "exit_code": 0,
+  "elapsed_sec": 13.25,
+  "comments": 5,
+  "video_requests": 1,
+  "chat_calls": 5,
+  "embedding_calls": 1,
+  "history_words": [
+    511,
+    537,
+    530,
+    502,
+    540
+  ],
+  "prompt_tokens": [
+    1938,
+    1971,
+    1919,
+    1904,
+    1933
+  ],
+  "thinking_characters": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "request_directory": "C:\\Users\\fra\\AppData\\Local\\Temp\\pllmdered-buffer-integration-suomwqp8\\video-requests"
+}

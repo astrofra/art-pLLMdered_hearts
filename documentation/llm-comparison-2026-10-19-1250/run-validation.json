@@ -1,0 +1,19 @@
+{
+  "finished_at": "2026-10-19T14:45:20.558194+02:00",
+  "command": ".venv\\Scripts\\python.exe -X utf8 -u src\\ollama_benchmark.py --scenes documentation\\llm-comparison-2026-10-19\\scenes.json --summary assets\\abriggs-itw-1250-words.txt --output-dir documentation\\llm-comparison-2026-10-19-1250",
+  "responses": 72,
+  "commentary_errors": 0,
+  "embedding_errors": 0,
+  "truncated_outputs": 0,
+  "server_log_path": "C:\\Users\\fra\\AppData\\Local\\Ollama\\server.log",
+  "server_log_start_offset": 530057,
+  "input_context_warnings": [],
+  "context_length_verified": 4096,
+  "embedding_digests": [
+    "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1"
+  ],
+  "embedding_cpu_verified": true,
+  "baseline_results_and_scenes_unchanged": true,
+  "python": "3.12.5",
+  "unit_tests_passed": 14
+}

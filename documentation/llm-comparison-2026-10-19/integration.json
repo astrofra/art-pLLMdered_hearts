@@ -1,0 +1,38 @@
+[
+  {
+    "model": "qwen3.5:4b",
+    "launcher": "4-test-qwen-4b.bat",
+    "exit_code": 0,
+    "elapsed_sec": 10.75,
+    "peak_gpu_mib": 4584,
+    "comments": [
+      "The game's intimate narrative contrasted sharply with Infocom's later corporate pressure and fear. Briggs valued this creative freedom despite its commercial failure.",
+      "The text adventure's romantic tension mirrors Briggs' own struggle to legitimize female narratives within a male-dominated industry. Her later disillusionment with corporate micromanagement contrasts sharply with the creative freedom she found in writing this swashbuckling story.",
+      "The game's romantic tension mirrors Briggs's struggle to legitimize female narratives against commercial pressures. Her technical constraints shaped this intimate encounter just as corporate fears eroded Infocom's creative freedom."
+    ],
+    "video_requests": [
+      "15_management_vision_0.ogv"
+    ],
+    "steps": 3,
+    "renderer": true,
+    "viewer": true
+  },
+  {
+    "model": "gemma4:e4b",
+    "launcher": "4-test-gemma-e4b.bat",
+    "exit_code": 0,
+    "elapsed_sec": 15.297,
+    "peak_gpu_mib": 5477,
+    "comments": [
+      "This scene reflects the genre exploration Briggs desired, moving beyond typical adventure tropes. The intense romantic tension contrasts sharply with the underlying threat, mirroring the precarious balance of creative freedom versus commercial pressure at Infocom.",
+      "This scene exemplifies the romance genre Briggs championed, yet the immediate danger hints at the narrative constraints she faced. The tension reflects the precarious balance between creative freedom and commercial expectations at Infocom.",
+      "This scene reflects the genre exploration Briggs desired, moving beyond triviality into intense narrative. The immediate danger contrasts with the romantic tension, showcasing the technical challenge of balancing action and intimacy within memory limits."
+    ],
+    "video_requests": [
+      "11_market_vision_0.ogv"
+    ],
+    "steps": 3,
+    "renderer": true,
+    "viewer": true
+  }
+]

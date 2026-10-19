@@ -29,7 +29,12 @@ AI_COMMENT_BG = (0, 0, 0)
 LLM_THINK = os.environ.get("LLM_THINK", "0" if LLM_MODEL.split(":")[0] == "gemma4" else None)
 COMMENTARY_LANGUAGE = os.environ.get("COMMENTARY_LANGUAGE", "English")
 LLM_TIMEOUT = float(os.environ.get("LLM_TIMEOUT", "180"))
+LLM_NUM_CTX = int(os.environ.get("LLM_NUM_CTX", "4096"))
+LLM_NUM_PREDICT = int(os.environ.get("LLM_NUM_PREDICT", "256"))
 EMBED_TIMEOUT = float(os.environ.get("EMBED_TIMEOUT", "30"))
+VIDEO_END_MARGIN_SEC = float(os.environ.get("VIDEO_END_MARGIN_SEC", "3"))
+COMMENTARY_MIN_WORDS = int(os.environ.get("COMMENTARY_MIN_WORDS", "500"))
+COMMENTARY_LOG_PATH = os.environ.get("COMMENTARY_LOG_PATH")
 GAME_TIMEOUT = 30.0
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434")
 ENABLE_LLM = True
@@ -514,10 +519,8 @@ def record_video_choice(filename, catalog_size, recent):
 
 def _get_video_duration(entry):
     duration_sec = entry.get("duration_sec")
-    if duration_sec is None:
-        return 0.0
-    if duration_sec <= 0.0:
-        return 0.0
+    if duration_sec is None or not math.isfinite(duration_sec) or duration_sec <= 0.0:
+        return 200.0
     return duration_sec
 
 
@@ -559,7 +562,7 @@ def maybe_emit_video_request(renderer, entry, recent, last_played, next_allowed,
         return entry, next_allowed, last_played
     record_video_choice(next_video, catalog_size, recent)
     last_played = next_video
-    next_allowed = time.monotonic() + _get_video_duration(entry)
+    next_allowed = time.monotonic() + _get_video_duration(entry) + VIDEO_END_MARGIN_SEC
     return None, next_allowed, last_played
 
 
@@ -593,22 +596,24 @@ def load_itw_redux():
 
 
 def build_prompt(prev_output, cmd, interview_text=None):
-    prompt = """Plundered Hearts is a 1987 interactive fiction by Amy Briggs.
+    prompt = """You are a quiet observer of an installation replaying Plundered Hearts,
+a 1987 interactive fiction by Amy Briggs. The game follows a fixed walkthrough.
 Here is an excerpt from Amy Briggs recalling her years at Infocom:
 """
     prompt += load_itw_redux() if interview_text is None else interview_text
 
     prompt += f"""
-While reading the following moment from the game, your response may attend to
-any aspect of Amy Briggs’s testimony that feels relevant in this moment:
-a memory of daily work, the group dynamics at Infocom, informal mentoring practices,
-commercial pressures, the struggle to legitimize video games as a growth engine versus
-business software (such as Cornerstone), and her personal desire to write novels,
-or technical detail, whatever seems relevant...
+Read the chronological game history accumulated since your previous comment.
+Choose one concrete event or change, preferably from the latest developments.
+Make a modest, specific association with Briggs's testimony only when it fits.
+Otherwise, stay with the game. Her testimony is context, not a checklist of themes.
+Do not invent biographical facts or causes for design choices.
+You are neither Amy Briggs nor a game character, and you do not choose the moves.
 Answer in TWO short sentences, 60 words maximum in total, in neutral {COMMENTARY_LANGUAGE}.
 Use plain text only, NO MARKDOWN, as a fleeting inner association.
 """
-    prompt += prev_output + "\nYour next move will be : " + cmd
+    prompt += "\nGAME HISTORY (oldest first):\n" + prev_output
+    prompt += "\nEND OF GAME HISTORY\nNext scripted command (not yet executed): " + cmd
     return prompt
 
 
@@ -749,7 +754,8 @@ def _ollama_request(method, timeout, **kwargs):
         return response
 
 
-def generate_commentary(prompt):
+def generate_commentary(prompt, metrics=None):
+    start = time.monotonic()
     try:
         thinking = {}
         if LLM_THINK is not None:
@@ -757,11 +763,21 @@ def generate_commentary(prompt):
         response = _ollama_request(
             "chat", LLM_TIMEOUT, model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
-            options={"temperature": 0.3, "num_predict": 256},
+            options={"temperature": 0.3, "num_predict": LLM_NUM_PREDICT, "num_ctx": LLM_NUM_CTX},
             **thinking,
         )
+        if metrics is not None:
+            metrics.update({
+                "elapsed_sec": round(time.monotonic() - start, 3),
+                "prompt_tokens": getattr(response, "prompt_eval_count", None),
+                "output_tokens": getattr(response, "eval_count", None),
+                "done_reason": getattr(response, "done_reason", None),
+                "thinking_characters": len(getattr(response.message, "thinking", None) or ""),
+            })
         return clean_output(response.message.content or "").strip()
     except Exception as exc:
+        if metrics is not None:
+            metrics["error"] = str(exc)
         print(f"Commentary unavailable, continuing the game: {exc}")
         return ""
 
@@ -777,6 +793,10 @@ def check_runtime():
         if not os.path.isfile(os.path.splitext(GODOT_VIEWER_PATH)[0] + ".pck"):
             raise FileNotFoundError("Godot viewer .pck missing from bin/.")
     if ENABLE_LLM:
+        if COMMENTARY_MIN_WORDS < 0 or LLM_NUM_CTX < 1 or LLM_NUM_PREDICT < 1:
+            raise ValueError("Commentary threshold must be nonnegative and token limits must be positive.")
+        if not math.isfinite(VIDEO_END_MARGIN_SEC) or VIDEO_END_MARGIN_SEC < 0:
+            raise ValueError("VIDEO_END_MARGIN_SEC must be a finite, nonnegative duration.")
         load_itw_redux()
         catalog = load_video_embeddings(VIDEO_EMBEDDINGS_PATH)
         if not catalog:
@@ -788,6 +808,8 @@ def check_runtime():
                 raise RuntimeError(f"Ollama model missing. Run: ollama pull {model}")
         print(f"Ollama: {OLLAMA_HOST}; {LLM_MODEL}; {VIDEO_EMBED_MODEL}")
         print(f"Video catalog: {len(catalog)} clips")
+        print(f"Commentary: over {COMMENTARY_MIN_WORDS} words at a game prompt; "
+              f"context {LLM_NUM_CTX}, output {LLM_NUM_PREDICT}; video margin {VIDEO_END_MARGIN_SEC:g}s")
     os.makedirs(LLM_OUT_DIR, exist_ok=True)
     print(f"Video requests: {LLM_OUT_DIR}")
 
@@ -818,6 +840,10 @@ def display_game_output(raw_output):
 
 
 def comment_on_game(previous_output, command):
+    prompt = build_prompt(previous_output, command)
+    metrics = {"history_words": len(previous_output.split()), "history_characters": len(previous_output),
+               "history_commands": len(re.findall(r"^>> ", previous_output, re.M)),
+               "context_tokens": LLM_NUM_CTX, "model": LLM_MODEL}
     status_color = getattr(renderer, "status_bar_bg", None)
     status_text = LAST_STATUS_BAR
     if renderer:
@@ -825,12 +851,25 @@ def comment_on_game(previous_output, command):
         renderer.set_status_bar_color((0, 0, 0))
         renderer.render_frame()
     try:
-        commentary = generate_commentary(build_prompt(previous_output, command))
+        commentary = generate_commentary(prompt, metrics)
     finally:
         if renderer:
             renderer.set_status_bar_color(status_color)
             renderer.set_status_bar(status_text)
             renderer.render_frame()
+    print("[Commentary buffer] %s words, %s commands; prompt %s/%s tokens; %s s" % (
+        metrics["history_words"], metrics["history_commands"], metrics.get("prompt_tokens", "?"),
+        LLM_NUM_CTX, metrics.get("elapsed_sec", "?")))
+    if COMMENTARY_LOG_PATH:
+        try:
+            path = os.path.abspath(COMMENTARY_LOG_PATH)
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            record = dict(metrics, timestamp=time.time(), game_history=previous_output,
+                          next_command=command, commentary=commentary, prompt=prompt)
+            with open(path, "a", encoding="utf-8") as handle:
+                handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+        except OSError as exc:
+            print("Unable to log commentary metrics: %s" % exc)
     if commentary:
         print(f"<AI thinks: {commentary}>\n")
         type_to_renderer(
@@ -841,6 +880,10 @@ def comment_on_game(previous_output, command):
     return commentary
 
 
+def commentary_is_due(history_words):
+    return history_words > COMMENTARY_MIN_WORDS
+
+
 def play(steps=None, once=False):
     global child, LAST_STATUS_BAR
     catalog = load_video_embeddings(VIDEO_EMBEDDINGS_PATH) if ENABLE_LLM else []
@@ -848,8 +891,10 @@ def play(steps=None, once=False):
     recent = []
     last_video = None
     pending_video = None
+    pending_commentary = None
     next_allowed = 0.0
     commands_sent = 0
+    commentary_history = []
     while True:
         child = _start_game_process()
         previous_outputs = []
@@ -859,30 +904,43 @@ def play(steps=None, once=False):
                 cleaned = display_game_output(read_game_output(child))
                 if cleaned:
                     previous_outputs = (previous_outputs + [cleaned])[-3:]
+                    if ENABLE_LLM:
+                        commentary_history.append(cleaned)
                 previous_output = "\n".join(previous_outputs)
                 command = enhance_game_command(command)
                 if ENABLE_RAW_OUTPUT and previous_output:
                     if update_raw_output(raw_outputs, previous_output + "\nYour next move will be : " + command):
                         write_raw_output(RAW_OUTPUT_PATH, raw_outputs)
-                if ENABLE_LLM:
-                    commentary = comment_on_game(previous_output, command)
-                    if commentary and catalog:
-                        vector, norm = embed_commentary_text(commentary)
-                        entry = select_best_video(vector, norm, catalog, recent, last_video)
-                        if entry:
-                            pending_video = entry
+                history_words = sum(len(text.split()) for text in commentary_history)
+                if ENABLE_LLM and commentary_is_due(history_words):
+                    commentary = comment_on_game("\n".join(commentary_history), command)
+                    if commentary:
+                        commentary_history.clear()
+                        pending_commentary = commentary
+                        pending_video = None
+                if (ENABLE_LLM and pending_commentary and pending_video is None
+                        and time.monotonic() >= next_allowed):
+                    vector, norm = embed_commentary_text(pending_commentary)
+                    pending_video = select_best_video(vector, norm, catalog, recent, last_video)
+                had_pending_video = pending_video is not None
                 pending_video, next_allowed, last_video = maybe_emit_video_request(
                     renderer, pending_video, recent, last_video, next_allowed, len(catalog),
                 )
+                if had_pending_video and pending_video is None:
+                    pending_commentary = None
                 print(">> " + command + "\n")
                 type_to_renderer(renderer, "\n>> " + command + "\n")
+                if ENABLE_LLM:
+                    commentary_history.append(">> " + command)
                 child.sendline(command)
                 commands_sent += 1
                 if steps is not None and commands_sent >= steps:
                     display_game_output(read_game_output(child))
                     return
             # Render the response to the final command before restarting.
-            display_game_output(read_game_output(child))
+            final_output = display_game_output(read_game_output(child))
+            if ENABLE_LLM and final_output:
+                commentary_history.append(final_output)
         finally:
             _stop_process(child.proc)
             child = None
@@ -892,6 +950,8 @@ def play(steps=None, once=False):
             return
         print(restart_message)
         type_to_renderer(renderer, "\n" + restart_message + "\n", word_mode=True)
+        if ENABLE_LLM:
+            commentary_history.append("[The game has restarted from the beginning.]")
 
 
 def main(argv=None):

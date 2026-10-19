@@ -1,0 +1,46 @@
+{
+  "unit_tests_passed": 19,
+  "syntax_python_310": true,
+  "model": "gemma4:e4b",
+  "thinking": false,
+  "threshold_words": 500,
+  "video_margin_sec": 3,
+  "word_buffers": 20,
+  "mean_history_words": 526.5,
+  "max_history_words": 560,
+  "mean_prompt_tokens": 1943.0,
+  "max_prompt_tokens": 2011,
+  "context_tokens": 4096,
+  "full_launcher_integration": {
+    "exit_code": 0,
+    "elapsed_sec": 13.25,
+    "comments": 5,
+    "video_requests": 1,
+    "chat_calls": 5,
+    "embedding_calls": 1,
+    "history_words": [
+      511,
+      537,
+      530,
+      502,
+      540
+    ],
+    "prompt_tokens": [
+      1938,
+      1971,
+      1919,
+      1904,
+      1933
+    ],
+    "thinking_characters": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "request_directory": "C:\\Users\\fra\\AppData\\Local\\Temp\\pllmdered-buffer-integration-suomwqp8\\video-requests"
+  },
+  "godot_feedback_added": false,
+  "prompt_template_sha256": "c8751254205e761304f5a2f10fec470b0e21b6abb9a4d017e3c59f5d9eee1206"
+}

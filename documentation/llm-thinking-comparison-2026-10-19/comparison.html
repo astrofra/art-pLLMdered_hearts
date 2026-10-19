@@ -1,0 +1,511 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gemma E4B : comparaison du raisonnement</title><style>body{font:16px/1.55 system-ui;margin:2rem auto;padding:0 1rem;max-width:1550px;color:#222}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:.6rem;text-align:left}.answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}article{border:1px solid #ccc;border-radius:8px;padding:1rem}pre{white-space:pre-wrap}small{color:#555}.warning{color:#a33}section{margin:2rem 0}</style><h1>Gemma E4B : avec ou sans raisonnement</h1><p>Mêmes douze scènes figées, résumé anglais de 752 mots, graines 42 et 43. Température 0,3, contexte 4 096 tokens, EmbeddingGemma 300M sur CPU. Aucun historique de commentaires. Aucun fichier envoyé au viewer.</p><p>Le modèle et les deux modes sont échauffés avant les mesures. Les six permutations des trois conditions sont réparties également entre les scènes ; leur ordre est inversé au second passage. Le budget de 1 024 tokens sans raisonnement sert de témoin pour isoler l’activation du raisonnement.</p><p>Si une réponse avec raisonnement atteint 1 024 tokens, une série complète à 2 048 tokens est ajoutée, après les trois conditions principales. Cette série complémentaire est distincte du protocole alterné.</p><table><tr><th>Condition</th><th>Réponses</th><th>Coupures</th><th>Médiane (s)</th><th>Lecture prompt (s)</th><th>Génération (s)</th><th>Tokens produits</th><th>Termes techniques</th><th>Vidéos distinctes</th></tr><tr><td>Sans raisonnement, 256</td><td>24/24</td><td>0</td><td>0.703</td><td>0.079</td><td>0.572</td><td>41.5</td><td>14/24</td><td>9</td></tr><tr><td>Sans raisonnement, 1024</td><td>24/24</td><td>0</td><td>0.688</td><td>0.078</td><td>0.551</td><td>42.5</td><td>12/24</td><td>10</td></tr><tr><td>Avec raisonnement, 1024</td><td>24/24</td><td>0</td><td>4.921</td><td>0.124</td><td>4.623</td><td>524.0</td><td>19/24</td><td>7</td></tr></table><p><small>Les temps médians incluent toutes les tentatives, y compris les réponses vides. Les tokens produits comprennent le raisonnement et la réponse ; le plafond ne fixe pas la longueur effective. Le compteur lexical cherche memory, hardware, technical, commodore, parser ou storage et ne mesure pas la pertinence. Les rapprochements vidéo sont calculés avant le filtre anti-répétition.</small></p><section><h2>Lecture des résultats</h2><p>Les 72 commentaires et leurs rapprochements vidéo ont été produits sans erreur : 24 essais par condition, sur 12 scènes et deux graines. Aucun dépassement de contexte ni aucune coupure de génération dans les conditions principales. Le mode avec raisonnement a produit entre 428 et 625 tokens au total par réponse : le plafond de 1 024 suffit donc pour cet échantillon. Les 72 commentaires finaux respectent la limite de 60 mots et n&#x27;utilisent pas de Markdown.</p><p>Après échauffement et équilibrage de l&#x27;ordre, les médianes sont de 0,703 seconde sans raisonnement à 256 tokens, 0,688 seconde sans raisonnement à 1 024 tokens et 4,921 secondes avec raisonnement à 1 024 tokens. Le raisonnement coûte environ sept fois plus de temps que le réglage actuel de l&#x27;installation. Le débit médian de génération est pourtant supérieur avec raisonnement, environ 112 tokens/s contre 75 à 78 sans raisonnement : c&#x27;est surtout le volume généré qui augmente, de 41–43 tokens médians à 524.</p><p>Le paradoxe de l&#x27;essai initial venait de conditions de mesure différentes : l&#x27;appel limité à 256 produisait ses tokens autour de 20 tokens/s, tandis que celui limité à 1 024 en produisait 566 autour de 108 tokens/s. Le cache du prompt réduit seulement environ 0,4 seconde de lecture et n&#x27;explique pas les presque huit secondes d&#x27;écart. La cause exacte du ralentissement initial n&#x27;est pas établie. Dans le contrôle après échauffement, les deux budgets tournent autour de 111 à 113 tokens/s : générer 256 tokens prend environ 2,3 secondes, contre 4,6 à 5,3 secondes pour 512 à 601 tokens. Les deux essais plafonnés à 256 finissent leur budget pendant le raisonnement et ne livrent aucun commentaire.</p><p>À budget égal de 1 024 tokens, les commentaires avec raisonnement ne montrent pas de gain net de pertinence sur ces scènes. Le compteur lexical technique passe de 12 à 19 réponses sur 24 ; la variété des premières propositions vidéo passe de 10 à 7 extraits. Le mode avec raisonnement renforce donc ici le motif des contraintes de mémoire, déjà récurrent dans les essais précédents.</p><p>Il existe un petit gain de variété dans les formulations : This scene reflects ouvre neuf commentaires sans raisonnement à 1 024 tokens et aucun avec raisonnement. Cette diversification du style ne s&#x27;accompagne pas d&#x27;une diversification des thèmes. Le mode avec raisonnement reste largement centré sur l&#x27;ambition littéraire de la romance et les limites de mémoire du C64.</p><p>Quelques associations sont moins artificielles : pour read invitation, le mode sans raisonnement rapproche la broche cassée de la fragilité d&#x27;Infocom et de Cornerstone ; le mode avec raisonnement relie la description des bijoux au désir d&#x27;écrire des romans. Mais il ajoute aussitôt une remarque générique sur la mémoire du C64. Pour give garter to papa au premier passage, l&#x27;intimité de la scène est également opposée aux contraintes techniques, sans lien précis démontré avec cette situation.</p><p>Le témoin sans raisonnement à 1 024 tokens reste proche du réglage à 256 en durée, en longueur et en thèmes. Leurs textes ne sont toutefois strictement identiques que dans 6 paires sur 24, et leur première vidéo coïncide dans 15 paires. Le moteur ne fournit donc pas ici des textes identiques entre ces réglages malgré les mêmes graines ; les écarts modestes entre ces deux témoins ne prouvent pas un bénéfice du budget supplémentaire.</p><p>Le pic de mémoire graphique échantillonné atteint 5 423 MiB sur l&#x27;ensemble du protocole, EmbeddingGemma fonctionnant sur CPU. Seuls les commentaires finaux sont vectorisés ; le texte intermédiaire du raisonnement n&#x27;est ni affiché ni utilisé pour choisir les vidéos.</p><p><strong>Pour la démonstration, je garderais Gemma E4B sans raisonnement prolongé. Sur cet échantillon, son activation augmente nettement l&#x27;attente et ne résout pas les associations génériques ni les répétitions thématiques. Un contexte plus sélectif ou un prompt mieux ajusté reste une piste plus directement liée au problème observé.</strong></p><ul><li>Ce comparatif est exploratoire : douze scènes et deux graines, un seul ordinateur, un seul modèle et un seul résumé de 752 mots. Les appréciations de pertinence ne résultent pas d&#x27;une évaluation aveugle par plusieurs personnes.</li><li>Les mots techniques sont détectés par une expression régulière qui cherche memory, hardware, technical, commodore, parser ou storage. Ce compteur ne mesure pas automatiquement la qualité ; memory peut aussi désigner un souvenir.</li><li>Les modes sont échauffés et leur ordre est équilibré, mais les états du cache, les variations numériques du moteur et la charge du système ne sont pas totalement isolés. Les résultats n&#x27;établissent pas la cause précise de la lenteur observée dans le premier essai.</li><li>Les premières propositions vidéo sont calculées avant le filtre anti-répétition et ne déclenchent aucune lecture. Leur diversité ne représente donc pas le nombre de clips effectivement joués dans l&#x27;installation.</li><li>Le mode raisonnement à 256 tokens est testé uniquement dans le contrôle de temps, sur une scène. Ses deux réponses vides ne constituent pas une mesure de taux d&#x27;échec sur tout le parcours.</li><li>L&#x27;absence de coupure à 1 024 tokens vaut pour les scènes testées. La condition complémentaire à 2 048 tokens n&#x27;a pas été nécessaire et n&#x27;a donc pas été exécutée.</li></ul></section><section><h2>Origine du paradoxe initial</h2><p>Mesures ponctuelles antérieures au protocole contrôlé. Le cache réduit la lecture du prompt d’environ 0,4 seconde ; l’écart principal vient de la génération, dont le débit était très différent. Les journaux ne permettent pas d’attribuer précisément ce ralentissement transitoire.</p><table><tr><th>Plafond</th><th>Tokens produits</th><th>Temps total (s)</th><th>Lecture prompt (s)</th><th>Génération (s)</th><th>Tokens/s</th></tr><tr><td>256</td><td>256</td><td>13.156</td><td>0.4278</td><td>12.67391</td><td>20.2</td></tr><tr><td>1024</td><td>566</td><td>5.297</td><td>0.03129</td><td>5.24907</td><td>107.83</td></tr></table><p><a href="initial-timing-observation.json">Données initiales</a> · <a href="initial-server-timing.log">Extrait du journal initial</a></p></section><section><h2>Contrôle du paradoxe 256 / 1 024</h2><p>Une même scène, raisonnement actif, graine 42, après échauffement. Ordre 256–1024 puis 1024–256. Les temps de chargement sont enregistrés séparément dans les données.</p><table><tr><th>Plafond</th><th>Tokens produits</th><th>Temps total (s)</th><th>Lecture prompt (s)</th><th>Génération (s)</th><th>Tokens/s</th><th>Réponse</th></tr><tr><td>256</td><td>256</td><td>2.422</td><td>0.070089</td><td>2.31183</td><td>110.73</td><td>False</td></tr><tr><td>1024</td><td>512</td><td>4.61</td><td>0.031536</td><td>4.558855</td><td>112.31</td><td>True</td></tr><tr><td>1024</td><td>601</td><td>5.375</td><td>0.036486</td><td>5.305604</td><td>113.28</td><td>True</td></tr><tr><td>256</td><td>256</td><td>3.922</td><td>1.626302</td><td>2.265911</td><td>112.98</td><td>False</td></tr></table></section><details><summary>Échauffements exclus des mesures</summary><pre>[
+  {
+    &quot;model&quot;: &quot;gemma4:e4b&quot;,
+    &quot;scene_id&quot;: &quot;cut_rope&quot;,
+    &quot;round&quot;: 1,
+    &quot;seed&quot;: 42,
+    &quot;commentary&quot;: &quot;The detailed inventory responses reflect the tight memory constraints Briggs faced, where every interaction had to be economical. This technical limitation shaped the design, mirroring the necessity of making every narrative choice count.&quot;,
+    &quot;elapsed_sec&quot;: 1.235,
+    &quot;words&quot;: 33,
+    &quot;prompt_tokens&quot;: 1245,
+    &quot;output_tokens&quot;: 38,
+    &quot;done_reason&quot;: &quot;stop&quot;,
+    &quot;thinking_enabled&quot;: false,
+    &quot;load_sec&quot;: 0.004,
+    &quot;prompt_eval_sec&quot;: 0.619991,
+    &quot;generation_sec&quot;: 0.59521,
+    &quot;server_total_sec&quot;: 1.23673,
+    &quot;tokens_per_sec&quot;: 63.84,
+    &quot;thinking_characters&quot;: 0,
+    &quot;technical_terms&quot;: true,
+    &quot;markdown&quot;: false,
+    &quot;loaded_models&quot;: {
+      &quot;models&quot;: [
+        {
+          &quot;model&quot;: &quot;gemma4:e4b&quot;,
+          &quot;name&quot;: &quot;gemma4:e4b&quot;,
+          &quot;digest&quot;: &quot;dc35e8d9c6061baa6f0fa870975ab6932e2542b579b13ea0f199fa4bb7300c9c&quot;,
+          &quot;expires_at&quot;: &quot;2026-10-19T15:21:07.660395+02:00&quot;,
+          &quot;size&quot;: 369371380,
+          &quot;size_vram&quot;: 369371380,
+          &quot;details&quot;: {
+            &quot;parent_model&quot;: &quot;&quot;,
+            &quot;format&quot;: &quot;gguf&quot;,
+            &quot;family&quot;: &quot;gemma4&quot;,
+            &quot;families&quot;: [
+              &quot;gemma4&quot;
+            ],
+            &quot;parameter_size&quot;: &quot;7.5B&quot;,
+            &quot;quantization_level&quot;: &quot;Q4_K_M&quot;
+          },
+          &quot;context_length&quot;: 4096
+        },
+        {
+          &quot;model&quot;: &quot;embeddinggemma:300m&quot;,
+          &quot;name&quot;: &quot;embeddinggemma:300m&quot;,
+          &quot;digest&quot;: &quot;85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1&quot;,
+          &quot;expires_at&quot;: &quot;2026-10-19T15:21:00.217859+02:00&quot;,
+          &quot;size&quot;: 692993392,
+          &quot;size_vram&quot;: 0,
+          &quot;details&quot;: {
+            &quot;parent_model&quot;: &quot;&quot;,
+            &quot;format&quot;: &quot;gguf&quot;,
+            &quot;family&quot;: &quot;gemma3&quot;,
+            &quot;families&quot;: [
+              &quot;gemma3&quot;
+            ],
+            &quot;parameter_size&quot;: &quot;307.58M&quot;,
+            &quot;quantization_level&quot;: &quot;BF16&quot;
+          },
+          &quot;context_length&quot;: 2048
+        }
+      ]
+    },
+    &quot;video_matches&quot;: [
+      {
+        &quot;filename&quot;: &quot;10_writing_a_romance_3.ogv&quot;,
+        &quot;title&quot;: &quot;Commodore 64 Development and the Parser&quot;,
+        &quot;score&quot;: 0.38787
+      },
+      {
+        &quot;filename&quot;: &quot;09_writing_a_romance_2.ogv&quot;,
+        &quot;title&quot;: &quot;Balancing Reality and Fiction in Games&quot;,
+        &quot;score&quot;: 0.36799
+      },
+      {
+        &quot;filename&quot;: &quot;24_writing_a_romance_5.ogv&quot;,
+        &quot;title&quot;: &quot;Plundered Hearts: Design and Memory Limits&quot;,
+        &quot;score&quot;: 0.34611
+      }
+    ],
+    &quot;embedding_sec&quot;: 0.031,
+    &quot;condition&quot;: &quot;off256&quot;,
+    &quot;num_predict&quot;: 256
+  },
+  {
+    &quot;model&quot;: &quot;gemma4:e4b&quot;,
+    &quot;scene_id&quot;: &quot;cut_rope&quot;,
+    &quot;round&quot;: 1,
+    &quot;seed&quot;: 42,
+    &quot;commentary&quot;: &quot;The detailed inventory responses reflect the tight memory constraints Briggs faced, where every interaction had to be economical. This technical necessity mirrored the pressure to create meaningful narratives within limited space.&quot;,
+    &quot;elapsed_sec&quot;: 0.61,
+    &quot;words&quot;: 31,
+    &quot;prompt_tokens&quot;: 1245,
+    &quot;output_tokens&quot;: 35,
+    &quot;done_reason&quot;: &quot;stop&quot;,
+    &quot;thinking_enabled&quot;: false,
+    &quot;load_sec&quot;: 0.006,
+    &quot;prompt_eval_sec&quot;: 0.063527,
+    &quot;generation_sec&quot;: 0.532208,
+    &quot;server_total_sec&quot;: 0.618637,
+    &quot;tokens_per_sec&quot;: 65.76,
+    &quot;thinking_characters&quot;: 0,
+    &quot;technical_terms&quot;: true,
+    &quot;markdown&quot;: false,
+    &quot;loaded_models&quot;: {
+      &quot;models&quot;: [
+        {
+          &quot;model&quot;: &quot;gemma4:e4b&quot;,
+          &quot;name&quot;: &quot;gemma4:e4b&quot;,
+          &quot;digest&quot;: &quot;dc35e8d9c6061baa6f0fa870975ab6932e2542b579b13ea0f199fa4bb7300c9c&quot;,
+          &quot;expires_at&quot;: &quot;2026-10-19T15:21:08.323433+02:00&quot;,
+          &quot;size&quot;: 369371380,
+          &quot;size_vram&quot;: 369371380,
+          &quot;details&quot;: {
+            &quot;parent_model&quot;: &quot;&quot;,
+            &quot;format&quot;: &quot;gguf&quot;,
+            &quot;family&quot;: &quot;gemma4&quot;,
+            &quot;families&quot;: [
+              &quot;gemma4&quot;
+            ],
+            &quot;parameter_size&quot;: &quot;7.5B&quot;,
+            &quot;quantization_level&quot;: &quot;Q4_K_M&quot;
+          },
+          &quot;context_length&quot;: 4096
+        },
+        {
+          &quot;model&quot;: &quot;embeddinggemma:300m&quot;,
+          &quot;name&quot;: &quot;embeddinggemma:300m&quot;,
+          &quot;digest&quot;: &quot;85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1&quot;,
+          &quot;expires_at&quot;: &quot;2026-10-19T15:21:07.698449+02:00&quot;,
+          &quot;size&quot;: 692993392,
+          &quot;size_vram&quot;: 0,
+          &quot;details&quot;: {
+            &quot;parent_model&quot;: &quot;&quot;,
+            &quot;format&quot;: &quot;gguf&quot;,
+            &quot;family&quot;: &quot;gemma3&quot;,
+            &quot;families&quot;: [
+              &quot;gemma3&quot;
+            ],
+            &quot;parameter_size&quot;: &quot;307.58M&quot;,
+            &quot;quantization_level&quot;: &quot;BF16&quot;
+          },
+          &quot;context_length&quot;: 2048
+        }
+      ]
+    },
+    &quot;video_matches&quot;: [
+      {
+        &quot;filename&quot;: &quot;10_writing_a_romance_3.ogv&quot;,
+        &quot;title&quot;: &quot;Commodore 64 Development and the Parser&quot;,
+        &quot;score&quot;: 0.33131
+      },
+      {
+        &quot;filename&quot;: &quot;19_working_at_infocom_1.ogv&quot;,
+        &quot;title&quot;: &quot;Remembering Computer Work at Infocom&quot;,
+        &quot;score&quot;: 0.32904
+      },
+      {
+        &quot;filename&quot;: &quot;04_company_culture_0.ogv&quot;,
+        &quot;title&quot;: &quot;A Young Company of Passionate Developers&quot;,
+        &quot;score&quot;: 0.32785
+      }
+    ],
+    &quot;embedding_sec&quot;: 0.047,
+    &quot;condition&quot;: &quot;off1024&quot;,
+    &quot;num_predict&quot;: 1024
+  },
+  {
+    &quot;model&quot;: &quot;gemma4:e4b&quot;,
+    &quot;scene_id&quot;: &quot;cut_rope&quot;,
+    &quot;round&quot;: 1,
+    &quot;seed&quot;: 42,
+    &quot;commentary&quot;: &quot;This detailed interaction highlights the commitment to a rich, literary world. It shows how the romance genre was treated as a legitimate narrative form, not merely a marketing gimmick.&quot;,
+    &quot;elapsed_sec&quot;: 5.937,
+    &quot;words&quot;: 29,
+    &quot;prompt_tokens&quot;: 1252,
+    &quot;output_tokens&quot;: 582,
+    &quot;done_reason&quot;: &quot;stop&quot;,
+    &quot;thinking_enabled&quot;: true,
+    &quot;load_sec&quot;: 0.004,
+    &quot;prompt_eval_sec&quot;: 0.427679,
+    &quot;generation_sec&quot;: 5.460688,
+    &quot;server_total_sec&quot;: 5.93907,
+    &quot;tokens_per_sec&quot;: 106.58,
+    &quot;thinking_characters&quot;: 2397,
+    &quot;technical_terms&quot;: false,
+    &quot;markdown&quot;: false,
+    &quot;loaded_models&quot;: {
+      &quot;models&quot;: [
+        {
+          &quot;model&quot;: &quot;gemma4:e4b&quot;,
+          &quot;name&quot;: &quot;gemma4:e4b&quot;,
+          &quot;digest&quot;: &quot;dc35e8d9c6061baa6f0fa870975ab6932e2542b579b13ea0f199fa4bb7300c9c&quot;,
+          &quot;expires_at&quot;: &quot;2026-10-19T15:21:14.306540+02:00&quot;,
+          &quot;size&quot;: 369371380,
+          &quot;size_vram&quot;: 369371380,
+          &quot;details&quot;: {
+            &quot;parent_model&quot;: &quot;&quot;,
+            &quot;format&quot;: &quot;gguf&quot;,
+            &quot;family&quot;: &quot;gemma4&quot;,
+            &quot;families&quot;: [
+              &quot;gemma4&quot;
+            ],
+            &quot;parameter_size&quot;: &quot;7.5B&quot;,
+            &quot;quantization_level&quot;: &quot;Q4_K_M&quot;
+          },
+          &quot;context_length&quot;: 4096
+        },
+        {
+          &quot;model&quot;: &quot;embeddinggemma:300m&quot;,
+          &quot;name&quot;: &quot;embeddinggemma:300m&quot;,
+          &quot;digest&quot;: &quot;85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1&quot;,
+          &quot;expires_at&quot;: &quot;2026-10-19T15:21:08.361193+02:00&quot;,
+          &quot;size&quot;: 692993392,
+          &quot;size_vram&quot;: 0,
+          &quot;details&quot;: {
+            &quot;parent_model&quot;: &quot;&quot;,
+            &quot;format&quot;: &quot;gguf&quot;,
+            &quot;family&quot;: &quot;gemma3&quot;,
+            &quot;families&quot;: [
+              &quot;gemma3&quot;
+            ],
+            &quot;parameter_size&quot;: &quot;307.58M&quot;,
+            &quot;quantization_level&quot;: &quot;BF16&quot;
+          },
+          &quot;context_length&quot;: 2048
+        }
+      ]
+    },
+    &quot;video_matches&quot;: [
+      {
+        &quot;filename&quot;: &quot;08_writing_a_romance_1.ogv&quot;,
+        &quot;title&quot;: &quot;Creating a Romance Game for Women&quot;,
+        &quot;score&quot;: 0.40184
+      },
+      {
+        &quot;filename&quot;: &quot;12_writing_a_romance_4.ogv&quot;,
+        &quot;title&quot;: &quot;Games That Inspired Plundered Hearts&quot;,
+        &quot;score&quot;: 0.38751
+      },
+      {
+        &quot;filename&quot;: &quot;11_market_vision_0.ogv&quot;,
+        &quot;title&quot;: &quot;Commercial Pressures and Romance Games&quot;,
+        &quot;score&quot;: 0.3695
+      }
+    ],
+    &quot;embedding_sec&quot;: 0.031,
+    &quot;condition&quot;: &quot;on1024&quot;,
+    &quot;num_predict&quot;: 1024
+  }
+]</pre></details><section><h2>Confinement in the cabin</h2><details><summary>Texte du jeu</summary><pre>&gt;SHOOT THE PIRATE
+Trembling, you fire the heavy arquebus. You hear its loud report over the
+roaring wind, yet the dark figure still approaches. The gun falls from your
+nerveless hands.
+   &quot;You won&#x27;t kill me,&quot; he says, stepping over the weapon. &quot;Not when I am
+the only protection you have from Jean Lafond.&quot;
+   Chestnut hair, tousled by the wind, frames the tanned oval of his face.
+Lips curving, his eyes rake over your inadequately dressed body, the damp
+chemise clinging to your legs and heaving bosom, your gleaming hair. You
+are intensely aware of the strength of his hard seaworn body, of the deep
+sea blue of his eyes. And then his mouth is on yours, lips parted,
+demanding, and you arch into his kiss...
+   He presses you against him, head bent. &quot;But who, my dear,&quot; he whispers
+into your hair, &quot;will protect you from me?&quot;
+
+PLUNDERED HEARTS
+Infocom interactive fiction
+Copyright (c) 1987 by Infocom, Inc. All rights reserved.
+PLUNDERED HEARTS is a trademark of Infocom, Inc.
+Release 26 / Serial number 870730
+
+LATE ONE SPRING NIGHT IN THE WEST INDIES...
+
+   A crash overhead! Pirates are boarding the Lafond Deux! The first mate
+hurries you into Captain Davis&#x27;s cabin.
+   &quot;Good, you brought the girl,&quot; Davis smirks. &quot;She&#x27;ll keep the pirates
+busy. She was only a tool of Lafond&#x27;s, anyway. Let me just find that cof--&quot;
+A man on deck screams in agony and Davis starts. &quot;Let&#x27;s go.&quot; The captain
+thrusts you on the bed and walks out, locking the door.
+   His laugh echoes. &quot;Best get comfortable, girl. You&#x27;re likely to be there
+for the rest of your life.&quot;
+
+Cabin, on the bed
+   You are in an officer&#x27;s cabin, lit by the firelight glowing through a
+porthole. A door is to starboard. Except for the built-in bed, the room
+seems to have been emptied thoroughly, if hurriedly.
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This scene reflects the romantic narrative Briggs desired, yet it also shows the pressures of genre expectations. The intense focus on the protagonist&#x27;s physical experience contrasts with the commercial need for a marketable, albeit constrained, &quot;woman writing for women&quot; title.</p><small>1.047 s · 40 mots · 50 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.37773)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This scene reflects the romantic genre Briggs pursued, challenging the notion of &quot;games for girls.&quot; The intense narrative focus contrasts with the commercial pressures driving Infocom toward business software.</p><small>0.531 s · 29 mots · 35 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.49733)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This intense romance aligns with her personal desire to legitimize the genre, moving beyond trivial &quot;games for girls.&quot; The descriptive language shows the ambition and technical difficulty of fitting such narrative depth into limited memory.</p><small>4.641 s · 35 mots · 456 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.47683)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This scene reflects the genre&#x27;s tension, blending romance with immediate danger, a narrative space Briggs championed. The visceral action contrasts with the technical constraints she faced in crafting such an ambitious, literary experience.</p><small>0.703 s · 33 mots · 41 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.35751)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This scene reflects the genre&#x27;s tension, blending romance with immediate danger, a narrative space Briggs championed. The intense focus on character interaction contrasts with the commercial pressures she faced at Infocom.</p><small>0.89 s · 31 mots · 39 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.37614)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This scene exemplifies the romantic swashbuckling genre Briggs championed, aligning with her desire to legitimize romance as a narrative form. The focus on the female protagonist&#x27;s experience in captivity reflects the unique perspective of &quot;a woman writing for women.&quot;</p><small>7.219 s · 39 mots · 482 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.4403)</small></p></article></div></section><section><h2>An invitation and a social role</h2><details><summary>Texte du jeu</summary><pre>All diamonds winking fire, tears of sapphire and crushed rubies in an oval
+setting, it is a pity that the clasp of the jewelled brooch has broken. The
+gold pin at the back swings about uselessly.
+
+&gt;
+Opening the coffer reveals an invitation.
+
+&gt;
+Taken.
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The broken clasp mirrors the fragility of the creative culture at Infocom, a contrast to the ambitious, literary quality of the text adventures. This moment echoes the tension between narrative depth and the commercial pressures of the company&#x27;s shifting focus.</p><small>0.656 s · 40 mots · 48 tokens · stop</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.44786)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The description of the broken brooch echoes the fragility of Infocom&#x27;s creative culture, much like the failing Cornerstone project. This moment reflects the tension between narrative beauty and technical limitations.</p><small>0.625 s · 30 mots · 37 tokens · stop</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.41316)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The detailed description of the jewels feels very literary, aligning with Briggs&#x27;s desire to write novels. Yet, every word and every object must fit within the tight memory constraints of the C64.</p><small>3.969 s · 32 mots · 428 tokens · stop</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.33416)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The description of the broken brooch echoes the fragility of Infocom&#x27;s creative culture under commercial pressure. This moment mirrors the delicate balance between narrative beauty and the practical constraints of the game&#x27;s design.</p><small>0.625 s · 33 mots · 41 tokens · stop</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.40373)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The description of the broken brooch echoes the fragility of Infocom&#x27;s creative culture under commercial pressure. This moment reflects the delicate balance between narrative beauty and the practical limitations of the game&#x27;s design.</p><small>0.562 s · 33 mots · 41 tokens · stop</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.41273)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The detailed description of the jewels reflects the narrative ambition Briggs championed for Plundered Hearts. This literary focus stood against the corporate pressure to create commercially guaranteed titles like Cornerstone.</p><small>4.422 s · 30 mots · 485 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.43315)</small></p></article></div></section><section><h2>Changing clothes and identity</h2><details><summary>Texte du jeu</summary><pre>Sleeping Cupboard
+   The bed is softer than it looks, plumped up with fresh straw. A soft, if
+somewhat cramped, bunk for the tall bulk of Jamison. The cupboard opens to
+the fore.
+   Kicked into a far corner is a pile of clothes.
+
+&gt;
+You pick up the pile of clothes. It separates into a pair of breeches and a
+shirt.
+
+&gt;
+You take off the cotton frock.
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This scene reflects the narrative focus Briggs desired, a romantic adventure, yet it exists within the tight memory constraints that dictated design choices. The functional description hints at the technical limitations shaping the world&#x27;s presentation.</p><small>0.563 s · 35 mots · 42 tokens · stop</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.3793)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This scene reflects the narrative focus Briggs desired, a romantic adventure, yet it exists within the tight memory constraints that dictated design choices. The humble setting contrasts with the grand swashbuckling themes she was trying to legitimize.</p><small>0.734 s · 37 mots · 46 tokens · stop</small><p><small>Vidéo : Games That Inspired Plundered Hearts (0.35774)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The detailed description shows how much narrative had to be packed into limited memory. This reflects the technical struggle of making a grand romance work within the C64&#x27;s small space.</p><small>4.719 s · 30 mots · 538 tokens · stop</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.45644)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This scene reflects the detailed, literary focus Briggs valued, contrasting with the corporate push toward business software. The intimate description hints at the narrative depth she sought, far removed from mere commercial metrics.</p><small>0.672 s · 33 mots · 39 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.30131)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This scene reflects the detailed, literary focus Briggs valued, contrasting with the corporate push toward business software. The intimate description hints at the narrative depth she sought, far removed from mere commercial metrics.</p><small>0.61 s · 33 mots · 39 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.30131)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The detailed description of the cramped cupboard and clothes reflects the literary ambition Briggs valued. Technical constraints forced designers to make every word count, shaping the world&#x27;s intimate feel.</p><small>4.063 s · 29 mots · 462 tokens · stop</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.3538)</small></p></article></div></section><section><h2>Escaping the ship</h2><details><summary>Texte du jeu</summary><pre>You crawl into the cask, feeling a slab of something stuck on the bottom.
+From this close, you can see the line is getting frayed where it rubs
+against the cask.
+
+&gt;
+You peel it off the cask.
+
+&gt;
+slab of pork: Done.
+shirt: You&#x27;ll have to remove the shirt first.
+breeches: You&#x27;ll have to remove the breeches first.
+your kid slippers: You&#x27;ll have to remove your kid slippers first.
+linen chemise: You&#x27;ll have to remove the linen chemise first.
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The detailed inventory checks reflect the tight memory constraints Briggs faced, where every small object mattered. This technical necessity shaped the narrative pacing, forcing careful design choices within the game&#x27;s limited scope.</p><small>0.703 s · 32 mots · 39 tokens · stop</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.42288)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The detailed inventory checks reflect the tight memory constraints Briggs faced, where every small object mattered. This technical necessity shaped the narrative pacing, forcing careful design choices within the game&#x27;s limited scope.</p><small>0.75 s · 32 mots · 39 tokens · stop</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.42288)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This simple puzzle reflects the technical constraints and the blend of literature and play that Briggs valued. It shows how careful design was required to make every interaction logically sound within the game&#x27;s world.</p><small>4.937 s · 34 mots · 525 tokens · stop</small><p><small>Vidéo : An Absurd Wonderland for Playtesting (0.40348)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The detailed inventory checks reflect the tight memory constraints Briggs faced, forcing design choices like frequent player deaths. This technical limitation shaped the narrative possibilities within the game&#x27;s scope.</p><small>0.562 s · 29 mots · 35 tokens · stop</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.45617)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The detailed inventory checks echo the technical constraints Briggs faced, where even simple actions required careful parsing. This contrasts with the grand narrative ambition she held for her writing, a desire for literary depth over mere gameplay mechanics.</p><small>0.813 s · 38 mots · 43 tokens · stop</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.41601)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This puzzle exemplifies how technical constraints shaped the game&#x27;s design. Space limitations forced the creation of simple, linear puzzles, a necessity Briggs noted for the C64.</p><small>5.797 s · 26 mots · 593 tokens · stop</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.42742)</small></p></article></div></section><section><h2>Meeting Lucy</h2><details><summary>Texte du jeu</summary><pre>For safety&#x27;s sake, you leave the hat on its knob. Best not to show that
+you&#x27;ve been wandering.
+
+East Hallway
+   The carpeted hallway turns from west to north here, extending into the
+east wing. A long table blocks the way south.
+   A black-garbed butler marches up to you, &quot;It was made clear at the
+whippings that villagers are not admitted in this house.&quot; He grasps you by
+the scruff of the neck and propels you headfirst out the front door.
+
+Main Entrance
+   The front door stands open to the south, light splayed out onto a drive
+stretching north into the jungle. A path leads around the western wing of
+the house; jutting out from the east wing is a tall hedge.
+
+&gt;
+The gravel path is just wide enough for a cart to pass. It bends around the
+west wing of the house, leading you to...
+
+Trade Entrance
+   You are on a well-trampled lawn at the side of the house, one low
+doorway leading in to the east. Gravelled paths lead north and south into
+the undergrowth.
+
+&gt;
+Kitchen
+   A firepit in the floor smokes badly, fogging up the depths of this large
+kitchen, somehow not escaping through either the south or west doors.
+   A blond woman huddles alone by the fire, as if cold.
+   The woman smiles uncertainly, then rushes over. &quot;Are you come from the
+village, boy? Dost know Lord Dimsford?&quot; She sighs at your surprise. &quot;So he
+sent you -- I am his Lucy. It&#x27;s been so long since I&#x27;ve seen him. Lafond
+caught me eavesdropping and now I can&#x27;t leave the grounds.&quot;
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This scene echoes the romantic, constrained world of Plundered Hearts, where narrative tension is built within strict boundaries. The butler&#x27;s forceful expulsion mirrors the pressure to fit grand ideas into technical and commercial limitations.</p><small>0.828 s · 34 mots · 42 tokens · stop</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.3414)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The scene reflects the romantic, swashbuckling tone of Plundered Hearts, a genre Briggs championed despite commercial skepticism. The narrative focus on a captive woman echoes her desire to explore legitimate, character-driven romance.</p><small>0.594 s · 32 mots · 44 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.45065)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The setting feels highly constrained, mirroring the memory limits that shaped Plundered Hearts&#x27; design. She wanted a grand romance, but the technical and critical pressures dictated the narrative&#x27;s boundaries.</p><small>5.671 s · 29 mots · 573 tokens · stop</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.49221)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The scene evokes the intimate, narrative focus Briggs valued, contrasting with the corporate pressures of Cornerstone. This moment feels like the kind of rich, literary world she wanted to build, away from business software.</p><small>0.641 s · 34 mots · 41 tokens · stop</small><p><small>Vidéo : Leaving Infocom and Looking Back (0.3018)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This scene reflects the romantic, swashbuckling tone of Plundered Hearts, a genre Briggs championed. The focus on personal drama contrasts with the corporate pressures that later strained Infocom&#x27;s creative freedom.</p><small>0.672 s · 30 mots · 42 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.42456)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The detailed atmosphere and confined settings reflect the ambition of the design. This complexity was achieved despite the tight memory constraints of the platform.</p><small>5.859 s · 24 mots · 625 tokens · stop</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.35287)</small></p></article></div></section><section><h2>Entering the ballroom</h2><details><summary>Texte du jeu</summary><pre>Foyer
+   A grandiose staircase splits and twists up to the next floor here,
+framing the entrance south to the ballroom. Long hallways lead east and
+west; cool night air drifts in through the front door, north of you.
+   The butler stands near the entrance to the ballroom.
+
+&gt;
+[to the butler]
+The butler takes the invitation. &quot;Enjoy the dance, Miss Davis.&quot;
+
+&gt;
+The sea of spectators parts to admit you, murmuring approval.
+
+Ballroom
+   Lafond&#x27;s party is well attended: you can hardly move for the crush.
+However, the room is oddly silent, no talk interrupting the musical efforts
+of the musicians to the west. Despite the heat, no one ventures south to
+the veranda, nor through the opening east. The foyer is north of you.
+   Captain Jamison moves up to you, saying, &quot;May I have this dance?&quot; He
+doesn&#x27;t await an answer, sweeping you out onto the dance floor.
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This scene reflects the romantic, swashbuckling tone of Plundered Hearts, aligning with Briggs&#x27;s personal desire to explore that genre. The setting&#x27;s formality echoes the high-stakes atmosphere of Infocom&#x27;s creative period before commercial pressures took hold.</p><small>0.656 s · 35 mots · 53 tokens · stop</small><p><small>Vidéo : Games That Inspired Plundered Hearts (0.41222)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This scene reflects the romantic, swashbuckling tone of Plundered Hearts, aligning with Briggs&#x27;s personal desire to explore that genre. The setting&#x27;s formality echoes the high-stakes atmosphere of Infocom&#x27;s creative period before commercial pressures took hold.</p><small>0.812 s · 35 mots · 53 tokens · stop</small><p><small>Vidéo : Games That Inspired Plundered Hearts (0.41222)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This grand setting reflects her desire to treat romance as a serious literary form, not just a marketing gimmick. The challenge was making such elaborate social scenes fit within the strict memory limits of the C64.</p><small>5.125 s · 36 mots · 548 tokens · stop</small><p><small>Vidéo : Commercial Pressures and Romance Games (0.39006)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The description evokes the grand, yet strangely constrained, atmosphere of a world built under technical limitations. This mirrors the pressure Briggs felt to make her romance feel grand while fitting within memory constraints.</p><small>0.86 s · 33 mots · 38 tokens · stop</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.32064)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The description evokes the grand, yet strangely silent, atmosphere of a world built under tight technical constraints. This echoes the tension between the narrative ambition of Plundered Hearts and the memory limitations of the C64.</p><small>0.625 s · 35 mots · 43 tokens · stop</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.44422)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This high-society scene showcases the romantic narrative Briggs wanted to legitimize, moving beyond trivial &quot;games for girls.&quot; The detailed setting also reflects the technical ambition of building a complex world within the memory constraints of the C64.</p><small>5.344 s · 37 mots · 565 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.34236)</small></p></article></div></section><section><h2>Distracting the crocodile</h2><details><summary>Texte du jeu</summary><pre>Bottom of Stairwell
+
+&gt;
+Anteroom
+   Two exits lead from this cavernous room, north and south. The walls drip
+with wet, forming a huge pool on the floor.
+   A crocodile lies half in the pool, gazing at you, with baleful eyes,
+jaws wide open. Dagger-sharp teeth glint in the torchlight.
+
+&gt;
+You squeeze three colorless drops onto the slab of pork. A patch of salt
+dissolves as the laudanum absorbs into the meat.
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The stark description of the crocodile and the deliberate use of laudanum hint at the narrative ambition Briggs pursued, balancing genre interest with technical constraints. This moment reflects the tight design choices made under memory limitations, where even simple actions carry narrative weight.</p><small>0.75 s · 43 mots · 50 tokens · stop</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.30642)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The stark description of the crocodile and the careful dosage of laudanum evoke the technical constraints Briggs faced, where even simple actions required precise, limited implementation. This moment mirrors the delicate balance between narrative ambition and the unforgiving memory limits of the hardware.</p><small>0.766 s · 43 mots · 51 tokens · stop</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.38351)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The detailed description of the crocodile and the laudanum preparation shows the narrative ambition. This level of world-building was challenging, often requiring clever design to fit strict memory constraints.</p><small>5.469 s · 29 mots · 578 tokens · stop</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.33036)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The stark, survival-driven nature of this scene echoes the technical constraints Briggs faced, where limited memory forced design compromises. This moment reflects the blend of high narrative ambition and brutal functional limitation in her work.</p><small>0.641 s · 35 mots · 42 tokens · stop</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.31991)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The stark, survival-oriented description echoes the technical constraints Briggs faced, where limited space forced design choices like frequent player deaths. This moment reflects the tension between narrative ambition and the harsh realities of platform limitations.</p><small>0.704 s · 35 mots · 42 tokens · stop</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.4382)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The vivid description of the crocodile reflects her desire to treat romance as a legitimate narrative form. Yet, the pressure of memory constraints forced her to simplify complex situations into dramatic, high-stakes choices.</p><small>4.938 s · 33 mots · 529 tokens · stop</small><p><small>Vidéo : Commercial Pressures and Romance Games (0.31366)</small></p></article></div></section><section><h2>Finding her father</h2><details><summary>Texte du jeu</summary><pre>[with the large key]
+Unlocked.
+
+&gt;
+Opened.
+
+&gt;
+Cell
+   Hewn from dense rock, the cell is a stagnant burrow. Except for the
+tiniest glow of light from the torch two rooms away, it is pitch black.
+   As you enter, a tall bony man moves out of the darkness. &quot;Papa,&quot; you
+cry, rushing into his arms.
+   &quot;Why, hullo, my dear.&quot; He hugs you tightly. &quot;Nick certainly took his
+time about fetching you.&quot;
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The intimate, narrative focus of this moment echoes Briggs&#x27;s desire to legitimize romance as a serious form, distinct from trivial marketing. It contrasts sharply with the corporate pressures pushing Infocom toward business software like Cornerstone.</p><small>0.719 s · 35 mots · 44 tokens · stop</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.38582)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The intimate, narrative focus of this moment echoes Briggs&#x27;s desire to legitimize romance as a serious form, moving beyond trivial marketing. It contrasts sharply with the corporate pressures pushing Infocom toward business software like Cornerstone.</p><small>0.719 s · 35 mots · 44 tokens · stop</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.39076)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This intimate scene demonstrates her commitment to romance as a legitimate narrative form. The emotional depth contrasts sharply with the technical constraints she faced during the game&#x27;s development.</p><small>4.719 s · 28 mots · 509 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.38648)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This moment echoes the intimate, narrative focus Briggs valued, contrasting with the corporate pressures of Cornerstone. The personal drama here reflects the literary depth she sought, rather than the commercial metrics Infocom increasingly demanded.</p><small>0.703 s · 34 mots · 41 tokens · stop</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.34313)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This moment echoes the intimate, narrative focus Briggs valued, contrasting with the corporate push toward business software. The personal drama here reflects the creative freedom she sought before commercial pressures took hold.</p><small>0.625 s · 32 mots · 37 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.3559)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This intimate scene reflects her desire to treat romance as a legitimate narrative form, not just a marketing gimmick. It stands in stark contrast to the corporate pressure to create &quot;serious&quot; business software like Cornerstone.</p><small>4.656 s · 35 mots · 502 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.41087)</small></p></article></div></section><section><h2>Deception over wine</h2><details><summary>Texte du jeu</summary><pre>&quot;Welcome, ma petite.&quot; Lafond bows you in.
+
+Lafond&#x27;s Bedroom
+   Lafond is leering, lip curled.
+   A lace-covered table crouches beside a wing-backed chair in one corner.
+Sitting on the table is a green goblet, a blue goblet and a flagon.
+   &quot;Have some wine.&quot; Lafond pours wine into two glasses, giving a blue one
+to you. &quot;Drink this down. We have a long night ahead of us.&quot; He drains his
+own.
+
+&gt;
+You empty the blue goblet of wine.
+   &quot;Good girl,&quot; he says, &quot;Let&#x27;s see more cooperation of this sort.&quot;
+   Suddenly, the door slams open. It is Jamison, coatless, sword bared, his
+shirt ripped. &quot;Thank God I am not too late. Leave, darling, before I skewer
+this dog to his bedposts,&quot; he cries. The scar on his cheek gleams coldly.
+   With a yell, Crulley and the butler jump out of the darkness behind him.
+Nicholas struggles, but soon lies unconscious on the floor.
+   &quot;Take him to the dungeon,&quot; Lafond says, setting down his glass. &quot;You,
+butler, stay nearby. I do not wish to be disturbed again.
+   &quot;Now that we are rid of that intrusion, cherie, I will change into
+something more comfortable. Pour me more wine.&quot; He crosses to the wardrobe
+removing his coat and vest, turned slightly away from you.
+
+&gt;
+You fill the green goblet with wine.
+   &quot;In private, call me Jean, or whatever endearment you choose, once I
+have approved it.&quot; Lafond is looking into the wardrobe.
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This scene reflects the romantic, swashbuckling tone Briggs wanted for Plundered Hearts, a genre she championed despite industry skepticism. The intimate, high-stakes drama mirrors the creative intensity she sought outside of corporate pressures.</p><small>0.672 s · 33 mots · 45 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.47411)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This scene reflects the romantic, swashbuckling tone Briggs aimed for, a genre she championed despite industry skepticism. The intense, dramatic action contrasts with the technical constraints she later faced in fitting content to memory.</p><small>0.766 s · 34 mots · 43 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.36037)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This scene captures the swashbuckling romance Briggs sought to legitimize in her work. The sudden intrusion into the intimate setting reflects the narrative ambition and high stakes of the game&#x27;s design.</p><small>4.828 s · 31 mots · 510 tokens · stop</small><p><small>Vidéo : Games That Inspired Plundered Hearts (0.38007)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This scene reflects the swashbuckling romance Briggs wanted to explore, a genre she felt was often trivialized. The dramatic action contrasts with the technical constraints she later faced fitting content into limited memory.</p><small>0.797 s · 33 mots · 41 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.41945)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This scene reflects the swashbuckling romance Briggs wanted to explore, a narrative freedom contrasted with the commercial pressures of Infocom. The dramatic action mirrors the high-stakes, intense creative atmosphere she experienced before the company&#x27;s disillusionment.</p><small>0.578 s · 35 mots · 49 tokens · stop</small><p><small>Vidéo : Commercial Pressures and Romance Games (0.3559)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This dramatic romance reflects her desire to legitimize the genre, moving beyond trivial &quot;games for girls.&quot; The complex scene also speaks to the technical ambition required to deliver such narrative flair within memory constraints.</p><small>4.593 s · 34 mots · 471 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.50256)</small></p></article></div></section><section><h2>Fighting Crulley</h2><details><summary>Texte du jeu</summary><pre>Anteroom
+   The crocodile lies half in the pool, gazing at you, with baleful eyes,
+jaws wide open. Dagger-sharp teeth glint in the torchlight.
+   Cookie pegs after you.
+   Cookie rushes at the crocodile, crying, &quot;I&#x27;ll take care of this monster,
+sweetheart. You run by and do what you must do.&quot; He dives headlong into the
+pool.
+
+&gt;
+A whip cracks the air. &quot;Flogs me, will ye, Cap&#x27;n? Taste it yourself, har.&quot;
+Jamison groans, half conscious. You rush in.
+
+Dungeon
+   You sense, rather than see, the rusty skeletons of old cages and torture
+devices that line the walls of this cavernous room. One flaming torch, high
+on a wall, casts mad licks of light into the darkness. Passages lead north
+and west. Set deep in the rocky floor is an open trapdoor.
+   Nicholas is spread-eagled against the wall, shackled in the pair of
+manacles.
+   A rapier lies in the half-dark of a corner.
+   Crulley steps leering out of the shadows and cracks the whip near you,
+hopping you towards the open trapdoor. &quot;Ye&#x27;re a tasty doxy to let slip, but
+no &#x27;elp fer it.&quot;
+
+&gt;
+Taken. Crulley snorts, &quot;Be careful, you might hurt yer dearie.&quot;
+   Crulley cracks the whip near you, hopping you towards the open trapdoor.
+&quot;What, afrighted of a lick o&#x27; the whip?&quot;
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The dramatic action here echoes the high stakes of her early work, where even romance needed sharp, impactful moments to survive technical constraints. This moment contrasts with the later corporate pressures that stifled creative risk.</p><small>0.766 s · 35 mots · 41 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.36791)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The dramatic action here echoes the high stakes of her early work, where player expectations met technical limitations. This moment captures the intense, narrative-driven world-building she championed, even amidst commercial uncertainty.</p><small>0.75 s · 31 mots · 41 tokens · stop</small><p><small>Vidéo : Game Design as a Literary Experience (0.38629)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This intense swashbuckling confirms her desire to legitimize romance as a serious narrative form. The high drama shows how she treated the genre as literature, not just a marketing gimmick.</p><small>5.515 s · 30 mots · 599 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.39114)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The dramatic, high-stakes action here reflects the intense creative energy Briggs experienced, even as commercial pressures threatened the company&#x27;s delicate balance. This moment embodies the blend of literary adventure and technical constraint she navigated.</p><small>0.75 s · 34 mots · 43 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.31848)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The dramatic, high-stakes action here reflects the intense creative energy Briggs experienced, a stark contrast to the corporate pressures of Cornerstone. This moment embodies the narrative ambition she sought, a genuine story rather than a mere marketing gimmick.</p><small>0.704 s · 38 mots · 46 tokens · stop</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.33362)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The dramatic action reflects her desire to legitimize romance as a serious narrative form. Yet, the memory constraints likely forced her to use frequent deaths or simple puzzles to manage the content.</p><small>4.563 s · 32 mots · 483 tokens · stop</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.41942)</small></p></article></div></section><section><h2>Reviving a companion</h2><details><summary>Texte du jeu</summary><pre>You flick the rapier across his chest, barely scratching him. He cries,
+&quot;Avast me! Pricked by a woman!&quot; and trips into the trapdoor.
+   You peer down the hole to find Crulley hanging in midair, his hook
+caught in the rocks a few yards down. He curses and starts to climb up the
+sheer slimy walls of the well.
+
+&gt;
+Shut.
+
+&gt;
+[with the jewelled brooch]
+You twist the pin of the jewelled brooch in the locks, quickly freeing
+Nicholas. He falls in a faint at your feet.
+   Sounds of scraping hook against stone and curses echo out of the well,
+muffled by the trapdoor.
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This moment reflects the swashbuckling romance Briggs desired, yet the game&#x27;s constraints likely dictated such dramatic, high-stakes action. The memory of cutting content for memory limits makes this elaborate scene feel both grand and technically fragile.</p><small>0.781 s · 36 mots · 48 tokens · stop</small><p><small>Vidéo : Games That Inspired Plundered Hearts (0.37765)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This moment reflects the swashbuckling romance Briggs desired, yet the underlying technical constraints of the C64 likely shaped the pacing and death mechanics. The game&#x27;s focus on personal narrative contrasts with the company&#x27;s push toward corporate software like Cornerstone.</p><small>0.625 s · 39 mots · 52 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.44148)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The swift action and detailed descriptions highlight the technical challenge of fitting complex scenes into limited memory. These moments demonstrate how space constraints shaped the design of the romantic adventure.</p><small>4.843 s · 30 mots · 518 tokens · stop</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.37826)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This moment reflects the romantic, swashbuckling tone Briggs wanted for Plundered Hearts, a genre she championed. The technical constraint of the game likely shaped these dramatic, high-stakes interactions.</p><small>0.547 s · 28 mots · 40 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.5511)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This moment reflects the romantic, swashbuckling tone Briggs wanted for Plundered Hearts, a genre she championed. The technical constraint of the game likely shaped these dramatic, high-stakes interactions.</p><small>0.625 s · 28 mots · 40 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.5511)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This scene embodies the swashbuckling romance she championed, proving her desire to legitimize the genre. The dramatic action also reflects the technical constraints that forced her to make impactful design choices.</p><small>4.968 s · 31 mots · 540 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.4129)</small></p></article></div></section><section><h2>The final confrontation</h2><details><summary>Texte du jeu</summary><pre>He fails to notice you&#x27;ve spoken.
+   Nicholas looks determined. &quot;I accept. So long as my people go free if I
+win. Order your dragoons to obey us, then.&quot; In answer, Lafond jumps off the
+cliff like a huge brocaded bat to land in front of Captain Jamison. &quot;Die
+then, fool!&quot;
+   The pistol, spinning from Lafond&#x27;s grip, drops to the sand nearby.
+
+&gt;
+Taken.
+   Lafond immediately takes the advantage, forcing Nicholas in a retreat
+towards the foaming surf. But Nicholas fights hard, jaw set, ignoring his
+wounds. Lafond finally loses his smile.
+   Behind the duellists, far away atop the cliff, you notice Crulley madly
+reloading the pistol.
+
+&gt;
+You pour a lumpy stream of gunpowder mixture into the barrel of the pistol
+tamping it as best you can.
+   Suddenly the force of the duel turns, Nicholas advancing against
+Lafond&#x27;s retreat. Their blades silently flash in the moonlight. Lafond is
+pressed back into the shadow of the cliff, sweat beading on his forehead.
+Abruptly, Jamison leaps forward, metal scrapes, and his rapier licks neatly
+into Lafond&#x27;s ribs, like a snake slipping into its burrow. The body of the
+governor of St. Sinistra convulses, as in amazement, then sags dead on the
+sword.
+   Nicholas removes a gold ring from the dead man&#x27;s finger, throwing his
+own cheap copy into the surf.
+   Far above him, Crulley moves down the stairs.
+
+&gt;</pre></details><h3>Graine 42</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>The scene reflects the narrative ambition Briggs pursued, blending high-stakes romance with technical constraints. This moment embodies the kind of literary focus she championed, contrasting with the corporate push for business software.</p><small>0.609 s · 32 mots · 39 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.37394)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>The scene reflects the narrative ambition Briggs pursued, blending high-stakes romance with technical constraints. This moment embodies the kind of literary focus she championed, contrasting with the corporate push for business software.</p><small>0.797 s · 32 mots · 39 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.37394)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>This intense action reflects her desire to write a legitimate narrative, not just a trivial &quot;game for girls.&quot; The detailed descriptions also show how technical constraints shaped the design of the adventure.</p><small>5.797 s · 32 mots · 622 tokens · stop</small><p><small>Vidéo : Creating a Romance Game for Women (0.4763)</small></p></article></div><h3>Graine 43</h3><div class="answers"><article><h4>Sans raisonnement, 256</h4><p>This scene reflects the high-stakes narrative ambition Briggs pursued, contrasting with the commercial pressures that later strained Infocom. The intense action mirrors the creative fervor of the &quot;Camelot&quot; era before corporate caution set in.</p><small>0.844 s · 34 mots · 44 tokens · stop</small><p><small>Vidéo : Nostalgia and Infocom&#x27;s Individual Vision (0.43203)</small></p></article><article><h4>Sans raisonnement, 1024</h4><p>This scene reflects the high-stakes narrative ambition Briggs pursued, contrasting with the commercial pressures that later strained Infocom. The intense action mirrors the creative fervor of the &quot;Camelot&quot; era before corporate caution set in.</p><small>0.656 s · 34 mots · 44 tokens · stop</small><p><small>Vidéo : Nostalgia and Infocom&#x27;s Individual Vision (0.43203)</small></p></article><article><h4>Avec raisonnement, 1024</h4><p>The intensity of this swashbuckling scene aligns with her desire to legitimize romance as a serious narrative form. The tight, focused action also reflects the necessity of simplifying design due to memory constraints.</p><small>4.906 s · 33 mots · 523 tokens · stop</small><p><small>Vidéo : Games That Inspired Plundered Hearts (0.32164)</small></p></article></div></section></html>

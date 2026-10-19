@@ -1,0 +1,182 @@
+[
+  {
+    "filename": "00_entering_infocom_0.ogv",
+    "actual_sec": 36.201333,
+    "catalog_sec": 40.72,
+    "delta_sec": -4.519
+  },
+  {
+    "filename": "01_entering_infocom_1.ogv",
+    "actual_sec": 55.166667,
+    "catalog_sec": 61.12,
+    "delta_sec": -5.953
+  },
+  {
+    "filename": "02_wheeler_building_0.ogv",
+    "actual_sec": 62.548,
+    "catalog_sec": 66.48,
+    "delta_sec": -3.932
+  },
+  {
+    "filename": "03_working_at_infocom_0.ogv",
+    "actual_sec": 188.393333,
+    "catalog_sec": 192.88,
+    "delta_sec": -4.487
+  },
+  {
+    "filename": "04_company_culture_0.ogv",
+    "actual_sec": 89.236,
+    "catalog_sec": 94.32,
+    "delta_sec": -5.084
+  },
+  {
+    "filename": "05_becoming_an_imp_0.ogv",
+    "actual_sec": 79.145333,
+    "catalog_sec": 84.64,
+    "delta_sec": -5.495
+  },
+  {
+    "filename": "06_leaving_infocom_0.ogv",
+    "actual_sec": 98.430667,
+    "catalog_sec": 103.68,
+    "delta_sec": -5.249
+  },
+  {
+    "filename": "07_writing_a_romance_0.ogv",
+    "actual_sec": 85.033333,
+    "catalog_sec": 89.68,
+    "delta_sec": -4.647
+  },
+  {
+    "filename": "08_writing_a_romance_1.ogv",
+    "actual_sec": 106.089333,
+    "catalog_sec": 106.24,
+    "delta_sec": -0.151
+  },
+  {
+    "filename": "09_writing_a_romance_2.ogv",
+    "actual_sec": 146.964,
+    "catalog_sec": 151.76,
+    "delta_sec": -4.796
+  },
+  {
+    "filename": "10_writing_a_romance_3.ogv",
+    "actual_sec": 59.305333,
+    "catalog_sec": 61.52,
+    "delta_sec": -2.215
+  },
+  {
+    "filename": "11_market_vision_0.ogv",
+    "actual_sec": 157.438667,
+    "catalog_sec": 164.16,
+    "delta_sec": -6.721
+  },
+  {
+    "filename": "12_writing_a_romance_4.ogv",
+    "actual_sec": 49.406667,
+    "catalog_sec": 53.84,
+    "delta_sec": -4.433
+  },
+  {
+    "filename": "13_critical_response_0.ogv",
+    "actual_sec": 94.078667,
+    "catalog_sec": 99.84,
+    "delta_sec": -5.761
+  },
+  {
+    "filename": "14_market_vision_1.ogv",
+    "actual_sec": 163.988,
+    "catalog_sec": 168.32,
+    "delta_sec": -4.332
+  },
+  {
+    "filename": "15_management_vision_0.ogv",
+    "actual_sec": 135.785333,
+    "catalog_sec": 140.16,
+    "delta_sec": -4.375
+  },
+  {
+    "filename": "16_writing_a_novel_0.ogv",
+    "actual_sec": 51.625333,
+    "catalog_sec": 54.64,
+    "delta_sec": -3.015
+  },
+  {
+    "filename": "17_wheeler_building_1.ogv",
+    "actual_sec": 104.510667,
+    "catalog_sec": 110.72,
+    "delta_sec": -6.209
+  },
+  {
+    "filename": "18_wheeler_building_2.ogv",
+    "actual_sec": 171.668,
+    "catalog_sec": 178.72,
+    "delta_sec": -7.052
+  },
+  {
+    "filename": "19_working_at_infocom_1.ogv",
+    "actual_sec": 93.502667,
+    "catalog_sec": 100.08,
+    "delta_sec": -6.577
+  },
+  {
+    "filename": "20_working_at_infocom_2.ogv",
+    "actual_sec": 93.289333,
+    "catalog_sec": 98.4,
+    "delta_sec": -5.111
+  },
+  {
+    "filename": "21_working_at_infocom_3.ogv",
+    "actual_sec": 77.865333,
+    "catalog_sec": 81.76,
+    "delta_sec": -3.895
+  },
+  {
+    "filename": "22_market_vision_2.ogv",
+    "actual_sec": 38.953333,
+    "catalog_sec": 43.36,
+    "delta_sec": -4.407
+  },
+  {
+    "filename": "23_market_vision_3.ogv",
+    "actual_sec": 116.777333,
+    "catalog_sec": 121.36,
+    "delta_sec": -4.583
+  },
+  {
+    "filename": "24_writing_a_romance_5.ogv",
+    "actual_sec": 39.273333,
+    "catalog_sec": 44.64,
+    "delta_sec": -5.367
+  },
+  {
+    "filename": "noise_00.ogv",
+    "actual_sec": 1.62,
+    "catalog_sec": null,
+    "delta_sec": null
+  },
+  {
+    "filename": "noise_01.ogv",
+    "actual_sec": 1.577333,
+    "catalog_sec": null,
+    "delta_sec": null
+  },
+  {
+    "filename": "noise_02.ogv",
+    "actual_sec": 1.62,
+    "catalog_sec": null,
+    "delta_sec": null
+  },
+  {
+    "filename": "noise_03.ogv",
+    "actual_sec": 1.62,
+    "catalog_sec": null,
+    "delta_sec": null
+  },
+  {
+    "filename": "noise_04.ogv",
+    "actual_sec": 1.62,
+    "catalog_sec": null,
+    "delta_sec": null
+  }
+]

@@ -1,0 +1,164 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Loading ministral-3:14b
+ministral-3:14b | round 1 | stand_up | 31.344 s | 88 words |
+ministral-3:14b | round 1 | read_invitation | 16.11 s | 55 words |
+ministral-3:14b | round 1 | wear_breeches | 13.484 s | 48 words |
+ministral-3:14b | round 1 | cut_rope | 15.562 s | 51 words |
+ministral-3:14b | round 1 | examine_lucy | 14.094 s | 44 words |
+ministral-3:14b | round 1 | dance | 13.218 s | 45 words |
+ministral-3:14b | round 1 | throw_pork_at_crocodile | 16.297 s | 53 words |
+ministral-3:14b | round 1 | give_garter_to_papa | 20.094 s | 57 words |
+ministral-3:14b | round 1 | squeeze_bottle_into_green_goblet | 17.5 s | 58 words |
+ministral-3:14b | round 1 | kill_crulley | 16.422 s | 58 words |
+ministral-3:14b | round 1 | wave_smelling_salts | 15.875 s | 50 words |
+ministral-3:14b | round 1 | fire_pistol_at_crulley | 24.609 s | 73 words |
+ministral-3:14b | round 2 | stand_up | 19.734 s | 70 words |
+ministral-3:14b | round 2 | read_invitation | 17.797 s | 63 words |
+ministral-3:14b | round 2 | wear_breeches | 18.047 s | 59 words |
+ministral-3:14b | round 2 | cut_rope | 13.547 s | 49 words |
+ministral-3:14b | round 2 | examine_lucy | 14.11 s | 49 words |
+ministral-3:14b | round 2 | dance | 16.953 s | 54 words |
+ministral-3:14b | round 2 | throw_pork_at_crocodile | 18.094 s | 55 words |
+ministral-3:14b | round 2 | give_garter_to_papa | 19.125 s | 63 words |
+ministral-3:14b | round 2 | squeeze_bottle_into_green_goblet | 19.797 s | 70 words |
+ministral-3:14b | round 2 | kill_crulley | 19.937 s | 60 words |
+ministral-3:14b | round 2 | wave_smelling_salts | 16.859 s | 59 words |
+ministral-3:14b | round 2 | fire_pistol_at_crulley | 15.25 s | 50 words |
+Loading qwen3.5:4b
+qwen3.5:4b | round 1 | stand_up | 1.657 s | 43 words |
+qwen3.5:4b | round 1 | read_invitation | 0.782 s | 36 words |
+qwen3.5:4b | round 1 | wear_breeches | 0.718 s | 33 words |
+qwen3.5:4b | round 1 | cut_rope | 0.953 s | 44 words |
+qwen3.5:4b | round 1 | examine_lucy | 1.094 s | 45 words |
+qwen3.5:4b | round 1 | dance | 0.906 s | 36 words |
+qwen3.5:4b | round 1 | throw_pork_at_crocodile | 0.844 s | 36 words |
+qwen3.5:4b | round 1 | give_garter_to_papa | 0.781 s | 33 words |
+qwen3.5:4b | round 1 | squeeze_bottle_into_green_goblet | 0.875 s | 32 words |
+qwen3.5:4b | round 1 | kill_crulley | 0.953 s | 44 words |
+qwen3.5:4b | round 1 | wave_smelling_salts | 0.75 s | 35 words |
+qwen3.5:4b | round 1 | fire_pistol_at_crulley | 0.813 s | 33 words |
+qwen3.5:4b | round 2 | stand_up | 0.859 s | 34 words |
+qwen3.5:4b | round 2 | read_invitation | 0.922 s | 38 words |
+qwen3.5:4b | round 2 | wear_breeches | 0.844 s | 39 words |
+qwen3.5:4b | round 2 | cut_rope | 1.015 s | 47 words |
+qwen3.5:4b | round 2 | examine_lucy | 0.86 s | 34 words |
+qwen3.5:4b | round 2 | dance | 0.89 s | 38 words |
+qwen3.5:4b | round 2 | throw_pork_at_crocodile | 0.797 s | 33 words |
+qwen3.5:4b | round 2 | give_garter_to_papa | 0.734 s | 30 words |
+qwen3.5:4b | round 2 | squeeze_bottle_into_green_goblet | 0.75 s | 29 words |
+qwen3.5:4b | round 2 | kill_crulley | 0.813 s | 35 words |
+qwen3.5:4b | round 2 | wave_smelling_salts | 0.672 s | 30 words |
+qwen3.5:4b | round 2 | fire_pistol_at_crulley | 0.797 s | 35 words |
+Loading gemma4:e4b
+gemma4:e4b | round 1 | stand_up | 1.656 s | 39 words |
+gemma4:e4b | round 1 | read_invitation | 0.672 s | 35 words |
+gemma4:e4b | round 1 | wear_breeches | 0.719 s | 36 words |
+gemma4:e4b | round 1 | cut_rope | 0.828 s | 37 words |
+gemma4:e4b | round 1 | examine_lucy | 0.718 s | 31 words |
+gemma4:e4b | round 1 | dance | 0.735 s | 28 words |
+gemma4:e4b | round 1 | throw_pork_at_crocodile | 0.687 s | 35 words |
+gemma4:e4b | round 1 | give_garter_to_papa | 0.672 s | 34 words |
+gemma4:e4b | round 1 | squeeze_bottle_into_green_goblet | 0.766 s | 37 words |
+gemma4:e4b | round 1 | kill_crulley | 0.734 s | 35 words |
+gemma4:e4b | round 1 | wave_smelling_salts | 0.625 s | 29 words |
+gemma4:e4b | round 1 | fire_pistol_at_crulley | 0.703 s | 28 words |
+gemma4:e4b | round 2 | stand_up | 0.766 s | 35 words |
+gemma4:e4b | round 2 | read_invitation | 0.672 s | 29 words |
+gemma4:e4b | round 2 | wear_breeches | 0.656 s | 33 words |
+gemma4:e4b | round 2 | cut_rope | 0.781 s | 37 words |
+gemma4:e4b | round 2 | examine_lucy | 0.828 s | 35 words |
+gemma4:e4b | round 2 | dance | 0.797 s | 39 words |
+gemma4:e4b | round 2 | throw_pork_at_crocodile | 0.703 s | 42 words |
+gemma4:e4b | round 2 | give_garter_to_papa | 0.688 s | 37 words |
+gemma4:e4b | round 2 | squeeze_bottle_into_green_goblet | 0.671 s | 32 words |
+gemma4:e4b | round 2 | kill_crulley | 0.828 s | 36 words |
+gemma4:e4b | round 2 | wave_smelling_salts | 0.688 s | 32 words |
+gemma4:e4b | round 2 | fire_pistol_at_crulley | 0.734 s | 34 words |
+[
+  {
+    "model": "ministral-3:14b",
+    "attempts": 24,
+    "responses": 24,
+    "errors": 0,
+    "median_sec": 16.906,
+    "first_response_sec": 31.344,
+    "median_words": 56.0,
+    "within_60_words": 18,
+    "truncated": 0,
+    "markdown": 14,
+    "technical_terms": 15,
+    "distinct_top_videos": 8,
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "mistral3",
+      "families": [
+        "mistral3"
+      ],
+      "parameter_size": "13.9B",
+      "quantization_level": "Q4_K_M"
+    },
+    "supports_thinking": false,
+    "packaged_parameters": "temperature                    0.15",
+    "preload_sec": 17.765,
+    "peak_gpu_mib": 7034
+  },
+  {
+    "model": "qwen3.5:4b",
+    "attempts": 24,
+    "responses": 24,
+    "errors": 0,
+    "median_sec": 0.844,
+    "first_response_sec": 1.657,
+    "median_words": 35.0,
+    "within_60_words": 24,
+    "truncated": 0,
+    "markdown": 0,
+    "technical_terms": 11,
+    "distinct_top_videos": 7,
+    "details": {
+      "parent_model": "model.gguf",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "4.2B",
+      "quantization_level": "Q4_K_M"
+    },
+    "supports_thinking": true,
+    "packaged_parameters": "top_k                          20\ntop_p                          0.95\npresence_penalty               1.5\ntemperature                    1",
+    "preload_sec": 6.297,
+    "peak_gpu_mib": 4505
+  },
+  {
+    "model": "gemma4:e4b",
+    "attempts": 24,
+    "responses": 24,
+    "errors": 0,
+    "median_sec": 0.718,
+    "first_response_sec": 1.656,
+    "median_words": 35.0,
+    "within_60_words": 24,
+    "truncated": 0,
+    "markdown": 1,
+    "technical_terms": 8,
+    "distinct_top_videos": 9,
+    "details": {
+      "parent_model": "gemma4-validation-20260929:e4b-imatrix-attention-q6-q8-draft2",
+      "format": "gguf",
+      "family": "gemma4",
+      "families": [
+        "gemma4"
+      ],
+      "parameter_size": "7.5B",
+      "quantization_level": "Q4_K_M"
+    },
+    "supports_thinking": true,
+    "packaged_parameters": "top_k                          64\ntop_p                          0.95\ndraft_num_predict              3\ntemperature                    1",
+    "preload_sec": 13.094,
+    "peak_gpu_mib": 5409
+  }
+]
+Report: C:\works\projects\pLLMdered_hearts\documentation\llm-comparison-2026-10-19-1250\comparison.html

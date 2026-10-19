@@ -1,0 +1,1873 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Buffer de commentaire — pLLMdered Hearts</title><style>body{font:16px/1.6 system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem;color:#222}table{border-collapse:collapse;width:100%}th,td{padding:.6rem;border:1px solid #ddd;text-align:left}pre{white-space:pre-wrap}section{margin:2rem 0}small{color:#555}</style><h1>Buffer de commentaire : seuil de 500 mots</h1><p>Les commandes exécutées et les sorties complètes du jeu s’accumulent. Quand le buffer dépasse 500 mots, le LLM commente au retour au prompt, après l’affichage complet de la sortie du jeu. Le commentaire s’affiche immédiatement, y compris pendant un extrait d’Amy.</p><p>Python conserve le dernier commentaire. Sa vectorisation et le choix de la vidéo attendent la fin estimée de l’extrait courant, calculée depuis l’écriture de la demande avec la durée du catalogue et une marge de 3 secondes. Godot ne renvoie aucun état.</p><p>Le nouveau prompt demande une observation concrète sur les événements du buffer et une association au témoignage seulement si elle est justifiée. Gemma E4B reste sans raisonnement prolongé, avec un contexte de 4 096 tokens.</p><h2>Taille des historiques</h2><table><tr><th>Mesure</th><th>Valeur</th></tr><tr><td>Commandes du parcours capturé</td><td>258</td></tr><tr><td>Buffers reconstitués</td><td>20</td></tr><tr><td>Mots moyens</td><td>526.5</td></tr><tr><td>Mots médians</td><td>524.5</td></tr><tr><td>Minimum / maximum</td><td>502 / 560</td></tr><tr><td>Tokens moyens du prompt complet</td><td>1943.0</td></tr><tr><td>Tokens maximum du prompt complet</td><td>2011</td></tr></table><p><small>Les historiques sont reconstitués à partir d’un parcours réel capturé dans Frotz, en conservant les commandes et chaque sortie complète. Les tokens sont mesurés avec Gemma, résumé de 752 mots et consignes inclus. Le reliquat de fin de parcours est conservé au redémarrage dans l’installation. Ces chiffres dépendent du seuil et des sorties effectivement produites par le jeu.</small></p><h2>Vérification avec le lanceur habituel</h2><p>Sur 50 commandes en mode rapide, rendu C64 et viewer actifs : 5 commentaires, 1 vectorisation et 1 demande vidéo. Sortie du programme : 0. Tous les commentaires sont sans raisonnement.</p><p>Les tests automatiques couvrent le seuil, la fin complète des sorties, l’utilisation du dernier commentaire après le délai, la conservation des historiques au redémarrage et les nouvelles tentatives après erreur.</p><h2>Commentaires sur les buffers complets</h2><p><small>Essais de profilage hors lecture vidéo : ces rapprochements ne représentent pas une session de diffusion. Aucune comparaison qualitative aveugle n’est menée ici.</small></p><section><h3>Étape 7</h3><p>The cabin door remains a potential point of interaction, mirroring the constrained narrative structure of Plundered Hearts. This fixed path contrasts with the open-ended nature of the early testing phase Briggs described.</p><small>514 mots dans l’historique · 1956 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;SHOOT THE PIRATE
+Trembling, you fire the heavy arquebus. You hear its loud report over the
+roaring wind, yet the dark figure still approaches. The gun falls from your
+nerveless hands.
+   &quot;You won&#x27;t kill me,&quot; he says, stepping over the weapon. &quot;Not when I am
+the only protection you have from Jean Lafond.&quot;
+   Chestnut hair, tousled by the wind, frames the tanned oval of his face.
+Lips curving, his eyes rake over your inadequately dressed body, the damp
+chemise clinging to your legs and heaving bosom, your gleaming hair. You
+are intensely aware of the strength of his hard seaworn body, of the deep
+sea blue of his eyes. And then his mouth is on yours, lips parted,
+demanding, and you arch into his kiss...
+   He presses you against him, head bent. &quot;But who, my dear,&quot; he whispers
+into your hair, &quot;will protect you from me?&quot;
+
+PLUNDERED HEARTS
+Infocom interactive fiction
+Copyright (c) 1987 by Infocom, Inc. All rights reserved.
+PLUNDERED HEARTS is a trademark of Infocom, Inc.
+Release 26 / Serial number 870730
+
+LATE ONE SPRING NIGHT IN THE WEST INDIES...
+
+   A crash overhead! Pirates are boarding the Lafond Deux! The first mate
+hurries you into Captain Davis&#x27;s cabin.
+   &quot;Good, you brought the girl,&quot; Davis smirks. &quot;She&#x27;ll keep the pirates
+busy. She was only a tool of Lafond&#x27;s, anyway. Let me just find that cof--&quot;
+A man on deck screams in agony and Davis starts. &quot;Let&#x27;s go.&quot; The captain
+thrusts you on the bed and walks out, locking the door.
+   His laugh echoes. &quot;Best get comfortable, girl. You&#x27;re likely to be there
+for the rest of your life.&quot;
+
+Cabin, on the bed
+   You are in an officer&#x27;s cabin, lit by the firelight glowing through a
+porthole. A door is to starboard. Except for the built-in bed, the room
+seems to have been emptied thoroughly, if hurriedly.
+
+&gt;
+&gt;&gt; STAND UP
+You get out of the bed.
+   With a creak and a crash, somewhere a mast falls to the deck.
+
+&gt;
+&gt;&gt; INVENTORY
+You have your reticule (hanging from your wrist). It seems that your
+reticule contains smelling salts and a banknote. You are wearing your kid
+slippers, a linen chemise and a cotton frock.
+
+&gt;
+&gt;&gt; EXAMINE SMELLING SALTS
+You always carry your smelling salts, for emergencies. There is a small tag
+on one side of them.
+   You recognize a voice from far away, &quot;Don&#x27;t take that! Look in the cabin
+at the stern -- you&#x27;ll find some fun there!&quot; It sounds like Davis.
+
+&gt;
+&gt;&gt; READ TAG
+It says, &quot;For cases of vapors, hysteria or collapse, revive persons with
+the smelling salts.&quot;
+   &quot;The Falcon! The Falcon conquers!&quot; yells someone.
+
+&gt;
+&gt;&gt; EXAMINE BANKNOTE
+This is the banknote that came in your game package.
+   Suddenly, the ship lurches to one side, throwing you off balance. A
+coffer slides from under the bed and bumps against your foot.
+   &quot;Aaieeee!&quot; echoes a scream, followed by several grunts and thumps.
+
+&gt;
+&gt;&gt; EXAMINE COFFER
+It is a small heavy chest, with a lock. It is closed.
+   &quot;Cap&#x27;n Jamison! We&#x27;ve got &#x27;em!&quot; cries a rough voice.
+
+&gt;</pre><p>Prochaine commande : <code>EXAMINE DOOR</code></p></details></section><section><h3>Étape 14</h3><p>The pirate captain&#x27;s sudden collapse mirrors the narrative constraints Briggs faced, where space limitations dictated design. The game&#x27;s focus on romance echoes her own desire to explore that genre.</p><small>560 mots dans l’historique · 2003 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; EXAMINE DOOR
+It is closed.
+
+&gt;
+&gt;&gt; OPEN DOOR
+It appears to be locked.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   Crash! You whirl around to see the door shatter, kicked by a hulking
+man, his twisted visage blackened with soot and blood. &quot;Me name&#x27;s Andy
+Crulley, and ladies learn to love me,&quot; sniggers the pirate.
+   With a creak and a crash, somewhere a mast falls to the deck.
+
+&gt;
+&gt;&gt; SCREAM
+&quot;Help me!&quot; you cry, hoping someone will help you.
+   &quot;Avast me, but ain&#x27;t ye a beauty,&quot; sniggers the pirate. His breath is
+heavy with rum.
+
+&gt;
+&gt;&gt; EAST
+&quot;Not that way, me pretty,&quot; says Crulley, blocking your way.
+   &quot;They calls me Andy, but I&#x27;m really randy,&quot; sniggers the pirate,
+advancing toward you.
+   Crulley drags you, despite your resistance, towards him. Then suddenly
+he grunts, stiffens and slumps into your arms. Stunned, Crulley collapses
+at your feet, his eyes rolling.
+   A tall form blocks the shattered door, one fist still raised from
+striking your attacker. You catch a glimpse of the hard masculinity of his
+broad shoulders, the implied power in the scar that etches the stranger&#x27;s
+jaw, and feel tremors course through your veins. Then you realize how
+ragged are his shirt, patched breeches and high boots. Intuitively, you
+understand -- he is the dreaded Falcon, scourge of the sea! Alas, your fate
+is sealed. Resigned, you meet his sea-blue eyes.
+
+&gt;
+&gt;&gt; EXAMINE FALCON
+Jamison carries an aura of power unusual in men so slim and tall, the
+strength of a willow in his hard seaworn body, straight shouldered and
+resilient. Chestnut hair, tousled by the wind, frames the tanned oval of
+his face. A jagged scar etches one cheek, harsh against the warmth of his
+limpid blue eyes.
+   To your surprise, the stranger bows. &quot;Well met, my lady.&quot; His accent is
+cultured, his smile vibrant. &quot;I am Captain Nicholas Jamison, known in these
+waters as &#x27;The Falcon&#x27;. Your father has sent me.&quot; He chuckles at your glare
+of distrust. &quot;Yes, you are like your sire. You needn&#x27;t believe me untried
+-- I carry this.&quot; He hands you a missive.
+
+&gt;
+&gt;&gt; READ MISSIVE
+The missive is in dear Papa&#x27;s handwriting:
+
+&quot;Dearest child,
+   You are in gravest danger! Lafond is a viper with the smile of a saint,
+my most particular enemy. I have only now learned the depth of his
+deception. Should Lafond get you in his power... It is unspeakable!
+   I have sided with Nicholas Jamison, a sea captain and a gentleman, whose
+circumstances have driven him to extreme measures, even branding him a
+pirate. Nevertheless, I trust him and so may you.
+   You will be safe -- but there is another for whom I fear! My horse is
+waiting and I ride to her rescue. Jamison will deliver this to you. Should
+anything happen to me, you must rely on him. I remain, with love, your
+father.&quot;
+
+   The pirate captain glances around the empty room, then notices the
+coffer. &quot;Davis&#x27;s safety box -- my men were hoping I&#x27;d find it.&quot; He takes it
+and nudges the unconscious man on the floor, &quot;I wonder how Crulley knew you
+were here? Just his bad luck? He&#x27;ll be flogged when he wakes.&quot;
+   The pirate bows. &quot;My lady, may I offer my protection and my ship until
+your father is free?&quot;
+   &quot;The Falcon! The Falcon conquers!&quot; yells someone.
+
+&gt;</pre><p>Prochaine commande : <code>FALCON, YES</code></p></details></section><section><h3>Étape 18</h3><p>The current scene places the protagonist in the Captain&#x27;s Quarters, anticipating a confrontation. This mirrors the narrative focus on romance and personal stakes in Plundered Hearts.</p><small>530 mots dans l’historique · 1919 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; FALCON, YES
+You nod tentatively.
+   He chuckles. &quot;Brave lady, to trust a stranger -- and a pirate. Who
+knows, perhaps I forged your father&#x27;s signature? Keep by my side as we go
+to my ship -- few sailors respect a lady&#x27;s dignity.&quot; He helps you through
+the door.
+
+Deck
+   The deck is an avalanche of noise and blood. Lit by roaring fires,
+silhouetted forms crash swords, dancing around the screaming wounded.
+   Out of the smoke staggers Davis, tugging a bloodied knife from the back
+of a pirate. Davis&#x27;s eyes gleam white from a face blackened and bloody, his
+lips dark red as if he has been drinking blood. He turns to face you.
+
+&gt;
+&gt;&gt; EXAMINE DAVIS
+Davis is ugly with fear.
+   Davis leaps across the deck to your side, &quot;Free me or she dies!&quot; he
+yells, jabbing a knife up to your throat. In one smooth motion, Captain
+Jamison draws his rapier, pulls you free and stabs. Davis slumps into a
+bloody heap.
+   Swooning, you fall into the Falcon&#x27;s arms. You are dimly aware of being
+carried to the other ship, down a short flight of stairs, and laid gently
+on a soft bed. When you gather strength to look around, the Falcon has left
+you in peace.
+   You remain confined to this room, a large cupboard blocking the door.
+Meals are brought by a peg-legged old man and eaten in silence. Of your
+handsome rescuer you see nothing. Slowly the days pass.
+
+TWO DAYS LATER...
+
+   You blear awake from a bored nap, focusing on something shiny. You
+discern it to be a new ring, on a strong hand in the act of tying a ribbon
+onto a rapier.
+   The man with the rapier and the ring turns, &quot;Sorry, I tried not to wake
+you.&quot; You sit up as if the bed had caught fire, for this is the Falcon,
+changed from his rags to a finery all red velvet and white lace -- and in
+your presence!
+
+Captain&#x27;s Quarters, on the bed
+
+   You are in the captain&#x27;s quarters of the Helena Louise, where you have
+been trapped these past days since your &quot;rescue&quot; from the Lafond Deux. The
+room has a masculine air, with ebony panelling, a large messy table, and a
+rumpled bed (upon which you lie). A curtain masks the forward exit and
+gilded woodwork decorates the sill of the tall window looking aft.
+
+&gt;
+&gt;&gt; EXAMINE RING
+Made of copper, the new ring has a curious design of gargoyles, curled
+tongues extended, on its flat face, with &quot;Sal Sapit Omnia&quot; engraved at the
+bottom.
+
+&gt;
+&gt;&gt; EXAMINE FALCON
+Jamison is finely dressed, in red velvet coat and full breeches, with a
+long gold embroidered vest and waterfalls of white lace at his neck, wrists
+and boottops. His rapier is bedecked with a fringed gold ribbon. He wears
+no wig, his unpowdered hair tied neatly at the back of his neck.
+   &quot;We have anchored off St. Sinistra,&quot; says Captain Jamison, &quot;and I must
+look like a guest at Lafond&#x27;s dance tonight. I will find and free your
+father, and then finally wreak my revenge on Lafond.&quot; He half draws his
+rapier from its scabbard.
+
+&gt;</pre><p>Prochaine commande : <code>WAIT</code></p></details></section><section><h3>Étape 32</h3><p>The invitation to Lafond&#x27;s ball suggests a social maneuvering central to the narrative. This mirrors the genre&#x27;s focus on intricate social dynamics, much like Briggs explored in her romance.</p><small>502 mots dans l’historique · 1904 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; WAIT
+Time passes...
+   &quot;I am sorry you have been confined down here, but I don&#x27;t trust my
+lonely crew with such beauty. Crulley isn&#x27;t the only man aboard with few
+principles.&quot; He smiles at you, eyes lingering, and takes your hand. You
+feel your color rising. &quot;If anything goes wrong, turn to Cookie. He is
+quite deaf, but capable. He&#x27;ll see you through.&quot;
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   His look darkens. &quot;You should know why I hate Lafond: Some years ago, as
+my brother and his bride sailed to a new life in Virginia, pirates struck.
+Their ship was boarded, looted and burned, the women taken, never to be
+seen again. A sailor, the one survivor, watched as a man of Lafond&#x27;s
+description shot my brother in the back as he tried to save the women.
+Lafond has now bought respectability, but he shall never buy peace.&quot;
+Jamison straightens resolutely, bows, and departs.
+
+&gt;
+&gt;&gt; STAND UP
+You get out of the bed.
+
+&gt;
+&gt;&gt; LOOK AROUND
+Captain&#x27;s Quarters
+   The room has a masculine air, with ebony panelling, a large messy table,
+and a rumpled bed. A curtain masks the forward exit and gilded woodwork
+decorates the sill of the tall window looking aft.
+
+&gt;
+&gt;&gt; LOOK THROUGH WINDOW
+The moon beckons across the lagoon to St. Sinistra. Moored to the stern is
+a skiff.
+
+&gt;
+&gt;&gt; OPEN CURTAIN
+You pull the cloth aside momentarily. Behind it, a large cupboard mostly
+blocks the doorway.
+
+&gt;
+&gt;&gt; EXAMINE CUPBOARD
+You can see only the back of the large cupboard. You might be able to
+squeeze past it.
+
+&gt;
+&gt;&gt; EXAMINE TABLE
+You have no need for that, milady.
+
+&gt;
+&gt;&gt; EXAMINE BED
+Someone appears to have tumbled out of it in a hurry.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   You hear the large cupboard scrape, and turn to see Captain Jamison.
+&quot;Hello! I came down to give you this -- my allotment from the coffer.&quot; He
+nods at the box in his arms.
+   Jamison starts to pin a jewelled brooch on your clothes, but, &quot;Devil
+take it, the clasp is broken. I&#x27;ll have it repaired.&quot; He folds the pretty
+thing into your hand. &quot;And I meant to reassure you that if the men suddenly
+abandon ship, they are off to help me. Rodney will stay behind with you.&quot;
+He drops the coffer on the floor, smiling in farewell, and walks swiftly
+away.
+
+&gt;
+&gt;&gt; EXAMINE BROOCH
+All diamonds winking fire, tears of sapphire and crushed rubies in an oval
+setting, it is a pity that the clasp of the jewelled brooch has broken. The
+gold pin at the back swings about uselessly.
+
+&gt;
+&gt;&gt; OPEN COFFER
+Opening the coffer reveals an invitation.
+
+&gt;
+&gt;&gt; TAKE INVITATION
+Taken.
+
+&gt;
+&gt;&gt; READ INVITATION
+The invitation is addressed to &quot;Davis&quot;:
+
+       In Honor of Jean Lafond,
+         recently proclaimed
+       Governor of St. Sinistra
+        A Dance at his Mansion
+      Ananas Road, St. Sinistra
+Formal Dress and Invitation Required.
+
+   A ball! You haven&#x27;t been to a ball in months!
+
+&gt;</pre><p>Prochaine commande : <code>NORTH</code></p></details></section><section><h3>Étape 45</h3><p>The current scene is the Landing, near the cupboard blocking the captain&#x27;s quarters. This fixed path mirrors the deliberate constraints Briggs faced in game design.</p><small>540 mots dans l’historique · 1933 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; NORTH
+The large cupboard is not flush against the doorsill. You squeeze through
+the opening between cupboard and wall.
+
+Landing
+   You are on the landing of a steep stairway heading up and down. A large
+cupboard against the aft wall blocks the doorway to the captain&#x27;s quarters.
+
+&gt;
+&gt;&gt; DOWN
+Aft Hold
+   This is a gloomy, damp area at the bottom of the Helena Louise. To the
+fore there seems to be a little more light, or you can climb up some steep
+stairs.
+
+&gt;
+&gt;&gt; NORTH
+You hear a scuffling noise ahead, and scraping up near the ceiling. You
+would think it was caused by rats, but for the definite curse you heard
+before all the movement.
+
+Hold
+   Steep stairs lead up in the dimness to a canvas hatch above. Rats&#x27;
+scratchings counterpoint the lullaby of bilge water sloshing in the
+bulkheads, punctuated by footsteps slapping the deck overhead. You may move
+fore or aft.
+   Behind a high fence, decorated by a sign, are stacked the food and
+ammunition supplies; casks of rum, water, flour and salt meat interspersed
+with kegs of gunpowder and shot. A closed gate is the only way in.
+   You gradually notice a familiar, worrying smell, sniff, and identify it
+as smoke. A tiny glow of fire creeps across a stretch of floor -- inside
+the cage full of ammunition.
+
+&gt;
+&gt;&gt; EXAMINE GATE
+It has a huge iron lock. Between the gate and the ceiling, however, is a
+gap of about 6 inches.
+
+&gt;
+&gt;&gt; NORTH
+Crew&#x27;s Quarters
+   The crew sleeps, in shifts, in this cramped space under the forecastle.
+A breeze blows in on a moonbeam through a grate in the ceiling. A low
+doorsill is abaft.
+   This area must also serve as sickroom. Strewn about the floor are
+various powders and spills of malodorous potions. In one corner, a large
+blood stain indicates an amputation; in another is the smear of a leech,
+dropped off a bloodletting.
+   A small bottle has been dropped nearby.
+   A chipped piece of mirror sits propped on a shoulder-high timber.
+
+&gt;
+&gt;&gt; TAKE BOTTLE
+Taken.
+   &quot;I gotta let Lafond know &#x27;e&#x27;s comin&#x27;.&quot; Crulley stands on deck above,
+talking to himself, his voice floating down through a grate in the ceiling.
+&quot;First, I do in the mates aboard-ship, with this and t&#x27;other mischief,&quot; he
+grunts, and you hear a snapping noise, like a taut rope being cut. &quot;Now to
+warn the boss and collect me pay. Off I go, har.&quot; He dives into the sea.
+
+&gt;
+&gt;&gt; TAKE MIRROR
+Taken.
+
+&gt;
+&gt;&gt; EXAMINE BOTTLE
+It&#x27;s a small leather bottle, with a tiny label on one side. It appears to
+be almost empty.
+
+&gt;
+&gt;&gt; READ LABEL
+The label reads, &quot;Laudanum drops. Squeeze into a glass of wine to sleep
+free of pain and mental anguish.&quot;
+
+&gt;
+&gt;&gt; SOUTH
+Hold
+   A tiny glow of fire creeps across a stretch of floor -- inside the cage
+full of ammunition.
+
+&gt;
+&gt;&gt; SOUTH
+Aft Hold
+
+&gt;
+&gt;&gt; UP
+Landing
+
+&gt;
+&gt;&gt; OPEN DOOR
+Opened. It is a dark messy bed, set entirely within and filling the large
+cupboard. A cabin boy must sleep here when Jamison isn&#x27;t using it. Kicked
+into a far corner is a pile of clothes.
+
+&gt;</pre><p>Prochaine commande : <code>ENTER</code></p></details></section><section><h3>Étape 63</h3><p>The game history shows the player has reached the Poop deck after a precarious climb. This sequence reflects the technical constraints Briggs mentioned, where environmental dangers shaped player progression.</p><small>504 mots dans l’historique · 1897 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; ENTER
+Sleeping Cupboard
+   The bed is softer than it looks, plumped up with fresh straw. A soft, if
+somewhat cramped, bunk for the tall bulk of Jamison. The cupboard opens to
+the fore.
+   Kicked into a far corner is a pile of clothes.
+
+&gt;
+&gt;&gt; TAKE CLOTHES
+You pick up the pile of clothes. It separates into a pair of breeches and a
+shirt.
+
+&gt;
+&gt;&gt; REMOVE DRESS
+You take off the cotton frock.
+
+&gt;
+&gt;&gt; WEAR BREECHES
+You tuck the linen chemise into the pants. You look a little fat, but now
+you can move freely.
+
+&gt;
+&gt;&gt; WEAR SHIRT
+It fits loosely, masking your figure.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+
+&gt;
+&gt;&gt; OUT
+Landing
+
+&gt;
+&gt;&gt; SOUTH
+You squeeze through the opening between cupboard and wall.
+
+Captain&#x27;s Quarters
+   You can see a coffer here.
+
+&gt;
+&gt;&gt; TAKE COFFER
+Taken.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   Your eyes are drawn to a flicker of light off the sea. Squinting, you
+see a man swimming to shore, moonlight flashing off his hook.
+
+&gt;
+&gt;&gt; THROW COFFER THROUGH WINDOW
+You hurl the coffer through the window, sending it and a shower of glass
+into the sea. The ledge now looks deep enough to sit upon.
+   The end of a rope ladder blows past the window.
+
+&gt;
+&gt;&gt; SIT ON LEDGE
+You climb onto the ledge. The ladder drifts within reach.
+
+&gt;
+&gt;&gt; PUT ALL IN RETICULE
+shirt: You&#x27;ll have to remove the shirt first.
+breeches: You&#x27;ll have to remove the breeches first.
+bit of mirror: Done.
+leather bottle: Done.
+invitation: Done.
+jewelled brooch: Done.
+missive: Done.
+your kid slippers: You&#x27;ll have to remove your kid slippers first.
+linen chemise: You&#x27;ll have to remove the linen chemise first.
+cotton frock: Done.
+
+&gt;
+&gt;&gt; TAKE LADDER
+You reach out for the ladder and over-balance, tumbling from your perch.
+Your hand closes on a slimy hemp rung as you fly out over the waves,
+clinging tenuously, feet free, to the ladder.
+
+On the Ladder
+   You are clinging to a slimy ladder, tied to a rail of the poop deck
+above you. Not far from your feet, waves kiss the stern of the ship.
+
+&gt;
+&gt;&gt; UP
+You climb up the ladder.
+   All air is driven out of you as the ladder slams into the stern.
+   The reefs are definitely getting larger.
+
+&gt;
+&gt;&gt; UP
+You climb up the ladder, passing the halfway point.
+   Rebounding, the ladder twists you around to face the Helena Louise.
+
+&gt;
+&gt;&gt; UP
+You climb up the ladder.
+   The ladder swings back towards the Helena Louise.
+
+&gt;
+&gt;&gt; UP
+You heave yourself over the stern rail and sink breathless to the deck of
+the Helena Louise.
+
+Poop
+   From this platform deck you can see the whole of the two-masted ship,
+shadowy forms moving about here and there. A railing protects you from
+stepping off the deck in any direction but to the fore. A rope ladder is
+tied to the railing at the stern of the ship.
+   The reefs are definitely getting larger.
+
+&gt;</pre><p>Prochaine commande : <code>NORTH</code></p></details></section><section><h3>Étape 75</h3><p>The ship&#x27;s movement, subtly influenced by the anchor&#x27;s release, mirrors the narrative&#x27;s shifting tides. This small mechanical action reflects the precarious balance Briggs described in her early game development.</p><small>534 mots dans l’historique · 1892 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; NORTH
+Quarterdeck
+   No torches are lit, or needed on this moonlit night, except in the deep
+shadows cast by the huge navigation wheel. Men move about to the fore,
+talking quietly. Under the stairs aft to the poop is a barred door.
+   The reefs are definitely getting larger.
+   Abaft the wheel sits a large pyramid of casks, held in place by a heavy
+rope.
+   Cannon line the deck, aimed at open sea and the island.
+
+&gt;
+&gt;&gt; NORTH
+Main Deck
+   It is a deceptively quiet evening on the ship, the pirates singing low
+shanties as they repair cannon, twist ropes and sharpen daggers. The
+mainmast casts an inky shadow over the canvas screening the hatch. A
+tangled mass of rigging hangs down from the mast, like many rope ladders
+woven together.
+   The reefs are definitely getting larger.
+   Two large barrels stand near the stair to the foredeck.
+
+&gt;
+&gt;&gt; NORTH
+Forecastle
+   Higher than all but the poop deck, this end of the ship commands a good
+view of the island; the &quot;crow&#x27;s nest,&quot; swinging above in the heights of the
+foremast, would command a better. A tangled mass of rigging hangs down from
+the mast, like many rope ladders woven together.
+   Imbedded in the deck is a grated air hole to the crew&#x27;s quarters below.
+You can go aft, or forward through a break in the ubiquitous railing.
+   Odors of old grease and char waft from a little shack perched behind the
+mast.
+   The reefs are definitely getting larger.
+   You can see a mooring winch here.
+
+&gt;
+&gt;&gt; EXAMINE WINCH
+Made of an old barrel turning on a pole, the mooring winch is used to coil
+in the anchor chain. A pair of metal teeth bite the links to prevent it
+from dragging out; a lever is connected to the teeth. Something is written
+on the lever.
+
+&gt;
+&gt;&gt; READ LEVER
+On the lever is written &quot;Open Up, Close Down.&quot; You notice the lever is
+pointed down.
+
+&gt;
+&gt;&gt; PULL LEVER UP
+The metal teeth open as you raise up the lever. The anchor, released,
+splashes down into the sea, dragging its clanking chain. After a moment,
+you feel the ship pull slightly against the current. You lower the lever to
+prevent any more chain from spooling out.
+
+&gt;
+&gt;&gt; SOUTH
+Main Deck
+
+&gt;
+&gt;&gt; EXAMINE BARRELS
+The two open barrels contain rum and water, you can tell by the smell of
+each. They are identical but for the dark stains around the mouth of the
+rum barrel.
+   With a heave and creak of timbers, the Helena Louise drifts a little way
+back towards the island. The tide has turned.
+
+&gt;
+&gt;&gt; TEAR DRESS
+You rip a large rag out of the cotton frock.
+
+&gt;
+&gt;&gt; PUT RAG IN WATER
+Keeping hold on the rag, you soak it with water.
+
+&gt;
+&gt;&gt; OPEN HATCH
+You pull a corner of canvas out of the frame. Steep stairs descend into
+murky darkness.
+
+&gt;
+&gt;&gt; DOWN
+You glance around to see that no one is watching, and duck through the open
+corner of the canvas hatch.
+
+Hold
+   A tiny glow of fire creeps across a stretch of floor -- inside the cage
+full of ammunition.
+
+&gt;</pre><p>Prochaine commande : <code>THROW RAG OVER GATE</code></p></details></section><section><h3>Étape 92</h3><p>The current pulls the player toward the island, a consequence of cutting the rope. This mirrors the narrative constraints Briggs mentioned, where space limitations dictated design.</p><small>507 mots dans l’historique · 1919 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; THROW RAG OVER GATE
+You throw the rag over the gate. Luckily, it lands directly on the burning
+end of the fuse. With a sputter and a sigh, the flame dies.
+
+&gt;
+&gt;&gt; UP
+You slip lithely through the canvas hatch.
+
+Main Deck
+
+&gt;
+&gt;&gt; SOUTH
+Quarterdeck
+   Abaft the wheel sits a large pyramid of casks, held in place by a heavy
+rope.
+   Cannon line the deck, aimed at open sea and the island.
+
+&gt;
+&gt;&gt; EXAMINE CASKS
+Lying on their sides, the casks are stacked in a rather shaky pyramid:
+perhaps that&#x27;s why someone has tied the rope about them. A cask on one
+corner has lost its lid. &quot;Hey, boy! Get away from those. It ain&#x27;t safe!&quot;
+yells a sailor.
+
+&gt;
+&gt;&gt; NORTH
+Main Deck
+
+&gt;
+&gt;&gt; NORTH
+Forecastle
+   You can see a mooring winch here.
+
+&gt;
+&gt;&gt; ENTER SHACK
+Galley
+   This tiny kitchen smells of old stew and yeast. A low door to starboard
+shows the way out.
+   A dagger is driven into the wooden floorboards.
+   An entirely bald man sits here, carving into his peg leg.
+   The man looks you over sharply, then winks an eye. &quot;Hullo, boy -- Sam,
+I&#x27;ll call you. Nervous about Cap&#x27;n? He&#x27;ll come to no harm. And if there is
+trouble, he only has to signal from that seaward winder of the house -- ye
+can see it from the crow&#x27;s nest -- and we&#x27;ll be there in a jiffy. Me and my
+peg are to stay aboard and guard y--, the Cap&#x27;n&#x27;s young lady.&quot;
+
+&gt;
+&gt;&gt; TAKE DAGGER
+Taken.
+
+&gt;
+&gt;&gt; EAST
+Forecastle
+   You can see a mooring winch here.
+
+&gt;
+&gt;&gt; SOUTH
+Main Deck
+
+&gt;
+&gt;&gt; SOUTH
+Quarterdeck
+   Abaft the wheel sits a large pyramid of casks, held in place by a heavy
+rope.
+   Cannon line the deck, aimed at open sea and the island.
+
+&gt;
+&gt;&gt; LOOK IN CASK
+You can see a slab of pork.
+
+&gt;
+&gt;&gt; ENTER CASK
+You crawl into the cask, feeling a slab of something stuck on the bottom.
+From this close, you can see the line is getting frayed where it rubs
+against the cask.
+
+&gt;
+&gt;&gt; TAKE PORK
+You peel it off the cask.
+
+&gt;
+&gt;&gt; PUT ALL IN RETICULE EXCEPT DAGGER
+slab of pork: Done.
+shirt: You&#x27;ll have to remove the shirt first.
+breeches: You&#x27;ll have to remove the breeches first.
+your kid slippers: You&#x27;ll have to remove your kid slippers first.
+linen chemise: You&#x27;ll have to remove the linen chemise first.
+
+&gt;
+&gt;&gt; CUT ROPE
+[with the dagger]
+The line snaps, and the pyramid collapses into dozens of tumbling casks.
+Your cask is thrust into the sea, the dagger flying from your hand.
+   Sputtering mouthfuls of salt water, you first look around several
+minutes later.
+
+Lagoon, in the cask
+   You are crouched in a cask on the lagoon of St. Sinistra. The jungle
+looms gray-green in the light of the full moon.
+
+&gt;
+&gt;&gt; EXAMINE PORK
+The slab of pork, caked white with salt, is rock-hard.
+   The current pulls you in towards the island.
+
+&gt;</pre><p>Prochaine commande : <code>WAIT</code></p></details></section><section><h3>Étape 103</h3><p>The current pulls the cask toward the island, mirroring the narrative&#x27;s steady progression. This fixed path contrasts with Briggs&#x27;s recollection of Infocom&#x27;s unpredictable creative atmosphere.</p><small>554 mots dans l’historique · 1973 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; WAIT
+Time passes...
+   The current pulls you in towards the island.
+Lagoon, in the cask
+   You are crouched in a cask on the lagoon of St. Sinistra. The jungle
+looms gray-green in the light of the full moon.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   The current pulls you in towards the island.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   The current pulls you in towards the island. With a scrape, the cask
+lodges in the sand.
+
+Shallows, in the cask
+   You are crouched in the cask in the warm, lapping waves of the shallows.
+A white sand beach is west of you.
+   A skiff nods in the waves, its oars jerking around in the current.
+
+&gt;
+&gt;&gt; LEAVE CASK
+Free of your weight, the cask bobs and spins in the current, pulled out
+into the lagoon. You splash after it, but it is gone.
+
+&gt;
+&gt;&gt; EXAMINE SKIFF
+The skiff is large enough to carry several men, but light enough that you
+feel able to row it.
+
+&gt;
+&gt;&gt; WEST
+Beach
+   This is a tiny beach, at the base of vine-covered cliffs. To the east,
+the Helena Louise floats serenely on the lagoon.
+   Immediately north of you, a rocky staircase is hewn into the cliff.
+
+&gt;
+&gt;&gt; NORTH
+Lawn
+   Jungle looms around this clipped lawn, a path meandering westward into
+the dense undergrowth. To the east is a folly entangled in blooming
+jasmine. The way to the beach is obscure, but visible to the southeast.
+Behind the folly a thorny hedge blocks the cliff view of the sea.
+   Music and voices float from the veranda to the north.
+   Two men stand whispering in the shadows. You catch an occasional word,
+&quot;Davis dead... girl... Falcon on Sinistra.&quot; The men separate, the well-
+dressed one going into the ballroom as the other slinks into the bushes.
+You see his face. Crulley!
+
+&gt;
+&gt;&gt; EAST
+Folly
+   Perfumed by the heady odor of the night-blooming jasmine entwined in the
+bamboo latticework, this folly is a cool, dark haven.
+   One bamboo slat at the back seems to be loose.
+   A bench is built into the wall, circling the folly.
+
+&gt;
+&gt;&gt; PULL SLAT
+You twist aside the loose slat, wedging the end into the woven wall. The
+remaining hole, just above the bench, looks big enough to snake yourself
+through.
+   Captain Jamison enters the folly, stooping to avoid the flowers dangling
+over the door. &quot;I thought I heard someone. What the devil are you doing
+here! Lafond is a dangerous man to play with!&quot; Jamison sighs. &quot;What an
+astonishing girl you are, my dear. And so ingeniously dressed.&quot; He plucks a
+flower from the tangle above the door, and sets it in your hair. &quot;The
+beauty of this blossom is nothing to yours.&quot;
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   Catching his breath, Jamison pulls you against him, his hands circling
+your waist, crushing the flower between you. &quot;Darling,&quot; he whispers,
+leaning over you, &quot;oh, my angel ...&quot;
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   &quot;My lovely,&quot; Jamison says huskily. His eyes burn intently, their blue
+like the sea on a summer day. A shiver of warmth flows through you, and you
+tremble at his touch. The pirate&#x27;s hands, warm and exciting, caress you,
+searing through the thin linen of your chemise. His lips near yours, his
+breath softly scented. &quot;May I kiss you?&quot;
+
+&gt;</pre><p>Prochaine commande : <code>FALCON, YES</code></p></details></section><section><h3>Étape 115</h3><p>The current path leads toward the hedge, mirroring the initial exploration of the setting. This progression feels like a deliberate narrative constraint, similar to how memory limitations shaped Plundered Hearts&#x27; design.</p><small>546 mots dans l’historique · 1922 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; FALCON, YES
+Breathless, eager, you lean into him.
+   Tender is his kiss, soft his lips as his body presses hard against you.
+You drown in the tide of your passion, swept like the sea against the rocks
+of the shore.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   With a pent-up sigh, Nicholas forces himself away from you. &quot;Now is not
+the time or the place to advance my suit,&quot; he says, wistfully. &quot;But the
+night is still young and you are so beautiful! I must be gone, lest I lose
+my soul in you.&quot; With an engaging smile he bows and leaves the folly.
+
+&gt;
+&gt;&gt; EAST
+In the Hedge
+   You crouch in the green rustlings of the hedge. Not far east, wind keens
+up the cliff, high above swells breaking against a rocky shore. You know
+the folly is somewhere to the west. North, the hedge is somewhat less
+dense.
+
+&gt;
+&gt;&gt; NORTH
+By the House
+   You crouch in the hedge by the house, twigs poking into you, the cliff
+crumbling away to the east. The hedge seems less dense to the south. A
+closed window is directly west of you.
+
+&gt;
+&gt;&gt; OPEN WINDOW
+Opened.
+
+&gt;
+&gt;&gt; WEST
+Library
+   Everything in this private office is larger than life. A huge portrait
+decorates the north side, and black drapes mask the east wall. Bookshelves
+tower over a cherry desk, and a massive wooden globe squats in a corner.
+Music wafts distantly from the ballroom across the hall to the south.
+   An expensive hat is hanging on a knob.
+
+&gt;
+&gt;&gt; EXAMINE PORTRAIT
+The portrait seems familiar, and you realize it is exactly the picture on
+the front of the banknote Lafond sent you, same clothes, same surroundings,
+same pose.
+
+&gt;
+&gt;&gt; EXAMINE BOOKSHELVES
+Most of the books appear unread, their pages uncut, the spines not yet
+creased. All except one, &quot;Treatise of Power&quot; by Sir Michael Villiers.
+
+&gt;
+&gt;&gt; EXAMINE GLOBE
+The massive wooden globe, painted in greens and blues and white, describes
+the world as presently known.
+
+&gt;
+&gt;&gt; TAKE HAT
+As you lift the hat from its knob on the wall, a low vibration tingles up
+your legs from the floor.
+
+&gt;
+&gt;&gt; SOUTH
+For safety&#x27;s sake, you leave the hat on its knob. Best not to show that
+you&#x27;ve been wandering.
+
+East Hallway
+   The carpeted hallway turns from west to north here, extending into the
+east wing. A long table blocks the way south.
+   A black-garbed butler marches up to you, &quot;It was made clear at the
+whippings that villagers are not admitted in this house.&quot; He grasps you by
+the scruff of the neck and propels you headfirst out the front door.
+
+Main Entrance
+   The front door stands open to the south, light splayed out onto a drive
+stretching north into the jungle. A path leads around the western wing of
+the house; jutting out from the east wing is a tall hedge.
+
+&gt;
+&gt;&gt; WEST
+The gravel path is just wide enough for a cart to pass. It bends around the
+west wing of the house, leading you to...
+
+Trade Entrance
+   You are on a well-trampled lawn at the side of the house, one low
+doorway leading in to the east. Gravelled paths lead north and south into
+the undergrowth.
+
+&gt;</pre><p>Prochaine commande : <code>EAST</code></p></details></section><section><h3>Étape 131</h3><p>The protagonist now stands at the stair landing, facing the grand descent. This progression mirrors the narrative focus on romantic setting, a genre Briggs pursued despite critical ambiguity.</p><small>511 mots dans l’historique · 1925 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; EAST
+Kitchen
+   A firepit in the floor smokes badly, fogging up the depths of this large
+kitchen, somehow not escaping through either the south or west doors.
+   A blond woman huddles alone by the fire, as if cold.
+   The woman smiles uncertainly, then rushes over. &quot;Are you come from the
+village, boy? Dost know Lord Dimsford?&quot; She sighs at your surprise. &quot;So he
+sent you -- I am his Lucy. It&#x27;s been so long since I&#x27;ve seen him. Lafond
+caught me eavesdropping and now I can&#x27;t leave the grounds.&quot;
+
+&gt;
+&gt;&gt; EXAMINE LUCY
+Lucy is a very pretty woman, a few years your senior, her yellow hair
+neatly arranged. She wears a cook&#x27;s apron.
+   &quot;I haven&#x27;t found Lafond&#x27;s papers, I&#x27;m watched too closely. Tell Dimsford
+that I -- I&#x27;m scared, and I want him to come get me. Give this to him --
+he&#x27;ll recognize it.&quot; Lucy slides a garter down her leg and holds it out to
+you.
+
+&gt;
+&gt;&gt; TAKE GARTER
+Taken.
+   Lucy kisses your head and returns to the fire, humming.
+
+&gt;
+&gt;&gt; WEST
+&quot;Don&#x27;t forget -- tell Dimsford,&quot; Lucy calls after you.
+
+Trade Entrance
+
+&gt;
+&gt;&gt; SOUTH
+Forest
+   Buried in the subtropical undergrowth, you lose all sense of being on
+someone&#x27;s private estate; jungle seems to extend for miles on all sides of
+you. A footworn path curves from east to north here, and the vegetation
+lessens to the northeast.
+
+&gt;
+&gt;&gt; NORTHEAST
+Clearing
+   You are in a small clearing under the western side of the house. Heavy
+vines creep up the wall past a second floor window, open to the night air.
+Southwest is an opening in the bushes.
+
+&gt;
+&gt;&gt; CLIMB VINE
+You take a firm grasp on a particularly thick tendril, jerk once to secure
+it, and scamper up the wall like some huge tropical spider. It is easy to
+climb through the window.
+
+Bedroom
+   Lit only with moonlight through the open window, tonight this room is
+serving as a ladies&#x27; dressing room. An exit lies to the north.
+   Draped across the bed is a lovely cream colored watered silk gown. It
+looks about your size.
+
+&gt;
+&gt;&gt; REMOVE CLOTHES
+You strip down to your chemise.
+
+&gt;
+&gt;&gt; WEAR BALL GOWN
+[taking the beautiful ball gown first]
+The beautiful ball gown fits perfectly, the creamy silk bringing a glow to
+your cheeks. You comb your hair with your fingers and bite your lips to
+make them red.
+
+&gt;
+&gt;&gt; TAKE INVITATION
+Taken.
+
+&gt;
+&gt;&gt; PUT GARTER IN RETICULE
+Done.
+
+&gt;
+&gt;&gt; NORTH
+Upstairs Hall
+   You stand in a carpeted hallway, leading east to a stair landing. Rooms
+lie north and south of you.
+
+&gt;
+&gt;&gt; NORTH
+Parlour
+   This room is exotically furnished with a Turkey divan and chairs. The
+exit is south.
+   A pair of duelling pistols is mounted high on one wall.
+
+&gt;
+&gt;&gt; TAKE PISTOLS
+You can&#x27;t reach them. Ladies don&#x27;t carry pistols, anyway.
+
+&gt;
+&gt;&gt; SOUTH
+Upstairs Hall
+
+&gt;
+&gt;&gt; EAST
+Stair Landing
+   The east-west hallway opens here to curve into a grand staircase
+sweeping down to the foyer.
+
+&gt;</pre><p>Prochaine commande : <code>EAST</code></p></details></section><section><h3>Étape 143</h3><p>The current location is the Ballroom, and the next command is WEST. This mirrors the narrative&#x27;s focus on confined social spaces, much like the memory constraints shaping Plundered Hearts&#x27; design.</p><small>537 mots dans l’historique · 1927 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; EAST
+Upstairs Hall
+   You stand in a carpeted hallway, leading west to a stair landing. To the
+north is an ornately carved door. From the south comes the impression of
+light and air.
+
+&gt;
+&gt;&gt; OPEN DOOR
+It&#x27;s quite locked.
+
+&gt;
+&gt;&gt; SOUTH
+Gallery
+   You are on a wide balcony overlooking the ballroom. A hallway lies to
+the north.
+   Down on the dance floor you see myriad colors as the guests weave the
+intricate steps of their dances.
+   A chandelier is held above the dance floor by a rope and pulley system,
+so that the servants can lower it to light and snuff its candles. Several
+feet of rope hang down from the pulley, the excess tied around the railing.
+
+&gt;
+&gt;&gt; NORTH
+Upstairs Hall
+
+&gt;
+&gt;&gt; WEST
+Stair Landing
+
+&gt;
+&gt;&gt; DOWN
+Foyer
+   A grandiose staircase splits and twists up to the next floor here,
+framing the entrance south to the ballroom. Long hallways lead east and
+west; cool night air drifts in through the front door, north of you.
+   The butler stands near the entrance to the ballroom.
+
+&gt;
+&gt;&gt; GIVE INVITATION
+[to the butler]
+The butler takes the invitation. &quot;Enjoy the dance, Miss Davis.&quot;
+
+&gt;
+&gt;&gt; SOUTH
+The sea of spectators parts to admit you, murmuring approval.
+
+Ballroom
+   Lafond&#x27;s party is well attended: you can hardly move for the crush.
+However, the room is oddly silent, no talk interrupting the musical efforts
+of the musicians to the west. Despite the heat, no one ventures south to
+the veranda, nor through the opening east. The foyer is north of you.
+   Captain Jamison moves up to you, saying, &quot;May I have this dance?&quot; He
+doesn&#x27;t await an answer, sweeping you out onto the dance floor.
+
+&gt;
+&gt;&gt; DANCE
+You pace out the steps.
+   Nicholas&#x27;s hands are smooth and cool.
+   The steps of the dance separate you a moment, as you twirl around and
+curtsey to another dancer. You glide back into the captain&#x27;s arms.
+
+&gt;
+&gt;&gt; DANCE
+You pace out the steps.
+   &quot;I haven&#x27;t found your father. We&#x27;ve long suspected a passage under the
+library, but I cannot find an entrance,&quot; says Jamison.
+   Your hands linked tightly with his and held high over your heads, a line
+of dancers files between you and Jamison.
+
+&gt;
+&gt;&gt; DANCE
+You pace out the steps.
+   Jamison grins down at you, a dazzling white smile.
+   Together you whirl around the ballroom, his arm snug around your waist,
+leading you gracefully, masterfully.
+    Nicholas&#x27;s grip tenses as he nods to a bewigged man staring at you. You
+turn, and the man moves on.
+
+&gt;
+&gt;&gt; DANCE
+You pace out the steps.
+   &quot;If there is any trouble, and I am unable to help -- a signal from an
+upstairs seaward window will bring my men. They can be here in moments,&quot;
+the Captain says.
+   The music ends with a flourish and you pirouette once more before
+curtseying to Jamison. As you move to the side of the dance floor, Nick
+adds, &quot;We should separate -- I&#x27;m sure I am being watched. You would be
+safer aboard the Helena Louise. If you slip out the veranda doors, no one
+will notice you leaving.&quot; He touches your hand and dissolves into the
+crowd.
+
+&gt;</pre><p>Prochaine commande : <code>WEST</code></p></details></section><section><h3>Étape 160</h3><p>The current scene is the Library, offering a chance to examine a treatise or take a hat. This quiet exploration echoes the careful, constrained world of text adventure design.</p><small>511 mots dans l’historique · 1919 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; WEST
+Orchestra
+   A few older women and young girls sit near the small orchestra assembled
+at this end of the ballroom.
+
+&gt;
+&gt;&gt; EXAMINE ORCHESTRA
+The small band is made up of a virginal, bass and treble viols, and several
+recorders. They are playing &quot;I Want to Kiss Your Hand,&quot; by J.S. Beatle.
+
+&gt;
+&gt;&gt; EAST
+Ballroom
+   A fashionably bewigged man stalks up to you and bows deeply. &quot;Will you
+dance?&quot; he asks, with a light French accent. &quot;Not that you have much
+choice. If you turn me down, your father dies.&quot;
+
+&gt;
+&gt;&gt; DANCE
+One cannot dance the minuet alone.
+   &quot;I am, of course, Lafond.&quot; He laughs triumphantly and pulls you into the
+dance.
+
+&gt;
+&gt;&gt; EXAMINE LAFOND
+Wigged in dark brown curls, dressed in velvets and brocade, he is warmly
+attractive. Until you meet his eyes, stone gray and cold.
+   &quot;So you know I am not your father&#x27;s friend,&quot; Lafond says, offering a
+hand for the promenade. &quot;Unfortunately, you are in my power, he is in my
+dungeon and I am still King of these waters.&quot; A gold ring flashes on his
+hand. It seems vaguely familiar.
+
+&gt;
+&gt;&gt; EXAMINE RING
+It&#x27;s an ancient gold band, with a curious design of gargoyles, curled
+tongues extended, on its flat face, with &quot;Sal Sapit Omnia&quot; engraved at the
+bottom.
+   Lafond&#x27;s eyes rake your body. &quot;When I am ready, the butler will summon
+you to sup with me in my room; it may be some time. We will find much in
+common before dawn, I am sure. Then I may free your father.&quot; Lafond bows as
+the dance ends, and kisses your hand. He cocks his head, curious, &quot;You have
+far less spirit than your father credited you. He swore you would have him
+freed in no time at all. A pity, I prefer doyennes with mettle.&quot; He moves
+to speak with the butler, then drifts into the crowd.
+
+&gt;
+&gt;&gt; OPEN DOOR
+Opened.
+
+&gt;
+&gt;&gt; SOUTH
+Veranda
+   Steps lead south from this white marble veranda to a clipped lawn. To
+the north a line of people blocks your view of the ballroom.
+
+&gt;
+&gt;&gt; NORTH
+The sea of spectators parts to admit you, murmuring approval.
+
+Ballroom
+
+&gt;
+&gt;&gt; NORTH
+Foyer
+   The butler stands near the entrance to the ballroom.
+
+&gt;
+&gt;&gt; EAST
+&quot;No, ma&#x27;am, that way&#x27;s private.&quot; The butler stops you.
+
+&gt;
+&gt;&gt; SOUTH
+The sea of spectators parts to admit you, murmuring approval.
+
+Ballroom
+
+&gt;
+&gt;&gt; EAST
+Supper Room
+   One long table set across the north entrance indicates that supper was
+served here earlier. West of you is the ballroom.
+
+&gt;
+&gt;&gt; NORTH
+You scuttle underneath the long table.
+
+East Hallway
+
+&gt;
+&gt;&gt; NORTH
+Library
+   An expensive hat is hanging on a knob.
+
+&gt;
+&gt;&gt; TAKE TREATISE
+You half tip the book out of the shelf when it snaps surprisingly back into
+place. There is a mysterious scraping sound from inside the wall.
+
+&gt;
+&gt;&gt; TAKE HAT
+As you lift the hat from its knob on the wall, a low vibration tingles up
+your legs from the floor.
+
+&gt;</pre><p>Prochaine commande : <code>PRESS SINISTRA ON GLOBE</code></p></details></section><section><h3>Étape 180</h3><p>The current path leads toward an iron door, mirroring the constrained settings Briggs noted in her work. The game&#x27;s progression feels tightly managed, much like the pressure Infocom faced.</p><small>517 mots dans l’historique · 1929 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; PRESS SINISTRA ON GLOBE
+You press the painted island, and it sinks into the wooden sea. You hear a
+whirr and a click and the portrait pops open. A draft of sea-scented air
+flows in from behind it.
+
+&gt;
+&gt;&gt; NORTH
+For safety&#x27;s sake, you leave the hat on its knob. Best not to show that
+you&#x27;ve been wandering.
+   You move beyond the portrait into the flickering torchlight.
+
+Stairwell
+   Cool salt air, blowing past a torch on a spiral staircase below you,
+ruffles your hair and circles south into the library.
+
+&gt;
+&gt;&gt; DOWN
+Bottom of Stairwell
+   Flickering torchlight lights the bottom of a spiral staircase. A draft
+blows from the east; a passage leads south.
+
+&gt;
+&gt;&gt; EAST
+North Passage
+   A strong wet breeze blows from a low doorway to the east. A circle of
+light leads west. The passageway continues south.
+
+&gt;
+&gt;&gt; EAST
+Guard&#x27;s Bunkroom
+   Once a cell, now, with the door missing, made into a guard&#x27;s bunkroom,
+this room is distinctly uncomfortable. Gasps of air are forced through a
+crack in the seaward wall of the room. The way out is west of you.
+   A powder horn hangs on a long strap from the wall.
+   A canvas cot is shoved against a wall. Sitting on the cot is a large
+key.
+
+&gt;
+&gt;&gt; TAKE KEY AND HORN
+large key: Taken.
+powder horn: Taken.
+
+&gt;
+&gt;&gt; WEST
+North Passage
+
+&gt;
+&gt;&gt; SOUTH
+South Passage
+   You are at the far end of a dank passageway heading north. A wooden door
+leads east.
+
+&gt;
+&gt;&gt; OPEN DOOR
+Opened.
+
+&gt;
+&gt;&gt; EAST
+Cell
+   This tiny cell is airless and shivering cold, entirely empty of anything
+but darkness. A wooden door leads west.
+
+&gt;
+&gt;&gt; WEST
+South Passage
+
+&gt;
+&gt;&gt; NORTH
+North Passage
+
+&gt;
+&gt;&gt; WEST
+Bottom of Stairwell
+
+&gt;
+&gt;&gt; SOUTH
+Anteroom
+   Two exits lead from this cavernous room, north and south. The walls drip
+with wet, forming a huge pool on the floor.
+   A crocodile lies half in the pool, gazing at you, with baleful eyes,
+jaws wide open. Dagger-sharp teeth glint in the torchlight.
+
+&gt;
+&gt;&gt; SQUEEZE BOTTLE ON PORK
+You squeeze three colorless drops onto the slab of pork. A patch of salt
+dissolves as the laudanum absorbs into the meat.
+
+&gt;
+&gt;&gt; THROW PORK AT CROCODILE
+The crocodile snaps its jaws shut as the slab of pork disappears into its
+maw.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   With an inaudible creak, the crocodile&#x27;s mouth opens again.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   Without warning, the crocodile relaxes, eyes closed, asleep.
+
+&gt;
+&gt;&gt; SOUTH
+You edge past the reptile.
+
+Dungeon
+   You sense, rather than see, the rusty skeletons of old cages and torture
+devices that line the walls of this cavernous room. One flaming torch, high
+on a wall, casts mad licks of light into the darkness. Passages lead north
+and west. Set deep in the rocky floor is a closed trapdoor.
+   A pair of manacles hangs from iron chains attached high on the wall.
+
+&gt;
+&gt;&gt; WEST
+Corner
+   This short passage turns from east to north to stop abruptly at an iron
+door.
+
+&gt;</pre><p>Prochaine commande : <code>UNLOCK DOOR</code></p></details></section><section><h3>Étape 195</h3><p>The current scene is the Foyer, where the butler awaits your direction toward Lafond&#x27;s mansion. This atmosphere of high society contrasts with the memory of the game&#x27;s technical constraints.</p><small>507 mots dans l’historique · 1920 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; UNLOCK DOOR
+[with the large key]
+Unlocked.
+
+&gt;
+&gt;&gt; OPEN DOOR
+Opened.
+
+&gt;
+&gt;&gt; NORTH
+Cell
+   Hewn from dense rock, the cell is a stagnant burrow. Except for the
+tiniest glow of light from the torch two rooms away, it is pitch black.
+   As you enter, a tall bony man moves out of the darkness. &quot;Papa,&quot; you
+cry, rushing into his arms.
+   &quot;Why, hullo, my dear.&quot; He hugs you tightly. &quot;Nick certainly took his
+time about fetching you.&quot;
+
+&gt;
+&gt;&gt; GIVE GARTER TO PAPA
+He smiles dreamily at a memory.
+   You briefly explain the current situation to your father.
+   &quot;I knew Falcon would do his best to rescue me, once you were safe,&quot; he
+responds. &quot;Now to rescue Lucy -- Nicholas will have told you about her. You
+get him while I get Lucy, and the four of us will meet down at the beach.
+Just show me the way out of this maze, and we&#x27;ll get started.&quot;
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+
+&gt;
+&gt;&gt; SOUTH
+Corner
+   Papa enters just a few steps behind you.
+
+&gt;
+&gt;&gt; EAST
+Dungeon
+   Papa mutters something to himself. You hear an occasional &quot;Zounds!&quot;
+
+&gt;
+&gt;&gt; NORTH
+Anteroom
+   The crocodile lies half in the pool, sleeping.
+   Papa follows you.
+   Your father stops, smiling at the crocodile, &quot;Hello, chum, how are you?&quot;
+He bends over the creature, and scratches its bumpy snout, muttering,
+&quot;Never seen you sleep like this before.&quot; It stirs to life as your father
+walks over to you by the north entrance. The reptile, waking, lunges after
+him, choking on its chain.
+
+&gt;
+&gt;&gt; NORTH
+Bottom of Stairwell
+   Papa enters just a few steps behind you.
+
+&gt;
+&gt;&gt; UP
+Stairwell
+   Papa mutters something to himself. You hear an occasional &quot;Zounds!&quot;
+
+&gt;
+&gt;&gt; SOUTH
+You move beyond the portrait into the library.
+
+Library
+   An expensive hat is hanging on a knob.
+   Papa follows you.
+   &quot;A window!&quot; your father exclaims. &quot;I shall creep out to the kitchen. Get
+the Falcon.&quot; He climbs out the window.
+
+&gt;
+&gt;&gt; SOUTH
+East Hallway
+   There is a commotion from the west. A woman screams and a man yells,
+&quot;Stop, Pirate!&quot; You run to the foyer in time to see two dragoons dragging
+out the battered frame of Captain Jamison.
+   An officer quiets the guests, &quot;This is the buccaneer who has been
+pirating our ships. He had the audacity to come here tonight intending to
+assassinate our dear governor. Do not worry, ladies, he was arrogant enough
+to come alone.&quot; The officer marches after his men. The dancers return to
+their banal conversations.
+
+Foyer
+   The butler stands near the entrance to the ballroom.
+
+&gt;
+&gt;&gt; NORTH
+Main Entrance
+
+&gt;
+&gt;&gt; NORTH
+Front Drive
+   A rutted drive runs north-south here, from a high spiked gate through
+the jungle to Lafond&#x27;s mansion. You hide in the bushes nearby.
+   Dragoons, conversing quietly, patrol the other side of the gate.
+
+&gt;
+&gt;&gt; SOUTH
+Main Entrance
+   The butler walks up to you. &quot;M. Lafond requests your presence in his
+room immediately, Miss.&quot; He points up the stairs, bows, and leaves.
+
+&gt;</pre><p>Prochaine commande : <code>SOUTH</code></p></details></section><section><h3>Étape 211</h3><p>The current state is Lafond&#x27;s Bedroom, awaiting the player&#x27;s next action. This fixed path mirrors the constrained narrative structure Briggs experienced in her own work.</p><small>549 mots dans l’historique · 2011 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; SOUTH
+Foyer
+
+&gt;
+&gt;&gt; SOUTH
+The sea of spectators parts to admit you, murmuring approval.
+
+Ballroom
+
+&gt;
+&gt;&gt; NORTH
+Foyer
+
+&gt;
+&gt;&gt; NORTH
+Main Entrance
+
+&gt;
+&gt;&gt; SOUTH
+Foyer
+
+&gt;
+&gt;&gt; UP
+Stair Landing
+
+&gt;
+&gt;&gt; EAST
+Upstairs Hall
+
+&gt;
+&gt;&gt; KNOCK ON DOOR
+Lafond calls, &quot;Come.&quot;
+
+&gt;
+&gt;&gt; OPEN DOOR
+Opened.
+
+&gt;
+&gt;&gt; NORTH
+&quot;Welcome, ma petite.&quot; Lafond bows you in.
+
+Lafond&#x27;s Bedroom
+   Lafond is leering, lip curled.
+   A lace-covered table crouches beside a wing-backed chair in one corner.
+Sitting on the table is a green goblet, a blue goblet and a flagon.
+   &quot;Have some wine.&quot; Lafond pours wine into two glasses, giving a blue one
+to you. &quot;Drink this down. We have a long night ahead of us.&quot; He drains his
+own.
+
+&gt;
+&gt;&gt; DRINK WINE
+You empty the blue goblet of wine.
+   &quot;Good girl,&quot; he says, &quot;Let&#x27;s see more cooperation of this sort.&quot;
+   Suddenly, the door slams open. It is Jamison, coatless, sword bared, his
+shirt ripped. &quot;Thank God I am not too late. Leave, darling, before I skewer
+this dog to his bedposts,&quot; he cries. The scar on his cheek gleams coldly.
+   With a yell, Crulley and the butler jump out of the darkness behind him.
+Nicholas struggles, but soon lies unconscious on the floor.
+   &quot;Take him to the dungeon,&quot; Lafond says, setting down his glass. &quot;You,
+butler, stay nearby. I do not wish to be disturbed again.
+   &quot;Now that we are rid of that intrusion, cherie, I will change into
+something more comfortable. Pour me more wine.&quot; He crosses to the wardrobe
+removing his coat and vest, turned slightly away from you.
+
+&gt;
+&gt;&gt; POUR WINE INTO GREEN GOBLET
+You fill the green goblet with wine.
+   &quot;In private, call me Jean, or whatever endearment you choose, once I
+have approved it.&quot; Lafond is looking into the wardrobe.
+
+&gt;
+&gt;&gt; SQUEEZE BOTTLE INTO GREEN GOBLET
+You squeeze three colorless drops into the green goblet. You sense Lafond
+hesitate, then continue primping.
+   The butler enters, laying a silver tray of cold chicken on the table.
+&quot;The kitchen wench has gone, your grace. I took the liberty of fetching
+these myself.&quot; He bows and leaves the room.
+   &quot;Sprinkle some spices on the fowl, ma petite,&quot; Lafond says, donning a
+long brocade robe, his back to you. &quot;They are hot, but delicious.&quot;
+
+&gt;
+&gt;&gt; POUR WINE INTO BLUE GOBLET
+You fill the blue goblet with wine.
+   &quot;Tsk. The cook has gone too far. She shall be &#x27;leaving us&#x27; tomorrow.&quot;
+Lafond adjusts the lace at his neck.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   Lafond strolls to the table smiling slyly. &quot;Which glass was mine? I seem
+to have forgotten.&quot; He points at the green goblet and smiles in a way that
+does not grant you confidence. &quot;Is this it?&quot;
+
+&gt;
+&gt;&gt; LAFOND, NO
+You shake your head, teeth clenched.
+   &quot;Ah yes, of course.&quot; Lafond obligingly takes the blue goblet.
+   He inhales deeply of the bouquet of his wine, then turns to you. &quot;You
+must think me very naive to fall for such a trick. I saw you pour something
+into one of these glasses -- although I cannot smell it.&quot; He switches
+goblets, setting the blue goblet into your nerveless grasp and taking up
+the other, smiling evilly. &quot;Now you will drink from the cup intended for
+me.&quot;
+
+&gt;</pre><p>Prochaine commande : <code>DRINK WINE</code></p></details></section><section><h3>Étape 228</h3><p>The current sequence moves from the Stairwell into the Foyer, continuing the exploration of the house. This progression mirrors the careful, constrained pathfinding inherent in the game&#x27;s design.</p><small>503 mots dans l’historique · 1915 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; DRINK WINE
+You empty the blue goblet of wine.
+   &quot;Good girl,&quot; he says. Lafond takes the leather bottle and drops it out
+the window. &quot;You shall not need this. You may suffer no headaches in my
+employ.&quot;
+   He lifts his glass to drink, but stops. &quot;Your father, for all his
+idiotic meddling in other people&#x27;s business, is not a fool. I doubt you
+are, either.&quot; He calls in the butler, ordering him to empty the green
+goblet. The man reports no odd taste and returns to his post.
+
+&gt;
+&gt;&gt; TAKE SPICE
+You take a pinch of spices between your thumb and forefinger.
+   Lafond draws near, whispering indecencies. He caresses your lily white
+neck, his fingers ice-cold despite the tropic heat.
+
+&gt;
+&gt;&gt; THROW SPICE AT LAFOND
+You blow the spices off your fingertips, directly into Lafond&#x27;s face. He
+sneezes, his eyes watering from the heat of the peppers. Reaching blindly
+for some wine, he instead upsets the table, shattering a glass. Lafond
+stumbles cursing out of the room, in search of relief.
+
+&gt;
+&gt;&gt; WAVE MIRROR AT WINDOW
+You roll the bit of mirror around in the beam of moonlight till it glows
+silver-white. After a moment, a flash of light responds from the Helena
+Louise.
+   You hear a &quot;thump-phoosh,&quot; like someone slumping against a wall.
+
+&gt;
+&gt;&gt; SOUTH
+You creep over the prostrate butler.
+
+Upstairs Hall
+   The butler lies on the floor, prone and snoring loudly.
+
+&gt;
+&gt;&gt; WEST
+Stair Landing
+
+&gt;
+&gt;&gt; DOWN
+Foyer
+
+&gt;
+&gt;&gt; SOUTH
+The sea of spectators parts to admit you, murmuring approval.
+
+Ballroom
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+   An eerie battle cry arises on the wind, from all sides of the house, and
+Jamison&#x27;s men stream in from all directions, huddling the dancers in the
+middle of the ballroom.
+   Cookie rushes up to you, looking worried. &quot;Miss, we must find the Cap&#x27;n.
+Have ye any idea where to look?&quot;
+
+&gt;
+&gt;&gt; COOKIE, YES
+You nod eagerly.
+   Cookie grins broadly, &quot;I knew we could depend on you, lass. Lead on!&quot;
+
+&gt;
+&gt;&gt; NORTH
+Foyer
+   Cookie pegs after you.
+
+&gt;
+&gt;&gt; EAST
+East Hallway
+   Cookie pegs after you.
+
+&gt;
+&gt;&gt; NORTH
+Library
+   An expensive hat is hanging on a knob.
+   Cookie pegs after you.
+
+&gt;
+&gt;&gt; TAKE TREATISE
+You half tip the book out of the shelf when it snaps surprisingly back into
+place. There is a mysterious scraping sound from inside the wall.
+
+&gt;
+&gt;&gt; TAKE HAT
+As you lift the hat from its knob on the wall, a low vibration tingles up
+your legs from the floor.
+
+&gt;
+&gt;&gt; PRESS SINISTRA
+You press the painted island, and it sinks into the wooden sea. You hear a
+whirr and a click and the portrait pops open. A draft of sea-scented air
+flows in from behind it. Cookie harrumphs, surprised.
+
+&gt;
+&gt;&gt; NORTH
+For safety&#x27;s sake, you leave the hat on its knob. Best not to show that
+you&#x27;ve been wandering.
+   You move beyond the portrait into the flickering torchlight.
+
+Stairwell
+   Cookie pegs after you.
+
+&gt;</pre><p>Prochaine commande : <code>DOWN</code></p></details></section><section><h3>Étape 237</h3><p>The current scene is the Dungeon, where a rapier lies near shackled Nicholas. This moment echoes the technical constraints Briggs faced, where every design choice had to be meticulously placed.</p><small>539 mots dans l’historique · 2000 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; DOWN
+Bottom of Stairwell
+   Cookie pegs after you.
+
+&gt;
+&gt;&gt; SOUTH
+Anteroom
+   The crocodile lies half in the pool, gazing at you, with baleful eyes,
+jaws wide open. Dagger-sharp teeth glint in the torchlight.
+   Cookie pegs after you.
+   Cookie rushes at the crocodile, crying, &quot;I&#x27;ll take care of this monster,
+sweetheart. You run by and do what you must do.&quot; He dives headlong into the
+pool.
+
+&gt;
+&gt;&gt; SOUTH
+A whip cracks the air. &quot;Flogs me, will ye, Cap&#x27;n? Taste it yourself, har.&quot;
+Jamison groans, half conscious. You rush in.
+
+Dungeon
+   You sense, rather than see, the rusty skeletons of old cages and torture
+devices that line the walls of this cavernous room. One flaming torch, high
+on a wall, casts mad licks of light into the darkness. Passages lead north
+and west. Set deep in the rocky floor is an open trapdoor.
+   Nicholas is spread-eagled against the wall, shackled in the pair of
+manacles.
+   A rapier lies in the half-dark of a corner.
+   Crulley steps leering out of the shadows and cracks the whip near you,
+hopping you towards the open trapdoor. &quot;What, afrighted of a lick o&#x27; the
+whip?&quot;
+
+&gt;
+&gt;&gt; TAKE RAPIER
+Taken. Crulley snorts, &quot;Be careful, you might hurt yer dearie.&quot;
+   Crulley cracks the whip near you, hopping you towards the open trapdoor.
+&quot;Would yer like a taste o&#x27; water?&quot;
+
+&gt;
+&gt;&gt; KILL CRULLEY
+Crulley seems more amazed than frightened of your attack, guessing
+correctly that you hardly know the tip from the hilt of the rapier. He
+steps sideways in surprise, so he stands at the edge of the trapdoor.
+   Crulley cracks the whip near you, hopping you towards the open trapdoor.
+&quot;Ye&#x27;re a tasty doxy to let slip, but no &#x27;elp fer it.&quot;
+
+&gt;
+&gt;&gt; G
+You flick the rapier across his chest, barely scratching him. He cries,
+&quot;Avast me! Pricked by a woman!&quot; and trips into the trapdoor.
+   You peer down the hole to find Crulley hanging in midair, his hook
+caught in the rocks a few yards down. He curses and starts to climb up the
+sheer slimy walls of the well.
+
+&gt;
+&gt;&gt; CLOSE TRAPDOOR
+Shut.
+   Sounds of scraping hook against stone and curses echo out of the well,
+muffled by the trapdoor.
+
+&gt;
+&gt;&gt; PICK LOCK
+[with the jewelled brooch]
+You twist the pin of the jewelled brooch in the locks, quickly freeing
+Nicholas. He falls in a faint at your feet.
+   Sounds of scraping hook against stone and curses echo out of the well,
+muffled by the trapdoor.
+
+&gt;
+&gt;&gt; WAVE SMELLING SALTS
+You wave the smelling salts under Nicholas&#x27;s nose. He stirs, sneezes and
+looks at you blearily. &quot;How --?&quot; he says, bewildered. &quot;Lafond, did he --?&quot;
+He straightens. &quot;Darling, you are an angel, to have gone through all this
+and then rescue me. Your ravisher will not go unpunished.&quot; He squares his
+shoulders. &quot;For my brother, his wife, and your honor, I will kill Jean
+Lafond.&quot;
+   Nick kisses you briefly, a butterfly touching your lips, then seizes his
+rapier and runs off to the north. Cookie calls a breathless &quot;Hullo, Cap&#x27;n&quot;
+to him as he races past.
+   Sounds of scraping hook against stone and curses echo out of the well,
+muffled by the trapdoor.
+
+&gt;</pre><p>Prochaine commande : <code>NORTH</code></p></details></section><section><h3>Étape 249</h3><p>The current scene is the Ballroom, where Lafond lies prone among various objects. This moment follows the dramatic confrontation near the chandelier.</p><small>519 mots dans l’historique · 1999 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; NORTH
+Anteroom
+   The pool is roily with the writhing bodies of Cookie and the crocodile.
+
+&gt;
+&gt;&gt; NORTH
+&quot;I ain&#x27;t goin&#x27; to fight this beast if you&#x27;re headin&#x27; back upstairs.&quot; Cookie
+follows you.
+
+Bottom of Stairwell
+   Cookie pegs after you.
+
+&gt;
+&gt;&gt; WAIT
+Time passes...
+
+&gt;
+&gt;&gt; UP
+Stairwell
+   Cookie pegs after you.
+
+&gt;
+&gt;&gt; SOUTH
+You move beyond the portrait into the library.
+
+Library
+   An expensive hat is hanging on a knob.
+   Cookie pegs after you.
+   Cookie cocks his head. &quot;What is that noise? Is Cap&#x27;n duelling Lafond?
+There&#x27;s no chance he could win as beaten as he is!&quot; Cookie races out
+towards the ballroom.
+   You hear metal scrape metal. A woman gasps.
+
+&gt;
+&gt;&gt; SOUTH
+East Hallway
+   Swords engage and disengage.
+
+&gt;
+&gt;&gt; WEST
+Foyer
+   Lafond&#x27;s voice is cold, lazy, &quot;You will die, you know, Jamison.&quot;
+
+&gt;
+&gt;&gt; UP
+Stair Landing
+   You hear a duellist leap forward, and swords clash, parrying.
+
+&gt;
+&gt;&gt; EAST
+Upstairs Hall
+   The butler lies on the floor, prone and snoring loudly.
+   Rapiers click and slide. &quot;Bad parry, Captain,&quot; Lafond says.
+
+&gt;
+&gt;&gt; SOUTH
+Gallery
+   A chandelier is held above the dance floor by a rope and pulley system,
+so that the servants can lower it to light and snuff its candles. Several
+feet of rope hang down from the pulley, the excess tied around the railing.
+   Nicholas and Lafond circle each other intently, the one breathing hard,
+the other casual, sword tips almost touching. Jamison has lost copious
+amounts of blood and is no match for Lafond, cool and competent.
+&quot;You must ... pay ... for your actions!&quot; Nicholas gasps.
+
+&gt;
+&gt;&gt; UNTIE ROPE
+Untied. The chandelier swings slightly, dribs of hot wax spilling to the
+floor.
+   Someone calls out, &quot;We&#x27;ve got the Dimsford girl, Governor&quot; -- lying, of
+course, since you&#x27;re obviously free. But Nick glances towards the voice,
+missteps, and slips in his own blood, falling backwards to the floor, his
+rapier skittering aside.
+
+&gt;
+&gt;&gt; CLIMB DOWN ROPE
+&quot;Aaieeee!&quot; The cry comes uncalled to your lips as you swoop down from the
+balcony, petticoats flying, on the end of the rope.
+   Your timing is perfect: you slam into Lafond just as he steps into his
+lunge. His rapier stabs wildly, piercing Nicholas&#x27;s shoulder, missing his
+heart. You and Lafond roll into a snowball of petticoats and brocade,
+dropping everything between you.
+
+   Nicholas shouts, from far away, &quot;Let me go! Let me deliver Lafond to a
+
+&#x27;better&#x27; world.&quot;
+   &quot;A gentleman can&#x27;t kill an unconscious man!&quot; That is Papa&#x27;s voice. &quot;And
+you&#x27;re in no shape to continue, Nicholas. Rodney -- help my daughter. I&#x27;ll
+take Nick.&quot;
+   Cookie leans over you. &quot;We must get back to the ship, Miss. Dragoons
+surround the house.&quot; Nicholas, injured but still arguing, is already on the
+veranda, half-forced, half-supported by your father, shadowed by Lucy.
+Cookie helps you to your feet and rushes after them, expecting you to
+follow. Lafond lies nearby, apparently unconscious.
+
+Ballroom
+   Lafond, his wig awry, sprawls across the parquet floor.
+   You can see breeches, a shirt, a flower, a large key, a powder horn and
+a bit of mirror here.
+
+&gt;</pre><p>Prochaine commande : <code>TAKE HORN</code></p></details></section><section><h3>Étape 258</h3><p>The current scene is set after the duel&#x27;s conclusion, with Crulley descending from the cliff. This sequence mirrors the high-stakes, constrained narrative environment Briggs described in Plundered Hearts.</p><small>546 mots dans l’historique · 1996 tokens dans le prompt</small><details><summary>Historique complet et prochaine commande</summary><pre>&gt;&gt; TAKE HORN
+Taken.
+
+&gt;
+&gt;&gt; SOUTH
+Veranda
+
+&gt;
+&gt;&gt; SOUTH
+Lawn
+
+&gt;
+&gt;&gt; SOUTH
+Beach
+   Cookie, Lucy and your father are moving towards the skiff.
+   Nicholas stands alone at one edge of the beach. He has a rapier.
+   You splash into the rising surf and pain needles up your leg. Blood
+swirls out from your shoe in the shallow water, flowing over a small
+pointed stone.
+
+&gt;
+&gt;&gt; LOOK AT NICHOLAS
+Jamison carries an aura of power unusual in men so slim and tall, the
+strength of a willow in his hard seaworn body, straight shouldered and
+resilient. Chestnut hair, tousled by the wind, frames the tanned oval of
+his face. A jagged scar etches one cheek, harsh against the warmth of his
+limpid blue eyes.
+   A shot rings out over the roar of the surf. Turning, you see that Lafond
+stands at the top of the cliff, a pistol in each hand. &quot;Trying to sneak out
+the back, cowards? You will die like your brother, Falcon. Snivelling for
+mercy.&quot; He hands one gun to Crulley, standing nearby, and levels the other
+at Jamison.
+
+&gt;
+&gt;&gt; PUSH NICHOLAS
+Pushing Captain Jamison accomplishes nothing.
+   As the gun fires, Cookie throws himself before his captain. He cries
+out, blood blossoming on his shoulder, and falls face first into the sand.
+Lucy runs to him.
+   Jamison yells up the cliff, brandishing his sword. &quot;Fight like a man,
+Lafond. You have drawn my blood once tonight -- let me draw yours.&quot;
+   Lafond sneers. &quot;On one condition. If I win, your lady comes to me. You
+will have no need of her when you are dead.&quot;
+   Nicholas stiffens, glances at the dragoons on the cliff above, and turns
+slowly to you. He says nothing, his face hard, but his eyes tell you what
+you want to know. &quot;Answer, my darling. Yes or no?&quot;
+
+&gt;
+&gt;&gt; NICHOLAS, YES
+He fails to notice you&#x27;ve spoken.
+   Nicholas looks determined. &quot;I accept. So long as my people go free if I
+win. Order your dragoons to obey us, then.&quot; In answer, Lafond jumps off the
+cliff like a huge brocaded bat to land in front of Captain Jamison. &quot;Die
+then, fool!&quot;
+   The pistol, spinning from Lafond&#x27;s grip, drops to the sand nearby.
+
+&gt;
+&gt;&gt; TAKE PISTOL
+Taken.
+   Lafond immediately takes the advantage, forcing Nicholas in a retreat
+towards the foaming surf. But Nicholas fights hard, jaw set, ignoring his
+wounds. Lafond finally loses his smile.
+   Behind the duellists, far away atop the cliff, you notice Crulley madly
+reloading the pistol.
+
+&gt;
+&gt;&gt; LOAD PISTOL
+You pour a lumpy stream of gunpowder mixture into the barrel of the pistol
+tamping it as best you can.
+   Suddenly the force of the duel turns, Nicholas advancing against
+Lafond&#x27;s retreat. Their blades silently flash in the moonlight. Lafond is
+pressed back into the shadow of the cliff, sweat beading on his forehead.
+Abruptly, Jamison leaps forward, metal scrapes, and his rapier licks neatly
+into Lafond&#x27;s ribs, like a snake slipping into its burrow. The body of the
+governor of St. Sinistra convulses, as in amazement, then sags dead on the
+sword.
+   Nicholas removes a gold ring from the dead man&#x27;s finger, throwing his
+own cheap copy into the surf.
+   Far above him, Crulley moves down the stairs.
+
+&gt;</pre><p>Prochaine commande : <code>FIRE PISTOL AT CRULLEY</code></p></details></section></html>

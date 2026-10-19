@@ -273,10 +273,9 @@ def main():
     if args.summary:
         original_summary = faketerm.load_itw_redux()
         for scene in scenes:
-            updated = faketerm.build_prompt(scene["game_text"], scene["command"], interview_text)
-            if scene["prompt"].count(original_summary) != 1 or updated != scene["prompt"].replace(original_summary, interview_text, 1):
-                parser.error("Saved prompt differs from the current template: " + scene["id"])
-            scene["prompt"] = updated
+            if scene["prompt"].count(original_summary) != 1:
+                parser.error("Saved prompt does not contain the original summary exactly once: " + scene["id"])
+            scene["prompt"] = scene["prompt"].replace(original_summary, interview_text, 1)
     save_json(directory / "scenes.json", scenes)
     client = ollama.Client(host=faketerm.OLLAMA_HOST, timeout=faketerm.LLM_TIMEOUT)
     catalog = faketerm.load_video_embeddings(faketerm.VIDEO_EMBEDDINGS_PATH)

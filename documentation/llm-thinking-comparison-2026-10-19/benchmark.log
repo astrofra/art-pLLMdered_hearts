@@ -1,0 +1,185 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+off256 | cut_rope | seed 42 | 1.235 s | 38 tokens | 33 words | stop
+off1024 | cut_rope | seed 42 | 0.61 s | 35 tokens | 31 words | stop
+on1024 | cut_rope | seed 42 | 5.937 s | 582 tokens | 29 words | stop
+probe256 | cut_rope | seed 42 | 2.422 s | 256 tokens | 0 words | length
+probe1024 | cut_rope | seed 42 | 4.61 s | 512 tokens | 29 words | stop
+probe1024 | cut_rope | seed 42 | 5.375 s | 601 tokens | 28 words | stop
+probe256 | cut_rope | seed 42 | 3.922 s | 256 tokens | 0 words | length
+off256 | stand_up | seed 42 | 1.047 s | 50 tokens | 40 words | stop
+off1024 | stand_up | seed 42 | 0.531 s | 35 tokens | 29 words | stop
+on1024 | stand_up | seed 42 | 4.641 s | 456 tokens | 35 words | stop
+off256 | read_invitation | seed 42 | 0.656 s | 48 tokens | 40 words | stop
+on1024 | read_invitation | seed 42 | 3.969 s | 428 tokens | 32 words | stop
+off1024 | read_invitation | seed 42 | 0.625 s | 37 tokens | 30 words | stop
+off1024 | wear_breeches | seed 42 | 0.734 s | 46 tokens | 37 words | stop
+off256 | wear_breeches | seed 42 | 0.563 s | 42 tokens | 35 words | stop
+on1024 | wear_breeches | seed 42 | 4.719 s | 538 tokens | 30 words | stop
+off1024 | cut_rope | seed 42 | 0.75 s | 39 tokens | 32 words | stop
+on1024 | cut_rope | seed 42 | 4.937 s | 525 tokens | 34 words | stop
+off256 | cut_rope | seed 42 | 0.703 s | 39 tokens | 32 words | stop
+on1024 | examine_lucy | seed 42 | 5.671 s | 573 tokens | 29 words | stop
+off256 | examine_lucy | seed 42 | 0.828 s | 42 tokens | 34 words | stop
+off1024 | examine_lucy | seed 42 | 0.594 s | 44 tokens | 32 words | stop
+on1024 | dance | seed 42 | 5.125 s | 548 tokens | 36 words | stop
+off1024 | dance | seed 42 | 0.812 s | 53 tokens | 35 words | stop
+off256 | dance | seed 42 | 0.656 s | 53 tokens | 35 words | stop
+off256 | throw_pork_at_crocodile | seed 42 | 0.75 s | 50 tokens | 43 words | stop
+off1024 | throw_pork_at_crocodile | seed 42 | 0.766 s | 51 tokens | 43 words | stop
+on1024 | throw_pork_at_crocodile | seed 42 | 5.469 s | 578 tokens | 29 words | stop
+off256 | give_garter_to_papa | seed 42 | 0.719 s | 44 tokens | 35 words | stop
+on1024 | give_garter_to_papa | seed 42 | 4.719 s | 509 tokens | 28 words | stop
+off1024 | give_garter_to_papa | seed 42 | 0.719 s | 44 tokens | 35 words | stop
+off1024 | squeeze_bottle_into_green_goblet | seed 42 | 0.766 s | 43 tokens | 34 words | stop
+off256 | squeeze_bottle_into_green_goblet | seed 42 | 0.672 s | 45 tokens | 33 words | stop
+on1024 | squeeze_bottle_into_green_goblet | seed 42 | 4.828 s | 510 tokens | 31 words | stop
+off1024 | kill_crulley | seed 42 | 0.75 s | 41 tokens | 31 words | stop
+on1024 | kill_crulley | seed 42 | 5.515 s | 599 tokens | 30 words | stop
+off256 | kill_crulley | seed 42 | 0.766 s | 41 tokens | 35 words | stop
+on1024 | wave_smelling_salts | seed 42 | 4.843 s | 518 tokens | 30 words | stop
+off256 | wave_smelling_salts | seed 42 | 0.781 s | 48 tokens | 36 words | stop
+off1024 | wave_smelling_salts | seed 42 | 0.625 s | 52 tokens | 39 words | stop
+on1024 | fire_pistol_at_crulley | seed 42 | 5.797 s | 622 tokens | 32 words | stop
+off1024 | fire_pistol_at_crulley | seed 42 | 0.797 s | 39 tokens | 32 words | stop
+off256 | fire_pistol_at_crulley | seed 42 | 0.609 s | 39 tokens | 32 words | stop
+on1024 | stand_up | seed 43 | 7.219 s | 482 tokens | 39 words | stop
+off1024 | stand_up | seed 43 | 0.89 s | 39 tokens | 31 words | stop
+off256 | stand_up | seed 43 | 0.703 s | 41 tokens | 33 words | stop
+off1024 | read_invitation | seed 43 | 0.562 s | 41 tokens | 33 words | stop
+on1024 | read_invitation | seed 43 | 4.422 s | 485 tokens | 30 words | stop
+off256 | read_invitation | seed 43 | 0.625 s | 41 tokens | 33 words | stop
+on1024 | wear_breeches | seed 43 | 4.063 s | 462 tokens | 29 words | stop
+off256 | wear_breeches | seed 43 | 0.672 s | 39 tokens | 33 words | stop
+off1024 | wear_breeches | seed 43 | 0.61 s | 39 tokens | 33 words | stop
+off256 | cut_rope | seed 43 | 0.562 s | 35 tokens | 29 words | stop
+on1024 | cut_rope | seed 43 | 5.797 s | 593 tokens | 26 words | stop
+off1024 | cut_rope | seed 43 | 0.813 s | 43 tokens | 38 words | stop
+off1024 | examine_lucy | seed 43 | 0.672 s | 42 tokens | 30 words | stop
+off256 | examine_lucy | seed 43 | 0.641 s | 41 tokens | 34 words | stop
+on1024 | examine_lucy | seed 43 | 5.859 s | 625 tokens | 24 words | stop
+off256 | dance | seed 43 | 0.86 s | 38 tokens | 33 words | stop
+off1024 | dance | seed 43 | 0.625 s | 43 tokens | 35 words | stop
+on1024 | dance | seed 43 | 5.344 s | 565 tokens | 37 words | stop
+on1024 | throw_pork_at_crocodile | seed 43 | 4.938 s | 529 tokens | 33 words | stop
+off1024 | throw_pork_at_crocodile | seed 43 | 0.704 s | 42 tokens | 35 words | stop
+off256 | throw_pork_at_crocodile | seed 43 | 0.641 s | 42 tokens | 35 words | stop
+off1024 | give_garter_to_papa | seed 43 | 0.625 s | 37 tokens | 32 words | stop
+on1024 | give_garter_to_papa | seed 43 | 4.656 s | 502 tokens | 35 words | stop
+off256 | give_garter_to_papa | seed 43 | 0.703 s | 41 tokens | 34 words | stop
+on1024 | squeeze_bottle_into_green_goblet | seed 43 | 4.593 s | 471 tokens | 34 words | stop
+off256 | squeeze_bottle_into_green_goblet | seed 43 | 0.797 s | 41 tokens | 33 words | stop
+off1024 | squeeze_bottle_into_green_goblet | seed 43 | 0.578 s | 49 tokens | 35 words | stop
+off256 | kill_crulley | seed 43 | 0.75 s | 43 tokens | 34 words | stop
+on1024 | kill_crulley | seed 43 | 4.563 s | 483 tokens | 32 words | stop
+off1024 | kill_crulley | seed 43 | 0.704 s | 46 tokens | 38 words | stop
+off1024 | wave_smelling_salts | seed 43 | 0.625 s | 40 tokens | 28 words | stop
+off256 | wave_smelling_salts | seed 43 | 0.547 s | 40 tokens | 28 words | stop
+on1024 | wave_smelling_salts | seed 43 | 4.968 s | 540 tokens | 31 words | stop
+off256 | fire_pistol_at_crulley | seed 43 | 0.844 s | 44 tokens | 34 words | stop
+off1024 | fire_pistol_at_crulley | seed 43 | 0.656 s | 44 tokens | 34 words | stop
+on1024 | fire_pistol_at_crulley | seed 43 | 4.906 s | 523 tokens | 33 words | stop
+[
+  {
+    "id": "off256",
+    "label": "Sans raisonnement, 256",
+    "think": false,
+    "num_predict": 256,
+    "attempts": 24,
+    "responses": 24,
+    "errors": 0,
+    "embedding_errors": 0,
+    "empty": 0,
+    "truncated": 0,
+    "median_sec": 0.703,
+    "median_prompt_sec": 0.079,
+    "median_generation_sec": 0.572,
+    "median_tokens_per_sec": 75.23,
+    "median_output_tokens": 41.5,
+    "median_thinking_characters": 0.0,
+    "median_words": 34.0,
+    "within_60_words": 24,
+    "technical_terms": 14,
+    "markdown": 0,
+    "distinct_top_videos": 9,
+    "top_video_counts": {
+      "08_writing_a_romance_1.ogv": 9,
+      "15_management_vision_0.ogv": 3,
+      "24_writing_a_romance_5.ogv": 3,
+      "09_writing_a_romance_2.ogv": 2,
+      "10_writing_a_romance_3.ogv": 2,
+      "12_writing_a_romance_4.ogv": 2,
+      "02_wheeler_building_0.ogv": 1,
+      "13_critical_response_0.ogv": 1,
+      "23_market_vision_3.ogv": 1
+    }
+  },
+  {
+    "id": "off1024",
+    "label": "Sans raisonnement, 1024",
+    "think": false,
+    "num_predict": 1024,
+    "attempts": 24,
+    "responses": 24,
+    "errors": 0,
+    "embedding_errors": 0,
+    "empty": 0,
+    "truncated": 0,
+    "median_sec": 0.688,
+    "median_prompt_sec": 0.078,
+    "median_generation_sec": 0.551,
+    "median_tokens_per_sec": 77.725,
+    "median_output_tokens": 42.5,
+    "median_thinking_characters": 0.0,
+    "median_words": 33.5,
+    "within_60_words": 24,
+    "technical_terms": 12,
+    "markdown": 0,
+    "distinct_top_videos": 10,
+    "top_video_counts": {
+      "08_writing_a_romance_1.ogv": 10,
+      "15_management_vision_0.ogv": 3,
+      "12_writing_a_romance_4.ogv": 2,
+      "10_writing_a_romance_3.ogv": 2,
+      "09_writing_a_romance_2.ogv": 2,
+      "22_market_vision_2.ogv": 1,
+      "24_writing_a_romance_5.ogv": 1,
+      "11_market_vision_0.ogv": 1,
+      "13_critical_response_0.ogv": 1,
+      "23_market_vision_3.ogv": 1
+    }
+  },
+  {
+    "id": "on1024",
+    "label": "Avec raisonnement, 1024",
+    "think": true,
+    "num_predict": 1024,
+    "attempts": 24,
+    "responses": 24,
+    "errors": 0,
+    "embedding_errors": 0,
+    "empty": 0,
+    "truncated": 0,
+    "median_sec": 4.921,
+    "median_prompt_sec": 0.124,
+    "median_generation_sec": 4.623,
+    "median_tokens_per_sec": 112.115,
+    "median_output_tokens": 524.0,
+    "median_thinking_characters": 2033.5,
+    "median_words": 31.5,
+    "within_60_words": 24,
+    "technical_terms": 19,
+    "markdown": 0,
+    "distinct_top_videos": 7,
+    "top_video_counts": {
+      "08_writing_a_romance_1.ogv": 10,
+      "10_writing_a_romance_3.ogv": 4,
+      "24_writing_a_romance_5.ogv": 3,
+      "11_market_vision_0.ogv": 2,
+      "09_writing_a_romance_2.ogv": 2,
+      "12_writing_a_romance_4.ogv": 2,
+      "05_becoming_an_imp_0.ogv": 1
+    }
+  }
+]
+Report: C:\works\projects\pLLMdered_hearts\documentation\llm-thinking-comparison-2026-10-19\comparison.html

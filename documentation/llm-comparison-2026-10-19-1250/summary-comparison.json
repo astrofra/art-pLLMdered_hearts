@@ -1,0 +1,161 @@
+{
+  "checks": "Only the interview summary changed; scenes, instructions, seeds, model digests, options and Ollama version match.",
+  "baseline_results_sha256": "3fe0ba56c0d55de57a66b7bde6a6327ab82bda25fa97f4965bef22b1abfaef43",
+  "summary_words": [
+    752,
+    1255
+  ],
+  "models": [
+    {
+      "model": "ministral-3:14b",
+      "before": {
+        "responses": 24,
+        "median_sec": 14.438,
+        "median_words": 49.0,
+        "within_60_words": 20,
+        "markdown": 11,
+        "technical_terms": 17,
+        "distinct_top_videos": 7,
+        "top_video_counts": {
+          "15_management_vision_0.ogv": 9,
+          "08_writing_a_romance_1.ogv": 7,
+          "11_market_vision_0.ogv": 2,
+          "20_working_at_infocom_2.ogv": 2,
+          "13_critical_response_0.ogv": 2,
+          "09_writing_a_romance_2.ogv": 1,
+          "24_writing_a_romance_5.ogv": 1
+        },
+        "truncated_outputs": 0,
+        "prompt_tokens_min": 1733,
+        "prompt_tokens_max": 2153,
+        "prompt_plus_output_tokens_max": 2238
+      },
+      "after": {
+        "responses": 24,
+        "median_sec": 16.906,
+        "median_words": 56.0,
+        "within_60_words": 18,
+        "markdown": 14,
+        "technical_terms": 15,
+        "distinct_top_videos": 8,
+        "top_video_counts": {
+          "15_management_vision_0.ogv": 11,
+          "08_writing_a_romance_1.ogv": 4,
+          "10_writing_a_romance_3.ogv": 3,
+          "23_market_vision_3.ogv": 2,
+          "11_market_vision_0.ogv": 1,
+          "03_working_at_infocom_0.ogv": 1,
+          "24_writing_a_romance_5.ogv": 1,
+          "09_writing_a_romance_2.ogv": 1
+        },
+        "truncated_outputs": 0,
+        "prompt_tokens_min": 2395,
+        "prompt_tokens_max": 2815,
+        "prompt_plus_output_tokens_max": 2948
+      },
+      "changed_top_video_pairs": 16,
+      "identical_commentary_pairs": 0
+    },
+    {
+      "model": "qwen3.5:4b",
+      "before": {
+        "responses": 24,
+        "median_sec": 0.774,
+        "median_words": 33.0,
+        "within_60_words": 24,
+        "markdown": 0,
+        "technical_terms": 18,
+        "distinct_top_videos": 8,
+        "top_video_counts": {
+          "08_writing_a_romance_1.ogv": 6,
+          "13_critical_response_0.ogv": 6,
+          "15_management_vision_0.ogv": 3,
+          "22_market_vision_2.ogv": 3,
+          "11_market_vision_0.ogv": 2,
+          "10_writing_a_romance_3.ogv": 2,
+          "09_writing_a_romance_2.ogv": 1,
+          "05_becoming_an_imp_0.ogv": 1
+        },
+        "truncated_outputs": 0,
+        "prompt_tokens_min": 1206,
+        "prompt_tokens_max": 1625,
+        "prompt_plus_output_tokens_max": 1666
+      },
+      "after": {
+        "responses": 24,
+        "median_sec": 0.844,
+        "median_words": 35.0,
+        "within_60_words": 24,
+        "markdown": 0,
+        "technical_terms": 11,
+        "distinct_top_videos": 7,
+        "top_video_counts": {
+          "15_management_vision_0.ogv": 12,
+          "04_company_culture_0.ogv": 4,
+          "03_working_at_infocom_0.ogv": 3,
+          "02_wheeler_building_0.ogv": 2,
+          "08_writing_a_romance_1.ogv": 1,
+          "13_critical_response_0.ogv": 1,
+          "09_writing_a_romance_2.ogv": 1
+        },
+        "truncated_outputs": 0,
+        "prompt_tokens_min": 1865,
+        "prompt_tokens_max": 2284,
+        "prompt_plus_output_tokens_max": 2339
+      },
+      "changed_top_video_pairs": 21,
+      "identical_commentary_pairs": 0
+    },
+    {
+      "model": "gemma4:e4b",
+      "before": {
+        "responses": 24,
+        "median_sec": 0.711,
+        "median_words": 34.0,
+        "within_60_words": 24,
+        "markdown": 0,
+        "technical_terms": 11,
+        "distinct_top_videos": 7,
+        "top_video_counts": {
+          "08_writing_a_romance_1.ogv": 12,
+          "24_writing_a_romance_5.ogv": 3,
+          "15_management_vision_0.ogv": 3,
+          "12_writing_a_romance_4.ogv": 2,
+          "09_writing_a_romance_2.ogv": 2,
+          "10_writing_a_romance_3.ogv": 1,
+          "22_market_vision_2.ogv": 1
+        },
+        "truncated_outputs": 0,
+        "prompt_tokens_min": 1190,
+        "prompt_tokens_max": 1602,
+        "prompt_plus_output_tokens_max": 1647
+      },
+      "after": {
+        "responses": 24,
+        "median_sec": 0.718,
+        "median_words": 35.0,
+        "within_60_words": 24,
+        "markdown": 1,
+        "technical_terms": 8,
+        "distinct_top_videos": 9,
+        "top_video_counts": {
+          "08_writing_a_romance_1.ogv": 8,
+          "24_writing_a_romance_5.ogv": 7,
+          "15_management_vision_0.ogv": 3,
+          "09_writing_a_romance_2.ogv": 1,
+          "10_writing_a_romance_3.ogv": 1,
+          "12_writing_a_romance_4.ogv": 1,
+          "04_company_culture_0.ogv": 1,
+          "23_market_vision_3.ogv": 1,
+          "02_wheeler_building_0.ogv": 1
+        },
+        "truncated_outputs": 0,
+        "prompt_tokens_min": 1840,
+        "prompt_tokens_max": 2252,
+        "prompt_plus_output_tokens_max": 2300
+      },
+      "changed_top_video_pairs": 19,
+      "identical_commentary_pairs": 0
+    }
+  ]
+}

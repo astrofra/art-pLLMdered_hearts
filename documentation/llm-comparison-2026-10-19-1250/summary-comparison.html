@@ -1,0 +1,785 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>750 / 1250 mots : pLLMdered Hearts</title><style>body{font:16px/1.55 system-ui;margin:2rem auto;padding:0 1rem;max-width:1300px;color:#222}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:.6rem;text-align:left}.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}article{border:1px solid #ccc;border-radius:8px;padding:1rem}pre{white-space:pre-wrap}small{color:#555}section{margin:2rem 0}@media(max-width:700px){.pair{grid-template-columns:1fr}}</style><h1>Effet du résumé : 752 / 1 255 mots</h1><p>Mêmes 12 scènes, 2 graines par scène et 3 modèles : 72 commentaires par série. Seul le texte du résumé change. Identité des scènes, consignes, graines, poids des modèles, paramètres et version d’Ollama vérifiée par le script.</p><p>Température 0,3 ; contexte 4 096 tokens ; sortie maximale 256 tokens ; raisonnement prolongé désactivé pour Qwen et Gemma. EmbeddingGemma 300M sur CPU ; aucune lecture vidéo déclenchée.</p><p><a href="../llm-comparison-2026-10-19/comparison.html">Série 752 mots</a> · <a href="comparison.html">Série 1 255 mots</a> · <a href="summary-comparison.json">Mesures comparées</a></p><table><tr><th>Modèle</th><th>Médiane (s)</th><th>Termes techniques / 24</th><th>Vidéos distinctes</th><th>Vidéo modifiée / 24</th><th>Prompt max. (tokens)</th></tr><tr><td>ministral-3:14b</td><td>14.438 → 16.906</td><td>17 → 15</td><td>7 → 8</td><td>16</td><td>2153 → 2815</td></tr><tr><td>qwen3.5:4b</td><td>0.774 → 0.844</td><td>18 → 11</td><td>8 → 7</td><td>21</td><td>1625 → 2284</td></tr><tr><td>gemma4:e4b</td><td>0.711 → 0.718</td><td>11 → 8</td><td>7 → 9</td><td>19</td><td>1602 → 2252</td></tr></table><p><small>Flèches : 752 → 1 255 mots. Le compteur lexical cherche memory, hardware, technical, commodore, parser ou storage ; il ne mesure pas la pertinence. Diversité vidéo calculée avant le filtre anti-répétition. Les temps incluent le traitement du prompt et la génération, avec modèle préchargé ; les effets de cache et de charge de la machine ne sont pas isolés.</small></p><section><h2>Lecture des résultats</h2><p>Les 72 commentaires et leurs embeddings ont été produits sans erreur. Les prompts atteignent au maximum 2 815 tokens pour Ministral, 2 284 pour Qwen et 2 252 pour Gemma ; aucune troncature d&#x27;entrée n&#x27;est signalée dans le journal Ollama de cette exécution. Aucune réponse n&#x27;atteint non plus la limite de génération. Sur ces scènes, le résumé long tient donc dans la fenêtre de 4 096 tokens.</p><p>Le résumé long modifie réellement les associations : la première vidéo proposée change dans 16 paires sur 24 pour Ministral, 21 pour Qwen et 19 pour Gemma. Cela montre une sensibilité au texte fourni ; ce compteur ne dit pas que les nouvelles associations sont meilleures.</p><p>L&#x27;indicateur lexical technique passe de 17 à 15 commentaires pour Ministral, de 18 à 11 pour Qwen et de 11 à 8 pour Gemma. Il cherche memory, hardware, technical, commodore, parser ou storage. Memory peut désigner un souvenir : ce comptage ne mesure donc pas exactement la présence du thème des contraintes techniques.</p><p>Chez Qwen, la diminution du vocabulaire technique s&#x27;accompagne d&#x27;un déplacement très net vers l&#x27;opposition entre autonomie créative et contrôle commercial. La vidéo 15_management_vision_0 arrive en tête dans 12 commentaires sur 24, contre 3 auparavant ; le nombre total de vidéos distinctes passe de 8 à 7. Le résumé long déplace ici le motif dominant sans résoudre la répétition.</p><p>Gemma mobilise davantage le personnage, l&#x27;émotion et la liberté de l&#x27;auteur, mais conserve une formulation très uniforme autour de This scene reflects the narrative focus. Les rapprochements couvrent 9 vidéos au lieu de 7, tout en restant concentrés : les vidéos 08_writing_a_romance_1 et 24_writing_a_romance_5 représentent ensemble 15 des 24 premières propositions, comme dans la série courte. Par exemple, wave smelling salts évoquait les limites de mémoire du C64 ; avec le texte long, le commentaire repart vers le contraste avec Cornerstone.</p><p>Ministral varie davantage ses détails, notamment autour du test, du mentorat et du contrôle du personnage, mais force encore des analogies entre les objets du jeu et les difficultés de l&#x27;entreprise. Il respecte moins souvent la limite de 60 mots : 18 réponses sur 24, contre 20. Le Markdown apparaît dans 14 réponses, contre 11. Qwen et Gemma restent tous deux sous les 60 mots pour leurs 24 réponses ; Gemma introduit du Markdown une fois.</p><p>Qwen conserve un risque de confusion de voix : il affirme notamment I remember how testers like me once shaped worlds et évoque the long, solitary nights I spent testing games in Infocom&#x27;s glass atrium. Ces souvenirs à la première personne ne conviennent pas à une voix qui commente le témoignage sans en être l&#x27;autrice.</p><p>Les médianes des requêtes passent de 14,438 à 16,906 secondes pour Ministral, de 0,774 à 0,844 pour Qwen et de 0,711 à 0,718 pour Gemma. Les pics échantillonnés de la carte sont respectivement de 7 034, 4 505 et 5 409 MiB, avec EmbeddingGemma sur CPU. Les deux petits modèles restent rapides dans ces conditions.</p><p><strong>Ce résumé long change les associations, sans démontrer un gain net de pertinence ou une disparition des répétitions. Sur cet échantillon, la piste d&#x27;un contexte plus sélectif selon la scène reste plus intéressante à tester que l&#x27;ajout systématique de texte. Le lancement habituel conserve pour l&#x27;instant le résumé de 750 mots.</strong></p><h3>Portée du comparatif</h3><ul><li>Les deux résumés diffèrent par leur contenu, pas seulement par leur longueur. Ce comparatif n&#x27;isole donc pas un effet causal du nombre de mots.</li><li>Douze scènes et deux graines par scène constituent un échantillon exploratoire. Les jugements qualitatifs ne sont ni aveugles ni évalués par plusieurs personnes.</li><li>Les mesures de temps utilisent des modèles préchargés et incluent le traitement du prompt ainsi que la génération. Les caches, la longueur des réponses et la charge de la machine ne sont pas isolés ; aucune différence de vitesse n&#x27;est attribuée uniquement à la longueur du résumé.</li><li>Les paramètres explicites, graines, empreintes des modèles et version d&#x27;Ollama sont identiques entre les séries ; les autres réglages restent ceux de chaque modèle distribué.</li><li>Les propositions vidéo sont calculées avant le filtre anti-répétition. Elles ne correspondent pas au nombre de clips réellement joués par l&#x27;installation. Les fenêtres C64 et Godot étaient fermées pendant ces mesures.</li><li>L&#x27;absence de dépassement de contexte vaut pour ces scènes et ces modèles. Elle ne garantit pas que tout passage du parcours complet tiendra dans 4 096 tokens.</li></ul></section><section><h2>ministral-3:14b</h2><h3>Confinement in the cabin</h3><details><summary>Texte du jeu</summary><pre>&gt;SHOOT THE PIRATE
+Trembling, you fire the heavy arquebus. You hear its loud report over the
+roaring wind, yet the dark figure still approaches. The gun falls from your
+nerveless hands.
+   &quot;You won&#x27;t kill me,&quot; he says, stepping over the weapon. &quot;Not when I am
+the only protection you have from Jean Lafond.&quot;
+   Chestnut hair, tousled by the wind, frames the tanned oval of his face.
+Lips curving, his eyes rake over your inadequately dressed body, the damp
+chemise clinging to your legs and heaving bosom, your gleaming hair. You
+are intensely aware of the strength of his hard seaworn body, of the deep
+sea blue of his eyes. And then his mouth is on yours, lips parted,
+demanding, and you arch into his kiss...
+   He presses you against him, head bent. &quot;But who, my dear,&quot; he whispers
+into your hair, &quot;will protect you from me?&quot;
+
+PLUNDERED HEARTS
+Infocom interactive fiction
+Copyright (c) 1987 by Infocom, Inc. All rights reserved.
+PLUNDERED HEARTS is a trademark of Infocom, Inc.
+Release 26 / Serial number 870730
+
+LATE ONE SPRING NIGHT IN THE WEST INDIES...
+
+   A crash overhead! Pirates are boarding the Lafond Deux! The first mate
+hurries you into Captain Davis&#x27;s cabin.
+   &quot;Good, you brought the girl,&quot; Davis smirks. &quot;She&#x27;ll keep the pirates
+busy. She was only a tool of Lafond&#x27;s, anyway. Let me just find that cof--&quot;
+A man on deck screams in agony and Davis starts. &quot;Let&#x27;s go.&quot; The captain
+thrusts you on the bed and walks out, locking the door.
+   His laugh echoes. &quot;Best get comfortable, girl. You&#x27;re likely to be there
+for the rest of your life.&quot;
+
+Cabin, on the bed
+   You are in an officer&#x27;s cabin, lit by the firelight glowing through a
+porthole. A door is to starboard. Except for the built-in bed, the room
+seems to have been emptied thoroughly, if hurriedly.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The tension between creative freedom and commercial pragmatism lingers here—Briggs’ lush, cinematic prose contrasts with the brutal memory constraints forcing her to truncate ambition. The pirate’s predatory charm mirrors Infocom’s own precarious balance: seductive, but ultimately a system where even passion must bow to budget and fear.</p><small>47 mots · 15.922 s · 2153 tokens en entrée</small><p><small>Vidéo : Commercial Pressures and Romance Games (0.36423)</small></p></article><article><strong>1 255 mots</strong><p>This moment echoes Infocom’s playful yet tense blend of romantic cliché and narrative constraint—where player agency (like shooting the pirate) collides with authored character limits. Briggs’ frustration over *Plundered Hearts*’ mixed reception (&quot;not allowing karate chops&quot;) feels acute here, as the game’s emotional stakes hinge on surrendering control to the pirate’s seduction rather than brute force.
+
+The cabin’s locked door and Davis’s threat (&quot;rest of your life&quot;) mirror Infocom’s own corporate trap—creative autonomy (her &quot;Camelot&quot;) replaced by corporate micromanagement, leaving her trapped in a sequel she couldn’t escape.</p><small>88 mots · 31.344 s · 2815 tokens en entrée</small><p><small>Vidéo : Commercial Pressures and Romance Games (0.49326)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This moment echoes Briggs’s frustration with Infocom’s commercial pressures—romantic tension here feels like a narrative risk, not just creative freedom, while the pirate’s dominance mirrors how her game’s constraints (technical *and* genre expectations) shaped its reception. The &quot;inadequately dressed&quot; prose also hints at how *Plundered Hearts*’ feminine perspective was both celebrated and scrutinized for its perceived limitations.</p><small>57 mots · 16.297 s · 2153 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.58276)</small></p></article><article><strong>1 255 mots</strong><p>The moment echoes Briggs’s tension between player agency and authored character—here, the pirate’s dominance over the protagonist mirrors Infocom’s corporate shift from creative trust to top-down control, while the forced seduction scene reflects her frustration with marketing’s demands for &quot;women’s games&quot; over artistic integrity. The trembling hands and locked door feel like technical constraints bleeding into narrative, a metaphor for how hardware limits (like the C64’s memory) stifled her vision.</p><small>70 mots · 19.734 s · 2815 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.44053)</small></p></article></div><h3>An invitation and a social role</h3><details><summary>Texte du jeu</summary><pre>All diamonds winking fire, tears of sapphire and crushed rubies in an oval
+setting, it is a pity that the clasp of the jewelled brooch has broken. The
+gold pin at the back swings about uselessly.
+
+&gt;
+Opening the coffer reveals an invitation.
+
+&gt;
+Taken.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The delicate craftsmanship of the brooch mirrors Infocom’s own tension between artistry and fragility—where creative ambition (like Briggs’s *Plundered Hearts*) often snapped under corporate pressure. The &quot;useless&quot; pin echoes how Cornerstone’s business pivot left the games group’s legacy dangling, half-implemented.</p><small>40 mots · 12.141 s · 1733 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.50562)</small></p></article><article><strong>1 255 mots</strong><p>The delicate, handcrafted imperfection of the brooch—its gold pin swinging uselessly—mirrors Briggs’s frustration with Infocom’s rushed, corporate shift from artistic autonomy to broken promises, like Cornerstone’s collapse. The invitation’s weight in the coffer feels like the unopened potential of her own abandoned novel, glinting just out of reach amid the company’s crumbling jewels of creativity.</p><small>55 mots · 16.11 s · 2395 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.38466)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The delicate precision of crafting *Plundered Hearts*’ puzzles—where every broken clasp or misplaced jewel was a deliberate choice to test player patience—mirrors Briggs’ frustration with Infocom’s shift from creative trust to micromanaged &quot;serious&quot; business ventures like Cornerstone. The invitation’s weight feels like the unspoken contracts of her era: promises of adventure, but with clamps that eventually snap under corporate pressure.</p><small>60 mots · 16.453 s · 1733 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.49931)</small></p></article><article><strong>1 255 mots</strong><p>The delicate craftsmanship of the brooch mirrors Infocom’s meticulous attention to detail in testing—where even a loose pin could break immersion, just as Cornerstone’s ambitions unraveled under pressure. The invitation’s weight feels like the unspoken tension between creative freedom and the company’s desperate need for marketable hits, where personal vision (like Briggs’s *Plundered Hearts*) often got lost in the clatter of corporate expectations.</p><small>63 mots · 17.797 s · 2395 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.47081)</small></p></article></div><h3>Changing clothes and identity</h3><details><summary>Texte du jeu</summary><pre>Sleeping Cupboard
+   The bed is softer than it looks, plumped up with fresh straw. A soft, if
+somewhat cramped, bunk for the tall bulk of Jamison. The cupboard opens to
+the fore.
+   Kicked into a far corner is a pile of clothes.
+
+&gt;
+You pick up the pile of clothes. It separates into a pair of breeches and a
+shirt.
+
+&gt;
+You take off the cotton frock.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>This moment echoes Briggs’s technical constraints—clothing choices as memory-saving puzzles, like *Plundered Hearts*’ cramped design. The act of shedding the &quot;cotton frock&quot; for breeches mirrors her defiance of gendered expectations in a male-dominated space, where even game mechanics reinforced or subverted norms.</p><small>42 mots · 12.578 s · 1767 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.41544)</small></p></article><article><strong>1 255 mots</strong><p>This moment echoes Infocom’s scrappy, lived-in worldbuilding—clothes kicked aside like discarded code snippets, the tactile, imperfect details of a tester’s eye. The shift from frock to breeches mirrors Briggs’ own struggle to fit into a male-dominated industry while preserving her creative autonomy, one parser command at a time.</p><small>48 mots · 13.484 s · 2429 tokens en entrée</small><p><small>Vidéo : From Playtester to Imp at Infocom (0.35581)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The cramped intimacy of the *Sleeping Cupboard*—a microcosm of Infocom’s tight-knit, constraint-driven creativity—mirrors Briggs’ later struggles with memory limits forcing brutal design choices, like *Plundered Hearts*’ frequent deaths as a puzzle shortcut. The discarded frock and breeches swap echo her fight to reclaim romance as serious narrative, not just &quot;games for girls,&quot; even as the industry’s shift toward Cornerstone’s sterile business logic left little room for such bold, personal reinvention.</p><small>70 mots · 19.969 s · 1767 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.43754)</small></p></article><article><strong>1 255 mots</strong><p>The cramped, lived-in intimacy of the *Sleeping Cupboard*—a tester’s eye for narrative detail, where even discarded clothes hint at character—mirrors Infocom’s culture: creative collaboration born from shared spaces and spontaneous mentorship. Briggs’ later frustration with corporate constraints (like Cornerstone’s failure) lingers here: the game’s tactile, handcrafted world contrasts with the company’s eventual push for mass-market polish over artistic risk.</p><small>59 mots · 18.047 s · 2429 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.4196)</small></p></article></div><h3>Escaping the ship</h3><details><summary>Texte du jeu</summary><pre>You crawl into the cask, feeling a slab of something stuck on the bottom.
+From this close, you can see the line is getting frayed where it rubs
+against the cask.
+
+&gt;
+You peel it off the cask.
+
+&gt;
+slab of pork: Done.
+shirt: You&#x27;ll have to remove the shirt first.
+breeches: You&#x27;ll have to remove the breeches first.
+your kid slippers: You&#x27;ll have to remove your kid slippers first.
+linen chemise: You&#x27;ll have to remove the linen chemise first.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The layered, absurd bureaucracy of undressing mirrors Infocom’s technical constraints—each step a deliberate puzzle, yet the game’s whimsy hints at Briggs’ playful subversion of genre expectations. The &quot;kid slippers&quot; detail feels like a private joke, the kind of informal, collaborative quirk that thrived in the company’s early creative chaos before corporate pressure stifled it.</p><small>54 mots · 14.406 s · 1784 tokens en entrée</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.38642)</small></p></article><article><strong>1 255 mots</strong><p>The parser’s rigid logic mirrors Infocom’s early testing culture—where even a pirate’s undressing required stripping layers of bureaucracy, much like Cornerstone’s corporate ambitions choking creative spontaneity. Briggs’ later frustration with imposed structures (like the *Hitchhiker* sequel) lingers here: the game’s constraints feel like the very institutional control that killed her Camelot.</p><small>51 mots · 15.562 s · 2446 tokens en entrée</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.45432)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The layered, absurdly specific undressing mirrors Infocom’s puzzle design—technical constraints (memory limits) forcing creative workarounds, like Briggs’ frequent player deaths simplifying mechanics. The game’s playful yet meticulous worldbuilding contrasts with Cornerstone’s failed corporate pivot, where Infocom’s magic lay in such organic, collaborative oddities.</p><small>43 mots · 12.953 s · 1784 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.46062)</small></p></article><article><strong>1 255 mots</strong><p>The parser’s rigid demands mirror Infocom’s corporate shift—creative freedom fraying under bureaucratic constraints, while Briggs’s testing role once blurred into mentorship now feels like stripping down to bare logic. The pork slab’s mundane weight hints at how *Plundered Hearts*’ romance was both ambitious and constrained by the same systems.</p><small>49 mots · 13.547 s · 2446 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.40479)</small></p></article></div><h3>Meeting Lucy</h3><details><summary>Texte du jeu</summary><pre>For safety&#x27;s sake, you leave the hat on its knob. Best not to show that
+you&#x27;ve been wandering.
+
+East Hallway
+   The carpeted hallway turns from west to north here, extending into the
+east wing. A long table blocks the way south.
+   A black-garbed butler marches up to you, &quot;It was made clear at the
+whippings that villagers are not admitted in this house.&quot; He grasps you by
+the scruff of the neck and propels you headfirst out the front door.
+
+Main Entrance
+   The front door stands open to the south, light splayed out onto a drive
+stretching north into the jungle. A path leads around the western wing of
+the house; jutting out from the east wing is a tall hedge.
+
+&gt;
+The gravel path is just wide enough for a cart to pass. It bends around the
+west wing of the house, leading you to...
+
+Trade Entrance
+   You are on a well-trampled lawn at the side of the house, one low
+doorway leading in to the east. Gravelled paths lead north and south into
+the undergrowth.
+
+&gt;
+Kitchen
+   A firepit in the floor smokes badly, fogging up the depths of this large
+kitchen, somehow not escaping through either the south or west doors.
+   A blond woman huddles alone by the fire, as if cold.
+   The woman smiles uncertainly, then rushes over. &quot;Are you come from the
+village, boy? Dost know Lord Dimsford?&quot; She sighs at your surprise. &quot;So he
+sent you -- I am his Lucy. It&#x27;s been so long since I&#x27;ve seen him. Lafond
+caught me eavesdropping and now I can&#x27;t leave the grounds.&quot;
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The abrupt, physical ejection by the butler mirrors Infocom’s own pushback against creative risks—formal barriers masking deeper tensions. Lucy’s trapped warmth contrasts with Briggs’ later frustration at being boxed into &quot;games for girls,&quot; yet her agency lingers in the kitchen’s smoky intimacy, a quiet rebellion within constraints.</p><small>47 mots · 12.454 s · 2048 tokens en entrée</small><p><small>Vidéo : Imps&#x27; Lunches: Team Dynamics and Pay Inequality (0.29501)</small></p></article><article><strong>1 255 mots</strong><p>The butler’s abrupt ejection mirrors Infocom’s own rigid hierarchies—where creative freedom (like wandering) was often policed by corporate expectations. Lucy’s trapped warmth contrasts with the cold, scripted brutality of the butler, echoing Briggs’ tension between personal storytelling and the industry’s demand for &quot;marketable&quot; narratives.</p><small>44 mots · 14.094 s · 2710 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.33561)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This abrupt ejection by the butler mirrors Infocom’s own rigid hierarchies—where creative freedom (like Lucy’s constrained agency) clashed with corporate control, yet Briggs’ games often hid subversion in their constraints. The kitchen’s trapped Lucy evokes how even &quot;failed&quot; projects like Plundered Hearts became unintended legacies for players who saw what the company dismissed.</p><small>53 mots · 14.469 s · 2048 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.45816)</small></p></article><article><strong>1 255 mots</strong><p>This abrupt ejection by the butler mirrors Infocom’s own rigid hierarchies—where even testers like Briggs were once outsiders, now thrust into roles they had to prove themselves for. Lucy’s trapped warmth contrasts with the company’s later corporate chill, where creative freedom (like her eavesdropping) became forbidden under Activision’s pressure.</p><small>49 mots · 14.11 s · 2710 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.42382)</small></p></article></div><h3>Entering the ballroom</h3><details><summary>Texte du jeu</summary><pre>Foyer
+   A grandiose staircase splits and twists up to the next floor here,
+framing the entrance south to the ballroom. Long hallways lead east and
+west; cool night air drifts in through the front door, north of you.
+   The butler stands near the entrance to the ballroom.
+
+&gt;
+[to the butler]
+The butler takes the invitation. &quot;Enjoy the dance, Miss Davis.&quot;
+
+&gt;
+The sea of spectators parts to admit you, murmuring approval.
+
+Ballroom
+   Lafond&#x27;s party is well attended: you can hardly move for the crush.
+However, the room is oddly silent, no talk interrupting the musical efforts
+of the musicians to the west. Despite the heat, no one ventures south to
+the veranda, nor through the opening east. The foyer is north of you.
+   Captain Jamison moves up to you, saying, &quot;May I have this dance?&quot; He
+doesn&#x27;t await an answer, sweeping you out onto the dance floor.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The butler’s crisp efficiency mirrors Infocom’s early, unspoken teamwork—where roles blurred between testers and writers, and mentorship happened in passing, like a nod toward the ballroom. The forced dance with Jamison echoes Briggs’s frustration with Infocom’s later micromanagement, where even creative choices felt scripted by fear, not freedom.</p><small>48 mots · 13.672 s · 1879 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.41039)</small></p></article><article><strong>1 255 mots</strong><p>The butler’s polite formality echoes Infocom’s early culture—polished but still intimate, where even testers like Briggs moved fluidly between roles. The forced silence in the ballroom mirrors the stifled creativity under Cornerstone’s shadow, where games became an afterthought in a corporate push for &quot;real&quot; business.</p><small>45 mots · 13.218 s · 2541 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.53591)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The butler’s efficiency mirrors Infocom’s early, hands-off creative trust—tasks handled without fuss, letting the game’s world breathe. Briggs’ frustration with commercial pressures lingers here: the crowded ballroom’s unnatural silence feels like Cornerstone’s forced &quot;seriousness&quot; stifling organic play.</p><small>37 mots · 11.594 s · 1879 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.46365)</small></p></article><article><strong>1 255 mots</strong><p>The butler’s crisp formality echoes Infocom’s early tester culture—where even NPCs felt like polished, peer-reviewed prose, shaped by Briggs’ own attention to narrative coherence. The stifled ballroom whispers of Cornerstone’s corporate shadow: a world where games were sidelined as frivolous, yet here, in *Plundered Hearts*, she quietly claimed space for romance as legitimate art.</p><small>54 mots · 16.953 s · 2541 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.51229)</small></p></article></div><h3>Distracting the crocodile</h3><details><summary>Texte du jeu</summary><pre>Bottom of Stairwell
+
+&gt;
+Anteroom
+   Two exits lead from this cavernous room, north and south. The walls drip
+with wet, forming a huge pool on the floor.
+   A crocodile lies half in the pool, gazing at you, with baleful eyes,
+jaws wide open. Dagger-sharp teeth glint in the torchlight.
+
+&gt;
+You squeeze three colorless drops onto the slab of pork. A patch of salt
+dissolves as the laudanum absorbs into the meat.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The tension between creative freedom and technical constraints—like squeezing laudanum into pork to bypass a puzzle—mirrors Briggs’ later frustration with Infocom’s shift toward corporate demands over artistic risk. The crocodile’s predatory gaze evokes the company’s own swallowing of its original vision under Cornerstone’s failed ambition.</p><small>45 mots · 11.859 s · 1786 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.44752)</small></p></article><article><strong>1 255 mots</strong><p>The tension between creative autonomy and corporate pragmatism—Briggs’s *Plundered Hearts* balancing poetic risk (like this visceral, unscripted moment) against Infocom’s shrinking tolerance for ambiguity. The crocodile’s predatory stillness mirrors her later frustration: a world where even playful danger (or romance) was framed as a bug to &quot;fix&quot; rather than a feature to nurture.</p><small>53 mots · 16.297 s · 2448 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.37601)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The tension between creative risk and technical precision—like dissolving salt into pork to bait a crocodile—mirrors Briggs’s struggle to balance artistic vision with Infocom’s shrinking memory constraints. The moment’s visceral danger also reflects the precariousness of her role as one of few women in a male-dominated space, where even small actions carried outsized weight.</p><small>54 mots · 13.453 s · 1786 tokens en entrée</small><p><small>Vidéo : Imps&#x27; Lunches: Team Dynamics and Pay Inequality (0.3263)</small></p></article><article><strong>1 255 mots</strong><p>The tension between creative freedom and technical constraints—like the crocodile’s lurking threat—mirrors Briggs’s struggle to balance artistic vision with Infocom’s shrinking margins, where even a game’s &quot;poisoned meat&quot; (romantic subversion) risked backlash. The anteroom’s dripping walls evoke the company’s slow, inevitable seepage from artistic autonomy into corporate control, where every &quot;throw&quot; became a calculated gamble.</p><small>55 mots · 18.094 s · 2448 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.4407)</small></p></article></div><h3>Finding her father</h3><details><summary>Texte du jeu</summary><pre>[with the large key]
+Unlocked.
+
+&gt;
+Opened.
+
+&gt;
+Cell
+   Hewn from dense rock, the cell is a stagnant burrow. Except for the
+tiniest glow of light from the torch two rooms away, it is pitch black.
+   As you enter, a tall bony man moves out of the darkness. &quot;Papa,&quot; you
+cry, rushing into his arms.
+   &quot;Why, hullo, my dear.&quot; He hugs you tightly. &quot;Nick certainly took his
+time about fetching you.&quot;
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The intimate yet constrained embrace—*Papa*’s voice warm, the cell’s suffocating dark—echoes Infocom’s creative tension: personal passion (Briggs’ romance themes) clashing with technical limits (memory cuts, &quot;crude&quot; player deaths). The garter’s exchange feels like a quiet rebellion against the company’s later micromanagement, where even intimate choices became corporate gambles.</p><small>48 mots · 15.844 s · 1785 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.42816)</small></p></article><article><strong>1 255 mots</strong><p>The intimate, unscripted warmth of this moment—*GIVE GARTER TO PAPA*—mirrors Infocom’s testers-turned-writers learning by osmosis, where emotional logic (not just parser rules) shaped worlds. Meanwhile, the game’s physical constraints (like cutting content for the C64) echo Briggs’ frustration with corporate meddling—how Cornerstone’s failed ambition to &quot;grow up&quot; stifled the very creativity that made games like this possible.</p><small>57 mots · 20.094 s · 2447 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.5058)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The intimate, unscripted warmth of this reunion—raw emotion in a constrained game world—mirrors Briggs’ frustration with Infocom’s later corporate rigidity, where creative spontaneity eroded under &quot;serious&quot; business pressures. The garter’s implied vulnerability (a gift, a bribe, or a trap?) echoes her tension between personal storytelling desires and industry expectations of &quot;empowerment&quot; in games like *Plundered Hearts*.</p><small>56 mots · 16.828 s · 1785 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.4593)</small></p></article><article><strong>1 255 mots</strong><p>The intimate, unscripted warmth of the reunion—*&quot;Papa,&quot; you cry*—echoes Infocom’s culture of mentorship and found family, where testing and writing blurred into shared passion, not corporate hierarchy. The garter’s gift feels like Briggs’ quiet defiance: crafting emotional stakes (romance, trust) in a medium dismissed as &quot;just games,&quot; while hardware limits (like the cell’s dim torch) mirror how technical constraints shaped her creative compromises.</p><small>63 mots · 19.125 s · 2447 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.38878)</small></p></article></div><h3>Deception over wine</h3><details><summary>Texte du jeu</summary><pre>&quot;Welcome, ma petite.&quot; Lafond bows you in.
+
+Lafond&#x27;s Bedroom
+   Lafond is leering, lip curled.
+   A lace-covered table crouches beside a wing-backed chair in one corner.
+Sitting on the table is a green goblet, a blue goblet and a flagon.
+   &quot;Have some wine.&quot; Lafond pours wine into two glasses, giving a blue one
+to you. &quot;Drink this down. We have a long night ahead of us.&quot; He drains his
+own.
+
+&gt;
+You empty the blue goblet of wine.
+   &quot;Good girl,&quot; he says, &quot;Let&#x27;s see more cooperation of this sort.&quot;
+   Suddenly, the door slams open. It is Jamison, coatless, sword bared, his
+shirt ripped. &quot;Thank God I am not too late. Leave, darling, before I skewer
+this dog to his bedposts,&quot; he cries. The scar on his cheek gleams coldly.
+   With a yell, Crulley and the butler jump out of the darkness behind him.
+Nicholas struggles, but soon lies unconscious on the floor.
+   &quot;Take him to the dungeon,&quot; Lafond says, setting down his glass. &quot;You,
+butler, stay nearby. I do not wish to be disturbed again.
+   &quot;Now that we are rid of that intrusion, cherie, I will change into
+something more comfortable. Pour me more wine.&quot; He crosses to the wardrobe
+removing his coat and vest, turned slightly away from you.
+
+&gt;
+You fill the green goblet with wine.
+   &quot;In private, call me Jean, or whatever endearment you choose, once I
+have approved it.&quot; Lafond is looking into the wardrobe.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>This moment echoes Infocom’s tight technical constraints—every object and interaction designed to fit memory limits, yet still carrying narrative weight. The forced compliance and sudden violence mirror the precarious balance between creative freedom and commercial pragmatism that eroded at Infocom.</p><small>40 mots · 9.75 s · 2048 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.48298)</small></p></article><article><strong>1 255 mots</strong><p>The tension between player agency and authored character shines here—Lafond’s leering dominance clashes with Jamison’s violent interruption, mirroring Briggs’ later reflection on how *Plundered Hearts* constrained &quot;tough&quot; actions while prioritizing emotional stakes. The frantic pacing and hidden exits (like the butler’s ambush) also echo Infocom’s technical limits, where narrative drama had to fit within parser and memory constraints.</p><small>58 mots · 17.5 s · 2710 tokens en entrée</small><p><small>Vidéo : Nostalgia and Infocom&#x27;s Individual Vision (0.41808)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This moment echoes Briggs’s tension between creative control and technical constraints—here, the player’s agency (like squeezing the bottle) mirrors her own struggle to balance narrative ambition with Infocom’s shrinking resources, while Lafond’s domineering tone reflects the corporate micromanagement that later stifled her vision. The abrupt violence also mirrors the &quot;disaster&quot; of Cornerstone’s collapse, where trust eroded into fear.</p><small>58 mots · 16.203 s · 2048 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.42756)</small></p></article><article><strong>1 255 mots</strong><p>This moment echoes Infocom’s collaborative yet chaotic testing culture—where narrative logic and player agency clashed under tight constraints, like the parser’s rigid expectations (e.g., &quot;pour wine&quot; vs. &quot;fill goblet&quot;). Briggs’ later embarrassment over such technical limits mirrors her frustration with Infocom’s shift from creative autonomy to corporate micromanagement, where even a line like *&quot;Good girl&quot;* feels like a relic of the company’s strained balance between artistic vision and market demands.</p><small>70 mots · 19.797 s · 2710 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.47629)</small></p></article></div><h3>Fighting Crulley</h3><details><summary>Texte du jeu</summary><pre>Anteroom
+   The crocodile lies half in the pool, gazing at you, with baleful eyes,
+jaws wide open. Dagger-sharp teeth glint in the torchlight.
+   Cookie pegs after you.
+   Cookie rushes at the crocodile, crying, &quot;I&#x27;ll take care of this monster,
+sweetheart. You run by and do what you must do.&quot; He dives headlong into the
+pool.
+
+&gt;
+A whip cracks the air. &quot;Flogs me, will ye, Cap&#x27;n? Taste it yourself, har.&quot;
+Jamison groans, half conscious. You rush in.
+
+Dungeon
+   You sense, rather than see, the rusty skeletons of old cages and torture
+devices that line the walls of this cavernous room. One flaming torch, high
+on a wall, casts mad licks of light into the darkness. Passages lead north
+and west. Set deep in the rocky floor is an open trapdoor.
+   Nicholas is spread-eagled against the wall, shackled in the pair of
+manacles.
+   A rapier lies in the half-dark of a corner.
+   Crulley steps leering out of the shadows and cracks the whip near you,
+hopping you towards the open trapdoor. &quot;Ye&#x27;re a tasty doxy to let slip, but
+no &#x27;elp fer it.&quot;
+
+&gt;
+Taken. Crulley snorts, &quot;Be careful, you might hurt yer dearie.&quot;
+   Crulley cracks the whip near you, hopping you towards the open trapdoor.
+&quot;What, afrighted of a lick o&#x27; the whip?&quot;
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The brutal, theatrical violence here mirrors Infocom’s blend of dark humor and technical constraints—player agency feels precarious, like Cookie’s sacrifice or Jamison’s groaning, while Crulley’s taunts expose the game’s meta-commentary on gendered power dynamics. Briggs’ frustration with commercial expectations looms: this scene’s visceral stakes contrast with *Plundered Hearts*’ eventual &quot;failure,&quot; yet its emotional weight hints at why players later cherished it as a rare, uncompromising work.</p><small>66 mots · 20.375 s · 2013 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.48154)</small></p></article><article><strong>1 255 mots</strong><p>The moment echoes Infocom’s blend of narrative tension and parser precision—Briggs’ struggle to balance player agency (like Cookie’s heroic but risky intervention) with authored stakes, while Crulley’s taunts expose the game’s gendered power dynamics she critiqued. The technical constraint of fitting dialogue like this into 64K memory mirrors her later admission of cutting content to meet hardware limits.</p><small>58 mots · 16.422 s · 2675 tokens en entrée</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.44042)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This moment echoes Infocom’s creative tension—where brutal, cinematic violence (Crulley’s whip, the crocodile’s jaws) contrasts with the game’s intimate, literary romance, mirroring Briggs’ struggle to merge high-stakes adventure with personal narrative. The technical constraints (e.g., Cookie’s sacrificial dive to &quot;simplify&quot; the puzzle) also reflect her later cuts to *Plundered Hearts* for memory limits, where player deaths were a crude but effective design tool.</p><small>63 mots · 19.375 s · 2013 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.47177)</small></p></article><article><strong>1 255 mots</strong><p>This moment echoes Infocom’s blend of narrative tension and technical constraints—Briggs’ struggle to balance player agency (like Cookie’s impulsive bravery) with authored drama (Crulley’s sadistic control), while hardware limits forced brutal content cuts (e.g., no karate chops for the protagonist). The whip-cracking dialogue also mirrors the corporate “flogging” of creativity as Cornerstone’s failure loomed, replacing artistic trust with micromanaged fear.</p><small>60 mots · 19.937 s · 2675 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.5189)</small></p></article></div><h3>Reviving a companion</h3><details><summary>Texte du jeu</summary><pre>You flick the rapier across his chest, barely scratching him. He cries,
+&quot;Avast me! Pricked by a woman!&quot; and trips into the trapdoor.
+   You peer down the hole to find Crulley hanging in midair, his hook
+caught in the rocks a few yards down. He curses and starts to climb up the
+sheer slimy walls of the well.
+
+&gt;
+Shut.
+
+&gt;
+[with the jewelled brooch]
+You twist the pin of the jewelled brooch in the locks, quickly freeing
+Nicholas. He falls in a faint at your feet.
+   Sounds of scraping hook against stone and curses echo out of the well,
+muffled by the trapdoor.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>This moment echoes Briggs’s frustration with technical constraints—like the well’s mechanics mirroring memory limits forcing brutal puzzle design. The brooch’s quick solution hints at her subversive creativity, reclaiming agency in a system that often dismissed &quot;romantic&quot; or &quot;female&quot; narratives as trivial.</p><small>41 mots · 10.844 s · 1825 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.33334)</small></p></article><article><strong>1 255 mots</strong><p>This moment echoes Infocom’s playful yet precise parser design—where even whimsical actions like &quot;wave smelling salts&quot; demand exact phrasing, mirroring Briggs’ frustration with technical constraints. The gendered jab (&quot;pricked by a woman&quot;) hints at the subtle tensions in *Plundered Hearts*’ romance-driven narrative, caught between feminist ambition and 1980s gaming tropes.</p><small>50 mots · 15.875 s · 2487 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.5042)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The trapdoor’s abrupt shut echoes Infocom’s technical constraints—players often *had* to solve puzzles quickly, with no room for hesitation, while Crulley’s curses mirror the team’s shared frustration over bugs slipping through testing. Briggs’ choice to free Nicholas with the brooch reflects her defiance of both Infocom’s commercial pressures (a &quot;romantic&quot; game deemed risky) and her own artistic impulse to subvert expectations.</p><small>61 mots · 16.812 s · 1825 tokens en entrée</small><p><small>Vidéo : Commercial Pressures and Romance Games (0.39104)</small></p></article><article><strong>1 255 mots</strong><p>The parser’s precision here mirrors Infocom’s tension between player agency and authored narrative—Briggs’ frustration with rigid systems (&quot;not allowing karate chopping enemies&quot;) feels palpable in these constrained choices. Meanwhile, the collaborative energy of testing culture shines through: Crulley’s curses and Nicholas’ faint evoke the shared, improvisational worldbuilding Briggs describes, where even bugs became part of the game’s lived texture.</p><small>59 mots · 16.859 s · 2487 tokens en entrée</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.46195)</small></p></article></div><h3>The final confrontation</h3><details><summary>Texte du jeu</summary><pre>He fails to notice you&#x27;ve spoken.
+   Nicholas looks determined. &quot;I accept. So long as my people go free if I
+win. Order your dragoons to obey us, then.&quot; In answer, Lafond jumps off the
+cliff like a huge brocaded bat to land in front of Captain Jamison. &quot;Die
+then, fool!&quot;
+   The pistol, spinning from Lafond&#x27;s grip, drops to the sand nearby.
+
+&gt;
+Taken.
+   Lafond immediately takes the advantage, forcing Nicholas in a retreat
+towards the foaming surf. But Nicholas fights hard, jaw set, ignoring his
+wounds. Lafond finally loses his smile.
+   Behind the duellists, far away atop the cliff, you notice Crulley madly
+reloading the pistol.
+
+&gt;
+You pour a lumpy stream of gunpowder mixture into the barrel of the pistol
+tamping it as best you can.
+   Suddenly the force of the duel turns, Nicholas advancing against
+Lafond&#x27;s retreat. Their blades silently flash in the moonlight. Lafond is
+pressed back into the shadow of the cliff, sweat beading on his forehead.
+Abruptly, Jamison leaps forward, metal scrapes, and his rapier licks neatly
+into Lafond&#x27;s ribs, like a snake slipping into its burrow. The body of the
+governor of St. Sinistra convulses, as in amazement, then sags dead on the
+sword.
+   Nicholas removes a gold ring from the dead man&#x27;s finger, throwing his
+own cheap copy into the surf.
+   Far above him, Crulley moves down the stairs.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>This duel’s chaotic precision mirrors Infocom’s tight technical constraints—where even a single missed bug (like Crulley’s reloading) could unravel a player’s carefully crafted moment. The ring’s symbolic discard echoes Briggs’ frustration with how *Plundered Hearts* was reduced to a &quot;women’s game&quot; trope, stripped of her original vision.</p><small>47 mots · 13.843 s · 2018 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.47692)</small></p></article><article><strong>1 255 mots</strong><p>This moment echoes Infocom’s tight, collaborative testing culture—where narrative stakes (like Crulley’s distant reloading) demand hyper-awareness of *every* detail, not just the protagonist’s choices. The technical precision of tamping powder mirrors Briggs’ later frustration with hardware limits, where even a &quot;lumpy stream&quot; could break immersion.
+
+The duel’s theatricality contrasts with Infocom’s corporate shift toward &quot;serious&quot; software like Cornerstone—here, spectacle (Lafond’s bat-like leap) feels like the last gasp of creative freedom before management’s micromanagement.</p><small>73 mots · 24.609 s · 2680 tokens en entrée</small><p><small>Vidéo : Nostalgia and Infocom&#x27;s Individual Vision (0.42193)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This duel’s chaotic precision mirrors Infocom’s technical constraints—where even a well-tested game like Plundered Hearts could hide glitches (like Crulley’s reloaded pistol) slipping through. The moment also echoes Briggs’ frustration with management’s commercial demands, as this high-stakes scene feels like a failed experiment—yet players later cherished its vivid, flawed drama.</p><small>50 mots · 14.75 s · 2018 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.45387)</small></p></article><article><strong>1 255 mots</strong><p>This moment echoes Infocom’s tight, collaborative testing culture—where every detail, like Crulley’s distant reloading, mattered in playability. Briggs’ frustration with parser limits (e.g., *not* letting the protagonist karate-chop) mirrors the tension here between authored drama and player agency, where even a loaded pistol feels constrained by the system’s rigid logic.</p><small>50 mots · 15.25 s · 2680 tokens en entrée</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.43818)</small></p></article></div></section><section><h2>qwen3.5:4b</h2><h3>Confinement in the cabin</h3><details><summary>Texte du jeu</summary><pre>&gt;SHOOT THE PIRATE
+Trembling, you fire the heavy arquebus. You hear its loud report over the
+roaring wind, yet the dark figure still approaches. The gun falls from your
+nerveless hands.
+   &quot;You won&#x27;t kill me,&quot; he says, stepping over the weapon. &quot;Not when I am
+the only protection you have from Jean Lafond.&quot;
+   Chestnut hair, tousled by the wind, frames the tanned oval of his face.
+Lips curving, his eyes rake over your inadequately dressed body, the damp
+chemise clinging to your legs and heaving bosom, your gleaming hair. You
+are intensely aware of the strength of his hard seaworn body, of the deep
+sea blue of his eyes. And then his mouth is on yours, lips parted,
+demanding, and you arch into his kiss...
+   He presses you against him, head bent. &quot;But who, my dear,&quot; he whispers
+into your hair, &quot;will protect you from me?&quot;
+
+PLUNDERED HEARTS
+Infocom interactive fiction
+Copyright (c) 1987 by Infocom, Inc. All rights reserved.
+PLUNDERED HEARTS is a trademark of Infocom, Inc.
+Release 26 / Serial number 870730
+
+LATE ONE SPRING NIGHT IN THE WEST INDIES...
+
+   A crash overhead! Pirates are boarding the Lafond Deux! The first mate
+hurries you into Captain Davis&#x27;s cabin.
+   &quot;Good, you brought the girl,&quot; Davis smirks. &quot;She&#x27;ll keep the pirates
+busy. She was only a tool of Lafond&#x27;s, anyway. Let me just find that cof--&quot;
+A man on deck screams in agony and Davis starts. &quot;Let&#x27;s go.&quot; The captain
+thrusts you on the bed and walks out, locking the door.
+   His laugh echoes. &quot;Best get comfortable, girl. You&#x27;re likely to be there
+for the rest of your life.&quot;
+
+Cabin, on the bed
+   You are in an officer&#x27;s cabin, lit by the firelight glowing through a
+porthole. A door is to starboard. Except for the built-in bed, the room
+seems to have been emptied thoroughly, if hurriedly.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The scene mirrors Briggs&#x27;s desire to write romance as legitimate fiction rather than trivial entertainment. Her later disillusionment with corporate pressure contrasts sharply with this moment of creative freedom.</p><small>29 mots · 1.094 s · 1625 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.32199)</small></p></article><article><strong>1 255 mots</strong><p>The scene mirrors Briggs&#x27;s memory of Infocom&#x27;s intense, voluntary work culture where creativity thrived without corporate micromanagement. Her later resignation stemmed from losing that trust, turning the pirate&#x27;s threat into a symbol of the fear she faced when her autonomy was stripped away.</p><small>43 mots · 1.657 s · 2284 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.37499)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The scene mirrors Briggs&#x27;s desire to legitimize romance as serious narrative rather than trivial entertainment. Her technical struggle with memory constraints shaped this intimate encounter into a memorable, albeit commercially underperforming, experience.</p><small>32 mots · 0.844 s · 1625 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.32875)</small></p></article><article><strong>1 255 mots</strong><p>The scene mirrors Infocom&#x27;s blend of narrative intimacy and technical constraint where testers shaped player agency. Briggs&#x27; memory of late nights crafting worlds feels like this moment where personal vision clashes with external expectations.</p><small>34 mots · 0.859 s · 2284 tokens en entrée</small><p><small>Vidéo : From Playtester to Imp at Infocom (0.44212)</small></p></article></div><h3>An invitation and a social role</h3><details><summary>Texte du jeu</summary><pre>All diamonds winking fire, tears of sapphire and crushed rubies in an oval
+setting, it is a pity that the clasp of the jewelled brooch has broken. The
+gold pin at the back swings about uselessly.
+
+&gt;
+Opening the coffer reveals an invitation.
+
+&gt;
+Taken.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The broken brooch mirrors how corporate pressure fractured Infocom&#x27;s creative trust. I remember feeling that same isolation when management demanded commercial success instead of trusting my vision.</p><small>27 mots · 0.61 s · 1206 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.44415)</small></p></article><article><strong>1 255 mots</strong><p>The broken clasp mirrors how corporate pressure fractured Infocom&#x27;s creative trust before it could fully bloom. I chose reading because the invitation felt like a story waiting to be told, not just a puzzle to solve.</p><small>36 mots · 0.782 s · 1865 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.40819)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The broken brooch mirrors how commercial pressure fractured Infocom&#x27;s creative trust, yet this fleeting moment of stolen invitation remains a testament to the game&#x27;s enduring emotional resonance despite its market failure.</p><small>31 mots · 0.703 s · 1206 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.40021)</small></p></article><article><strong>1 255 mots</strong><p>The broken brooch mirrors how corporate pressure fractured Infocom&#x27;s creative spirit, turning a once-voluntary passion into a desperate race for hits. Like that swinging pin, the company&#x27;s core vision lost its grip when management replaced trust with micromanagement.</p><small>38 mots · 0.922 s · 1865 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.50385)</small></p></article></div><h3>Changing clothes and identity</h3><details><summary>Texte du jeu</summary><pre>Sleeping Cupboard
+   The bed is softer than it looks, plumped up with fresh straw. A soft, if
+somewhat cramped, bunk for the tall bulk of Jamison. The cupboard opens to
+the fore.
+   Kicked into a far corner is a pile of clothes.
+
+&gt;
+You pick up the pile of clothes. It separates into a pair of breeches and a
+shirt.
+
+&gt;
+You take off the cotton frock.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The memory of cutting content for memory limits echoes here, yet this moment reveals how technical constraints once shaped narrative choices. It feels like a fleeting association with that unique blend of literature and play that defined the early days.</p><small>40 mots · 0.797 s · 1239 tokens en entrée</small><p><small>Vidéo : Game Design as a Literary Experience (0.39217)</small></p></article><article><strong>1 255 mots</strong><p>The cramped bunk and simple clothes reminded me of Infocom&#x27;s early days where testers lived in the work itself. That era felt like a brief Camelot before commercial pressures turned creativity into fear.</p><small>33 mots · 0.718 s · 1898 tokens en entrée</small><p><small>Vidéo : A Young Company of Passionate Developers (0.47452)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The memory of cutting content for memory limits echoes here, where space dictated design choices. This technical constraint shaped the game&#x27;s crude mechanics, reflecting Briggs&#x27; struggle to fit ambition into scarce resources.</p><small>32 mots · 0.703 s · 1239 tokens en entrée</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.50681)</small></p></article><article><strong>1 255 mots</strong><p>The cramped bunk and bare clothes reminded me of the long, solitary nights I spent testing games in Infocom&#x27;s glass atrium. That era felt like a fleeting Camelot where trust fueled creativity before commercial pressure stripped away our autonomy.</p><small>39 mots · 0.844 s · 1898 tokens en entrée</small><p><small>Vidéo : A Young Company of Passionate Developers (0.50001)</small></p></article></div><h3>Escaping the ship</h3><details><summary>Texte du jeu</summary><pre>You crawl into the cask, feeling a slab of something stuck on the bottom.
+From this close, you can see the line is getting frayed where it rubs
+against the cask.
+
+&gt;
+You peel it off the cask.
+
+&gt;
+slab of pork: Done.
+shirt: You&#x27;ll have to remove the shirt first.
+breeches: You&#x27;ll have to remove the breeches first.
+your kid slippers: You&#x27;ll have to remove your kid slippers first.
+linen chemise: You&#x27;ll have to remove the linen chemise first.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The memory of cutting rope recalls how technical constraints once shaped narrative choices at Infocom. This struggle to fit a story into limited space mirrors the commercial pressures that eventually eroded their creative freedom.</p><small>34 mots · 0.734 s · 1263 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.45557)</small></p></article><article><strong>1 255 mots</strong><p>The tedious layering of clothes mirrors the corporate bureaucracy that eventually stifled creativity at Infocom. This moment highlights the game&#x27;s unique blend of narrative intimacy and technical constraint, reflecting Briggs&#x27; belief in interactive fiction as a form of personal storytelling rather than commercial spectacle.</p><small>44 mots · 0.953 s · 1922 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.42456)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The memory of cutting rope recalls how technical constraints once shaped narrative design. This humble moment reflects the unique blend of literature and play that defined Infocom&#x27;s golden age.</p><small>29 mots · 0.656 s · 1263 tokens en entrée</small><p><small>Vidéo : Game Design as a Literary Experience (0.37866)</small></p></article><article><strong>1 255 mots</strong><p>The tedious layering of clothes mirrors the company&#x27;s slow shift from creative freedom to corporate bureaucracy, where every small detail demanded strict adherence rather than artistic intuition. This mechanical struggle foreshadows how external pressures eventually stripped away the very autonomy that made Infocom&#x27;s early games so compelling.</p><small>47 mots · 1.015 s · 1922 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.52208)</small></p></article></div><h3>Meeting Lucy</h3><details><summary>Texte du jeu</summary><pre>For safety&#x27;s sake, you leave the hat on its knob. Best not to show that
+you&#x27;ve been wandering.
+
+East Hallway
+   The carpeted hallway turns from west to north here, extending into the
+east wing. A long table blocks the way south.
+   A black-garbed butler marches up to you, &quot;It was made clear at the
+whippings that villagers are not admitted in this house.&quot; He grasps you by
+the scruff of the neck and propels you headfirst out the front door.
+
+Main Entrance
+   The front door stands open to the south, light splayed out onto a drive
+stretching north into the jungle. A path leads around the western wing of
+the house; jutting out from the east wing is a tall hedge.
+
+&gt;
+The gravel path is just wide enough for a cart to pass. It bends around the
+west wing of the house, leading you to...
+
+Trade Entrance
+   You are on a well-trampled lawn at the side of the house, one low
+doorway leading in to the east. Gravelled paths lead north and south into
+the undergrowth.
+
+&gt;
+Kitchen
+   A firepit in the floor smokes badly, fogging up the depths of this large
+kitchen, somehow not escaping through either the south or west doors.
+   A blond woman huddles alone by the fire, as if cold.
+   The woman smiles uncertainly, then rushes over. &quot;Are you come from the
+village, boy? Dost know Lord Dimsford?&quot; She sighs at your surprise. &quot;So he
+sent you -- I am his Lucy. It&#x27;s been so long since I&#x27;ve seen him. Lafond
+caught me eavesdropping and now I can&#x27;t leave the grounds.&quot;
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>Amy Briggs noted how technical constraints like memory limits shaped her design choices, a lesson evident here in the game&#x27;s atmospheric limitations. Her experience reminds us that creative freedom often flourishes only when commercial pressures are minimized.</p><small>37 mots · 0.86 s · 1521 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.41499)</small></p></article><article><strong>1 255 mots</strong><p>The scene mirrors Amy Briggs&#x27;s early days of accidental discovery and informal mentorship, where testing felt like a shared adventure rather than rigid corporate oversight. Her memory of Infocom&#x27;s &quot;pleasantly neglected&quot; culture contrasts sharply with the game&#x27;s strict constraints on player freedom and narrative control.</p><small>45 mots · 1.094 s · 2180 tokens en entrée</small><p><small>Vidéo : From Playtester to Imp at Infocom (0.49402)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The memory of cutting content to fit memory constraints echoes in this cramped space where technical limits shape narrative survival. Like Lucy, you are trapped by invisible walls that define what a story can safely say.</p><small>36 mots · 0.812 s · 1521 tokens en entrée</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.342)</small></p></article><article><strong>1 255 mots</strong><p>The scene mirrors Amy Briggs&#x27;s early days, where testing required deep narrative immersion rather than just bug hunting. Her memory of Infocom&#x27;s supportive culture contrasts sharply with the game&#x27;s strict constraints on player agency.</p><small>34 mots · 0.86 s · 2180 tokens en entrée</small><p><small>Vidéo : From Playtester to Imp at Infocom (0.494)</small></p></article></div><h3>Entering the ballroom</h3><details><summary>Texte du jeu</summary><pre>Foyer
+   A grandiose staircase splits and twists up to the next floor here,
+framing the entrance south to the ballroom. Long hallways lead east and
+west; cool night air drifts in through the front door, north of you.
+   The butler stands near the entrance to the ballroom.
+
+&gt;
+[to the butler]
+The butler takes the invitation. &quot;Enjoy the dance, Miss Davis.&quot;
+
+&gt;
+The sea of spectators parts to admit you, murmuring approval.
+
+Ballroom
+   Lafond&#x27;s party is well attended: you can hardly move for the crush.
+However, the room is oddly silent, no talk interrupting the musical efforts
+of the musicians to the west. Despite the heat, no one ventures south to
+the veranda, nor through the opening east. The foyer is north of you.
+   Captain Jamison moves up to you, saying, &quot;May I have this dance?&quot; He
+doesn&#x27;t await an answer, sweeping you out onto the dance floor.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>Amy Briggs&#x27; memory of Infocom&#x27;s creative freedom contrasts sharply with the game&#x27;s commercial failure and later criticism. She valued that unique environment where individual vision thrived under technical constraints, a feeling now lost in modern industry pressures.</p><small>37 mots · 0.844 s · 1353 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.51635)</small></p></article><article><strong>1 255 mots</strong><p>The butler&#x27;s polite dismissal and the captain&#x27;s impulsive sweep mirror the company&#x27;s shift from supportive mentorship to demanding control. This tension between autonomy and pressure echoes Briggs&#x27; later realization that creative freedom was Infocom&#x27;s true strength.</p><small>36 mots · 0.906 s · 2012 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.44569)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The butler&#x27;s dismissal and Jamison&#x27;s command mirrored the company&#x27;s sudden shift from creative freedom to rigid expectation. This moment of forced movement felt like the early corporate pressure that would soon erode Infocom&#x27;s unique culture.</p><small>35 mots · 0.844 s · 1353 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.48541)</small></p></article><article><strong>1 255 mots</strong><p>The butler&#x27;s polite dismissal and the sudden shift to a forced dance mirror Infocom&#x27;s early autonomy versus later corporate control. Briggs&#x27; experience of creative freedom fading under pressure echoes here, where personal narrative clashes with rigid social expectations.</p><small>38 mots · 0.89 s · 2012 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.36624)</small></p></article></div><h3>Distracting the crocodile</h3><details><summary>Texte du jeu</summary><pre>Bottom of Stairwell
+
+&gt;
+Anteroom
+   Two exits lead from this cavernous room, north and south. The walls drip
+with wet, forming a huge pool on the floor.
+   A crocodile lies half in the pool, gazing at you, with baleful eyes,
+jaws wide open. Dagger-sharp teeth glint in the torchlight.
+
+&gt;
+You squeeze three colorless drops onto the slab of pork. A patch of salt
+dissolves as the laudanum absorbs into the meat.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The crocodile scene mirrors Briggs&#x27;s memory of technical constraints forcing creative solutions like frequent deaths. Her desire to write legitimate romance contrasts with this visceral, survival-focused gameplay design.</p><small>28 mots · 0.672 s · 1257 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.43181)</small></p></article><article><strong>1 255 mots</strong><p>The crocodile&#x27;s baleful gaze mirrors the company&#x27;s fear, where creative autonomy was stripped away by commercial pressure. This moment of solitary action contrasts sharply with Infocom&#x27;s collaborative culture that once allowed such personal visions to flourish.</p><small>36 mots · 0.844 s · 1916 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.44602)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The crocodile scene recalls how technical constraints once forced creative solutions, much like memory limits shaped Plundered Hearts. Briggs&#x27; experience shows that even failed games can leave lasting impressions on players.</p><small>31 mots · 0.734 s · 1257 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.49979)</small></p></article><article><strong>1 255 mots</strong><p>The crocodile&#x27;s baleful gaze mirrors the fear that eventually consumed Infocom when commercial pressure replaced creative trust. This moment of solitary decision-making contrasts sharply with the company&#x27;s earlier culture of shared, voluntary work.</p><small>33 mots · 0.797 s · 1916 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.44715)</small></p></article></div><h3>Finding her father</h3><details><summary>Texte du jeu</summary><pre>[with the large key]
+Unlocked.
+
+&gt;
+Opened.
+
+&gt;
+Cell
+   Hewn from dense rock, the cell is a stagnant burrow. Except for the
+tiniest glow of light from the torch two rooms away, it is pitch black.
+   As you enter, a tall bony man moves out of the darkness. &quot;Papa,&quot; you
+cry, rushing into his arms.
+   &quot;Why, hullo, my dear.&quot; He hugs you tightly. &quot;Nick certainly took his
+time about fetching you.&quot;
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The intimate embrace contrasts sharply with the commercial pressure to sell romance as a product rather than art. This fleeting memory recalls how technical constraints once forced creative choices that defined the game&#x27;s legacy.</p><small>34 mots · 0.719 s · 1259 tokens en entrée</small><p><small>Vidéo : Commercial Pressures and Romance Games (0.43684)</small></p></article><article><strong>1 255 mots</strong><p>The intimate embrace mirrors the close-knit mentorship Briggs described at Infocom, where testers and creators shared a family-like bond. This warmth contrasts sharply with the later commercial pressures that eroded such creative trust.</p><small>33 mots · 0.781 s · 1918 tokens en entrée</small><p><small>Vidéo : A Young Company of Passionate Developers (0.316)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The intimate embrace contrasts sharply with the commercial pressure to sell romance as a niche product rather than serious fiction. This fleeting memory of creative freedom highlights how technical constraints once shaped narrative depth while management demanded guaranteed success.</p><small>39 mots · 0.766 s · 1259 tokens en entrée</small><p><small>Vidéo : Commercial Pressures and Romance Games (0.3968)</small></p></article><article><strong>1 255 mots</strong><p>The intimate reunion mirrors the close-knit mentorship Briggs described at Infocom, where personal bonds fueled creative growth. This moment highlights how emotional connection often outweighs rigid commercial constraints in storytelling.</p><small>30 mots · 0.734 s · 1918 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.30741)</small></p></article></div><h3>Deception over wine</h3><details><summary>Texte du jeu</summary><pre>&quot;Welcome, ma petite.&quot; Lafond bows you in.
+
+Lafond&#x27;s Bedroom
+   Lafond is leering, lip curled.
+   A lace-covered table crouches beside a wing-backed chair in one corner.
+Sitting on the table is a green goblet, a blue goblet and a flagon.
+   &quot;Have some wine.&quot; Lafond pours wine into two glasses, giving a blue one
+to you. &quot;Drink this down. We have a long night ahead of us.&quot; He drains his
+own.
+
+&gt;
+You empty the blue goblet of wine.
+   &quot;Good girl,&quot; he says, &quot;Let&#x27;s see more cooperation of this sort.&quot;
+   Suddenly, the door slams open. It is Jamison, coatless, sword bared, his
+shirt ripped. &quot;Thank God I am not too late. Leave, darling, before I skewer
+this dog to his bedposts,&quot; he cries. The scar on his cheek gleams coldly.
+   With a yell, Crulley and the butler jump out of the darkness behind him.
+Nicholas struggles, but soon lies unconscious on the floor.
+   &quot;Take him to the dungeon,&quot; Lafond says, setting down his glass. &quot;You,
+butler, stay nearby. I do not wish to be disturbed again.
+   &quot;Now that we are rid of that intrusion, cherie, I will change into
+something more comfortable. Pour me more wine.&quot; He crosses to the wardrobe
+removing his coat and vest, turned slightly away from you.
+
+&gt;
+You fill the green goblet with wine.
+   &quot;In private, call me Jean, or whatever endearment you choose, once I
+have approved it.&quot; Lafond is looking into the wardrobe.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The scene mirrors Briggs&#x27;s struggle to legitimize romance as serious art rather than a trivial gimmick. Her desire to write novels found expression here, even if commercial pressures later overshadowed the creative freedom she once cherished.</p><small>36 mots · 0.875 s · 1520 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.32222)</small></p></article><article><strong>1 255 mots</strong><p>Amy Briggs&#x27; memory of Infocom&#x27;s intense, voluntary work culture contrasts with this scene&#x27;s demanding atmosphere. The game&#x27;s technical constraints and commercial struggles reflect her broader critique of corporate pressure stifling creative vision.</p><small>32 mots · 0.875 s · 2179 tokens en entrée</small><p><small>Vidéo : A Young Company of Passionate Developers (0.44851)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The scene mirrors Briggs&#x27;s struggle to legitimize romance as serious narrative against commercial pressure. Her desire for creative freedom clashes with corporate expectations, much like this character&#x27;s manipulation of the player.</p><small>31 mots · 0.782 s · 1520 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.38874)</small></p></article><article><strong>1 255 mots</strong><p>The scene mirrors Briggs&#x27;s struggle to balance narrative freedom with technical constraints. Her memory of Infocom&#x27;s supportive culture contrasts sharply with the commercial pressure that eventually drove her away.</p><small>29 mots · 0.75 s · 2179 tokens en entrée</small><p><small>Vidéo : Leaving Infocom and Looking Back (0.39625)</small></p></article></div><h3>Fighting Crulley</h3><details><summary>Texte du jeu</summary><pre>Anteroom
+   The crocodile lies half in the pool, gazing at you, with baleful eyes,
+jaws wide open. Dagger-sharp teeth glint in the torchlight.
+   Cookie pegs after you.
+   Cookie rushes at the crocodile, crying, &quot;I&#x27;ll take care of this monster,
+sweetheart. You run by and do what you must do.&quot; He dives headlong into the
+pool.
+
+&gt;
+A whip cracks the air. &quot;Flogs me, will ye, Cap&#x27;n? Taste it yourself, har.&quot;
+Jamison groans, half conscious. You rush in.
+
+Dungeon
+   You sense, rather than see, the rusty skeletons of old cages and torture
+devices that line the walls of this cavernous room. One flaming torch, high
+on a wall, casts mad licks of light into the darkness. Passages lead north
+and west. Set deep in the rocky floor is an open trapdoor.
+   Nicholas is spread-eagled against the wall, shackled in the pair of
+manacles.
+   A rapier lies in the half-dark of a corner.
+   Crulley steps leering out of the shadows and cracks the whip near you,
+hopping you towards the open trapdoor. &quot;Ye&#x27;re a tasty doxy to let slip, but
+no &#x27;elp fer it.&quot;
+
+&gt;
+Taken. Crulley snorts, &quot;Be careful, you might hurt yer dearie.&quot;
+   Crulley cracks the whip near you, hopping you towards the open trapdoor.
+&quot;What, afrighted of a lick o&#x27; the whip?&quot;
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The game&#x27;s technical constraints forced crude design choices like frequent deaths, yet the narrative ambition to write romance for women remains vivid in memory. Your choice to kill Crulley reflects the swashbuckling spirit that made this early Infocom title both commercially risky and personally formative.</p><small>45 mots · 1.078 s · 1484 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.48142)</small></p></article><article><strong>1 255 mots</strong><p>Amy Briggs noted how testers evaluated narrative logic rather than just bugs, a practice that shaped this game&#x27;s internal consistency despite its commercial failure. She later felt Infocom lost its creative trust when management demanded hits instead of allowing such autonomous visions to flourish.</p><small>44 mots · 0.953 s · 2143 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.52402)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>Amy Briggs once noted how technical constraints shaped her early games, yet this moment feels more like a test of courage than code. The crocodile&#x27;s baleful gaze and Crulley&#x27;s leering threat echo the fear that drove many Infocom testers to seek deeper understanding through play.</p><small>45 mots · 1.062 s · 1484 tokens en entrée</small><p><small>Vidéo : An Absurd Wonderland for Playtesting (0.43987)</small></p></article><article><strong>1 255 mots</strong><p>The scene recalls Briggs&#x27;s struggle to balance narrative freedom with technical constraints on early Infocom games. Her desire for creative control contrasts sharply with the corporate pressure that eventually forced her out of the industry.</p><small>35 mots · 0.813 s · 2143 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.46521)</small></p></article></div><h3>Reviving a companion</h3><details><summary>Texte du jeu</summary><pre>You flick the rapier across his chest, barely scratching him. He cries,
+&quot;Avast me! Pricked by a woman!&quot; and trips into the trapdoor.
+   You peer down the hole to find Crulley hanging in midair, his hook
+caught in the rocks a few yards down. He curses and starts to climb up the
+sheer slimy walls of the well.
+
+&gt;
+Shut.
+
+&gt;
+[with the jewelled brooch]
+You twist the pin of the jewelled brooch in the locks, quickly freeing
+Nicholas. He falls in a faint at your feet.
+   Sounds of scraping hook against stone and curses echo out of the well,
+muffled by the trapdoor.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The memory of cutting content for memory limits echoes as you manage space with salts. This technical constraint mirrors how commercial pressure once shaped your creative choices.</p><small>27 mots · 0.61 s · 1297 tokens en entrée</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.29732)</small></p></article><article><strong>1 255 mots</strong><p>The scene echoes Briggs&#x27;s memory of late nights testing narrative logic rather than technical bugs. Her caution about parser constraints now feels like a lesson learned from that early, ambitious attempt to write for women.</p><small>35 mots · 0.75 s · 1956 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.36765)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The memory of cutting content for memory limits echoes as you twist the brooch to save Nicholas. Your choice to wave smelling salts feels like a final act of care in a world that once valued such personal stories.</p><small>39 mots · 0.796 s · 1297 tokens en entrée</small><p><small>Vidéo : Game Design as a Literary Experience (0.28067)</small></p></article><article><strong>1 255 mots</strong><p>The scene mirrors Briggs&#x27;s belief that testing ensures narrative logic holds despite hardware limits. Her caution about commercial pressure here reflects her later fear of losing creative control at Infocom.</p><small>30 mots · 0.672 s · 1956 tokens en entrée</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.35521)</small></p></article></div><h3>The final confrontation</h3><details><summary>Texte du jeu</summary><pre>He fails to notice you&#x27;ve spoken.
+   Nicholas looks determined. &quot;I accept. So long as my people go free if I
+win. Order your dragoons to obey us, then.&quot; In answer, Lafond jumps off the
+cliff like a huge brocaded bat to land in front of Captain Jamison. &quot;Die
+then, fool!&quot;
+   The pistol, spinning from Lafond&#x27;s grip, drops to the sand nearby.
+
+&gt;
+Taken.
+   Lafond immediately takes the advantage, forcing Nicholas in a retreat
+towards the foaming surf. But Nicholas fights hard, jaw set, ignoring his
+wounds. Lafond finally loses his smile.
+   Behind the duellists, far away atop the cliff, you notice Crulley madly
+reloading the pistol.
+
+&gt;
+You pour a lumpy stream of gunpowder mixture into the barrel of the pistol
+tamping it as best you can.
+   Suddenly the force of the duel turns, Nicholas advancing against
+Lafond&#x27;s retreat. Their blades silently flash in the moonlight. Lafond is
+pressed back into the shadow of the cliff, sweat beading on his forehead.
+Abruptly, Jamison leaps forward, metal scrapes, and his rapier licks neatly
+into Lafond&#x27;s ribs, like a snake slipping into its burrow. The body of the
+governor of St. Sinistra convulses, as in amazement, then sags dead on the
+sword.
+   Nicholas removes a gold ring from the dead man&#x27;s finger, throwing his
+own cheap copy into the surf.
+   Far above him, Crulley moves down the stairs.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>Amy Briggs noted how technical constraints shaped her early game design. This moment&#x27;s tight action mirrors that creative pressure.</p><small>19 mots · 0.531 s · 1496 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.39102)</small></p></article><article><strong>1 255 mots</strong><p>The chaotic duel mirrors Infocom&#x27;s shift from creative freedom to commercial panic when management micromanaged vision. I remember how testers like me once shaped worlds before corporate pressure demanded hits instead of art.</p><small>33 mots · 0.813 s · 2155 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.51383)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The scene mirrors Amy Briggs&#x27;s belief that technical constraints and narrative ambition must align for true creativity. Her experience reminds me that even commercial failures can leave lasting, meaningful impressions on players.</p><small>32 mots · 0.75 s · 1496 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Unexpected Success and Memories (0.48361)</small></p></article><article><strong>1 255 mots</strong><p>The chaotic duel mirrors the frantic creative pressure Briggs felt when trying to balance narrative ambition with technical limits. Her memory of Infocom&#x27;s supportive culture contrasts sharply with the fear that eventually drove her away.</p><small>35 mots · 0.797 s · 2155 tokens en entrée</small><p><small>Vidéo : Leaving Infocom and Looking Back (0.39167)</small></p></article></div></section><section><h2>gemma4:e4b</h2><h3>Confinement in the cabin</h3><details><summary>Texte du jeu</summary><pre>&gt;SHOOT THE PIRATE
+Trembling, you fire the heavy arquebus. You hear its loud report over the
+roaring wind, yet the dark figure still approaches. The gun falls from your
+nerveless hands.
+   &quot;You won&#x27;t kill me,&quot; he says, stepping over the weapon. &quot;Not when I am
+the only protection you have from Jean Lafond.&quot;
+   Chestnut hair, tousled by the wind, frames the tanned oval of his face.
+Lips curving, his eyes rake over your inadequately dressed body, the damp
+chemise clinging to your legs and heaving bosom, your gleaming hair. You
+are intensely aware of the strength of his hard seaworn body, of the deep
+sea blue of his eyes. And then his mouth is on yours, lips parted,
+demanding, and you arch into his kiss...
+   He presses you against him, head bent. &quot;But who, my dear,&quot; he whispers
+into your hair, &quot;will protect you from me?&quot;
+
+PLUNDERED HEARTS
+Infocom interactive fiction
+Copyright (c) 1987 by Infocom, Inc. All rights reserved.
+PLUNDERED HEARTS is a trademark of Infocom, Inc.
+Release 26 / Serial number 870730
+
+LATE ONE SPRING NIGHT IN THE WEST INDIES...
+
+   A crash overhead! Pirates are boarding the Lafond Deux! The first mate
+hurries you into Captain Davis&#x27;s cabin.
+   &quot;Good, you brought the girl,&quot; Davis smirks. &quot;She&#x27;ll keep the pirates
+busy. She was only a tool of Lafond&#x27;s, anyway. Let me just find that cof--&quot;
+A man on deck screams in agony and Davis starts. &quot;Let&#x27;s go.&quot; The captain
+thrusts you on the bed and walks out, locking the door.
+   His laugh echoes. &quot;Best get comfortable, girl. You&#x27;re likely to be there
+for the rest of your life.&quot;
+
+Cabin, on the bed
+   You are in an officer&#x27;s cabin, lit by the firelight glowing through a
+porthole. A door is to starboard. Except for the built-in bed, the room
+seems to have been emptied thoroughly, if hurriedly.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>This scene reflects the romantic narrative Briggs desired, yet it also shows the pressures of genre expectations. The immediate danger contrasts with the intimate focus, mirroring the tension between creative vision and commercial demands.</p><small>34 mots · 1.313 s · 1602 tokens en entrée</small><p><small>Vidéo : Games That Inspired Plundered Hearts (0.30901)</small></p></article><article><strong>1 255 mots</strong><p>This scene reflects the narrative focus of Plundered Hearts, prioritizing intense emotion and character over action, a departure from typical adventure tropes. It illustrates the creative freedom Briggs sought, contrasting with the corporate push for more &quot;serious&quot; business software.</p><small>39 mots · 1.656 s · 2252 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.48258)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This scene reflects the genre&#x27;s tension, blending romance with immediate danger, much like Briggs explored in her writing. The narrative&#x27;s focus on intense personal stakes contrasts with the commercial pressures she later felt at Infocom.</p><small>35 mots · 0.859 s · 1602 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.36617)</small></p></article><article><strong>1 255 mots</strong><p>This scene reflects the narrative focus of Plundered Hearts, prioritizing emotion and character over action, a departure from typical adventure tropes. It embodies the tension between authorial control and player freedom discussed in Briggs&#x27;s account.</p><small>35 mots · 0.766 s · 2252 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.47643)</small></p></article></div><h3>An invitation and a social role</h3><details><summary>Texte du jeu</summary><pre>All diamonds winking fire, tears of sapphire and crushed rubies in an oval
+setting, it is a pity that the clasp of the jewelled brooch has broken. The
+gold pin at the back swings about uselessly.
+
+&gt;
+Opening the coffer reveals an invitation.
+
+&gt;
+Taken.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The broken clasp mirrors the fragility of the creative culture at Infocom, a contrast to the ambitious, yet constrained, world of Plundered Hearts. This moment reflects the delicate balance between narrative beauty and the harsh realities of technical limitations.</p><small>39 mots · 0.64 s · 1190 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.41873)</small></p></article><article><strong>1 255 mots</strong><p>The description of the broken brooch echoes the fragility of Infocom&#x27;s creative peak, much like the game&#x27;s commercial failure. This small detail mirrors the tension between artistic vision and the harsh realities of market demands.</p><small>35 mots · 0.672 s · 1840 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.41933)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The description of the broken brooch echoes the fragility of Infocom&#x27;s creative culture under commercial pressure. This moment mirrors the delicate balance between narrative beauty and the practical constraints of the game&#x27;s design.</p><small>33 mots · 0.594 s · 1190 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.40373)</small></p></article><article><strong>1 255 mots</strong><p>This moment echoes the tension between narrative ambition and technical constraint, much like *Plundered Hearts*&#x27;s delicate balance. The broken clasp mirrors the company&#x27;s fragile creative autonomy under commercial pressure.</p><small>29 mots · 0.672 s · 1840 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.41152)</small></p></article></div><h3>Changing clothes and identity</h3><details><summary>Texte du jeu</summary><pre>Sleeping Cupboard
+   The bed is softer than it looks, plumped up with fresh straw. A soft, if
+somewhat cramped, bunk for the tall bulk of Jamison. The cupboard opens to
+the fore.
+   Kicked into a far corner is a pile of clothes.
+
+&gt;
+You pick up the pile of clothes. It separates into a pair of breeches and a
+shirt.
+
+&gt;
+You take off the cotton frock.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>This scene reflects the narrative focus Briggs desired, a romantic adventure, yet it also hints at the technical constraints of memory management. The simple, descriptive text contrasts with the ambitious scope she aimed for in her writing.</p><small>37 mots · 0.703 s · 1223 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.33396)</small></p></article><article><strong>1 255 mots</strong><p>This scene reflects the detailed world-building Briggs valued, where every object in the pirate setting had narrative weight. It contrasts with the corporate drive toward &quot;serious&quot; business software, showing the creative life thriving despite external pressures.</p><small>36 mots · 0.719 s · 1873 tokens en entrée</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.38258)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This scene reflects the intimate, constrained world of the game, mirroring the technical limitations Briggs faced. The focus on tangible objects echoes the literary nature she valued over cinematic expectations.</p><small>30 mots · 0.593 s · 1223 tokens en entrée</small><p><small>Vidéo : Game Design as a Literary Experience (0.40546)</small></p></article><article><strong>1 255 mots</strong><p>This scene reflects the narrative focus of Plundered Hearts, prioritizing character and setting over action, much like a novel. It contrasts with the corporate drive toward business software, highlighting the game&#x27;s artistic intent.</p><small>33 mots · 0.656 s · 1873 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.42885)</small></p></article></div><h3>Escaping the ship</h3><details><summary>Texte du jeu</summary><pre>You crawl into the cask, feeling a slab of something stuck on the bottom.
+From this close, you can see the line is getting frayed where it rubs
+against the cask.
+
+&gt;
+You peel it off the cask.
+
+&gt;
+slab of pork: Done.
+shirt: You&#x27;ll have to remove the shirt first.
+breeches: You&#x27;ll have to remove the breeches first.
+your kid slippers: You&#x27;ll have to remove your kid slippers first.
+linen chemise: You&#x27;ll have to remove the linen chemise first.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The detailed inventory prompts reflect the tight memory constraints Briggs faced, forcing design compromises. This technical necessity mirrored the broader pressures to make every word count, a contrast to the grander narrative ambitions.</p><small>33 mots · 0.719 s · 1245 tokens en entrée</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.34706)</small></p></article><article><strong>1 255 mots</strong><p>This moment reflects the parser&#x27;s strict adherence to internal logic, mirroring the world-building rigor Briggs valued. It contrasts with her desire for narrative freedom, a tension evident in her struggle to balance authorial control with player expectation.</p><small>37 mots · 0.828 s · 1895 tokens en entrée</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.43119)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The detailed inventory checks reflect the tight memory constraints Briggs faced, forcing design choices like frequent player deaths. This technical necessity contrasts with her desire to explore more expansive narrative forms.</p><small>31 mots · 0.625 s · 1245 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.45978)</small></p></article><article><strong>1 255 mots</strong><p>This moment reflects the narrative focus of Plundered Hearts, prioritizing character interaction over action, a contrast to the &quot;tough&quot; actions critics noted. It embodies the intimate, authored world Briggs created, distinct from the corporate focus of Cornerstone.</p><small>37 mots · 0.781 s · 1895 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.44506)</small></p></article></div><h3>Meeting Lucy</h3><details><summary>Texte du jeu</summary><pre>For safety&#x27;s sake, you leave the hat on its knob. Best not to show that
+you&#x27;ve been wandering.
+
+East Hallway
+   The carpeted hallway turns from west to north here, extending into the
+east wing. A long table blocks the way south.
+   A black-garbed butler marches up to you, &quot;It was made clear at the
+whippings that villagers are not admitted in this house.&quot; He grasps you by
+the scruff of the neck and propels you headfirst out the front door.
+
+Main Entrance
+   The front door stands open to the south, light splayed out onto a drive
+stretching north into the jungle. A path leads around the western wing of
+the house; jutting out from the east wing is a tall hedge.
+
+&gt;
+The gravel path is just wide enough for a cart to pass. It bends around the
+west wing of the house, leading you to...
+
+Trade Entrance
+   You are on a well-trampled lawn at the side of the house, one low
+doorway leading in to the east. Gravelled paths lead north and south into
+the undergrowth.
+
+&gt;
+Kitchen
+   A firepit in the floor smokes badly, fogging up the depths of this large
+kitchen, somehow not escaping through either the south or west doors.
+   A blond woman huddles alone by the fire, as if cold.
+   The woman smiles uncertainly, then rushes over. &quot;Are you come from the
+village, boy? Dost know Lord Dimsford?&quot; She sighs at your surprise. &quot;So he
+sent you -- I am his Lucy. It&#x27;s been so long since I&#x27;ve seen him. Lafond
+caught me eavesdropping and now I can&#x27;t leave the grounds.&quot;
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The scene reflects the romantic, swashbuckling tone Briggs desired for Plundered Hearts, a genre she championed. This intimate setting contrasts with the corporate pressures that later strained the creative environment at Infocom.</p><small>32 mots · 0.797 s · 1503 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.42893)</small></p></article><article><strong>1 255 mots</strong><p>This scene evokes the narrative focus of Plundered Hearts, prioritizing character interaction over pure technical traversal. It contrasts with the corporate focus on Cornerstone, highlighting the creative, story-driven environment Briggs valued.</p><small>31 mots · 0.718 s · 2153 tokens en entrée</small><p><small>Vidéo : Games That Inspired Plundered Hearts (0.38825)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This scene reflects the romantic, swashbuckling tone of Plundered Hearts, a genre Briggs championed despite commercial skepticism. The narrative focus on personal drama echoes her desire to write literature beyond typical game expectations.</p><small>33 mots · 0.703 s · 1503 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.5312)</small></p></article><article><strong>1 255 mots</strong><p>This scene reflects the narrative focus of Plundered Hearts, prioritizing character interaction over action, much like Briggs&#x27;s desire for novelistic depth. The confined, atmospheric setting contrasts with the company&#x27;s broader corporate shift toward business software.</p><small>35 mots · 0.828 s · 2153 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.46103)</small></p></article></div><h3>Entering the ballroom</h3><details><summary>Texte du jeu</summary><pre>Foyer
+   A grandiose staircase splits and twists up to the next floor here,
+framing the entrance south to the ballroom. Long hallways lead east and
+west; cool night air drifts in through the front door, north of you.
+   The butler stands near the entrance to the ballroom.
+
+&gt;
+[to the butler]
+The butler takes the invitation. &quot;Enjoy the dance, Miss Davis.&quot;
+
+&gt;
+The sea of spectators parts to admit you, murmuring approval.
+
+Ballroom
+   Lafond&#x27;s party is well attended: you can hardly move for the crush.
+However, the room is oddly silent, no talk interrupting the musical efforts
+of the musicians to the west. Despite the heat, no one ventures south to
+the veranda, nor through the opening east. The foyer is north of you.
+   Captain Jamison moves up to you, saying, &quot;May I have this dance?&quot; He
+doesn&#x27;t await an answer, sweeping you out onto the dance floor.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>This scene reflects the romantic, swashbuckling tone of Plundered Hearts, aligning with Briggs&#x27;s personal desire to explore romance. The description of the crowded ballroom echoes the narrative ambition she brought to the game.</p><small>33 mots · 0.688 s · 1334 tokens en entrée</small><p><small>Vidéo : Games That Inspired Plundered Hearts (0.46758)</small></p></article><article><strong>1 255 mots</strong><p>This scene evokes the polished, corporate atmosphere Briggs noted, contrasting with the scrappy beginnings. The formal setting mirrors the pressure to produce polished, marketable experiences despite creative desires.</p><small>28 mots · 0.735 s · 1984 tokens en entrée</small><p><small>Vidéo : A Young Company of Passionate Developers (0.35908)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The description evokes the romantic, swashbuckling tone of Plundered Hearts, aligning with Briggs&#x27;s personal desire to explore romance. The crowded, yet strangely silent, ballroom hints at the tension between creative freedom and external pressures she later faced.</p><small>37 mots · 0.766 s · 1334 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.3223)</small></p></article><article><strong>1 255 mots</strong><p>This scene reflects the narrative focus of Plundered Hearts, prioritizing character and emotion over action, much like Briggs&#x27;s preference for novelistic depth. The atmosphere hints at the kind of intimate, authored world she sought to create outside corporate pressures.</p><small>39 mots · 0.797 s · 1984 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.41128)</small></p></article></div><h3>Distracting the crocodile</h3><details><summary>Texte du jeu</summary><pre>Bottom of Stairwell
+
+&gt;
+Anteroom
+   Two exits lead from this cavernous room, north and south. The walls drip
+with wet, forming a huge pool on the floor.
+   A crocodile lies half in the pool, gazing at you, with baleful eyes,
+jaws wide open. Dagger-sharp teeth glint in the torchlight.
+
+&gt;
+You squeeze three colorless drops onto the slab of pork. A patch of salt
+dissolves as the laudanum absorbs into the meat.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The crocodile scene reflects the technical constraints and narrative risks Briggs navigated, where a simple puzzle could become a dramatic, potentially deadly encounter. This mirrors the delicate balance between creative ambition and the need for functional, constrained gameplay.</p><small>38 mots · 0.734 s · 1242 tokens en entrée</small><p><small>Vidéo : Balancing Reality and Fiction in Games (0.40296)</small></p></article><article><strong>1 255 mots</strong><p>The tension between narrative freedom and technical constraints is evident here, mirroring the delicate balance Briggs sought in Plundered Hearts. This moment reflects the immersive world-building that thrived when creative autonomy was present at Infocom.</p><small>35 mots · 0.687 s · 1892 tokens en entrée</small><p><small>Vidéo : Nostalgia and Infocom&#x27;s Individual Vision (0.46157)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The stark, survivalist nature of this scene echoes the technical constraints Briggs faced, where limited memory forced difficult design choices. This moment reflects the raw, literary focus of her work, distinct from the corporate pressures of Cornerstone.</p><small>37 mots · 0.766 s · 1242 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.28023)</small></p></article><article><strong>1 255 mots</strong><p>This moment reflects the intense narrative focus of Plundered Hearts, where the author had to balance dramatic tension with the parser&#x27;s limitations. The need to author this scene speaks to the tension between creative vision and the technical constraints of the hardware.</p><small>42 mots · 0.703 s · 1892 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.52473)</small></p></article></div><h3>Finding her father</h3><details><summary>Texte du jeu</summary><pre>[with the large key]
+Unlocked.
+
+&gt;
+Opened.
+
+&gt;
+Cell
+   Hewn from dense rock, the cell is a stagnant burrow. Except for the
+tiniest glow of light from the torch two rooms away, it is pitch black.
+   As you enter, a tall bony man moves out of the darkness. &quot;Papa,&quot; you
+cry, rushing into his arms.
+   &quot;Why, hullo, my dear.&quot; He hugs you tightly. &quot;Nick certainly took his
+time about fetching you.&quot;
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The intimate, narrative focus of this moment echoes Briggs&#x27;s desire to legitimize romance as a serious form, distinct from trivial marketing. It contrasts sharply with the corporate pressures pushing Infocom toward business software like Cornerstone.</p><small>35 mots · 0.688 s · 1240 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.38582)</small></p></article><article><strong>1 255 mots</strong><p>This moment echoes the narrative focus of Plundered Hearts, prioritizing emotional connection over action. It contrasts with the corporate pressure Briggs felt to produce marketable hits, a stark departure from her own narrative interests.</p><small>34 mots · 0.672 s · 1890 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.4412)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This moment echoes the intimate, narrative focus Briggs valued, contrasting with the corporate push toward business software. The personal connection in the text reflects the creative freedom she sought before commercial pressures took over.</p><small>34 mots · 0.687 s · 1240 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.36792)</small></p></article><article><strong>1 255 mots</strong><p>This moment reflects the narrative focus of Plundered Hearts, a romance-driven game, contrasting with the company&#x27;s push toward business software like Cornerstone. The intimate dialogue hints at the deep character focus Briggs valued over pure technical spectacle.</p><small>37 mots · 0.688 s · 1890 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.5584)</small></p></article></div><h3>Deception over wine</h3><details><summary>Texte du jeu</summary><pre>&quot;Welcome, ma petite.&quot; Lafond bows you in.
+
+Lafond&#x27;s Bedroom
+   Lafond is leering, lip curled.
+   A lace-covered table crouches beside a wing-backed chair in one corner.
+Sitting on the table is a green goblet, a blue goblet and a flagon.
+   &quot;Have some wine.&quot; Lafond pours wine into two glasses, giving a blue one
+to you. &quot;Drink this down. We have a long night ahead of us.&quot; He drains his
+own.
+
+&gt;
+You empty the blue goblet of wine.
+   &quot;Good girl,&quot; he says, &quot;Let&#x27;s see more cooperation of this sort.&quot;
+   Suddenly, the door slams open. It is Jamison, coatless, sword bared, his
+shirt ripped. &quot;Thank God I am not too late. Leave, darling, before I skewer
+this dog to his bedposts,&quot; he cries. The scar on his cheek gleams coldly.
+   With a yell, Crulley and the butler jump out of the darkness behind him.
+Nicholas struggles, but soon lies unconscious on the floor.
+   &quot;Take him to the dungeon,&quot; Lafond says, setting down his glass. &quot;You,
+butler, stay nearby. I do not wish to be disturbed again.
+   &quot;Now that we are rid of that intrusion, cherie, I will change into
+something more comfortable. Pour me more wine.&quot; He crosses to the wardrobe
+removing his coat and vest, turned slightly away from you.
+
+&gt;
+You fill the green goblet with wine.
+   &quot;In private, call me Jean, or whatever endearment you choose, once I
+have approved it.&quot; Lafond is looking into the wardrobe.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>This scene reflects the romantic, swashbuckling tone Briggs desired for Plundered Hearts, a genre she championed despite industry skepticism. The intimate, high-stakes drama mirrors her desire to treat romance as a legitimate narrative form.</p><small>34 mots · 0.766 s · 1501 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.47179)</small></p></article><article><strong>1 255 mots</strong><p>This scene reflects the narrative focus of Plundered Hearts, where emotion and character drive the action, contrasting with the business focus of Cornerstone. The intense, dramatic atmosphere mirrors the passionate, yet sometimes fraught, creative environment at Infocom.</p><small>37 mots · 0.766 s · 2151 tokens en entrée</small><p><small>Vidéo : Leaving Infocom and Looking Back (0.38005)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This scene reflects the swashbuckling romance Briggs wanted to explore, a narrative freedom contrasted with the technical constraints of the C64. The dramatic action mirrors the high creative intensity she experienced before corporate pressures set in.</p><small>36 mots · 0.766 s · 1501 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.39059)</small></p></article><article><strong>1 255 mots</strong><p>This scene reflects the intense, narrative focus of Plundered Hearts, contrasting with the corporate push toward business software. The dramatic action mirrors the high creative stakes of the company&#x27;s early, passionate atmosphere.</p><small>32 mots · 0.671 s · 2151 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.43988)</small></p></article></div><h3>Fighting Crulley</h3><details><summary>Texte du jeu</summary><pre>Anteroom
+   The crocodile lies half in the pool, gazing at you, with baleful eyes,
+jaws wide open. Dagger-sharp teeth glint in the torchlight.
+   Cookie pegs after you.
+   Cookie rushes at the crocodile, crying, &quot;I&#x27;ll take care of this monster,
+sweetheart. You run by and do what you must do.&quot; He dives headlong into the
+pool.
+
+&gt;
+A whip cracks the air. &quot;Flogs me, will ye, Cap&#x27;n? Taste it yourself, har.&quot;
+Jamison groans, half conscious. You rush in.
+
+Dungeon
+   You sense, rather than see, the rusty skeletons of old cages and torture
+devices that line the walls of this cavernous room. One flaming torch, high
+on a wall, casts mad licks of light into the darkness. Passages lead north
+and west. Set deep in the rocky floor is an open trapdoor.
+   Nicholas is spread-eagled against the wall, shackled in the pair of
+manacles.
+   A rapier lies in the half-dark of a corner.
+   Crulley steps leering out of the shadows and cracks the whip near you,
+hopping you towards the open trapdoor. &quot;Ye&#x27;re a tasty doxy to let slip, but
+no &#x27;elp fer it.&quot;
+
+&gt;
+Taken. Crulley snorts, &quot;Be careful, you might hurt yer dearie.&quot;
+   Crulley cracks the whip near you, hopping you towards the open trapdoor.
+&quot;What, afrighted of a lick o&#x27; the whip?&quot;
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The dramatic, high-stakes action here reflects the intense narrative ambition Briggs felt, contrasting with the commercial pressures that often constrained her work. These moments show the genre&#x27;s potential, a literary quality she valued over mere marketability.</p><small>36 mots · 0.953 s · 1471 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.3369)</small></p></article><article><strong>1 255 mots</strong><p>The dramatic, high-stakes narrative of this excerpt contrasts with the quiet, often technical nature of early Infocom testing. This moment reflects the intense, authored world-building that Briggs pursued, distinct from the corporate focus on Cornerstone.</p><small>35 mots · 0.734 s · 2121 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.40278)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>The dramatic, high-stakes action here reflects the intense creative energy Briggs experienced, a stark contrast to the corporate pressure of Cornerstone. This moment embodies the narrative freedom she sought, a literary quality she felt Infocom&#x27;s later business focus threatened.</p><small>39 mots · 0.906 s · 1471 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.36857)</small></p></article><article><strong>1 255 mots</strong><p>The dramatic, high-stakes narrative of this excerpt contrasts with the company&#x27;s earlier focus on corporate software like Cornerstone. This moment reflects the creative intensity Briggs valued, a stark difference from the pressure to produce commercial hits.</p><small>36 mots · 0.828 s · 2121 tokens en entrée</small><p><small>Vidéo : Creative Neglect and Commercial Failure (0.41388)</small></p></article></div><h3>Reviving a companion</h3><details><summary>Texte du jeu</summary><pre>You flick the rapier across his chest, barely scratching him. He cries,
+&quot;Avast me! Pricked by a woman!&quot; and trips into the trapdoor.
+   You peer down the hole to find Crulley hanging in midair, his hook
+caught in the rocks a few yards down. He curses and starts to climb up the
+sheer slimy walls of the well.
+
+&gt;
+Shut.
+
+&gt;
+[with the jewelled brooch]
+You twist the pin of the jewelled brooch in the locks, quickly freeing
+Nicholas. He falls in a faint at your feet.
+   Sounds of scraping hook against stone and curses echo out of the well,
+muffled by the trapdoor.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>This moment reflects the swashbuckling romance Briggs desired, yet the tight memory constraints likely forced such dramatic, concise action. The game’s narrative ambition clashed with the technical limitations of the C64.</p><small>31 mots · 0.641 s · 1277 tokens en entrée</small><p><small>Vidéo : Commodore 64 Development and the Parser (0.43104)</small></p></article><article><strong>1 255 mots</strong><p>This moment reflects the narrative focus of Plundered Hearts, prioritizing character action over technical spectacle. It contrasts with the business focus of Cornerstone, illustrating the creative autonomy Briggs valued.</p><small>29 mots · 0.625 s · 1927 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.43491)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This moment reflects the romantic, swashbuckling tone Briggs wanted for Plundered Hearts, a genre she championed. The technical constraint of the game likely shaped these dramatic, high-stakes interactions.</p><small>28 mots · 0.625 s · 1277 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.5511)</small></p></article><article><strong>1 255 mots</strong><p>This moment reflects the narrative focus of Plundered Hearts, prioritizing character interaction over action, a choice made despite internal skepticism. It contrasts with the corporate push toward &quot;serious&quot; business software like Cornerstone.</p><small>32 mots · 0.688 s · 1927 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.49715)</small></p></article></div><h3>The final confrontation</h3><details><summary>Texte du jeu</summary><pre>He fails to notice you&#x27;ve spoken.
+   Nicholas looks determined. &quot;I accept. So long as my people go free if I
+win. Order your dragoons to obey us, then.&quot; In answer, Lafond jumps off the
+cliff like a huge brocaded bat to land in front of Captain Jamison. &quot;Die
+then, fool!&quot;
+   The pistol, spinning from Lafond&#x27;s grip, drops to the sand nearby.
+
+&gt;
+Taken.
+   Lafond immediately takes the advantage, forcing Nicholas in a retreat
+towards the foaming surf. But Nicholas fights hard, jaw set, ignoring his
+wounds. Lafond finally loses his smile.
+   Behind the duellists, far away atop the cliff, you notice Crulley madly
+reloading the pistol.
+
+&gt;
+You pour a lumpy stream of gunpowder mixture into the barrel of the pistol
+tamping it as best you can.
+   Suddenly the force of the duel turns, Nicholas advancing against
+Lafond&#x27;s retreat. Their blades silently flash in the moonlight. Lafond is
+pressed back into the shadow of the cliff, sweat beading on his forehead.
+Abruptly, Jamison leaps forward, metal scrapes, and his rapier licks neatly
+into Lafond&#x27;s ribs, like a snake slipping into its burrow. The body of the
+governor of St. Sinistra convulses, as in amazement, then sags dead on the
+sword.
+   Nicholas removes a gold ring from the dead man&#x27;s finger, throwing his
+own cheap copy into the surf.
+   Far above him, Crulley moves down the stairs.
+
+&gt;</pre></details><h4>Graine 42</h4><div class="pair"><article><strong>752 mots</strong><p>The scene reflects the narrative ambition Briggs pursued, blending high-stakes romance with technical constraints. This moment embodies the kind of literary depth she sought, contrasting with the commercial pressures of the era.</p><small>32 mots · 0.688 s · 1480 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.31909)</small></p></article><article><strong>1 255 mots</strong><p>This scene reflects the narrative focus of Plundered Hearts, prioritizing character drama over action spectacle. The tension mirrors the struggle Briggs felt balancing authored narrative against player freedom.</p><small>28 mots · 0.703 s · 2130 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.50236)</small></p></article></div><h4>Graine 43</h4><div class="pair"><article><strong>752 mots</strong><p>This scene reflects the swashbuckling romance Briggs desired, a genre she fought to legitimize against trivialization. The intense action mirrors the creative energy of Infocom&#x27;s early, unburdened days.</p><small>28 mots · 0.735 s · 1480 tokens en entrée</small><p><small>Vidéo : Creating a Romance Game for Women (0.35714)</small></p></article><article><strong>1 255 mots</strong><p>This scene reflects the narrative focus of Plundered Hearts, prioritizing character action over spectacle, much like Briggs preferred. The tension mirrors the internal struggle between creative freedom and the commercial demands of the company.</p><small>34 mots · 0.734 s · 2130 tokens en entrée</small><p><small>Vidéo : Plundered Hearts: Design and Memory Limits (0.43118)</small></p></article></div></section></html>

@@ -13,9 +13,10 @@ Deux recits se croisent : Lady Dimsford dans le jeu, et Amy Briggs dans son temo
 ## Architecture
 
 - `src/faketerm.py` pilote `frotz`, envoie une solution pre-ecrite, nettoie la sortie, et rend le texte via un renderer C64.
-- Le LLM ne choisit pas les commandes : il commente la situation a chaque prompt.
-- Chaque commentaire est embarque (`ollama.embeddings`) puis compare a `assets/abriggs-itw-embeddings.json` pour choisir le prochain clip video (cosine similarity).
-- Le choix est ecrit dans `llm_out/` via un fichier timestamp, et un cooldown base sur `duration_sec` evite d'enchainer trop vite.
+- Le LLM ne choisit pas les commandes : il commente quand le buffer depasse 500 mots, au retour au prompt, apres l'affichage complet de la sortie du jeu.
+- Le buffer conserve toutes les commandes et sorties depuis le dernier commentaire reussi. Le commentaire s'affiche immediatement, meme pendant un extrait d'Amy.
+- Python garde le dernier commentaire disponible. Une fois l'extrait courant termine selon `duration_sec` et une marge de 3 secondes, ce commentaire est embarque (`ollama.embeddings`) puis compare a `assets/abriggs-itw-embeddings.json` pour choisir le prochain clip video.
+- Le choix est ecrit dans `llm_out/` via un fichier timestamp. La synchronisation repose uniquement sur les durees ; Godot ne renvoie aucun etat a Python.
 - La boucle redemarre apres la derniere commande pour un fonctionnement continu.
 - `godot-viewer/` lit `llm_out/`, met en file les videos, et joue du bruit (noise) quand la file est vide.
 
@@ -55,6 +56,17 @@ Les variables `LLM_MODEL`, `VIDEO_EMBED_MODEL`, `OLLAMA_HOST` et `FROTZ_PATH` pe
 
 Les embeddings utilisent le processeur par defaut pour garder la memoire graphique disponible pour Gemma, notamment sur une carte de 8 Go. `VIDEO_EMBED_NUM_GPU=-1` permet a Ollama de choisir automatiquement le placement si la carte dispose de davantage de memoire. Le premier commentaire inclut le temps de chargement des modeles.
 
+Le seuil `COMMENTARY_MIN_WORDS` vaut 500 par defaut : le compteur inclut les commandes et le texte nettoye du jeu. Le programme attend toujours la fin d'une sortie complete avant de verifier ce seuil. Il ne tronque pas le buffer. Une reponse vide conserve l'historique pour la tentative suivante ; les fins de parcours sont conservees et marquees lors du redemarrage.
+
+Les commentaires continuent pendant les videos. Seule la vectorisation attend la fin estimee de l'extrait, avec `VIDEO_END_MARGIN_SEC=3`. Si plusieurs commentaires ont ete produits entre-temps, seul le dernier choisit le prochain extrait. Sans commentaire disponible, le viewer reste sur le bruit video. Les durees du catalogue proviennent des sous-titres et sont deja legerement prudentes ; une duree absente ou invalide utilise 200 secondes.
+
+`LLM_NUM_CTX=4096` et `LLM_NUM_PREDICT=256` configurent le contexte et le plafond de generation. Le raisonnement reste desactive par defaut. `COMMENTARY_LOG_PATH` peut enregistrer un journal JSONL des buffers, prompts, commentaires et nombres de tokens, par exemple :
+
+```bat
+set "COMMENTARY_LOG_PATH=documentation\commentary-session.jsonl"
+3-run-ai-play.bat
+```
+
 Apres modification du viewer, reconstruire `bin/itw-viewer.exe` et son `.pck` depuis Godot avec le preset `Windows Desktop`. Les videos `.ogv`, les sous-titres et les fontes doivent rester inclus dans l'export.
 
 ### Comparaison des modeles de commentaire
@@ -77,7 +89,7 @@ Pour comparer un autre resume sur exactement les memes scenes et consignes, util
 .venv\Scripts\python.exe src\ollama_benchmark.py --scenes documentation\llm-comparison-2026-10-19\scenes.json --summary assets\abriggs-itw-1250-words.txt --output-dir documentation\llm-comparison-2026-10-19-1250
 ```
 
-Le script verifie que seul le resume change dans les prompts sauvegardes et enregistre son empreinte. Ce choix concerne le benchmark ; le lancement habituel conserve son resume de 750 mots.
+Le script remplace seulement le resume dans les prompts sauvegardes et enregistre son empreinte. Les prompts archives conservent leurs consignes d'origine, meme apres une evolution de l'installation. Ce choix concerne le benchmark ; le lancement habituel conserve son resume de 750 mots.
 
 Le comparatif du raisonnement de Gemma se relance avec :
 
@@ -86,6 +98,8 @@ Le comparatif du raisonnement de Gemma se relance avec :
 ```
 
 Il reutilise les douze scenes du premier benchmark et compare les modes sans raisonnement (256 et 1024 tokens) et avec raisonnement (1024 tokens), sur deux graines. Les modes sont echauffes, l'ordre des conditions est equilibre et les temps de lecture du prompt et de generation sont enregistres separement. Si le raisonnement atteint le plafond de 1024 tokens, une serie complete a 2048 tokens est ajoutee. Le rapport `comparison.html` et les donnees restent dans ce dossier ; les reglages de l'installation ne sont pas modifies par cet essai.
+
+Le profil du nouveau buffer est dans `documentation/commentary-buffer-analysis/`. `profile_buffers.py` reconstitue les historiques depuis le parcours Frotz capture ; `--measure-tokens` compte leurs tokens avec Gemma. Les comparatifs precedents restent des archives du prompt et du rythme anterieurs.
 
 ## Notes
 

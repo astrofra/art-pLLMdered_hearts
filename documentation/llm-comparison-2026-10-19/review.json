@@ -1,0 +1,19 @@
+{
+  "recommendation": "Pour le prochain essai de l’installation, je privilégierais Gemma 4 E4B. Qwen 3.5 4B constitue une alternative consommant moins de VRAM. Le choix reste à confirmer par la lecture artistique des commentaires ; le prompt actuel mérite toujours une révision.",
+  "findings": [
+    "Les deux candidats apportent surtout un gain de réactivité : médianes de 0,774 seconde pour Qwen et de 0,711 seconde pour Gemma, contre 14,438 secondes pour Ministral 14B. Les mesures portent sur le commentaire après préchargement. Le premier chargement d’un modèle et la préparation des premiers calculs peuvent être sensiblement plus longs.",
+    "Qwen et Gemma produisent chacun 24 réponses sur 24 sous la limite de 60 mots, sans Markdown ni réponse coupée. Ministral respecte cette limite dans 20 cas sur 24 et emploie des marqueurs Markdown dans 11 réponses. Cela ne vérifie pas automatiquement la consigne de deux phrases : une réponse de Qwen ne contient, par exemple, qu’une phrase.",
+    "Les pics de mémoire de la carte pendant le comparatif sont de 4 554 MiB pour Qwen, 5 444 MiB pour Gemma et 7 054 MiB pour Ministral. Ces chiffres comprennent le bureau et les allocations temporaires. EmbeddingGemma 300M utilise le processeur. Les deux nouveaux modèles sont annoncés entièrement sur le GPU par Ollama.",
+    "Le changement de modèle ne résout pas la répétition thématique. Les mots techniques recherchés apparaissent dans 17 réponses de Ministral, 18 de Qwen et 11 de Gemma sur 24. Gemma déplace souvent le commentaire vers la romance et le récit de cape et d’épée, mais répète aussi des formulations générales comme « This scene reflects… ». Le nombre de vidéos différentes en première position varie peu : 7, 8 et 7.",
+    "Les petits modèles proposent fréquemment une reformulation générale du résumé plutôt qu’une association singulière à un détail de la scène. Qwen invente même un souvenir à la première personne dans un exemple : « I remember feeling that same isolation when management demanded commercial success instead of trusting my vision. » Ministral s’appuie davantage sur des objets précis, mais produit parfois des métaphores commerciales ou techniques forcées.",
+    "Ces résultats sont compatibles avec une forte influence du résumé fixe et des thèmes du prompt. Ils ne permettent pas d’attribuer causalement la répétition au seul résumé : aucun autre prompt n’a été testé dans ce comparatif."
+  ],
+  "limitations": [
+    "Douze scènes et deux graines par scène constituent un premier comparatif local, pas un classement général des modèles.",
+    "Les modèles sont évalués en anglais, sans historique des commentaires précédents, avec température 0,3, fenêtre de 4 096 tokens et limite de 256 tokens de sortie. Les autres paramètres, notamment les pénalités et les accélérations propres au modèle, restent ceux des modèles distribués par Ollama et figurent dans results.json.",
+    "Les mots techniques sont un indicateur lexical approximatif ; ils ne mesurent ni toute la répétition thématique ni la pertinence des associations.",
+    "La recherche vidéo utilise le catalogue actuel, sans redécoupage, avant le filtre anti-répétition. Une plus grande diversité des vidéos n’indique pas nécessairement une meilleure pertinence.",
+    "Les mesures à chaud bénéficient des caches et excluent le rendu graphique. Une vérification distincte a été réalisée avec les fenêtres C64 et Godot, sur trois commandes par candidat.",
+    "Gemma E4B désigne une taille effective ; le modèle téléchargé annonce environ 7,5 milliards de paramètres au total, contre 4,2 milliards pour Qwen."
+  ]
+}

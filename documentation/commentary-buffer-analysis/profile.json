@@ -1,0 +1,158 @@
+{
+  "source_commands": 258,
+  "samples": 20,
+  "threshold_words": 500,
+  "mean_words": 526.5,
+  "median_words": 524.5,
+  "min_words": 502,
+  "max_words": 560,
+  "uncommented_tail_words": 277,
+  "description": "One captured walkthrough, complete outputs and executed commands. Tail is preserved at runtime across restarts.",
+  "prompt_template_sha256": "c8751254205e761304f5a2f10fec470b0e21b6abb9a4d017e3c59f5d9eee1206",
+  "token_measurements": [
+    {
+      "step": 7,
+      "history_words": 514,
+      "prompt_tokens": 1956,
+      "output_tokens": 39,
+      "elapsed_sec": 9.578
+    },
+    {
+      "step": 14,
+      "history_words": 560,
+      "prompt_tokens": 2003,
+      "output_tokens": 37,
+      "elapsed_sec": 1.297
+    },
+    {
+      "step": 18,
+      "history_words": 530,
+      "prompt_tokens": 1919,
+      "output_tokens": 34,
+      "elapsed_sec": 1.078
+    },
+    {
+      "step": 32,
+      "history_words": 502,
+      "prompt_tokens": 1904,
+      "output_tokens": 38,
+      "elapsed_sec": 1.093
+    },
+    {
+      "step": 45,
+      "history_words": 540,
+      "prompt_tokens": 1933,
+      "output_tokens": 31,
+      "elapsed_sec": 1.078
+    },
+    {
+      "step": 63,
+      "history_words": 504,
+      "prompt_tokens": 1897,
+      "output_tokens": 34,
+      "elapsed_sec": 1.093
+    },
+    {
+      "step": 75,
+      "history_words": 534,
+      "prompt_tokens": 1892,
+      "output_tokens": 40,
+      "elapsed_sec": 1.203
+    },
+    {
+      "step": 92,
+      "history_words": 507,
+      "prompt_tokens": 1919,
+      "output_tokens": 31,
+      "elapsed_sec": 1.0
+    },
+    {
+      "step": 103,
+      "history_words": 554,
+      "prompt_tokens": 1973,
+      "output_tokens": 36,
+      "elapsed_sec": 1.141
+    },
+    {
+      "step": 115,
+      "history_words": 546,
+      "prompt_tokens": 1922,
+      "output_tokens": 38,
+      "elapsed_sec": 1.094
+    },
+    {
+      "step": 131,
+      "history_words": 511,
+      "prompt_tokens": 1925,
+      "output_tokens": 33,
+      "elapsed_sec": 1.14
+    },
+    {
+      "step": 143,
+      "history_words": 537,
+      "prompt_tokens": 1927,
+      "output_tokens": 39,
+      "elapsed_sec": 1.078
+    },
+    {
+      "step": 160,
+      "history_words": 511,
+      "prompt_tokens": 1919,
+      "output_tokens": 34,
+      "elapsed_sec": 1.156
+    },
+    {
+      "step": 180,
+      "history_words": 517,
+      "prompt_tokens": 1929,
+      "output_tokens": 37,
+      "elapsed_sec": 1.187
+    },
+    {
+      "step": 195,
+      "history_words": 507,
+      "prompt_tokens": 1920,
+      "output_tokens": 39,
+      "elapsed_sec": 1.141
+    },
+    {
+      "step": 211,
+      "history_words": 549,
+      "prompt_tokens": 2011,
+      "output_tokens": 34,
+      "elapsed_sec": 1.141
+    },
+    {
+      "step": 228,
+      "history_words": 503,
+      "prompt_tokens": 1915,
+      "output_tokens": 38,
+      "elapsed_sec": 1.078
+    },
+    {
+      "step": 237,
+      "history_words": 539,
+      "prompt_tokens": 2000,
+      "output_tokens": 37,
+      "elapsed_sec": 1.235
+    },
+    {
+      "step": 249,
+      "history_words": 519,
+      "prompt_tokens": 1999,
+      "output_tokens": 27,
+      "elapsed_sec": 1.093
+    },
+    {
+      "step": 258,
+      "history_words": 546,
+      "prompt_tokens": 1996,
+      "output_tokens": 40,
+      "elapsed_sec": 1.218
+    }
+  ],
+  "mean_prompt_tokens": 1943.0,
+  "max_prompt_tokens": 2011,
+  "min_prompt_tokens": 1892,
+  "context_tokens": 4096
+}

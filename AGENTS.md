@@ -17,10 +17,11 @@ Guidelines for maintaining the installation that plays Plundered Hearts while dr
 ## Runtime flow (`src/faketerm.py`)
 - Spawns `frotz` via `pexpect`, waits for the initial prompt, and plays the walkthrough in `plundered_hearts_commands`.
 - Game output is cleaned by `clean_output()` and rendered through the C64 renderer when enabled.
-- LLM commentary (via `ollama`) is displayed on the C64 renderer after each prompt.
-- Each LLM comment is embedded with `VIDEO_EMBED_MODEL` and matched by cosine similarity against `assets/abriggs-itw-embeddings.json`.
+- Complete game outputs and executed commands accumulate until the history exceeds `COMMENTARY_MIN_WORDS` (default 500). Commentary runs only at a game prompt, after rendering the whole output.
+- Each successful LLM comment is displayed immediately, including during an interview, and clears the game-history buffer. Empty responses keep the buffer. History and the pending comment survive walkthrough restarts.
+- Only after the current interview's estimated duration plus `VIDEO_END_MARGIN_SEC` (default 3) has elapsed is the latest pending comment embedded with `VIDEO_EMBED_MODEL` and matched by cosine similarity against `assets/abriggs-itw-embeddings.json`.
 - The chosen interview `filename` is written to a timestamped file in `llm_out/`.
-- A cooldown uses `duration_sec` to avoid queuing a new video while the current one is still expected to play.
+- A cooldown uses `duration_sec` to avoid queuing a new video while the current one is still expected to play. Godot sends no playback feedback to Python.
 - The game loop restarts after the final command and shows a restart message to keep the installation running continuously.
 
 ## Godot viewer (`godot-viewer/main.gd`)
@@ -37,6 +38,7 @@ Guidelines for maintaining the installation that plays Plundered Hearts while dr
 - Video matching uses embeddings via `ollama.embeddings`.
 - Keep prompts short and deterministic; avoid multi-turn chains.
 - Guard against missing or slow responses to avoid blocking the loop.
+- `LLM_NUM_CTX` defaults to 4096 and `LLM_NUM_PREDICT` to 256. `COMMENTARY_LOG_PATH` optionally logs full histories and token metrics as JSONL.
 
 ## Subtitle and embedding tools
 - `src/embed_vtt.py` builds `abriggs-itw-embeddings.json` from subtitle `.txt` files and adds `sequence_title`.
