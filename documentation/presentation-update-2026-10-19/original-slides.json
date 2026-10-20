@@ -1,0 +1,1021 @@
+[
+  {
+    "number": 1,
+    "shapes": [
+      {
+        "id": "62",
+        "text": "pLLMdered_hearts: Playing or Commenting to Revive Interactive Fiction",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"851350\" y=\"744575\" /><ns0:ext cx=\"7980900\" cy=\"2052600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "63",
+        "text": "Language Models and the Mediation of Digital Works",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"851400\" y=\"2834125\" /><ns0:ext cx=\"7980900\" cy=\"792600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "64",
+        "text": "Museums and AI Cultural HeritagePanel 6 · 27 November 2026 · 11.45–12.45",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1517500\" y=\"3663675\" /><ns0:ext cx=\"6648600\" cy=\"554100\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "Hello, I’m François Gutherz, a PhD student at Paris 8 University. I work on the preservation of interactive digital works, particularly in the demoscene, a digital culture that developed alongside the fields of art and video games."
+  },
+  {
+    "number": 2,
+    "shapes": [
+      {
+        "id": "69",
+        "text": "The obsolescence of interactive digital works",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "70",
+        "text": "What remains of an interactive digital work once its execution context has disappeared (Strigot, 2022)?\nEmulation offers remarkable technical intermediation, but it does not always restore the experience surrounding the work.\nWhat disappears is not only a machine, but a material culture, a relationship with the interface. Does the work remain intelligible to audiences whose interaction habits have changed?",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840900\" y=\"1152475\" /><ns0:ext cx=\"7991400\" cy=\"3416400\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "One of the issues that drives my work is the technological obsolescence of interactive digital works, which are tied to a material environment and a context of display. The BnF is doing remarkable work by making video games and interactive digital works available through emulators when changes in their hardware and software environments have rendered them inoperable."
+  },
+  {
+    "number": 3,
+    "shapes": [
+      {
+        "id": "75",
+        "text": "Digital work",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7159927\" y=\"305133\" /><ns0:ext cx=\"1498800\" cy=\"369300\" /></ns0:xfrm>"
+      },
+      {
+        "id": "76",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1242525\" y=\"2793275\" /><ns0:ext cx=\"3265200\" cy=\"1044000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "77",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5462225\" y=\"1300275\" /><ns0:ext cx=\"3265200\" cy=\"2011200\" /></ns0:xfrm>"
+      },
+      {
+        "id": "78",
+        "text": "Computer",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5530670\" y=\"3370026\" /><ns0:ext cx=\"3127800\" cy=\"369300\" /></ns0:xfrm>"
+      },
+      {
+        "id": "79",
+        "text": "Drivers",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5530670\" y=\"2869552\" /><ns0:ext cx=\"3127800\" cy=\"369300\" /></ns0:xfrm>"
+      },
+      {
+        "id": "80",
+        "text": "Kernel",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5530670\" y=\"2369078\" /><ns0:ext cx=\"3127800\" cy=\"369300\" /></ns0:xfrm>"
+      },
+      {
+        "id": "81",
+        "text": "System utilities",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5530670\" y=\"1382616\" /><ns0:ext cx=\"1629000\" cy=\"369300\" /></ns0:xfrm>"
+      },
+      {
+        "id": "88",
+        "text": "Computer",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1311022\" y=\"3370051\" /><ns0:ext cx=\"3127800\" cy=\"369300\" /></ns0:xfrm>"
+      },
+      {
+        "id": "89",
+        "text": "Digital work",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1311204\" y=\"2292865\" /><ns0:ext cx=\"3127800\" cy=\"369300\" /></ns0:xfrm>"
+      },
+      {
+        "id": "90",
+        "text": "1987",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2168425\" y=\"4648082\" /><ns0:ext cx=\"1413300\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "91",
+        "text": "2026",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"6387881\" y=\"4648032\" /><ns0:ext cx=\"1413300\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "93",
+        "text": "Kernel",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1311022\" y=\"2869552\" /><ns0:ext cx=\"3127800\" cy=\"369300\" /></ns0:xfrm>"
+      },
+      {
+        "id": "96",
+        "text": "System libraries",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5530670\" y=\"1886128\" /><ns0:ext cx=\"3127800\" cy=\"369300\" /></ns0:xfrm>"
+      },
+      {
+        "id": "100",
+        "text": "Emulator",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7159687\" y=\"822633\" /><ns0:ext cx=\"1498800\" cy=\"369300\" /></ns0:xfrm>"
+      },
+      {
+        "id": "101",
+        "text": "Emulation of digital work / video game",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "102",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4576650\" y=\"2811025\" /><ns0:ext cx=\"104700\" cy=\"987900\" /></ns0:xfrm>"
+      },
+      {
+        "id": "103",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5261825\" y=\"1312600\" /><ns0:ext cx=\"104700\" cy=\"2011200\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "What is an emulator? It is a computational intermediary that makes a digital work or video game “believe” that its original environment is still present. Technically, it is an intermediate layer. If the original experience cannot be fully reconstructed, that difference can and should be documented: the use of bodily space, alternative controllers, or simply \ncontact with a keyboard."
+  },
+  {
+    "number": 4,
+    "shapes": [
+      {
+        "id": "108",
+        "text": "Plundered Hearts",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "109",
+        "text": "Plundered Hearts is an interactive fiction developed by Amy Briggs and published by Infocom in 1987.\nAn interactive romance written by a woman, whose heroine is a female character.\nThe game belongs to a hybrid genre between novel and video game, based on reading descriptions and entering commands on a keyboard, in dialogue with a parser.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3017925\" y=\"1152475\" /><ns0:ext cx=\"5814300\" cy=\"3416400\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "It was in this context that I became interested in the video game Plundered Hearts (“Pillaged Hearts”), an interactive fiction written in 1987 by the developer Amy Briggs at Infocom. Interactive fiction is a hybrid genre in which everything passes through writing, from descriptions of what happens in the game to the players’ actions. We converse with a “parser”, an algorithm that analyses the sentences written by players."
+  },
+  {
+    "number": 5,
+    "shapes": [
+      {
+        "id": "119",
+        "text": "Infocom and the Z-machine",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "120",
+        "text": "Infocom produced dozens of interactive fictions, selling more than 2.5 million copies between 1980 and 1990. Among the best-known titles is Zork.\nInfocom’s impact was accompanied by an innovation: the Z-machine and its language ZIL, allowing the same game to run on the roughly twenty computers on the market. Although ZIL inherited from symbolic AI languages such as LISP (Briceno, 2000), it also foreshadowed Java and its virtual machine.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3624150\" y=\"1152475\" /><ns0:ext cx=\"5208300\" cy=\"3867600\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "Infocom played a major role in the history of interactive fiction, with the game Zork, which became a cult classic. In response to the hardware fragmentation of the home microcomputer market, where more than a dozen strictly incompatible computers were found in people’s homes, Infocom innovated: its games were written for a virtual machine, the Z-machine, which was adapted to each type of hardware. The second innovation was ZIL, a language derived from LISP and designed for developing symbolic artificial intelligence. Symbolic AI is the ancestor of connectionist AI in which every rule is written explicitly. Whatever is not implemented is unknown to the system. The same is true of interactive fiction."
+  },
+  {
+    "number": 6,
+    "shapes": [
+      {
+        "id": "129",
+        "text": "Teletype",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"928850\" y=\"1176325\" /><ns0:ext cx=\"1654200\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "130",
+        "text": "Keyboard and punched cards",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"943499\" y=\"1559800\" /><ns0:ext cx=\"1654200\" cy=\"313500\" /></ns0:xfrm>"
+      },
+      {
+        "id": "132",
+        "text": "Interactive terminal",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2561150\" y=\"1176379\" /><ns0:ext cx=\"1889340\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "133",
+        "text": "“Command Line Interface”",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2683698\" y=\"1559868\" /><ns0:ext cx=\"1654200\" cy=\"313500\" /></ns0:xfrm>"
+      },
+      {
+        "id": "134",
+        "text": "GUI",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4588789\" y=\"1176379\" /><ns0:ext cx=\"1741800\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "135",
+        "text": "“Graphical User Interface”",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4632495\" y=\"1559868\" /><ns0:ext cx=\"1654200\" cy=\"313500\" /></ns0:xfrm>"
+      },
+      {
+        "id": "137",
+        "text": "Touch",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"6607187\" y=\"1176379\" /><ns0:ext cx=\"1071600\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "138",
+        "text": "Touch, swipe…",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"6605274\" y=\"1559868\" /><ns0:ext cx=\"1071600\" cy=\"313500\" /></ns0:xfrm>"
+      },
+      {
+        "id": "139",
+        "text": "Chatbot",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7880012\" y=\"1176379\" /><ns0:ext cx=\"1071600\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "140",
+        "text": "Written, spoken",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7878099\" y=\"1559868\" /><ns0:ext cx=\"1071600\" cy=\"313500\" /></ns0:xfrm>"
+      },
+      {
+        "id": "141",
+        "text": "A history of the human–machine interface",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "143",
+        "text": "1950",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"943500\" y=\"4417550\" /><ns0:ext cx=\"1654200\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "144",
+        "text": "1970",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2683700\" y=\"4417550\" /><ns0:ext cx=\"1654200\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "145",
+        "text": "1984",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4632600\" y=\"4435725\" /><ns0:ext cx=\"1654200\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "146",
+        "text": "2007",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"6315875\" y=\"4435725\" /><ns0:ext cx=\"1654200\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "147",
+        "text": "2022",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7588700\" y=\"4417550\" /><ns0:ext cx=\"1654200\" cy=\"387000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "148",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4473550\" y=\"1963700\" /><ns0:ext cx=\"1972500\" cy=\"2250600\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "Interactive fiction places dialogue with the machine at the centre of our relationship with technology, a relationship with a long history. Since the first teletypes, everything has passed through the keyboard. Around 1970, cathode-ray screens brought conversational terminals into view: we talked with the machine, and everything passed through writing. The primacy of writing came to an end with the advent of the graphical interface, prototyped at Xerox and commercialised by Apple. The desktop metaphor is still used today and has barely evolved, even though the touchscreens introduced with the iPhone radically simplified, if not impoverished, our way of interacting with the machine … TOUCH, SWIPE, as Marcello Vitali-Rosati laments in his In Praise of the Bug. And yet, in a twist, the conversational mode has made an unexpected return at the heart of the AI revolution, placing the prompt\n at \nthe centre of our interactions."
+  },
+  {
+    "number": 7,
+    "shapes": [
+      {
+        "id": "159",
+        "text": "Interactive terminals & conversational interfaces",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "160",
+        "text": "Apple DOS",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2483625\" y=\"1093925\" /><ns0:ext cx=\"1221600\" cy=\"400200\" /></ns0:xfrm>"
+      },
+      {
+        "id": "161",
+        "text": "Commodore Kernal",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4658975\" y=\"2571750\" /><ns0:ext cx=\"1529100\" cy=\"400200\" /></ns0:xfrm>"
+      },
+      {
+        "id": "162",
+        "text": "CP/M",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7520725\" y=\"1093925\" /><ns0:ext cx=\"1221600\" cy=\"400200\" /></ns0:xfrm>"
+      },
+      {
+        "id": "163",
+        "text": "Amstrad Locomotive",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1011525\" y=\"4384575\" /><ns0:ext cx=\"2693700\" cy=\"400200\" /></ns0:xfrm>"
+      },
+      {
+        "id": "164",
+        "text": "SYSTEM-80",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4658975\" y=\"4384575\" /><ns0:ext cx=\"1529100\" cy=\"400200\" /></ns0:xfrm>"
+      },
+      {
+        "id": "165",
+        "text": "Atari DOS",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7213225\" y=\"4384575\" /><ns0:ext cx=\"1529100\" cy=\"400200\" /></ns0:xfrm>"
+      },
+      {
+        "id": "166",
+        "text": "Prompt",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7940732\" y=\"3281596\" /><ns0:ext cx=\"944400\" cy=\"431100\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "In 1980s computing, we can already see the prompt. The \nmachine \nsignals that it is ready to start a conversation, receive and then interpret commands. These commands are functional and closed. Anything unknown is rejected by the system, a fundamental difference from ChatGPT, an incorrigible liar that wants to have an answer for everything."
+  },
+  {
+    "number": 8,
+    "shapes": [
+      {
+        "id": "173",
+        "text": "Place",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1020525\" y=\"1254400\" /><ns0:ext cx=\"683700\" cy=\"431100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "175",
+        "text": "Situation",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"759725\" y=\"2472211\" /><ns0:ext cx=\"944400\" cy=\"431100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "177",
+        "text": "Prompt",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"759825\" y=\"4225475\" /><ns0:ext cx=\"944400\" cy=\"431100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "179",
+        "text": "Score",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7913889\" y=\"1254400\" /><ns0:ext cx=\"810900\" cy=\"431100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "181",
+        "text": "What does the game Plundered Hearts look like?",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "So what does the interactive fiction Plundered Hearts look like? The game describes the place where we are, the score and the current situation, then waits for the players’ instructions … the famous prompt."
+  },
+  {
+    "number": 9,
+    "shapes": [
+      {
+        "id": "187",
+        "text": "The audiovisual austerity of interactive fiction is offset by feelies, physical objects supplied with the game that provide clues and stimulate the imagination.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"841000\" y=\"4017375\" /><ns0:ext cx=\"7991400\" cy=\"837000\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "Interactive fiction has no visual component. To compensate for this apparent austerity and stimulate the players’ imagination, the game comes with physical objects connected to the adventure."
+  },
+  {
+    "number": 10,
+    "shapes": [
+      {
+        "id": "192",
+        "text": "LLM vs Plundered Hearts",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "193",
+        "text": "A game whose mode of interaction is entirely textual? An ideal candidate for an LLM?\nI first wanted to find out whether an LLM could play an interactive fiction by reading the game’s descriptions and responding with commands.\nI bypassed the Z-machine interpreter’s interface in order to send the game’s textual output directly to the Ministral-3:14B model.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"841000\" y=\"1152475\" /><ns0:ext cx=\"7991400\" cy=\"3416400\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "This is where my own adventure begins: on the one hand, I had an adventure game expressed solely through text; on the other, large language models capable of reading and writing about any subject. Why not bring the two together?\nThat is what I did, by connecting a Z-machine directly to a local, French LLM: Ministral, a reduced version of Mistral."
+  },
+  {
+    "number": 11,
+    "shapes": [
+      {
+        "id": "198",
+        "text": "LLM vs Plundered Hearts",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "199",
+        "text": "Plundered Hearts (file .z3)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1812213\" y=\"2330738\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "200",
+        "text": "Z-machine emulator (Frotz)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3754938\" y=\"2330738\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "201",
+        "text": "LLM (Ministral 3:14b)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5697663\" y=\"2330738\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "205",
+        "text": "Knowledge base\n(Game + Z-machine)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5697663\" y=\"577875\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "207",
+        "text": "Description",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4930575\" y=\"1656975\" /><ns0:ext cx=\"1225500\" cy=\"384900\" /></ns0:xfrm>"
+      },
+      {
+        "id": "208",
+        "text": "Commands",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4930575\" y=\"3754951\" /><ns0:ext cx=\"1225500\" cy=\"384900\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "The mechanics are simple: I use a Z-machine emulator whose interaction mode I have repurposed so that Ministral can read what is happening in the adventure and formulate command suggestions. The game does not know that it is no longer dealing with a \nhuman. To help the LLM, which knows nothing about Plundered Hearts, I assembled a document explaining the game’s context and how the parser\n \nworks."
+  },
+  {
+    "number": 12,
+    "shapes": [
+      {
+        "id": "213",
+        "text": "ZIL and the Z-machine",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "214",
+        "text": "<OBJECT RAPIER (DESC \"rapier\") (SYNONYM SWORD RAPIER) (FLAGS TRYTAKEBIT TAKEBIT) (ACTION RAPIER-F)>\n<TELL \". It is decorated with a big floppy ribbon\">)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2486025\" y=\"1603200\" /><ns0:ext cx=\"4701000\" cy=\"2241900\" /></ns0:xfrm>"
+      },
+      {
+        "id": "215",
+        "text": "Z-machine symbol",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"691750\" y=\"1660475\" /><ns0:ext cx=\"1506300\" cy=\"384900\" /></ns0:xfrm>"
+      },
+      {
+        "id": "217",
+        "text": "Name shown to player",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"6530451\" y=\"1897725\" /><ns0:ext cx=\"2071800\" cy=\"384900\" /></ns0:xfrm>"
+      },
+      {
+        "id": "219",
+        "text": "Accepted synonyms",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"591325\" y=\"2162300\" /><ns0:ext cx=\"1606800\" cy=\"384900\" /></ns0:xfrm>"
+      },
+      {
+        "id": "221",
+        "text": "Properties in the world",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"6939476\" y=\"2418310\" /><ns0:ext cx=\"2071800\" cy=\"384900\" /></ns0:xfrm>"
+      },
+      {
+        "id": "223",
+        "text": "Literary description",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"769825\" y=\"3084575\" /><ns0:ext cx=\"1506300\" cy=\"384900\" /></ns0:xfrm>"
+      },
+      {
+        "id": "225",
+        "text": "The source code of Plundered Hearts: an ontology?",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"931400\" y=\"3970700\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "To understand how Plundered Hearts works, I would like to draw on the notion of ontology. From a philosophical point of view, interactive fiction is a phenomenological ontology, as opposed to an essentialist approach: the world is described as it is perceived from the outside, rather than in terms of how it works internally. From the point of view of information science, an ontology is an explicit model describing the objects in a system, their properties and their relationships. Here we can see how Amy Briggs implemented the possible interactions with a blade, a rapier."
+  },
+  {
+    "number": 13,
+    "shapes": [
+      {
+        "id": "231",
+        "text": "Model: Ministral-3:14b without a history of previous actions",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"930288\" y=\"67742\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "232",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3547672\" y=\"1364931\" /><ns0:ext cx=\"974700\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "233",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3572472\" y=\"1784037\" /><ns0:ext cx=\"974700\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "234",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3572463\" y=\"2203125\" /><ns0:ext cx=\"974700\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "235",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3572463\" y=\"2622225\" /><ns0:ext cx=\"974700\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "236",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3928672\" y=\"3358529\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "The LLM therefore begins to play. In the left-hand column we find the situation described by the game. Next comes the command suggested by the LLM, followed by the parser’s response, which occasionally rejects the command.\nWhat struck me was the model’s tendency to repeat a command that had not produced a result.\nBut this is a limitation of LLMs: strictly speaking, they have no memory. They also cannot count or retrieve precise information from a document if it is too long."
+  },
+  {
+    "number": 14,
+    "shapes": [
+      {
+        "id": "241",
+        "text": "Model: Ministral-3:14b with a history of the last 16 actions",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"930288\" y=\"67742\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "243",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3928634\" y=\"2412960\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "244",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4861859\" y=\"3473110\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "To compensate for the model’s inability to remember the consequences of past actions, I implemented a history of previous actions. Originally, the model has no “memory” of the previous move. My protocol gradually increases the number of remembered moves, from 0 to 16. Here we have a history of 16: the LLM has access to its last 16 actions and to the game’s response."
+  },
+  {
+    "number": 15,
+    "shapes": [
+      {
+        "id": "250",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4027803\" y=\"1809679\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "251",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4027803\" y=\"2028829\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "252",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4027803\" y=\"2238379\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "253",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4027803\" y=\"2647887\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "254",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3872011\" y=\"3905183\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "255",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3872003\" y=\"4114733\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "256",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4406603\" y=\"4333879\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "257",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4027803\" y=\"4543433\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "258",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3881599\" y=\"4752983\" /><ns0:ext cx=\"534600\" cy=\"210600\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "And this is where the trouble \nbegins. What strikes me is the model’s persistence in the face of commands that do not work."
+  },
+  {
+    "number": 16,
+    "shapes": [
+      {
+        "id": "264",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2770239\" y=\"1754870\" /><ns0:ext cx=\"144000\" cy=\"144000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "265",
+        "text": "AI thinks : 'The coffer is locked and you lack a key. Davis suggests looking in the stern cabin for tools or items that might help. The porthole is already open but unreachable from inside. The bed and coffer are empty or locked.'\n\nAI suggests: 'LOOK STERN'",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4338546\" y=\"1613075\" /><ns0:ext cx=\"4192500\" cy=\"1262100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "266",
+        "text": "[I don't know the word \"stern.\"]",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4338546\" y=\"2853025\" /><ns0:ext cx=\"4192500\" cy=\"338700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "267",
+        "text": "AI thinks : 'The parser rejected 'stern'—likely a directional or structural term in the cabin. Try a more specific object or area visible in the scene (e.g., BED, DOOR, PORTHOLE, or COFFER).' \n\nAI suggests: 'LOOK UNDER BED'",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4338546\" y=\"3231075\" /><ns0:ext cx=\"4192500\" cy=\"1108200\" /></ns0:xfrm>"
+      },
+      {
+        "id": "268",
+        "text": "You recognize a voice from far away, \"Don't take that! Look in the cabin at the stern -- you'll find some fun there!\" It sounds like Davis.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4338546\" y=\"865725\" /><ns0:ext cx=\"4192500\" cy=\"646500\" /></ns0:xfrm>"
+      },
+      {
+        "id": "269",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4233200\" y=\"2535748\" /><ns0:ext cx=\"144000\" cy=\"144000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "270",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2254847\" y=\"1721569\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "The writing of interactive fiction is based on an economy of means. The literary side of the game describes a rich world filled with ornament. The logical side contains only a finite list of objects and interactions. For Amy Briggs, the difficulty was to balance the two, so as not to frustrate the player by presenting objects with which they cannot interact.\n That is what happens here: the game alludes to the stern of the ship. Ministral decides to investigate it, but the parser rejects this \nbecause \nit does not know the word."
+  },
+  {
+    "number": 17,
+    "shapes": [
+      {
+        "id": "277",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2370779\" y=\"257953\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "278",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2370779\" y=\"468558\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "279",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2370779\" y=\"679158\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "280",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2339472\" y=\"889750\" /><ns0:ext cx=\"415500\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "281",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2370779\" y=\"1100358\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "282",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2339472\" y=\"1310950\" /><ns0:ext cx=\"415500\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "283",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2356969\" y=\"1521550\" /><ns0:ext cx=\"468000\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "284",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2356969\" y=\"1732150\" /><ns0:ext cx=\"468000\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "285",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2208276\" y=\"2344713\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "286",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2208276\" y=\"2555313\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "287",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2756739\" y=\"2767643\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "288",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2362016\" y=\"2986995\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "289",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2208276\" y=\"3197590\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "290",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2747991\" y=\"3409943\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "291",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2217014\" y=\"3611773\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "292",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2833711\" y=\"3824151\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "293",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2289511\" y=\"4236551\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "294",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2739239\" y=\"4443703\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "295",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2436794\" y=\"4661303\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "296",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"2979442\" y=\"4863158\" /><ns0:ext cx=\"515400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "297",
+        "text": "AI thinks : 'The ring appears to be a key object tied to the rapier—likely significant given the context of rescue and confinement. The room description mentions a curtain (forward exit) and a window (aft view). The table and bed are also present, but the rapier (now with the ring) may be usable or inspectable.'\n\nAI suggests: 'UNTIE RIBBON'",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4584776\" y=\"148700\" /><ns0:ext cx=\"4358700\" cy=\"1416000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "298",
+        "text": "[I don't know the word \"ribbon.\"]",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4584776\" y=\"1634950\" /><ns0:ext cx=\"4358700\" cy=\"338700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "299",
+        "text": "AI thinks : 'The ribbon is likely the fabric tied around the rapier hilt. The game text mentions 'tying ribbon onto rapier' and the ring is attached to it. Try a more precise command.'\n\nAI suggests: 'UNTIE RIBBON FROM RAPIER'",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4584776\" y=\"2013000\" /><ns0:ext cx=\"4358700\" cy=\"1108200\" /></ns0:xfrm>"
+      },
+      {
+        "id": "300",
+        "text": "[I don't know the word \"ribbon.\"]",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4584776\" y=\"3129950\" /><ns0:ext cx=\"4358700\" cy=\"338700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "301",
+        "text": "AI thinks : 'The game explicitly mentions a 'ribbon' tied to the rapier. The parser rejected 'ribbon'—likely due to phrasing. Try a more direct verb-object pair.'\n\nAI suggests: 'UNTIE RIBBON'",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4584776\" y=\"3508000\" /><ns0:ext cx=\"4358700\" cy=\"1108200\" /></ns0:xfrm>"
+      },
+      {
+        "id": "302",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4489999\" y=\"1328465\" /><ns0:ext cx=\"144000\" cy=\"144000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "303",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4489999\" y=\"2827227\" /><ns0:ext cx=\"144000\" cy=\"144000\" /></ns0:xfrm>"
+      },
+      {
+        "id": "304",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4489999\" y=\"4188852\" /><ns0:ext cx=\"144000\" cy=\"144000\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "What follows is catastrophic: Ministral fixates on the ribbon around a character’s rapier, tries every possible synonym in an attempt to interact with it, and becomes trapped in an endless loop, even repeating the same command several times."
+  },
+  {
+    "number": 18,
+    "shapes": [
+      {
+        "id": "310",
+        "text": "Impossible dialogue",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "311",
+        "text": "The ribbon sequence illustrates the misunderstanding within the fiction between literary space and logical representation.\nThe model interprets the described ribbon as a manipulable object, even though it does not belong to the game’s operational vocabulary.\nIt then repeats semantic variations around ribbon, band, cloth or decoration, facing a parser with a limited lexicon.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840900\" y=\"1152475\" /><ns0:ext cx=\"7991400\" cy=\"3416400\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "The model cannot grasp the gap between the literary, ornamental space and the finite logic of the Z-machine. Its power of semantic mobilisation does not compensate for its inability to construct a logical representation of the world as presented and managed by the game. An LLM’s memory is implicit, contained in a sliding context window that makes it lose track of things as new elements appear."
+  },
+  {
+    "number": 19,
+    "shapes": [
+      {
+        "id": "317",
+        "text": "As the action history grows, the model expands its exploratory capacity but increases parser rejections.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"841000\" y=\"4017375\" /><ns0:ext cx=\"7991400\" cy=\"837000\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "Here is a comparison of the model’s performance when it has access to a history of varying length. The repetition\n metric\n measures the proportion of actions already attempted during the session.\n Conversely,\n exploration is the proportion of new actions, that is, actions never seen before. A paradoxical dynamic emerges: adding history does not improve navigation. On the contrary, it can amplify certain errors because the model re-injects into its own context the words that have already made it fail."
+  },
+  {
+    "number": 20,
+    "shapes": [
+      {
+        "id": "322",
+        "text": "Previous work",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "323",
+        "text": "Two studies compared the Z-machine with LLMs in 2024 and 2025\nBecker, N., & Li, M. (2024). Learning Strategic Play with Language Agents in Text-Adventure Games.\nTsai, C. F., Zhou, X., Liu, S. S., Li, J., Yu, M., & Mei, H. (2025). Can Large Language Models Play Text Games Well? Current State-of-the-Art and Open Questions.\nThese recent studies show that LLMs fail to complete these games when left alone with the parser.\nThe most effective solutions tend to add a symbolic representation of the state of the world.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840900\" y=\"1152475\" /><ns0:ext cx=\"7991400\" cy=\"3416400\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "Two studies conducted in 2024 and 2025 had already confronted LLMs with an Infocom game, Zork in this case. Becker and Li already observed that increasing the history length only made the situation worse."
+  },
+  {
+    "number": 21,
+    "shapes": [
+      {
+        "id": "328",
+        "text": "Previous work",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "329",
+        "text": "The choice of Zork is not neutral. The game’s iconic status creates a training bias in models that already “know” it.\nZork’s hyper-visibility contrasts with the invisibility of Amy Briggs’s game, and this is reflected in Ministral-3:14b’s responses:",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840900\" y=\"1152475\" /><ns0:ext cx=\"7991400\" cy=\"3416400\" /></ns0:xfrm>"
+      },
+      {
+        "id": "332",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5063297\" y=\"3860121\" /><ns0:ext cx=\"1895100\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "333",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7609973\" y=\"3860125\" /><ns0:ext cx=\"342900\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "334",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"5063300\" y=\"4273225\" /><ns0:ext cx=\"1654200\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "335",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"7020424\" y=\"4070725\" /><ns0:ext cx=\"399000\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "336",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1094873\" y=\"3870151\" /><ns0:ext cx=\"342900\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "337",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1774799\" y=\"3681699\" /><ns0:ext cx=\"932400\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "338",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3519250\" y=\"3681700\" /><ns0:ext cx=\"517500\" cy=\"210600\" /></ns0:xfrm>"
+      },
+      {
+        "id": "339",
+        "text": "",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"6950225\" y=\"3640750\" /><ns0:ext cx=\"669900\" cy=\"210600\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "Moreover, the choice of game is not neutral. Through its status as a cult game, Zork has permeated the training of language models, including Ministral. By comparing the model’s acquired knowledge of Zork and Plundered Hearts, we find, nostalgically, the episodes of mythomania that characterised ChatGPT at its launch."
+  },
+  {
+    "number": 22,
+    "shapes": [
+      {
+        "id": "344",
+        "text": "Methodological pivot",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "345",
+        "text": "Following this apparent failure, I stopped expecting AI to simulate the human way of playing.\nI chose instead to entrust it with a sensitive reading of the narrative.\nThe LLM no longer serves merely to reactivate an experience in supposedly authentic fashion, but to make the work newly legible.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840900\" y=\"1152475\" /><ns0:ext cx=\"7991400\" cy=\"3416400\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 23,
+    "shapes": [
+      {
+        "id": "350",
+        "text": "pLLMdered_hearts, Matricule Bis festival, ESAD Orléans",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "351",
+        "text": "The game is traversed automatically through a fixed sequence of commands extracted from the known walkthrough.\nThe Z-machine is deterministic: this sequence produces the same effects on every run.\nThe LLM is no longer responsible for advancing the story: it acts as a situated commentator, reading the situations in light of the available archives.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4039450\" y=\"1000075\" /><ns0:ext cx=\"4600200\" cy=\"3491700\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 24,
+    "shapes": [
+      {
+        "id": "358",
+        "text": "Intertextuality around Amy Briggs",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "359",
+        "text": "The main material for this heritage mediation comes from a video interview with Amy Briggs by Jason Scott for the documentary Get Lamp.\nI do not use this interview to explain the game linearly.\nI place it in relation to the descriptions produced by Plundered Hearts through an embeddings-based mechanism, allowing semantic affinities to emerge (Bardiot, 2015).",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3284750\" y=\"1152475\" /><ns0:ext cx=\"5547600\" cy=\"3416400\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 25,
+    "shapes": [
+      {
+        "id": "365",
+        "text": "pLLMdered_hearts",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "366",
+        "text": "Plundered Hearts (file .z3)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"1105388\" y=\"2452975\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "367",
+        "text": "Z-machine emulator (Frotz)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3048113\" y=\"2452975\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "368",
+        "text": "LLM (Ministral 3:14b)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4990838\" y=\"2452975\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "369",
+        "text": "Amy Briggs interview (vectorised segments)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3048413\" y=\"3877650\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "370",
+        "text": "Staging ofthe terminal+Video viewer",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"6933563\" y=\"2452975\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "374",
+        "text": "Vectorisation (Gemma)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4990838\" y=\"3877650\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "379",
+        "text": "Official walkthrough",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"3048113\" y=\"1028300\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "381",
+        "text": "Knowledge base\n(Game + summary of Amy Briggs interview)",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"4990838\" y=\"1028300\" /><ns0:ext cx=\"1634100\" cy=\"1079100\" /></ns0:xfrm>"
+      },
+      {
+        "id": "383",
+        "text": "Video excerpt",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"6805700\" y=\"3877650\" /><ns0:ext cx=\"1225500\" cy=\"384900\" /></ns0:xfrm>"
+      },
+      {
+        "id": "384",
+        "text": "Description",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"6690475\" y=\"1722500\" /><ns0:ext cx=\"1225500\" cy=\"384900\" /></ns0:xfrm>"
+      },
+      {
+        "id": "385",
+        "text": "For each game command, the commentary is re-embedded and selects the semantically closest video segment.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"969350\" y=\"4023000\" /><ns0:ext cx=\"1906200\" cy=\"789000\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 26,
+    "shapes": [],
+    "notes": ""
+  },
+  {
+    "number": 27,
+    "shapes": [
+      {
+        "id": "395",
+        "text": "The effects of semantic proximity",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "396",
+        "text": "At each step forward in the fiction, the LLM places the described situation in the context of Amy Briggs’s testimony.\nThe device gives rise to unexpected, sometimes obsessive connections between the heroine’s experience and the constraints of creating the game in 1987.\nEach run produces a unique sequence, without claiming to produce original information.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840900\" y=\"1152475\" /><ns0:ext cx=\"7991400\" cy=\"3416400\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 28,
+    "shapes": [
+      {
+        "id": "401",
+        "text": "Limitations and improvements",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "402",
+        "text": "The “knowledge base” is limited by Ministral-3:14B’s context capacity. A more comprehensive RAG needs to be implemented to compensate for training biases that may reproduce our social patterns.\nThe semantic proximity between the texts produced by the LLM and the transcript of Amy Briggs’s interview could be tested against different embedding models.\nImprove intelligibility by translating the subtitles and using other video sources.",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840900\" y=\"1152475\" /><ns0:ext cx=\"7991400\" cy=\"3416400\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "number": 29,
+    "shapes": [
+      {
+        "id": "407",
+        "text": "Open question",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"572700\" /></ns0:xfrm>"
+      },
+      {
+        "id": "408",
+        "text": "Does AI’s contribution lie more in the surprise produced by a large language model’s reactions to the situations presented by the game than in the satisfaction of watching “someone else” play an interactive fiction (Pfaller, 2000)?\nDoes this combination of an obsolete work with contemporary means of automated reading sketch out a new form of mediation?",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840900\" y=\"1152475\" /><ns0:ext cx=\"7991400\" cy=\"3416400\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": "“someone else”"
+  },
+  {
+    "number": 30,
+    "shapes": [
+      {
+        "id": "413",
+        "text": "Bibliography",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840825\" y=\"445025\" /><ns0:ext cx=\"7991400\" cy=\"430800\" /></ns0:xfrm>"
+      },
+      {
+        "id": "414",
+        "text": "- Alombert, A., Leveau-Vallier, A., & Loreaux, B. (eds). (2026). Penser l’intelligence artificielle : Enjeux philosophiques, politiques et culturels de l’automatisation numérique. Paris: Éditions de la Sorbonne.- Bardiot, C. (2015). Rekall: An environment for notation / annotation / denotation. Performance Research, 20(6), 82–86. https://doi.org/10.1080/13528165.2015.1111058- Becker, N., & Li, M. (2024). Learning Strategic Play with Language Agents in Text-Adventure Games.- Briceno, H., Chao, W., Glenn, A., Hu, S., Krishnamurthy, A., & Tsuchida, B. (2000). Down From the Top of Its Game.- Flusser, V. (2025). Arts, sciences, technologies : Défis à la recherche‑création (Y. Citton & M. Lenot, eds). Paris: Les presses du réel- Fu, T., Ferrando, R., Conde, J., Arriaga, C., & Reviriego, P. (2024). Why Do Large Language Models (LLMs) Struggle to Count Letters?.- Gutherz, F. (2025). Une exploration de la photographie vernaculaire par l’IA générative. Sens Public. http://sens-public.org/articles/1800/- Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (n.d.). Lost in the Middle: How Language Models Use Long Contexts.- Pfaller, R. (2022). Interpassivity: The Aesthetics of Delegated Enjoyment. Edinburgh University Press. https://doi.org/10.1515/9781474422949- Maher, J. (2017). A Time of Endings, Part 4: Magnetic Scrolls. The Digital Antiquarian. https://www.filfre.net/2017/01/a-time-of-endings-part-4-magnetic-scrolls/Roche, J. (2018). Le tournant ontologique de la terminologie (PhD thesis in computer science and information technology, Université Grenoble Alpes, SISEO doctoral school, in cotutelle with Liaocheng University, China).- Strigot, M. (2022). La littérature numérique aujourd’hui et demain : préserver l’art programmé | Nouvelles écritures. YouTube. Bibliothèque nationale de France (BnF). https://www.youtube.com/live/Wppww7_S5xw?t=25085s- Thacker, C. P., McCreight, E. M., Lampson, B. W., Sproull, R. F., & Boggs, D. R. (1979). Alto: A personal computer (CSL-79-11). Xerox Palo Alto Research Center.- Tsai, C. F., Zhou, X., Liu, S. S., Li, J., Yu, M., & Mei, H. (2025). Can Large Language Models Play Text Games Well? Current State-of-the-Art and Open Questions (arXiv:2304.02868). arXiv. https://doi.org/10.48550/arXiv.2304.02868- Vitali-Rosati, M. (2024). Éloge du bug : Être libre à l’époque du numérique. La Découverte.- Zhang, X., Cao, J., & You, C. (2024). Counting Ability of Large Language Models and Impact of Tokenization (arXiv:2410.19730). arXiv. https://doi.org/10.48550/arXiv.2410.19730",
+        "position": "<ns0:xfrm xmlns:ns0=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><ns0:off x=\"840900\" y=\"875825\" /><ns0:ext cx=\"7991400\" cy=\"4045500\" /></ns0:xfrm>"
+      }
+    ],
+    "notes": ""
+  }
+]

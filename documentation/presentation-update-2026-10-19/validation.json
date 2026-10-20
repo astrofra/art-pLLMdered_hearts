@@ -1,0 +1,13 @@
+{
+  "rendered_pdf_pages": 37,
+  "updated_text_paragraphs_found_in_pdf": 96,
+  "missing_text": [],
+  "missing_relationship_targets": [],
+  "missing_report_links": [],
+  "original_sha256": "410775d44ce3101d7fe9723a7d24a412620aad42bdc79178a940dd86d2065f90",
+  "original_unchanged": true,
+  "unit_tests_passed": 23,
+  "python_310_syntax_files": 5,
+  "projection_png_matches_pptx": true,
+  "figure_aspect_ratio_preserved": true
+}

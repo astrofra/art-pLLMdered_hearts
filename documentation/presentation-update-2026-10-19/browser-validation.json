@@ -1,0 +1,9 @@
+{
+  "browser": "Installed Google Chrome, via isolated Playwright",
+  "all_55_comment_rankings": true,
+  "points": 80,
+  "actual_links": 4,
+  "selection_navigation_reset": true,
+  "page_errors": [],
+  "live_recency_exclusions_verified": true
+}

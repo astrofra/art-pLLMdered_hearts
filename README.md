@@ -131,6 +131,18 @@ L'experience se relance avec `.venv\Scripts\python.exe documentation\commentary-
 
 ## Notes
 
+Le [dossier de mise a jour de la presentation anglaise](documentation/presentation-update-2026-10-19/research-notes.html) resume le cheminement experimental, les reglages retenus et leurs limites. La [carte interactive des embeddings](documentation/presentation-update-2026-10-19/embedding-map.html) permet de lire les 25 transcriptions et les 55 commentaires d'un parcours instrumente, avec les scores de cosinus dans l'espace complet. La projection PCA en deux dimensions conserve environ 21,5 % de la variance ; elle ne sert pas au choix des videos.
+
+Le [comparatif PCA / t-SNE / UMAP](documentation/presentation-update-2026-10-19/projection-comparison.html) reprend les memes 80 vecteurs, sans nouvel appel au modele. Il conserve les identifiants et les scores reels, permet de changer l'echelle de voisinage et la graine, et ajoute une matrice des similarites en 768 dimensions. Les 13 projections et leurs parametres sont archives. `compare_projections.py` utilise des dependances d'analyse isolees dans `.tools/projection-python` (NumPy, SciPy, scikit-learn, UMAP et Matplotlib), sans modifier celles de l'installation. La proximite visuelle entre les deux familles reste approximative, meme quand les voisinages locaux sont mieux preserves.
+
+Pour enregistrer une nouvelle session avec les prompts, sorties completes, timings Ollama, vecteurs, classements video, temporisations et echantillons GPU, utiliser un dossier de destination neuf :
+
+```bat
+.venv\Scripts\python.exe documentation\presentation-update-2026-10-19\record_session.py --output-dir documentation\my-recording -- --once
+```
+
+Le journal et les requetes video sont isoles dans ce dossier. Ajouter `--no-renderer --no-viewer --fast` apres `--once` pour un diagnostic accelere : les temps d'inference restent mesures, mais la cadence de requetes video ne represente alors pas celle de l'installation exposee. Le script utilise uniquement la bibliotheque standard et les dependances existantes ; les outils de projection et de verification de la presentation utilisent des paquets isoles dans `.tools/`, sans modifier les dependances du projet.
+
 - `llm_out/` est l'interface entre les processus (ne pas y ecrire a la main).
 - Le walkthrough est fixe; le LLM ne change pas le gameplay.
 - Les videos sont choisies par similarite semantique, pas par ordre chronologique.

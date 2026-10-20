@@ -1,0 +1,593 @@
+{
+  "scope": "One actual, unseeded Frotz walkthrough; console and fast output; no Godot or C64 rendering.",
+  "date": "2026-10-19",
+  "game_commands": 258,
+  "pagination_acknowledgements": 7,
+  "raw_counter_caveat": "Schema 1 commands_sent includes blank pagination; game_commands here filters them out. Recorder schema 2 separates them.",
+  "game_outputs": 259,
+  "comments": 55,
+  "successful_comments": 55,
+  "exit_code": 0,
+  "elapsed_sec": 351.953,
+  "median_inference_sec": 6.422,
+  "median_inference_excluding_first_sec": 6.3985,
+  "first_inference_sec": 20.469,
+  "inference_range_sec": [
+    2.984,
+    20.469
+  ],
+  "history_words": {
+    "min": 151,
+    "median": 175,
+    "max": 400
+  },
+  "max_prompt_tokens": 1191,
+  "max_prompt_plus_output_tokens": 1937,
+  "output_token_definition": "Ollama eval_count includes reasoning and visible output.",
+  "done_reasons": {
+    "stop": 55
+  },
+  "nonempty_error_records": 0,
+  "max_comment_words": 42,
+  "sampled_gpu_peak_mib": 5488.0,
+  "resource_sampling_interval_sec": 5,
+  "video_requests": [
+    {
+      "event": "video_request",
+      "utc": "2026-10-19T17:58:39.238164+00:00",
+      "elapsed_sec": 22.828,
+      "commands_sent": 2,
+      "filename": "17_wheeler_building_1.ogv",
+      "sequence_title": "Remembering Wheeler Street and Cambridge Park",
+      "source_comment_id": 1,
+      "duration_sec": 110.72,
+      "margin_sec": 3.0,
+      "estimated_next_allowed_sec": 136.54799999999523,
+      "playback_confirmed": false
+    },
+    {
+      "event": "video_request",
+      "utc": "2026-10-19T18:00:36.688291+00:00",
+      "elapsed_sec": 140.281,
+      "commands_sent": 94,
+      "filename": "24_writing_a_romance_5.ogv",
+      "sequence_title": "Plundered Hearts: Design and Memory Limits",
+      "source_comment_id": 20,
+      "duration_sec": 44.64,
+      "margin_sec": 3.0,
+      "estimated_next_allowed_sec": 187.92099999999482,
+      "playback_confirmed": false
+    },
+    {
+      "event": "video_request",
+      "utc": "2026-10-19T18:01:28.651073+00:00",
+      "elapsed_sec": 192.234,
+      "commands_sent": 126,
+      "filename": "16_writing_a_novel_0.ogv",
+      "sequence_title": "Regrets and Unfinished Writing Dreams",
+      "source_comment_id": 28,
+      "duration_sec": 54.64,
+      "margin_sec": 3.0,
+      "estimated_next_allowed_sec": 249.87399999999616,
+      "playback_confirmed": false
+    },
+    {
+      "event": "video_request",
+      "utc": "2026-10-19T18:02:30.852833+00:00",
+      "elapsed_sec": 254.437,
+      "commands_sent": 186,
+      "filename": "09_writing_a_romance_2.ogv",
+      "sequence_title": "Balancing Reality and Fiction in Games",
+      "source_comment_id": 38,
+      "duration_sec": 151.76,
+      "margin_sec": 3.0,
+      "estimated_next_allowed_sec": 409.1970000000001,
+      "playback_confirmed": false
+    }
+  ],
+  "distinct_requested_videos": 4,
+  "comments_started_during_estimated_video": 54,
+  "pending_comments_replaced": 50,
+  "catalogue_entries": 25,
+  "catalogue_reembedding_min_cosine": 0.9773332735989474,
+  "catalogue_reembedding_self_nearest": 25,
+  "catalogue_reembedding_note": "Recomputed vectors are close, not bit-identical; projection and live rankings retain the original stored catalogue vectors.",
+  "projection_retained_variance_percent": 21.536419417820543,
+  "chat_timing_ns": [
+    {
+      "comment_id": 1,
+      "total_duration": 20272724500,
+      "load_duration": 12670126800,
+      "prompt_eval_duration": 561732000,
+      "eval_duration": 7031588000,
+      "prompt_eval_count": 940,
+      "eval_count": 851
+    },
+    {
+      "comment_id": 2,
+      "total_duration": 7516410900,
+      "load_duration": 4219400,
+      "prompt_eval_duration": 362512000,
+      "eval_duration": 7111946000,
+      "prompt_eval_count": 808,
+      "eval_count": 813
+    },
+    {
+      "comment_id": 3,
+      "total_duration": 7874941300,
+      "load_duration": 5056500,
+      "prompt_eval_duration": 278640000,
+      "eval_duration": 7541667000,
+      "prompt_eval_count": 1032,
+      "eval_count": 905
+    },
+    {
+      "comment_id": 4,
+      "total_duration": 5181173900,
+      "load_duration": 4162400,
+      "prompt_eval_duration": 377166000,
+      "eval_duration": 4758876000,
+      "prompt_eval_count": 1079,
+      "eval_count": 558
+    },
+    {
+      "comment_id": 5,
+      "total_duration": 6033259600,
+      "load_duration": 3801500,
+      "prompt_eval_duration": 410504000,
+      "eval_duration": 5579251000,
+      "prompt_eval_count": 1191,
+      "eval_count": 670
+    },
+    {
+      "comment_id": 6,
+      "total_duration": 7680778500,
+      "load_duration": 4142400,
+      "prompt_eval_duration": 325256000,
+      "eval_duration": 7313740000,
+      "prompt_eval_count": 916,
+      "eval_count": 843
+    },
+    {
+      "comment_id": 7,
+      "total_duration": 2763872300,
+      "load_duration": 3689200,
+      "prompt_eval_duration": 300778000,
+      "eval_duration": 2427221000,
+      "prompt_eval_count": 853,
+      "eval_count": 269
+    },
+    {
+      "comment_id": 8,
+      "total_duration": 6542252600,
+      "load_duration": 4146600,
+      "prompt_eval_duration": 301122000,
+      "eval_duration": 6207635000,
+      "prompt_eval_count": 869,
+      "eval_count": 780
+    },
+    {
+      "comment_id": 9,
+      "total_duration": 3675506500,
+      "load_duration": 4112100,
+      "prompt_eval_duration": 325089000,
+      "eval_duration": 3312033000,
+      "prompt_eval_count": 899,
+      "eval_count": 339
+    },
+    {
+      "comment_id": 10,
+      "total_duration": 3412874500,
+      "load_duration": 3631900,
+      "prompt_eval_duration": 301256000,
+      "eval_duration": 3076341000,
+      "prompt_eval_count": 855,
+      "eval_count": 359
+    },
+    {
+      "comment_id": 11,
+      "total_duration": 8106247900,
+      "load_duration": 3841900,
+      "prompt_eval_duration": 301461000,
+      "eval_duration": 7767221000,
+      "prompt_eval_count": 876,
+      "eval_count": 866
+    },
+    {
+      "comment_id": 12,
+      "total_duration": 6805261400,
+      "load_duration": 3895700,
+      "prompt_eval_duration": 304775000,
+      "eval_duration": 6456003000,
+      "prompt_eval_count": 877,
+      "eval_count": 804
+    },
+    {
+      "comment_id": 13,
+      "total_duration": 7089529500,
+      "load_duration": 4093700,
+      "prompt_eval_duration": 303907000,
+      "eval_duration": 6739818000,
+      "prompt_eval_count": 887,
+      "eval_count": 818
+    },
+    {
+      "comment_id": 14,
+      "total_duration": 4250515200,
+      "load_duration": 4202200,
+      "prompt_eval_duration": 308403000,
+      "eval_duration": 3897022000,
+      "prompt_eval_count": 887,
+      "eval_count": 355
+    },
+    {
+      "comment_id": 15,
+      "total_duration": 6421959600,
+      "load_duration": 3627900,
+      "prompt_eval_duration": 326089000,
+      "eval_duration": 6042762000,
+      "prompt_eval_count": 881,
+      "eval_count": 647
+    },
+    {
+      "comment_id": 16,
+      "total_duration": 5517995700,
+      "load_duration": 3616900,
+      "prompt_eval_duration": 308833000,
+      "eval_duration": 5166822000,
+      "prompt_eval_count": 863,
+      "eval_count": 613
+    },
+    {
+      "comment_id": 17,
+      "total_duration": 6143054900,
+      "load_duration": 4205000,
+      "prompt_eval_duration": 316143000,
+      "eval_duration": 5777070000,
+      "prompt_eval_count": 862,
+      "eval_count": 637
+    },
+    {
+      "comment_id": 18,
+      "total_duration": 4858538700,
+      "load_duration": 3626200,
+      "prompt_eval_duration": 312530000,
+      "eval_duration": 4499565000,
+      "prompt_eval_count": 853,
+      "eval_count": 478
+    },
+    {
+      "comment_id": 19,
+      "total_duration": 7511559400,
+      "load_duration": 4228700,
+      "prompt_eval_duration": 335096000,
+      "eval_duration": 7118882000,
+      "prompt_eval_count": 899,
+      "eval_count": 864
+    },
+    {
+      "comment_id": 20,
+      "total_duration": 4754531400,
+      "load_duration": 3658700,
+      "prompt_eval_duration": 308800000,
+      "eval_duration": 4401656000,
+      "prompt_eval_count": 862,
+      "eval_count": 497
+    },
+    {
+      "comment_id": 21,
+      "total_duration": 5408069200,
+      "load_duration": 3648000,
+      "prompt_eval_duration": 334908000,
+      "eval_duration": 5026065000,
+      "prompt_eval_count": 923,
+      "eval_count": 604
+    },
+    {
+      "comment_id": 22,
+      "total_duration": 6780116800,
+      "load_duration": 5310400,
+      "prompt_eval_duration": 314978000,
+      "eval_duration": 6416693000,
+      "prompt_eval_count": 885,
+      "eval_count": 756
+    },
+    {
+      "comment_id": 23,
+      "total_duration": 7072545800,
+      "load_duration": 3976200,
+      "prompt_eval_duration": 306778000,
+      "eval_duration": 6728879000,
+      "prompt_eval_count": 885,
+      "eval_count": 775
+    },
+    {
+      "comment_id": 24,
+      "total_duration": 7031565600,
+      "load_duration": 3866300,
+      "prompt_eval_duration": 312874000,
+      "eval_duration": 6680842000,
+      "prompt_eval_count": 864,
+      "eval_count": 764
+    },
+    {
+      "comment_id": 25,
+      "total_duration": 6283012600,
+      "load_duration": 4025500,
+      "prompt_eval_duration": 359846000,
+      "eval_duration": 5674504000,
+      "prompt_eval_count": 845,
+      "eval_count": 644
+    },
+    {
+      "comment_id": 26,
+      "total_duration": 7401146300,
+      "load_duration": 4102900,
+      "prompt_eval_duration": 331986000,
+      "eval_duration": 7029756000,
+      "prompt_eval_count": 955,
+      "eval_count": 834
+    },
+    {
+      "comment_id": 27,
+      "total_duration": 4182845500,
+      "load_duration": 3593900,
+      "prompt_eval_duration": 329656000,
+      "eval_duration": 3813202000,
+      "prompt_eval_count": 946,
+      "eval_count": 435
+    },
+    {
+      "comment_id": 28,
+      "total_duration": 5501990200,
+      "load_duration": 4180300,
+      "prompt_eval_duration": 330313000,
+      "eval_duration": 5131527000,
+      "prompt_eval_count": 901,
+      "eval_count": 562
+    },
+    {
+      "comment_id": 29,
+      "total_duration": 6678184100,
+      "load_duration": 4262700,
+      "prompt_eval_duration": 303388000,
+      "eval_duration": 6340014000,
+      "prompt_eval_count": 857,
+      "eval_count": 742
+    },
+    {
+      "comment_id": 30,
+      "total_duration": 6166188000,
+      "load_duration": 4574600,
+      "prompt_eval_duration": 303362000,
+      "eval_duration": 5824903000,
+      "prompt_eval_count": 860,
+      "eval_count": 655
+    },
+    {
+      "comment_id": 31,
+      "total_duration": 4195889000,
+      "load_duration": 4199500,
+      "prompt_eval_duration": 301999000,
+      "eval_duration": 3850954000,
+      "prompt_eval_count": 855,
+      "eval_count": 456
+    },
+    {
+      "comment_id": 32,
+      "total_duration": 7061062100,
+      "load_duration": 5078400,
+      "prompt_eval_duration": 328844000,
+      "eval_duration": 6680663000,
+      "prompt_eval_count": 924,
+      "eval_count": 817
+    },
+    {
+      "comment_id": 33,
+      "total_duration": 7073738400,
+      "load_duration": 4260400,
+      "prompt_eval_duration": 326514000,
+      "eval_duration": 6701353000,
+      "prompt_eval_count": 910,
+      "eval_count": 784
+    },
+    {
+      "comment_id": 34,
+      "total_duration": 4608864300,
+      "load_duration": 4191300,
+      "prompt_eval_duration": 305196000,
+      "eval_duration": 4258042999,
+      "prompt_eval_count": 859,
+      "eval_count": 497
+    },
+    {
+      "comment_id": 35,
+      "total_duration": 5993504400,
+      "load_duration": 3919100,
+      "prompt_eval_duration": 306639000,
+      "eval_duration": 5642479000,
+      "prompt_eval_count": 861,
+      "eval_count": 639
+    },
+    {
+      "comment_id": 36,
+      "total_duration": 6738161800,
+      "load_duration": 4118400,
+      "prompt_eval_duration": 329857000,
+      "eval_duration": 6357480000,
+      "prompt_eval_count": 941,
+      "eval_count": 798
+    },
+    {
+      "comment_id": 37,
+      "total_duration": 4153369700,
+      "load_duration": 3840500,
+      "prompt_eval_duration": 307426000,
+      "eval_duration": 3794282000,
+      "prompt_eval_count": 882,
+      "eval_count": 423
+    },
+    {
+      "comment_id": 38,
+      "total_duration": 6552012100,
+      "load_duration": 4198600,
+      "prompt_eval_duration": 306782000,
+      "eval_duration": 6197765000,
+      "prompt_eval_count": 860,
+      "eval_count": 770
+    },
+    {
+      "comment_id": 39,
+      "total_duration": 6971244900,
+      "load_duration": 3529800,
+      "prompt_eval_duration": 296574000,
+      "eval_duration": 6627997000,
+      "prompt_eval_count": 837,
+      "eval_count": 807
+    },
+    {
+      "comment_id": 40,
+      "total_duration": 7157011700,
+      "load_duration": 4184100,
+      "prompt_eval_duration": 801462000,
+      "eval_duration": 6310691000,
+      "prompt_eval_count": 880,
+      "eval_count": 748
+    },
+    {
+      "comment_id": 41,
+      "total_duration": 6205325300,
+      "load_duration": 4111200,
+      "prompt_eval_duration": 310803000,
+      "eval_duration": 5839044000,
+      "prompt_eval_count": 871,
+      "eval_count": 671
+    },
+    {
+      "comment_id": 42,
+      "total_duration": 4298500500,
+      "load_duration": 4150400,
+      "prompt_eval_duration": 381776000,
+      "eval_duration": 3864640000,
+      "prompt_eval_count": 1043,
+      "eval_count": 395
+    },
+    {
+      "comment_id": 43,
+      "total_duration": 6602416900,
+      "load_duration": 4181500,
+      "prompt_eval_duration": 334500000,
+      "eval_duration": 6214561000,
+      "prompt_eval_count": 903,
+      "eval_count": 691
+    },
+    {
+      "comment_id": 44,
+      "total_duration": 6414742800,
+      "load_duration": 4563100,
+      "prompt_eval_duration": 307681000,
+      "eval_duration": 6059997000,
+      "prompt_eval_count": 868,
+      "eval_count": 707
+    },
+    {
+      "comment_id": 45,
+      "total_duration": 4504174600,
+      "load_duration": 4068200,
+      "prompt_eval_duration": 314125000,
+      "eval_duration": 4139492000,
+      "prompt_eval_count": 863,
+      "eval_count": 463
+    },
+    {
+      "comment_id": 46,
+      "total_duration": 4502499100,
+      "load_duration": 4155100,
+      "prompt_eval_duration": 308789000,
+      "eval_duration": 4152059000,
+      "prompt_eval_count": 856,
+      "eval_count": 461
+    },
+    {
+      "comment_id": 47,
+      "total_duration": 3546928500,
+      "load_duration": 4426700,
+      "prompt_eval_duration": 312816000,
+      "eval_duration": 3189355000,
+      "prompt_eval_count": 876,
+      "eval_count": 362
+    },
+    {
+      "comment_id": 48,
+      "total_duration": 6682195900,
+      "load_duration": 6007600,
+      "prompt_eval_duration": 312706000,
+      "eval_duration": 6317585000,
+      "prompt_eval_count": 890,
+      "eval_count": 711
+    },
+    {
+      "comment_id": 49,
+      "total_duration": 4463903800,
+      "load_duration": 4201200,
+      "prompt_eval_duration": 311227000,
+      "eval_duration": 4107246000,
+      "prompt_eval_count": 862,
+      "eval_count": 493
+    },
+    {
+      "comment_id": 50,
+      "total_duration": 4742637800,
+      "load_duration": 4235800,
+      "prompt_eval_duration": 320494000,
+      "eval_duration": 4373320000,
+      "prompt_eval_count": 893,
+      "eval_count": 510
+    },
+    {
+      "comment_id": 51,
+      "total_duration": 4176429400,
+      "load_duration": 4053300,
+      "prompt_eval_duration": 357319000,
+      "eval_duration": 3768660000,
+      "prompt_eval_count": 985,
+      "eval_count": 441
+    },
+    {
+      "comment_id": 52,
+      "total_duration": 4237366100,
+      "load_duration": 3992500,
+      "prompt_eval_duration": 398001000,
+      "eval_duration": 3792468000,
+      "prompt_eval_count": 1027,
+      "eval_count": 424
+    },
+    {
+      "comment_id": 53,
+      "total_duration": 8252059900,
+      "load_duration": 4213500,
+      "prompt_eval_duration": 320756000,
+      "eval_duration": 7873407000,
+      "prompt_eval_count": 889,
+      "eval_count": 899
+    },
+    {
+      "comment_id": 54,
+      "total_duration": 3262389100,
+      "load_duration": 4545500,
+      "prompt_eval_duration": 333165000,
+      "eval_duration": 2889432000,
+      "prompt_eval_count": 931,
+      "eval_count": 259
+    },
+    {
+      "comment_id": 55,
+      "total_duration": 7009267400,
+      "load_duration": 4165100,
+      "prompt_eval_duration": 391837000,
+      "eval_duration": 6577893000,
+      "prompt_eval_count": 894,
+      "eval_count": 777
+    }
+  ]
+}

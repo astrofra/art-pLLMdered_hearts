@@ -1,0 +1,164 @@
+{
+  "source": "C:\\works\\projects\\these\\thesis-project-demoscene\\obsidian\\these\\40_articles\\ai-museum\\presentation\\Playing or Commenting to Revive Interactive Fiction.pptx",
+  "output": "C:\\works\\projects\\these\\thesis-project-demoscene\\obsidian\\these\\40_articles\\ai-museum\\presentation\\Playing or Commenting to Revive Interactive Fiction - Gemma 2026-10-19.pptx",
+  "source_sha256": "410775d44ce3101d7fe9723a7d24a412620aad42bdc79178a940dd86d2065f90",
+  "source_unchanged": true,
+  "slide_count_before": 30,
+  "slide_count_after": 37,
+  "new_slides": [
+    {
+      "position": 25,
+      "part_number": 31
+    },
+    {
+      "position": 26,
+      "part_number": 32
+    },
+    {
+      "position": 27,
+      "part_number": 33
+    },
+    {
+      "position": 29,
+      "part_number": 34
+    },
+    {
+      "position": 33,
+      "part_number": 35
+    },
+    {
+      "position": 34,
+      "part_number": 36
+    },
+    {
+      "position": 30,
+      "part_number": 37
+    }
+  ],
+  "original_media_preserved_byte_for_byte": 31,
+  "changed_parts": [
+    "[Content_Types].xml",
+    "ppt/slides/slide10.xml",
+    "ppt/slides/slide11.xml",
+    "ppt/slides/slide13.xml",
+    "ppt/slides/slide14.xml",
+    "ppt/slides/slide19.xml",
+    "ppt/slides/slide23.xml",
+    "ppt/slides/slide24.xml",
+    "ppt/slides/slide25.xml",
+    "ppt/slides/slide26.xml",
+    "ppt/slides/slide27.xml",
+    "ppt/slides/slide28.xml",
+    "ppt/_rels/presentation.xml.rels",
+    "ppt/slides/slide30.xml",
+    "ppt/presentation.xml",
+    "ppt/notesSlides/notesSlide10.xml",
+    "ppt/notesSlides/notesSlide11.xml",
+    "ppt/notesSlides/notesSlide13.xml",
+    "ppt/notesSlides/notesSlide14.xml",
+    "ppt/notesSlides/notesSlide16.xml",
+    "ppt/notesSlides/notesSlide17.xml",
+    "ppt/notesSlides/notesSlide18.xml",
+    "ppt/notesSlides/notesSlide19.xml",
+    "ppt/notesSlides/notesSlide20.xml",
+    "ppt/notesSlides/notesSlide21.xml",
+    "ppt/notesSlides/notesSlide23.xml",
+    "ppt/notesSlides/notesSlide24.xml",
+    "ppt/notesSlides/notesSlide25.xml",
+    "ppt/notesSlides/notesSlide26.xml",
+    "ppt/notesSlides/notesSlide27.xml",
+    "ppt/notesSlides/notesSlide28.xml",
+    "docProps/app.xml",
+    "ppt/slides/slide31.xml",
+    "ppt/slides/slide32.xml",
+    "ppt/slides/slide33.xml",
+    "ppt/slides/slide34.xml",
+    "ppt/slides/slide35.xml",
+    "ppt/slides/slide36.xml",
+    "ppt/slides/slide37.xml",
+    "ppt/notesSlides/notesSlide31.xml",
+    "ppt/notesSlides/notesSlide32.xml",
+    "ppt/notesSlides/notesSlide33.xml",
+    "ppt/notesSlides/notesSlide34.xml",
+    "ppt/notesSlides/notesSlide35.xml",
+    "ppt/notesSlides/notesSlide36.xml",
+    "ppt/notesSlides/notesSlide37.xml",
+    "ppt/slides/_rels/slide31.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide31.xml.rels",
+    "ppt/slides/_rels/slide32.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide32.xml.rels",
+    "ppt/slides/_rels/slide33.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide33.xml.rels",
+    "ppt/slides/_rels/slide34.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide34.xml.rels",
+    "ppt/slides/_rels/slide35.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide35.xml.rels",
+    "ppt/slides/_rels/slide36.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide36.xml.rels",
+    "ppt/slides/_rels/slide37.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide37.xml.rels",
+    "ppt/media/gemma-embedding-map.png"
+  ],
+  "text_changes": [
+    {
+      "source_slide": 10,
+      "shape_id": 192,
+      "before": "LLM \nvs\n Plundered Hearts",
+      "after": "Initial experiment: an LLM as player"
+    },
+    {
+      "source_slide": 11,
+      "shape_id": 198,
+      "before": "LLM \nvs\n Plundered Hearts",
+      "after": "Initial prototype: Ministral as player"
+    },
+    {
+      "source_slide": 13,
+      "shape_id": 231,
+      "before": "Model: Ministral-3:14b without a history of previous actions",
+      "after": "Initial Ministral 3:14B experiment: no action history"
+    },
+    {
+      "source_slide": 14,
+      "shape_id": 241,
+      "before": "Model: Ministral-3:14b with a history of the last 16 actions",
+      "after": "Initial Ministral 3:14B experiment: history of 16 actions"
+    },
+    {
+      "source_slide": 19,
+      "shape_id": 317,
+      "before": "As the action history grows, the model expands its \nexploratory capacity but increases parser \nrejections\n.",
+      "after": "Initial Ministral experiment: a longer action history increases exploration, but also parser rejections."
+    },
+    {
+      "source_slide": 23,
+      "shape_id": 350,
+      "before": "pLLMdered_hearts, Matricule Bis festival, ESAD Orléans",
+      "after": "From the festival prototype to Gemma"
+    },
+    {
+      "source_slide": 23,
+      "shape_id": 351,
+      "before": "The game is traversed automatically through a fixed sequence of commands extracted from the known walkthrough.\nThe Z-machine is\n deterministic:\n this sequence produces the same effects on every run.\nThe LLM is no longer \nresponsible for \nadvancing the story: it acts as a situated commentator, reading the situations in light of the available archives.",
+      "after": "A fixed walkthrough advances the game; the model does not choose commands.\nThe current build uses Gemma 4 E4B for English commentary, with extended reasoning enabled.\nComplete game outputs are buffered. The commentator notices a detail in the scene, using the interview as optional background."
+    },
+    {
+      "source_slide": 24,
+      "shape_id": 359,
+      "before": "The main material for this heritage mediation comes \nfrom a video \ninterview with Amy Briggs by Jason Scott for the documentary\n Get \nLamp.\nI do not use this interview to explain the game linearly.\nI place it in relation to the descriptions produced by \nPlundered Hearts \nthrough an embeddings-based\n mechanism,\n allowing semantic \naffinities to emerge \n(Bardiot, 2015).",
+      "after": "Amy Briggs's interview with Jason Scott for Get Lamp supplies the documentary material.\nEach of 25 interview clips is indexed by an embedding of its English subtitle transcript.\nThe generated comment is embedded in the same space. It becomes the bridge from the game to the archive; the game output itself is not vectorised."
+    },
+    {
+      "source_slide": 27,
+      "shape_id": 396,
+      "before": "At each step forward in the fiction, the LLM places the described situation in the context of\n Amy Briggs’s \ntestimony.\nThe device gives rise to unexpected, sometimes obsessive \nconnections between\n the heroine’s experience and the constraints of creating the game in 1987.\nEach run produces a \nunique sequence,\n without claiming to produce original information.",
+      "after": "The commentary is the semantic bridge between the game and Briggs's retrospective testimony.\nEarly prompts repeatedly returned to hardware limits, commercial pressure or genre. Reworking the prompt and its context reduced these patterns in the sampled readings.\nA high similarity score can still yield a weak association. The sequence offers an interpretation; generated comments are not historical evidence."
+    },
+    {
+      "source_slide": 28,
+      "shape_id": 402,
+      "before": "The “knowledge base” is limited by Ministral-3:14B’s context capacity. A more comprehensive RAG needs to\n be\n implemented to compensate for training biases that may reproduce our social patterns.\nThe semantic proximity between the texts produced by the LLM and the transcript of Amy Briggs’s interview could be tested \nagainst different \nembedding models.\nImprove intelligibility by \ntranslating\n the subtitles and using other video sources.",
+      "after": "The new prompt reduces forced explanations, but can also weaken the explicit link to Briggs. Paraphrases, repetition and unsupported interpretations remain.\nCosine similarity ranks associations; it does not validate them. Recent-clip exclusions can also change which video is selected.\nNext: assess game–comment–clip triples with human readers; compare shorter interview segments, embedding models and context positions."
+    }
+  ]
+}

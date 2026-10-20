@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-10-19T17:58:16.213838+00:00",
+  "runtime_args": [
+    "--once",
+    "--no-renderer",
+    "--no-viewer",
+    "--fast"
+  ],
+  "python": "3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)]",
+  "python_executable": "C:\\works\\projects\\pLLMdered_hearts\\.venv\\Scripts\\python.exe",
+  "settings": {
+    "LLM_MODEL": "gemma4:e4b",
+    "LLM_THINK": "1",
+    "LLM_TEMPERATURE": 0.3,
+    "LLM_NUM_CTX": 4096,
+    "LLM_NUM_PREDICT": 2560,
+    "COMMENTARY_MIN_WORDS": 150,
+    "COMMENTARY_WORD_LIMIT": 90,
+    "COMMENTARY_LANGUAGE": "English",
+    "INTERVIEW_CONTEXT_PATH": "C:\\works\\projects\\pLLMdered_hearts\\assets\\abriggs-itw-facts-brief.txt",
+    "VIDEO_EMBED_MODEL": "embeddinggemma:300m",
+    "VIDEO_EMBED_NUM_GPU": 0,
+    "VIDEO_END_MARGIN_SEC": 3.0,
+    "LLM_TIMEOUT": 180.0,
+    "EMBED_TIMEOUT": 30.0
+  },
+  "scope": "Actual Frotz walkthrough and local Ollama requests. Playback is estimated, never confirmed.",
+  "files": {
+    "src/faketerm.py": {
+      "sha256": "661dc488973d6b6f6bce95d0fa92d30eb3e86a4764d6174d71d7edc6018e5127",
+      "bytes": 41815
+    },
+    "src/c64renderer.py": {
+      "sha256": "81e7205b0946b9f9df62b63fd01c16a42f7392ee793dc9a2f59e072321dd1f27",
+      "bytes": 32806
+    },
+    "godot-viewer/main.gd": {
+      "sha256": "8e2cba0e7d4190c71ecaf631a24b3e74a1b5806931b23ed339a4227660674623",
+      "bytes": 14394
+    },
+    "assets/abriggs-itw-embeddings.json": {
+      "sha256": "7b4f4779c940fbca03c07566fbf3863a60361e358effbfaf575991eafac27d33",
+      "bytes": 563184
+    },
+    "C:\\works\\projects\\pLLMdered_hearts\\roms\\PLUNDERE.z3": {
+      "sha256": "b53a2588c7926892f8f5e9b201c1855a01892e972d938bf919b4f36e1b8bd7db",
+      "bytes": 128963
+    },
+    "C:\\works\\projects\\pLLMdered_hearts\\frotz.exe": {
+      "sha256": "6715fd2c2876ba99f03856e2b07fd0c0614c2a8b36fa67e88c7e4e9a333ade6e",
+      "bytes": 145486
+    },
+    "C:\\works\\projects\\pLLMdered_hearts\\assets\\abriggs-itw-facts-brief.txt": {
+      "sha256": "01d0d3e515abfb8a5ddeead68c9af832da3a485fdc0010b1cbc9c5701ca0f7de",
+      "bytes": 959
+    },
+    "C:\\works\\projects\\pLLMdered_hearts\\documentation\\presentation-update-2026-10-19\\record_session.py": {
+      "sha256": "9760a882a24e9cae4ce64ed9458e756ba8be11057952dde894e785c389858936",
+      "bytes": 13706
+    }
+  },
+  "git_commit": "da55b03189ade7510f197437445700e0381286fa\n",
+  "git_runtime_diff": "",
+  "ollama_version": {
+    "version": "0.40.6"
+  }
+}

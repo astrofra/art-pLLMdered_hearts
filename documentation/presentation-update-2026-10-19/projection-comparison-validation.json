@@ -1,0 +1,13 @@
+{
+  "points": 80,
+  "maps": 13,
+  "source_sha256_matches": true,
+  "python_310_syntax": true,
+  "linked_selection_all_3_views": true,
+  "all_12_nonlinear_parameter_seed_variants": true,
+  "ranking_unchanged_after_projection_switch": true,
+  "live_clip_filters": true,
+  "family_zoom": true,
+  "mobile_no_horizontal_overflow": true,
+  "page_errors": []
+}

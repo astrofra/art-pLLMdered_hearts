@@ -1,0 +1,97 @@
+"""Write the English research narrative and reproducibility guide for the deck."""
+
+import html
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+
+def main():
+    stats = json.loads((HERE / "session-summary.json").read_text(encoding="utf-8"))
+    projection = json.loads((HERE / "projection.json").read_text(encoding="utf-8"))
+    esc = html.escape
+    text = '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>pLLMdered_hearts — from model replacement to situated mediation</title><style>
+body{font:17px/1.65 system-ui;max-width:1050px;margin:36px auto;padding:0 24px;color:#29292e;background:#f8f8f8}h1{font-size:34px;line-height:1.2}h2{margin-top:2em;color:#a43a57}h3{font-size:19px}a{color:#216b91}table{border-collapse:collapse;width:100%;background:white;font-size:15px}td,th{text-align:left;padding:12px;border-bottom:1px solid #ddd;vertical-align:top}th{background:#f8dde6}pre{white-space:pre-wrap;background:#eee;padding:16px;font-size:13px}code{font-size:14px}blockquote{margin:1em 0;padding:14px 20px;background:#f8dde6}img{width:100%}.note{border-left:4px solid #a43a57;padding:12px 20px;background:white}.small{font-size:14px;color:#666}
+</style><h1>From model replacement to situated mediation</h1>
+<p>Research notes for the English presentation, 19 October 2026. The central question is how a contemporary commentary can build a pertinent transition from <em>Plundered Hearts</em> to Amy Briggs's retrospective testimony. Faster generation, varied wording and a greater number of clips are useful observations, but none independently measures that transition's interpretive value.</p>
+<p><a href="embedding-map.html">Explore the original PCA map</a> · <a href="projection-comparison.html">Compare PCA, t-SNE and UMAP</a> · <a href="embedding-map.svg">Vector figure (SVG)</a> · <a href="embedding-map.pdf">Figure (PDF)</a> · <a href="session-summary.json">New run statistics</a> · <a href="presentation-changes.json">Slide changes</a></p>
+
+<h2>1. The initial role change remains the main artistic decision</h2>
+<p>The first prototype asked Ministral 3:14B to play the game. Its failed commands, repeated attempts and growing action history belong to that historical experiment. The current installation instead advances through a scripted walkthrough. Gemma 4 E4B reads completed scenes and produces a situated commentary; it does not decide moves. The original slides and examples remain labelled as historical evidence, rather than being retrospectively attributed to Gemma.</p>
+
+<h2>2. Choosing a local commentator</h2>
+<p>We compared Ministral 3:14B, Qwen 3.5 4B and Gemma 4 E4B on twelve fixed scenes, two rounds each, in English. In that first protocol the models were preloaded, reasoning was disabled, the output cap was 256 tokens and the context window was 4,096 tokens. Distributed model defaults differed beyond the explicit controls.</p>
+<table><tr><th>Model</th><th>752-word reference: median</th><th>1,250-word follow-up: median</th><th>First study: sampled GPU peak</th></tr>
+<tr><td>Ministral 3:14B</td><td>14.438 s</td><td>16.906 s</td><td>7,054 MiB</td></tr>
+<tr><td>Qwen 3.5 4B</td><td>0.774 s</td><td>0.844 s</td><td>4,554 MiB</td></tr>
+<tr><td>Gemma 4 E4B</td><td>0.711 s</td><td>0.718 s</td><td>5,444 MiB</td></tr></table>
+<p>Gemma was retained for responsiveness and the readings produced in this sample. It still repeated generic themes. The larger interview summary changed many proposed clips without establishing a consistent improvement in relevance. E4B is an effective-size label: this downloaded Gemma reports 7.5B total parameters. The table is a local protocol, not a general model ranking and not the latency of today's reasoning-enabled preset.</p>
+<p class="small">Sources: <a href="../llm-comparison-2026-10-19/comparison.html">initial comparison</a>, <a href="../llm-comparison-2026-10-19/results.json">data</a>, <a href="../llm-comparison-2026-10-19-1250/results.json">long-reference follow-up</a>. GPU figures include the desktop and temporary allocations.</p>
+
+<h2>3. What was repeating, and what we changed</h2>
+<p>Listening to the installation revealed recurring explanations about hardware constraints, memory limits and commercial pressure. Structured session logs then exposed the full chain: game passage, prompt, prior comments and generated reading. The model was often supplied with ready-made themes and encouraged to apply the interview to every scene. These observations motivated changes to the task itself.</p>
+<table><tr><th>Intervention</th><th>Reason</th><th>Evidence or limit</th></tr>
+<tr><td>Remove the upcoming command</td><td>A spectator should read completed events without knowing the next scripted move.</td><td>The old “Your next move…” line was a surviving autonomous-player instruction; it is absent from current prompts and logs.</td></tr>
+<tr><td>Develop one fresh detail across two sentences</td><td>Replace a scene paraphrase followed by a generic historical theme with a more specific observation.</td><td>In the 17-scene replay, the assistant found no new attribution of individual scenes to technical constraints. Both versions still yielded seven distinct raw top clips. No blind human assessment was performed.</td></tr>
+<tr><td>Supply the two previous comments</td><td>Make already expressed ideas available for comparison.</td><td>These are successful visible comments, not game facts. Compressed memory was discussed but not deployed. Semantic novelty is still not guaranteed.</td></tr>
+<tr><td>Trigger above 150 buffered words, at a complete prompt</td><td>The artist found the earlier 500-word threshold too infrequent.</td><td>The model never interrupts a game paragraph. Empty responses retain the buffer. This is an exhibition pacing choice, not an objectively optimal word count.</td></tr>
+<tr><td>Separate commentary from video selection</td><td>Amy's current speech should finish before another clip is requested.</td><td>Comments remain visible during speech. Only the latest pending comment chooses the next video after the estimated clip duration plus three seconds. Godot provides no playback feedback.</td></tr></table>
+<p class="small">Sources: <a href="../commentary-prompt-review-2026-10-19/results.json">prompt replay</a> and the recorded source in <a href="session-headless/inputs/faketerm.py">this session's runtime snapshot</a>. The old session was unseeded; its replay used seed 42 and regenerated rolling memory. Their difference is exploratory, not a clean causal estimate.</p>
+
+<h2>4. Reasoning, output budgets and temperature</h2>
+<p>Early reasoning tests changed the prose more than the recurring themes. A later small anti-repetition test, with previous comments supplied, found more specific fresh details in several reasoning-enabled responses; it also increased latency. That justified another practical trial, not a universal claim that reasoning improves artistic relevance. A larger output <em>ceiling</em> does not require the model to generate that many tokens: actual stopping, prompt caching and runtime conditions determine the measured duration.</p>
+<p>The production ceiling is now 2,560 tokens, covering reasoning plus visible output, within a configured context of 4,096 tokens. The requested visible answer remains two sentences and no more than 90 words. Shorter 512/768-token reasoning budgets had produced empty or truncated responses in a small probe. Enabling reasoning does not make this an autonomous tool-using agent: the script still controls the game and archive retrieval.</p>
+<p>The subsequent temperature/context experiment produced 96 screened answers (four references × three temperatures × four scenes × two seeds), then five rolling replays of 55 buffers: 371 answers overall. The chosen reference has eight compact factual entries totalling 136 words, at temperature 0.3. The original 752-word reference, a 230-word prose version and a 255-word thematic version remain available. The compact reference's observed median in that replay was 4.84 s, versus 7.05 s for the original at 0.3. Higher temperatures, 0.6 and 0.9, did not consistently improve the assistant's qualitative reading. Occasional errors remained in every condition.</p>
+<p class="small">Sources: <a href="../llm-thinking-comparison-2026-10-19/results.json">initial reasoning study</a>, <a href="../llm-thinking-memory-2026-10-19/results.json">small memory/reasoning probe</a>, <a href="../llm-thinking-memory-2026-10-19/budget-results.json">budget probe</a>, <a href="../commentary-settings-2026-10-19/comparison.html">371-response experiment</a>. The verdict was not blinded or assessed by an independent panel.</p>
+
+<h2>5. “Lost in the middle” and fine-tuning: precise terms</h2>
+<p><a href="https://aclanthology.org/2024.tacl-1.9/">Liu et al., <em>Lost in the Middle</em> (TACL, 2024)</a> report sensitivity to the position of relevant information in long contexts, on their models and retrieval tasks. This motivates our question about the interview summary's structure. It does not diagnose the cause of Gemma's recurring themes in this installation.</p>
+<p>We did not move identical facts between controlled positions. The compact version also changes content and length; it is therefore impossible to isolate a pure list-format or attention-position effect. No interview-fact order was randomised. The current prompt has substantial context margin in the new measured run. More available tokens would not by itself remove thematic anchoring.</p>
+<p><strong>No model weights were trained or fine-tuned.</strong> Our interventions concern model selection, prompts, supplied context, bounded memory, sampling and scheduling. Embedding the transcript is indexing, not training. A future fine-tuning project would require a curated set of judged game–comment–clip examples and held-out evaluation; it would be premature to present it as a demonstrated solution here.</p>
+
+<h2>6. The newly recorded full walkthrough</h2>
+STATS
+<p>All recorded outputs finished with Ollama's <code>stop</code> reason; no commentary error was recorded. The first inference took FIRST s and includes model loading. The first-run median is not interchangeable with the earlier preloaded fixed-scene benchmarks. These observations concern one unseeded run; the counter for raw terminal inputs includes seven blank pagination acknowledgements, which are excluded from the game-command count above.</p>
+<p>The recorder retains cleaned complete game outputs, executed commands, exact model requests, visible answers, the two-comment memory, per-stage Ollama durations, token counts, embedding vectors, all 25 cosine scores at each live selection, recency exclusions, replaced pending comments, estimated video gates and GPU/model-residency samples every five seconds. It snapshots source files, selected context, the catalogue, model metadata, hashes and the Git revision. Internal reasoning text is counted but not retained.</p>
+<p class="note">This run used <code>--once --no-renderer --no-viewer --fast</code>. Four request files were written, but no clip playback was observed. Accelerating game output changes the number and timing of requests; it cannot establish the exhibition's clip frequency or subtitle synchronisation.</p>
+
+<h2>7. A map of what is actually vectorised</h2>
+<p><a href="embedding-map.html"><img src="embedding-map.png" alt="PCA projection: interview transcript points and generated commentary points with actual request arrows"></a></p>
+<p>The map jointly projects the 25 stored clip-transcript vectors and 55 comment vectors. All vectors have 768 dimensions and are L2-normalised before centred PCA. Four commentary vectors come directly from live requests; the others were generated offline solely for inspection. The arrows show the four recorded video requests. Neither the game histories, the eight factual cards nor the hidden reasoning appear as points.</p>
+<p>The two axes retain VARIANCE% of total variance. The first axis visibly separates the two text populations in this sample; length, voice and subject matter may contribute, but this projection does not identify their causes. The installation matches by cosine in the original 768-dimensional space. A nearest neighbour on the flat diagram need not be the true nearest neighbour. The interactive map exposes every text, its original-space scores and whether its comment actually drove a request.</p>
+<p>All 25 transcripts were also re-embedded as a consistency check. Each was closest to its own stored catalogue entry; the lowest corresponding cosine was 0.9773. They are close, not bit-identical, and this does not recover the original catalogue's complete generation provenance. The production catalogue was not overwritten. The map retains its original vectors.</p>
+<h3>Comparing local and broader views</h3>
+<p>The follow-up <a href="projection-comparison.html">interactive comparison</a> jointly fits the same frozen vectors with PCA, t-SNE and UMAP. Thirteen recorded fits cover PCA plus three neighbourhood scales and two seeds for each non-linear method. No new commentary or embeddings were generated. The page preserves the same point IDs and colours, links selections across the three maps, and exposes the unchanged full-space ranking. Family focus zooms the existing coordinates without refitting. Parameters and package versions are saved in <a href="projection-comparison.json">the comparison data</a>.</p>
+<p>The original-space mean cosines are 0.325 within comments, 0.439 within transcripts and 0.126 across the two families. The separation therefore precedes projection. Possible contributions from topic, style or length remain hypotheses. A third PCA axis raises retained variance only from 21.5% to 25.0%. The non-linear maps preserve more local neighbours, but can represent cross-family neighbours less faithfully: at the displayed defaults, the visually nearest clip matches the original-space top clip for 19/55 comments in PCA, 1/55 in t-SNE and 13/55 in UMAP. Those counts describe map fidelity, not the installation's retrieval accuracy or artistic relevance.</p>
+<p><a href="projection-comparison.pdf">Three-map figure (PDF)</a> · <a href="projection-comparison.svg">Three-map figure (SVG)</a> · <a href="cosine-matrix.png">Exact cosine matrix</a>. The matrix shows the pairwise original-space similarities directly, omitting the self-similarity diagonal. Method references and interpretive cautions are linked in the comparison page.</p>
+
+<h2>8. What remains unresolved about the game/video link</h2>
+<p>The new prompt's scene-first approach removes many forced documentary explanations, but it can also weaken the explicit connection to Briggs. In the new run, the first comment about a captive's emptied room selected “Remembering Wheeler Street and Cambridge Park” at a cosine near 0.2693, slightly ahead of “Plundered Hearts: Design and Memory Limits” near 0.2672. This is a real recorded transition, not a fabricated example. Whether that association helps an audience is still a question for a human reader of both texts.</p>
+<p>Useful next experiments would rate complete game–comment–clip triples with a shared human rubric, compare smaller coherent subtitle segments with the existing full-clip vectors, and test embedding models while holding commentary constant. A position experiment should keep facts and other inputs identical. Diversity should remain a separate measure: more clips or fewer repeated words do not automatically mean a more pertinent documentary relationship.</p>
+
+<h2>Reproduce or continue recording</h2>
+<pre>.venv\\Scripts\\python.exe documentation\\presentation-update-2026-10-19\\record_session.py --output-dir documentation\\my-new-recording -- --once --no-renderer --no-viewer --fast
+
+# To record the displayed installation at its normal pace instead:
+.venv\\Scripts\\python.exe documentation\\presentation-update-2026-10-19\\record_session.py --output-dir documentation\\my-display-recording -- --once</pre>
+<p>The destination must be new. The recorder uses an isolated request folder and commentary journal, leaving the normal <code>llm_out/</code> untouched. Core scheduling and model settings remain the production defaults. The recorder itself uses the standard library and existing project dependencies. <code>analyse_session.py</code> additionally uses NumPy/Matplotlib from <code>.tools/presentation-python</code>; those packages are for the presentation, not the installation. PyMuPDF/Pillow in that isolated folder render and check the exported deck.</p>
+<p>The English PowerPoint copy preserves the original 30-slide account, labels the Ministral experiments, updates the current installation and adds seven slides with English speaker notes. The original file and all its original media remain intact. The original historical experiment data and literature claims have not been re-run or independently audited as part of this update.</p>
+'''
+    rows = [("Executed game commands", stats["game_commands"]), ("Completed visible comments", stats["successful_comments"]),
+            ("Median inference", "%.3f s" % stats["median_inference_sec"]),
+            ("Median excluding first request", "%.3f s" % stats["median_inference_excluding_first_sec"]),
+            ("Game-history buffer: min / median / max", "151 / 175 / 400 words"),
+            ("Largest observed prompt + generated output", "%s / 4096 tokens" % stats["max_prompt_plus_output_tokens"]),
+            ("Largest visible comment", "%s words" % stats["max_comment_words"]),
+            ("Sampled total GPU-memory peak", "%s MiB" % int(stats["sampled_gpu_peak_mib"])),
+            ("Request files / confirmed playbacks", "4 / not measured"),
+            ("Comments begun during an estimated active clip", stats["comments_started_during_estimated_video"])]
+    table = "<table>" + "".join("<tr><th>"+esc(str(k))+"</th><td>"+esc(str(v))+"</td></tr>" for k,v in rows) + "</table>"
+    text = text.replace("STATS", table).replace("FIRST", str(stats["first_inference_sec"])).replace("VARIANCE", "%.1f" % projection["retained_variance_percent"])
+    (HERE / "research-notes.html").write_text(text, encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()

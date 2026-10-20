@@ -1,0 +1,57 @@
+{
+  "cosines_768d": {
+    "comments_within": {
+      "pairs": 1485,
+      "mean": 0.32546927014110977,
+      "median": 0.3206065962122187,
+      "p10": 0.22348162103508162,
+      "p90": 0.43551295065072043,
+      "min": 0.051414924575866064,
+      "max": 0.7764534338053446
+    },
+    "transcripts_within": {
+      "pairs": 300,
+      "mean": 0.4389445667416655,
+      "median": 0.43849749847604413,
+      "p10": 0.303478874863212,
+      "p90": 0.559303339078678,
+      "min": 0.201793857680665,
+      "max": 0.7052699872977182
+    },
+    "comments_to_transcripts": {
+      "pairs": 1375,
+      "mean": 0.1264711094966597,
+      "median": 0.1245626261338845,
+      "p10": 0.0613022108328312,
+      "p90": 0.19737272109439377,
+      "min": -0.05412389007406072,
+      "max": 0.3205478909002437
+    }
+  },
+  "variance_first5": [
+    0.16471625903500953,
+    0.0506479351431959,
+    0.0342122246211745,
+    0.03320157405363574,
+    0.030603827696509735
+  ],
+  "variance_2d": 0.21536419417820543,
+  "variance_3d": 0.24957641879937992,
+  "comment_best_transcript_cosine": {
+    "pairs": 55,
+    "mean": 0.21757721242966124,
+    "median": 0.20754779839047063,
+    "p10": 0.17718231166627857,
+    "p90": 0.2684191056885855,
+    "min": 0.14334088792692065,
+    "max": 0.3205478909002437
+  },
+  "text_type_centroid_fraction_total_variance": 0.1583644185354004,
+  "pc1_text_type_mean_fraction": 0.9573585612769453,
+  "fresh_embedding_control_means": {
+    "comments_within": 0.32546927014110977,
+    "transcripts_within": 0.4455290068935849,
+    "cross": 0.12639377086715586
+  },
+  "scope": "Descriptive pair statistics for these 25 clip transcripts and 55 comments. Off-diagonal unordered pairs within groups; all cross pairs. No semantic or causal labels inferred from PCA."
+}
