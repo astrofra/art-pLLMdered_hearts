@@ -1,0 +1,8 @@
+Testing fictional worlds: She tested plausible player actions that writers had not implemented, alongside ordinary software bugs. Describing a familiar desk makes players expect its ordinary objects; fantasy settings can avoid such expectations.
+Choosing romance: Writing romance from a heroine's perspective was her choice, not a commission from management.
+Players and the heroine: Some critics wanted a heroine who could fight, and attacked the restrictions on her actions.
+Application game (not Plundered Hearts): Her abstract application game avoided realistic details that might expose gaps in implementation.
+Working conditions: She valued working on her own story with colleagues nearby for help. Creative freedom and trust gave way to layoffs and micromanagement after Cornerstone's failure.
+Editing and bugs: Fitting the completed game into limited computer memory required months of cuts. A sensible command for taking the coffer under the bed could produce garbage in the released game; she was embarrassed that this bug escaped testing and accepted responsibility.
+Sales and next projects: Management demanded a hit but rejected her next proposals, including vampires and Doctor Who.
+Readers and the medium: Low sales contrasted with players' lasting attachment; she compared text adventures to books.

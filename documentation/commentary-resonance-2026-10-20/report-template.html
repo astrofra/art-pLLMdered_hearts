@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Playing / remembering — matching experiments, 20 October 2026</title>
+<style>
+:root{color-scheme:light;font:17px/1.55 system-ui,sans-serif;color:#182c2b;background:#f3f1e8}*{box-sizing:border-box}body{margin:0}main{max-width:1440px;margin:auto;padding:48px 36px}h1{font-size:clamp(2rem,4vw,3.7rem);line-height:1.08;letter-spacing:-.04em;max-width:1050px;margin:12px 0 24px}h2{font-size:1.65rem;margin:56px 0 12px}h3{margin:8px 0 12px;font-size:1.1rem}p{max-width:1000px}.eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.15em;color:#436a62}.lead{font-size:1.2rem}.note{border-left:4px solid #bd713d;padding:12px 20px;background:#fff7e6}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}.card{background:#fffefa;border:1px solid #ccd2c6;border-radius:12px;padding:24px;overflow-wrap:anywhere}.card .excerpt{font-size:1rem;line-height:1.6}.muted,small{color:#52665f}button,select{font:inherit;border:1px solid #99aaa0;background:#fffefa;padding:9px 13px;border-radius:5px;color:inherit;cursor:pointer}select{max-width:100%}button:hover{background:#dce8db}button:focus-visible,select:focus-visible{outline:3px solid #aa4e1e;outline-offset:2px}label{display:inline-block;margin:10px 18px 10px 0}label select{display:block;margin-top:5px}.query{font-size:1.2rem;max-width:none;background:#dfebe0;padding:24px;border-radius:12px}.score{font-size:1.6rem;font-variant-numeric:tabular-nums;font-weight:650}.rank{border-top:1px solid #dce1d5;margin-top:18px;padding-top:12px}table{width:100%;border-collapse:collapse;background:#fffefa;font-size:.9rem}th,td{text-align:left;padding:12px;border-bottom:1px solid #d6ddd0;vertical-align:top}th{background:#dfe9de}td.comment{min-width:330px;max-width:560px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#e8e9e0;padding:18px;font:14px/1.5 ui-monospace,monospace}details{margin:12px 0}summary{cursor:pointer;color:#245e51}.scroll{overflow-x:auto}a{color:#165c4c}code{font-size:.9em}.tag{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em}.metric{display:inline-block;margin-right:20px}.observations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.observations article{padding:20px;border-top:2px solid #93a995}footer{margin:60px 0 20px;border-top:1px solid #b6c4b7;padding-top:24px}@media(max-width:900px){main{padding:28px 18px}.cards,.observations{grid-template-columns:1fr}h1{font-size:2.5rem}}
+</style>
+<main>
+<div class="eyebrow">pLLuMdered Hearts · exploratory study · 20 October 2026</div>
+<h1>Can the game and Amy’s testimony meet more meaningfully?</h1>
+<p class="lead">Test several passages per interview clip, then let the single closest passage choose its clip. Keep enough context to understand what that passage is actually about.</p>
+<p class="note">The installation now uses 132 contextual subtitle-cue passages across 25 clips, aiming for 70 words and retaining the best individual passage per clip. Its commentary prompt stays the same. This study compares 55 recorded comments, eight segmentation strategies, three embedding input formats, and 120 new comments; it does not establish a validated artistic winner.</p>
+<h2>Read the match, not just its score</h2>
+<p>Each card shows the winning clip and the exact passage that earned its score. The clip score is the <strong>maximum individual passage cosine</strong>, never an average vector or an average of passage scores. Every index still represents the same 25 videos.</p>
+<p><button id="vague">A deliberately vague sentence</button> <button id="coffer">The coffer under the bed</button></p>
+<label>Query <select id="query" aria-label="Query"></select></label>
+<label>Compare another passage index <select id="index" aria-label="Passage index"></select></label>
+<p id="query-type" class="muted"></p>
+<div id="query-text" class="query"></div>
+<details id="history-details"><summary>Original completed game history</summary><pre id="history"></pre></details>
+<div id="matches" class="cards"></div>
+<p class="muted">Timecodes identify the subtitle cues covering the winning passage, relative to its video. A live integration would play the whole clip. Scores are not probabilities; more candidate passages give more chances for an accidental high score.</p>
+<h2>What changing the granularity does</h2>
+<div class="scroll"><table id="granularity"><thead><tr><th>Index</th><th>Passages</th><th>Median words</th><th>Known-subject queries, top 1 / 8</th><th>Mean best cosine, 55 comments</th><th>Changed clip / 55</th></tr></thead><tbody></tbody></table></div>
+<p>Those eight queries are manually written paraphrases of known interview subjects. They test factual lookup, not the relevance of an artistic association with a game scene. Complete-sentence windows retain 8/8 here; isolated sentences retain 4/8. There are no independent relevance labels for the 55 game comments. The sentence-window condition was added after inspecting the earlier segmentation results.</p>
+<p>The live installation uses subtitle-cue groups aiming for 70 words (132 passages, median 75 words), which retain the coffer example. The complete-sentence windows are a separate candidate: median 79.5 words, range 38–190 because sentences are not split. Neither segmentation guarantees an autonomous thought. Automatic punctuation in spontaneous speech is imperfect, and passage review is still useful.</p>
+<details><summary>Embedding task prefixes: a large score increase can be misleading</summary>
+<p>The original 300M EmbeddingGemma model card specifies different formats for similarity and retrieval. We tested both against bare text. In this corpus, symmetric similarity prefixes raise the mean full-clip cross cosine from approximately 0.126 to 0.409 while leaving known-subject top-1 lookup at 8/8. A changed score scale does not establish a better interpretation. The original model card distinguishes similarity from retrieval. <a href="https://huggingface.co/google/embeddinggemma-300m#prompt-instructions">Google’s 300M model card</a></p>
+<div class="scroll"><table id="prefixes"><thead><tr><th>Index / input format</th><th>Known subject top 1</th><th>Mean best cosine</th><th>Mean full-clip cross cosine</th></tr></thead><tbody></tbody></table></div></details>
+<h2>Does changing the commentary voice help?</h2>
+<p>Gemma 4 E4B: reasoning enabled, temperature 0.3, context 4096, shared reasoning/output budget 2560. Twelve identical frozen histories × two seeds × five prompt variants. The first four conditions rotate their order; <em>companion</em> is a later revision after seeing those results. Each candidate receives the same two prior production comments, rather than its own rolling memory.</p>
+<div class="scroll"><table id="prompt-summary"><thead><tr><th>Prompt variant</th><th>Samples completed</th><th>Mean best full-clip cosine</th><th>Mean comment/comment cosine</th><th>Comments containing “wonder”</th></tr></thead><tbody></tbody></table></div>
+<p>Speaking more conversationally moves embeddings closer to the interview, but also makes comments more similar to one another. Higher cosines do not resolve factual misreadings. The <em>companion</em> variant repeatedly asks what the story will allow and uses “wonder” in 18/24 outputs. The current production prompt remains the recommendation.</p>
+<label>Game scene <select id="scene" aria-label="Game scene"></select></label>
+<label>Seed <select id="seed" aria-label="Seed"><option>42</option><option>43</option></select></label>
+<details><summary>Shared input history</summary><pre id="generation-history"></pre></details>
+<div class="scroll"><table id="generations"><thead><tr><th>Variant</th><th>Commentary</th><th>Best complete-sentence passage match</th></tr></thead><tbody></tbody></table></div>
+<h2>Interpretive checks</h2>
+<p id="review-method" class="muted"></p><div id="observations" class="observations"></div>
+<h2>Would cluster-first search be more precise?</h2>
+<p>We tested 4, 6, 8 and 10 KMeans groups, two seeds each, on all 132 normalised passage vectors in 768 dimensions. The query admits one or two closest normalised centroids, then compares individual passages inside those groups. Overlapping passages are not independent examples.</p>
+<div class="scroll"><table id="clusters"><thead><tr><th>Groups / seed</th><th>Cosine silhouette</th><th>Same winning clip: one group / 55</th><th>Same winning clip: two groups / 55</th><th>Coffer retained: one / two groups</th></tr></thead><tbody></tbody></table></div>
+<p>A one-group filter loses the concrete coffer association in 6/8 configurations; two groups still lose it in 3/8. Preserving the exhaustive winner is a geometric retrieval diagnostic, not proof of artistic quality. With only 132 candidates, exhaustive matching is inexpensive. These tests support using clusters for exploration rather than as an exclusion filter. Other clustering methods were not tested. <a href="https://scikit-learn.org/stable/auto_examples/text/plot_document_clustering.html">scikit-learn’s text-clustering example and limitations</a></p>
+<label>Inspect a partition <select id="partition" aria-label="Cluster partition"></select></label><div id="cluster-detail" class="observations"></div>
+<h2>Practical recommendation</h2>
+<p id="recommendation"></p>
+<p>Before deploying the passage index, read each unit for a named or recoverable subject: who or what is “it”, “there”, “that” or “the reason”? Join an underspecified passage to its neighbour. Removing hesitations cannot restore a missing antecedent. Preserve the original transcript as evidence.</p>
+<footer>
+<p><strong>Integration checks.</strong> 29 project tests and four data checks pass. An eight-command Frotz/Ollama run without the renderer or viewer produced two comments and one logged video request. A fresh embedding of the coffer comment selects the expected clip, with only a 0.00267 lead over second place. <a href="integration-check.json">Saved integration evidence</a>.</p>
+<p><strong>Reproducibility.</strong> All embeddings use the same local EmbeddingGemma 300M model, 768 dimensions, CPU, explicit 2048 context, <code>truncate=false</code>. Prompt and embedding experiments make no changes to model weights. Some CPU embedding work overlapped GPU generation, so wall times are not a controlled speed benchmark. Raw modern API vectors may differ slightly from the legacy catalogue, enough to swap close rankings.</p>
+<p><a href="README.md">Method and commands (French)</a> · <a href="protocol.json">Protocol and exact input histories</a> · <a href="environment.json">Versions and model digests</a> · <a href="screen.json">All exact prompts and generated responses</a> · <a href="matches.csv">Top-three passage matches (CSV)</a> · <a href="catalogue-sentence70.json">Grouped experimental catalogue</a> · <a href="embedding-cache.json.gz">All cached embeddings (compressed JSON)</a></p>
+<p>Primary references: <a href="https://huggingface.co/google/embeddinggemma-300m#prompt-instructions">EmbeddingGemma 300M model card</a>; <a href="https://docs.ollama.com/api/embed">Ollama embed API</a>. Full reasoning text is not logged. The synthetic vague-reason control is based on the user’s example and is not a quotation from Briggs.</p>
+</footer>
+</main>
+<script type="application/json" id="data">REPORT_JSON</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+const labels={full:'Whole clip',chunk:'Subtitle cues · target 100 words',cue40:'Subtitle cues · target 40 words',cue70:'Subtitle cues · target 70 words',cue140:'Subtitle cues · target 140 words',sent1:'One sentence',sent3:'Three sentences',sentence70:'Complete sentences · target 70 words'};
+const descriptions={production:'Current prompt',spoken:'Conversational reader',resonant:'Attention informed by testimony',testimony:'Resonance + verbatim background',companion:'Watching companion · post-hoc'};
+const el=id=>document.getElementById(id);
+const add=(tag,text,parent,className)=>{const n=document.createElement(tag);n.textContent=text;if(className)n.className=className;parent.append(n);return n};
+const number=x=>Number(x).toFixed(3);
+function option(parent,value,label){const n=add('option',label,parent);n.value=value;}
+for(const q of D.queries)option(el('query'),String(q.id),typeof q.id==='number'?`Recorded comment ${q.id}`:q.id.replaceAll('_',' '));
+for(const key of Object.keys(labels))option(el('index'),key,labels[key]);
+el('query').value='2';el('index').value='sentence70';
+function matchCard(kind,q){
+ const card=add('article','',el('matches'),'card');add('div',labels[kind],card,'tag');
+ const r=q.rankings[kind][0];add('h3',r.title,card);add('div',number(r.score),card,'score');
+ add('small',r.filename+(r.start?` · ${r.start} – ${r.end}`:' · full transcript'),card);
+ add('p',r.excerpt,card,'excerpt');
+ const details=add('details','',card);add('summary','Next two clips',details);
+ for(const rr of q.rankings[kind].slice(1)){const box=add('div','',details,'rank');add('strong',number(rr.score)+' · '+rr.title,box);add('p',rr.excerpt,box);}
+}
+function refreshMatches(){
+ const q=D.queries.find(q=>String(q.id)===el('query').value);
+ el('query-text').textContent=q.text;el('query-type').textContent=q.control_type?'Synthetic control · no precise game-scene match expected':q.expected?'Known-subject sanity query · expected: '+q.expected.join(', '):'Original recorded commentary · no gold clip label';
+ el('history-details').hidden=!q.history;el('history').textContent=q.history||'';el('matches').replaceChildren();
+ for(const kind of ['full','sent1',el('index').value])matchCard(kind,q);
+}
+el('query').onchange=el('index').onchange=refreshMatches;
+el('vague').onclick=()=>{el('query').value='vague_reason';el('index').value='sentence70';refreshMatches()};
+el('coffer').onclick=()=>{el('query').value='2';el('index').value='cue70';refreshMatches()};
+function cells(table,values){const tr=add('tr','',el(table).tBodies[0]);for(const value of values)add('td',value,tr);return tr;}
+for(const r of D.granularity)cells('granularity',[labels[r.id],r.unit_count,r.words_median,`${r.calibration_top1} / ${r.calibration_count}`,number(r.mean_top_cosine),r.changed_from_full]);
+for(const r of D.retrieval)cells('prefixes',[r.id,`${r.calibration_top1} / ${r.calibration_count}`,number(r.mean_top_score),number(r.mean_cross_full_clip_cosine)]);
+for(const r of D.prompt_summary)cells('prompt-summary',[descriptions[r.condition],`${r.complete} / ${r.samples}`,number(r.mean_top_cosine),number(r.mean_comment_intra_cosine),`${r.wonder_count} / ${r.samples}`]);
+for(const [i,result] of D.clusters.results.entries()){
+ const r=result.summary;
+ const coffer=key=>r[key].coffer==='09_writing_a_romance_2.ogv'?'yes':'no';
+ cells('clusters',[`${r.clusters} / ${r.seed}`,number(r.cosine_silhouette),`${r.top1.same_best_clip} / 55`,`${r.top2.same_best_clip} / 55`,`${coffer('top1')} / ${coffer('top2')}`]);
+ option(el('partition'),i,`${r.clusters} groups · seed ${r.seed}`);
+}
+function refreshPartition(){
+ const r=D.clusters.results[Number(el('partition').value)];el('cluster-detail').replaceChildren();
+ for(const group of r.groups){const box=add('article','',el('cluster-detail'));add('h3',`Group ${group.id+1} · ${group.passages} passages · ${Object.keys(group.clip_counts).length} clips`,box);for(const p of group.representatives){const d=add('details','',box);add('summary',p.title+' · '+p.start,d);add('p',p.text,d);}}
+}
+el('partition').onchange=refreshPartition;refreshPartition();
+for(const scene of [...new Set(D.generated.map(r=>r.scene))].sort((a,b)=>a-b))option(el('scene'),scene,'Scene '+scene);
+el('scene').value='20';
+function refreshGeneration(){
+ el('generations').tBodies[0].replaceChildren();
+ const rows=D.generated.filter(r=>String(r.scene)===el('scene').value&&String(r.seed)===el('seed').value);
+ el('generation-history').textContent=rows[0].history;
+ for(const condition of Object.keys(descriptions)){
+  const r=rows.find(r=>r.condition===condition);const tr=add('tr','',el('generations').tBodies[0]);
+  add('td',descriptions[r.condition],tr);const td=add('td','',tr,'comment');add('p',r.commentary,td);
+  add('small',`${r.words} words · ${r.elapsed_sec}s · ${r.prompt_tokens} prompt + ${r.output_tokens} output/reasoning tokens`,td);
+  const prompt=add('details','',td);add('summary','Exact prompt',prompt);add('pre',r.prompt,prompt);
+  const result=add('td','',tr);const top=r.match_sentence70[0];add('strong',number(top.score)+' · '+top.title,result);add('p',top.excerpt,result);add('small',top.filename+' · '+top.start+' – '+top.end,result);
+ }
+}
+el('scene').onchange=el('seed').onchange=refreshGeneration;
+el('review-method').textContent=D.review.method;el('recommendation').textContent=D.review.recommendation;
+for(const observation of D.review.observations){const box=add('article','',el('observations'));add('h3',observation.id.replaceAll('_',' '),box);add('p',observation.finding,box);}
+refreshMatches();refreshGeneration();
+</script>
+</html>

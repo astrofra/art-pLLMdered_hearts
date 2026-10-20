@@ -1,0 +1,53 @@
+{
+  "method": "Exploratory qualitative review by the coding assistant after seeing the outputs. No blind panel, independent game-to-clip labels, or claim of statistically validated artistic quality.",
+  "observations": [
+    {
+      "id": "vague",
+      "query": "vague_reason",
+      "finding": "The synthetic vague-reason query scores about 0.57 against a sentence about leaving for personal reasons. Neither utterance supplies a precise common subject. This supports the user's concern about decontextualised speech; the synthetic line is not an Amy Briggs quotation."
+    },
+    {
+      "id": "coffer",
+      "query": 2,
+      "finding": "The cue70 index selects the clip where Briggs recalls the actual coffer sliding out from under the bed and a missed early bug. Full-clip retrieval selects the office recollection involving boxes. This is a concrete promising local match. Sentence70 loses this particular win: segmentation boundaries matter, not just average size."
+    },
+    {
+      "id": "single_sentence",
+      "query": 11,
+      "finding": "Sentence-only matching selects an isolated line about getting out of a pickle in the story for several different game comments. The line is applicable to many adventures and loses the surrounding discussion of colleagues helping one another."
+    },
+    {
+      "id": "inventory",
+      "scene": 20,
+      "seed": 42,
+      "conditions": ["production", "spoken", "resonant", "testimony", "companion"],
+      "finding": "The command PUT ALL IN RETICULE EXCEPT DAGGER succeeds for pork and receives removal messages for clothes already being worn. Spoken, resonant and testimony turn these mundane inventory responses into a demand for vulnerability, restrictions on possession, or deliberate bureaucracy. The production response stays nearer the actions. A thematic bridge is harmful when it depends on a misreading."
+    },
+    {
+      "id": "broken_clasp",
+      "scene": 8,
+      "seed": 42,
+      "conditions": ["production", "spoken", "companion"],
+      "finding": "Spoken makes the failed brooch presentation sound less formal without claiming a production cause. Production adds a causal link to the captain's departure that the history does not establish. Companion adds suspicion about his promises. These are different interpretations, not evidence that speaking more like the testimony is uniformly better."
+    },
+    {
+      "id": "repair_error",
+      "scene": 8,
+      "seed": 43,
+      "conditions": ["resonant", "companion"],
+      "finding": "Resonant describes repair as the observed moment; only a future repair is promised. Companion says the clasp breaks during the attempt; the source says it is broken. Small factual shifts matter before evaluating interpretive resonance."
+    },
+    {
+      "id": "companion_repetition",
+      "finding": "Companion uses wonder in 18 of 24 outputs and repeatedly returns to trust and whether the story will allow something. The last two comments supplied were fixed production comments, not the candidate's own rolling memory. This screening exposes a new rhetorical habit but does not measure whole-session repetition under rolling memory."
+    },
+    {
+      "id": "sentence_count",
+      "scene": 38,
+      "seed": 42,
+      "conditions": ["companion"],
+      "finding": "Companion produces three sentences and speculation about the next room despite the two-sentence and no-prediction instructions. All samples finish with stop, but that does not mean all comply with the content instructions."
+    }
+  ],
+  "recommendation": "Keep the production prompt. The installation now uses 132 contextual subtitle-cue passages across 25 clips, aiming for 70 words, scored by maximum individual passage cosine. The winning passage and timecodes are logged for review. This initial choice retains the concrete coffer match; the 130 complete-sentence windows remain a separate comparison candidate, not an established optimum. Join underspecified passages to their neighbours when reviewing boundaries. Keep exhaustive passage search rather than cluster-first filtering for now; do not optimise merely for higher cosine or overlapping projected clouds."
+}

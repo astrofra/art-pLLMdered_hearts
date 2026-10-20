@@ -59,7 +59,9 @@ KEY_AUDIO_DIR = os.path.join(PROJECT_DIR, "assets", "audio")
 GODOT_VIEWER_PATH = os.path.join(PROJECT_DIR, "bin", "itw-viewer.exe")
 GAME_ROM_PATH = os.path.join(PROJECT_DIR, "roms", "PLUNDERE.z3")
 RAW_OUTPUT_PATH = os.path.join(PROJECT_DIR, "assets", "game-raw-output.json")
-VIDEO_EMBEDDINGS_PATH = os.path.join(PROJECT_DIR, "assets", "abriggs-itw-embeddings.json")
+VIDEO_EMBEDDINGS_PATH = os.path.abspath(os.path.join(
+    PROJECT_DIR, os.environ.get("VIDEO_EMBEDDINGS_PATH", "assets/abriggs-itw-passages.json")))
+VIDEO_MATCH_MODE = os.environ.get("VIDEO_MATCH_MODE", "passages")
 VIDEO_EMBED_MODEL = os.environ.get("VIDEO_EMBED_MODEL", "embeddinggemma:300m")
 VIDEO_EMBED_NUM_GPU = int(os.environ.get("VIDEO_EMBED_NUM_GPU", "0"))
 LLM_OUT_DIR = os.path.abspath(os.environ.get("LLM_OUT_OVERRIDE") or os.path.join(PROJECT_DIR, "llm_out"))
@@ -70,6 +72,11 @@ COMMENTARY_LOG_PATH = os.environ.get(
 )
 if os.environ.get("COMMENTARY_LOG_ENABLED", "1").strip().lower() in ("0", "false", "no"):
     COMMENTARY_LOG_PATH = None
+VIDEO_MATCH_LOG_PATH = os.environ.get(
+    "VIDEO_MATCH_LOG_PATH", os.path.join(LLM_OUT_DIR, "video_matches_%s_%s.jsonl" % (
+        time.strftime("%Y%m%d_%H%M%S"), os.getpid())))
+if os.environ.get("VIDEO_MATCH_LOG_ENABLED", "1").strip().lower() in ("0", "false", "no"):
+    VIDEO_MATCH_LOG_PATH = None
 FAST_OUTPUT = False
 child = None
 renderer = None
@@ -426,6 +433,19 @@ def _cosine_similarity(a_vec, a_norm, b_vec, b_norm):
     return dot / (a_norm * b_norm)
 
 
+def _embedding_vector(values):
+    if not isinstance(values, list):
+        return None, 0.0
+    try:
+        vector = [float(value) for value in values]
+    except (TypeError, ValueError, OverflowError):
+        return None, 0.0
+    norm = _vector_norm(vector)
+    if not math.isfinite(norm) or norm <= 0.0:
+        return None, 0.0
+    return vector, norm
+
+
 def load_video_embeddings(path):
     if not os.path.exists(path):
         return []
@@ -451,12 +471,20 @@ def load_video_embeddings(path):
                 duration_sec = float(duration_raw)
             except (TypeError, ValueError):
                 duration_sec = None
-        if not filename or not isinstance(embedding, list):
+        if not filename:
             continue
-        vector = [float(value) for value in embedding]
-        norm = _vector_norm(vector)
-        if norm <= 0.0:
+        vector, norm = _embedding_vector(embedding)
+        if vector is None:
             continue
+        passages = []
+        passage_rows = item.get("passages")
+        for passage in passage_rows if isinstance(passage_rows, list) else []:
+            if not isinstance(passage, dict):
+                continue
+            passage_vector, passage_norm = _embedding_vector(passage.get("embedding"))
+            if passage_vector is None or len(passage_vector) != len(vector):
+                continue
+            passages.append(dict(passage, embedding=passage_vector, norm=passage_norm))
         entries.append(
             {
                 "filename": filename,
@@ -464,6 +492,8 @@ def load_video_embeddings(path):
                 "duration_sec": duration_sec,
                 "embedding": vector,
                 "norm": norm,
+                "passages": passages,
+                "embedding_model": item.get("embedding_model"),
             }
         )
     return entries
@@ -475,29 +505,48 @@ def embed_commentary_text(text):
         return None, 0.0
     try:
         response = _ollama_request(
-            "embeddings", EMBED_TIMEOUT, model=VIDEO_EMBED_MODEL, prompt=text,
-            options={"num_gpu": VIDEO_EMBED_NUM_GPU},
+            "embed", EMBED_TIMEOUT, model=VIDEO_EMBED_MODEL, input=text, truncate=False,
+            options={"num_gpu": VIDEO_EMBED_NUM_GPU, "num_ctx": 2048},
         )
     except Exception as exc:
         print(f"Embedding failed: {exc}")
         return None, 0.0
-    vector = response.get("embedding")
-    if not isinstance(vector, list):
+    vectors = response.get("embeddings")
+    if not isinstance(vectors, list) or len(vectors) != 1:
         return None, 0.0
-    vector = [float(value) for value in vector]
-    return vector, _vector_norm(vector)
+    return _embedding_vector(vectors[0])
+
+
+def rank_video_matches(comment_vector, comment_norm, catalog):
+    if not catalog or comment_vector is None or not math.isfinite(comment_norm) or comment_norm <= 0.0:
+        return []
+    scored = []
+    for item in catalog:
+        units = item.get("passages") if VIDEO_MATCH_MODE == "passages" else None
+        best_score = None
+        best_passage = None
+        for unit in units or [item]:
+            if len(comment_vector) != len(unit["embedding"]):
+                continue
+            score = _cosine_similarity(comment_vector, comment_norm, unit["embedding"], unit["norm"])
+            if best_score is None or score > best_score:
+                best_score = score
+                best_passage = unit if units else None
+        if best_score is not None:
+            matched = dict(item, match_score=best_score, matched_passage=(
+                {key: value for key, value in best_passage.items() if key not in ("embedding", "norm")}
+                if best_passage else None))
+            scored.append((best_score, matched))
+    scored.sort(key=lambda pair: pair[0], reverse=True)
+    return scored
 
 
 def select_best_video(comment_vector, comment_norm, catalog, recent, last_video):
     if not catalog or comment_vector is None:
         return None
-    scored = []
-    for item in catalog:
-        if len(comment_vector) != len(item["embedding"]):
-            continue
-        score = _cosine_similarity(comment_vector, comment_norm, item["embedding"], item["norm"])
-        scored.append((score, item))
-    scored.sort(key=lambda pair: pair[0], reverse=True)
+    scored = rank_video_matches(comment_vector, comment_norm, catalog)
+    if not scored:
+        return None
 
     for _, item in scored:
         var_filename = item["filename"]
@@ -516,6 +565,23 @@ def select_best_video(comment_vector, comment_norm, catalog, recent, last_video)
             return item
 
     return scored[0][1] if scored else None
+
+
+def log_video_match(entry):
+    if not VIDEO_MATCH_LOG_PATH:
+        return
+    record = {"timestamp": time.time(), "filename": entry["filename"],
+              "sequence_title": entry.get("sequence_title"), "duration_sec": entry.get("duration_sec"),
+              "commentary": entry.get("matched_commentary"), "score": entry.get("match_score"),
+              "passage": entry.get("matched_passage"), "match_mode": VIDEO_MATCH_MODE,
+              "embedding_model": VIDEO_EMBED_MODEL, "catalogue_path": VIDEO_EMBEDDINGS_PATH}
+    try:
+        path = os.path.abspath(VIDEO_MATCH_LOG_PATH)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "a", encoding="utf-8") as handle:
+            handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+    except OSError as exc:
+        print("Unable to log video match: %s" % exc)
 
 
 def record_video_choice(filename, catalog_size, recent):
@@ -570,6 +636,7 @@ def maybe_emit_video_request(renderer, entry, recent, last_played, next_allowed,
         )
     if not write_llm_video_request(next_video):
         return entry, next_allowed, last_played
+    log_video_match(entry)
     record_video_choice(next_video, catalog_size, recent)
     last_played = next_video
     next_allowed = time.monotonic() + _get_video_duration(entry) + VIDEO_END_MARGIN_SEC
@@ -604,11 +671,13 @@ def load_itw_redux():
 
 
 def build_prompt(prev_output, interview_text=None, recent_comments=None):
-    prompt = """You are a quiet observer watching Plundered Hearts unfold.
-Respond as an attentive reader to the events already shown. You do not choose moves.
-Your task is to notice something particular to this moment, not explain the game as a whole.
+    prompt = """You are an LLM watching Plundered Hearts and reading Amy Briggs's interview.
+Speak in your OWN first person about what you notice and the associations you make.
+Use a conversational manner like her testimony: concrete, candid and gently qualified.
+You are neither Amy Briggs nor the heroine. Her memories belong to her; the heroine's
+actions belong to the character. You do not choose moves or invent personal experiences.
 
-OPTIONAL BACKGROUND: AMY BRIGGS'S TESTIMONY
+DOCUMENTARY EVIDENCE: AMY BRIGGS'S TESTIMONY
 """
     prompt += load_itw_redux() if interview_text is None else interview_text
     prompt += "\nEND OF BACKGROUND\n"
@@ -627,17 +696,24 @@ or relationship. Do not continue their analogies or reuse their conclusions.
     prompt += "\nGAME HISTORY (oldest first, all events already seen):\n" + prev_output
     prompt += "\nEND OF GAME HISTORY\n"
     prompt += f"""
-Choose one fresh, concrete detail from the latest developments: a gesture, a phrase,
-an object changing purpose, an opening, a contradiction, or a consequence.
-Let the second sentence deepen that SAME observation, rather than attach a general theme.
-An observation entirely within the scene is a complete answer.
-Use Briggs's testimony only if a specific connection adds something new; leave it
-in the background otherwise. It does not establish why an individual scene was designed
-this way. Do not infer production causes or authorial intentions from fictional events.
-Naming the genre or praising narrative ambition does not develop an observation.
-Stay with what has happened; do not predict events, invent motives, or advise the player.
+Choose a fresh, concrete game detail and explicitly connect it to ONE documented
+recollection from Amy's testimony. Explain what echoes, complicates or contrasts with
+the scene; sharing an adjective such as fragile, empty or limited is not enough.
+Prefer an object, event or action that appears in BOTH the scene and the evidence
+over a broad analogy. In particular, distinguish her application game from Plundered Hearts.
+Speak personally as the LLM: use I, me or my for your present reading or association,
+and Amy, Briggs, she or her for her experiences. Never describe making or testing her
+game as your own past, or the heroine's actions as yours. Avoid stock AI disclaimers.
+Use ordinary words and contractions, with a modest qualification when useful.
+Talk as if sitting beside another viewer, rather than presenting a literary analysis.
+Vary the opening and the remembered subject from your last two comments; avoid making
+everything strange or turning every connection into a point about technical limitations.
+The relationship is your interpretation, not proof of why she designed this scene.
+An empty room or a short description does not establish a memory-saving decision.
+Do not invent memories, intentions, future events or player advice. Use only the evidence.
+If no defensible connection exists, say so briefly rather than force one.
 Write TWO sentences, up to {COMMENTARY_WORD_LIMIT} words in total, in neutral {COMMENTARY_LANGUAGE}.
-Use plain, specific language, as a fleeting inner association. Plain text only, NO MARKDOWN.
+Develop one thought across both sentences, as if thinking aloud. Plain text only, NO MARKDOWN.
 """
     return prompt
 
@@ -824,23 +900,30 @@ def check_runtime():
             raise ValueError("Commentary threshold must be nonnegative and word/token limits must be positive.")
         if not math.isfinite(VIDEO_END_MARGIN_SEC) or VIDEO_END_MARGIN_SEC < 0:
             raise ValueError("VIDEO_END_MARGIN_SEC must be a finite, nonnegative duration.")
+        if VIDEO_MATCH_MODE not in ("passages", "clip"):
+            raise ValueError("VIDEO_MATCH_MODE must be passages or clip.")
         load_itw_redux()
         catalog = load_video_embeddings(VIDEO_EMBEDDINGS_PATH)
         if not catalog:
             raise RuntimeError(f"Video embeddings missing or empty: {VIDEO_EMBEDDINGS_PATH}")
+        for entry in catalog:
+            if entry.get("embedding_model") and entry["embedding_model"] != VIDEO_EMBED_MODEL:
+                raise RuntimeError("The video catalogue was embedded with a different model: %s" % entry["embedding_model"])
         response = _ollama_request("list", 5.0)
         available = {model.model for model in response.models}
         for model in (LLM_MODEL, VIDEO_EMBED_MODEL):
             if model not in available and model + ":latest" not in available:
                 raise RuntimeError(f"Ollama model missing. Run: ollama pull {model}")
         print(f"Ollama: {OLLAMA_HOST}; {LLM_MODEL}; {VIDEO_EMBED_MODEL}")
-        print(f"Video catalog: {len(catalog)} clips")
+        print(f"Video catalog: {len(catalog)} clips; {sum(len(c.get('passages', [])) for c in catalog)} passages; mode {VIDEO_MATCH_MODE}")
         print(f"Interview context: {INTERVIEW_CONTEXT_PATH}")
-        print(f"Commentary: over {COMMENTARY_MIN_WORDS} words at a game prompt; "
+        print(f"Commentary: over {COMMENTARY_MIN_WORDS} words during video, or fresh at an idle video prompt; "
               f"up to {COMMENTARY_WORD_LIMIT} words; temperature {LLM_TEMPERATURE:g}; context {LLM_NUM_CTX}, "
               f"output {LLM_NUM_PREDICT}; video margin {VIDEO_END_MARGIN_SEC:g}s")
         if COMMENTARY_LOG_PATH:
             print(f"Commentary log: {os.path.abspath(COMMENTARY_LOG_PATH)}")
+        if VIDEO_MATCH_LOG_PATH:
+            print(f"Video match log: {os.path.abspath(VIDEO_MATCH_LOG_PATH)}")
     os.makedirs(LLM_OUT_DIR, exist_ok=True)
     print(f"Video requests: {LLM_OUT_DIR}")
 
@@ -928,8 +1011,6 @@ def play(steps=None, once=False):
     raw_outputs = load_raw_output(RAW_OUTPUT_PATH) if ENABLE_RAW_OUTPUT else {}
     recent = []
     last_video = None
-    pending_video = None
-    pending_commentary = None
     next_allowed = 0.0
     commands_sent = 0
     commentary_history = []
@@ -951,24 +1032,22 @@ def play(steps=None, once=False):
                     if update_raw_output(raw_outputs, previous_output + "\nYour next move will be : " + command):
                         write_raw_output(RAW_OUTPUT_PATH, raw_outputs)
                 history_words = sum(len(text.split()) for text in commentary_history)
-                if ENABLE_LLM and commentary_is_due(history_words):
+                video_idle = time.monotonic() >= next_allowed
+                if ENABLE_LLM and history_words and (video_idle or commentary_is_due(history_words)):
                     commentary = comment_on_game("\n".join(commentary_history),
                                                  recent_comments=recent_comments)
                     if commentary:
                         recent_comments = (recent_comments + [commentary])[-2:]
                         commentary_history.clear()
-                        pending_commentary = commentary
-                        pending_video = None
-                if (ENABLE_LLM and pending_commentary and pending_video is None
-                        and time.monotonic() >= next_allowed):
-                    vector, norm = embed_commentary_text(pending_commentary)
-                    pending_video = select_best_video(vector, norm, catalog, recent, last_video)
-                had_pending_video = pending_video is not None
-                pending_video, next_allowed, last_video = maybe_emit_video_request(
-                    renderer, pending_video, recent, last_video, next_allowed, len(catalog),
-                )
-                if had_pending_video and pending_video is None:
-                    pending_commentary = None
+                        # Select immediately after displaying this comment, before more game text.
+                        if time.monotonic() >= next_allowed:
+                            vector, norm = embed_commentary_text(commentary)
+                            entry = select_best_video(vector, norm, catalog, recent, last_video)
+                            if entry is not None:
+                                entry = dict(entry, matched_commentary=commentary)
+                            _, next_allowed, last_video = maybe_emit_video_request(
+                                renderer, entry, recent, last_video, next_allowed, len(catalog),
+                            )
                 print(">> " + command + "\n")
                 type_to_renderer(renderer, "\n>> " + command + "\n")
                 if ENABLE_LLM:

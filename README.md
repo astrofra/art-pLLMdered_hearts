@@ -13,9 +13,9 @@ Deux recits se croisent : Lady Dimsford dans le jeu, et Amy Briggs dans son temo
 ## Architecture
 
 - `src/faketerm.py` pilote `frotz`, envoie une solution pre-ecrite, nettoie la sortie, et rend le texte via un renderer C64.
-- Le LLM ne choisit pas les commandes : il commente quand le buffer depasse 150 mots, au retour au prompt, apres l'affichage complet de la sortie du jeu.
+- Le LLM ne choisit pas les commandes : pendant une video, il commente quand le buffer depasse 150 mots. Quand le magneto est estime libre, il produit un commentaire neuf au prochain prompt, meme sous ce seuil. L'affichage complet de la sortie du jeu precede toujours son intervention.
 - Le buffer conserve toutes les commandes et sorties depuis le dernier commentaire reussi. Le commentaire s'affiche immediatement, meme pendant un extrait d'Amy.
-- Python garde le dernier commentaire disponible. Une fois l'extrait courant termine selon `duration_sec` et une marge de 3 secondes, ce commentaire est embarque (`ollama.embeddings`) puis compare a `assets/abriggs-itw-embeddings.json` pour choisir le prochain clip video.
+- Une fois l'extrait courant termine selon `duration_sec` et une marge de 3 secondes, seul un commentaire venant d'etre affiche peut choisir le prochain extrait. Il est vectorise (`ollama.embed`) puis compare aux passages de `assets/abriggs-itw-passages.json` avant toute nouvelle commande ou sortie de jeu. Le meilleur passage de chaque video determine son score, sans moyenne.
 - Le choix est ecrit dans `llm_out/` via un fichier timestamp. La synchronisation repose uniquement sur les durees ; Godot ne renvoie aucun etat a Python.
 - La boucle redemarre apres la derniere commande pour un fonctionnement continu.
 - `godot-viewer/` lit `llm_out/`, met en file les videos, et joue du bruit (noise) quand la file est vide.
@@ -23,6 +23,7 @@ Deux recits se croisent : Lady Dimsford dans le jeu, et Amy Briggs dans son temo
 ## Donnees et scripts
 
 - `src/embed_vtt.py` genere `assets/abriggs-itw-embeddings.json` a partir des sous-titres `.txt` (hors `-fr`), et ajoute `sequence_title`.
+- `src/embed_vtt.py --passages` regenere `assets/abriggs-itw-passages.json`, en reutilisant les titres et durees du catalogue historique. Il vectorise le texte complet et plusieurs passages par video, sur CPU, sans appel supplementaire au modele de commentaire.
 - `src/translate_subtitles.py` produit les sous-titres `-fr.txt` avec contexte.
 - `src/compute_itw_durations.py` calcule `duration_sec` depuis les timecodes de sous-titres.
 
@@ -56,13 +57,13 @@ Les variables `LLM_MODEL`, `VIDEO_EMBED_MODEL`, `OLLAMA_HOST` et `FROTZ_PATH` pe
 
 Les embeddings utilisent le processeur par defaut pour garder la memoire graphique disponible pour Gemma, notamment sur une carte de 8 Go. `VIDEO_EMBED_NUM_GPU=-1` permet a Ollama de choisir automatiquement le placement si la carte dispose de davantage de memoire. Le premier commentaire inclut le temps de chargement des modeles.
 
-Le seuil `COMMENTARY_MIN_WORDS` vaut 150 par defaut : le compteur inclut les commandes et le texte nettoye du jeu. Le programme attend toujours la fin d'une sortie complete avant de verifier ce seuil. Il ne tronque pas le buffer. Une reponse vide conserve l'historique pour la tentative suivante ; les fins de parcours sont conservees et marquees lors du redemarrage.
+Le seuil `COMMENTARY_MIN_WORDS` vaut 150 par defaut pendant une video : le compteur inclut les commandes et le texte nettoye du jeu. Quand le lecteur est estime libre, un commentaire neuf est demande au prochain prompt, meme si le buffer est plus court. Le programme attend toujours la fin d'une sortie complete et ne tronque pas le buffer. Une reponse vide conserve l'historique pour la tentative suivante ; les fins de parcours sont conservees et marquees lors du redemarrage.
 
 Le prompt contient aussi les deux derniers commentaires affiches, dans une section distincte qui demande d'eviter de reprendre leurs observations, analogies et formulations. Cette memoire reste limitee a deux reponses reussies et traverse les redemarrages du parcours. Les commentaires peuvent developper deux phrases, avec une limite de 90 mots au total au lieu de 60 ; `COMMENTARY_WORD_LIMIT` permet d'ajuster cette limite. Le seuil de 150 mots concerne toujours uniquement les commandes et sorties du jeu.
 
-Le LLM recoit uniquement les evenements deja affiches et les commandes deja executees, jamais la prochaine commande du parcours. La consigne privilegie un detail nouveau de la scene et demande que les deux phrases developpent la meme observation. Le temoignage d'Amy reste un contexte facultatif ; il ne sert pas a expliquer chaque evenement par des contraintes de production ou une intention supposee de l'autrice.
+Le LLM recoit uniquement les evenements deja affiches et les commandes deja executees, jamais la prochaine commande du parcours. Il s'exprime en anglais a la premiere personne, en tant que LLM, avec une expression concrete et conversationnelle inspiree de celle d'Amy. Les deux phrases relient explicitement un detail du jeu a un souvenir documente d'Amy ; ses souvenirs restent attribues a elle. Le modele n'incarne ni l'autrice ni l'heroine et n'invente pas de causes de production ou d'intentions pour expliquer une scene. Il peut signaler l'absence de lien solide plutot que forcer une analogie.
 
-Le contexte par defaut est `assets/abriggs-itw-facts-brief.txt` : huit fiches factuelles totalisant 136 mots. `LLM_TEMPERATURE=0.3` conserve un echantillonnage modere. `INTERVIEW_CONTEXT_PATH` choisit un autre fichier UTF-8 ; les chemins relatifs partent de la racine du projet. Pour essayer le resume historique avec une autre temperature :
+Le contexte par defaut est `assets/abriggs-itw-facts-brief.txt` : huit fiches factuelles totalisant 191 mots, enrichies de souvenirs precis sur les attentes des joueurs, le coffre du debut et l'aide des collegues. `LLM_TEMPERATURE=0.3` conserve un echantillonnage modere. `INTERVIEW_CONTEXT_PATH` choisit un autre fichier UTF-8 ; les chemins relatifs partent de la racine du projet. Pour essayer le resume historique avec une autre temperature :
 
 ```bat
 set "LLM_TEMPERATURE=0.6"
@@ -70,9 +71,9 @@ set "INTERVIEW_CONTEXT_PATH=assets\abriggs-itw-750-words.txt"
 3-run-ai-play.bat
 ```
 
-Les variantes conservees sont le recit historique (752 mots), `abriggs-itw-facts-prose.txt` (230 mots), `abriggs-itw-facts-cards.txt` (255 mots, memes phrases que la prose avec huit rubriques), et `abriggs-itw-facts-brief.txt` (136 mots, plus condense). Ces nouveaux fichiers sont derives de l'entretien et du resume ; ils ne modifient ni les sous-titres ni le catalogue d'embeddings.
+Les variantes conservees sont le recit historique (752 mots), `abriggs-itw-facts-prose.txt` (230 mots), `abriggs-itw-facts-cards.txt` (255 mots, memes phrases que la prose avec huit rubriques), et `abriggs-itw-facts-brief.txt` (191 mots, initialement 136 avant l'ajout de souvenirs concrets). Ces fichiers sont derives de l'entretien et du resume ; ils ne modifient ni les sous-titres ni le catalogue d'embeddings.
 
-Les commentaires continuent pendant les videos. Seule la vectorisation attend la fin estimee de l'extrait, avec `VIDEO_END_MARGIN_SEC=3`. Si plusieurs commentaires ont ete produits entre-temps, seul le dernier choisit le prochain extrait. Sans commentaire disponible, le viewer reste sur le bruit video. Les durees du catalogue proviennent des sous-titres et sont deja legerement prudentes ; une duree absente ou invalide utilise 200 secondes.
+Les commentaires continuent pendant les videos au seuil de 150 mots. Apres la fin estimee de l'extrait, avec `VIDEO_END_MARGIN_SEC=3`, le prochain retour au prompt declenche un commentaire neuf : il s'affiche, puis choisit immediatement la prochaine video avant la reprise du jeu. Les commentaires affiches pendant la video ne sont plus conserves pour une selection differee. Une reponse vide ou une erreur laisse le lecteur au bruit video ; une nouvelle tentative partira d'un nouveau commentaire au prompt suivant. Les durees proviennent des sous-titres ; une duree absente ou invalide utilise 200 secondes.
 
 `LLM_NUM_CTX=4096` et `LLM_NUM_PREDICT=2560` configurent le contexte et le plafond de generation. Le raisonnement est active par defaut pour Gemma 4. Le plafond couvre son raisonnement interne et le commentaire affiche ; les deux phrases restent limitees a 90 mots dans le prompt. Le prompt et les tokens generes partagent la fenetre de contexte.
 
@@ -84,6 +85,14 @@ set "COMMENTARY_LOG_PATH=documentation\commentary-session.jsonl"
 ```
 
 `COMMENTARY_LOG_ENABLED=0` desactive le journal. Les sessions precedentes restent disponibles pour analyse.
+
+La recherche video utilise desormais **132 passages pour 25 videos**, visant 70 mots, avec une mediane de 75 mots. Les passages conservent des groupes de sous-titres contigus avec un recouvrement d'un sous-titre ; une fin trop courte est rattachee au passage precedent. Le decoupage ne garantit pas des frontieres de phrases parfaites. Chaque passage conserve son texte exact et ses timecodes ; les fichiers de sous-titres originaux restent inchanges. L'extrait video entier est joue, et sa duree ainsi que la recence restent gerees au niveau des 25 videos.
+
+Le meilleur score individuel, parmi les passages d'une video, est retenu. Un score eleve peut encore venir d'une formulation vague, et les videos longues proposent plus de passages : ces scores ne sont pas des probabilites de pertinence. Le [comparatif des passages et des prompts](documentation/commentary-resonance-2026-10-20/comparison.html) permet de lire les rapprochements et leurs limites. Les essais de voix plus orale ne justifient pas de changer le prompt actuel.
+
+Chaque demande video reussie ajoute une ligne a `llm_out/video_matches_YYYYMMDD_HHMMSS_PID.jsonl` : commentaire ayant choisi l'extrait, video, score, passage gagnant, timecodes, modele et chemin du catalogue. `VIDEO_MATCH_LOG_PATH` choisit un autre fichier ; `VIDEO_MATCH_LOG_ENABLED=0` desactive ce journal. Il decrit une demande de lecture, pas une confirmation du lecteur.
+
+`VIDEO_MATCH_MODE=clip` permet de comparer a nouveau les vecteurs des clips entiers. `VIDEO_EMBEDDINGS_PATH=assets\abriggs-itw-embeddings.json` permet aussi de recharger le catalogue historique ; le chargeur accepte les deux formats. Les chemins relatifs partent de la racine du projet. Le nouveau catalogue et les commentaires utilisent la meme API moderne et le meme format de texte brut, sans prefixe de tache ; les embeddings sont refuses plutot que tronques au-dela de 2048 tokens.
 
 Apres modification du viewer, reconstruire `bin/itw-viewer.exe` et son `.pck` depuis Godot avec le preset `Windows Desktop`. Les videos `.ogv`, les sous-titres et les fontes doivent rester inclus dans l'export.
 

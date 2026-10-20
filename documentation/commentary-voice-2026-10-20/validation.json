@@ -1,0 +1,16 @@
+{
+  "unit_tests": 32,
+  "status": "passed",
+  "real_runtime_commands": 3,
+  "real_runtime_exit_code": 0,
+  "fresh_comment_request_checks": [
+    {
+      "comment_id": 1,
+      "no_game_output_between": true,
+      "filename": "24_writing_a_romance_5.ogv"
+    }
+  ],
+  "renderer": false,
+  "viewer": false,
+  "playback_state": "estimated by duration, not confirmed by Godot"
+}

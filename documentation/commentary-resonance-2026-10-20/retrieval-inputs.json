@@ -1,0 +1,2234 @@
+{
+  "documents": [
+    {
+      "text": "Oh, yeah. I mean, that's that's easy. That's an easy question. I was in college. I had a boyfriend who was ahead of the game and he actually sold computers. This in the early 80s, so he was ahead ... ahead. He was a geek like most of the people I like. And... he introduced me. We would stay up late playing text adventure games. So, the first one I played actually was a Scott Adams game. I think this is the one I played first. Scott Adams game about being in the west. I can't remember the name of it, but it was a western cowboy game. And I graduated from those two Infocom games actually before I worked at Infocom.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "00_entering_infocom_0.ogv",
+      "title": "Text Adventures and Early Home Computers",
+      "id": "V01_0",
+      "embeddings": {
+        "raw": "f92c0d6b5a4ea5cc294a0e20ad0649205f03456c2ad257fc4ead769cd332097b",
+        "similarity": "195d4c9639518fc0c8761412bbb7afe2dffdbaf6988e6b2a880519c0721071f8",
+        "retrieval": "7af6622416e234c65450231620afd610f55957b45d1249f262a1d25ca8fb82ce"
+      }
+    },
+    {
+      "text": "Oh, yeah. I mean, that's that's easy. That's an easy question. I was in college. I had a boyfriend who was ahead of the game and he actually sold computers. This in the early 80s, so he was ahead ... ahead. He was a geek like most of the people I like. And... he introduced me. We would stay up late playing text adventure games. So, the first one I played actually was a Scott Adams game. I think this is the one I played first. Scott Adams game about being in the west. I can't remember the name of it, but it was a western cowboy",
+      "start": "0:00:00.160",
+      "end": "0:00:30.960",
+      "kind": "chunk",
+      "filename": "00_entering_infocom_0.ogv",
+      "title": "Text Adventures and Early Home Computers",
+      "id": "V01_1",
+      "embeddings": {
+        "raw": "934c1e5741f7f793ad0b70c02a32f333bde297c8fa6b230c54e4f7450d5e0f1a",
+        "similarity": "c581fb4656103636b53fc098ddfbd8627cdc420b2f532b256d54ff3f37522080",
+        "retrieval": "fde6b82613e6673430d81f950923f29ab96b9720c62c2a51511cd1c2bb689526"
+      }
+    },
+    {
+      "text": "game about being in the west. I can't remember the name of it, but it was a western cowboy game. And I graduated from those two Infocom games actually before I worked at Infocom.",
+      "start": "0:00:25.760",
+      "end": "0:00:35.840",
+      "kind": "chunk",
+      "filename": "00_entering_infocom_0.ogv",
+      "title": "Text Adventures and Early Home Computers",
+      "id": "V01_2",
+      "embeddings": {
+        "raw": "9d6c83b248fdf06ed81fc8fb557da3f79c002bdf5cc5887d78b3551cb70850d9",
+        "similarity": "1882051562ad51fb95811ac80ee3ab81f36a7e9e1c504c2c3f37f80b7615b950",
+        "retrieval": "7f09597e0d3fadd7295206c7cf3e4d94334776e30975659e553d26920be71ca5"
+      }
+    },
+    {
+      "text": "Uh, no. Mine was more kismet which was I broke up with that boyfriend and he was moving to some other place and in kind of a so there kind of thing. I said well I'm going to move to Massachusetts and yeah I'm going to work for Infocom completely out of the blue. It was it was a just trying to get his goat and it sounded like fun. You know I happened to be I had a sister in Massachusetts so I could go mooch off her and look you know Infocom's there. Um, and I got to Massachusetts on a Thursday. I looked in the newspaper and the want ads that weekend had a a job for two testers at Infocom. One for Cornerstone and one for the games. And I applied for them and was interviewed a week later and got the job two weeks after that. I mean, it was I just walked into it. I didn't have to try hard at",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "01_entering_infocom_1.ogv",
+      "title": "Finding Infocom Through a Chance Encounter",
+      "id": "V02_0",
+      "embeddings": {
+        "raw": "e4fb1be08e9e91d62d85762f023cfa21a4fa17910334ade023b2d55d5b419564",
+        "similarity": "b13bd0a0aae2c5c083e197aa40463e05ed00b25c6288a6b5fbf870a6ac81bd87",
+        "retrieval": "25ae57fc221343ba80434f62ca61bd5949fb536f77f943c17426cc2237684d6f"
+      }
+    },
+    {
+      "text": "Uh, no. Mine was more kismet which was I broke up with that boyfriend and he was moving to some other place and in kind of a so there kind of thing. I said well I'm going to move to Massachusetts and yeah I'm going to work for Infocom completely out of the blue. It was it was a just trying to get his goat and it sounded like fun. You know I happened to be I had a sister in Massachusetts so I could go mooch off her and look you know Infocom's there. Um, and I got to Massachusetts on a Thursday. I looked in the newspaper and the want ads that weekend",
+      "start": "0:00:00.000",
+      "end": "0:00:37.440",
+      "kind": "chunk",
+      "filename": "01_entering_infocom_1.ogv",
+      "title": "Finding Infocom Through a Chance Encounter",
+      "id": "V02_1",
+      "embeddings": {
+        "raw": "3bc4a5c43cc2a7c7402bcfe8ab074e9be9dd7d178ca1997d889f6c1aa0758945",
+        "similarity": "2bc4db907b88ffd52e07e26d4cb49dea7e140d3b5ee5d725b601571e6d5cc600",
+        "retrieval": "6921e32d3bcaa72e3dc311d7f7c7fbf05d5969e1610f5250fe731766cdcabccd"
+      }
+    },
+    {
+      "text": "and I got to Massachusetts on a Thursday. I looked in the newspaper and the want ads that weekend had a a job for two testers at Infocom. One for Cornerstone and one for the games. And I applied for them and was interviewed a week later and got the job two weeks after that. I mean, it was I just walked into it. I didn't have to try hard at",
+      "start": "0:00:27.920",
+      "end": "0:00:54.960",
+      "kind": "chunk",
+      "filename": "01_entering_infocom_1.ogv",
+      "title": "Finding Infocom Through a Chance Encounter",
+      "id": "V02_2",
+      "embeddings": {
+        "raw": "4bfab7359617e53ed282aced7d348a9498e671e0fbde960b41422763e9ca3187",
+        "similarity": "dcd7afb0b794c33672f4b573796116faf6c01c0956d846a157abd92cd2a1d91f",
+        "retrieval": "8ba97feb4ba637900438fe2371223f0d5cfbb330cc5e324c908842a3617e0d82"
+      }
+    },
+    {
+      "text": "I started at Wheeler and they moved in my first month or two. Okay. So, so I got to see both sort of the end of the old and the beginning of the new and I was new enough and arrived at a time when everything was expanding and the excitement was all about Cornerstone and how we're going to be business. We're going to be button down. We're going to be real. None of these game things. And I got caught up in that even though I was hired on the game side. Um, and so I was all for the move and the cool new building with the glass and the atriums and and it was, I suppose, it was an interesting not a loss of innocence so much but to see if I look back at myself of learning what the mistakes were being made even as that happened I was able to sort of experience them myself with with getting caught up in the excitement of of the new idea and then seeing how that was really a bad idea for Infocom. And then of course I ended up as an imp. So I moved much further into the other side of things.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "02_wheeler_building_0.ogv",
+      "title": "Leaving Infocom and Looking Back",
+      "id": "V03_0",
+      "embeddings": {
+        "raw": "33c927e5a675bb1e00a9120dbf2cdd4faaa0df8be8f251af4cbcbffd7c462fb3",
+        "similarity": "d75624a4f45dfb1e44dd9fcab3084e62a42d01fb964e00eb4bc27e0b73589203",
+        "retrieval": "3191267a29b25c90e3318e21c5fcb3b4c3c7fb56d458bfc42c9008ac75872b20"
+      }
+    },
+    {
+      "text": "I started at Wheeler and they moved in my first month or two. Okay. So, so I got to see both sort of the end of the old and the beginning of the new and I was new enough and arrived at a time when everything was expanding and the excitement was all about Cornerstone and how we're going to be business. We're going to be button down. We're going to be real. None of these game things. And I got caught up in that even though I was hired on the game side. Um, and so I was all for the move and the cool new building with the glass and the atriums and and",
+      "start": "0:00:00.000",
+      "end": "0:00:32.000",
+      "kind": "chunk",
+      "filename": "02_wheeler_building_0.ogv",
+      "title": "Leaving Infocom and Looking Back",
+      "id": "V03_1",
+      "embeddings": {
+        "raw": "8b42590b079ee93db8e9ef13802db1c322c977a057b38a9205cd3edda4d94931",
+        "similarity": "95ad5487ca248070a94c4fb3070d9d7a15c755ea6c72002a8a0d1f60255890b3",
+        "retrieval": "182e3b886626effdf5b3d9a3deb902a0c02e8d5800cac4139deb0deb8c54338c"
+      }
+    },
+    {
+      "text": "and so I was all for the move and the cool new building with the glass and the atriums and and it was, I suppose, it was an interesting not a loss of innocence so much but to see if I look back at myself of learning what the mistakes were being made even as that happened I was able to sort of experience them myself with with getting caught up in the excitement of of the new idea and then seeing how that was really a bad idea for Infocom. And then of course I ended up as an imp. So I moved much further into the other side of things.",
+      "start": "0:00:25.760",
+      "end": "0:01:01.680",
+      "kind": "chunk",
+      "filename": "02_wheeler_building_0.ogv",
+      "title": "Leaving Infocom and Looking Back",
+      "id": "V03_2",
+      "embeddings": {
+        "raw": "24140186eddf2481527b8da4455301c953ed20ed2688a50de677afc6fd1bd5b0",
+        "similarity": "15a3b8c4020844d747d19d90c034b84fe430df8df165bf7d32046084fe040f46",
+        "retrieval": "a880179b7b505dbedceaa92e08cd108a17de6c04903ac6021b0af5c49f2bcfd0"
+      }
+    },
+    {
+      "text": "I have a very first person narrative view of the whole experience. Yeah, I can't tell you what it was like in a third person world. This was the first job I'd had out of college, so I didn't know at the time that it was different from anywhere else. I mean, I knew it was different, but I didn't know how different. Um, I haven't continued working in the games industry, so I don't know how different it was from how games are done now, you know. So, that's all I can say. Um, from my experience, I was part of the testers and we were part of the imps and I don't know what it was like to be uh, in marketing really in in a different part of the same company. I I can't really talk to that experience. So, yes, a call would go out. We're going to get an imp. But I don't know if that was really only, you know, four of us knew that the call had gone out or if the whole company knew that. That's sort of my my thing about not being omnisient. I don't really know what was happening to the for the other people and I have learned later that apparently there was this sense of we were the very clickish in group the imp the clickish of the clicks and the testers were on the outer margins of that and you know moving out in groups but it didn't it didn't feel that way so much to to us. So from my experience we had gone through the layoffs the Cornerstone disaster the purchase of of infocom by Activision and uh Steve came to me. I was one of his testers and he came to me some Saturday morning and said you know Amy you I think I had told him it would be a goal someday to be an imperson. It was sort of in the blue sky. And he said, you know, uh, we're going to be hiring an imp someday and someday soon. And after this hiring, because of all the cutbacks and all, there's not going to be another imp hired until one of us dies. So, if you're going to go for it, you have to go for it now. So, I kind of said, \"Oh, well, what do I do?\" He said, \"Well, you should write a game.\" So, I read a game and applied. And I think there were other people applying, too. But then I got it. So the other side of this is the testing and the imps worked very closely together. So I mean it was a perfect springboard to become an imp because you you knew the games and you were able to see how they were being created. You know it wasn't I suppose when you get a game completely done it's hard to imagine all of the steps that went into creating it. But when you're a tester and you've been there from from the alpha testing, very early stuff where nothing works and there's not a full story there and there's not a full experience, you have a much better sense while steaming out still being outside of it of of what it's like to create it. So it's a it's a logical next step to try to do it yourself. And Steve helped me. He he was the one who said, you know, here's how to do the interpreter. Here's how to Oh, I'm blanking on the words, you know, compile your pro-you know-compile your game. just the steps to the computer side. I had had some programming experience, so that wasn't completely out of my experience, but I didn't know how to do it for ZIL. So, he was able to to show me to he didn't he did not leave me by the hand, but he did sort of lay out what was needed in front of me.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "03_working_at_infocom_0.ogv",
+      "title": "From Playtester to Imp at Infocom",
+      "id": "V04_0",
+      "embeddings": {
+        "raw": "7785269539d7eff1ca8f9447ab3420b83f4e4bc3e5624e81b1254296c23ec22a",
+        "similarity": "feaf6d885cabd3c7601e5dc0ec06987de33a1443a12202e51bf705c01380faea",
+        "retrieval": "23bd5dcf7680b2a2572988c22ef98e3f0d713b771ef430aa5ee8afec182978dc"
+      }
+    },
+    {
+      "text": "I have a very first person narrative view of the whole experience. Yeah, I can't tell you what it was like in a third person world. This was the first job I'd had out of college, so I didn't know at the time that it was different from anywhere else. I mean, I knew it was different, but I didn't know how different. Um, I haven't continued working in the games industry, so I don't know how different it was from how games are done now, you know. So, that's all I can say. Um, from my experience, I was part of the testers and we were part of the imps and I don't know what",
+      "start": "0:00:00.320",
+      "end": "0:00:30.720",
+      "kind": "chunk",
+      "filename": "03_working_at_infocom_0.ogv",
+      "title": "From Playtester to Imp at Infocom",
+      "id": "V04_1",
+      "embeddings": {
+        "raw": "3c3af2f2cfe6572aca9b7ad96fc3b858295ccb59f62316b48cc787979dbf7e84",
+        "similarity": "974da2ed8104079d6da541e6639c64dc6482a253538bc80bfd424be69ddade18",
+        "retrieval": "36519c60483e10bc55a34f268033a9f6e16aa1457fea3902294292249db3d77d"
+      }
+    },
+    {
+      "text": "from my experience, I was part of the testers and we were part of the imps and I don't know what it was like to be uh, in marketing really in in a different part of the same company. I I can't really talk to that experience. So, yes, a call would go out. We're going to get an imp. But I don't know if that was really only, you know, four of us knew that the call had gone out or if the whole company knew that. That's sort of my my thing about not being omnisient. I don't really know what was happening to the for the other people and I have learned later",
+      "start": "0:00:23.440",
+      "end": "0:00:53.600",
+      "kind": "chunk",
+      "filename": "03_working_at_infocom_0.ogv",
+      "title": "From Playtester to Imp at Infocom",
+      "id": "V04_2",
+      "embeddings": {
+        "raw": "effa3c62651ff79b2ddfed04dececc86af5c10349a6c4ec153806be66f4da8b5",
+        "similarity": "19efe503edde752339ada0bc016892dc907a05c7c294ceaefbce86185d533d01",
+        "retrieval": "cd33401cea0365d6fbeb6d61dcdd7c622ce7b13fddbb840f45f7a667f5d46fad"
+      }
+    },
+    {
+      "text": "I don't really know what was happening to the for the other people and I have learned later that apparently there was this sense of we were the very clickish in group the imp the clickish of the clicks and the testers were on the outer margins of that and you know moving out in groups but it didn't it didn't feel that way so much to to us. So from my experience we had gone through the layoffs the Cornerstone disaster the purchase of of infocom by Activision and uh Steve came to me. I was one of his testers and he came to me some Saturday morning and said",
+      "start": "0:00:49.200",
+      "end": "0:01:28.800",
+      "kind": "chunk",
+      "filename": "03_working_at_infocom_0.ogv",
+      "title": "From Playtester to Imp at Infocom",
+      "id": "V04_3",
+      "embeddings": {
+        "raw": "099599031d9d54785643e395d048d218a6c1cae6d98322089e1e79d6bf025f42",
+        "similarity": "60f0a59e87ac72207592fd2e5b02ef4ae5014e4c545b980d92e9300892682183",
+        "retrieval": "695f537b55d7ed1805e92453aa5c8323336815f70b63564f28ea0ca95b2796fc"
+      }
+    },
+    {
+      "text": "uh Steve came to me. I was one of his testers and he came to me some Saturday morning and said you know Amy you I think I had told him it would be a goal someday to be an imperson. It was sort of in the blue sky. And he said, you know, uh, we're going to be hiring an imp someday and someday soon. And after this hiring, because of all the cutbacks and all, there's not going to be another imp hired until one of us dies. So, if you're going to go for it, you have to go for it now. So, I kind of said, \"Oh, well, what do I do?\" He said, \"Well,",
+      "start": "0:01:21.120",
+      "end": "0:01:51.520",
+      "kind": "chunk",
+      "filename": "03_working_at_infocom_0.ogv",
+      "title": "From Playtester to Imp at Infocom",
+      "id": "V04_4",
+      "embeddings": {
+        "raw": "1a2f921ea21e78519baabf1e6359a3936be6d27470c6ebd0801a8b72185a48e4",
+        "similarity": "59dfdc418dee45eca61f081a8f535d1326fcee09f228ab9e98e3b24003083f4a",
+        "retrieval": "df4ccfdf2c788f5653ccb2921868f687a4d161f195a1ee4ef1b37586040edc34"
+      }
+    },
+    {
+      "text": "for it, you have to go for it now. So, I kind of said, \"Oh, well, what do I do?\" He said, \"Well, you should write a game.\" So, I read a game and applied. And I think there were other people applying, too. But then I got it. So the other side of this is the testing and the imps worked very closely together. So I mean it was a perfect springboard to become an imp because you you knew the games and you were able to see how they were being created. You know it wasn't I suppose when you get a game completely done it's hard to imagine all of the steps that went into",
+      "start": "0:01:46.800",
+      "end": "0:02:19.840",
+      "kind": "chunk",
+      "filename": "03_working_at_infocom_0.ogv",
+      "title": "From Playtester to Imp at Infocom",
+      "id": "V04_5",
+      "embeddings": {
+        "raw": "7af379b8bb6fb3cb0fad8bca523594a4e630106ee16f2bce7fb34aa1e9a9f1a4",
+        "similarity": "42d52b944c22b4d1e3ac867e9a866c57d7ec07b42035743215d27d6e95bdae8c",
+        "retrieval": "a7f21cc2820c643d3ca28ab7a986ac1df6895fd6f1677d855d7d263e59a8c919"
+      }
+    },
+    {
+      "text": "suppose when you get a game completely done it's hard to imagine all of the steps that went into creating it. But when you're a tester and you've been there from from the alpha testing, very early stuff where nothing works and there's not a full story there and there's not a full experience, you have a much better sense while steaming out still being outside of it of of what it's like to create it. So it's a it's a logical next step to try to do it yourself. And Steve helped me. He he was the one who said, you know, here's how to do the interpreter. Here's how to Oh,",
+      "start": "0:02:14.320",
+      "end": "0:02:45.600",
+      "kind": "chunk",
+      "filename": "03_working_at_infocom_0.ogv",
+      "title": "From Playtester to Imp at Infocom",
+      "id": "V04_6",
+      "embeddings": {
+        "raw": "fc5df107885998eb13a70b89df58943fead13ca65737cfc507ce568b274d3bb9",
+        "similarity": "cbd67ff97cece69b0caaaaaeb4e5f71177aa68ddd16a234651155a6d7df31448",
+        "retrieval": "959724aa9d0cbfedd71c9fbae5d4f462d24a75af76bcb80aac58fae760fb9a70"
+      }
+    },
+    {
+      "text": "me. He he was the one who said, you know, here's how to do the interpreter. Here's how to Oh, I'm blanking on the words, you know, compile your pro-you know-compile your game. just the steps to the computer side. I had had some programming experience, so that wasn't completely out of my experience, but I didn't know how to do it for ZIL. So, he was able to to show me to he didn't he did not leave me by the hand, but he did sort of lay out what was needed in front of me.",
+      "start": "0:02:39.840",
+      "end": "0:03:08.000",
+      "kind": "chunk",
+      "filename": "03_working_at_infocom_0.ogv",
+      "title": "From Playtester to Imp at Infocom",
+      "id": "V04_7",
+      "embeddings": {
+        "raw": "317da43af772c81bc3bcae5d2fce0df3a1fc3ad995845e689f09b8e0e1b7faff",
+        "similarity": "6247163b6259b3c96fe74c8191135b48d6418fe6ebd879342c325861f965121b",
+        "retrieval": "b92a17b38ad2d9caf44dc9648d833cb271bcdce0961bb48c341538e4ab5da988"
+      }
+    },
+    {
+      "text": "So the other side of it was again from my experience from within the whole company we were all very young. I was younger than the average, but I was like 22, 23. Um, but but and the guys, somebody can tell you what the average age, there's a t-shirt that was given to the first person who would age, the oldest person in the company, you know. So, it was a young company. We all, most of us were single. We would just live there. It was our our home and our family as well as our workplace. So, for me to write a game, I would just work. I' get into work to test, you know, at 9:00, 9:30, 10:00. I'd work till 6:30 or 7:00 and then I'd work on the game for 2 or 3 hours. Go out to dinner with somebody, you know, else who was working late, come back. The company was open and there all the time. And then I worked all weekends when I was sort of actively in the mindset of I'm going to be coming in. I have to do this. I was getting up at six in the morning and coming in Saturdays and Sundays, too, to to write my game on the on the weekends when I wasn't working. But it wasn't hard. It was just part of the whole culture of the company. I was not alone in this is what I mean to say. You'd see other people there at the company, not writing their own games necessarily, but there to play games on the computers that we had available or to just hang out, everything. So, I guess in that way, it was probably different from other places I've worked.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "04_company_culture_0.ogv",
+      "title": "A Young Company of Passionate Developers",
+      "id": "V05_0",
+      "embeddings": {
+        "raw": "38c5ba02c83fab9d21c1916333350263ebdf1bf1bc83ac61e1bbb9562628859c",
+        "similarity": "4f54d61a15f0c211f6a6c59c9aa2c6f43ba0555bec5a0e11db69a19ff4d3997d",
+        "retrieval": "68c08d941e865b30c44d3992d22d037360c3a551b96f3f3b855351e8fefc84d3"
+      }
+    },
+    {
+      "text": "So the other side of it was again from my experience from within the whole company we were all very young. I was younger than the average, but I was like 22, 23. Um, but but and the guys, somebody can tell you what the average age, there's a t-shirt that was given to the first person who would age, the oldest person in the company, you know. So, it was a young company. We all, most of us were single. We would just live there. It was our our home and our family as well as our workplace. So, for me to write a game,",
+      "start": "0:00:00.080",
+      "end": "0:00:35.360",
+      "kind": "chunk",
+      "filename": "04_company_culture_0.ogv",
+      "title": "A Young Company of Passionate Developers",
+      "id": "V05_1",
+      "embeddings": {
+        "raw": "14d7d4e9498ed1c0333b9b9707ee5a894eb05360853053c53ba786f84b973586",
+        "similarity": "7006b6a65ebcb07995fc18e0e9e97da236aae9f7bf6fa200e7a629c9a53f01c6",
+        "retrieval": "1815a25cbace09d7e05a6f58844ed96e0383064ed2ada600da57d599128dfbde"
+      }
+    },
+    {
+      "text": "our our home and our family as well as our workplace. So, for me to write a game, I would just work. I' get into work to test, you know, at 9:00, 9:30, 10:00. I'd work till 6:30 or 7:00 and then I'd work on the game for 2 or 3 hours. Go out to dinner with somebody, you know, else who was working late, come back. The company was open and there all the time. And then I worked all weekends when I was sort of actively in the mindset of I'm going to be coming in. I have to do this. I was getting up at six in the morning and coming in Saturdays and Sundays, too,",
+      "start": "0:00:29.280",
+      "end": "0:01:01.760",
+      "kind": "chunk",
+      "filename": "04_company_culture_0.ogv",
+      "title": "A Young Company of Passionate Developers",
+      "id": "V05_2",
+      "embeddings": {
+        "raw": "45c29fabfdb5d993306677757c0210998237beb54240c1d8ac7c4bf09230069e",
+        "similarity": "0ca257f8d7ecb9b24fac8d3c0106ab1e46cb22bbb95fb6bb8543d31019d19676",
+        "retrieval": "15ae52f9d4e3a6309eb04aca200c2d55e1fd1a122302120f204b134f5cd2dfb7"
+      }
+    },
+    {
+      "text": "I have to do this. I was getting up at six in the morning and coming in Saturdays and Sundays, too, to to write my game on the on the weekends when I wasn't working. But it wasn't hard. It was just part of the whole culture of the company. I was not alone in this is what I mean to say. You'd see other people there at the company, not writing their own games necessarily, but there to play games on the computers that we had available or to just hang out, everything. So, I guess in that way, it was probably different from other places I've worked.",
+      "start": "0:00:57.760",
+      "end": "0:01:28.560",
+      "kind": "chunk",
+      "filename": "04_company_culture_0.ogv",
+      "title": "A Young Company of Passionate Developers",
+      "id": "V05_3",
+      "embeddings": {
+        "raw": "ea642c3869fb74998326c6689b312155f5e9154e79ec726bc2617fc870e3a34b",
+        "similarity": "bebbff67233e7b1a9dcae1cd219d8a1ec9959f3a3e71378c59229db0ef719af1",
+        "retrieval": "212ab37982bf72e1801bd31b70f0a91a039a19f24a14fa26d90333d64f36bcbe"
+      }
+    },
+    {
+      "text": "Um, I had written a really off-the-wall, bizarre little game that came from who knows where about being a tester in a sort of Alice in Wonderland alternate dimension and taking your your bugs, which are real metamorphosized bugs, to the imp who was like a caterpillar at a hookah. you know, it was very bizarre and didn't and it esc got around all of the real world things of like rope so that my test game that I had done to sort of prove I could do it didn't have any warning signals. Um, I mean, I would talk with all of the guys about I mean it was sort of an open atmosphere for some of us. So, it was up to the individual imp how much he wanted to share with the others, but I would ask about puzzle problems and and things, but I don't remember any any uh advice on that level. I know that that Steve did help me decide what to after I was hired, what what should my first game be, and I talked with it with him about it fairly often. Um, and I do remember him saying he would not have done Plundered Hearts first. I mean, before I started, he said, \"This is not what I do for my first game because it sounds too hard.\" and I didn't take his advice on that. But so so obviously there was there was mentoring and discussion going on, but I don't remember specifics like that.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "05_becoming_an_imp_0.ogv",
+      "title": "An Absurd Wonderland for Playtesting",
+      "id": "V06_0",
+      "embeddings": {
+        "raw": "f9b1787665db5acdf6e2652e34958ac85b2495b8adf62ba86b964febf3e24468",
+        "similarity": "b4e4ea642c94e7f1463b6df6fe40f01e6e25c414d67c67b25e37a4a0dc3b53d7",
+        "retrieval": "35883fc21a3cc80536e6a4e543aa641c2269e10118eb00ebe57f800bef88ef03"
+      }
+    },
+    {
+      "text": "Um, I had written a really off-the-wall, bizarre little game that came from who knows where about being a tester in a sort of Alice in Wonderland alternate dimension and taking your your bugs, which are real metamorphosized bugs, to the imp who was like a caterpillar at a hookah. you know, it was very bizarre and didn't and it esc got around all of the real world things of like rope so that my test game that I had done to sort of prove I could do it didn't have any warning signals. Um, I mean, I would talk with all of the guys about I mean it was sort of an open",
+      "start": "0:00:00.080",
+      "end": "0:00:39.040",
+      "kind": "chunk",
+      "filename": "05_becoming_an_imp_0.ogv",
+      "title": "An Absurd Wonderland for Playtesting",
+      "id": "V06_1",
+      "embeddings": {
+        "raw": "282d6fe7410d5124b730face8f973619b8d0d8c45b4f00b174139ee50b706252",
+        "similarity": "fa01786958d273b0e2a7a2e50d79e8c2c42a1fc68c608074e729a94abc600ec1",
+        "retrieval": "1da5ca0240fa3a81eb93dcbd09412a84c80059245cbb144b8890e8c1737de40e"
+      }
+    },
+    {
+      "text": "signals. Um, I mean, I would talk with all of the guys about I mean it was sort of an open atmosphere for some of us. So, it was up to the individual imp how much he wanted to share with the others, but I would ask about puzzle problems and and things, but I don't remember any any uh advice on that level. I know that that Steve did help me decide what to after I was hired, what what should my first game be, and I talked with it with him about it fairly often. Um, and I do remember him saying he would not have done Plundered Hearts first. I mean,",
+      "start": "0:00:30.960",
+      "end": "0:01:03.680",
+      "kind": "chunk",
+      "filename": "05_becoming_an_imp_0.ogv",
+      "title": "An Absurd Wonderland for Playtesting",
+      "id": "V06_2",
+      "embeddings": {
+        "raw": "e685b29d27980ebfc20d6752f322909876a78717c2b8d0ca8df22b0e80f57423",
+        "similarity": "1d0d0ffbf8b2d114c66611c805f8c619c887c10167c0a904e995e9fea9cea989",
+        "retrieval": "6483fbfeba0279fa7f3471869a6ad838503ddc13a1b65f8373bbe4f42a659d2f"
+      }
+    },
+    {
+      "text": "and I do remember him saying he would not have done Plundered Hearts first. I mean, before I started, he said, \"This is not what I do for my first game because it sounds too hard.\" and I didn't take his advice on that. But so so obviously there was there was mentoring and discussion going on, but I don't remember specifics like that.",
+      "start": "0:01:00.080",
+      "end": "0:01:18.720",
+      "kind": "chunk",
+      "filename": "05_becoming_an_imp_0.ogv",
+      "title": "An Absurd Wonderland for Playtesting",
+      "id": "V06_3",
+      "embeddings": {
+        "raw": "9c44cf9532bf36bcb16422a66d6f921218b038f4b1ebec3a4d04b5d450dc1dca",
+        "similarity": "1b4b6a0152602cc42f949126590103664a89a52dee08ef91f517104034179c9d",
+        "retrieval": "bc313fca269f538eef49912afcb2901f5a8c60c7882dae2d908f788c4cf055ae"
+      }
+    },
+    {
+      "text": "I was boy I kind of left I left the company oh it was probably a year after Plundered Hearts came out and I had worked on some other projects. We had troubles finding a project that marketing and administration I'll call them wanted me to work on. Um, and I was very frustrated at the time and we don't have to go into that or we can that's up to you but I was definitely I could have stayed and done other things. Management, I shouldn't say administration, management and marketing and I could not agree on what to do next and some of that was the terrified nature of the company at that point, the downside. Um I'm just thinking of of your talking about the other imps talking about how wonderful it was and it it really was. I mean, I can say for me it was a sad truth that it was the best job I've ever had and and a job I don't think I could ever get again. It was a really not a job. It was a an amazing creative experience with an amazing creative group and I do think it was something very special and unusual. Um, but I can I was also there sort of I came in at the end of the good stuff and I can even even say I came in at the end of the good stuff and I know how good it was and I was there for most of the trajectory into into the dissolution of the company and that was hard that was hard to go through. So anyway, I could have I could have written more games, but we couldn't come to an agreement about what. And so I left for some personal reasons and for some of that reason.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "06_leaving_infocom_0.ogv",
+      "title": "Leaving a Unique Creative Experience",
+      "id": "V07_0",
+      "embeddings": {
+        "raw": "210f1b4b8c7c3ab126648d3509d1db207c362e3e424e2304d544845c376860bd",
+        "similarity": "b68317c6e8d4aedf2099a6591d4fcfd0d51c76b313f15c42159ba1fc8990b198",
+        "retrieval": "a2f044d9951e7a2113909f3ded9414eacaf604cea0f8f0abb3a65abcd82000dc"
+      }
+    },
+    {
+      "text": "I was boy I kind of left I left the company oh it was probably a year after Plundered Hearts came out and I had worked on some other projects. We had troubles finding a project that marketing and administration I'll call them wanted me to work on. Um, and I was very frustrated at the time and we don't have to go into that or we can that's up to you but I was definitely I could have stayed and done other things. Management, I shouldn't say administration, management and marketing and I could not agree on what to do next and some of that was the",
+      "start": "0:00:00.080",
+      "end": "0:00:38.400",
+      "kind": "chunk",
+      "filename": "06_leaving_infocom_0.ogv",
+      "title": "Leaving a Unique Creative Experience",
+      "id": "V07_1",
+      "embeddings": {
+        "raw": "e3eb1112ecac12b21943280e12a1630bfd02e7df21769031c7605974eed43a07",
+        "similarity": "6ecdafcc3003b7459d4a7984d0b079559f4e6e9c405df73f1740f23901c9940a",
+        "retrieval": "c4da526e95d50e74ca3447d041576855e6308ef6aa9ebdacef2cb07516aef7af"
+      }
+    },
+    {
+      "text": "management and marketing and I could not agree on what to do next and some of that was the terrified nature of the company at that point, the downside. Um I'm just thinking of of your talking about the other imps talking about how wonderful it was and it it really was. I mean, I can say for me it was a sad truth that it was the best job I've ever had and and a job I don't think I could ever get again. It was a really not a job. It was a an amazing creative experience with an amazing creative group and I do think it was something very special and unusual. Um,",
+      "start": "0:00:32.320",
+      "end": "0:01:09.440",
+      "kind": "chunk",
+      "filename": "06_leaving_infocom_0.ogv",
+      "title": "Leaving a Unique Creative Experience",
+      "id": "V07_2",
+      "embeddings": {
+        "raw": "6a154e590a54827758ad969e288258a7f5c427a04eaa36a8dca0e56dee57a700",
+        "similarity": "ccccaa59851ae8dc1985b69451a89f7eee6e89e1a34e100c83bff2c416cb5def",
+        "retrieval": "4c54b6da137afa0310c25ddc2586d209fde3d7f1bd431416ef6297ff38054a04"
+      }
+    },
+    {
+      "text": "with an amazing creative group and I do think it was something very special and unusual. Um, but I can I was also there sort of I came in at the end of the good stuff and I can even even say I came in at the end of the good stuff and I know how good it was and I was there for most of the trajectory into into the dissolution of the company and that was hard that was hard to go through. So anyway, I could have I could have written more games, but we couldn't come to an",
+      "start": "0:01:04.080",
+      "end": "0:01:31.840",
+      "kind": "chunk",
+      "filename": "06_leaving_infocom_0.ogv",
+      "title": "Leaving a Unique Creative Experience",
+      "id": "V07_3",
+      "embeddings": {
+        "raw": "547f5c79e5bbcd52e59942f3723d27c015d7ca0e41feb6d8b850b09216573b3c",
+        "similarity": "36a1594defd66b35368b7a2232a3510d0a73f1bf890f9744fda53bcdcd04c611",
+        "retrieval": "75ebd066aba634dbe96dd28fa2ed9e3c9e2bdd944685c9674ce43fe2b52108bb"
+      }
+    },
+    {
+      "text": "go through. So anyway, I could have I could have written more games, but we couldn't come to an agreement about what. And so I left for some personal reasons and for some of that reason.",
+      "start": "0:01:26.960",
+      "end": "0:01:37.760",
+      "kind": "chunk",
+      "filename": "06_leaving_infocom_0.ogv",
+      "title": "Leaving a Unique Creative Experience",
+      "id": "V07_4",
+      "embeddings": {
+        "raw": "ee035f239fc071e2906bacce2e40fc15a2c6d860cabef87071f2e47459f793b5",
+        "similarity": "7be321f512d1af05ea8a95924a6b73e2eb7ad6ec4780e2136c1dbc457c1e29de",
+        "retrieval": "c19fd37f6845272a6818413fdf3d4ec2c6b664e931c728063b047809962e349c"
+      }
+    },
+    {
+      "text": "Um, well, I they wanted me ... they tasked me to come up with a game that would have marketing tie-ins and my personal interests were geekish and not necessarily going to make huge marketing tie-ins. In retrospect, I think they some of them would have worked. I had an idea for a vampire game that was roughly based on the Anne Rice books, which is before the movie had come out. Um so it hadn't hit the mainstream yet. Um, so that's one that I think was a mistake not to have let me follow up on. Um, I had an idea for an another series of books based on or a game based on a series of books about a swashbuckler in the 16th century. That probably wouldn't have gone over big, but it would have been another swashbuckler. Um, not a romance, but a more historical. That one I was a little less interested in because I'd sort of been there, done that with Plundered Heart, something similar. Um, I had an idea for a Doctor Who game, but this was right at the end of the, you know, Doctor Who was falling into not disrepair, but Tom Baker had stopped showing on the on the American screens and the new doctors weren't as exciting and and he was never that huge here anyway. And I don't know that that would have been so so big either. And I should say it's I don't know that it was all management saying, \"No, no, no, you can't do that.\" It was some combination of me not pushing and and them not pushing me. You know, it was a two-way street.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "07_writing_a_romance_0.ogv",
+      "title": "A Rejected Anne Rice Game Proposal",
+      "id": "V08_0",
+      "embeddings": {
+        "raw": "e91dd5883335545568caee8584cd47992dec517257b7cedf2575bdf5397045a2",
+        "similarity": "6b75e0c12201dc4b42a82cbbdad81cb3f5f5800ef7441d326835bde349433dfc",
+        "retrieval": "8edd99d49ccc8c98399c66efb5ab69f511dc5c2d207f6a8849149f0a76faef05"
+      }
+    },
+    {
+      "text": "Um, well, I they wanted me ... they tasked me to come up with a game that would have marketing tie-ins and my personal interests were geekish and not necessarily going to make huge marketing tie-ins. In retrospect, I think they some of them would have worked. I had an idea for a vampire game that was roughly based on the Anne Rice books, which is before the movie had come out. Um so it hadn't hit the mainstream yet. Um, so that's one that I think was a mistake not to have let me follow up on. Um, I had an idea for an another series of books based on or a game based on a series of books about a",
+      "start": "0:00:00.480",
+      "end": "0:00:39.840",
+      "kind": "chunk",
+      "filename": "07_writing_a_romance_0.ogv",
+      "title": "A Rejected Anne Rice Game Proposal",
+      "id": "V08_1",
+      "embeddings": {
+        "raw": "c9fefce933f9187109e4d918d228ea21590c33dae39721a9359981ee2acec924",
+        "similarity": "19266398a86c3186676f9f76bdd2c1fbc3eb0f090e74b0f58ee66cc462ff669d",
+        "retrieval": "0e76c0b295d88858495d15c9f60d4610aed7802d7ddbd1c6977a6274f55bc2e9"
+      }
+    },
+    {
+      "text": "I had an idea for an another series of books based on or a game based on a series of books about a swashbuckler in the 16th century. That probably wouldn't have gone over big, but it would have been another swashbuckler. Um, not a romance, but a more historical. That one I was a little less interested in because I'd sort of been there, done that with Plundered Heart, something similar. Um, I had an idea for a Doctor Who game, but this was right at the end of the, you know, Doctor Who was falling into not disrepair, but Tom Baker had stopped showing on the on the",
+      "start": "0:00:33.920",
+      "end": "0:01:06.000",
+      "kind": "chunk",
+      "filename": "07_writing_a_romance_0.ogv",
+      "title": "A Rejected Anne Rice Game Proposal",
+      "id": "V08_2",
+      "embeddings": {
+        "raw": "da9e764a4d6a6034f7e160d3634da6b2b2fbe5406035da277be36b370b6e1c14",
+        "similarity": "8a06d651e07056489a6e0aed855e6e6fb1488a9ae8292220eb13123f2217f881",
+        "retrieval": "57d6ac198688935a345947cef53f8f61eab0cedc51bce7659df118b97f66efc3"
+      }
+    },
+    {
+      "text": "Doctor Who was falling into not disrepair, but Tom Baker had stopped showing on the on the American screens and the new doctors weren't as exciting and and he was never that huge here anyway. And I don't know that that would have been so so big either. And I should say it's I don't know that it was all management saying, \"No, no, no, you can't do that.\" It was some combination of me not pushing and and them not pushing me. You know, it was a two-way street.",
+      "start": "0:00:59.920",
+      "end": "0:01:24.480",
+      "kind": "chunk",
+      "filename": "07_writing_a_romance_0.ogv",
+      "title": "A Rejected Anne Rice Game Proposal",
+      "id": "V08_3",
+      "embeddings": {
+        "raw": "570330fac9696eca2128a927a92796ad8a30427638b0d26c1de044a214e04057",
+        "similarity": "744b82adef91d2bef6bdec3b516a9b27ac789c9640efb4ad5f975e5e71c935cc",
+        "retrieval": "0cb5753b1fa247fe913519df9bd6fde23923ed649300d1c4086e5d56c022b783"
+      }
+    },
+    {
+      "text": "That was I will take the credit and the blame. I think that was all my idea. I mean, I think they were fine with me going forward with it. And it wasn't that there hadn't been women writing text adventures before. Um, even in our company, though they hadn't been, you know, the main imp. Um, but I think it was a good selling point of, oh, look, and there was this movement at that time. is before Brenda Laurel and before I think it's Purple Moon, which has gone out of business now, but the games for girls, the games that they were coming out for girls at that time were like cooking games. Oh, let's have a sewing game and which is just benited. It it just the concept that and they weren't fun to play either. Um so, no wonder girls weren't interested in playing them. I'm not actually going to claim that Plundered Hearts is a game that girls would be that interested in playing because I think the mode of play is something that developmentally teenage girls aren't that interested in doing sitting down with a computer by yourself. I think Brenda Laurel and some other companies have done good ways of of getting games that girls will be interested in playing. But we didn't know that then. And I was interested in in writing romance. I thought a romance might be kind of fun and different. And it had this, you know, this gimmick of a woman writing for women. So there were at the time there were some critical reviews that just hated it because of its over femininess. And I remember one reviewer just lit into the game because she was trying to karate chop and to do tough guy stuff and the game wouldn't let her. And so she was criticizing it for not allowing uh the character to be strong. And we can go into a whole sort of philosophical approach about what a character should be in one of these games.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "08_writing_a_romance_1.ogv",
+      "title": "Creating a Romance Game for Women",
+      "id": "V09_0",
+      "embeddings": {
+        "raw": "b45bffda6d7110862601c35059c34943ed181921c24d26ddc2b2948af82cf9be",
+        "similarity": "4697dadb104056243694c33962cdee749778ac7264d897384b543907e400f02c",
+        "retrieval": "5b9d5f92a7a23e932045d80d9a4d97039cb0240a8b0029d6b1e139e3e21f2d57"
+      }
+    },
+    {
+      "text": "That was I will take the credit and the blame. I think that was all my idea. I mean, I think they were fine with me going forward with it. And it wasn't that there hadn't been women writing text adventures before. Um, even in our company, though they hadn't been, you know, the main imp. Um, but I think it was a good selling point of, oh, look, and there was this movement at that time. is before Brenda Laurel and before I think it's Purple Moon, which has gone out of business now, but the games for girls, the games that they were coming out for girls at that time were like",
+      "start": "0:00:00.240",
+      "end": "0:00:33.360",
+      "kind": "chunk",
+      "filename": "08_writing_a_romance_1.ogv",
+      "title": "Creating a Romance Game for Women",
+      "id": "V09_1",
+      "embeddings": {
+        "raw": "6ec120de4761288d378e32c1c199736c24ff75d3394f35dce49f12282f946c1c",
+        "similarity": "ad737c3a18bc4ec9f7e359e5abefd460bbc2136026b87d045e7c07bcd91c0af7",
+        "retrieval": "9911f460ab7dd49ce5fe9cf862c0f824e41cf92ce5356e773cb4ed8b9b2c71b4"
+      }
+    },
+    {
+      "text": "but the games for girls, the games that they were coming out for girls at that time were like cooking games. Oh, let's have a sewing game and which is just benited. It it just the concept that and they weren't fun to play either. Um so, no wonder girls weren't interested in playing them. I'm not actually going to claim that Plundered Hearts is a game that girls would be that interested in playing because I think the mode of play is something that developmentally teenage girls aren't that interested in doing sitting down with a computer by yourself. I",
+      "start": "0:00:27.920",
+      "end": "0:00:59.040",
+      "kind": "chunk",
+      "filename": "08_writing_a_romance_1.ogv",
+      "title": "Creating a Romance Game for Women",
+      "id": "V09_2",
+      "embeddings": {
+        "raw": "ad106e0b94799fca1edf941d7b5c2fb37fee86fa14f19c16ad90e721f22a8bf2",
+        "similarity": "b6facc559c094a59b8b2db71c6a9df0f574199686bb8b21f566cb94b5f55b4e3",
+        "retrieval": "b6ac46738f9076e995f328482a7a76bf21b4708b1eeee5b11adf53c5d0debe93"
+      }
+    },
+    {
+      "text": "teenage girls aren't that interested in doing sitting down with a computer by yourself. I think Brenda Laurel and some other companies have done good ways of of getting games that girls will be interested in playing. But we didn't know that then. And I was interested in in writing romance. I thought a romance might be kind of fun and different. And it had this, you know, this gimmick of a woman writing for women. So there were at the time there were some critical reviews that just hated it because of its over femininess. And I remember one reviewer just lit into the",
+      "start": "0:00:54.480",
+      "end": "0:01:27.680",
+      "kind": "chunk",
+      "filename": "08_writing_a_romance_1.ogv",
+      "title": "Creating a Romance Game for Women",
+      "id": "V09_3",
+      "embeddings": {
+        "raw": "bad8b198ec24490d5b4573e48d4e8aec9891962f62c555f83b105567b5d29e98",
+        "similarity": "0dfd5bf3eafc6174f3d0246eb087185ad5ad156ab9c094ce8fe53ae4a7089a69",
+        "retrieval": "bc2b3808671f2b5ad35263b74e0599f3c244f5c1c81970ddf07ec652baf103a7"
+      }
+    },
+    {
+      "text": "hated it because of its over femininess. And I remember one reviewer just lit into the game because she was trying to karate chop and to do tough guy stuff and the game wouldn't let her. And so she was criticizing it for not allowing uh the character to be strong. And we can go into a whole sort of philosophical approach about what a character should be in one of these games.",
+      "start": "0:01:19.600",
+      "end": "0:01:42.320",
+      "kind": "chunk",
+      "filename": "08_writing_a_romance_1.ogv",
+      "title": "Creating a Romance Game for Women",
+      "id": "V09_4",
+      "embeddings": {
+        "raw": "00dda0d0657106b5f4fccdb359426bb72560d8bc0a30d3f42bbb5268d667c975",
+        "similarity": "53ff930b64fa04221ea81b8022d49b49c0d868bf0217b273b97500d3485203c8",
+        "retrieval": "220e6e725018f9edd23bf39adff1cedfd7812714669609f07541c9793ebe0945"
+      }
+    },
+    {
+      "text": "Um earlier I wanted to say when when asking about Steve giving advice, he may not have needed to give advice because I had read him in a at the time I was working there. I read his an interview with him. I think it was may have been for Games Magazine that that struck me at the time and and I still obviously remember it today which is he said there's this fine line with with reality and with setting up how the games how the rooms are described. He said, \"If you if you say you walk into an office, there's a desk there. The player is going to expect the whole world of things that are on a typical desk, a stapler, a phone, you know, a pencil cup. Who knows what they're going to expect?\" And you don't want to waste your time as a as an implementer coding in every single possible thing that could possibly be on a desktop when what you really only care about is, you know, the magic pen that's in the pencil cup. Um, whereas if you say you walk into a wizard's uh lab or a wizard's cave, who knows what's in a wizard's cave. So you can get away with a lot by setting it in this fantasy at environment that people don't have predetermined expectations about what should be in that environment. Um, and and so I think that's some of what you're talking about of of at the level of the ters's job was not just to find bugs. the rather dull QA of where does the computer crash. It's where does the world that you've invented break down and what is a reasonable approximation of things that are on the desk. Let's say that people will look for without having to burden the code with everything possible. And you could argue that in Plundered Hearts I didn't I didn't broaden it enough. I didn't get enough of those because people were complaining you can't karate chop or or things. Um, certainly I know I'm still embarrassed to this day in the final released version there's a bug that happens in the first couple moves, when you do something very logical and I can't remember what it is right now but it then that's a it's a true bug. You get garbage if you type out something like take the box there's a box under the bed that slides out and if you take the box rather than grab the box or something that's a logical thing to do you get garbage from it. So that was a case where the testers had missed or I missed in in my own I should take responsibility a very obvious thing to have done at the beginning.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "09_writing_a_romance_2.ogv",
+      "title": "Balancing Reality and Fiction in Games",
+      "id": "V10_0",
+      "embeddings": {
+        "raw": "416783b50575adf5ccd2738440058d7264616d3a84b06b365c21ed4e8e4d55ca",
+        "similarity": "6a82a0d091d369670e6554ad6c58e0437450f91cef882f6f971783c390a18dd7",
+        "retrieval": "59b87e8a3203ca06cc2257bdce7c64f0d2395cde59cfaaf725fc009a230f73e0"
+      }
+    },
+    {
+      "text": "Um earlier I wanted to say when when asking about Steve giving advice, he may not have needed to give advice because I had read him in a at the time I was working there. I read his an interview with him. I think it was may have been for Games Magazine that that struck me at the time and and I still obviously remember it today which is he said there's this fine line with with reality and with setting up how the games how the rooms are described. He said, \"If you if you say you walk into an office, there's a desk there. The player is going to",
+      "start": "0:00:00.400",
+      "end": "0:00:35.600",
+      "kind": "chunk",
+      "filename": "09_writing_a_romance_2.ogv",
+      "title": "Balancing Reality and Fiction in Games",
+      "id": "V10_1",
+      "embeddings": {
+        "raw": "121739a516a03165e217ffcac31e82fb4c802936f019443ad65735a9fb25329d",
+        "similarity": "3aa69e728cc5e18627b04d5686b9440b6ea098776bb16ad260b71ff46c93c15a",
+        "retrieval": "05c41e81a7601b627a8972ebae22e09a72abe9f0582f97aef6b40382089fe87a"
+      }
+    },
+    {
+      "text": "\"If you if you say you walk into an office, there's a desk there. The player is going to expect the whole world of things that are on a typical desk, a stapler, a phone, you know, a pencil cup. Who knows what they're going to expect?\" And you don't want to waste your time as a as an implementer coding in every single possible thing that could possibly be on a desktop when what you really only care about is, you know, the magic pen that's in the pencil cup. Um, whereas if you say you walk into a wizard's uh lab or a wizard's cave, who knows what's in",
+      "start": "0:00:29.680",
+      "end": "0:01:02.720",
+      "kind": "chunk",
+      "filename": "09_writing_a_romance_2.ogv",
+      "title": "Balancing Reality and Fiction in Games",
+      "id": "V10_2",
+      "embeddings": {
+        "raw": "f2e0207156c4c74d250a9413fd50dd7728e13c42b57b4c4f015c01891c8273b1",
+        "similarity": "2ca97ad8429606a4eb4a051ece08df1ea99cb14fd7b98450df07219c389ca1ea",
+        "retrieval": "80a5d886bea208952468a685c23a686d29e8935440b1b1d87d82188c4295444f"
+      }
+    },
+    {
+      "text": "Um, whereas if you say you walk into a wizard's uh lab or a wizard's cave, who knows what's in a wizard's cave. So you can get away with a lot by setting it in this fantasy at environment that people don't have predetermined expectations about what should be in that environment. Um, and and so I think that's some of what you're talking about of of at the level of the ters's job was not just to find bugs. the rather dull QA of where does the computer crash. It's where does the world that you've invented break down and what is a reasonable approximation",
+      "start": "0:00:54.880",
+      "end": "0:01:35.040",
+      "kind": "chunk",
+      "filename": "09_writing_a_romance_2.ogv",
+      "title": "Balancing Reality and Fiction in Games",
+      "id": "V10_3",
+      "embeddings": {
+        "raw": "939e23432456e8422568d18d95ab6933141c7dad95828c001b04a00e9876bd3e",
+        "similarity": "3fcc13640dbc440d405eeda5e8c13d696c1bf37d291347e000d5a8fba60e3c1a",
+        "retrieval": "19e9385909f9e5ece7b3c340116aa385425be0c53d9d9c45dc6d5921d55c623f"
+      }
+    },
+    {
+      "text": "where does the world that you've invented break down and what is a reasonable approximation of things that are on the desk. Let's say that people will look for without having to burden the code with everything possible. And you could argue that in Plundered Hearts I didn't I didn't broaden it enough. I didn't get enough of those because people were complaining you can't karate chop or or things. Um, certainly I know I'm still embarrassed to this day in the final released version there's a bug that happens in the first couple moves, when you do something very logical and I can't remember what it is right now but it then that's a it's a true bug.",
+      "start": "0:01:28.320",
+      "end": "0:02:05.120",
+      "kind": "chunk",
+      "filename": "09_writing_a_romance_2.ogv",
+      "title": "Balancing Reality and Fiction in Games",
+      "id": "V10_4",
+      "embeddings": {
+        "raw": "1a7b5b88434d9a72d71cf576706c28c7e2158ca4d3985b5d7dbaa51af77bdd12",
+        "similarity": "fd7ce57d13a9a576132d007fa647132d01920c65335b263ed3e152dad8893127",
+        "retrieval": "e54f70137e2e0f73eb45eea0c066ae38f5af3b0b08ffd7d6cae80f6150581af0"
+      }
+    },
+    {
+      "text": "very logical and I can't remember what it is right now but it then that's a it's a true bug. You get garbage if you type out something like take the box there's a box under the bed that slides out and if you take the box rather than grab the box or something that's a logical thing to do you get garbage from it. So that was a case where the testers had missed or I missed in in my own I should take responsibility a very obvious thing to have done at the beginning.",
+      "start": "0:02:01.520",
+      "end": "0:02:26.640",
+      "kind": "chunk",
+      "filename": "09_writing_a_romance_2.ogv",
+      "title": "Balancing Reality and Fiction in Games",
+      "id": "V10_5",
+      "embeddings": {
+        "raw": "cdee684593e22c5bcee28290d8be6e90941e7e96de7b435de0d639cc14989c09",
+        "similarity": "d7aadd347e3492af62bdc8d075848090ad3d0bee0d2b54b2b49f2842e458e676",
+        "retrieval": "af70bed8213d4e2693936eb5833d7ed0b757f3bf3f776ee9cf774012e5d93351"
+      }
+    },
+    {
+      "text": "Boy, I used a parser that was already done and I had to strip it way down. I don't know if if nobody has told you my story, which was they they gave me 'cuz it was my first game, they gave me nine months to write it and I finished it in six. Um, and then spent the next three just cutting stuff out. It was way way too big to fit because I was the last game to fit on I think it was a Commodore 64. So, it was all that great stuff that had to be cut. And so I did a lot of cutting, but I started with a blackbox parser. And I don't think I started with any other game. I mean, I could be because it was a different it it was just coming at things differently. If I did, it would have been prism because it was in my mind it was the most like a mind forever voyaging. Sorry, which we called prism in development. Um, but I'm pretty sure I didn't because that was so huge that I would I would have spent my first six months just cutting stuff out of that to make it small enough to build",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "10_writing_a_romance_3.ogv",
+      "title": "Commodore 64 Development and the Parser",
+      "id": "V11_0",
+      "embeddings": {
+        "raw": "f52040bca239f8c33049580e059b1b0c30c54e0243d92bc9d7faf4d0b8cbff48",
+        "similarity": "a4e77db0f7824cdfbb483d87252420746147dae682e96ab42b59b40dc3ccbd51",
+        "retrieval": "92f02f5cdd52f332e733214441eac1adc3809ce82b457c9c27efc56ba68306b5"
+      }
+    },
+    {
+      "text": "Boy, I used a parser that was already done and I had to strip it way down. I don't know if if nobody has told you my story, which was they they gave me 'cuz it was my first game, they gave me nine months to write it and I finished it in six. Um, and then spent the next three just cutting stuff out. It was way way too big to fit because I was the last game to fit on I think it was a Commodore 64. So, it was all that great stuff that had to be cut.",
+      "start": "0:00:00.160",
+      "end": "0:00:29.280",
+      "kind": "chunk",
+      "filename": "10_writing_a_romance_3.ogv",
+      "title": "Commodore 64 Development and the Parser",
+      "id": "V11_1",
+      "embeddings": {
+        "raw": "c9c59364000ed02cbf7a69b1a55cd07a2e3e922e988e752cf2e2ca9bd67fdf9c",
+        "similarity": "ebe78991d903ccacb04bc7871f61f2af17f086f0219c3cce6a89b62d73b3aa9b",
+        "retrieval": "9857f61574819082b1a3189a60c997d5b8fa9f4df87a21afdce960d17547bcc3"
+      }
+    },
+    {
+      "text": "to fit on I think it was a Commodore 64. So, it was all that great stuff that had to be cut. And so I did a lot of cutting, but I started with a blackbox parser. And I don't think I started with any other game. I mean, I could be because it was a different it it was just coming at things differently. If I did, it would have been prism because it was in my mind it was the most like a mind forever voyaging. Sorry, which we called prism in development. Um, but I'm pretty sure I didn't because that was so huge that I would I would have",
+      "start": "0:00:23.040",
+      "end": "0:00:55.440",
+      "kind": "chunk",
+      "filename": "10_writing_a_romance_3.ogv",
+      "title": "Commodore 64 Development and the Parser",
+      "id": "V11_2",
+      "embeddings": {
+        "raw": "9483704060af53769dbdc21e45ea5c536320a5432ea09112bef91c833c8d8f26",
+        "similarity": "bb383165705b4eb07f5d68cf807546054c06ddec2ce7d621e1ac9c35ba07b46f",
+        "retrieval": "7259416e75478452b40238f253b9f2d2a86cc912fc857367333252deca75ae9a"
+      }
+    },
+    {
+      "text": "Um, but I'm pretty sure I didn't because that was so huge that I would I would have spent my first six months just cutting stuff out of that to make it small enough to build",
+      "start": "0:00:51.760",
+      "end": "0:00:58.480",
+      "kind": "chunk",
+      "filename": "10_writing_a_romance_3.ogv",
+      "title": "Commodore 64 Development and the Parser",
+      "id": "V11_3",
+      "embeddings": {
+        "raw": "283ffaa5716439026b443abfca815b2e239c6c1cd0ade9e2dc5c02f85a602763",
+        "similarity": "c341d28f3b55eb0bf67d0458a0b5787ac6af4e066459fc81409a5482ee96a325",
+        "retrieval": "f7aa2ce6a7f1bfea70e6462a5c0e8dbbb62ec2a3d0b460e5976fc666c1c49008"
+      }
+    },
+    {
+      "text": "No, no, it was very very clear. I think they would have been happier for me not to have done Romance game first. It's not like I railroaded them into it. But I think there was there was definitely hey let's do something for women, you know, so we can do the whole women writing for women. We can get that whole new market 'cuz it was definitely at the time the whole time I was essentially after my first six months at Infocom, it was all the beginning of the end. And so there was a panic underlying everything of \"where is the next Hitchhiker's Guide to the Galaxy ?\" and that's that would be my anger is after Plundered Hearts. He said, \"Well, that's good. You know, you didn't sell very many, dear.\" It it wasn't quite that condescending, but it was almost was \"just go out and just write us another game that will sell 150,000 copies\", which none of the other games had done except for Hitchhogers, which still like 400,000 copies, you know. So, it was this impossible task that was laid on and oh, we don't want to burden you with with telling you what to do. Just you just write us a hit. And it was very frustrating for me because I had perhaps bitten off more than I could chew with my first game and trying a different genre and... ...a different play, a type of play for an entirely new market that then, you know, again, this is something I don't know a lot about cuz I was kind of the innocent newbie throughout the whole experience. But from what I was told at the time, sales didn't know what to do with Activision sales didn't know what to do with the Infocom games. are sold to a slightly different market, a different kind of player. Um, it's a very different kind of play at the time. Um, you know, sitting down for 100, 150 hours with the game was not the same as Pong, you know. So, it was I could I could blame the lack of sales on things far beyond my ability to to control. Um but it also probably was being marketed to the wrong group and the people who would been interested weren't interested in playing computer games. So marketing was not unaware of that to to bring it back to the question which is no they did not say here sit down you have to write a game a romance. So, I think they played on that after the fact to have something to talk about, you know, about the game, but I don't even remember what else I had in mind for the first game. Um, I had in high school uh thought I would write romance novels when I was going to be a grown-up. So, so writing a romance seemed to be a a logical thing to do and something different. But no, it did not come from outside.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "11_market_vision_0.ogv",
+      "title": "Commercial Pressures and Romance Games",
+      "id": "V12_0",
+      "embeddings": {
+        "raw": "9146d67e3ee33c53f36442346c25c71a27bd7108d41ac0da62b82a89cdc06306",
+        "similarity": "064c7604d50d0a1d5551103d9664ae5561d395063748f3857b2e3fec58e761b0",
+        "retrieval": "cde61a9498b1768420480e822de024c605b6cb3f41d71222637a41e34600e495"
+      }
+    },
+    {
+      "text": "No, no, it was very very clear. I think they would have been happier for me not to have done Romance game first. It's not like I railroaded them into it. But I think there was there was definitely hey let's do something for women, you know, so we can do the whole women writing for women. We can get that whole new market 'cuz it was definitely at the time the whole time I was essentially after my first six months at Infocom, it was all the beginning of the end. And so there was a panic underlying everything of \"where is the next Hitchhiker's Guide to the Galaxy ?\"",
+      "start": "0:00:00.240",
+      "end": "0:00:32.240",
+      "kind": "chunk",
+      "filename": "11_market_vision_0.ogv",
+      "title": "Commercial Pressures and Romance Games",
+      "id": "V12_1",
+      "embeddings": {
+        "raw": "4c7e559b11131c852b54c3d0e11904de5f7056ed119436c77a13b403aad784e4",
+        "similarity": "564603e42b1b18978336c926e567e628847bb5dbb5a5aff903f0eeb8367ac299",
+        "retrieval": "12c6a5b4a32fb6e5f8ef52f9af0b05ba7582246e2aa34cee44c499fd1fc9ffb9"
+      }
+    },
+    {
+      "text": "And so there was a panic underlying everything of \"where is the next Hitchhiker's Guide to the Galaxy ?\" and that's that would be my anger is after Plundered Hearts. He said, \"Well, that's good. You know, you didn't sell very many, dear.\" It it wasn't quite that condescending, but it was almost was \"just go out and just write us another game that will sell 150,000 copies\", which none of the other games had done except for Hitchhogers, which still like 400,000 copies, you know. So, it was this impossible task that was laid on and oh, we don't want to burden you with with",
+      "start": "0:00:27.200",
+      "end": "0:00:58.240",
+      "kind": "chunk",
+      "filename": "11_market_vision_0.ogv",
+      "title": "Commercial Pressures and Romance Games",
+      "id": "V12_2",
+      "embeddings": {
+        "raw": "79e0d2f590e100ecfa347c35ea30a41f75c5259c315e47fdc44d85cbe44d50bc",
+        "similarity": "d10aeb739b032a867f605f9bf4b931229e94d47e46609eb54f956a90526a10be",
+        "retrieval": "23e0a7b20f2dd7064bf151275ed41d616febca50249013bb8c351cdcbe4520c1"
+      }
+    },
+    {
+      "text": "it was this impossible task that was laid on and oh, we don't want to burden you with with telling you what to do. Just you just write us a hit. And it was very frustrating for me because I had perhaps bitten off more than I could chew with my first game and trying a different genre and... ...a different play, a type of play for an entirely new market that then, you know, again, this is something I don't know a lot about cuz I was kind of the innocent newbie throughout the whole experience. But from what I was told at the time, sales didn't know what to do with Activision sales",
+      "start": "0:00:53.440",
+      "end": "0:01:26.560",
+      "kind": "chunk",
+      "filename": "11_market_vision_0.ogv",
+      "title": "Commercial Pressures and Romance Games",
+      "id": "V12_3",
+      "embeddings": {
+        "raw": "43a0c0e2b349b481abed67b5ce15cf1c26f51f661a13f87ce5e71af2590bf8fb",
+        "similarity": "753e0c78cbb40613c361e195d358126368e9d1b75db05ef6b099b5aeb7f61f19",
+        "retrieval": "beb6c17249cdb31b617f96d2156fdbb7d616267470bb3bdf659edd72b4b1fba9"
+      }
+    },
+    {
+      "text": "experience. But from what I was told at the time, sales didn't know what to do with Activision sales didn't know what to do with the Infocom games. are sold to a slightly different market, a different kind of player. Um, it's a very different kind of play at the time. Um, you know, sitting down for 100, 150 hours with the game was not the same as Pong, you know. So, it was I could I could blame the lack of sales on things far beyond my ability to to control. Um but it also probably was being marketed to the wrong group and the people who would been interested weren't",
+      "start": "0:01:21.440",
+      "end": "0:01:58.800",
+      "kind": "chunk",
+      "filename": "11_market_vision_0.ogv",
+      "title": "Commercial Pressures and Romance Games",
+      "id": "V12_4",
+      "embeddings": {
+        "raw": "3864b6a70e3e9e23a6ba40d65190d08aa50bc38496673d91c1a5c5fdd325ab92",
+        "similarity": "3c089f72717c1fff3f21a1645883d4127bb42319c1f6b773c8f78e44c1aaba1d",
+        "retrieval": "6b5bc0deaffaf194d38732817a15326007abdc3d408f77dd5c79cde2fea3a5b7"
+      }
+    },
+    {
+      "text": "being marketed to the wrong group and the people who would been interested weren't interested in playing computer games. So marketing was not unaware of that to to bring it back to the question which is no they did not say here sit down you have to write a game a romance. So, I think they played on that after the fact to have something to talk about, you know, about the game, but I don't even remember what else I had in mind for the first game. Um, I had in high school uh thought I would write romance novels when I was going to be a grown-up. So, so writing a romance",
+      "start": "0:01:53.520",
+      "end": "0:02:30.080",
+      "kind": "chunk",
+      "filename": "11_market_vision_0.ogv",
+      "title": "Commercial Pressures and Romance Games",
+      "id": "V12_5",
+      "embeddings": {
+        "raw": "db2a4a0feeb92ff8e6ae64ae6ed3d1124ae062e455592aa607bdef7b856a6335",
+        "similarity": "7360e2fefb8659f6d75b36b2d146f3aa679a22a7b644eec27201db8dac1500ae",
+        "retrieval": "d3e10c00366ebda5dca1dc338586d7479e7f0276e8ee597fbce4a68b8744f407"
+      }
+    },
+    {
+      "text": "thought I would write romance novels when I was going to be a grown-up. So, so writing a romance seemed to be a a logical thing to do and something different. But no, it did not come from outside.",
+      "start": "0:02:24.320",
+      "end": "0:02:37.120",
+      "kind": "chunk",
+      "filename": "11_market_vision_0.ogv",
+      "title": "Commercial Pressures and Romance Games",
+      "id": "V12_6",
+      "embeddings": {
+        "raw": "8cc8d7f9cbc1d85a5b8c1d9cfa868443ee3cf5b41df5cd00d189c64ea1cae342",
+        "similarity": "0f67b04692d9e9c6f8d7f0eb0243e9f795fa488597a42ccbfc62b7bf59560998",
+        "retrieval": "cd1a1e99c971568af5b7843cd87b100218d89f01333ad527e0dae4deb6f5f2de"
+      }
+    },
+    {
+      "text": "If if I can say actually I would in retrospect uh, when I saw Pirates of the Caribbean the first movie I thought that's what I was trying to do that movie is what I was trying to get my game to play like that whole experience and Wishbringer was the other game that I loved the double layer of Wishbringer of able to play it without magic and with magic and in the end I didn't have any magic in the romance but that's sort of I should say what I was trying to do with Plunder Ed hearts was have a way you could play it just as an adventure and then a way you could play it as a as a romance. Steve did it more successfully in Leather Goddesses of Phobos. I'd say if you tongue-in-cheek romance for kind of sexy stuff, you could do the joke of you could play it as a straightforward game or you could play it for all the sex jokes. So anyway, that's all.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "12_writing_a_romance_4.ogv",
+      "title": "Games That Inspired Plundered Hearts",
+      "id": "V13_0",
+      "embeddings": {
+        "raw": "c5364dd61ff49360b265b7600c8883d297d9727663fa375673c066f9becfd077",
+        "similarity": "ed9bff7821b65262ee14410908cbdda435a248c3bca8c67fb663c8c4f6277521",
+        "retrieval": "82d19a53b7abe95350774ddb240ee542cf9a1902a98b266263cb5c936efa0334"
+      }
+    },
+    {
+      "text": "If if I can say actually I would in retrospect uh, when I saw Pirates of the Caribbean the first movie I thought that's what I was trying to do that movie is what I was trying to get my game to play like that whole experience and Wishbringer was the other game that I loved the double layer of Wishbringer of able to play it without magic and with magic and in the end I didn't have any magic in the romance but that's sort of I should say what I was trying to do with Plunder Ed hearts was have a way you could play it just as an adventure and then a way you could play it as",
+      "start": "0:00:00.880",
+      "end": "0:00:34.640",
+      "kind": "chunk",
+      "filename": "12_writing_a_romance_4.ogv",
+      "title": "Games That Inspired Plundered Hearts",
+      "id": "V13_1",
+      "embeddings": {
+        "raw": "bba14e9003e021e7d0e683d181c7194e97fb406ab4b032ee08f28425dffd970d",
+        "similarity": "08d95ac6dd6ff9cb4f88c022b48e015d1e2e59e40af275afd38023caa1ebcee9",
+        "retrieval": "d49f4376e1cb238c8626360d445782b4703a706c41b960a5cf97e3af52ef5656"
+      }
+    },
+    {
+      "text": "Ed hearts was have a way you could play it just as an adventure and then a way you could play it as a as a romance. Steve did it more successfully in Leather Goddesses of Phobos. I'd say if you tongue-in-cheek romance for kind of sexy stuff, you could do the joke of you could play it as a straightforward game or you could play it for all the sex jokes. So anyway, that's all.",
+      "start": "0:00:29.840",
+      "end": "0:00:49.200",
+      "kind": "chunk",
+      "filename": "12_writing_a_romance_4.ogv",
+      "title": "Games That Inspired Plundered Hearts",
+      "id": "V13_2",
+      "embeddings": {
+        "raw": "3ad0fe7fa4e61dde9ce53dc223f983a3cca8e5bf9ff30ae29d4a0855193cce39",
+        "similarity": "8ac07a4fef5dd94473760c3130131101adea17f656ef203c4cd7904f22701591",
+        "retrieval": "018dfdaceeac24d205d6ddfd1f7c4383596db45ad4a9af14213181540bddc167"
+      }
+    },
+    {
+      "text": "Well, not immediately. the initial response, was disappointment. Um, I don't take that personally. I think every game that didn't sell 150,000 at that point was met with internally disappointment. Not not in the imps, but marketing and management were like, \"Oh, darn. We didn't we didn't get it that time. Um, go make us a hit. Come on, do it next time.\" uh, but what was it and given that it sold a poultry 30,000 at the time that the average game was selling 60,000, I think it was a surprise when 10 years later, I'm in graduate school in Minnesota, and somebody a high school or a college kid knocks on my door and says are you THE Amy Briggs? I played \"Plundered Hearts\" in fifth grade. It was my sister's game, but I played it with her. I always make clear that the guys were only playing it 'cuz it was their sister's game. Um, and that was a great experience for me. I just want to thank you. That was a surprise to have this undercoming and not not so much. I mean, I kind of expect something from being part of Infocom. Um, but to have apparently there are people who really think my game is really good and that and and it it I wouldn't say it changed their lives, but it it made a difference in their lives and they remembered it not as oh it's the failed game of that year, which is sort of how I felt about it at the time of a failed experiment. Um, so that was kind of a surprise.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "13_critical_response_0.ogv",
+      "title": "Plundered Hearts: Unexpected Success and Memories",
+      "id": "V14_0",
+      "embeddings": {
+        "raw": "08a69f5a52f96859f4645998642758058d1f70fa2cb2aca8761e5b93ba4f8675",
+        "similarity": "4c62e8c070113587cf5a3d92e296103b07a9dcd10ff9fa60b158f8ca3783903d",
+        "retrieval": "f6bf979b6c9ee054f2c6f55bfb1394ae46e69b3ebe24f8e49e60cd0c5786f489"
+      }
+    },
+    {
+      "text": "Well, not immediately. the initial response, was disappointment. Um, I don't take that personally. I think every game that didn't sell 150,000 at that point was met with internally disappointment. Not not in the imps, but marketing and management were like, \"Oh, darn. We didn't we didn't get it that time. Um, go make us a hit. Come on, do it next time.\" uh, but what was it and given that it sold a poultry 30,000 at the time that the average game was selling 60,000, I think it was a surprise when 10 years later, I'm in graduate school in Minnesota, and somebody a high school or a college kid knocks on my door and says are",
+      "start": "0:00:00.640",
+      "end": "0:00:49.920",
+      "kind": "chunk",
+      "filename": "13_critical_response_0.ogv",
+      "title": "Plundered Hearts: Unexpected Success and Memories",
+      "id": "V14_1",
+      "embeddings": {
+        "raw": "c0e289cb8c2e8fb276c75cbc0c198828354f14a6f26acc13e4387b5b021abf71",
+        "similarity": "1775c0c0006ed28952adf9c2af422d15a52bcbac3a6102d58b0a05e7aafe4d7e",
+        "retrieval": "396ea05666f7bde3ca61505294a900298661624d383b9ba23658269bf3164d63"
+      }
+    },
+    {
+      "text": "school in Minnesota, and somebody a high school or a college kid knocks on my door and says are you THE Amy Briggs? I played \"Plundered Hearts\" in fifth grade. It was my sister's game, but I played it with her. I always make clear that the guys were only playing it 'cuz it was their sister's game. Um, and that was a great experience for me. I just want to thank you. That was a surprise to have this undercoming and not not so much. I mean, I kind of expect something from being part of Infocom. Um, but to have apparently there are people who really think my game is really good",
+      "start": "0:00:44.160",
+      "end": "0:01:18.640",
+      "kind": "chunk",
+      "filename": "13_critical_response_0.ogv",
+      "title": "Plundered Hearts: Unexpected Success and Memories",
+      "id": "V14_2",
+      "embeddings": {
+        "raw": "4cb5434e2db9b39fa48ca57e49e9337d4ad6b7b50e97fe7cd934d37dfa78a34b",
+        "similarity": "50662cbc83bddcc0a3565a33b0db1e2fb9fe668dd2573b3902dbbe8976e8f4d0",
+        "retrieval": "876cc18303c14c856503c97eb4293c76fb0e7963f0a714b6c13174eccc74543f"
+      }
+    },
+    {
+      "text": "of Infocom. Um, but to have apparently there are people who really think my game is really good and that and and it it I wouldn't say it changed their lives, but it it made a difference in their lives and they remembered it not as oh it's the failed game of that year, which is sort of how I felt about it at the time of a failed experiment. Um, so that was kind of a surprise.",
+      "start": "0:01:13.360",
+      "end": "0:01:33.600",
+      "kind": "chunk",
+      "filename": "13_critical_response_0.ogv",
+      "title": "Plundered Hearts: Unexpected Success and Memories",
+      "id": "V14_3",
+      "embeddings": {
+        "raw": "67a690b3a305091627d19ee724102e0a2b6aa7d035b2c37fb1f07fe32c4d9a89",
+        "similarity": "7cc9b3da6a8842e6ad5a2dd41c61d70179e4e08620e7e7acb8bb153bb36b1740",
+        "retrieval": "9a44fc04ef8909ab5328724f43a1db656a1ffc6f107f71c7ffa69c61d38a4346"
+      }
+    },
+    {
+      "text": "Uh, that's why the vampire things surprised me that they didn't I think it was a combination of maybe me not pushing hard enough. She was not as famous as she is now. I mean, she'd only written I think two of the books at that point, maybe three. Um, and that wasn't big enough. Um, I did get pressure. I had worked on pray home companion and I as a an usher for years and knew Garrison have had had potlucks in Garrison Keeler's kitchen you know I won't say we were close personal friends but you know there was pressure hey see if you can get Garrison Keeler and that was surprises me actually in retrospect because he's much much bigger now than he was in the 80s but he at least was a name, Ann Rice was still kind of this kind of culty vampire person so so I don't know why that idea didn't take off more. Now I was assigned to the long list of people writing the Douglas Adams or Sunstone at the end of the universe. That was I don't know if that was the first I think that came up when I didn't have a good game of my own. They said here you will write the next big hit because it will be the next Douglas Adams game. And it wasn't it was after Bureaucracy and it wasn't or maybe it was the same time as Bureaucracy but anyway it was a sequel to Hitchhiker's and a lot of imps careers died in that in that game. At the time I came on Douglas was completely unattached to the to the project. Um he just didn't want to hammer it through. I never met him personally. I stood in the room with him once when I right after I was hired like the day after I started he came through and was introduced to another tester but I wasn't on his game at that point so I didn't get to meet him but so he was not attached to the process the project and then it was handed off to other people and in the end I was told seriously that I was going to be writing the game with a programmer at I think it was at magnetic scrolls a competitor's company was going to tell me how to write the game and that I was just going to be the oldfashioned meaning of the word implementing. I was just going to be doing coding for it. And I at that point I said, \"No, this is absurd.\" So I quit on that project. So it was all at the same time, you know, it wasn't So - it was So - that was like a standard breakup. That was a stand- \"Yeah, that was just the house isn't clean. You didn't take care of the dogs. I'm doing bad at work. You know what? I'm getting my back\". Yeah. I mean, I can't remember the exact timing actually, but Okay. But it was in the same period.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "14_market_vision_1.ogv",
+      "title": "Project Management and Cultural Failures",
+      "id": "V15_0",
+      "embeddings": {
+        "raw": "6b524618c5b32a59b9b84d84641ab521343803b116c5cbadc8532beb044ebae7",
+        "similarity": "d21fd471aa0c95075d2d5797ce4d43c4f67810ed88c60ee607694404b009baef",
+        "retrieval": "c38281714108603764d67c84c017c86b322af0a8adf77e784489f2f54d95c22a"
+      }
+    },
+    {
+      "text": "Uh, that's why the vampire things surprised me that they didn't I think it was a combination of maybe me not pushing hard enough. She was not as famous as she is now. I mean, she'd only written I think two of the books at that point, maybe three. Um, and that wasn't big enough. Um, I did get pressure. I had worked on pray home companion and I as a an usher for years and knew Garrison have had had potlucks in Garrison Keeler's kitchen you know I won't say we were close personal friends but you know there was pressure hey see if you can get Garrison Keeler",
+      "start": "0:00:00.080",
+      "end": "0:00:38.480",
+      "kind": "chunk",
+      "filename": "14_market_vision_1.ogv",
+      "title": "Project Management and Cultural Failures",
+      "id": "V15_1",
+      "embeddings": {
+        "raw": "f2ae94202b09ca4004ab49f96243f2d752218b1e5a5914e920ee79d8341f2472",
+        "similarity": "ea8db4fa034ff4485b837fcdb4367da516d1ee0ad2f1a00f6e6d625028c8ea36",
+        "retrieval": "858cb7ece1aa9def4c7c4febe435def00a0410ab54a66562a458f4cdf4e00fe8"
+      }
+    },
+    {
+      "text": "close personal friends but you know there was pressure hey see if you can get Garrison Keeler and that was surprises me actually in retrospect because he's much much bigger now than he was in the 80s but he at least was a name, Ann Rice was still kind of this kind of culty vampire person so so I don't know why that idea didn't take off more. Now I was assigned to the long list of people writing the Douglas Adams or Sunstone at the end of the universe. That was I don't know if that was the first I think that came up when I didn't have a good game of my own.",
+      "start": "0:00:33.440",
+      "end": "0:01:07.680",
+      "kind": "chunk",
+      "filename": "14_market_vision_1.ogv",
+      "title": "Project Management and Cultural Failures",
+      "id": "V15_2",
+      "embeddings": {
+        "raw": "8214275c366220370c5350df3ab38751d8a9c141725e93c403d675fb01e2d3cc",
+        "similarity": "bb02b7f69d36705ebbb2dce7f85cd94733ba34e77a9311a2d15fad00413f35c6",
+        "retrieval": "deb45278d203abc3f3c6809dcef467f158ef3b577948f60a9eeba289fe23ac80"
+      }
+    },
+    {
+      "text": "don't know if that was the first I think that came up when I didn't have a good game of my own. They said here you will write the next big hit because it will be the next Douglas Adams game. And it wasn't it was after Bureaucracy and it wasn't or maybe it was the same time as Bureaucracy but anyway it was a sequel to Hitchhiker's and a lot of imps careers died in that in that game. At the time I came on Douglas was completely unattached to the to the project. Um he just didn't want to hammer it through. I never met him personally. I stood in the room with him",
+      "start": "0:01:01.360",
+      "end": "0:01:39.120",
+      "kind": "chunk",
+      "filename": "14_market_vision_1.ogv",
+      "title": "Project Management and Cultural Failures",
+      "id": "V15_3",
+      "embeddings": {
+        "raw": "51a83dc9f90955671f247bcb06541d1445f2f05274a9ba233f5617bc1dc2e68e",
+        "similarity": "21d3e3a1a9fe4b36cdb45ad2db83c43357289198c1d53d073915a55c294776dc",
+        "retrieval": "ab0eadcdbbf2d9651027bf143eda375a75c3548910dd3f9a7465edc38026dac0"
+      }
+    },
+    {
+      "text": "just didn't want to hammer it through. I never met him personally. I stood in the room with him once when I right after I was hired like the day after I started he came through and was introduced to another tester but I wasn't on his game at that point so I didn't get to meet him but so he was not attached to the process the project and then it was handed off to other people and in the end I was told seriously that I was going to be writing the game with a programmer at I think it was at magnetic scrolls a competitor's company was going to tell me how to",
+      "start": "0:01:33.920",
+      "end": "0:02:09.280",
+      "kind": "chunk",
+      "filename": "14_market_vision_1.ogv",
+      "title": "Project Management and Cultural Failures",
+      "id": "V15_4",
+      "embeddings": {
+        "raw": "e60d5e4a6a5f3118c6e632cce7e6ec61861588ca67c8ac4da04dd7c6f12417f9",
+        "similarity": "f501677de4daa915e06669ff9f5749d7f061ceb3f80e76174215e4145c12deb8",
+        "retrieval": "d480e51b9b104f0bab6ed43d3370fc5f346b44e7590b5f345085e3d59a5d596b"
+      }
+    },
+    {
+      "text": "at I think it was at magnetic scrolls a competitor's company was going to tell me how to write the game and that I was just going to be the oldfashioned meaning of the word implementing. I was just going to be doing coding for it. And I at that point I said, \"No, this is absurd.\" So I quit on that project. So it was all at the same time, you know, it wasn't So - it was So - that was like a standard breakup. That was a stand- \"Yeah, that was just the house isn't clean. You didn't",
+      "start": "0:02:03.520",
+      "end": "0:02:32.720",
+      "kind": "chunk",
+      "filename": "14_market_vision_1.ogv",
+      "title": "Project Management and Cultural Failures",
+      "id": "V15_5",
+      "embeddings": {
+        "raw": "dcc9c621d00da629c2c0fe1e2cf9932214b7c97c312c9a6afe7e49e8a4a95f75",
+        "similarity": "085e940c709b381da821eddfa2efdff1be51ba81e83d9289fac72a42c7dc497f",
+        "retrieval": "9a75401445c55c262e920988a588177ce9184e1e96181c76b89ad0e8aad1dfcf"
+      }
+    },
+    {
+      "text": "like a standard breakup. That was a stand- \"Yeah, that was just the house isn't clean. You didn't take care of the dogs. I'm doing bad at work. You know what? I'm getting my back\". Yeah. I mean, I can't remember the exact timing actually, but Okay. But it was in the same period.",
+      "start": "0:02:27.840",
+      "end": "0:02:42.960",
+      "kind": "chunk",
+      "filename": "14_market_vision_1.ogv",
+      "title": "Project Management and Cultural Failures",
+      "id": "V15_6",
+      "embeddings": {
+        "raw": "acbd1501c731dc9b43217560a8382615090e974922a3232b99cd8d79046f8d48",
+        "similarity": "cfe064cfc3ac93ec5f232e3e796118766fe599630b12a8bf4b533a461095f0a9",
+        "retrieval": "a89239bf292c70457eca52e748523c51728248568a750d4d739e2f661efb5256"
+      }
+    },
+    {
+      "text": "I think it was panic. I think it was panic. And I think what made Infocom so great when it was great was exactly what killed us. The as I understand it, what happened was they formed the company to be a button-down threepiece suit with vest and tie business company, but look, we've got these games. We'll make money off the games and then we'll use that for the real stuff. and they ignored the games, which is exactly what you need for creative fment for for good stuff to happen. They ignored the games. They threw a little bit of money at us, not near as much as they should have done if we wanted to stay alive in the games world because that wasn't the point. Then they funneled off all that money and put it into the grown-up stuff. And that allowed the games people to do what they did best. they they just sort of they were ignored and pleasantly neglected which allowed this group of really brilliant people excluding myself from that just come together and create really wonderful things and a great environment. I mean it was just a really wonderful environment and then when Cornerstone died and the end started happening suddenly there was this need to make themselves a totally understandably human nature. Oh my gosh, we have to now survive on what we were doing before and make all of our hopes and dreams about the grown-up business side. Now we've got to apply to the game side and applying a micromanagement uh finger to to that side, which is exactly what killed it. Um, so I mean it's kind of through the neglect that it became was allowed to become great and then through trying to capitalize on that greatness that it killed it. I think killed the qual I don't know that the games are bad. I would just the late games. I would just say that they're uh they're trying too hard. It's it's too much not let leveling go off and come up with another great game on his own 'cuz he's done it before. trust us, you know, he'll do this again. It's we have to make sure that it's going to be a win before he gets out of the gate, which you just can't do.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "15_management_vision_0.ogv",
+      "title": "Creative Neglect and Commercial Failure",
+      "id": "V16_0",
+      "embeddings": {
+        "raw": "930486c9d2fc094476055a85b4bd740bb20dcf62266b207a5802971aa8c4be6c",
+        "similarity": "db81f59dfc77db11c4ab95ce461e9d2ffaf8d17d36f9e418207aa2b3cfbbbaaf",
+        "retrieval": "97680e2b6160b9f4c0aff2dc479e4d81038c3bd3550b8b7d7e35ce0398708af7"
+      }
+    },
+    {
+      "text": "I think it was panic. I think it was panic. And I think what made Infocom so great when it was great was exactly what killed us. The as I understand it, what happened was they formed the company to be a button-down threepiece suit with vest and tie business company, but look, we've got these games. We'll make money off the games and then we'll use that for the real stuff. and they ignored the games, which is exactly what you need for creative fment for for good stuff to happen. They ignored the games. They threw a little bit of money at us, not near as much as",
+      "start": "0:00:00.320",
+      "end": "0:00:37.440",
+      "kind": "chunk",
+      "filename": "15_management_vision_0.ogv",
+      "title": "Creative Neglect and Commercial Failure",
+      "id": "V16_1",
+      "embeddings": {
+        "raw": "e2dec18db6c97492645d8dfde81db93535a915729cb3c753190c105294cdbe67",
+        "similarity": "fc73be856750d500408a652bf8b182c4e728069998e169376ae2c51ac9571a6a",
+        "retrieval": "e4aeda728e3e53eef831666cf836a03da5bef2cf8cee6c7d50ea2671e832413e"
+      }
+    },
+    {
+      "text": "happen. They ignored the games. They threw a little bit of money at us, not near as much as they should have done if we wanted to stay alive in the games world because that wasn't the point. Then they funneled off all that money and put it into the grown-up stuff. And that allowed the games people to do what they did best. they they just sort of they were ignored and pleasantly neglected which allowed this group of really brilliant people excluding myself from that just come together and create really wonderful things and a great environment. I mean it was just",
+      "start": "0:00:32.800",
+      "end": "0:01:06.720",
+      "kind": "chunk",
+      "filename": "15_management_vision_0.ogv",
+      "title": "Creative Neglect and Commercial Failure",
+      "id": "V16_2",
+      "embeddings": {
+        "raw": "a45d349e303fbefef0402757bd87e2bd6c10665098af1f051406147370699272",
+        "similarity": "42c9a7fa0bfe15987c6d26353795ed882b5a7df23f729def4f98dd59586a7428",
+        "retrieval": "2053bec4d90a87e8987a277df273457522d563848d58c697c93c4aa688ba2233"
+      }
+    },
+    {
+      "text": "just come together and create really wonderful things and a great environment. I mean it was just a really wonderful environment and then when Cornerstone died and the end started happening suddenly there was this need to make themselves a totally understandably human nature. Oh my gosh, we have to now survive on what we were doing before and make all of our hopes and dreams about the grown-up business side. Now we've got to apply to the game side and applying a micromanagement uh finger to to that side, which is exactly what killed it. Um, so I mean it's kind of",
+      "start": "0:01:01.520",
+      "end": "0:01:42.960",
+      "kind": "chunk",
+      "filename": "15_management_vision_0.ogv",
+      "title": "Creative Neglect and Commercial Failure",
+      "id": "V16_3",
+      "embeddings": {
+        "raw": "2213362c90f79f25b50dbde3b545f5a0a915d7ec959935a474c89dbda15afb20",
+        "similarity": "9557351e41712fa1a8171b7e6a7fe4b5caeec9bc5433b112396fb39f1cbb3c29",
+        "retrieval": "347956bdd7955a8ad26ade89dbd017e0685536fbc51678526cc11eb727c80a2d"
+      }
+    },
+    {
+      "text": "uh finger to to that side, which is exactly what killed it. Um, so I mean it's kind of through the neglect that it became was allowed to become great and then through trying to capitalize on that greatness that it killed it. I think killed the qual I don't know that the games are bad. I would just the late games. I would just say that they're uh they're trying too hard. It's it's too much not let leveling go off and come up with another great game on his own 'cuz he's done it before. trust us, you know, he'll do this again. It's we have",
+      "start": "0:01:34.720",
+      "end": "0:02:10.560",
+      "kind": "chunk",
+      "filename": "15_management_vision_0.ogv",
+      "title": "Creative Neglect and Commercial Failure",
+      "id": "V16_4",
+      "embeddings": {
+        "raw": "692986687bb6f1b8046d2afd01c36ba1e3a85219ec23f7097c02e0c68b77b1ce",
+        "similarity": "57c0e44930f475f3c46be5739a3dd648b796e25637fe7f5e344cf7aafbad34aa",
+        "retrieval": "a9c229420ed5d2329903fbca366ebe0faff1b210498caa63c107121fc91ba40c"
+      }
+    },
+    {
+      "text": "game on his own 'cuz he's done it before. trust us, you know, he'll do this again. It's we have to make sure that it's going to be a win before he gets out of the gate, which you just can't do.",
+      "start": "0:02:04.160",
+      "end": "0:02:15.360",
+      "kind": "chunk",
+      "filename": "15_management_vision_0.ogv",
+      "title": "Creative Neglect and Commercial Failure",
+      "id": "V16_5",
+      "embeddings": {
+        "raw": "c6879c68c10e3fd552acccc207448830e6ddf8eeea6cbb666e0533b03310692f",
+        "similarity": "720a86d24cfbe995300322409fb2f8071fef7960f272f56622c5525685e40b5a",
+        "retrieval": "3ce834e8e8eb289097b08751a28f2ab74f42f3254b1f01bebc3d7bbce305150b"
+      }
+    },
+    {
+      "text": "Yeah, I didn't plan on it. It just kind of happened. I could sort of kept thinking, well, I'll go back there someday. And then I realized it had moved on without me. I keep doing that. I've done that periodically in my life. I'm going to write the great American novel. And actually that that was a mistake. I was going to just write a novel. And they had this huge party for me when I left Infocom and they gave me a t-shirt which I still have which was the 1989 winner of the Pulitzer Prize which suddenly put these expectations on it that kind of killed that in the bud. So I'm still interested in it and I'm still kind of trying to do it but I've never written that novel. No, I keep finding other things to do. So I wonder if I really do want to write the novel or if I just want to keep dreaming about writing the novel. There was something to be said for that.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "16_writing_a_novel_0.ogv",
+      "title": "Regrets and Unfinished Writing Dreams",
+      "id": "V17_0",
+      "embeddings": {
+        "raw": "8d692b5ff20ff10c8cf34195bd803c85f467e6a2e7fef1ba6e5d3b98fe9c81ee",
+        "similarity": "14def09baec19d31e1035570808e819c1bf08234cf9b56418932ad4c0bc90828",
+        "retrieval": "86f64bda261dd3c737593acd03d2c9d0d5d0e7aefc1bf2fb9dfe816692e72ba5"
+      }
+    },
+    {
+      "text": "Yeah, I didn't plan on it. It just kind of happened. I could sort of kept thinking, well, I'll go back there someday. And then I realized it had moved on without me. I keep doing that. I've done that periodically in my life. I'm going to write the great American novel. And actually that that was a mistake. I was going to just write a novel. And they had this huge party for me when I left Infocom and they gave me a t-shirt which I still have which was the 1989 winner of the Pulitzer Prize which suddenly put these expectations on it that",
+      "start": "0:00:00.000",
+      "end": "0:00:33.920",
+      "kind": "chunk",
+      "filename": "16_writing_a_novel_0.ogv",
+      "title": "Regrets and Unfinished Writing Dreams",
+      "id": "V17_1",
+      "embeddings": {
+        "raw": "6912820dd04571291e431e0d6dd5f61f4aaa9869ee2f9de64c7eab9e6b3301ad",
+        "similarity": "b6b2e75e6c50e540f208d8cf37591e3c0e13c6c316f8d2231ecf3fbaa4a4a3bb",
+        "retrieval": "aeab585dba298b3f09389967428f3feeb69ae9dce9c56d7b7f0e717aa042f084"
+      }
+    },
+    {
+      "text": "the 1989 winner of the Pulitzer Prize which suddenly put these expectations on it that kind of killed that in the bud. So I'm still interested in it and I'm still kind of trying to do it but I've never written that novel. No, I keep finding other things to do. So I wonder if I really do want to write the novel or if I just want to keep dreaming about writing the novel. There was something to be said for that.",
+      "start": "0:00:26.560",
+      "end": "0:00:50.880",
+      "kind": "chunk",
+      "filename": "16_writing_a_novel_0.ogv",
+      "title": "Regrets and Unfinished Writing Dreams",
+      "id": "V17_2",
+      "embeddings": {
+        "raw": "bd41a4d81aae512d5043febdfe18ef38d7ed838e9f653be1d3c36a475766a606",
+        "similarity": "dcd6677c10ed8e8963d63516de2a4890911499c2cb09530e110d0dbc89760638",
+        "retrieval": "6d5fa1975b601e8d9c0ef2f18a367f2c10a600b3c8f67599fc73fb242132d242"
+      }
+    },
+    {
+      "text": "Wheeler when I first saw it was already in boxes. Yeah, it was a dark little place full of boxes. So, I'll start talking about the imp life, but I could also probably talk about the testers. The the building is still around today, I think, and I think it's six stories tall and we were on the fifth floor and it was what is now, I'm sure, very dated. all glass on the outside with quite beautiful glass atriums from from bottom to top in the middle and it was all very buttoned down. So, you'd arrive I'd arrive whenever I felt like getting up and I was I was living in oh gosh I lived all over Boston at that time, but I was living on the tea. So, it was an easy tea trip out and then just a walk of three blocks over to Cambridge Park and you go up the elevator and you're surrounded by, you know, button-down places. You walk in, we've got a formal reception area and everything's kind of light and I should say colorless. Not not light in a good way. It's all colorless and there's gray carpet and there's white walls and there's no uh the thing Wheeler had going for it is it it even though when I knew it it was dark and in boxes, there was a sense of actual artisanship there. I don't actually know if it was just a rundown place, but that was the feeling of it. There was no artisanship at Cambridge Park and it was we we were we took up like half the floor around one atrium and it was all divided up with the 'cuz when we moved in we were going to take over the whole floor and I have some memory that maybe we even did rent the whole floor for a while and then they in the cutbacks they got rid of some of the space but it was largely empty. Um,",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "17_wheeler_building_1.ogv",
+      "title": "Remembering Wheeler Street and Cambridge Park",
+      "id": "V18_0",
+      "embeddings": {
+        "raw": "39e1f9d8509e9d703542e46dae224923a37a98fd3d0f327d97095d28166f7c74",
+        "similarity": "fd8e5e7260a33d471a8c4dfd35f5b5df200b6a6a2f8728f7247c9ee6f683fbab",
+        "retrieval": "75fa3c4482cc254bf0caaee0c95a83e301710ffb2af4d107f67513a2b3b80dbb"
+      }
+    },
+    {
+      "text": "Wheeler when I first saw it was already in boxes. Yeah, it was a dark little place full of boxes. So, I'll start talking about the imp life, but I could also probably talk about the testers. The the building is still around today, I think, and I think it's six stories tall and we were on the fifth floor and it was what is now, I'm sure, very dated. all glass on the outside with quite beautiful glass atriums from from bottom to top in the middle and it was all very buttoned down. So, you'd arrive I'd arrive whenever I felt like getting up and I was I was",
+      "start": "0:00:00.080",
+      "end": "0:00:37.360",
+      "kind": "chunk",
+      "filename": "17_wheeler_building_1.ogv",
+      "title": "Remembering Wheeler Street and Cambridge Park",
+      "id": "V18_1",
+      "embeddings": {
+        "raw": "1634acf7c723efd706f88700934de7d038b086b57da824cfc9b34ee575023114",
+        "similarity": "a29f0da8d6ae02d6b3097d60578b2e5fbcbb1dfb90f9a50ea8e12b7ec3af6625",
+        "retrieval": "84b3fa10cd3cf66df404e98000cada45c584d1884003234e8f0f73a47d018e9a"
+      }
+    },
+    {
+      "text": "buttoned down. So, you'd arrive I'd arrive whenever I felt like getting up and I was I was living in oh gosh I lived all over Boston at that time, but I was living on the tea. So, it was an easy tea trip out and then just a walk of three blocks over to Cambridge Park and you go up the elevator and you're surrounded by, you know, button-down places. You walk in, we've got a formal reception area and everything's kind of light and I should say colorless. Not not light in a good way. It's all colorless and there's gray",
+      "start": "0:00:31.040",
+      "end": "0:01:05.200",
+      "kind": "chunk",
+      "filename": "17_wheeler_building_1.ogv",
+      "title": "Remembering Wheeler Street and Cambridge Park",
+      "id": "V18_2",
+      "embeddings": {
+        "raw": "eabb2a139975bd456571c03a87caae65546528a54f9a1dc11ffdc6ae1fa54dce",
+        "similarity": "8e03cf6924c0e63ac9a9ce4d11171a67764cb4061bc40c9136ed65fbfe41f4da",
+        "retrieval": "fd3f60678c68bd38c18205ddf1da2618b1d75bb179cc245f6e6ba8e962984d6c"
+      }
+    },
+    {
+      "text": "I should say colorless. Not not light in a good way. It's all colorless and there's gray carpet and there's white walls and there's no uh the thing Wheeler had going for it is it it even though when I knew it it was dark and in boxes, there was a sense of actual artisanship there. I don't actually know if it was just a rundown place, but that was the feeling of it. There was no artisanship at Cambridge Park and it was we we were we took up like half the floor around one atrium and it was all divided up with the 'cuz when we moved in we were going to take",
+      "start": "0:00:59.040",
+      "end": "0:01:33.600",
+      "kind": "chunk",
+      "filename": "17_wheeler_building_1.ogv",
+      "title": "Remembering Wheeler Street and Cambridge Park",
+      "id": "V18_3",
+      "embeddings": {
+        "raw": "665ccf8f179a5bb79640e6ae766445958c00fcdc48c0492e6a1e4aeb2e893bc4",
+        "similarity": "671ab558e015b6687fb11366978f969602bab416d85f47f55826e675a93b9b79",
+        "retrieval": "cdbff5679b93b0ec4f0249967d760a33ae47b138b593038d6c8ec2903cc61596"
+      }
+    },
+    {
+      "text": "around one atrium and it was all divided up with the 'cuz when we moved in we were going to take over the whole floor and I have some memory that maybe we even did rent the whole floor for a while and then they in the cutbacks they got rid of some of the space but it was largely empty. Um,",
+      "start": "0:01:28.960",
+      "end": "0:01:44.480",
+      "kind": "chunk",
+      "filename": "17_wheeler_building_1.ogv",
+      "title": "Remembering Wheeler Street and Cambridge Park",
+      "id": "V18_4",
+      "embeddings": {
+        "raw": "520375d8dbbedf45970e69e3120da993b4a074767565844d032536ade7750a70",
+        "similarity": "2031a968fa5aa6099694a3974687f0d578e1b5952ac9c3af4c8696eeb96400a1",
+        "retrieval": "e1f51504586afe8588bac1277fcd1375289ae8e84fb517662b839d62f74d5156"
+      }
+    },
+    {
+      "text": "So, we had a you'd walk into reception with marketing and then beyond that into you you go gez you can go to the right and go to the imps go to the left and you get to the testing area and go further to the left and around the building you'd be where they developed the parser and Tim Anderson and the the guys who I considered the real programmers work. I misspoke. not the parts are the interpreters were written over there and then administration the big guys were down the hall by themselves in a corner. Um, and the imps area has probably been described we we had what we called a bowling alley. It was a very large open room with windows at the end and it was on the corner of the building. So, all of the imps on the north side had windows in their offices with John Palace on the corner and then a big series of windows for the bowling alley and then a line of offices on the south side with Steve Moritzky had the southside windowed office and then the rest of us had the closedin offices on the south side. And we did talk about the north side kids and the southside kids. And the north side were the real programmers and the southside were the just the dabblers who had the creative ability and were struggling with the programming. That that was the myth because of course Steve was on the south side but he wasn't considered one of the real programmers and he didn't have a computer science degree. But he definitely in that deserved to be on the north side. I think he kind of enjoyed being on the south side. So the southside was me, Jeff O'Neal, and Hollywood, who actually was not on the southside, it was on the what would east side, but it was also a windowless office. Um I think the intent had been to when we got up and running and were famous, assuming they even were going to have games, that there would be cubicles in the center of that big area and then we'd have games just routing out our ears from all the people working all at once. So, you'd show up when you'd show up. I don't remember ever being rushed, and I'm not a morning person, so I don't think it was an an early time. Um, I would the doors were always open. Um, except in few cases when people didn't want to be bothered, but it was actually a really wonderful way to work. all of the imps, we were all working on our own projects separately, but in a shared environment and and for me it was a it was a great it was kind of the perfect environment because you had the team the sense of we're all working together on something but I didn't have to share my work with anybody else. There was no need to actually work with partners. Other people work well with partners. I don't but I had the team support without the individual butting in",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "18_wheeler_building_2.ogv",
+      "title": "Organisation and Culture Among the Imps",
+      "id": "V19_0",
+      "embeddings": {
+        "raw": "2316b04af5505d981786d4266395065b89d1d39653113a432c9ba3158f7705a2",
+        "similarity": "a155309bc43b165dd4d8ba777de2151f95e2a1f896cea79ef5bc547fe2d4d4e1",
+        "retrieval": "1816ab69dbc0228acad12e0fd5c85f0db383ac52546954f243ee04f00ea36ded"
+      }
+    },
+    {
+      "text": "So, we had a you'd walk into reception with marketing and then beyond that into you you go gez you can go to the right and go to the imps go to the left and you get to the testing area and go further to the left and around the building you'd be where they developed the parser and Tim Anderson and the the guys who I considered the real programmers work. I misspoke. not the parts are the interpreters were written over there and then administration the big guys were down the hall by themselves in a corner. Um, and the imps",
+      "start": "0:00:00.320",
+      "end": "0:00:32.480",
+      "kind": "chunk",
+      "filename": "18_wheeler_building_2.ogv",
+      "title": "Organisation and Culture Among the Imps",
+      "id": "V19_1",
+      "embeddings": {
+        "raw": "bd0def7f72dea420a12ee33d15277c62568d41fa90eb11154684b8e5b33b287d",
+        "similarity": "8c371a0b7d4493eaf3632045b4f594f34f226026852a67f089935f73ed7ab0b6",
+        "retrieval": "8923c6d3664fa26178d4f95b84425d3faa9c3a37d39981dabc6ec70ffa8bf634"
+      }
+    },
+    {
+      "text": "administration the big guys were down the hall by themselves in a corner. Um, and the imps area has probably been described we we had what we called a bowling alley. It was a very large open room with windows at the end and it was on the corner of the building. So, all of the imps on the north side had windows in their offices with John Palace on the corner and then a big series of windows for the bowling alley and then a line of offices on the south side with Steve Moritzky had the southside windowed office and then the rest of us had the closedin offices on the south",
+      "start": "0:00:26.160",
+      "end": "0:01:02.960",
+      "kind": "chunk",
+      "filename": "18_wheeler_building_2.ogv",
+      "title": "Organisation and Culture Among the Imps",
+      "id": "V19_2",
+      "embeddings": {
+        "raw": "128737be009ac306482af6f4148545318589d8a1f899b36754883a04ea4c40a9",
+        "similarity": "7cdcccfd3b4a10f7f0d4ca75aee8e3dff7b664d4ed54b898736e096d62a5fe71",
+        "retrieval": "7ce996836e49f6aa89b003221e0ab50f0371637924ec66feea16eba9fb185ab5"
+      }
+    },
+    {
+      "text": "had the southside windowed office and then the rest of us had the closedin offices on the south side. And we did talk about the north side kids and the southside kids. And the north side were the real programmers and the southside were the just the dabblers who had the creative ability and were struggling with the programming. That that was the myth because of course Steve was on the south side but he wasn't considered one of the real programmers and he didn't have a computer science degree. But he definitely in that deserved to be on the north side. I think he",
+      "start": "0:00:55.600",
+      "end": "0:01:28.160",
+      "kind": "chunk",
+      "filename": "18_wheeler_building_2.ogv",
+      "title": "Organisation and Culture Among the Imps",
+      "id": "V19_3",
+      "embeddings": {
+        "raw": "ff1d10f31ec705c83368594c169759331625748d1592a7f02a996a5b4154a45d",
+        "similarity": "74ee0a7d20037a7de52969925e175b43d39662de556dd8f8c1a892e5fe56d64c",
+        "retrieval": "493807af1acbc29e7126329390f29c91858c444308739f1ccf901c55a34dbd82"
+      }
+    },
+    {
+      "text": "science degree. But he definitely in that deserved to be on the north side. I think he kind of enjoyed being on the south side. So the southside was me, Jeff O'Neal, and Hollywood, who actually was not on the southside, it was on the what would east side, but it was also a windowless office. Um I think the intent had been to when we got up and running and were famous, assuming they even were going to have games, that there would be cubicles in the center of that big area and then we'd have games just routing out our ears from all the people working all at once.",
+      "start": "0:01:21.760",
+      "end": "0:01:57.760",
+      "kind": "chunk",
+      "filename": "18_wheeler_building_2.ogv",
+      "title": "Organisation and Culture Among the Imps",
+      "id": "V19_4",
+      "embeddings": {
+        "raw": "8abe9a57be36059535f0d25bc8b144f49fc824cdf1bd9f2bee3054278f3af911",
+        "similarity": "6a5b11401ff5639cfb18ff765707ff53c3879f0ce5871474a5024bfd997a8d70",
+        "retrieval": "cb4cf033a1a9b1e7f5c1d14486663a1ef74f27511b000dd622447416f648f080"
+      }
+    },
+    {
+      "text": "area and then we'd have games just routing out our ears from all the people working all at once. So, you'd show up when you'd show up. I don't remember ever being rushed, and I'm not a morning person, so I don't think it was an an early time. Um, I would the doors were always open. Um, except in few cases when people didn't want to be bothered, but it was actually a really wonderful way to work. all of the imps, we were all working on our own projects separately, but in a shared environment and and for me it was a it was a great it was kind of the perfect environment",
+      "start": "0:01:51.680",
+      "end": "0:02:33.360",
+      "kind": "chunk",
+      "filename": "18_wheeler_building_2.ogv",
+      "title": "Organisation and Culture Among the Imps",
+      "id": "V19_5",
+      "embeddings": {
+        "raw": "2778789bad1be44171e15a0e433b09bca39be02e408c16da66a52993fd538296",
+        "similarity": "395f2131773aa5d436d7fc850c220514618eaadfd414b3c733e880b7c41e0ed1",
+        "retrieval": "24354adedd95bfd893cbf992b07a72dcd2fd46569fc8ee77581b74e0ffe029be"
+      }
+    },
+    {
+      "text": "in a shared environment and and for me it was a it was a great it was kind of the perfect environment because you had the team the sense of we're all working together on something but I didn't have to share my work with anybody else. There was no need to actually work with partners. Other people work well with partners. I don't but I had the team support without the individual butting in",
+      "start": "0:02:27.680",
+      "end": "0:02:51.040",
+      "kind": "chunk",
+      "filename": "18_wheeler_building_2.ogv",
+      "title": "Organisation and Culture Among the Imps",
+      "id": "V19_6",
+      "embeddings": {
+        "raw": "795f4d7108e276f5f3b93b4312ec1864eb5381b86cb854f92e71cb48454b55bf",
+        "similarity": "33c1fc74ed09d2cff43a6450b0fc09cf8a56acd41eadf8307f0780adf178160a",
+        "retrieval": "71bc6a4095e9e49595b6c70067f83746de00d6172052fdf106f971f7027b414b"
+      }
+    },
+    {
+      "text": "You would say hi. You'd sit down. I would work. On a good day, I would forget the time had passed and I kind of come into myself 6 hours later realizing I'd forgotten to have lunch. Um we worked on old-fashioned amber monitors plugged into a main frame. It's kind of hard to even remember how basic. It felt very high-tech at the time, but you know, it was nothing like, you know, the cheapest computer out today. Um the day would end around separate time, the formal day frequently with a a bogggle party or not party but a bogggle game which gosh I wish I could get this probably available now but for many years it was not possible to have an intranet bogggle game. So we we would all be playing it would be whoever signed up usually impssons and testers playing Boggle on the computer for half an hour or so and then some people would go home if they had families they would go home to the families others of us would stay and work later. Um, Steve, by the way, was by far the best Boggle player. And I always thought that I was a poor player. Um, because Steve would beat the pants off me and everybody else. Um, partly just 'cuz he's the fastest typist I've ever known. So, you could think of the word and it would already be typed out for him. Um, I have since discovered that I have not been beaten by anybody in Bogle ever since I lost or left Infocom. So, I guess I'm pretty good, too. But Steve was supreme.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "19_working_at_infocom_1.ogv",
+      "title": "Remembering Computer Work at Infocom",
+      "id": "V20_0",
+      "embeddings": {
+        "raw": "9ce3f3f6f1c69964ae9d62cc97a41f1be1f4ebe9ed5aa261cb63b4ee73446fe2",
+        "similarity": "a80c9adc779da0c276ba08dbe4afe6ce80441e3ba85dae88021925b5287b1695",
+        "retrieval": "c52c10bfc531d42d8f47882dbf1dcbc0056a9b4837d5d935a0f0365b8225e8da"
+      }
+    },
+    {
+      "text": "You would say hi. You'd sit down. I would work. On a good day, I would forget the time had passed and I kind of come into myself 6 hours later realizing I'd forgotten to have lunch. Um we worked on old-fashioned amber monitors plugged into a main frame. It's kind of hard to even remember how basic. It felt very high-tech at the time, but you know, it was nothing like, you know, the cheapest computer out today. Um the day would end around separate time, the formal day frequently with a a bogggle party or not party but a bogggle game which gosh I wish I could get",
+      "start": "0:00:01.120",
+      "end": "0:00:42.480",
+      "kind": "chunk",
+      "filename": "19_working_at_infocom_1.ogv",
+      "title": "Remembering Computer Work at Infocom",
+      "id": "V20_1",
+      "embeddings": {
+        "raw": "431fc29946b625044e424e821022116906f7bba127e20878a5dab3b497d5b912",
+        "similarity": "7d6b850c1fb2813d64d84cad30b4cbc32b6d29e62deae50f4c5d2815280cd825",
+        "retrieval": "a5803877fe3c7425c0d7aaf379ccf94febb6c0eac0c8805bf2b44808402896f1"
+      }
+    },
+    {
+      "text": "frequently with a a bogggle party or not party but a bogggle game which gosh I wish I could get this probably available now but for many years it was not possible to have an intranet bogggle game. So we we would all be playing it would be whoever signed up usually impssons and testers playing Boggle on the computer for half an hour or so and then some people would go home if they had families they would go home to the families others of us would stay and work later. Um, Steve, by the way, was by far the best Boggle player. And I always thought that I was a poor player. Um,",
+      "start": "0:00:35.280",
+      "end": "0:01:12.640",
+      "kind": "chunk",
+      "filename": "19_working_at_infocom_1.ogv",
+      "title": "Remembering Computer Work at Infocom",
+      "id": "V20_2",
+      "embeddings": {
+        "raw": "097697f03dd3584f631afce1d2fe376809c6e0fb2be8d8ba346fe5990a59478c",
+        "similarity": "ae87add1d8e394e61d903a4b7f94a57c6f2059617aa1d10fec190c90ed38db43",
+        "retrieval": "32a0e2b132c464cb0551b1c65e20343a887661001408a556b2c4090b0d410279"
+      }
+    },
+    {
+      "text": "by the way, was by far the best Boggle player. And I always thought that I was a poor player. Um, because Steve would beat the pants off me and everybody else. Um, partly just 'cuz he's the fastest typist I've ever known. So, you could think of the word and it would already be typed out for him. Um, I have since discovered that I have not been beaten by anybody in Bogle ever since I lost or left Infocom. So, I guess I'm pretty good, too. But Steve was supreme.",
+      "start": "0:01:06.720",
+      "end": "0:01:33.120",
+      "kind": "chunk",
+      "filename": "19_working_at_infocom_1.ogv",
+      "title": "Remembering Computer Work at Infocom",
+      "id": "V20_3",
+      "embeddings": {
+        "raw": "5f3a83de964e099709a1f46d9cbb8d310d899c08041149eeb5f04501dca28ec3",
+        "similarity": "3555d279d6b38b93603bcb92f3171af9ce11ab42e9642b964a2e19e59a25672f",
+        "retrieval": "9f4fc1392c93e72dcb6e9996f145901bab2d100f54021efc127d623d84efb886"
+      }
+    },
+    {
+      "text": "Um, every week, uh, one day a week, we'd have a an imps lunch, where we would get together and formally officially share how the game was going, bring up problems, ask for help. Um, Tom Snyder Productions would come to those, you know, other other outside groups. Um, Bob Bates when he was sort of working for us but not yet part of the group would come to those lunches. They were they were semiformmal I think Bruce what's his name the head of Activision came to one of them Br... It doesn't ring a bell... Bruce is what the CEO - yeah - so when paid info yeah he came to one of those lunches and that was a tense lunch but those were and I guess you know I was the girl I was the one who ran out to get the food John and me John and I would share that and I still don't think that that was because I was the girl. I got paid less than anybody else. But I don't think it was because I was the girl. It was because I was the last hired in that group and I was told before I started, you know, we're paying the other guys a lot more than you, but we just don't have the money now. Now, maybe if I had not been a girl, they wouldn't have cut that way. I don't I don't hold it against them, whoever they might be, but it was the true fact that I was the one who would get the lunches and I was the one who would frequently got the Friday party supplies, too. But I also kind of like to do that, so I would volunteer.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "20_working_at_infocom_2.ogv",
+      "title": "Imps' Lunches: Team Dynamics and Pay Inequality",
+      "id": "V21_0",
+      "embeddings": {
+        "raw": "6f3165dd25929c67e68229d54529880e30bd072706779cd5ca53345edde13f3b",
+        "similarity": "fee0e22f1c0a22058ddc68a41170f1cfe2290cb86ba0bc256c36f104b59bf3c3",
+        "retrieval": "7867bb7415aa0a7720c30ff4d1d646445ec3b88289c964ea33e835a94ab8b83c"
+      }
+    },
+    {
+      "text": "Um, every week, uh, one day a week, we'd have a an imps lunch, where we would get together and formally officially share how the game was going, bring up problems, ask for help. Um, Tom Snyder Productions would come to those, you know, other other outside groups. Um, Bob Bates when he was sort of working for us but not yet part of the group would come to those lunches. They were they were semiformmal I think Bruce what's his name the head of Activision came to one of them Br... It doesn't ring a bell... Bruce is what the CEO - yeah - so when paid info yeah he",
+      "start": "0:00:00.240",
+      "end": "0:00:42.320",
+      "kind": "chunk",
+      "filename": "20_working_at_infocom_2.ogv",
+      "title": "Imps' Lunches: Team Dynamics and Pay Inequality",
+      "id": "V21_1",
+      "embeddings": {
+        "raw": "c078eb603dc2484e05ae6567fd3ce8bf214eefd1bf6500eda839b6ec6c8ef656",
+        "similarity": "3d0e07f0d6b7aa78cef495f2df5ae7832c06daff59378e1ed766ef3ed5b05e41",
+        "retrieval": "7b7b93afcd7a9cfe06d193417a89e503dcf3d7a7e3918ae414c8a6a377406533"
+      }
+    },
+    {
+      "text": "one of them Br... It doesn't ring a bell... Bruce is what the CEO - yeah - so when paid info yeah he came to one of those lunches and that was a tense lunch but those were and I guess you know I was the girl I was the one who ran out to get the food John and me John and I would share that and I still don't think that that was because I was the girl. I got paid less than anybody else. But I don't think it was because I was the girl. It was because I was the last hired in that",
+      "start": "0:00:33.200",
+      "end": "0:01:04.720",
+      "kind": "chunk",
+      "filename": "20_working_at_infocom_2.ogv",
+      "title": "Imps' Lunches: Team Dynamics and Pay Inequality",
+      "id": "V21_2",
+      "embeddings": {
+        "raw": "30d8e0909423b03dc4a1efefbcdaa4f254892bcfec506df315bdde18b8f266b7",
+        "similarity": "b791262c66bc47ed906ae63a0fe133f034b62aa05d7644b5d8fe69dc01b71335",
+        "retrieval": "e26d4fd9ed4b57a46f61193f25bd5fdb9674d5ceaba8251b578279194c3d0043"
+      }
+    },
+    {
+      "text": "else. But I don't think it was because I was the girl. It was because I was the last hired in that group and I was told before I started, you know, we're paying the other guys a lot more than you, but we just don't have the money now. Now, maybe if I had not been a girl, they wouldn't have cut that way. I don't I don't hold it against them, whoever they might be, but it was the true fact that I was the one who would get the lunches and I was the one who would frequently",
+      "start": "0:01:00.400",
+      "end": "0:01:27.520",
+      "kind": "chunk",
+      "filename": "20_working_at_infocom_2.ogv",
+      "title": "Imps' Lunches: Team Dynamics and Pay Inequality",
+      "id": "V21_3",
+      "embeddings": {
+        "raw": "ea9d9f16e404ca85ef95c2ab496035f33b2199054b7c6d1d72504f4bdcb94144",
+        "similarity": "e914d8605591acef440fe3a4b4abc6282fc3265e88fbbf0af1d9a91fd39474aa",
+        "retrieval": "7630d1cc63281fc61cf31fc7524124d748415e0d18ca34dfb7d7269bd7373e0d"
+      }
+    },
+    {
+      "text": "that I was the one who would get the lunches and I was the one who would frequently got the Friday party supplies, too. But I also kind of like to do that, so I would volunteer.",
+      "start": "0:01:22.480",
+      "end": "0:01:32.960",
+      "kind": "chunk",
+      "filename": "20_working_at_infocom_2.ogv",
+      "title": "Imps' Lunches: Team Dynamics and Pay Inequality",
+      "id": "V21_4",
+      "embeddings": {
+        "raw": "332b72778cdc597bbffa2803b01d8841ff17e520838e492fbb45089990503ecf",
+        "similarity": "592e854c4106ef0f65bca98b18b3de4146b7c92e0070fba742044d64a2be9adf",
+        "retrieval": "c5053d933df1908d3e8d48be50130fa0c5776882ac51999472f7fd781f88190e"
+      }
+    },
+    {
+      "text": "Um, and at the imps lunches it was a supportive atmosphere. I don't recall I mean I know there must have been fights between imps and I know that there were fights between imps but I don't recall anything at these lunches among us except sort of support of gez you know I've got a puzzle I can't figure out how to solve it. It's boring. how do we solve this puzzle or how do I we didn't do coding questions because it's sitting around a lunch table is not a good place to do coding uh problem solving. So that wasn't the kind of thing we discussed that you'd walk over to Stu Stu Galley is usually the person I'd check in with. I mean depended what what you were looking for. Stu was the person I go to for parser stuff. Leveling for really complex stuff in programming. Steve for real questions for comedy, you know, how to make something funny. Um or just how to get out of a pickle in the story. Um, and then at the in lunches, it was all just a free-for-all of people talking and suggesting. Um so that would pretty much be how how it would work. It was everybody working on their own thing but together.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "21_working_at_infocom_3.ogv",
+      "title": "Imps' Lunches and a Supportive Atmosphere",
+      "id": "V22_0",
+      "embeddings": {
+        "raw": "375ac2583476b089eddb29c296a8946c83709b432795a640aaf3dbcd8d8d8e69",
+        "similarity": "d46d2e9c05f3d46b9cfc81204d82d510b95fe5183371dd019bcff46fd519c20d",
+        "retrieval": "a66d6ce7afbf3d421290d2f2f540e02a7238bbc15fd7caa405cd9936978c8092"
+      }
+    },
+    {
+      "text": "Um, and at the imps lunches it was a supportive atmosphere. I don't recall I mean I know there must have been fights between imps and I know that there were fights between imps but I don't recall anything at these lunches among us except sort of support of gez you know I've got a puzzle I can't figure out how to solve it. It's boring. how do we solve this puzzle or how do I we didn't do coding questions because it's sitting around a lunch table is not a good place to do coding uh problem solving. So that wasn't the kind of",
+      "start": "0:00:00.160",
+      "end": "0:00:35.920",
+      "kind": "chunk",
+      "filename": "21_working_at_infocom_3.ogv",
+      "title": "Imps' Lunches and a Supportive Atmosphere",
+      "id": "V22_1",
+      "embeddings": {
+        "raw": "2744352494f0c9b9ef9dd23a5fba99ec43c84b245a2374e7d5d3a1ce01ef8c73",
+        "similarity": "f926948a934dad500bfcb258cf0f2e4f3e95f10995e6de2f1b73d1a53b9b45ef",
+        "retrieval": "11d8225e2c01e1a0fa2cfa866c8b7c5bd335d1d989d87c9b1faa400e49a9e7f5"
+      }
+    },
+    {
+      "text": "lunch table is not a good place to do coding uh problem solving. So that wasn't the kind of thing we discussed that you'd walk over to Stu Stu Galley is usually the person I'd check in with. I mean depended what what you were looking for. Stu was the person I go to for parser stuff. Leveling for really complex stuff in programming. Steve for real questions for comedy, you know, how to make something funny. Um or just how to get out of a pickle in the story. Um, and then at the in lunches, it was all just a free-for-all of people talking and suggesting. Um so that",
+      "start": "0:00:29.920",
+      "end": "0:01:09.600",
+      "kind": "chunk",
+      "filename": "21_working_at_infocom_3.ogv",
+      "title": "Imps' Lunches and a Supportive Atmosphere",
+      "id": "V22_2",
+      "embeddings": {
+        "raw": "90f8b136cc4f8f630e383af3343a965ef1cdc58defae2c8572ffa11f68e002fe",
+        "similarity": "1c587e6d8b66d20fa26a5ae18f5ac8f462e930d60c451247feb563c505c824ac",
+        "retrieval": "0024a86a372cef77c61608f9fdc40113c163f02c13f9064e3d11279c246bd2ad"
+      }
+    },
+    {
+      "text": "the in lunches, it was all just a free-for-all of people talking and suggesting. Um so that would pretty much be how how it would work. It was everybody working on their own thing but together.",
+      "start": "0:01:02.720",
+      "end": "0:01:15.680",
+      "kind": "chunk",
+      "filename": "21_working_at_infocom_3.ogv",
+      "title": "Imps' Lunches and a Supportive Atmosphere",
+      "id": "V22_3",
+      "embeddings": {
+        "raw": "b434471bb3d170c6698b3b6c1cf83b9ff629fbb7d57ba1b4d3a8f1048c82f154",
+        "similarity": "0da35cc34d9e977ae8aa5cd7b4d01d2fbd5d30c62db5d00e3515315f81a4fbaf",
+        "retrieval": "869cb278e3fa47f0f5eca1bd49f2ed27f35536ac93bfb734b1e18b24fdc4b0ef"
+      }
+    },
+    {
+      "text": "the game... the game packaging when I was it's changed from all the wonderful unique packaging to the look of a matching set of books. I mean it it fits in with that. That was very very definitely the perception and the perception from within that yeah we really were the best and and it's arrogant I suppose but maybe it's true. I don't know. Uh, we certainly have been remembered well. Um, so we didn't need to. We We were above all the We weren't doing just games. We were doing experiences, environments, and they were more like books. That's how we saw them.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "22_market_vision_2.ogv",
+      "title": "Game Design as a Literary Experience",
+      "id": "V23_0",
+      "embeddings": {
+        "raw": "71a15bbc65224a6ac2452e7442cc9393d440b38ab0d0d92c455d10b5f8cccf75",
+        "similarity": "9d114eac8a86e2200ba8c3ec300c75055aad7f289e0206f0b1a6e6018001ee31",
+        "retrieval": "dca1058ec466514f8e002e3e31282840363cc10c5636ee110bc7cdb0f0f8aca4"
+      }
+    },
+    {
+      "text": "the game... the game packaging when I was it's changed from all the wonderful unique packaging to the look of a matching set of books. I mean it it fits in with that. That was very very definitely the perception and the perception from within that yeah we really were the best and and it's arrogant I suppose but maybe it's true. I don't know. Uh, we certainly have been remembered well. Um, so we didn't need to. We We were above all the We weren't doing just games. We were doing experiences, environments, and they were more like books. That's how we saw them.",
+      "start": "0:00:00.080",
+      "end": "0:00:38.560",
+      "kind": "chunk",
+      "filename": "22_market_vision_2.ogv",
+      "title": "Game Design as a Literary Experience",
+      "id": "V23_1",
+      "embeddings": {
+        "raw": "71a15bbc65224a6ac2452e7442cc9393d440b38ab0d0d92c455d10b5f8cccf75",
+        "similarity": "9d114eac8a86e2200ba8c3ec300c75055aad7f289e0206f0b1a6e6018001ee31",
+        "retrieval": "dca1058ec466514f8e002e3e31282840363cc10c5636ee110bc7cdb0f0f8aca4"
+      }
+    },
+    {
+      "text": "Right. Um I'm not sure I can say I think of Infoc. theme song in the back of my head is Camelot. Camelot, which I can't sing right now, but it was kind of this moment of glory. And it's not to say that it couldn't happen again. I look at the games coming out now, which I don't look at too closely. I'm not big into games. Um but I don't know. I think some of what made Infocom so great was this individual vision that they were able to that the style of the game and the ability with a text adventure. It's you know it's it is a book. I'll I'll go strongly. It is a book just done a little differently. You get an individual vision in a different way than you do when you're having to hire voice uh what do they call voice actors. you know, Mark Hamill has to be in this and we got to have graphics and we got to have certain algorithms for the fight scenes and things. I just it doesn't surprise me that many of the games, the commercial games today are more and more like sort of absent Hollywood movies. It's because it's the only way you can make something that looks like that. And I do think it's kind of amazing the underground amateur games that there are. Maybe they aren't underground to people who are there, but because my my response is why would I want to it's an an unlearned response. I want to say this is not educated. It's it's why would I want to commit to 100 hours of playing some unknowns game. I want I want the stamp of somebody put some money behind this. You know, I have to pay for this to make it worthwhile to prove that it's good. Um but probably those games are as engaging as any other book that's written today. And I would think probably for me and the kind of interests I have more engaging than Halo. Um, so it's it's not quite fair to compare Halo with Plundered Hearts, but anyway.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "23_market_vision_3.ogv",
+      "title": "Nostalgia and Infocom's Individual Vision",
+      "id": "V24_0",
+      "embeddings": {
+        "raw": "52b02c0ec09172aa7b5aa50ba43e04b0b877b9f302acb4e7c35c953ed4baa42c",
+        "similarity": "d33bd24dbebbd23763e252bf626df2fb46bf2b5440be169feac1788fdcb7f13a",
+        "retrieval": "98ed59fa98eab3a9b14dba60597c868e40c2e47795d197f9b6aa50b7a5599608"
+      }
+    },
+    {
+      "text": "Right. Um I'm not sure I can say I think of Infoc. theme song in the back of my head is Camelot. Camelot, which I can't sing right now, but it was kind of this moment of glory. And it's not to say that it couldn't happen again. I look at the games coming out now, which I don't look at too closely. I'm not big into games. Um but I don't know. I think some of what made Infocom so great was this individual vision that they were able to that the style of the game and the ability with a text adventure. It's you know it's it is a",
+      "start": "0:00:00.160",
+      "end": "0:00:37.520",
+      "kind": "chunk",
+      "filename": "23_market_vision_3.ogv",
+      "title": "Nostalgia and Infocom's Individual Vision",
+      "id": "V24_1",
+      "embeddings": {
+        "raw": "9410c98e7be7686451c7ce1f3c031a79e50747cd6bfd34c96bc77142a1c976a0",
+        "similarity": "be1f01aca63d476f24ad69d3c2589d3f496bcd8c12608374049161c6b244f0c3",
+        "retrieval": "6bb01062389ca4aa6e2d2910b7c4b2e3a38c5dee04bc76c632c773ad281c6cbb"
+      }
+    },
+    {
+      "text": "the style of the game and the ability with a text adventure. It's you know it's it is a book. I'll I'll go strongly. It is a book just done a little differently. You get an individual vision in a different way than you do when you're having to hire voice uh what do they call voice actors. you know, Mark Hamill has to be in this and we got to have graphics and we got to have certain algorithms for the fight scenes and things. I just it doesn't surprise me that many of the games, the commercial games today are more and more like sort of absent",
+      "start": "0:00:32.640",
+      "end": "0:01:06.240",
+      "kind": "chunk",
+      "filename": "23_market_vision_3.ogv",
+      "title": "Nostalgia and Infocom's Individual Vision",
+      "id": "V24_2",
+      "embeddings": {
+        "raw": "2cb06972ef2dd048bf67bb3ce2e8660335b80368b5961af2008a7bae6e14f6d7",
+        "similarity": "a490ebb0ec4dfda8029f5cc3f51ca7a774631489332d9c44494018b66a8d1eeb",
+        "retrieval": "b67c84036ae02600c3e54d04dfdbe9acc6968f37692c0627e39756891a905a55"
+      }
+    },
+    {
+      "text": "that many of the games, the commercial games today are more and more like sort of absent Hollywood movies. It's because it's the only way you can make something that looks like that. And I do think it's kind of amazing the underground amateur games that there are. Maybe they aren't underground to people who are there, but because my my response is why would I want to it's an an unlearned response. I want to say this is not educated. It's it's why would I want to commit to 100 hours of playing some unknowns game. I want I want the stamp of somebody",
+      "start": "0:01:00.000",
+      "end": "0:01:32.080",
+      "kind": "chunk",
+      "filename": "23_market_vision_3.ogv",
+      "title": "Nostalgia and Infocom's Individual Vision",
+      "id": "V24_3",
+      "embeddings": {
+        "raw": "6f98360e59986b5c48215b82780c0ae5d2610764d554378717d93184c3826863",
+        "similarity": "053f4f9f63d796e8b200d5195862587b39ce182d5ab6b501d2777898da277352",
+        "retrieval": "470c459f19bf60c28167efebb0597e1a95e1656a6795374db785314ed5c02082"
+      }
+    },
+    {
+      "text": "to commit to 100 hours of playing some unknowns game. I want I want the stamp of somebody put some money behind this. You know, I have to pay for this to make it worthwhile to prove that it's good. Um but probably those games are as engaging as any other book that's written today. And I would think probably for me and the kind of interests I have more engaging than Halo. Um, so it's it's not quite fair to compare Halo with Plundered Hearts, but anyway.",
+      "start": "0:01:27.280",
+      "end": "0:01:56.080",
+      "kind": "chunk",
+      "filename": "23_market_vision_3.ogv",
+      "title": "Nostalgia and Infocom's Individual Vision",
+      "id": "V24_4",
+      "embeddings": {
+        "raw": "48b24d4fd4fe72b66726c488a879da70bcab511c1ed99cbc2d3afa95beacc2de",
+        "similarity": "57a1c5dced0b13532f888e043538542fdc321bb9cb15297f22d3b7ceec1a255c",
+        "retrieval": "ef5b39a22c0b0853fb3cb9e1c87038759fddb4dcc2a453213a9394deaec0d34d"
+      }
+    },
+    {
+      "text": "though there are a lot of deaths in Plundered Hearts and that was strictly because I was trying to keep it easy on the idea that it was supposed to be this new market of people who hadn't played and I didn't have a good way of making the puzzles easier better hints or something. So I just have you die before and it was to make it easy. You just die so that I didn't have to get a puzzle to get out of whatever it was. And also I didn't have the space 'cuz I was so crammed for space. It was easier to die than to have a landing room that you know if you step off the cliff or something a propos very specific point about planet hearts.",
+      "start": null,
+      "end": null,
+      "kind": "full",
+      "filename": "24_writing_a_romance_5.ogv",
+      "title": "Plundered Hearts: Design and Memory Limits",
+      "id": "V25_0",
+      "embeddings": {
+        "raw": "a24547feafd3acfebb46024f3611a92812019dbf24231ebc55eb5c54ae62112c",
+        "similarity": "eb3cfd48074b85566b6a43583e384ace2e7bc52c53db707076b1cf7c38e00cbc",
+        "retrieval": "55794384242e422dee9dc2d6a26872205dbcbcd056ac059f7c839cc3d59a7e78"
+      }
+    },
+    {
+      "text": "though there are a lot of deaths in Plundered Hearts and that was strictly because I was trying to keep it easy on the idea that it was supposed to be this new market of people who hadn't played and I didn't have a good way of making the puzzles easier better hints or something. So I just have you die before and it was to make it easy. You just die so that I didn't have to get a puzzle to get out of whatever it was. And also I didn't have the space 'cuz I was so crammed for space. It was easier to die than to have a landing room that you know if",
+      "start": "0:00:00.480",
+      "end": "0:00:32.320",
+      "kind": "chunk",
+      "filename": "24_writing_a_romance_5.ogv",
+      "title": "Plundered Hearts: Design and Memory Limits",
+      "id": "V25_1",
+      "embeddings": {
+        "raw": "81b1ac4542ebdf0c6f9cf44d99404edaea5bc505334fc18a22593e7d707a2a85",
+        "similarity": "addfd0a056456354d6426b963912f92ad31688b6241e16fd56b2bb87b3535612",
+        "retrieval": "2cdae1e7e4eb35f0ecc159529e9ec9e6f809321eb2bc7ba249ec6a2607828145"
+      }
+    },
+    {
+      "text": "'cuz I was so crammed for space. It was easier to die than to have a landing room that you know if you step off the cliff or something a propos very specific point about planet hearts.",
+      "start": "0:00:26.960",
+      "end": "0:00:38.480",
+      "kind": "chunk",
+      "filename": "24_writing_a_romance_5.ogv",
+      "title": "Plundered Hearts: Design and Memory Limits",
+      "id": "V25_2",
+      "embeddings": {
+        "raw": "f155bc48c5e8408a2a3e8052b7da39e5223980a365d160d82b5d984bc03a304b",
+        "similarity": "1687937d336b04210eada918596d19fe16321459457c0aae6ec1df94e99129e0",
+        "retrieval": "1c8336ab1d3d6d6ac8fcfbc3a95f16705ecffe3b1ed3058f91988ba73f114bcd"
+      }
+    }
+  ],
+  "queries": [
+    {
+      "id": 1,
+      "text": "The room seems emptied thoroughly, if hurriedly, despite the immediate violence that has just occurred. This sudden lack of personal belongings emphasizes the protagonist's immediate reduction to a captive object.",
+      "embeddings": {
+        "raw": "29e56839088cce1f9bc20a450459f2d573dc305166cf2b5bdcf049e89eda0c81",
+        "similarity": "33227ee9b4df2becb512528492840795c2a9e8869adb58ab2572ce6a4d9f4295",
+        "retrieval": "6dd9250dda01247b08ea64c4d74420362e00d5951c9e30929c76112856bcd774"
+      }
+    },
+    {
+      "id": 2,
+      "text": "The ship lurches sharply just as she examines the banknote. A coffer slides from beneath the bed, interrupting the quiet inventory check with a sudden physical jolt.",
+      "embeddings": {
+        "raw": "66b67e865ae46bdc3b8143a6897a6d44777a00323f4e47de3737ccaff2cff9ba",
+        "similarity": "1a03289ee7400811d2b4e6f4619cdb42f6633328a4564c5dcff5ba06b0bf620c",
+        "retrieval": "c22edd03fcc044b55b13c8a0f03ff9c82755d8e8027882d10bb22e19cdb7c8cc"
+      }
+    },
+    {
+      "id": 3,
+      "text": "Crulley, who was aggressively dragging her, suddenly grunts and slumps into her arms. This abrupt physical failure immediately shifts the dynamic from an active, immediate threat to a passive, vulnerable state.",
+      "embeddings": {
+        "raw": "99daf460bf06d05206cc38585ca67b09771368a811d606239c7a02dc5c4cba4c",
+        "similarity": "31fa2dfc0b314cfe417222a4c129c0ce2520aab5d704f34cb93fdc3ce9222376",
+        "retrieval": "25393b5d13bc84cf88a96a8935a8894ee9a849e4ce075e39827f79c289792c4d"
+      }
+    },
+    {
+      "id": 4,
+      "text": "The father's letter warns of a deadly viper, yet Jamison's immediate concern is the location of a simple safety box. He casually assesses the unconscious man, suggesting a swift, brutal reckoning for his intrusion.",
+      "embeddings": {
+        "raw": "cf48c86ea098cbcf5ed2523bd9e38e3750daa29b9ec12c72032597f99745a9eb",
+        "similarity": "e8ebb58f82d267cfeb1aa2ca267bb1dd537da0dd4a53718ebfc186aec51823f6",
+        "retrieval": "36c6b4e1f158d79d5ab0604cb7139e0d11ccac2791925de507b7d830e74be7a0"
+      }
+    },
+    {
+      "id": 5,
+      "text": "The curtain masks the forward exit, obscuring the path out of the quarters. This detail creates a sense of contained space, despite the large size of the room.",
+      "embeddings": {
+        "raw": "ae91813c670b323e81f4efb1dce8e35f43f4eb830b2a65034b2d39c3fc60bd31",
+        "similarity": "a6a47d71d644b674ade8967a0a1e711008c6de4c09146b2377292573fec22301",
+        "retrieval": "18b2d8dd7073de41f519443b474b583ff4d0a402650ed9c8eb4cf6608507d1a0"
+      }
+    },
+    {
+      "id": 6,
+      "text": "The speaker lingers on the player’s beauty and takes their hand, creating an intimate moment. Yet, the immediate practical advice is to rely on Cookie, who is noted to be quite deaf.",
+      "embeddings": {
+        "raw": "c8f7347eacb1683a63d4f3eb6cf68ac81841e68beecd2cd7892514390c837f87",
+        "similarity": "b45f3466042ba79e8f409c1dcda94a09f22127220df8d5d61b1b1295144a3228",
+        "retrieval": "8f3ca3ed175af687d755a7bab33a7fd7421502e767bef2adac3e9a8a7703db59"
+      }
+    },
+    {
+      "id": 7,
+      "text": "Jamison's hatred is not abstract but rooted in a specific, violent memory of piracy and loss. The past tragedy has transformed a simple rivalry into a deeply personal, enduring vendetta.",
+      "embeddings": {
+        "raw": "740069ce02e324e6a48f41b13a32fa04dc1a5bbc93203efa99f3151d6ec469b9",
+        "similarity": "22452d793c6952a4b719c73445f6215c4c7627274f997335844e7d88b1623792",
+        "retrieval": "24d407e6c38948e47c9dbb834c94682a3e56dd48b404b2689d03bab2421b53b9"
+      }
+    },
+    {
+      "id": 8,
+      "text": "Jamison attempts to affix the jeweled brooch, only to find the clasp is broken. He then folds the piece into the player’s hand, transforming a display of adornment into a simple, held object.",
+      "embeddings": {
+        "raw": "67ba84fd8ce14e847e1f0cf0b50fe558452a2d8dea32aca32661b35f46d6b371",
+        "similarity": "c955de20a997c49cc3c2b4929ab8be90e3e3583043dfd9eed9b9245cfd2ad774",
+        "retrieval": "20773850b096d047f59dff0812b1d79c0ea2a979ca41e72239c4de00b8b20430"
+      }
+    },
+    {
+      "id": 9,
+      "text": "The invitation speaks of a formal dance in St. Sinistra, a world of polished ceremony. This promise of high society is starkly contrasted by the gloomy, damp confines of the ship's hold.",
+      "embeddings": {
+        "raw": "25037fcd0ed55778e81f137af5aed93efb3f25e7126d6a52f05fe446968922b0",
+        "similarity": "37b716ab6b00f02bcdbbddf1e742c5a6b691bb54ffde0b35cd24afb3e01e54bc",
+        "retrieval": "7a34873615f23749023a1002a16472125c0caf6d5b3cb2989e343e5e18431aaa"
+      }
+    },
+    {
+      "id": 10,
+      "text": "The supplies—casks of rum, flour, and gunpowder—are stacked behind a high fence. Yet, the fire is burning in the ammunition cage, dangerously close to these vital stores.",
+      "embeddings": {
+        "raw": "5cc07a6f362a3f79226fbffd8ff18e534afde5615b2f23454bca52a2ad74d8c9",
+        "similarity": "6222dc96c6c7a7b8996dc4d69cfcff66806f22e081f3b268a3d92fb8fa7afab9",
+        "retrieval": "dc990b2dacf432889a627b3f4cf861cb375f0a69aba4a54900c749550c4d6088"
+      }
+    },
+    {
+      "id": 11,
+      "text": "The small bottle, found among the stains and medical detritus of the quarters, seems to be the catalyst for the immediate action. This mundane object triggers Crulley's sudden, self-important departure into the sea, leaving the confined space behind.",
+      "embeddings": {
+        "raw": "6b0c50de3296831f2014e00bbe27ac8332965a6a4cf6e01cea3b0b5154a84a64",
+        "similarity": "258ec9c43e9de4a617097718e3a8183492ef349ba24ccfb88266a342480de448",
+        "retrieval": "efa650b94ff2112bedda6819ce3b99e411edac080c805d240e8e2e6ef5915bae"
+      }
+    },
+    {
+      "id": 12,
+      "text": "The bed was initially described as dark and messy, but the closer inspection reveals straw that is plumped and soft. This detail contrasts sharply with the general impression of the cramped, utilitarian sleeping space.",
+      "embeddings": {
+        "raw": "6b0973c93d05757fb15d2389a1aa082c7b1579b552932abe93e6cad1e18bbe06",
+        "similarity": "9db1c6c53843a8d05d1908a639f524f7860d3f77c425aba714b64c1b94477819",
+        "retrieval": "db587b9ec351116a9a701f79382ffa82f8e635ee182bae82b1d2c15fe4d5f851"
+      }
+    },
+    {
+      "id": 13,
+      "text": "The moonlight catches the hook of the distant swimmer as he approaches the shore. This solitary figure, moving toward the land, contrasts sharply with the heavy, deliberate act of throwing the coffer into the deep water.",
+      "embeddings": {
+        "raw": "ba4ac085da7c846b3d09f09435ac26ca8a8737fb705493df2f83473be1bb34f6",
+        "similarity": "d88ace8d792a9fd0c36e9bd89cfd5d6373a7ac22fbc90d922d9d23ee1f7cafc1",
+        "retrieval": "ce9b8935146d069fc2da22c1dc9b40bdf956c0e1351b8131f51076a4668c2a56"
+      }
+    },
+    {
+      "id": 14,
+      "text": "The ladder slams into the stern, driving all the air out of you. This sudden, forceful impact follows the earlier description of clinging tenuously to the slimy rung.",
+      "embeddings": {
+        "raw": "7a990c2317dc53e6a45f6c82e44863b963d289faa5ab99a9d99ea88ca14a2544",
+        "similarity": "178032f9d7ac0b2e1f6aadbf450c994abbff504d310c2f1150b15dfc9ade293b",
+        "retrieval": "dfac56fe127b733a10f6a764ab27094e7890a7fa1418e0ed7ee8a7880735f4b9"
+      }
+    },
+    {
+      "id": 15,
+      "text": "The cannons line the deck, aimed at the open sea and the island, yet no torches are lit. This heavy military readiness exists under the quiet, pervasive glow of the moon.",
+      "embeddings": {
+        "raw": "685b9a6d262b15b3e04dd3e4fe682e7d57550548eb807311d47d5dd89cb43040",
+        "similarity": "b18cd3628df7c147cb7120c54782f3c841d920f9414995897c911c8b5dcee074",
+        "retrieval": "63c3b8998bd4c25df490df70197c4972881ab3dc73e6253eb4bf575db626ed6d"
+      }
+    },
+    {
+      "id": 16,
+      "text": "The pirates sing low shanties while repairing cannon and sharpening daggers. This domestic rhythm of work feels oddly fragile against the constant reminder that the reefs are definitely getting larger.",
+      "embeddings": {
+        "raw": "1200f7b95da2738a2db08fb47d0ec46d3d1e31ca0a7ab747d09565248d64c6a0",
+        "similarity": "811061f944b5d801135ae2e7cc19c7d4e56e52dd87d04e1402bb31c65f9f7cf5",
+        "retrieval": "b1075da6389058b26dbaa76191e48bc75c6fff22451e5df966cd3dadfc61133b"
+      }
+    },
+    {
+      "id": 17,
+      "text": "The Helena Louise drifts back toward the island with a heave and creak of timbers. The open barrels, one stained with dark rum and the other holding water, remain fixed in the ship's slow, inevitable movement.",
+      "embeddings": {
+        "raw": "d80b47504948a044873e9b660d26b06562568006e1482d6dbc0768654240d93f",
+        "similarity": "657f21a9f324b6899dc0f79a1362cc8e42a593f36ae0b75fbfc5c97736f30957",
+        "retrieval": "2b65aa0f25c055fbe90c6b37fc725c0b334e643705504de4fe1236866a0863e2"
+      }
+    },
+    {
+      "id": 18,
+      "text": "The large pyramid of casks sits precariously, held only by a heavy rope against the deck. This organized stack of supplies feels both necessary and temporary, a fragile monument to the ship's current state.",
+      "embeddings": {
+        "raw": "aceaa5a82c92341560f3797467631b754e41ea951d27b6362b99ce39aad00a28",
+        "similarity": "27e065763c70d3c7f135a9e5e6cade9551ee6688d87eff2e27365dbc19204373",
+        "retrieval": "9f4e96c765ef433408e74070f17bc01d32ab51995892d8abe94227a2de614f61"
+      }
+    },
+    {
+      "id": 19,
+      "text": "The galley man offers a casual greeting and a quick reassurance about the Captain's safety. He then specifies that he and his peg are assigned to guard the Captain's young lady.",
+      "embeddings": {
+        "raw": "83865aca36c66e0147e9df234cdecc73ea249d75690095a081a2c1f419dd699c",
+        "similarity": "e0a71af3a7f3c4c6eb29e967421b0d5c05dae527e9e1f7b8de5d956c78333491",
+        "retrieval": "2d559eb898b5abeb87d746d542b433e0fa6f66017f0743e830b41c4f3d2f668a"
+      }
+    },
+    {
+      "id": 20,
+      "text": "The line holding the cask is visibly frayed where it rubs against the wood. This small detail suggests the ship's supplies are held together by something already weakening.",
+      "embeddings": {
+        "raw": "9ebddbf150dac0a7f8cd53de2a5a268f2ec52f3ccd49fec2abcf8f7038a6b319",
+        "similarity": "a33c8255dc8d4adb3af233c3c6855494faa94f42753088497d77ae03d8d6df45",
+        "retrieval": "df91cceb5800ac0db9f32a84e722821cd4b4241de5b9f7e683d2cfb48b27d22e"
+      }
+    },
+    {
+      "id": 21,
+      "text": "The skiff nods in the waves, its oars jerking around in the current. This suggests the water's movement is powerful enough to actively fight the boat's direction.",
+      "embeddings": {
+        "raw": "2228a11f62a28f67716639ddafe7c297ebdf5c09b88dd94b3a4b94cc7767bf38",
+        "similarity": "a977c0d5a18e7a912d9fb7f388a509a7d88551e1c536bfadc1ac1df33f7f93b2",
+        "retrieval": "e0ca677ce4222a38d3fb068c5bb7935591b39edb5759c377df9845ff4764eff4"
+      }
+    },
+    {
+      "id": 22,
+      "text": "One man, well-dressed, enters the ballroom while the other man slinks into the bushes. This stark difference in movement suggests a deliberate division between public performance and hidden intent.",
+      "embeddings": {
+        "raw": "70f2e5154837c4d55e73d5b61d798bfc677515f9568b09f9b6a6b47601ed5838",
+        "similarity": "f788700d9f71800973ce1e43304e7a07703903bec927a8c1996638b38ebf1fc3",
+        "retrieval": "71f3acf374a6a00c6735ccb7934e3f972b461125c9ad09beb3a9742202a3c0c3"
+      }
+    },
+    {
+      "id": 23,
+      "text": "The warning about Lafond being a dangerous man is immediately superseded by Jamison's physical embrace. The rapid transition from caution to whispering \"my angel\" suggests a deliberate prioritization of immediate intimacy over perceived danger.",
+      "embeddings": {
+        "raw": "6b4ec97f7a491a149d31323ca990e54bb5ebd0059225bfabf1298a1f3cedbb6d",
+        "similarity": "658bb94aa3ee219233f4ccc95d75709a90e9fe854aa4f76980d46572a142cdda",
+        "retrieval": "eaa142145e3192513b3f515e4a133ff0a6559fd81dd3630e518fa1cd795d47e4"
+      }
+    },
+    {
+      "id": 24,
+      "text": "Nicholas frames his departure not as a rejection, but as a necessary act of self-preservation. His statement that he must leave lest he lose his soul in her elevates his restraint into a dramatic, almost spiritual, act of control.",
+      "embeddings": {
+        "raw": "e6e68a06b45273dd75fc08f5c986b22856064d79b8c7c75b16435595c945a20f",
+        "similarity": "b417df4701638c51d044acdca172d5dc3694fbfebfcb531d377eeeb94a8303f0",
+        "retrieval": "4f9810a6d9f2860a3ac411a5ac67cd7e78e763be576088231e00dd5d418422a2"
+      }
+    },
+    {
+      "id": 25,
+      "text": "The massive wooden globe squats in the corner of the library, suggesting a contained world of knowledge. This object stands in stark contrast to the open, wild landscape glimpsed just outside the window.",
+      "embeddings": {
+        "raw": "e3ed979ec861e30f39a46ab5618e1a98d177d943891a2c4b0ab1297bd2eb617e",
+        "similarity": "b33881a47b9e09280cb2986f79270cf48a185c7a5929290d259cad862bd1be60",
+        "retrieval": "df661391dc960c222ccc2376df26531478821861dbd4d1d0cf63475acc699f5f"
+      }
+    },
+    {
+      "id": 26,
+      "text": "The butler's declaration that villagers are not admitted is immediately followed by a forceful physical ejection. This suggests the house's boundaries are enforced not by polite refusal, but by sudden, brutal physical action.",
+      "embeddings": {
+        "raw": "c0720ce88a0ebde5ca51b29da91ee258d4ecc173be43b02c7c3256a81635397e",
+        "similarity": "263d925b2a90bd3ba3a0c34ba852c6d9d029ad017a539d3b7163d610aaed97f6",
+        "retrieval": "303cdb9851f88edd5b5cbae50d1de8c9455e72e11b2f8d3a7c3c1d48a87e391c"
+      }
+    },
+    {
+      "id": 27,
+      "text": "The kitchen, with its smoky firepit, feels like a hidden, claustrophobic space. Lucy offers a piece of intimate clothing, turning a domestic errand into a dangerous, secret exchange.",
+      "embeddings": {
+        "raw": "7f671bd7aaad31ff108ee4edfde06f654b7992023f6d1a128c8ff662a74ecd89",
+        "similarity": "5e2890dbfbd3faf0f73e74b780e84945d9d2880627b51f2206786bd74844a81d",
+        "retrieval": "820852618d6f317836ef0b052f8b498a929dc0bcde0923cb26b6b747c212b0b5"
+      }
+    },
+    {
+      "id": 28,
+      "text": "The bedroom, lit by moonlight, holds a lovely cream colored watered silk gown. This luxurious fabric contrasts sharply with the dense, subtropical jungle visible just outside the window.",
+      "embeddings": {
+        "raw": "2a6d81525f22fb7f5bfd51753892f6053b107156b12d85de37dde773a1de47f0",
+        "similarity": "5a0e2e261d87f9dee2566df0c051360c9c118c5477b358efb1c6f99088bbbe82",
+        "retrieval": "348374852d02cbafaa5a578515c4e03d3a4b5cfaa89970992cf78d35fa7481b7"
+      }
+    },
+    {
+      "id": 29,
+      "text": "The Parlour is furnished with exotic elements and features mounted duelling pistols. Yet, the inability to reach them is immediately followed by the social commentary that ladies do not carry pistols.",
+      "embeddings": {
+        "raw": "06aac8f6e025ab3ca014ada5630b6e58abe6e827ab434ddb087e2cb292f59388",
+        "similarity": "967e7facc2d33d4a3f7a9609cd4d61429ef9a5b88494acc993114e8a680a5a15",
+        "retrieval": "fb79c0c97b7147e4948d3374f84edcfaf174e82b8111932e0318dbc61c9ec1c4"
+      }
+    },
+    {
+      "id": 30,
+      "text": "The chandelier is held above the dance floor by a rope and pulley system. This functional mechanism allows the servants to manage the light, introducing a practical, mechanical element into the grand spectacle.",
+      "embeddings": {
+        "raw": "f7ec9cc9d3af353f740b9c846c347406318cd8badb20fe518b60ab2987255537",
+        "similarity": "1b8e021395258bab4053993693ba3f17250b31def907d85c28e5039089ef9316",
+        "retrieval": "ac2ee7c930a0299d2dccb9ff2c5f49174443228bb9ba070371c826dbd22eb213"
+      }
+    },
+    {
+      "id": 31,
+      "text": "The search for a secret passage under the library is mentioned while the characters are engaged in a public dance. This juxtaposition places the quest for a hidden entrance directly within the most formal and open social spectacle.",
+      "embeddings": {
+        "raw": "6b63695c6a82a6c97d4a3dc1acb3ed95729f4364c83db79f0d8287aed9c5c3d6",
+        "similarity": "9584ee7e8724baa028b5bf74e58daa8484d98b5c6a795771f846a70922daeac9",
+        "retrieval": "705d665d9ecf67ad5e0db2df3ee5d133066f9ade39c46832e7badbb250a94e2e"
+      }
+    },
+    {
+      "id": 32,
+      "text": "Amidst the formal whirl of the dance, Nicholas advises slipping out the veranda doors. This specific instruction transforms the elegant social setting into a potential point of clandestine departure.",
+      "embeddings": {
+        "raw": "618788c85d48a80d8191119ea136f120c3fb43bd211092aa442f1606e503b4d4",
+        "similarity": "e2fc349aaa1aea6aaa411e33ce97d1ff6d174c702d959c4c314668a40123f918",
+        "retrieval": "dda60736d6d86c3b0e53a58133f398bae1d55df4086c9a76ce30bf3cad3a92a3"
+      }
+    },
+    {
+      "id": 33,
+      "text": "The delicate tune of \"I Want to Kiss Your Hand\" plays as Lafond pulls the player into the minuet. His claim that he is \"King of these waters\" is delivered while he guides the player through the formal elegance of the ballroom.",
+      "embeddings": {
+        "raw": "7cbd3ff1c1a5a601ea08a1b1f3886e1b399d4dbc423164eaeacf2a3daa3ad61f",
+        "similarity": "624eac43799493a6f06ac18fa1c0623e4ee64a63dbfb4fb705956214a2c748ae",
+        "retrieval": "1c5a3d46ecb45d4174c701c85fcdf938495d0119cf2dd457e3d49d07987c251a"
+      }
+    },
+    {
+      "id": 34,
+      "text": "Lafond promises the player a private meeting to find common ground and secure her father's freedom. This promise is immediately undercut by his assessment that she lacks the spirit he prefers in a doyenne.",
+      "embeddings": {
+        "raw": "8b3a5362f80c4a205db6048cdf1e9057310e5b48fb0657a1380e71345b8530ed",
+        "similarity": "1041e10d57342b04fcd66784ae4b0144259398316777cb2a6529a585061826a0",
+        "retrieval": "948981c565afe7fe08dfd1d4b29d1719babffbd0daef3d3ef0ef70dfcefbf8c1"
+      }
+    },
+    {
+      "id": 35,
+      "text": "The treatise snapping back into place is accompanied by a mysterious scraping sound from inside the wall. Later, lifting the hat causes a low vibration to tingle up the legs from the floor, suggesting the structure itself is subtly resonant.",
+      "embeddings": {
+        "raw": "2bf2ec1e6512c5f097a2f0e99b40558c7d535c4103cb0679d6953c6504312048",
+        "similarity": "0f4d4237eb8f4767627d39bd1021ee958fad1f83079c1de216f948a33421a111",
+        "retrieval": "948f0cb83eb275b6d8c9531705b112a5f120443cfe1e05b1fed5fed2ec93f2f9"
+      }
+    },
+    {
+      "id": 36,
+      "text": "The gasps of air forced through the crack in the seaward wall are distinct from the general drafts elsewhere. This suggests the room is not merely exposed to the sea, but is actively drawing air from a specific, unseen source.",
+      "embeddings": {
+        "raw": "3a02d87a87932f200d67dc0cbece5afba628ce5773a43165c818f63e9cf262b8",
+        "similarity": "87d0319fcff69167aa976747c5cbffb6264a3fa4083e20a0e31320e8579abc64",
+        "retrieval": "3641561df349a5c0640c2794c381b740c87572c3300bbf9170987ec4c1b6710a"
+      }
+    },
+    {
+      "id": 37,
+      "text": "The crocodile rests half-submerged in the pool formed by the dripping walls. Its baleful gaze, coupled with wide-open jaws, suggests a predatory alertness despite its current stillness.",
+      "embeddings": {
+        "raw": "26630d8bfb4aab497476410509fd77c9acc58dcf603dac5cdc0405ad0877d38c",
+        "similarity": "2a5dc2a0d5f492cd4234c4c3152380d8a3ff20c3a85946f2d4843ad9f890beb0",
+        "retrieval": "711ee0a522bdf64ee180d18c36230b9500f326fbfe22195f8927e3d3401cd916"
+      }
+    },
+    {
+      "id": 38,
+      "text": "The rusty skeletons of cages and torture devices line the cavern walls, suggesting a history of brutal confinement. Despite this grim backdrop, the immediate progression focuses on the functional iron door, which is now unlocked and opened.",
+      "embeddings": {
+        "raw": "83066831d24758a24c77323af572469c4651be534288cf2d0764e2ad246ae97e",
+        "similarity": "c52e6911e5ad0632b193ba10381a459c096968ee6ad3e535345c0e696977c497",
+        "retrieval": "044865156523d842c945bc265460d68b351bfc6d230047b81ae95ac1ebe45c4a"
+      }
+    },
+    {
+      "id": 39,
+      "text": "The father smiles dreamily at a memory while discussing the urgent need to rescue Lucy. This suggests a profound detachment from the immediate reality of their confinement within the cell.",
+      "embeddings": {
+        "raw": "c44ed66c10d1e19fe830c0fddf8e5ef86e830edf36232a0a072f1d832f4c32f1",
+        "similarity": "11a07ea79eb6199afd3f50793bc01e9b8e92793a528f79ddec65af19aed079cf",
+        "retrieval": "92c0da052234f95c084619cffe37bea8a7e0eec45e2b2b018f74db8ca7cff8a3"
+      }
+    },
+    {
+      "id": 40,
+      "text": "The father spots the window and immediately declares his intention to creep out to the kitchen. This sudden, decisive action contrasts sharply with his earlier, more meandering observations within the confined dungeon.",
+      "embeddings": {
+        "raw": "4c181e75b2ce97d07197f3cc6c8da1b68a772da9612ff7358b86c0d76d1fa60b",
+        "similarity": "7142269555ac917f57696f33fd64b5fb842166afe22ba055331c0ceb8f919c8e",
+        "retrieval": "40c83f988a2226a2ba237d2ac9ade3c098efb593a1b6a35bc88e3a2912616642"
+      }
+    },
+    {
+      "id": 41,
+      "text": "The dancers quickly resume their banal conversations after the commotion involving Captain Jamison. This immediate return to chatter seems to absorb the violence into the background noise of the party.",
+      "embeddings": {
+        "raw": "a87ba223686be4bea8eb1186273a8b22d8b4abe57ec56e03aa121b92f0abecb0",
+        "similarity": "edafc6d1f9d5c65562f79c523f8d9d2fe2b9c3def7c653efde88761518d3c5af",
+        "retrieval": "61c9a2fc58918eb440ad79e206d533e532b55632b575648964a136e875a3737e"
+      }
+    },
+    {
+      "id": 42,
+      "text": "Lafond treats the violent intrusion of Jamison and his men with casual indifference. He merely dismisses the fight as an annoyance before returning to his wine and changing clothes.",
+      "embeddings": {
+        "raw": "7b629d97bde73ab1928e81967d25f27a675fa98c3c72d4ac862a5e376da7f961",
+        "similarity": "cb4aa338d988f31a4141a59d192ba12a93f439a7cc89fdc5d45b2c76c4e13c59",
+        "retrieval": "c91d97885757a05625ba6b7ed14fa750806b883968aa92c355d5b4f6c15e10c2"
+      }
+    },
+    {
+      "id": 43,
+      "text": "Lafond pretends to forget which glass is his, then points specifically at the green goblet. His sly smile suggests the question is not about memory, but about control over the situation.",
+      "embeddings": {
+        "raw": "bea9acc53e0aa01c465575150c1459ee43837047f24ae34ed095595bbd80d05d",
+        "similarity": "f37343fa9e88534482a21c7404f9cc8452fe3c8026ba31451d2fb50840b7878a",
+        "retrieval": "f8885b78e2b54700ab0cabe1a016d6d4ea53b49c75ec70dc1e011d6eb9ddfcc0"
+      }
+    },
+    {
+      "id": 44,
+      "text": "Lafond orders the butler to empty the green goblet, suggesting a hidden threat was present. The butler’s report of no odd taste seems to dismiss the immediate danger, yet the atmosphere remains heavy with Lafond's control.",
+      "embeddings": {
+        "raw": "bc611fa34742a465615e04e00797698396bb39017d12e701a1bb13635c729a2e",
+        "similarity": "2dc3284a700789d76d9bdc6da7c49dd90a6c4f3594029ffe3138d3acd9036c77",
+        "retrieval": "68fd9cac9ce90496799686a1af960d8875b34468fe0bb4f70c1944440bc3282a"
+      }
+    },
+    {
+      "id": 45,
+      "text": "The butler lies prone and snoring loudly in the upstairs hall. This mundane sound contrasts sharply with the sudden violence of the preceding events.",
+      "embeddings": {
+        "raw": "980de1249025a6a65b2fb9256a1d66d30e54aaadb7ab959d8b80f65166b26796",
+        "similarity": "a23788ae7b7712402d1f25c56e5c98db7fd2f4877e64ec90460d7a4914531ebf",
+        "retrieval": "66c4aa14bc31b521807704055ac1871b1e9c1334594a3ba34bce0f094e860d93"
+      }
+    },
+    {
+      "id": 46,
+      "text": "The treatise snaps back into its shelf position when half-tipped, suggesting the book is not merely resting there. This sudden recoil is accompanied by a scraping sound emanating from within the wall, hinting at something concealed behind the structure.",
+      "embeddings": {
+        "raw": "a854e2019cd5a8b0a65f6aa08b21e45c5f0092f1d4cde16d43ae8763622f80f5",
+        "similarity": "ebbc7037e8c9a18c389e03bf53684e7253b3a001d43600adfc6ad3dacf5e7d0c",
+        "retrieval": "d9ec888728cd2169924778721f0d35f66210a5bb1d8bcbad1a1e4de308be5acc"
+      }
+    },
+    {
+      "id": 47,
+      "text": "Cookie declares he will take care of the monster, a phrase immediately undercut by his reckless dive into the pool. His protective urgency seems to dissolve the moment he commits himself to the dangerous water.",
+      "embeddings": {
+        "raw": "403ecd5f5631a35c020caa011b271c5a510f805e4d45dc278f652385db491d7b",
+        "similarity": "138267b91340e4bbf5b2baacff3c67de9d9f50d8d40c7e33401ae589f77ac160",
+        "retrieval": "4b40156aa178d3a4a981bb0288de27e70a736d7823f0ea870b220207c6f97705"
+      }
+    },
+    {
+      "id": 48,
+      "text": "Crulley's snort and warning about hurting \"yer dearie\" feel less like genuine caution and more like a mocking observation. The whip cracks again, directing the player's attention solely toward the dark, open trapdoor.",
+      "embeddings": {
+        "raw": "4d5d47a5518759e7d7a3d0f14fe751b157bf15269500d596b940082590b4e3f2",
+        "similarity": "789df620c9357098b2d78f2e41b2c7809d6e09fdbfe07d5d2b2fe881e241abe0",
+        "retrieval": "0c2d47524d5a4ec1373fb15d48d5be24ca73c03d934ca908166b2ea9a3168a0e"
+      }
+    },
+    {
+      "id": 49,
+      "text": "Crulley is shown struggling against the well's slimy walls, a desperate, active effort. In contrast, Nicholas simply falls into a faint at the player's feet, a sudden and passive surrender.",
+      "embeddings": {
+        "raw": "05f6e605b63520b50adbab4a4d021437454747d39a6dd5318494d2f83333284a",
+        "similarity": "2b04a5910fd96eeb22fbe5915d0ecce9661dccd0d7c7f2c33f5f2d21680c6009",
+        "retrieval": "f0be8a1df6fbcc4f26ab887087b33a60e5c176ba89508e7d73628725a36fd189"
+      }
+    },
+    {
+      "id": 50,
+      "text": "Nicholas's passionate vow to kill Lafond is immediately undercut by the muffled sounds of struggle and curses echoing from the well. The immediate shift from romantic declaration to the raw, physical violence below suggests the danger is far from resolved.",
+      "embeddings": {
+        "raw": "9dd368f05aebc151967b7ec6dc00ff6e6e39b298c66e463a0a01b222e9f529a8",
+        "similarity": "5ee0ef220bc9582af63227ab615d5a98e9c3ce721a833bac630b7270124e2202",
+        "retrieval": "bbfe98c8c0fc5df4e217eb39c637d5471d8783aff2a6a9c24d4cc7acf21fe8a1"
+      }
+    },
+    {
+      "id": 51,
+      "text": "Lafond remains casual despite the intensity of the duel. His cool competence contrasts sharply with Jamison's visible exhaustion and copious blood loss.",
+      "embeddings": {
+        "raw": "2e89da4a86ba3ff2112305f191946624d0ee9adb867f7759b02c366d7f9b930a",
+        "similarity": "7713b608f5059f78413281da615270bc28bb6e3d9dfa93a9e7dc915d347cd27e",
+        "retrieval": "4806ee7c2d4ef986fa24ebab4f572b5501dec62501ef26a08c59e2429c6b7c9e"
+      }
+    },
+    {
+      "id": 52,
+      "text": "The collection of personal effects scattered around Lafond suggests a sudden, violent disruption of his composure. The presence of a flower among the practical items like the powder horn and key emphasizes the abrupt transition from formal elegance to physical wreckage.",
+      "embeddings": {
+        "raw": "823ae6765fdce1d20999eaafef30afe29750d2324c61147e37d03064b70f377b",
+        "similarity": "6c0c3e2e5cfc5d6888bbaf488d79ed75173d0e9dcea31fd64fa58a224f3b51cd",
+        "retrieval": "3addd72a00acdd1fdfbb8644b4691994583e2a90c2ad050d98e23cd2387db457"
+      }
+    },
+    {
+      "id": 53,
+      "text": "Lafond's pronouncement of death, framed as a moral judgment against \"cowards,\" is immediately undercut by the practical mechanics of the duel. His rhetorical flourish transitions instantly into the cold, focused aim of the pistol leveled at Jamison.",
+      "embeddings": {
+        "raw": "4883c6a9d1d78c4ffdcacc6d130551d8ee12493c862cf71c9f1d1f7374522e65",
+        "similarity": "a3da2e2370eb6edf16d9ea10357e50e57fa49b7a69a093503bd082909eb3f5d0",
+        "retrieval": "7282129191bb1de9ea2b8b80c56da9fc60e907a3c4358919802d88c5ddb62fe9"
+      }
+    },
+    {
+      "id": 54,
+      "text": "Nicholas's acceptance of the duel is immediately conditioned by the freedom of his people. This transforms the confrontation from a simple matter of personal honor into a high-stakes political negotiation.",
+      "embeddings": {
+        "raw": "95d55df0b0924e64cf27d45122f90143b53dd9348b6bd01b39f2a649dc098c14",
+        "similarity": "ffbb058a00224f653a1a075b85bc91a8674b71b464ff11ac0508e5cce0cfc241",
+        "retrieval": "c24b46732ade42be1deffd9f308581237be7391ce08631770d4e802a1bbe705d"
+      }
+    },
+    {
+      "id": 55,
+      "text": "Nicholas extracts the gold ring from the dead governor's finger. He then casts his own cheap ring into the foaming surf. The discarded objects contrast the governor's established wealth with Nicholas's own humble status.",
+      "embeddings": {
+        "raw": "5d53bc77eab0a9af1728bf34aeb43dd758c2835a0fb90baeff47b90462184a98",
+        "similarity": "d97af4a5bb7fe402a70985ae77f54e82a2ac879b25438086adf94d5f537b4db0",
+        "retrieval": "77aa51706a8ed2eb412de8b673951c0d6153a21e6c07c67786dbefe26c43258e"
+      }
+    },
+    {
+      "id": "office_expectations",
+      "text": "A familiar room makes a player expect all the ordinary objects and actions that should be there.",
+      "expected": [
+        "09_writing_a_romance_2.ogv"
+      ],
+      "embeddings": {
+        "raw": "09c128d16402785ada1de3cc21d9d2ab6738ebccbd669e56c9072f17cc84cf6f",
+        "similarity": "573a96c44d4973bdea3b993e56d6f0799493a621e1210274af470641a094a195",
+        "retrieval": "6a07cf81484a6966d28e1ee1444c521e77e17dde1265edc37ee31236736c8d28"
+      }
+    },
+    {
+      "id": "romance_choice",
+      "text": "Choosing to write a romance was her own idea, not an assignment to make a product for girls.",
+      "expected": [
+        "08_writing_a_romance_1.ogv"
+      ],
+      "embeddings": {
+        "raw": "f10d60128aa69e11d6195f5e00a91754744f796485383d000afbde8146db4e35",
+        "similarity": "d2c462753af7c718f656354f0eed96846ac6add9c2efa31b99ca9c266adf5cdc",
+        "retrieval": "ad795adcdd57b6de17708e6d5ba408fcdaf18b7e164bf55b0fb5a68870052c60"
+      }
+    },
+    {
+      "id": "deaths_and_space",
+      "text": "Killing the player was easier to implement than designing another escape route, and used less room.",
+      "expected": [
+        "24_writing_a_romance_5.ogv"
+      ],
+      "embeddings": {
+        "raw": "f753a4b83f5616f0b98b9671839d0bc1786cff56298ec8ac32508c38052e874d",
+        "similarity": "bcebf9bae5170d2c270bdac5d53ea7d078bda04fd0f1effabbac9aa32c702a8e",
+        "retrieval": "a435fd604f9d86012d0b396048ae755007f09172555a931d6de21a660f57a642"
+      }
+    },
+    {
+      "id": "later_readers",
+      "text": "A game remembered internally as a failure turned out to have mattered to readers who sought out its writer years later.",
+      "expected": [
+        "13_critical_response_0.ogv"
+      ],
+      "embeddings": {
+        "raw": "e360b9e45827014efc7dc9707f3e72e503cbc083803e2b02f9f026613176e15a",
+        "similarity": "8b365253380569f48f722dd7b7df8a0a59a96bdfe6d2c8fba3ddb0ae8f48cc9b",
+        "retrieval": "35fcdb5bc3944af6e878c2349fa735cc4273d6dead109b53945d4bed27ce581c"
+      }
+    },
+    {
+      "id": "novel_expectations",
+      "text": "The expectation of writing a great novel became so intimidating that dreaming of it displaced actually writing it.",
+      "expected": [
+        "16_writing_a_novel_0.ogv"
+      ],
+      "embeddings": {
+        "raw": "f034658bc22d264d6642491b5ab6a6b31a74cb3fab2d8151c272c6fc8cbcecde",
+        "similarity": "7e23d9f6e46618cf5951df5ee8ba34a2844dc34545a0911baa152ac2f09adc6d",
+        "retrieval": "e7096939570c70477f150db19f2d5d503b48678c7d1d7b881287ca728ec9dfc5"
+      }
+    },
+    {
+      "id": "work_as_home",
+      "text": "The office was also a home and social circle, where working late did not mean being alone.",
+      "expected": [
+        "04_company_culture_0.ogv"
+      ],
+      "embeddings": {
+        "raw": "621b18597d045cd4b0a11c139fcdf752efc618b2f382e6e7b50f884ec141a80a",
+        "similarity": "474500d7e0ec646581397ded1af35e200b7e29dbfa47c8587526a93eabba6067",
+        "retrieval": "4ce5b6e05a4868db5b0356e2342672d2f9e3750151b605374fe97abbf8a82fb5"
+      }
+    },
+    {
+      "id": "abstract_application",
+      "text": "She chose an absurd fantasy for her application game to avoid having to implement all the details of a realistic world.",
+      "expected": [
+        "05_becoming_an_imp_0.ogv"
+      ],
+      "embeddings": {
+        "raw": "706178f51778efbb4ab2b4ac6f0fabcacc1f683844d2913aeede3bc0eee0051d",
+        "similarity": "fcf3af8fdc43863053154d23d6673fcb25738a9c7055fbf926f0a8209f426c14",
+        "retrieval": "2d1267f928047778dfba15315273ee33f45e914452f07975e5f7eaf6def23ed0"
+      }
+    },
+    {
+      "id": "books_not_films",
+      "text": "They thought of their games as literary experiences and environments, more like books than ordinary games.",
+      "expected": [
+        "22_market_vision_2.ogv"
+      ],
+      "embeddings": {
+        "raw": "4a3bcfbc71f410ceb3e1adb1f7e8217265c343fc357912c413c012630006a237",
+        "similarity": "09f2d20450771533a623fdffe351eeea9360778433962ae7200296765037e86b",
+        "retrieval": "ecd7b69938841b55f508586f4e734c1448afd1d11709b5b62410a6f7e5fcf8f3"
+      }
+    },
+    {
+      "id": "unrelated_weather",
+      "text": "The weather forecast says there will be light rain tomorrow, with a colder wind in the afternoon.",
+      "control_type": "synthetic_not_grounded_in_any_game_scene",
+      "embeddings": {
+        "raw": "61b77a81929267b5358675a849638d133e564a9d9ac31073bd6d970354e265d5",
+        "similarity": "099ff927a7a41468495700080f398f9f0f2056ee5eb3ae41d10146830369a1a9",
+        "retrieval": "ea9b6ec10399f2564d8a39d6979d99a5c306420e92e69156153f203c112cf041"
+      }
+    },
+    {
+      "id": "vague_reason",
+      "text": "You, err, I was there for a reason, you know, and I thought that was what I was supposed to do.",
+      "control_type": "synthetic_not_grounded_in_any_game_scene",
+      "embeddings": {
+        "raw": "fbe38b6a62e375e5e29bfb6abc2514cc8ce8351dd0f25c8fb16a27e81e5b0d4b",
+        "similarity": "e6bbe2fbd1ffaa610c5fc0edc789fd6effbdd45c31030a52dd27366617b92394",
+        "retrieval": "61d0d95eff08ed69a25f6fdf3530b0307359010b7a2f95fc3ee5a4c33d07e2ef"
+      }
+    },
+    {
+      "id": "generic_reader",
+      "text": "I enjoy telling stories, and I sometimes wonder whether other people see what I see in them.",
+      "control_type": "synthetic_not_grounded_in_any_game_scene",
+      "embeddings": {
+        "raw": "2566d9d6e093069e6ca874d0bc1a7dc05808aed9f7f7221f83431586aaffa0e0",
+        "similarity": "485c6f98e9979d017090dd48f0548d917d3ff396fe1e5945d1788380bec9da42",
+        "retrieval": "76de0c647bdae30791e376e33ee867e22e2036dbeed433d5fe76e7b7b872ba7f"
+      }
+    },
+    {
+      "id": "biographical_decoy",
+      "text": "Amy Briggs wrote a romance at Infocom, worked with testers, faced computer memory limits, and later discovered that readers valued her game.",
+      "control_type": "synthetic_not_grounded_in_any_game_scene",
+      "embeddings": {
+        "raw": "80783bdd68d1499743e904d4320618c2379fb303fd4b141ca0d9c4659c81269a",
+        "similarity": "c4412084e9b4e1adf0608da279716444a5e844d29249723c48c7551cf16c9160",
+        "retrieval": "b5079815789727782c3df95952b3bcd6d44f56f18e7af2161f8b4ae86e380b69"
+      }
+    }
+  ],
+  "note": "Calibration items paraphrase specified clips; useful for implementation sanity, not a blind artistic benchmark. Chunk max-pooling creates more candidates than full-clip retrieval."
+}

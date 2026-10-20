@@ -1,0 +1,50 @@
+{
+  "catalogue_sha256": "c58f38231fde244d07151e6f6415e6c65ddb1ac4d2a06456a8633dd1823b87d9",
+  "clips": 25,
+  "passages": 132,
+  "query": "The ship lurches sharply just as she examines the banknote. A coffer slides from beneath the bed, interrupting the quiet inventory check with a sudden physical jolt.",
+  "top3": [
+    {
+      "filename": "09_writing_a_romance_2.ogv",
+      "score": 0.2646933151715163,
+      "passage": {
+        "text": "released version there's a bug that happens in the first couple moves, when you do something very logical and I can't remember what it is right now but it then that's a it's a true bug. You get garbage if you type out something like take the box there's a box under the bed that slides out and if you take the box rather than grab the box or something that's a logical thing",
+        "start": "0:01:56.480",
+        "end": "0:02:15.280",
+        "id": "09_writing_a_romance_2:007"
+      }
+    },
+    {
+      "filename": "17_wheeler_building_1.ogv",
+      "score": 0.2620228946867045,
+      "passage": {
+        "text": "Wheeler when I first saw it was already in boxes. Yeah, it was a dark little place full of boxes. So, I'll start talking about the imp life, but I could also probably talk about the testers. The the building is still around today, I think, and I think it's six stories tall and we were on the fifth floor and it was what is now, I'm sure, very dated. all glass on the outside with",
+        "start": "0:00:00.080",
+        "end": "0:00:24.800",
+        "id": "17_wheeler_building_1:001"
+      }
+    },
+    {
+      "filename": "03_working_at_infocom_0.ogv",
+      "score": 0.2140920654697891,
+      "passage": {
+        "text": "out or if the whole company knew that. That's sort of my my thing about not being omnisient. I don't really know what was happening to the for the other people and I have learned later that apparently there was this sense of we were the very clickish in group the imp the clickish of the clicks and the testers were on the outer margins of that and you know moving out in groups",
+        "start": "0:00:44.880",
+        "end": "0:01:04.800",
+        "id": "03_working_at_infocom_0:004"
+      }
+    }
+  ],
+  "smoke_test": {
+    "commands": 8,
+    "renderer": false,
+    "viewer": false,
+    "exit_code": 0,
+    "comments": 2,
+    "video_requests": 1
+  },
+  "unit_tests": 29,
+  "analysis_checks": 4,
+  "python_3_10_syntax": true,
+  "browser_checks": "Desktop and mobile interactions passed; no script errors."
+}

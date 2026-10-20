@@ -1,0 +1,63 @@
+{
+  "python": "3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)]",
+  "ollama": {
+    "version": "0.40.6"
+  },
+  "models": [
+    {
+      "name": "gemma4:e4b",
+      "model": "gemma4:e4b",
+      "modified_at": "2026-10-19T13:57:35.6568869+02:00",
+      "size": 6583656505,
+      "digest": "dc35e8d9c6061baa6f0fa870975ab6932e2542b579b13ea0f199fa4bb7300c9c",
+      "details": {
+        "parent_model": "gemma4-validation-20260929:e4b-imatrix-attention-q6-q8-draft2",
+        "format": "gguf",
+        "family": "gemma4",
+        "families": [
+          "gemma4"
+        ],
+        "parameter_size": "7.5B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 2560,
+        "runner": "llamacpp"
+      },
+      "capabilities": [
+        "completion",
+        "vision",
+        "audio",
+        "tools",
+        "thinking"
+      ]
+    },
+    {
+      "name": "embeddinggemma:300m",
+      "model": "embeddinggemma:300m",
+      "modified_at": "2025-09-23T16:08:58.8334188+02:00",
+      "size": 621875917,
+      "digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1",
+      "details": {
+        "parent_model": "embeddinggemma:300m-bf16",
+        "format": "gguf",
+        "family": "gemma3",
+        "families": [
+          "gemma3"
+        ],
+        "parameter_size": "307.58M",
+        "quantization_level": "BF16",
+        "context_length": 2048,
+        "embedding_length": 768,
+        "runner": "ggml"
+      },
+      "capabilities": [
+        "embedding"
+      ]
+    }
+  ],
+  "hardware": "NVIDIA RTX 4060 8 GiB; commentary GPU; embeddings CPU (num_gpu=0)",
+  "timing_limit": "Some embedding and generation runs overlapped. Do not treat wall-clock timings as a controlled latency benchmark.",
+  "embedding_api": "/api/embed, truncate=false, num_ctx=2048",
+  "generation_api": "/api/chat, think=true, num_ctx=4096, num_predict=2560, temperature=0.3",
+  "generation_comparison": "Four initial conditions, 12 frozen histories, 2 seeds each; fifth companion prompt designed post-hoc and run separately."
+}

@@ -1,0 +1,153 @@
+{
+  "source_commit": "3475243",
+  "model": "gemma4:e4b",
+  "embedding_model": "embeddinggemma:300m",
+  "context_tokens": 4096,
+  "output_tokens": 2560,
+  "temperature": 0.3,
+  "think": true,
+  "seeds": [
+    42,
+    43
+  ],
+  "source_commentary_sha256": "65c7fc899ed978334bff028f7c2bb962df1b1e4c224ff8fd964e31d5cdb84062",
+  "scenes": [
+    {
+      "scene": 1,
+      "history": ">SHOOT THE PIRATE\nTrembling, you fire the heavy arquebus. You hear its loud report over the\nroaring wind, yet the dark figure still approaches. The gun falls from your\nnerveless hands.\n   \"You won't kill me,\" he says, stepping over the weapon. \"Not when I am\nthe only protection you have from Jean Lafond.\"\n   Chestnut hair, tousled by the wind, frames the tanned oval of his face.\nLips curving, his eyes rake over your inadequately dressed body, the damp\nchemise clinging to your legs and heaving bosom, your gleaming hair. You\nare intensely aware of the strength of his hard seaworn body, of the deep\nsea blue of his eyes. And then his mouth is on yours, lips parted,\ndemanding, and you arch into his kiss...\n   He presses you against him, head bent. \"But who, my dear,\" he whispers\ninto your hair, \"will protect you from me?\"\n\nPLUNDERED HEARTS\nInfocom interactive fiction\nCopyright (c) 1987 by Infocom, Inc. All rights reserved.\nPLUNDERED HEARTS is a trademark of Infocom, Inc.\nRelease 26 / Serial number 870730\n\nLATE ONE SPRING NIGHT IN THE WEST INDIES...\n\n   A crash overhead! Pirates are boarding the Lafond Deux! The first mate\nhurries you into Captain Davis's cabin.\n   \"Good, you brought the girl,\" Davis smirks. \"She'll keep the pirates\nbusy. She was only a tool of Lafond's, anyway. Let me just find that cof--\"\nA man on deck screams in agony and Davis starts. \"Let's go.\" The captain\nthrusts you on the bed and walks out, locking the door.\n   His laugh echoes. \"Best get comfortable, girl. You're likely to be there\nfor the rest of your life.\"\n\nCabin, on the bed\n   You are in an officer's cabin, lit by the firelight glowing through a\nporthole. A door is to starboard. Except for the built-in bed, the room\nseems to have been emptied thoroughly, if hurriedly.\n\n>",
+      "fixed_recent_comments": []
+    },
+    {
+      "scene": 2,
+      "history": ">> STAND UP\nYou get out of the bed.\n\n>\n>> INVENTORY\nYou have your reticule (hanging from your wrist). It seems that your\nreticule contains smelling salts and a banknote. You are wearing your kid\nslippers, a linen chemise and a cotton frock.\n\n>\n>> EXAMINE SMELLING SALTS\nYou always carry your smelling salts, for emergencies. There is a small tag\non one side of them.\n   \"The Falcon! The Falcon conquers!\" yells someone.\n\n>\n>> READ TAG\nIt says, \"For cases of vapors, hysteria or collapse, revive persons with\nthe smelling salts.\"\n   You recognize a voice from far away, \"Don't take that! Look in the cabin\nat the stern -- you'll find some fun there!\" It sounds like Davis.\n\n>\n>> EXAMINE BANKNOTE\nThis is the banknote that came in your game package.\n   Suddenly, the ship lurches to one side, throwing you off balance. A\ncoffer slides from under the bed and bumps against your foot.\n\n>",
+      "fixed_recent_comments": [
+        "The room seems emptied thoroughly, if hurriedly, despite the immediate violence that has just occurred. This sudden lack of personal belongings emphasizes the protagonist's immediate reduction to a captive object."
+      ]
+    },
+    {
+      "scene": 8,
+      "history": ">> OPEN CURTAIN\nYou pull the cloth aside momentarily. Behind it, a large cupboard mostly\nblocks the doorway.\n\n>\n>> EXAMINE CUPBOARD\nYou can see only the back of the large cupboard. You might be able to\nsqueeze past it.\n\n>\n>> EXAMINE TABLE\nYou have no need for that, milady.\n\n>\n>> EXAMINE BED\nSomeone appears to have tumbled out of it in a hurry.\n\n>\n>> WAIT\nTime passes...\n   You hear the large cupboard scrape, and turn to see Captain Jamison.\n\"Hello! I came down to give you this -- my allotment from the coffer.\" He\nnods at the box in his arms.\n   Jamison starts to pin a jewelled brooch on your clothes, but, \"Devil\ntake it, the clasp is broken. I'll have it repaired.\" He folds the pretty\nthing into your hand. \"And I meant to reassure you that if the men suddenly\nabandon ship, they are off to help me. Rodney will stay behind with you.\"\nHe drops the coffer on the floor, smiling in farewell, and walks swiftly\naway.\n\n>",
+      "fixed_recent_comments": [
+        "The speaker lingers on the player’s beauty and takes their hand, creating an intimate moment. Yet, the immediate practical advice is to rely on Cookie, who is noted to be quite deaf.",
+        "Jamison's hatred is not abstract but rooted in a specific, violent memory of piracy and loss. The past tragedy has transformed a simple rivalry into a deeply personal, enduring vendetta."
+      ]
+    },
+    {
+      "scene": 9,
+      "history": ">> EXAMINE BROOCH\nAll diamonds winking fire, tears of sapphire and crushed rubies in an oval\nsetting, it is a pity that the clasp of the jewelled brooch has broken. The\ngold pin at the back swings about uselessly.\n\n>\n>> OPEN COFFER\nOpening the coffer reveals an invitation.\n\n>\n>> TAKE INVITATION\nTaken.\n\n>\n>> READ INVITATION\nThe invitation is addressed to \"Davis\":\n\n       In Honor of Jean Lafond,\n         recently proclaimed\n       Governor of St. Sinistra\n        A Dance at his Mansion\n      Ananas Road, St. Sinistra\nFormal Dress and Invitation Required.\n\n   A ball! You haven't been to a ball in months!\n\n>\n>> NORTH\nThe large cupboard is not flush against the doorsill. You squeeze through\nthe opening between cupboard and wall.\n\nLanding\n   You are on the landing of a steep stairway heading up and down. A large\ncupboard against the aft wall blocks the doorway to the captain's quarters.\n\n>\n>> DOWN\nAft Hold\n   This is a gloomy, damp area at the bottom of the Helena Louise. To the\nfore there seems to be a little more light, or you can climb up some steep\nstairs.\n\n>",
+      "fixed_recent_comments": [
+        "Jamison's hatred is not abstract but rooted in a specific, violent memory of piracy and loss. The past tragedy has transformed a simple rivalry into a deeply personal, enduring vendetta.",
+        "Jamison attempts to affix the jeweled brooch, only to find the clasp is broken. He then folds the piece into the player’s hand, transforming a display of adornment into a simple, held object."
+      ]
+    },
+    {
+      "scene": 11,
+      "history": ">> NORTH\nCrew's Quarters\n   The crew sleeps, in shifts, in this cramped space under the forecastle.\nA breeze blows in on a moonbeam through a grate in the ceiling. A low\ndoorsill is abaft.\n   This area must also serve as sickroom. Strewn about the floor are\nvarious powders and spills of malodorous potions. In one corner, a large\nblood stain indicates an amputation; in another is the smear of a leech,\ndropped off a bloodletting.\n   A small bottle has been dropped nearby.\n   A chipped piece of mirror sits propped on a shoulder-high timber.\n\n>\n>> TAKE BOTTLE\nTaken.\n   \"I gotta let Lafond know 'e's comin'.\" Crulley stands on deck above,\ntalking to himself, his voice floating down through a grate in the ceiling.\n\"First, I do in the mates aboard-ship, with this and t'other mischief,\" he\ngrunts, and you hear a snapping noise, like a taut rope being cut. \"Now to\nwarn the boss and collect me pay. Off I go, har.\" He dives into the sea.\n\n>",
+      "fixed_recent_comments": [
+        "The invitation speaks of a formal dance in St. Sinistra, a world of polished ceremony. This promise of high society is starkly contrasted by the gloomy, damp confines of the ship's hold.",
+        "The supplies—casks of rum, flour, and gunpowder—are stacked behind a high fence. Yet, the fire is burning in the ammunition cage, dangerously close to these vital stores."
+      ]
+    },
+    {
+      "scene": 16,
+      "history": ">> NORTH\nMain Deck\n   It is a deceptively quiet evening on the ship, the pirates singing low\nshanties as they repair cannon, twist ropes and sharpen daggers. The\nmainmast casts an inky shadow over the canvas screening the hatch. A\ntangled mass of rigging hangs down from the mast, like many rope ladders\nwoven together.\n   The reefs are definitely getting larger.\n   Two large barrels stand near the stair to the foredeck.\n\n>\n>> NORTH\nForecastle\n   Higher than all but the poop deck, this end of the ship commands a good\nview of the island; the \"crow's nest,\" swinging above in the heights of the\nforemast, would command a better. A tangled mass of rigging hangs down from\nthe mast, like many rope ladders woven together.\n   Imbedded in the deck is a grated air hole to the crew's quarters below.\nYou can go aft, or forward through a break in the ubiquitous railing.\n   Odors of old grease and char waft from a little shack perched behind the\nmast.\n   The reefs are definitely getting larger.\n   You can see a mooring winch here.\n\n>",
+      "fixed_recent_comments": [
+        "The ladder slams into the stern, driving all the air out of you. This sudden, forceful impact follows the earlier description of clinging tenuously to the slimy rung.",
+        "The cannons line the deck, aimed at the open sea and the island, yet no torches are lit. This heavy military readiness exists under the quiet, pervasive glow of the moon."
+      ]
+    },
+    {
+      "scene": 20,
+      "history": ">> TAKE DAGGER\nTaken.\n\n>\n>> EAST\nForecastle\n   You can see a mooring winch here.\n\n>\n>> SOUTH\nMain Deck\n\n>\n>> SOUTH\nQuarterdeck\n   Abaft the wheel sits a large pyramid of casks, held in place by a heavy\nrope.\n   Cannon line the deck, aimed at open sea and the island.\n\n>\n>> LOOK IN CASK\nYou can see a slab of pork.\n\n>\n>> ENTER CASK\nYou crawl into the cask, feeling a slab of something stuck on the bottom.\nFrom this close, you can see the line is getting frayed where it rubs\nagainst the cask.\n\n>\n>> TAKE PORK\nYou peel it off the cask.\n\n>\n>> PUT ALL IN RETICULE EXCEPT DAGGER\nslab of pork: Done.\nshirt: You'll have to remove the shirt first.\nbreeches: You'll have to remove the breeches first.\nyour kid slippers: You'll have to remove your kid slippers first.\nlinen chemise: You'll have to remove the linen chemise first.\n\n>",
+      "fixed_recent_comments": [
+        "The large pyramid of casks sits precariously, held only by a heavy rope against the deck. This organized stack of supplies feels both necessary and temporary, a fragile monument to the ship's current state.",
+        "The galley man offers a casual greeting and a quick reassurance about the Captain's safety. He then specifies that he and his peg are assigned to guard the Captain's young lady."
+      ]
+    },
+    {
+      "scene": 26,
+      "history": ">> EXAMINE PORTRAIT\nThe portrait seems familiar, and you realize it is exactly the picture on\nthe front of the banknote Lafond sent you, same clothes, same surroundings,\nsame pose.\n\n>\n>> EXAMINE BOOKSHELVES\nMost of the books appear unread, their pages uncut, the spines not yet\ncreased. All except one, \"Treatise of Power\" by Sir Michael Villiers.\n\n>\n>> EXAMINE GLOBE\nThe massive wooden globe, painted in greens and blues and white, describes\nthe world as presently known.\n\n>\n>> TAKE HAT\nAs you lift the hat from its knob on the wall, a low vibration tingles up\nyour legs from the floor.\n\n>\n>> SOUTH\nFor safety's sake, you leave the hat on its knob. Best not to show that\nyou've been wandering.\n\nEast Hallway\n   The carpeted hallway turns from west to north here, extending into the\neast wing. A long table blocks the way south.\n   A black-garbed butler marches up to you, \"It was made clear at the\nwhippings that villagers are not admitted in this house.\" He grasps you by\nthe scruff of the neck and propels you headfirst out the front door.\n\nMain Entrance\n   The front door stands open to the south, light splayed out onto a drive\nstretching north into the jungle. A path leads around the western wing of\nthe house; jutting out from the east wing is a tall hedge.\n\n>",
+      "fixed_recent_comments": [
+        "Nicholas frames his departure not as a rejection, but as a necessary act of self-preservation. His statement that he must leave lest he lose his soul in her elevates his restraint into a dramatic, almost spiritual, act of control.",
+        "The massive wooden globe squats in the corner of the library, suggesting a contained world of knowledge. This object stands in stark contrast to the open, wild landscape glimpsed just outside the window."
+      ]
+    },
+    {
+      "scene": 31,
+      "history": ">> GIVE INVITATION\n[to the butler]\nThe butler takes the invitation. \"Enjoy the dance, Miss Davis.\"\n\n>\n>> SOUTH\nThe sea of spectators parts to admit you, murmuring approval.\n\nBallroom\n   Lafond's party is well attended: you can hardly move for the crush.\nHowever, the room is oddly silent, no talk interrupting the musical efforts\nof the musicians to the west. Despite the heat, no one ventures south to\nthe veranda, nor through the opening east. The foyer is north of you.\n   Captain Jamison moves up to you, saying, \"May I have this dance?\" He\ndoesn't await an answer, sweeping you out onto the dance floor.\n\n>\n>> DANCE\nYou pace out the steps.\n   \"I haven't found your father. We've long suspected a passage under the\nlibrary, but I cannot find an entrance,\" says Jamison.\n   The steps of the dance separate you a moment, as you twirl around and\ncurtsey to another dancer. You glide back into the captain's arms.\n\n>",
+      "fixed_recent_comments": [
+        "The Parlour is furnished with exotic elements and features mounted duelling pistols. Yet, the inability to reach them is immediately followed by the social commentary that ladies do not carry pistols.",
+        "The chandelier is held above the dance floor by a rope and pulley system. This functional mechanism allows the servants to manage the light, introducing a practical, mechanical element into the grand spectacle."
+      ]
+    },
+    {
+      "scene": 38,
+      "history": ">> THROW PORK AT CROCODILE\nThe crocodile snaps its jaws shut as the slab of pork disappears into its\nmaw.\n\n>\n>> WAIT\nTime passes...\n   With an inaudible creak, the crocodile's mouth opens again.\n\n>\n>> WAIT\nTime passes...\n   Without warning, the crocodile relaxes, eyes closed, asleep.\n\n>\n>> SOUTH\nYou edge past the reptile.\n\nDungeon\n   You sense, rather than see, the rusty skeletons of old cages and torture\ndevices that line the walls of this cavernous room. One flaming torch, high\non a wall, casts mad licks of light into the darkness. Passages lead north\nand west. Set deep in the rocky floor is a closed trapdoor.\n   A pair of manacles hangs from iron chains attached high on the wall.\n\n>\n>> WEST\nCorner\n   This short passage turns from east to north to stop abruptly at an iron\ndoor.\n\n>\n>> UNLOCK DOOR\n[with the large key]\nUnlocked.\n\n>\n>> OPEN DOOR\nOpened.\n\n>",
+      "fixed_recent_comments": [
+        "The gasps of air forced through the crack in the seaward wall are distinct from the general drafts elsewhere. This suggests the room is not merely exposed to the sea, but is actively drawing air from a specific, unseen source.",
+        "The crocodile rests half-submerged in the pool formed by the dripping walls. Its baleful gaze, coupled with wide-open jaws, suggests a predatory alertness despite its current stillness."
+      ]
+    },
+    {
+      "scene": 43,
+      "history": ">> POUR WINE INTO GREEN GOBLET\nYou fill the green goblet with wine.\n   \"In private, call me Jean, or whatever endearment you choose, once I\nhave approved it.\" Lafond is looking into the wardrobe.\n\n>\n>> SQUEEZE BOTTLE INTO GREEN GOBLET\nYou squeeze three colorless drops into the green goblet. You sense Lafond\nhesitate, then continue primping.\n   The butler enters, laying a silver tray of cold chicken on the table.\n\"The kitchen wench has gone, your grace. I took the liberty of fetching\nthese myself.\" He bows and leaves the room.\n   \"Sprinkle some spices on the fowl, ma petite,\" Lafond says, donning a\nlong brocade robe, his back to you. \"They are hot, but delicious.\"\n\n>\n>> POUR WINE INTO BLUE GOBLET\nYou fill the blue goblet with wine.\n   \"Tsk. The cook has gone too far. She shall be 'leaving us' tomorrow.\"\nLafond adjusts the lace at his neck.\n\n>\n>> WAIT\nTime passes...\n   Lafond strolls to the table smiling slyly. \"Which glass was mine? I seem\nto have forgotten.\" He points at the green goblet and smiles in a way that\ndoes not grant you confidence. \"Is this it?\"\n\n>",
+      "fixed_recent_comments": [
+        "The dancers quickly resume their banal conversations after the commotion involving Captain Jamison. This immediate return to chatter seems to absorb the violence into the background noise of the party.",
+        "Lafond treats the violent intrusion of Jamison and his men with casual indifference. He merely dismisses the fight as an annoyance before returning to his wine and changing clothes."
+      ]
+    },
+    {
+      "scene": 55,
+      "history": ">> TAKE PISTOL\nTaken.\n   Lafond immediately takes the advantage, forcing Nicholas in a retreat\ntowards the foaming surf. But Nicholas fights hard, jaw set, ignoring his\nwounds. Lafond finally loses his smile.\n   Behind the duellists, far away atop the cliff, you notice Crulley madly\nreloading the pistol.\n\n>\n>> LOAD PISTOL\nYou pour a lumpy stream of gunpowder mixture into the barrel of the pistol\ntamping it as best you can.\n   Suddenly the force of the duel turns, Nicholas advancing against\nLafond's retreat. Their blades silently flash in the moonlight. Lafond is\npressed back into the shadow of the cliff, sweat beading on his forehead.\nAbruptly, Jamison leaps forward, metal scrapes, and his rapier licks neatly\ninto Lafond's ribs, like a snake slipping into its burrow. The body of the\ngovernor of St. Sinistra convulses, as in amazement, then sags dead on the\nsword.\n   Nicholas removes a gold ring from the dead man's finger, throwing his\nown cheap copy into the surf.\n   Far above him, Crulley moves down the stairs.\n\n>",
+      "fixed_recent_comments": [
+        "Lafond's pronouncement of death, framed as a moral judgment against \"cowards,\" is immediately undercut by the practical mechanics of the duel. His rhetorical flourish transitions instantly into the cold, focused aim of the pistol leveled at Jamison.",
+        "Nicholas's acceptance of the duel is immediately conditioned by the freedom of his people. This transforms the confrontation from a simple matter of personal honor into a high-stakes political negotiation."
+      ]
+    }
+  ],
+  "fragments": [
+    {
+      "filename": "05_becoming_an_imp_0.ogv",
+      "verbatim": "I had written a really off-the-wall, bizarre little game"
+    },
+    {
+      "filename": "08_writing_a_romance_1.ogv",
+      "verbatim": "I was interested in in writing romance. I thought a romance might be kind of fun and different."
+    },
+    {
+      "filename": "09_writing_a_romance_2.ogv",
+      "verbatim": "It's where does the world that you've invented break down"
+    },
+    {
+      "filename": "13_critical_response_0.ogv",
+      "verbatim": "it made a difference in their lives and they remembered it"
+    },
+    {
+      "filename": "16_writing_a_novel_0.ogv",
+      "verbatim": "So I wonder if I really do want to write the novel or if I just want to keep dreaming about writing the novel."
+    },
+    {
+      "filename": "22_market_vision_2.ogv",
+      "verbatim": "We weren't doing just games. We were doing experiences, environments, and they were more like books."
+    }
+  ],
+  "conditions": [
+    "production",
+    "spoken",
+    "resonant",
+    "testimony",
+    "companion"
+  ],
+  "followup_note": "Companion is a post-hoc prompt revision after reading the first screening responses, run separately; not an independent blind confirmation.",
+  "controls": [
+    "Same frozen histories and two prior production comments for paired screening; candidates never see a next command.",
+    "Each condition sees the same selected scenes and seeds. Order rotates by scene and seed.",
+    "Do not equate a higher cosine, smaller centroid gap or greater clip diversity with interpretive quality.",
+    "No clip title or retrieval result is supplied to commentary generation. No Amy impersonation or invented memories.",
+    "No weights trained and no production configuration changed. Reasoning text counted, not saved."
+  ],
+  "references": [
+    "https://huggingface.co/google/embeddinggemma-300m#prompt-instructions",
+    "https://docs.ollama.com/api/embed"
+  ]
+}

@@ -135,13 +135,18 @@ class Recorder:
             previous_recent = list(recent)
             ranked = []
             if vector is not None:
-                for item in catalog:
-                    if len(vector) == len(item["embedding"]):
-                        ranked.append({"filename": item["filename"], "sequence_title": item.get("sequence_title"),
-                                       "duration_sec": item.get("duration_sec"),
-                                       "score": runtime._cosine_similarity(vector, norm, item["embedding"], item["norm"]),
-                                       "is_recent": item["filename"] in previous_recent,
-                                       "is_last": item["filename"] == last})
+                rank_matches = getattr(runtime, "rank_video_matches", None)
+                if rank_matches is not None:
+                    matches = rank_matches(vector, norm, catalog)
+                else:
+                    matches = [(runtime._cosine_similarity(vector, norm, item["embedding"], item["norm"]), item)
+                               for item in catalog if len(vector) == len(item["embedding"])]
+                for score, item in matches:
+                    ranked.append({"filename": item["filename"], "sequence_title": item.get("sequence_title"),
+                                   "duration_sec": item.get("duration_sec"), "score": score,
+                                   "matched_passage": item.get("matched_passage"),
+                                   "is_recent": item["filename"] in previous_recent,
+                                   "is_last": item["filename"] == last})
             ranked.sort(key=lambda item: item["score"], reverse=True)
             result = recorder.originals["select_best_video"](vector, norm, catalog, recent, last)
             recorder.event("video_ranking", source_comment_id=recorder.pending_comment,
@@ -162,6 +167,7 @@ class Recorder:
                                source_comment_id=recorder.pending_comment,
                                duration_sec=runtime._get_video_duration(entry),
                                margin_sec=runtime.VIDEO_END_MARGIN_SEC,
+                               match_score=entry.get("match_score"), matched_passage=entry.get("matched_passage"),
                                estimated_next_allowed_sec=result[1] - recorder.started,
                                playback_confirmed=False)
                 recorder.pending_comment = None
@@ -205,7 +211,8 @@ class Recorder:
 def snapshot(runtime, directory, runtime_args):
     names = ["LLM_MODEL", "LLM_THINK", "LLM_TEMPERATURE", "LLM_NUM_CTX", "LLM_NUM_PREDICT",
              "COMMENTARY_MIN_WORDS", "COMMENTARY_WORD_LIMIT", "COMMENTARY_LANGUAGE", "INTERVIEW_CONTEXT_PATH",
-             "VIDEO_EMBED_MODEL", "VIDEO_EMBED_NUM_GPU", "VIDEO_END_MARGIN_SEC", "LLM_TIMEOUT", "EMBED_TIMEOUT"]
+             "VIDEO_EMBED_MODEL", "VIDEO_EMBED_NUM_GPU", "VIDEO_END_MARGIN_SEC", "VIDEO_MATCH_MODE",
+             "VIDEO_EMBEDDINGS_PATH", "LLM_TIMEOUT", "EMBED_TIMEOUT"]
     manifest = {"created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
                 "schema_version": 2, "command_counter": "Game commands only; blank pagination acknowledgements are separate.",
                 "runtime_args": runtime_args, "python": sys.version, "python_executable": sys.executable,
@@ -214,7 +221,7 @@ def snapshot(runtime, directory, runtime_args):
                 "files": {}}
     source_dir = directory / "inputs"
     source_dir.mkdir()
-    for name in ["src/faketerm.py", "src/c64renderer.py", "godot-viewer/main.gd", "assets/abriggs-itw-embeddings.json"]:
+    for name in ["src/faketerm.py", "src/c64renderer.py", "godot-viewer/main.gd", runtime.VIDEO_EMBEDDINGS_PATH]:
         path = ROOT / name
         data = path.read_bytes()
         manifest["files"][name] = {"sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)}
