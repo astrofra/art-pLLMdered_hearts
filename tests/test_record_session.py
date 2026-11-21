@@ -72,6 +72,28 @@ class SessionRecordingTests(unittest.TestCase):
             self.assertEqual(event["selected"], "second.ogv")
             self.assertIs(runtime.select_best_video, select)
 
+    def test_adjusted_ranking_is_recorded_alongside_raw_cosine(self):
+        entry = {"filename": "relevant.ogv", "match_score": 0.563, "adjusted_score": 0.543,
+                 "recency_penalty": 0.02, "videos_since_last_play": 3,
+                 "excluded_immediate_repeat": False}
+        runtime = SimpleNamespace(rank_video_choices=Mock(return_value=[(0.543, entry)]),
+                                  rank_video_matches=Mock(), select_best_video=Mock(return_value=entry))
+        for name in ["_start_game_process", "read_game_output", "display_game_output", "comment_on_game",
+                     "_ollama_request", "maybe_emit_video_request"]:
+            setattr(runtime, name, Mock())
+        with tempfile.TemporaryDirectory() as temporary:
+            recorder = record_session.Recorder(runtime, temporary)
+            recorder.install()
+            try:
+                runtime.select_best_video([1.0], 1.0, [], ["relevant.ogv", "A", "B", "C"], "C")
+            finally:
+                recorder.close()
+            event = json.loads((Path(temporary)/"events.jsonl").read_text(encoding="utf-8"))
+        runtime.rank_video_matches.assert_not_called()
+        self.assertEqual(event["ranking"][0]["score"], 0.563)
+        self.assertEqual(event["ranking"][0]["adjusted_score"], 0.543)
+        self.assertEqual(event["ranking"][0]["recency_penalty"], 0.02)
+
 
 if __name__ == "__main__":
     unittest.main()

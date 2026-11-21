@@ -62,6 +62,7 @@ RAW_OUTPUT_PATH = os.path.join(PROJECT_DIR, "assets", "game-raw-output.json")
 VIDEO_EMBEDDINGS_PATH = os.path.abspath(os.path.join(
     PROJECT_DIR, os.environ.get("VIDEO_EMBEDDINGS_PATH", "assets/abriggs-itw-passages.json")))
 VIDEO_MATCH_MODE = os.environ.get("VIDEO_MATCH_MODE", "passages")
+VIDEO_RECENCY_PENALTY = float(os.environ.get("VIDEO_RECENCY_PENALTY", "0.08"))
 VIDEO_EMBED_MODEL = os.environ.get("VIDEO_EMBED_MODEL", "embeddinggemma:300m")
 VIDEO_EMBED_NUM_GPU = int(os.environ.get("VIDEO_EMBED_NUM_GPU", "0"))
 LLM_OUT_DIR = os.path.abspath(os.environ.get("LLM_OUT_OVERRIDE") or os.path.join(PROJECT_DIR, "llm_out"))
@@ -541,30 +542,28 @@ def rank_video_matches(comment_vector, comment_norm, catalog):
     return scored
 
 
+def rank_video_choices(comment_vector, comment_norm, catalog, recent, last_video):
+    last_video = last_video or (recent[-1] if recent else None)
+    choices = []
+    for score, item in rank_video_matches(comment_vector, comment_norm, catalog):
+        filename = item["filename"]
+        age = next((index for index, previous in enumerate(reversed(recent))
+                    if previous == filename), None)
+        penalty = (VIDEO_RECENCY_PENALTY * (0.5 ** (age - 1))
+                   if age is not None and age >= 1 else 0.0)
+        adjusted = score - penalty
+        choices.append((adjusted, dict(item, recency_penalty=penalty, adjusted_score=adjusted,
+                                       videos_since_last_play=age,
+                                       excluded_immediate_repeat=filename == last_video)))
+    choices.sort(key=lambda pair: pair[0], reverse=True)
+    return choices
+
+
 def select_best_video(comment_vector, comment_norm, catalog, recent, last_video):
-    if not catalog or comment_vector is None:
-        return None
-    scored = rank_video_matches(comment_vector, comment_norm, catalog)
-    if not scored:
-        return None
-
-    for _, item in scored:
-        var_filename = item["filename"]
-        if var_filename == last_video:
-            continue
-        if var_filename in recent:
-            continue
-        return item
-
-    if recent:
-        recent.clear()
-        for _, item in scored:
-            var_filename = item["filename"]
-            if var_filename == last_video:
-                continue
+    for _, item in rank_video_choices(comment_vector, comment_norm, catalog, recent, last_video):
+        if not item["excluded_immediate_repeat"]:
             return item
-
-    return scored[0][1] if scored else None
+    return None
 
 
 def log_video_match(entry):
@@ -573,6 +572,10 @@ def log_video_match(entry):
     record = {"timestamp": time.time(), "filename": entry["filename"],
               "sequence_title": entry.get("sequence_title"), "duration_sec": entry.get("duration_sec"),
               "commentary": entry.get("matched_commentary"), "score": entry.get("match_score"),
+              "recency_penalty": entry.get("recency_penalty", 0.0),
+              "adjusted_score": entry.get("adjusted_score", entry.get("match_score")),
+              "videos_since_last_play": entry.get("videos_since_last_play"),
+              "recency_penalty_setting": VIDEO_RECENCY_PENALTY,
               "passage": entry.get("matched_passage"), "match_mode": VIDEO_MATCH_MODE,
               "embedding_model": VIDEO_EMBED_MODEL, "catalogue_path": VIDEO_EMBEDDINGS_PATH}
     try:
@@ -587,10 +590,8 @@ def log_video_match(entry):
 def record_video_choice(filename, catalog_size, recent):
     if not filename:
         return
-    if filename not in recent:
-        recent.append(filename)
-    if catalog_size and len(recent) >= catalog_size:
-        recent.clear()
+    recent.append(filename)
+    del recent[:-max(2, catalog_size)]
 
 
 def _get_video_duration(entry):
@@ -902,6 +903,8 @@ def check_runtime():
             raise ValueError("VIDEO_END_MARGIN_SEC must be a finite, nonnegative duration.")
         if VIDEO_MATCH_MODE not in ("passages", "clip"):
             raise ValueError("VIDEO_MATCH_MODE must be passages or clip.")
+        if not math.isfinite(VIDEO_RECENCY_PENALTY) or VIDEO_RECENCY_PENALTY < 0:
+            raise ValueError("VIDEO_RECENCY_PENALTY must be finite and nonnegative.")
         load_itw_redux()
         catalog = load_video_embeddings(VIDEO_EMBEDDINGS_PATH)
         if not catalog:
@@ -916,6 +919,7 @@ def check_runtime():
                 raise RuntimeError(f"Ollama model missing. Run: ollama pull {model}")
         print(f"Ollama: {OLLAMA_HOST}; {LLM_MODEL}; {VIDEO_EMBED_MODEL}")
         print(f"Video catalog: {len(catalog)} clips; {sum(len(c.get('passages', [])) for c in catalog)} passages; mode {VIDEO_MATCH_MODE}")
+        print(f"Video recency penalty: {VIDEO_RECENCY_PENALTY:g}, halved per intervening clip; no immediate repeats")
         print(f"Interview context: {INTERVIEW_CONTEXT_PATH}")
         print(f"Commentary: over {COMMENTARY_MIN_WORDS} words during video, or fresh at an idle video prompt; "
               f"up to {COMMENTARY_WORD_LIMIT} words; temperature {LLM_TEMPERATURE:g}; context {LLM_NUM_CTX}, "

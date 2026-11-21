@@ -1,5 +1,6 @@
 import subprocess
 import json
+import math
 from contextlib import ExitStack
 import sys
 import tempfile
@@ -66,6 +67,68 @@ class VideoSelectionTests(unittest.TestCase):
         self.log_patch = patch.object(faketerm, "VIDEO_MATCH_LOG_PATH", None)
         self.log_patch.start()
         self.addCleanup(self.log_patch.stop)
+        self.penalty_patch = patch.object(faketerm, "VIDEO_RECENCY_PENALTY", 0.08)
+        self.penalty_patch.start()
+        self.addCleanup(self.penalty_patch.stop)
+
+    @staticmethod
+    def catalog_with_scores(**scores):
+        return [{"filename": name, "embedding": [score, math.sqrt(1-score*score)], "norm": 1.0}
+                for name, score in scores.items()]
+
+    def test_strong_old_match_can_win_without_consuming_all_clips(self):
+        catalog = self.catalog_with_scores(relevant=0.563, new=0.350)
+        recent = ["relevant", "other1", "other2", "other3"]
+        entry = faketerm.select_best_video([1.0, 0.0], 1.0, catalog, recent, "other3")
+        self.assertEqual(entry["filename"], "relevant")
+        self.assertAlmostEqual(entry["recency_penalty"], 0.02)
+        self.assertAlmostEqual(entry["adjusted_score"], 0.543)
+        self.assertAlmostEqual(entry["match_score"], 0.563)
+        self.assertEqual(recent, ["relevant", "other1", "other2", "other3"])
+
+    def test_close_match_favors_unplayed_clip(self):
+        catalog = self.catalog_with_scores(recent=0.56, new=0.53)
+        entry = faketerm.select_best_video([1.0, 0.0], 1.0, catalog, ["recent", "last"], "last")
+        self.assertEqual(entry["filename"], "new")
+        self.assertEqual(entry["recency_penalty"], 0)
+        self.assertIsNone(entry["videos_since_last_play"])
+
+    def test_penalty_halves_for_each_intervening_play(self):
+        catalog = self.catalog_with_scores(target=0.9)
+        for count, expected in [(1, 0.08), (2, 0.04), (3, 0.02), (4, 0.01)]:
+            recent = ["target"] + ["other%d" % i for i in range(count)]
+            entry = faketerm.select_best_video([1.0, 0.0], 1.0, catalog, recent, recent[-1])
+            self.assertAlmostEqual(entry["recency_penalty"], expected)
+            self.assertEqual(entry["videos_since_last_play"], count)
+
+    def test_repeated_plays_restart_penalty_and_count_as_intervening_events(self):
+        catalog = self.catalog_with_scores(target=0.9)
+        for recent, age in [(["target", "B", "C", "B"], 3), (["target", "B", "target", "C"], 1)]:
+            entry = faketerm.select_best_video([1.0, 0.0], 1.0, catalog, recent, recent[-1])
+            self.assertEqual(entry["videos_since_last_play"], age)
+            self.assertAlmostEqual(entry["recency_penalty"], 0.08 * (0.5 ** (age-1)))
+
+    def test_immediate_repeat_is_forbidden_even_if_only_valid_clip(self):
+        catalog = self.catalog_with_scores(only=1.0)
+        self.assertIsNone(faketerm.select_best_video([1.0, 0.0], 1.0, catalog, ["only"], "only"))
+
+    def test_zero_penalty_keeps_immediate_repeat_exclusion(self):
+        catalog = self.catalog_with_scores(best=1.0, second=0.95)
+        with patch.object(faketerm, "VIDEO_RECENCY_PENALTY", 0):
+            entry = faketerm.select_best_video([1.0, 0.0], 1.0, catalog, ["best", "last"], "last")
+            self.assertEqual(entry["filename"], "best")
+            entry = faketerm.select_best_video([1.0, 0.0], 1.0, catalog, ["best"], "best")
+            self.assertEqual(entry["filename"], "second")
+
+    def test_history_is_bounded_and_does_not_reset_after_full_catalogue(self):
+        recent = []
+        for i in range(25):
+            faketerm.record_video_choice("clip%d" % i, 25, recent)
+        self.assertEqual(len(recent), 25)
+        faketerm.record_video_choice("clip24", 25, recent)
+        self.assertEqual(len(recent), 25)
+        self.assertEqual(recent[:1], ["clip1"])
+        self.assertEqual(recent[-2:], ["clip24", "clip24"])
 
     def test_passages_use_maximum_and_keep_clip_recency(self):
         catalog = [
@@ -105,6 +168,7 @@ class VideoSelectionTests(unittest.TestCase):
 
     def test_match_log_records_only_successfully_requested_video(self):
         entry = {"filename": "clip.ogv", "duration_sec": 30, "match_score": 0.4,
+                 "recency_penalty": 0.04, "adjusted_score": 0.36, "videos_since_last_play": 2,
                  "matched_commentary": "A game observation.",
                  "matched_passage": {"text": "A contextual recollection.", "start": "0:00:12.000", "end": "0:00:42.000"}}
         with tempfile.TemporaryDirectory() as directory:
@@ -119,13 +183,17 @@ class VideoSelectionTests(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["commentary"], "A game observation.")
         self.assertEqual(rows[0]["passage"], entry["matched_passage"])
+        self.assertEqual(rows[0]["score"], 0.4)
+        self.assertEqual(rows[0]["recency_penalty"], 0.04)
+        self.assertEqual(rows[0]["adjusted_score"], 0.36)
+        self.assertEqual(rows[0]["videos_since_last_play"], 2)
 
     def test_equal_scores_are_stable_and_skip_recent_clips(self):
         catalog = [
             {"filename": name, "embedding": [1.0, 0.0], "norm": 1.0}
             for name in ("first.ogv", "second.ogv", "third.ogv")
         ]
-        entry = faketerm.select_best_video([1.0, 0.0], 1.0, catalog, ["first.ogv"], "third.ogv")
+        entry = faketerm.select_best_video([1.0, 0.0], 1.0, catalog, ["first.ogv", "third.ogv"], "third.ogv")
         self.assertEqual(entry["filename"], "second.ogv")
 
     def test_different_embedding_dimensions_do_not_select_arbitrary_clip(self):
